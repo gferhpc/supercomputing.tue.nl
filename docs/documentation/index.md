@@ -1,5 +1,5 @@
 ---
-title: Introduction
+title: TU/e Umbrella HPC Cluster
 ---
 # TU/e Umbrella HPC Cluster
 
