@@ -1,6 +1,5 @@
 ---
 title: TU/e Umbrella HPC Cluster
-template: umbrella.html
 ---
 # TU/e Umbrella HPC Cluster
 
