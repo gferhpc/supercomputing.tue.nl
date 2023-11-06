@@ -2,7 +2,9 @@
 hide:
   - navigation
   - toc
+  - pages
 title: Home
+template: intro.html
 ---
 
 # Simulation and AI

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+<!-- https://squidfunk.github.io/mkdocs-material/customization/ -->
+
+{% block styles %}
+{{ super() }}
+<style>
+    .md-content__button { display: none; }
+</style>
+{% endblock %}
