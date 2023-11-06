@@ -124,5 +124,3 @@ benchmark their performance. All these concepts will be discussed in this module
 In this module, basic compression techniques will be highlighted, we will learn how to persist large
 arrays with Zarr and get the basic knowledge of Blosc for efficient data storage. Implementing chunk
 writing is also addressed here.
-
-...
