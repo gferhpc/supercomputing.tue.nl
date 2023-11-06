@@ -3,45 +3,146 @@ title: 2. Access the cluster
 ---
 # Access the cluster
 
-## Secure Shell
+This page describes how to connect to the cluster making novice users
+more familiar with \`CLI\` and \`SSH\` concepts.
 
-Secure Shell (ssh) is a commandline-tool for logging into a different computer over some network (e.g. the internet) and for executing commands on that machine, as if one would be sitting there instead of the own computer. So you use ssh to build a connection to the other computer and can then interact with it, using its shell. It is commonly used to login to the login nodes of a supercomputer.
+## Necessary tools
 
-To start an SSH session and to esablish a shared session key to encrypt the SSH traffic, [Diffie–Hellman key exchange](https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange) is used.
+HPC clusters that are most commonly operated via a [\`Command Line
+Interface\`
+(CLI)](https://en.wikipedia.org/wiki/Command-line_interface).
 
-OpenSSH is the standard ssh client on Linux and the Mac and it is freely available for everyone.
-On Windows, you can use Putty, Bitvise or the GitBash (coming with ssh) which is also free. On Windows 10 since Update 1709, Microsoft has packaged "ssh" right into windows. You can thus open a cmd window (Start - type "cmd" - <ENTER>) and run ssh username@hostname.domain like you would with Linux or MacOS.
+Such a CLI can be accessed directly by attaching a monitor and keyboard
+to the cluster itself locally to create an operational "terminal",
+however it is more common to operate HPC clusters remotely over the
+(inter)network through [\`Secure SHell\`
+(SSH)](https://en.wikipedia.org/wiki/Secure_Shell) using a [Terminal
+Emulators](https://en.wikipedia.org/wiki/Terminal_emulator), as HPC
+clusters are usually geographically inconveniently located for their
+users.
 
-### VPN
+GNU/Linux and MacOS systems are usually equipped with powerful SSH tools
+by default out of the box. Microsoft Windows users can install openSSH
+on windows
+[1](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse),
+or install third-party software, e.g.:
 
-Sometimes access to a cluster's login nodes is restricted to certain networks within the university/facility, so you can connect while being on the campus, but not from your network at home or at other institutions. To nevertheless access those login nodes from external, one can 'pretend to be inside the network' by using a Virtual Private Network (VPN) provided by the university operating the cluster.
+### Free and Open Source Software
 
-[Alice and Bob](../images/Public_key_encryption.png)
+-   [MobaXterm](https://mobaxterm.mobatek.net/) (Free Version); Enhanced
+    terminal for Windows with X11 server, tabbed SSH client, network
+    tools and much more.
+-   [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html);
+    SSH CLI-terminal.
+-   [WinSCP](https://winscp.net/eng/index.php); SSH file-explorer.
+-   [Git for Windows](https://git-scm.com/download/win) installs Git
+    Bash:; Linux-like CLI environment on Windows, including SSH.
 
-## Usage
+### Proprietary software
 
-Logging in with OpenSSH on the HPC cluster is done with:
+-   [SmarTTY](http://sysprogs.com/SmarTTY/); both an SSH CLI-terminal
+    and file-explorer combined into one program.
 
-'''$ ssh -l login@cluster'''
+## Logging in
 
-Here <login> is your username and <cluster> is one of the login nodes of the system, you are trying to connect to. At the first login you will be asked to verify the authenticity of the host. If the shown host is correct, enter yes. After pressing RETURN you will be prompted to enter your password for the provided username.
+If you get a question about SSH key fingerprints from the server, you
+can verify them with the below values.
 
-## Graphical Applications on the Login Node
+```shell
+2048 SHA256:1XsJDtOvF640B+woZx1i3Jg3H6IhyrLZSmcfbdpePYI hpc.tue.nl (RSA)
+256 SHA256:f397R3vn2cnR6gOq3FUwor3fs/ng0GOpA0pJva4L4Xg hpc.tue.nl (ECDSA)
+256 SHA256:czSbafxnFyq581Rvlrl4buHLjEApG5dBZkGfjy09HhI hpc.tue.nl (ED25519)
+```
 
-This might or might not work depending on the your operating system, because it requires an X11-Server running on your local machine, which is not available by default on Mac and Windows. To utilize graphical tools anyway, you might want to look into MobaXterm, which provides the necessary functionality for Windows or Xquartz for Mac.
+### From CLI
 
+Simpy issue the following from the command line:
 
-### Linux
-If you need to start graphical applications you need to enable X11 forwarding/X11 tunneling by your ssh client. For OpenSSH this is done by giving it the command line option -X (or -Y if the previous did not work):
+`$ ssh hpc.tue.nl -l `<USERNAME>
 
-'''$ ssh -X -l login@cluster'''
+### From a GUI
 
-### Mac
+1.  Open your SSH tool of choice (e.g. PuTTY).
+2.  Fill-out the server address (e.g. hpc.tue.nl)\*
+3.  Open the connection (click the \[Open\] button in the case of
+    PuTTY).
+4.  Answer the questions on-screen.
 
-### Windows
+```shell
+       _____ _   _  __                                ╮╭
+      |_   _| | | |/ /__                         ▄██████████▄
+        | | | |_| / / -_)                     ▄████████████████▄
+        |_|  \___/_/\___|                   ▄████████████████████▄
+                                           ▄██████████████████████▄
+ Eindhoven University of Technology       ▐▀▀▀▀███▀▀▀▀██▀▀▀▀███▀▀▀▀▌
+------------------------------------                  ▐▌
+                                                      ▐▌  ▄
+Welcome to the TU/e HPC Umbrella login node           ▐▌  █
+                                                       █▄█▀
+For WIKI information on how to use this cluster go to:
+https://hpcwiki.tue.nl/
 
-This might or might not work depending on the your operating system, because it requires an X11-Server running on your local machine, which is not available by default on Mac and Windows. To utilize graphical tools anyway, you might want to look into FastX, which provides the necessary functionality for Mac and Windows.
+--------------------------------------------------------------------
+ Data (incl. home directories) in the HPC Cluster is NOT backed up!
 
-For more security and ease of use you should consider setting up authentication via ssh keys.
+     The HPC Cluster is not a solution for archiving your work!
+--------------------------------------------------------------------
 
-## OpenOnDemand
+[username@tue-login001 ~]$
+```
+
+### Login nodes
+
+Most TU/e HPC clusters are logged-into via the general log-in nodes from
+the TU/e: *hpc.tue.nl*, but some clusters have their own login node:
+
+| Node                      | Users                          |
+|---------------------------|--------------------------------|
+| phys-login001.phys.tue.nl | Applied Physics (compass)      |
+| hpc.win.tue.nl            | Mathematics & Computer Science |
+| hpc.arch.tue.nl           | Built Environment              |
+| hpc.tue.nl                | All others                     |
+
+## Personal homedir
+
+All HPC accounts come with a
+[homedir](https://en.wikipedia.org/wiki/Home_directory) on the cluster.
+
+This directory ("folder" in Ms. Windows terminology) forms the entry
+point "location" on the cluster for a user to operate the HPC cluster
+from.
+
+It can be used to store scripts but also to have (personal) software
+locally installed and/or configured.
+
+## Open OnDemand on the TU/e Umbrella HPC Cluster
+
+Based on <https://openondemand.org/> easy access to the TU/e Umbrella
+HPC Cluster is possible using a Web-Browser.
+[alt=OpenOnDemand Login
+Screen\|300x300px](/File:LoginOOD.png "wikilink")
+
+<big>Goto: <https://hpc.tue.nl> and login with your credentials</big>
+
+### Features
+
+#### Terminal in the Browser
+
+Terminal access to the cluster login-node available from the browser, no
+longer client software is needed (other than Chrome) to take your first
+steps on the cluster.
+
+[<File:TerminalOOD.png>](/File:TerminalOOD.png "wikilink")
+
+#### Upload and Download Files
+
+Access to the files with upload and download capabilities, in your
+home-directory on the cluster via the browser.
+[none\|frame](/File:UpdownOOD.png "wikilink")
+
+#### Interactive Graphical Jobs
+
+Start interactive jobs in your browser with a few clicks and interact
+within your browser. [thumb\|none](/File:InteractiveOOD.png "wikilink")
+Like R Studio: [none\|thumb](/File:RStudioOOD.png "wikilink") Or
+Paraview: [none\|thumb](/File:ParaviewOOD.png "wikilink")
