@@ -1,7 +1,8 @@
 ---
-title: SSH
-tags: [Umbrella]
+title: 2. Access the cluster
 ---
+# Access the cluster
+
 ## Secure Shell
 
 Secure Shell (ssh) is a commandline-tool for logging into a different computer over some network (e.g. the internet) and for executing commands on that machine, as if one would be sitting there instead of the own computer. So you use ssh to build a connection to the other computer and can then interact with it, using its shell. It is commonly used to login to the login nodes of a supercomputer.
@@ -15,7 +16,7 @@ On Windows, you can use Putty, Bitvise or the GitBash (coming with ssh) which is
 
 Sometimes access to a cluster's login nodes is restricted to certain networks within the university/facility, so you can connect while being on the campus, but not from your network at home or at other institutions. To nevertheless access those login nodes from external, one can 'pretend to be inside the network' by using a Virtual Private Network (VPN) provided by the university operating the cluster.
 
-[Alice and Bob](\website\assets\Public_key_encryption.png)
+[Alice and Bob](../images/Public_key_encryption.png)
 
 ## Usage
 
@@ -42,3 +43,5 @@ If you need to start graphical applications you need to enable X11 forwarding/X1
 This might or might not work depending on the your operating system, because it requires an X11-Server running on your local machine, which is not available by default on Mac and Windows. To utilize graphical tools anyway, you might want to look into FastX, which provides the necessary functionality for Mac and Windows.
 
 For more security and ease of use you should consider setting up authentication via ssh keys.
+
+## OpenOnDemand
