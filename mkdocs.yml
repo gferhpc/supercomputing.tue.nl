@@ -26,14 +26,16 @@ theme:
     - content.code.copy
     - content.code.annotate
   palette:
-    - scheme: slate
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
-    - scheme: hpc
+    - media: "(prefers-color-scheme: light)"
+      scheme: hpc
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
   custom_dir: overrides
   icon:
     repo: fontawesome/brands/gitlab
