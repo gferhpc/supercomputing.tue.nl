@@ -5,19 +5,12 @@ title: TU/e Umbrella HPC Cluster
 
 ![The Umbrella Cluster](../images/hpc-umbrella-full.png){ align=right width=350 }
 
-The TU/e Umbrella HPC Cluster is the HPC cluster of the TU/e consisting of Faculty supplied compute (CPU and GPU) resources and managed by the HPC Lab. It is one of the High Performance Computing solutions the HPC Lab offers.
+The TU/e Umbrella HPC Cluster is the HPC cluster of the TU/e consisting of Faculty supplied compute (CPU and GPU) resources and managed by the HPC Lab. It's one of the High Performance Computing solutions the HPC Lab offers.
 
-As the TU/e Umbrella HPC Cluster is managed centrally, you can get access with your TU/e account. Depending on your department/research group, you can get access to certain part of TU/e Umbrella HPC Cluster. Note that at the TU/e, some departments/research groups have several local computation facilities. These are not part of the TU/e HPC Umbrella Cluster, please contact the [Reasearch IT contact of your department](https://tuenl.sharepoint.com/sites/intranet-LIS/SitePages/Research-IT.aspx) for more information.
+As the TU/e Umbrella HPC Cluster is managed centrally, you can get access with your TU/e account. Depending on your department/research group, you can get access to certain part of TU/e Umbrella HPC Cluster.
 
-## Access
-
-*"How-to-be-allowed-onto-the-TU/e-Umbrella-HPC-cluster"*
-
-Use the Selfservice request formm supplied by the TU/e to request login credentails.
-
-[Create a Service Request :material-ticket:](https://tue.topdesk.net/tas/public/ssp/content/serviceflow?unid=a745121fa0ab45f2b24aaaf64060760f){ .md-button .md-button--primary }
-
-After this is done and login credentials are supplied, one can proceed to login.
+!!! Note "Local Clusters"
+    Note that at the TU/e, some departments/research groups have several local computation facilities. These are **_not_** part of the TU/e HPC Umbrella Cluster, please contact the [Reasearch IT contact of your department](https://tuenl.sharepoint.com/sites/intranet-LIS/SitePages/Research-IT.aspx){:target=_blank} for more information.
 
 ## Login
 

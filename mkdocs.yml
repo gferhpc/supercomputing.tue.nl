@@ -2,7 +2,8 @@
 site_name: Eindhoven Supercomputing Center - HPC Lab
 theme:
   name: material
-  font: false
+  font:
+    text: Lato Regular
   language: en
   logo: images/TUe-logo-scarlet-S.png
   favicon: images/favicon.webp
@@ -28,11 +29,15 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: hpc
+      primary: custom
+      accent: custom
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
+      primary: custom
+      accent: custom
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
@@ -42,7 +47,8 @@ theme:
     edit: material/pencil
     view: material/eye
 plugins:
-  - awesome-pages
+  - awesome-pages:
+      filename: pages.yml
   - blog
   - glightbox
   - search
