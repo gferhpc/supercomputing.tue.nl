@@ -2,20 +2,20 @@ authors:
   "r.j.zoontjens@tue.nl":
     name: Zoontjens, Richard
     description: HPC & AI Lead
-    avatar: " "
+    avatar: "/images/favicon.webp"
   "r.kotian@tue.nl":
     name: Kotian, Roshan
     description: ML/AI application specialist
-    avatar: " "
+    avatar: "/images/favicon.webp"
   "a.van.hoof@tue.nl":
     name: Hoof, Alain van
     description: Cluster Administrator
-    avatar: " "
+    avatar: "/images/favicon.webp"
   "a.c.m.bertens@tue.nl":
     name: Bertens, Guus
     description: Quantum Computing / Cluster Administrator
-    avatar: " "
+    avatar: "/images/favicon.webp"
   "e.loomeijer@tue.nl":
     name: Loomeijer, Emily
     description: Cluster Administrator
-    avatar: " "
+    avatar: "/images/favicon.webp"
