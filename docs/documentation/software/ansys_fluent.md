@@ -1,5 +1,6 @@
 ---
 title: Ansys Fluent
+tags: [Software, Module]
 ---
 
 ## Start-up Fluent with GUI (interactive)

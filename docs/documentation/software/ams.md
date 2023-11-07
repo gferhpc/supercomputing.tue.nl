@@ -1,7 +1,8 @@
 ---
 title: AMS
+tags: [Software, Module]
 ---
-The [Amsterdam Modeling Suite](https://scm.org) is used by academic and
+The [Amsterdam Modeling Suite](https://www.scm.com){:target=_blank} is used by academic and
 industrial researchers in all areas of chemistry, materials science, and
 engineering.
 
@@ -12,7 +13,7 @@ for `ams/2022.101`:
 #!/bin/bash
 
 #SBATCH --job-name=test_ams
-#SBATCH --output=test_ams-%j.out
+#SBATCH --output=test_ams-%j.out 
 #SBATCH --error=test_ams-%j.err
 #SBATCH --partition=tue.default.q
 #SBATCH --nodes=1
@@ -26,3 +27,5 @@ module load ams/2022.101
 
 <AMS CODE HERE>
 ```
+
+1.  Look ma, less line noise!

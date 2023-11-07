@@ -1,5 +1,6 @@
 ---
 title: R
+tags: [Software, Module]
 ---
 The Comprehensive R Archive Network (CRAN) has packages available that
 can be used to extend R. On the HPC cluster specific version of R can be

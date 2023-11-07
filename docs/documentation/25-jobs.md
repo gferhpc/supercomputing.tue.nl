@@ -1,5 +1,6 @@
 ---
 title: 5. Submit Jobs
+tags: [SLURM]
 ---
 # Submit Jobs
 

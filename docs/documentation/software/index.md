@@ -1,3 +1,6 @@
+---
+tags: [Software]
+---
 # Software Installation
 
 **Note: this page serves as a reference to system administrators, but

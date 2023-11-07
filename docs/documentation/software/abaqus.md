@@ -1,3 +1,6 @@
+---
+tags: [Software, Module]
+---
 Abaqus (https://www.3ds.com/products-services/simulia/products/abaqus/)
 is licensed software and only usable the the user is a member of the
 correct group.

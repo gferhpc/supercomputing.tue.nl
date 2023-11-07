@@ -23,6 +23,8 @@ theme:
     - search.share
     - announce.dismiss
     - content.action.edit
+    - content.code.copy
+    - content.code.annotate
   palette:
     - scheme: slate
       toggle:
@@ -38,9 +40,11 @@ theme:
     edit: material/pencil
     view: material/eye
 plugins:
+  - awesome-pages
   - blog
+  - glightbox
+  - search
   - tags
-#    - social
 extra_css:
   - stylesheets/extra.css
 extra_javascript:
@@ -57,7 +61,26 @@ markdown_extensions:
   - attr_list
   - md_in_html
   - tables
+  - admonition
+  - footnotes
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 edit_uri: https://gitlab.tue.nl/hpclab/website/edit/main/docs/
+announcement: "⚠️ TU/e Umbrella HPC Cluster maintenance scheduled on 20, 21 and 22 January 2024 ⚠️"

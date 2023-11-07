@@ -13,7 +13,7 @@
                 {% include ".icons/" ~ icon ~ ".svg" %}
             </button>
             {% endif %}
-            <div style="text-align: center;">⚠️ Important maintenance warning: TU/e Umbrella HPC Cluster maintenance scheduled on 20, 21 and 22 Januari 2024 ⚠️</div>
+            <div style="text-align: center;">{{ config.announcement }}</div>
         </div>
         {% if "announce.dismiss" in features %}
         {% include "partials/javascripts/announce.html" %}

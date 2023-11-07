@@ -1,6 +1,4 @@
-{% extends "base.html" %}
-
-<!-- https://squidfunk.github.io/mkdocs-material/customization/ -->
+{% extends "main.html" %}
 
 {% block styles %}
 {{ super() }}
@@ -8,24 +6,4 @@
     .md-content__button { display: none; }
     .md-banner { display: none; }
 </style>
-{% endblock %}
-
-{% block header %}
-{{ super() }}
-<div data-md-component="announce">
-    <aside class="md-banner">
-        <div class="md-banner__inner md-grid md-typeset">
-            {% if "announce.dismiss" in features %}
-            <button class="md-banner__button md-icon" aria-label="{{ lang.t('announce.dismiss') }}">
-                {% set icon = config.theme.icon.close or "material/close" %}
-                {% include ".icons/" ~ icon ~ ".svg" %}
-            </button>
-            {% endif %}
-            <div style="text-align: center;">⚠️ Important maintenance warning: TU/e Umbrella HPC Cluster maintenance scheduled on 20, 21 and 22 Januari 2024 ⚠️</div>
-        </div>
-        {% if "announce.dismiss" in features %}
-        {% include "partials/javascripts/announce.html" %}
-        {% endif %}
-    </aside>
-</div>
 {% endblock %}

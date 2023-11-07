@@ -1,5 +1,6 @@
 ---
 title: CP2K
+tags: [Software, Module]
 ---
 
 Version 8.2 available as a module

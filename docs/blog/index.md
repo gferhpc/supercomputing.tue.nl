@@ -1,1 +1,1 @@
-# Blog
+# Latest News

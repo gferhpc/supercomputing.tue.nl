@@ -1,5 +1,6 @@
 ---
 title: EnergyPlus
+tags: [Software, Module]
 ---
 
 EnergyPlus™ is a whole building energy simulation program that
