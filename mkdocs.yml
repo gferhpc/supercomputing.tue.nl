@@ -49,7 +49,8 @@ theme:
 plugins:
   - awesome-pages:
       filename: pages.yml
-  - blog
+  - blog:
+      draft_if_future_date: true
   - glightbox
   - search
   - tags
