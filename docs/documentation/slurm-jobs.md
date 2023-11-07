@@ -260,6 +260,247 @@ To requeue (cancel and rerun) a particular job:
 
 `scontrol requeue `<jobid>
 
+To run a computing job on the cluster, it has to be submitted to the
+queueing system. This queueing system decides which jobs will run when
+and on which nodes/processors based on certain policies that are
+designed to make the usage of the cluster as fair as possible for
+everyone in an efficient way. The most convenient way to submit a job is
+to use SLURM (Simple Linux Utility for Resource Management), which is
+the queueing system used in the 2018+ Umbrella HPC Cluster environment.
+
+This page describes how to run computation jobs using Slurm. For
+in-depth information on submitting jobs with Slurm, see the online
+documentation provided at the [Slurm
+website](https://slurm.schedmd.com/sbatch.html), or their [Slurm Cheat
+Sheet (PDF)](https://slurm.schedmd.com/pdfs/summary.pdf). For a quick
+start, see below.
+
+## Slurm scripts
+
+A Slurm script is simply a Unix-style shell script with some additional
+comments the sbatch-program can parse in order to determine information
+about the job, e.g., the number of required processors. This page
+contains a few example Slurm scripts.
+
+### Script for a single core job
+
+Below is an example Slurm script that attempts to run the program
+"my_program" using a single core, assuming the program is located in the
+same directory as the Slurm script:
+
+`#!/usr/bin/bash`
+`#SBATCH --nodes=1`
+`#SBATCH --ntasks=1`
+`#SBATCH --partition=tue.default.q`
+`#SBATCH --error=slurm-%j.err`
+`#SBATCH --output=slurm-%j.out`
+`#SBATCH --time=24:00:00`
+` `
+`./my_program`
+
+We'll go through the lines one by one:
+
+-   **#!/usr/bin/bash** tells the GNU/Linux shell that the script should
+    be run by bash.
+
+<!-- -->
+
+-   **#SBATCH --nodes=** is the first comment intended for Slurm to
+    interpret: It tells Slurm (the queueing system) that this job wants
+    to run on 1 node.
+
+<!-- -->
+
+-   **#SBATCH --ntasks=1** tells Slurm that this job wants a total of 1
+    tasks. On our cluster, this means 1 core of a processor (in PBS
+    langauge this would be called 1 processor).
+
+<!-- -->
+
+-   **#SBATCH --partition=tue.test.q** tells Slurm the partition it
+    should use (this used to be called "queue" in the old system).
+    Select a partition based on the [technical
+    specifications](/technical_specifications "wikilink") of the cluster
+    you are using.
+
+<!-- -->
+
+-   **#SBATCH --error=slurm-%j.err** tells Slurm to write standard error
+    messages (errors and warnings from the job itself) to a file named
+    "slurm-<jobid>.err". If this line is omitted, the standard error
+    stream is merged with the standard output into a single file
+    "slurm-<jobid>.out".
+
+<!-- -->
+
+-   **#SBATCH --output=slurm-%j.out** tells Slurm to write standard
+    output of the job to a file named "slurm-<jobid>.out". This is the
+    default behavior (included for reference reasons).
+
+<!-- -->
+
+-   **#SBATCH --time=24:00:00** tells Slurm to respect a "walltime"
+    limit; limiting the job to be run for a maximum of 1 day (24 hours).
+    Acceptable time formats include "minutes", "minutes:seconds",
+    "hours:minutes:seconds", "days-hours", "days-hours:minutes" and
+    "days-hours:minutes:seconds". If the job runs longer than the
+    specified walltime limit, it will be terminated by Slurm, so make
+    sure it is long enough to make sure your job finishes in that
+    walltime limit. Note that jobs with a low walltime limit might get
+    extra priority in the queue, so it is in *your* interest to specify
+    a walltime limit that is realistic for your jobs. Finally, note that
+    you specify a walltime limit rather than a cpu time limit, which is
+    an important distinction for multi-core jobs.
+
+<!-- -->
+
+-   **./my_program** runs the program called "my_program" that is
+    located in the current directory, which, in our configuration, is
+    the directory from which the script was submitted. Unlike in the old
+    PBS system, there is no need to change directories here for this to
+    work.
+
+*NFO: \*Normally bash-script lines marked with a \`#\` character are
+considered a comment only that do not get executed when the script is
+ran from the cli, however Slurm explicitly DOES use these specific "bash
+comments" and interprets them as INSTRUCTIONS instead!*
+
+### Script for a multi core job
+
+Suppose you want to run another program, "parallel_program", which
+supports parallel computation via MPI using multiple processor cores,
+and you want to run it using 16 cores. This can be achieved with some
+minor modifications to the single core script. Below is an example,
+where the differences are highlighted in bold:
+
+`#!/bin/bash`
+`#SBATCH --nodes=1`
+`#SBATCH --ntasks=16`
+`#SBATCH --partition=tue.default.q`
+`#SBATCH --error=slurm-%j.err`
+`#SBATCH --output=slurm-%j.out`
+`#SBATCH --time=24:00:00`
+
+`module load openmpi`
+`mpirun ./my_program`
+
+The essential changes are in lines:
+
+-   **#SBATCH --nodes=1** In order to properly run in parallel on 16
+    cores, you need to request 16 processor cores. At the time of
+    writing, the maximum number of cores a node can have is 20, but most
+    nodes only have 16 processor cores. Some nodes have only 8 cores, so
+    if the only available nodes are of that type, you would also need to
+    change the preceding line to --nodes=2. Unlike in PBS, the number
+    requested with --ntasks is the TOTAL number of tasks, not the number
+    of tasks/processors per node.
+
+<!-- -->
+
+-   **module load openmpi** In order to run MPI programs in parallel,
+    you need to load a module that provides MPI support. If you compiled
+    the software yourself, the common thing to do at this point is to
+    load the same module that you needed to load when you were compiling
+    the code. In this example, I am assuming the openmpi module was
+    serving this purpose.
+
+<!-- -->
+
+-   **mpirun ./my_program**The actual start of parallel execution
+    requires starting your program via the "mpirun" program. Unlike in
+    the old PBS setup, the Open MPI version of mpirun that we have on
+    the 2018+ cluster figures out automatically which nodes have been
+    assigned to your job, and how many tasks each node is getting.
+    Hence, the only arguments to mpirun should be the program you want
+    to run, followed by any arguments to the program you want to run.
+
+***NB: If the requested number of cores are not available, your job
+enters the queue. In the waiting queue, the more cores and nodes you
+claim, the longer you have to wait for it to start. Furthermore, others
+will have to wait for your job to start before their jobs in the queue
+start, so it is in everyone's interest to not request more resources
+than needed.***
+
+## Save a script on the cluster
+
+In order to save the script, or any file, to the cluster, it is
+recommended to create a subdirectory in your [home
+directory](/Connecting_to_the_cluster#Personal_homedir "wikilink"). Use
+command
+
+`$ ls`
+
+to see what directories already exist. If you do this for the first
+time, it is most likely empty. To create a directory, called 'myjob',
+you can use the following command:
+
+`$ mkdir myjob`
+
+To save the script in this directory, go to this directory using
+command:
+
+`$ cd myjob`
+
+Then open a text editor in the terminal, using, e.g., command: `nano` ,
+and type in the script. Save it with 'ctrl + O'. You can also choose to
+use a GUI, like WinSCP, to save your scripts to the cluster.
+
+## Submitting a script
+
+To submit the script, you have to save this script somewhere on the
+cluster (recommended is a subdirectory of your [home
+directory](/Connecting_to_the_cluster#Personal_homedir "wikilink")).
+Assuming you named it "myjob.run", to submit it, simply run:
+
+`$ sbatch myjob.run`
+
+in the same directory as you saved the script. Upon submitting this
+script, the system will check to see if there are nodes available that
+have at least 1 idle processor, and if so, it will dispatch this script
+to that node. If not, the job will enter the queue system and will
+accumulate priority depending on various things, including the time it
+was in the queue, the walltime limit, and possibly your recent usage on
+the cluster.
+
+## Selecting a partition (queue) and/or specific features
+
+The `--partition` option takes care of selecting a queue (partition in
+Slurm terminology). Select a partition based on the [technical
+specifications](/technical_specifications "wikilink") of the cluster you
+are using.
+
+In case there are different types of nodes within the partition you
+select, and you require specific hardware to run your job on, you can
+further constrain where your job can run using *features*. First, query
+which features the nodes have. For example:
+
+`$ sinfo -o "%16N  %16f  %8G" -p mcs.gpu.q   `
+`NODELIST          AVAIL_FEATURES    GRES     `
+`mcs-gpuA001       tesla,v100        gpu:2    `
+`mcs-gpuB001       gforce,2080ti     gpu:8`
+
+To use the V100 GPU in your Slurm batch script, you can now add the
+parameter `--constraint=v100`. Refer to the
+[documentation](https://slurm.schedmd.com/sbatch.html) for details and
+other options, such as combining features.
+
+Note that to actually see and use the GPU(s), you will need to load the
+CUDA toolkit module (or other relevant software) by executing
+`module load cuda10.2/toolkit/10.2.89` or similar in your sbatch script.
+
+## Interactive use
+
+In order to use a node interactively (e.g. for debugging modules or
+dependencies, or simply to use it as an extension of your own computer),
+you can issue the command
+
+`srun --nodes=1 --ntasks-per-node=1 --time=01:00:00 --pty bash -i`
+
+You can add the common SLURM modifications to your command as you would
+otherwise do in the job script, for instance to select a particular
+queue to run use:
+
+`srun --nodes=1 --ntasks-per-node=1 --time=01:00:00  --partition=tue.default.q --pty bash -i`
 
 ## Troubleshooting
 ### Errors when trying to submit a job using `sbatch`

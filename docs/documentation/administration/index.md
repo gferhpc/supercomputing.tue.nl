@@ -5,6 +5,12 @@ title: Administration Guide
 !!! danger
     These are "internal" notes and require privileged accounts to execute. Please use with care!
 
+## Training, Courses & Resources
+- [Bright View Admin Portal](https://hpc-cluster.tue.nl/bright-view/){:target=_blank}
+- [Bright User Portal](https://hpc-cluster.tue.nl/userportal/){:target=_blank}
+- [Bright Cluster Manager online training (free)](https://academy.nvidia.com/en/training-search-wizard/?mySearch=bright%20cluster%20manager){:target=_blank}
+- [NVIDIA Bright Cluster Manager Customer Portal](https://customer.brightcomputing.com/){:target=_blank}
+
 ## Hardware
 
 ### BMC Configuration
@@ -79,4 +85,34 @@ zfs groupspace tank/home
 In this example we configure a quota of 1TB.
 ```shell
 zfs set groupquota@<GroupName>=1T molml/home
+```
+
+## Slurm Accounting
+Script written by Wouter Ellenbroek after an idea by Bart de Braaf. The
+maintainers of this Wiki do not accept any responsibility for damage
+incurred by using this script.
+
+```python
+#!/usr/bin/python3
+
+import subprocess;
+
+users=subprocess.check_output('squeue -O "username:14" |tail -n +2|sort|uniq',shell=True)
+userlist=users.decode().splitlines()
+print("USER          RUNNING/PENDING (REASONS)")
+for user in userlist:
+    #user=user.strip()
+    nrunning=subprocess.check_output("squeue -u {!s} -t R -O numtasks |tail -n +2".format(user),shell=True).decode().splitlines()
+    nrunning=[int(x) for x in nrunning]
+    nrunning=sum(nrunning)
+    npending=subprocess.check_output("squeue -u {!s} -t PD -O numtasks |tail -n +2".format(user),shell=True).decode().splitlines()
+    npending=[int(x) for x in npending]
+    npending=sum(npending)
+    if (npending==0): 
+        print("{:s}: {:d}/0".format(user,nrunning))
+    else:
+        reasons=subprocess.check_output("squeue -u {!s} -t PD -O reason | tail -n +2 |sort|uniq".format(user),shell=True).decode().splitlines()
+        reasons=[x.strip() for x in reasons]
+        reasons=','.join(reasons)
+        print("{:s}: {:d}/{:d}\t({:s})".format(user,nrunning,npending,reasons))
 ```
