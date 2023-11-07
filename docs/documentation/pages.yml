@@ -1,10 +1,12 @@
 nav:
   - index.md
-  - account.md
-  - access.md
-  - data.md
-  - modules.md
-  - jobs.md
+  - request-account.md
+  - cluster-access.md
+  - transfer-data.md
+  - software-modules.md
+  - slurm-jobs.md
+  - workload-optimization.md
   - ...
+  - Faculties: faculties
   - Software: software
   - Administration: administration

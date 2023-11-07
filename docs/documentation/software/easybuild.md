@@ -1,13 +1,10 @@
 ---
 tags: [Software]
 ---
-# Software Installation
+# EasyBuild
 
-**Note: this page serves as a reference to system administrators, but
-the curious user is welcomed to read it as well.**
-
-Please consider use the command below to see current available software
-and releases.
+!!! note 
+    This page serves as a reference to system administrators, but the curious user is welcomed to read it as well.
 
 ## EasyBuild
 

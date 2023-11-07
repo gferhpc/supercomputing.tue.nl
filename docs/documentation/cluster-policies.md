@@ -11,7 +11,8 @@ Data (incl. home directories) in the HPC Cluster is **NOT** backed up!
 
 The HPC Cluster is not a solution for archiving your work.
 
-**You are *FULLY responsible for your own data management!***
+!!! danger
+    You are **FULLY** responsible for your own data management!
 
 ### Fair Use of Disk Space
 
