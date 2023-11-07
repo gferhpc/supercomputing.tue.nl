@@ -2,6 +2,9 @@
 title: Administration Guide
 ---
 
+!!! danger
+    These are "internal" notes and require privileged accounts to execute. Please use with care!
+
 ## Hardware
 
 ### BMC Configuration
@@ -19,6 +22,16 @@ racadm set idrac.users.4.username bright
 racadm set idrac.users.4.password PASSWORD # (1)!
 racadm set idrac.users.4.privilege 0x1F3
 racadm set idrac.users.4.enable 1
+```
+
+1. Replace this value with the actual password which can be retrieved from our KeyPass database.
+
+#### IPMI Authentication
+```{ .shell .annotate hl_lines="3" }
+module load ipmitool
+ipmitool user set name 4 bright
+ipmitool user set password 4 PASSWORD # (1)!
+ipmitool user enable 4
 ```
 
 1. Replace this value with the actual password which can be retrieved from our KeyPass database.

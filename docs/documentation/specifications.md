@@ -1,3 +1,6 @@
+---
+title: Technical Specifications
+---
 The TU/e 'Umbrella' HPC Cluster Specs
 
 Depending on your department/research group, you can get access to

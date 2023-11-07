@@ -1,0 +1,10 @@
+nav:
+  - index.md
+  - account.md
+  - access.md
+  - data.md
+  - modules.md
+  - jobs.md
+  - ...
+  - Software: software
+  - Administration: administration
