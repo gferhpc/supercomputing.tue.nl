@@ -9,6 +9,8 @@ By default we run Ansys Fluent jobs in batch mode with sbatch on the HPC
 cluster. For the model and mesh generation Ansys Fluent can be start
 interactive in the following way:
 
+Use your browser to connect to https://hpc.tue.nl
+
 Obtain a Slurm job allocation (a set of nodes), execute a command, and
 then release the allocation when the command is finished.
 
