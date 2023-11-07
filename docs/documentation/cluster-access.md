@@ -3,15 +3,59 @@ title: 2. Access the cluster
 ---
 # Access the cluster
 
-The TU/e Umbrella HPC Cluster is unix-based (Linux) environments with shell (commandline) access.
-To log in, one usually uses ssh to reach the respective Login Nodes (computers reserved for people just like you that want to connect to the HPC Cluster). This access is restricted, so you can only connect, when you are within the university/facility and its network. To still access the Login Nodes externally, one can 'pretend to be inside the network' by using the TU/e provided Virtual Private Network (VPN).
-
+The TU/e Umbrella HPC Cluster is an UNIX-based (Linux) environment with shell (commandline) access.
+To log in, one usually uses SSH to reach the respective Login Nodes (computers reserved for people just like you that want to connect to the HPC Cluster). This access is restricted, so you can only connect, when you are within the university/facility and its network. To still access the Login Nodes externally, one can 'pretend to be inside the network' by using the TU/e provided Virtual Private Network (VPN).
+ 
 Once there, the user can interact with the system and run (small) programs to generally test the system/software.
 
 This page describes how to connect to the cluster making novice users
 more familiar with \`CLI\` and \`SSH\` concepts.
 
-## Necessary tools
+## GUI
+
+### Open OnDemand
+
+![img.png](openondemand/img.png){ align=right width=250px }
+Based on [openondemand.org](https://openondemand.org/){:target=_blank} easy access to the TU/e Umbrella HPC Cluster is possible using a web browser. To get started visit [hpc.tue.nl](https://hpc.tue.nl){:target=_blank} and login with your TU/e credentials.
+
+<br/>
+
+#### Terminal in the Browser
+
+![img_1.png](openondemand/img_1.png){ align=right width=250px }
+Terminal access to the cluster login-node available from the browser, no longer client software is needed (other than a modern web browser) to take your first steps on the cluster!
+
+<br/>
+
+#### Upload and Download Files
+
+![img_2.png](openondemand/img_2.png){ align=right width=250px }
+Access to the files with upload and download capabilities, in your home-directory on the cluster via the browser.
+
+<br/><br/><br/>
+
+#### Interactive Graphical Jobs
+
+![img_3.png](openondemand/img_3.png){ align=right width=250px }
+Start interactive jobs in your browser with a few clicks and interact
+within your browser.
+
+<br/><br/><br/><br/><br/><br/>
+
+![img_4.png](openondemand/img_4.png){ align=right width=250px }
+R Studio 
+
+<br/><br/><br/><br/><br/><br/><br/>
+
+![img_5.png](openondemand/img_5.png){ align=right width=250px }
+Paraview:
+
+!!! remark
+    This article is partially based on a [GitHub help article](https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent){:target=_blank}
+
+## Command Line
+
+### Necessary tools
 
 HPC clusters that are most commonly operated via a [\`Command Line
 Interface\`
@@ -32,7 +76,7 @@ on windows
 [1](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse),
 or install third-party software, e.g.:
 
-### Free and Open Source Software
+#### Free and Open Source Software
 
 -   [MobaXterm](https://mobaxterm.mobatek.net/) (Free Version); Enhanced
     terminal for Windows with X11 server, tabbed SSH client, network
@@ -43,12 +87,12 @@ or install third-party software, e.g.:
 -   [Git for Windows](https://git-scm.com/download/win) installs Git
     Bash:; Linux-like CLI environment on Windows, including SSH.
 
-### Proprietary software
+#### Proprietary software
 
 -   [SmarTTY](http://sysprogs.com/SmarTTY/); both an SSH CLI-terminal
     and file-explorer combined into one program.
 
-## Logging in
+### Logging in
 
 If you get a question about SSH key fingerprints from the server, you
 can verify them with the below values.
@@ -59,21 +103,14 @@ can verify them with the below values.
 256 SHA256:czSbafxnFyq581Rvlrl4buHLjEApG5dBZkGfjy09HhI hpc.tue.nl (ED25519)
 ```
 
-### From CLI
+#### From CLI
 
-Simpy issue the following from the command line:
+Simply issue the following from the command line:
 
-`$ ssh hpc.tue.nl -l `<USERNAME>
+``` { .shell .annotate }
+$ ssh hpc.tue.nl -l username #(1)!
+username@hpc.tue.nl's password: #(2)!
 
-### From a GUI
-
-1.  Open your SSH tool of choice (e.g. PuTTY).
-2.  Fill-out the server address (e.g. hpc.tue.nl)\*
-3.  Open the connection (click the \[Open\] button in the case of
-    PuTTY).
-4.  Answer the questions on-screen.
-
-```shell
        _____ _   _  __                                ╮╭
       |_   _| | | |/ /__                         ▄██████████▄
         | | | |_| / / -_)                     ▄████████████████▄
@@ -93,10 +130,24 @@ https://hpcwiki.tue.nl/
      The HPC Cluster is not a solution for archiving your work!
 --------------------------------------------------------------------
 
-[username@tue-login001 ~]$
+[username@tue-login002 ~]$
 ```
 
-### Login nodes
+1. The username is equal to your TU/e network login name, which is usually a numeric value or starts with a `s` for students.
+2. Use the same password as the one you're using to log onto your TU/e account when prompted.
+
+!!! info
+    The username is equal to your TU/e network login name. This is usually a numeric value or starts with a `s` for students. Use the same password as the one you're using to log onto your TU/e account when prompted.
+
+#### From a GUI
+
+1.  Open your SSH tool of choice (e.g. PuTTY).
+2.  Fill-out the server address (e.g. hpc.tue.nl)\*
+3.  Open the connection (click the \[Open\] button in the case of
+    PuTTY).
+4.  Answer the questions on-screen.
+
+#### Login nodes
 
 Most TU/e HPC clusters are logged-into via the general log-in nodes from
 the TU/e: *hpc.tue.nl*, but some clusters have their own login node:
@@ -108,7 +159,7 @@ the TU/e: *hpc.tue.nl*, but some clusters have their own login node:
 | hpc.arch.tue.nl           | Built Environment              |
 | hpc.tue.nl                | All others                     |
 
-## Personal homedir
+### Personal homedir
 
 All HPC accounts come with a
 [homedir](https://en.wikipedia.org/wiki/Home_directory) on the cluster.
@@ -120,49 +171,9 @@ from.
 It can be used to store scripts but also to have (personal) software
 locally installed and/or configured.
 
-## Open OnDemand on the TU/e Umbrella HPC Cluster
+### Advanced
 
-Based on <https://openondemand.org/> easy access to the TU/e Umbrella
-HPC Cluster is possible using a Web-Browser.
-[alt=OpenOnDemand Login
-Screen\|300x300px](/File:LoginOOD.png "wikilink")
-
-<big>Goto: <https://hpc.tue.nl> and login with your credentials</big>
-
-### Features
-
-#### Terminal in the Browser
-
-Terminal access to the cluster login-node available from the browser, no
-longer client software is needed (other than Chrome) to take your first
-steps on the cluster.
-
-[<File:TerminalOOD.png>](/File:TerminalOOD.png "wikilink")
-
-#### Upload and Download Files
-
-Access to the files with upload and download capabilities, in your
-home-directory on the cluster via the browser.
-[none\|frame](/File:UpdownOOD.png "wikilink")
-
-#### Interactive Graphical Jobs
-
-Start interactive jobs in your browser with a few clicks and interact
-within your browser. [thumb\|none](/File:InteractiveOOD.png "wikilink")
-Like R Studio: [none\|thumb](/File:RStudioOOD.png "wikilink") Or
-Paraview: [none\|thumb](/File:ParaviewOOD.png "wikilink")
-
-Normally you have to provide a password when [logging
-in](/Connecting_to_the_cluster "wikilink") on the cluster. It is however
-possible to set up an SSH key pair instead. This article explains how to
-do so.
-
-*This article is partially based on a [GitHub help
-article](https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).*
-
-## Advanced
-
-### Passwordless Authentication
+#### Passwordless Authentication
 
 To authenticate with the HPC cluster and verify that you are who you
 claim you are (username), you provide a password. It is possible to use
@@ -187,9 +198,9 @@ the same key pair to log in to different machines, or if you frequently
 log out and back in. The agent will ask for your password once and then
 remember it for the rest of the session.
 
-#### Using the command line (recommended)
+##### Using the command line (recommended)
 
-##### Generating an SSH key pair
+###### Generating an SSH key pair
 
 **Windows**: To get a suitable environment, it is easiest to install
 [Git for Windows](https://git-scm.com/download/win). When done, you can
@@ -209,7 +220,7 @@ When prompted for a passphrase, enter the password that protects your
 key. It is possible to leave this empty, but we strongly recommend
 choosing a strong passphrase.
 
-##### Putting your public key on the HPC cluster
+###### Putting your public key on the HPC cluster
 
 To be able to use your SSH key pair to log in to the HPC cluster, you
 have to put your public key on the server.
@@ -237,7 +248,7 @@ have to put your public key on the server.
 You should now be able to log in to the HPC cluster using your SSH key
 rather than your password.
 
-##### Using ssh-agent
+###### Using ssh-agent
 
 Either [make sure ssh-agent starts
 automatically](https://help.github.com/en/github/authenticating-to-github/working-with-ssh-key-passphrases#auto-launching-ssh-agent-on-git-for-windows)

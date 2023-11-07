@@ -1,6 +1,6 @@
 ---
 draft: false 
-date: 2023-10-02
+date: 2023-09-19
 categories: [Programming, Workshop]
 tags: [Python]
 authors: [r.kotian@tue.nl]
@@ -9,7 +9,12 @@ authors: [r.kotian@tue.nl]
 # Python code optimization workshop
 ## Techniques to use the computing resources efficiently
 
+Python code optimization workshop. Techniques to use the computing resources efficiently.
+
+<!-- more -->
+
 ### User stories
+
 ![](2023-10-02_Python code optimization workshop/eee07ee1-daa1-4c03-ab11-67b15f430c61.png)
 
 Scenarios like the one depicted above are common. Researchers tend to reserve more computing
@@ -18,8 +23,6 @@ the importance of refactoring the code. Achieving scalability by adding more res
 efficient way of scaling your application.
 
 <blockquote style="text-align: center;">“Code that can efficiently utilize the computing resources is the best costeffective way to scale up”</blockquote>
-
-<!-- more -->
 
 ### Goal
 
@@ -31,7 +34,6 @@ approach to optimizing your code using libraries shown in figure 2. In addition,
 a set of checklists or a sort of questionnaire that will spark curiosity and assist you in writing efficient
 code.
 At the end of this workshop, you’ll receive a workshop completion certificate.
-
 
 <figure markdown>
   ![](2023-10-02_Python code optimization workshop/63626e6c-ae80-4945-b878-494e99c5ee2c.png)

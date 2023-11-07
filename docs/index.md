@@ -2,7 +2,6 @@
 hide:
   - navigation
   - toc
-  - pages
 title: Home
 template: intro.html
 ---
@@ -24,4 +23,3 @@ So, wait no longer and call us for speeding up your computations in Simulation a
 ![The Solutions Staircase](images/solution_staircase.png){ align=right width="600" loading=lazy }
 At TU/e, there are multiple types of HPC infrastructure available, each with their own characteristics and target group.
 The staircase model (see picture above) represents the vision of TU/e regarding HPC. There is not one solution for High Performance Computing. Depending on the scale of the simulations and resources, know-how and money available, an HPC user normally starts somewhere on this staircase. As during time the scale of the simulations increases, sometimes another staircase is needed. We can help and support you.
-

@@ -54,6 +54,10 @@ plugins:
   - glightbox
   - search
   - tags
+  - termynal:
+      prompt_literal_start:
+        - "$"
+        - ">"
 extra_css:
   - stylesheets/extra.css
 extra_javascript:
@@ -93,3 +97,11 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 edit_uri: https://gitlab.tue.nl/hpclab/website/edit/main/docs/
 announcement: "⚠️ TU/e Umbrella HPC Cluster maintenance scheduled on 20, 21 and 22 January 2024 ⚠️"
+extra:
+  social:
+    - name: Eindhoven Computing Center at LinkedIn
+      icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/supercomputing/
+    - name: HPC Lab Teams Community @ TU/e
+      icon: simple/microsoftteams
+      link: https://teams.microsoft.com/l/team/19:7830cc8a6f244d6689a374c60673b43c%40thread.tacv2/conversations?groupId=a07b9e15-8538-4889-8610-502177c36dc7&tenantId=cc7df247-60ce-4a0f-9d75-704cf60efc64
