@@ -3,7 +3,7 @@ site_name: Eindhoven Supercomputing Center - HPC Lab
 theme:
   name: material
   font:
-    text: Lato Regular
+    text: Lato
   language: en
   logo: images/TUe-logo-scarlet-S.png
   favicon: images/favicon.webp
@@ -53,6 +53,7 @@ plugins:
       draft_if_future_date: true
   - glightbox
   - search
+  - social
   - tags
   - termynal:
       prompt_literal_start:
@@ -100,7 +101,7 @@ announcement: "⚠️ TU/e Umbrella HPC Cluster maintenance scheduled on 20, 21 
 extra:
   social:
     - name: Eindhoven Computing Center at LinkedIn
-      icon: fontawesome/brands/linkedin
+      icon: simple/linkedin
       link: https://www.linkedin.com/in/supercomputing/
     - name: HPC Lab Teams Community @ TU/e
       icon: simple/microsoftteams
