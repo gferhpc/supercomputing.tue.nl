@@ -4,6 +4,7 @@
 
 {% block header %}
 {{ super() }}
+{% if config.extra.announcement %}
 <div data-md-component="announce">
     <aside class="md-banner">
         <div class="md-banner__inner md-grid md-typeset">
@@ -13,11 +14,12 @@
                 {% include ".icons/" ~ icon ~ ".svg" %}
             </button>
             {% endif %}
-            <div style="text-align: center;">{{ config.announcement }}</div>
+            <div style="text-align: center;">{{ config.extra.announcement }}</div>
         </div>
         {% if "announce.dismiss" in features %}
         {% include "partials/javascripts/announce.html" %}
         {% endif %}
     </aside>
 </div>
+{% endif %}
 {% endblock %}
