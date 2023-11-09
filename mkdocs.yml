@@ -1,12 +1,13 @@
 # yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
 site_name: Eindhoven Supercomputing Center - HPC Lab
+docs_dir: pages
 theme:
   name: material
   font:
     text: Lato
   language: en
-  logo: images/TUe-logo-scarlet-S.png
-  favicon: images/favicon.webp
+  logo: assets/logo.png
+  favicon: assets/favicon.webp
   features:
     - navigation.instant
     - navigation.instant.progress
@@ -48,16 +49,17 @@ theme:
     view: material/eye
 plugins:
   - awesome-pages:
-      filename: pages.yml
+      filename: .pages.yml
   - blog:
+      blog_dir: news
       draft_if_future_date: true
   - glightbox
   - search
   - tags
 extra_css:
-  - stylesheets/extra.css
+  - assets/stylesheets/extra.css
 extra_javascript:
-  - javascripts/extra.js
+  - assets/javascripts/extra.js
 #extra:
 #  consent:
 #    title: Cookie consent

@@ -1,12 +1,13 @@
 ---
 title: TU/e Umbrella HPC Cluster
 ---
+
 # TU/e Umbrella HPC Cluster
 
 !!! example "Work In Progress"
     Please note that all pages are currently migrated from our (old) wiki and as a result some images are missing or contains broken links. In addition, some of the pages may contain duplicate/unfiltered information.
 
-![The Umbrella Cluster](../images/hpc-umbrella-full.png){ align=right width=350 }
+![The Umbrella Cluster](/assets/images/hpc-umbrella-full.png){ align=right width=350 }
 
 The TU/e Umbrella HPC Cluster is the HPC cluster of the TU/e consisting of Faculty supplied compute (CPU and GPU) resources and managed by the HPC Lab. It's one of the High Performance Computing solutions the HPC Lab offers.
 
