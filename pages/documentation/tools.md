@@ -1,3 +1,7 @@
+---
+status: deprecated
+---
+
 On this page, we collect some useful tips and tricks for experienced HPC
 users.
 

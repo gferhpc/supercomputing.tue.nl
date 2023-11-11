@@ -15,7 +15,7 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.sections
-#    - navigation.indexes
+    - navigation.indexes
     - navigation.top
     - toc.follow
 #    - toc.integrate
@@ -27,6 +27,8 @@ theme:
     - content.action.edit
     - content.code.copy
     - content.code.annotate
+    - content.tabs.link
+    - content.tooltips
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: hpc
@@ -69,6 +71,7 @@ extra_javascript:
 #      find what they're searching for. With your consent, you're helping us to
 #      make our documentation better
 markdown_extensions:
+  - abbr
   - attr_list
   - md_in_html
   - tables
@@ -93,6 +96,8 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true
 edit_uri: https://gitlab.tue.nl/hpclab/website/edit/main/docs/
 extra:
   announcement: "⚠️ TU/e Umbrella HPC Cluster maintenance scheduled on 20, 21 and 22 January 2024 ⚠️"

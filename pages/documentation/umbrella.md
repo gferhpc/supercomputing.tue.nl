@@ -1,5 +1,8 @@
 ---
+short_title: test
 title: TU/e Umbrella HPC Cluster
+#icon:
+#status: new
 ---
 
 # TU/e Umbrella HPC Cluster

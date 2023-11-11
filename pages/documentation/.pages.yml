@@ -1,11 +1,8 @@
 nav:
-  - index.md
-  - request-account.md
-  - cluster-access.md
-  - transfer-data.md
-  - software-modules.md
-  - slurm-jobs.md
-  - workload-optimization.md
+  - umbrella.md
+  - policies.md
+  - specifications.md
+  - Getting Started: steps
   - ...
   - Faculties: faculties
   - Software: software

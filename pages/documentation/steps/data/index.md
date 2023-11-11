@@ -26,7 +26,7 @@ Windows storage, which would hinder everyone working at TU/e.
 
 ### Connecting
 
-1.  [Connect](cluster-access.md) to any
+1.  [Connect](steps/access/cluster-access.md) to any
     of the cluster's login nodes.
 2.  Connect to the Windows file share using the following command:
     smbclient -U tue/20232655 //campushome.campus.tue.nl/20232655
