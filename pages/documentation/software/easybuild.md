@@ -68,3 +68,4 @@ Fixes and workarounds:
     built, and the dependecy versions are hardcoded. EasyBuild allows
     some flexibility with `--try-toolchain` and `--try-software`, but
     for building FEniCS this failed.
+

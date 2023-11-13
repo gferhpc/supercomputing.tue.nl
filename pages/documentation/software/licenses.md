@@ -1,6 +1,3 @@
----
-tags: [Software]
----
 # Licenses
 
 ### FlexLM stands for "Flexible License Manager". It is used to restrict who

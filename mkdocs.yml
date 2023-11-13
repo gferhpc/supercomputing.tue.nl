@@ -18,7 +18,6 @@ theme:
     - navigation.indexes
     - navigation.top
     - toc.follow
-#    - toc.integrate
     - search
     - search.suggest
     - search.highlight
@@ -71,33 +70,36 @@ extra_javascript:
 #      find what they're searching for. With your consent, you're helping us to
 #      make our documentation better
 markdown_extensions:
+  # Python Markdown
   - abbr
-  - attr_list
-  - md_in_html
-  - tables
   - admonition
-  - footnotes
+  - attr_list
   - def_list
-  - pymdownx.tasklist:
-      custom_checkbox: true
-  - pymdownx.details
-  - pymdownx.superfences
-  - pymdownx.critic
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  # Python Markdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
   - pymdownx.caret
-  - pymdownx.keys
-  - pymdownx.mark
-  - pymdownx.tilde
-  - pymdownx.highlight:
-      anchor_linenums: true
-      line_spans: __span
-      pygments_lang_class: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
+  - pymdownx.details
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
 edit_uri: https://gitlab.tue.nl/hpclab/website/edit/main/docs/
 extra:
   announcement: "⚠️ TU/e Umbrella HPC Cluster maintenance scheduled on 20, 21 and 22 January 2024 ⚠️"

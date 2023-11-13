@@ -24,3 +24,8 @@
 code {
     line-height: 1.1;
 }
+
+.md-tabs__item--right {
+    margin-left: auto;
+    margin-right: 0;
+}

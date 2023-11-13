@@ -1,9 +1,9 @@
 nav:
-  - umbrella.md
+  - introduction.md
   - policies.md
   - specifications.md
-  - Getting Started: steps
+  - "Getting Started": steps
+  - "Software": software
+  - "Departments": departments
+  - "Administration": administration
   - ...
-  - Faculties: faculties
-  - Software: software
-  - Administration: administration

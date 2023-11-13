@@ -26,230 +26,319 @@ experimental purposes to get to know HPC.
 Note that for some departments, these partitions are not accessible for
 technical reasons.
 
-## TU/e Central nodes
+## Filesystems
+
+=== "APSE"
+
+    | Filesystem     | Quota              | Mount Point                     | Backup          |
+    |----------------|--------------------|---------------------------------|-----------------|
+    | Home           | 200 GB             | `/home/phys/<username>`         | :no_entry_sign: No |
+    | Scratch (node) | varies             | `/local`                        | :no_entry_sign: No |
+    | Project        | based upon request | based upon request              | :no_entry_sign: No |
+
+=== "BmE"
+
+    | Filesystem     | Quota              | Mount Point                     | Backup          |
+    |----------------|--------------------|---------------------------------|-----------------|
+    | Home           | 200 GB             | `/home/bme001/<username>`       | :no_entry_sign: No |
+    | Scratch (node) | varies             | `/local`                        | :no_entry_sign: No |
+    | Project        | based upon request | based upon request              | :no_entry_sign: No |
+
+=== "BE"
+
+    | Filesystem     | Quota              | Mount Point                     | Backup          |
+    |----------------|--------------------|---------------------------------|-----------------|
+    | Home           | 200 GB             | `/home/arch001/<username>`      | :no_entry_sign: No |
+    | Scratch (node) | varies             | `/local`                        | :no_entry_sign: No |
+    | Project        | based upon request | based upon request              | :no_entry_sign: No |
+
+=== "CE&C"
+
+    | Filesystem     | Quota              | Mount Point                     | Backup          |
+    |----------------|--------------------|---------------------------------|-----------------|
+    | Home           | 200 GB             | `/home/chem002/<username>`      | :no_entry_sign: No |
+    | Scratch (node) | varies             | `/local`                        | :no_entry_sign: No |
+    | Project        | based upon request | based upon request              | :no_entry_sign: No |
+
+=== "EE"
+
+    | Filesystem     | Quota              | Mount Point                     | Backup          |
+    |----------------|--------------------|---------------------------------|-----------------|
+    | Home           | 200 GB             | `/home/tue/<username>`          | :no_entry_sign: No |
+    | Scratch (node) | varies             | `/local`                        | :no_entry_sign: No |
+    | Project        | based upon request | based upon request              | :no_entry_sign: No |
+
+=== "ID"
+
+    | Filesystem     | Quota              | Mount Point                     | Backup          |
+    |----------------|--------------------|---------------------------------|-----------------|
+    | Home           | 200 GB             | `/home/tue/<username>`          | :no_entry_sign: No |
+    | Scratch (node) | varies             | `/local`                        | :no_entry_sign: No |
+    | Project        | based upon request | based upon request              | :no_entry_sign: No |
+
+=== "IE&IS"
+
+    | Filesystem     | Quota              | Mount Point                     | Backup          |
+    |----------------|--------------------|---------------------------------|-----------------|
+    | Home           | 200 GB             | `/home/tue/<username>`          | :no_entry_sign: No |
+    | Scratch (node) | varies             | `/local`                        | :no_entry_sign: No |
+    | Project        | based upon request | based upon request              | :no_entry_sign: No |
+
+=== "M&CS"
+
+    | Filesystem     | Quota              | Mount Point                     | Backup          |
+    |----------------|--------------------|---------------------------------|-----------------|
+    | Home           | 200 GB             | `/home/mcs001/<username>`       | :no_entry_sign: No |
+    | Scratch (node) | varies             | `/local`                        | :no_entry_sign: No |
+    | Project        | based upon request | based upon request              | :no_entry_sign: No |
+
+=== "ME"
+
+    | Filesystem     | Quota              | Mount Point                     | Backup          |
+    |----------------|--------------------|---------------------------------|-----------------|
+    | Home           | 200 GB             | `/home/mech001/<username>`      | :no_entry_sign: No |
+    | Scratch (node) | varies             | `/local`                        | :no_entry_sign: No |
+    | Project        | based upon request | based upon request              | :no_entry_sign: No |
+
+!!! danger
+
+    The HPC Lab doesn't provide an archive or backup solution. Please check with X for available options to store your data for long term!
+
+*[APSE]: Applied Physics & Science Education
+*[BmE]: Biomedical Engineering
+*[BE]: Built Environment
+*[CE&C]: Chemical Engineering & Chemistry
+*[EE]: Electrical Engineering
+*[ID]: Industrial Design
+*[IE&IS]: Industrial Engineering & Innovation Sciences
+*[M&CS]: Mathematics & Computer Science
+*[ME]: Mechanical Engineering
+
+## Hardware
+
+!!! example "Auto Generated"
+
+    The following table content is automatically generated. Please report any errors to hpcsupport@tue.nl.
+
+### Generic Nodes
 
 Service Nodes
 
-| Type    | Hostname                 | CPU           | GHz | CPU/Node | Cores/Node | RAM/Node | RAM/Core | Notes          |
-|---------|--------------------------|---------------|-----|----------|------------|----------|----------|----------------|
-| Login   | tue-login001.icts.tue.nl | E3-1220v5[^1] | 3.0 | 1        | 4          | 32       | 8        | hpc.tue.nl     |
-| Storage | tue-storage001           | 7281[^2]      | 2.1 | 1        | 16         | 64       | 4        | ZFS 109T /home |
-| Head    | hpc-primary              | E5-2650v4[^3] | 2,2 | 2        | 48[^4]     | 32       | 0.8      |                |
-| Head    | hpc-secondary[^1]        | E5-2650v4[^5] | 2,2 | 2        | 48[^6]     | 32       | 0.8      |                |
+| Type    | # of Nodes | Processor             | # of Threads | Memory  | Storage |
+|---------|------------|-----------------------|--------------|---------|---------|
+| Login   | 1          | 1x AMD EPYC™ 7402P    | 48^SMT^      | 128^GB^ |         |
+| Storage | 1          | 1x AMD EPYC™ 7281[^2] | 16           | 64^GB^  | 109^TB^ |
 
-Compute Nodes (tue-compute)
+Compute Nodes
 
-| Partition                                                      | Node Group | Nodes | CPU           | GHz | CPU/Node | Cores/Node | RAM/Node | RAM/Core | Total Cores | Total RAM |
-|----------------------------------------------------------------|------------|-------|---------------|-----|----------|------------|----------|----------|-------------|-----------|
-| [tue.default.q](steps/jobs/index.md#per-partition-constraints) | A          | 2     | Gold 6130[^7] | 2.1 | 2        | 32         | 128      | 4        | 64          | 256       |
+| Partition          | # of Nodes     | Processor                     | # of Threads | Memory  |
+|--------------------|----------------|-------------------------------|--------------|---------|
+| [tue.default.q](#) | 2 ^(computeA)^ | 2x Intel® Xeon® Gold 6130[^7] | 32           | 128^GB^ |
 
-## Departments
+GPU Nodes
 
-### Applied Physics & Science Education (APSE)
+| Partition      | # of Nodes | Processor         | # of Threads | Memory  | GPU           |
+|----------------|------------|-------------------|--------------|---------|---------------|
+| [tue.gpu.q](#) | 2 ^(gpuA)^ | 2x AMD EPYC™ 7313 | 32           | 256^GB^ | 2x NVIDIA A30 |
 
-#### Service Nodes
+### Departmental Nodes
 
-| Type    | # of Nodes | Processor                      | # of Threads | Memory  |
-|---------|------------|--------------------------------|--------------|---------|
-| Login   | 1          | 2x Intel® Xeon® E5-2623 v4[^8] | 8            | 32^GB^  |
-| Storage | 1          | 2x Intel® Xeon® E5-2620 v4[^9] | 16           | 128^GB^ |
+=== "APSE"
 
-#### Compute Nodes
+    Service Nodes
+    
+    | Type    | # of Nodes | Processor                      | # of Threads | Memory  | Storage |
+    |---------|------------|--------------------------------|--------------|---------|---------|
+    | Login   | 1          | 2x Intel® Xeon® E5-2623 v4[^8] | 8            | 32^GB^  | |
+    | Storage | 1          | 2x Intel® Xeon® E5-2620 v4[^9] | 16           | 128^GB^ | 127^TB^ |
+    
+    Compute Nodes
+    
+    | Partition           | # of Nodes             | # of Threads | Memory   | Processor                        |
+    |---------------------|------------------------|--------------|----------|----------------------------------|
+    | [phys.default.q](#) | 9 ^(computeA)^         | 64           | 256^GB^  | 2x AMD EPYC™ 7502[^10]           |
+    |                     | 9 ^(computeB)^         | 16           | 32^GB^   | 2x Intel® Xeon® E5-2660[^11]     |
+    |                     | 13 ^(computeC001-014)^ | 20           | 48^GB^   | 2x Intel® Xeon® E5-2660 v2[^12]  |
+    |                     | 8 ^(computeC015-022)^  | 20           | 48^GB^   | 2x Intel® Xeon® E5-2660 v3[^13]  |
+    |                     | 15 ^(computeD)^        | 32           | 64^GB^   | 2x Intel® Xeon® E5-2683 v4[^14]  |
+    |                     | 9 ^(computeF)^         | 36           | 96^GB^   | 2x Intel® Xeon® Gold 6240[^15]   |
+    | [phys.bigmem.q](#)  | 6 ^(computeE)^         | 24           | 256^GB^  | 2x Intel® Xeon® E5-2650 v4[^16]  |
+    |                     | 1 ^(computeG)^         | 24           | 384^GB^  | 2x Intel® Xeon® Silver 4214[^17] |
+    |                     | 2 ^(computeK)^         | 48           | 1024^GB^ | 2x AMD EPYC™ 7413[^18]           |
+    |                     | 1 ^(computeL)^         | 48           | 512^GB^  | 2x AMD EPYC™ 7402[^19]           |
+    | [phys.psn.q](#)     | 1 ^(computeH)^         | 64           | 128^GB^  | 2x AMD EPYC™ 7542[^20]           |
+    | [phys.and.q](#)     | 1 ^(computeI)^         | 48           | 256^GB^  | 2x AMD EPYC™ 7352[^21]           |
+    | [phys.edu.q](#)     | 3 ^(computeJ)^         | 64           | 256^GB^  | 2x AMD EPYC™ 7502[^22]           |
+    
+    GPU Nodes
+    
+    | Partition       | # of Nodes | # of Threads | Memory  | Processor                       | GPU                       |
+    |-----------------|------------|--------------|---------|---------------------------------|---------------------------|
+    | [phys.gpu.q](#) | 2 ^(gpuA)^ | 12           | 256^GB^ | 2x Intel® Xeon® E5-2643 v4[^23] | 2x NVIDIA Tesla P100[^26] |
+    |                 | 1 ^(gpuB)^ | 12           | 128^GB^ | 2x Intel® Xeon® Gold 6128[^25]  | 2x NVIDIA Tesla V100[^26] |
 
-| Partition           | # of Nodes             | Processor                        | # of Threads | Memory   |
-|---------------------|------------------------|----------------------------------|--------------|----------|
-| [phys.default.q](#) | 9 ^(computeA)^         | 2x AMD EPYC™ 7502[^10]           | 64           | 256^GB^  |
-|                     | 9 ^(computeB)^         | 2x Intel® Xeon® E5-2660[^11]     | 16           | 32^GB^   |
-|                     | 13 ^(computeC001-014)^ | 2x Intel® Xeon® E5-2660 v2[^12]  | 20           | 48^GB^   |
-|                     | 8 ^(computeC015-022)^  | 2x Intel® Xeon® E5-2660 v3[^13]  | 20           | 48^GB^   |
-|                     | 15 ^(computeD)^        | 2x Intel® Xeon® E5-2683 v4[^14]  | 32           | 64^GB^   |
-|                     | 9 ^(computeF)^         | 2x Intel® Xeon® Gold 6240[^15]   | 36           | 96^GB^   |
-| [phys.bigmem.q](#)  | 6 ^(computeE)^         | 2x Intel® Xeon® E5-2650 v4[^16]  | 24           | 256^GB^  |
-|                     | 1 ^(computeG)^         | 2x Intel® Xeon® Silver 4214[^17] | 24           | 384^GB^  |
-|                     | 2 ^(computeK)^         | 2x AMD EPYC™ 7413[^18]           | 48           | 1024^GB^ |
-|                     | 1 ^(computeL)^         | 2x AMD EPYC™ 7402[^19]           | 48           | 512^GB^  |
-| [phys.psn.q](#)     | 1 ^(computeH)^         | 2x AMD EPYC™ 7542[^20]           | 64           | 128^GB^  |
-| [phys.and.q](#)     | 1 ^(computeI)^         | 2x AMD EPYC™ 7352[^21]           | 48           | 256^GB^  |
-| [phys.edu.q](#)     | 3 ^(computeJ)^         | 2x AMD EPYC™ 7502[^22]           | 64           | 256^GB^  |
+=== "BmE"
 
-#### GPU Nodes
+    Service Nodes
+    
+    | Type    | # of Nodes | Processor                      | # of Threads | Memory  | Storage |
+    |---------|------------|--------------------------------|--------------|---------|---------|
+    | Storage | 1          | 2x AMD EPYC™ 7262[^39] | 32^SMT^           | 128^GB^ | 10^TB^ |
+    
+    Compute Nodes
+    
+    !!! note "No compute nodes"
+    
+    GPU Nodes
+    
+    | Partition       | # of Nodes | Processor                       | # of Threads | Memory  | GPU                       |
+    |-----------------|------------|---------------------------------|--------------|---------|---------------------------|
+    | [bme.gpuresearch.q](#) | 1 ^(gpuA)^ | 2x Intel® Xeon® E5-2640 v4[^41] | 40^SMT^           | 448^GB^ | 8x NVIDIA TITAN Xp[^43] |
+    |  | 1 ^(gpuB)^ | 2x Intel® Xeon® E5-2640 v4[^41] | 40^SMT^           | 128^GB^ | 8x NVIDIA GeForce RTX 2080 Ti[^46] |
+    | [bme.gpustudent.q](#) | 1 ^(gpuC)^ | 2x Intel® Xeon® Silver 4214[^47] | 48^SMT^           | 384^GB^ | 8x NVIDIA GeForce RTX 2080 Ti[^46] |
+    | [bme.gpumolml.q](#) | 1 ^(gpuD)^ | 2x AMD EPYC™ 7313[^50] | 32           | 128^GB^ | 3x NVIDIA A100[^51] |
 
-| Partition       | # of Nodes | Processor                       | # of Threads | Memory  | GPU                       |
-|-----------------|------------|---------------------------------|--------------|---------|---------------------------|
-| [phys.gpu.q](#) | 2 ^(gpuA)^ | 2x Intel® Xeon® E5-2643 v4[^23] | 12           | 256^GB^ | 2x NVIDIA Tesla P100[^26] |
-|                 | 1 ^(gpuB)^ | 2x Intel® Xeon® Gold 6128[^25]  | 12           | 128^GB^ | 2x NVIDIA Tesla V100[^26] |
+=== "BE"
 
-### Biomedical Engineering (BmE)
+    Service Nodes
+    
+    | Type    | Hostname                 | CPU         | GHz | CPU/Node | Cores/Node | RAM/Node | RAM/Core | Notes           |
+    |---------|--------------------------|-------------|-----|----------|------------|----------|----------|-----------------|
+    | Login   | arch-login001.bwk.tue.nl | E-2124[^27] | 3.3 | 1        | 4          | 32       | 8        | hpc.arch.tue.nl |
+    | Storage | arch-storage001          | 7302P[^28]  | 3.0 | 1        | 16         | 64       | 4        | ZFS 128T /home  |
+    
+    Compute Nodes (**arch-compute**)
+    
+    | Partition                                                                                                                          | Node Group | Nodes | CPU            | GHz  | CPU/Node | Cores/Node | RAM/Node | RAM/Core | Total Cores | Total RAM |
+    |------------------------------------------------------------------------------------------------------------------------------------|------------|-------|----------------|------|----------|------------|----------|----------|-------------|-----------|
+    | [be.research.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink")                                                                  | A          | 6     | 7452[^29]      | 2.35 | 2        | 64         | 512      | 8        | 384         | 1536      |
+    | [be.research.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink") [be.student.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink") | B          | 2     | E5-2690[^30]   | 2.9  | 2        | 16         | 256      | 16       | 32          | 512       |
+    |                                                                                                                                    | C          | 3     | E5-2670[^31]   | 2.3  | 2        | 24         | 256      | 10       | 72          | 768       |
+    |                                                                                                                                    | D          | 1     | E5-2650v3[^32] | 2.3  | 2        | 40[^33]    | 256      | 6        | 40[^34]     | 256       |
+    |                                                                                                                                    | E          | 4     | X5650[^35]     | 2.67 | 2        | 12         | 192      | 16       | 48          | 768       |
+    |                                                                                                                                    | F          | 1     | 7643[^36]      | 2.3  | 2        | 96         | 1024     | 10       | 96          | 1024      |
+    
+    GPU Nodes (**arch-gpu**)
+    
+    | Partition                                                                                                                                | Node Group | Nodes | CPU       | GHz | CPU/Node | Cores/Node | RAM/Node | RAM/Core | Total Cores | Total RAM | GPU      | RAM/GPU | GPU/Node |
+    |------------------------------------------------------------------------------------------------------------------------------------------|------------|-------|-----------|-----|----------|------------|----------|----------|-------------|-----------|----------|---------|----------|
+    | [be.gpuresearch.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink") [be.gpustudent.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink") | A          | 1     | 7272[^37] | 2.9 | 2        | 24         | 128      | 5        | 24          | 128       | A40[^38] | 48      | 1        |
 
-Service Nodes
+=== "CE&C"
 
-| Type    | Hostname                  | CPU \[type\] | CPU | CPU/Node | Cores/Node | RAM/Node | RAM/Core | Notes         |
-|---------|---------------------------|--------------|-----|----------|------------|----------|----------|---------------|
-| Storage | bme-storage001.bme.tue.nl | 7262[^39]    | 2.3 | 2        | 32[^40]    | 128      | 4        | ZFS 10T /home |
+    Service Nodes
+    
+    | Type    | Hostname                  | CPU         | GHz | CPU/Node | Cores/Node | RAM/Node | RAM/Core | Notes                   |
+    |---------|---------------------------|-------------|-----|----------|------------|----------|----------|-------------------------|
+    | Login   | chem-login001.chem.tue.nl | E-2124[^52] | 3.3 | 1        | 4          | 32       | 8        | st-hpc-main.chem.tue.nl |
+    | Storage | chem-storage001           | 7251[^53]   | 2.1 | 2        | 16         | 128      | 8        | ZFS 89T /scratch        |
+    | Storage | chem-storage002           | 7302P[^54]  | 3.0 | 1        | 16         | 64       | 4        | ZFS 128T /home          |
+    
+    Compute Nodes (**chem-compute**)
+    
+    | Partition                                                           | Node Group    | Nodes | CPU       | GHz  | CPU/Node | Cores/Node | RAM/Node | RAM/Core | Total Cores | Total RAM |
+    |---------------------------------------------------------------------|---------------|-------|-----------|------|----------|------------|----------|----------|-------------|-----------|
+    | [chem.smm01.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink")    | A             | 16    | 7601[^55] | 2.0  | 2        | 64         | 512      | 8        | 1024        | 8192      |
+    | [chem.ppd.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink")      | B\[^001-002\] | 2/6   | 7452[^56] | 2.35 | 2        | 64         | 256      | 4        | 384         | 1536      |
+    | [chem.default.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink")  | B\[^001-006\] | 6/6   |           |      |          |            |          |          |             |           |
+    | [chem.longterm.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink") | B\[^005-006\] | 2/6   |           |      |          |            |          |          |             |           |
+    | [chem.smm02.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink")    | F             | 5     | 7F72[^57] | 3.2  | 2        | 48         | 512      | 10       | 240         | 2560      |
+    
+    GPU Nodes (**chem-gpu**)
+    
+    | Partition                                                      | Node Group | Nodes | CPU            | GHz | CPU/Node | Cores/Node | RAM/Node | RAM/Core | Total Cores | Total RAM | GPU            | RAM/GPU | GPU/Node |
+    |----------------------------------------------------------------|------------|-------|----------------|-----|----------|------------|----------|----------|-------------|-----------|----------------|---------|----------|
+    | [chem.gpu.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink") | A          | 1     | Gold 6234[^58] | 3.3 | 2        | 16         | 192      | 12       | 16          | 192       | RTX A5000[^59] | 24      | 2        |
 
-Compute Nodes (**bme-compute**)
+=== "EE"
 
-GPU Nodes (**bme-gpu**)
+    Compute Nodes (**elec-compute**)
+    
+    | Partition                                                          | Node Group | Nodes | CPU       | GHz | CPU/Node | Cores/Node | RAM/Node | RAM/Core | Total Cores | Total RAM |
+    |--------------------------------------------------------------------|------------|-------|-----------|-----|----------|------------|----------|----------|-------------|-----------|
+    | [elec.default.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink") | A          | 1     | 7601[^60] | 2.2 | 2        | 64         | 512      | 8        | 64          | 512       |
+    
+    GPU Nodes (**elec-gpu**)
+    
+    | Partition                                                           | Node Group | Nodes | CPU             | GHz | CPU/Node | Cores/Node | RAM/Node | RAM/Core | Total Cores | Total RAM | GPU                      | RAM/GPU | GPU/Node |
+    |---------------------------------------------------------------------|------------|-------|-----------------|-----|----------|------------|----------|----------|-------------|-----------|--------------------------|---------|----------|
+    | [elec.gpu.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink")      | A          | 1     | Gold 5218[^61]  | 2,3 | 2        | 32         | 768      | 24       | 32          | 768       | GeForce RTX 2080 TI[^62] | 11      | 8        |
+    | [elec-em.gpu.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink")   | B          | 1     | E5-2687Wv3[^63] | 3.1 | 2        | 20         | 256      | 12       | 20          | 256       | Tesla K80[^64]           | 12      | 2        |
+    | [elec-phi.gpu.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink")  | C          | 1     | 7542[^65]       | 2.9 | 2        | 64         | 256      | 4        | 64          | 256       | Quadro RTX 6000[^66]     | 24      | 1        |
+    | [elec.gpu-es02.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink") | D          | 1     | 7343[^67]       |     | 2        | 32         | 1024     | 32       | 32          | 1024      | A100[^68]                | 80      | 8        |
 
-| Partition                                                             | Node Group | Nodes | CPU              | GHz | CPU/Node | Cores/Node | RAM/Node | RAM/Core | Total Cores | Total RAM | GPU                      | RAM/GPU | GPU/Node |
-|-----------------------------------------------------------------------|------------|-------|------------------|-----|----------|------------|----------|----------|-------------|-----------|--------------------------|---------|----------|
-| [bme.gpuresearch.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink") | A          | 1     | E5-2640v4[^41]   | 2.4 | 2        | 40[^42]    | 448      | 11       | 40          | 448       | TITAN Xp[^43]            | 12      | 8        |
-|                                                                       | B          | 1     | E5-2640v4[^44]   | 2.4 | 2        | 40[^45]    | 128      | 3        | 40          | 128       | GeForce RTX 2080 Ti[^46] | 11      | 5        |
-| [bme.gpustudent.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink")  | C          | 1     | Silver 4214[^47] | 2.4 | 2        | 48[^48]    | 384      | 8        | 48          | 384       | GeForce RTX 2080 Ti[^49] | 11      | 8        |
-| [bme.gpumolml.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink")    | D          | 1     | 7313[^50]        | 3.0 | 2        | 32         | 128      | 4        | 32          | 128       | A100[^51]                | 80      | 3        |
+=== "ID"
 
-### Built Environment (BE)
+    GPU Nodes (**id-gpu**)
+    
+    | Partition                                                   | Node Group | Nodes | CPU            | GHz | CPU/Node | Cores/Node | RAM/Node | RAM/Core | Total Cores | Total RAM | GPU             | RAM/GPU | GPU/Node |
+    |-------------------------------------------------------------|------------|-------|----------------|-----|----------|------------|----------|----------|-------------|-----------|-----------------|---------|----------|
+    | [id.fe.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink") | A          | 2     | Gold 6128[^69] | 3.4 | 2        | 12         | 128      | 10       | 24          | 256       | Tesla V100[^70] | 16      | 2        |
 
-Service Nodes
+=== "IE&IS"
 
-| Type    | Hostname                 | CPU         | GHz | CPU/Node | Cores/Node | RAM/Node | RAM/Core | Notes           |
-|---------|--------------------------|-------------|-----|----------|------------|----------|----------|-----------------|
-| Login   | arch-login001.bwk.tue.nl | E-2124[^27] | 3.3 | 1        | 4          | 32       | 8        | hpc.arch.tue.nl |
-| Storage | arch-storage001          | 7302P[^28]  | 3.0 | 1        | 16         | 64       | 4        | ZFS 128T /home  |
+    No hardware
 
-Compute Nodes (**arch-compute**)
+=== "M&CS"
 
-| Partition                                                                                                                          | Node Group | Nodes | CPU            | GHz  | CPU/Node | Cores/Node | RAM/Node | RAM/Core | Total Cores | Total RAM |
-|------------------------------------------------------------------------------------------------------------------------------------|------------|-------|----------------|------|----------|------------|----------|----------|-------------|-----------|
-| [be.research.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink")                                                                  | A          | 6     | 7452[^29]      | 2.35 | 2        | 64         | 512      | 8        | 384         | 1536      |
-| [be.research.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink") [be.student.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink") | B          | 2     | E5-2690[^30]   | 2.9  | 2        | 16         | 256      | 16       | 32          | 512       |
-|                                                                                                                                    | C          | 3     | E5-2670[^31]   | 2.3  | 2        | 24         | 256      | 10       | 72          | 768       |
-|                                                                                                                                    | D          | 1     | E5-2650v3[^32] | 2.3  | 2        | 40[^33]    | 256      | 6        | 40[^34]     | 256       |
-|                                                                                                                                    | E          | 4     | X5650[^35]     | 2.67 | 2        | 12         | 192      | 16       | 48          | 768       |
-|                                                                                                                                    | F          | 1     | 7643[^36]      | 2.3  | 2        | 96         | 1024     | 10       | 96          | 1024      |
+    Service Nodes
+    
+    | Type    | Hostname                | CPU         | GHz | CPU/Node | Cores/Node | RAM/Node | RAM/Core | Notes          |
+    |---------|-------------------------|-------------|-----|----------|------------|----------|----------|----------------|
+    | Login   | mcs-login001.win.tue.nl | E-2124[^71] | 3.3 | 1        | 4          | 32       | 8        | hpc.win.tue.nl |
+    | Storage | mcs-storage001          | 7302P[^72]  | 3.0 | 1        | 16         | 64       | 4        | ZFS 128T /home |
+    
+    Compute Nodes (**mcs-compute**)
+    
+    | Partition                                                         | Node Group | Nodes | CPU                | GHz | CPU/Node | Cores/Node | RAM/Node | RAM/Core | Total Cores | Total RAM |
+    |-------------------------------------------------------------------|------------|-------|--------------------|-----|----------|------------|----------|----------|-------------|-----------|
+    | [mcs.default.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink") | A          | 12    | Platinum 8260[^73] | 2.4 | 2        | 48         | 512      | 10       | 576         | 6144      |
+    
+    GPU Nodes (**mcs-gpu**)
+    
+    | Partition                                                     | Node Group | Nodes | CPU             | GHz | CPU/Node | Cores/Node | RAM/Node | RAM/Core | Total Cores | Total RAM | GPU                      | RAM/GPU | GPU/Node |
+    |---------------------------------------------------------------|------------|-------|-----------------|-----|----------|------------|----------|----------|-------------|-----------|--------------------------|---------|----------|
+    | [mcs.gpu.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink") | A          | 1     | Gold 6134[^74]  | 3.2 | 2        | 16         | 256      | 16       | 16          | 256       | Tesla V100[^75]          | 16      | 2        |
+    |                                                               | B          | 1     | Gold 6238R[^76] | 2.2 | 2        | 56         | 256      | 4        | 56          | 256       | GeForce RTX 2080 TI[^77] | 11      | 8        |
 
-GPU Nodes (**arch-gpu**)
+=== "ME"
 
-| Partition                                                                                                                                | Node Group | Nodes | CPU       | GHz | CPU/Node | Cores/Node | RAM/Node | RAM/Core | Total Cores | Total RAM | GPU      | RAM/GPU | GPU/Node |
-|------------------------------------------------------------------------------------------------------------------------------------------|------------|-------|-----------|-----|----------|------------|----------|----------|-------------|-----------|----------|---------|----------|
-| [be.gpuresearch.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink") [be.gpustudent.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink") | A          | 1     | 7272[^37] | 2.9 | 2        | 24         | 128      | 5        | 24          | 128       | A40[^38] | 48      | 1        |
+    Service Nodes
+    
+    | Type    | Hostname        | CPU \[type\] | CPU | CPU/Node | Cores/Node | RAM/Node | RAM/Core | Notes         |
+    |---------|-----------------|--------------|-----|----------|------------|----------|----------|---------------|
+    | Storage | mech-storage001 | 7251[^78]    | 2.1 | 2        | 32[^79]    | 128      | 4        | ZFS 90T /home |
+    
+    Compute Nodes (**mech-compute**)
+    
+    | Partition                                                          | Node Group    | Nodes | CPU       | GHz  | CPU/Node | Cores/Node | RAM/Node | RAM/Core | Total Cores | Total RAM |
+    |--------------------------------------------------------------------|---------------|-------|-----------|------|----------|------------|----------|----------|-------------|-----------|
+    | [mech.pf.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink")      | A             | 9     | 7601[^80] | 2.2  | 2        | 64         | 512      | 8        | 576         | 4608      |
+    |                                                                    | B001          | 1/7   | 7542[^81] | 2.9  | 2        | 64         | 768      | 12       | 448         | 4352      |
+    |                                                                    | B002          | 1/7   |           |      |          |            | 1024     | 16       |             |           |
+    |                                                                    | B\[^003-007\] | 5/7   |           |      |          |            | 512      | 8        |             |           |
+    |                                                                    | C             | 3     | 7452[^82] | 2.35 | 2        | 64         | 512      | 8        | 192         | 1536      |
+    | [mech.student.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink") | D             | 1     | 7742[^83] | 2.25 | 2        | 128        | 1024     | 8        | 128         | 1024      |
 
-### Chemical Engineering & Chemistry (CE&C)
+[//]: # (## CPU)
 
-Service Nodes
+[//]: # ()
 
-| Type    | Hostname                  | CPU         | GHz | CPU/Node | Cores/Node | RAM/Node | RAM/Core | Notes                   |
-|---------|---------------------------|-------------|-----|----------|------------|----------|----------|-------------------------|
-| Login   | chem-login001.chem.tue.nl | E-2124[^52] | 3.3 | 1        | 4          | 32       | 8        | st-hpc-main.chem.tue.nl |
-| Storage | chem-storage001           | 7251[^53]   | 2.1 | 2        | 16         | 128      | 8        | ZFS 89T /scratch        |
-| Storage | chem-storage002           | 7302P[^54]  | 3.0 | 1        | 16         | 64       | 4        | ZFS 128T /home          |
+[//]: # (| Introduction   | Codename | Microarchitecture | Socket | Process | Cores |)
 
-Compute Nodes (**chem-compute**)
+[//]: # (|----------------|----------|-------------------|--------|---------|-------|)
 
-| Partition                                                           | Node Group    | Nodes | CPU       | GHz  | CPU/Node | Cores/Node | RAM/Node | RAM/Core | Total Cores | Total RAM |
-|---------------------------------------------------------------------|---------------|-------|-----------|------|----------|------------|----------|----------|-------------|-----------|
-| [chem.smm01.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink")    | A             | 16    | 7601[^55] | 2.0  | 2        | 64         | 512      | 8        | 1024        | 8192      |
-| [chem.ppd.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink")      | B\[^001-002\] | 2/6   | 7452[^56] | 2.35 | 2        | 64         | 256      | 4        | 384         | 1536      |
-| [chem.default.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink")  | B\[^001-006\] | 6/6   |           |      |          |            |          |          |             |           |
-| [chem.longterm.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink") | B\[^005-006\] | 2/6   |           |      |          |            |          |          |             |           |
-| [chem.smm02.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink")    | F             | 5     | 7F72[^57] | 3.2  | 2        | 48         | 512      | 10       | 240         | 2560      |
+[//]: # (| June, 2017     | Naples   | Zen 1             | SP3    | 14 nm   | 8-32  |)
 
-GPU Nodes (**chem-gpu**)
+[//]: # (| August, 2019   | Rome     | Zen 2             | SP3    | 7 nm    | 8-64  |)
 
-| Partition                                                      | Node Group | Nodes | CPU            | GHz | CPU/Node | Cores/Node | RAM/Node | RAM/Core | Total Cores | Total RAM | GPU            | RAM/GPU | GPU/Node |
-|----------------------------------------------------------------|------------|-------|----------------|-----|----------|------------|----------|----------|-------------|-----------|----------------|---------|----------|
-| [chem.gpu.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink") | A          | 1     | Gold 6234[^58] | 3.3 | 2        | 16         | 192      | 12       | 16          | 192       | RTX A5000[^59] | 24      | 2        |
+[//]: # (| March, 2021    | Milan    | Zen 3             | SP3    | 7 nm+   | 8-64  |)
 
-### Electrical Engineering (EE)
+[//]: # (| November, 2022 | Genoa    | Zen 4             | SP5    | 5 nm    | 16-96 |)
 
-Compute Nodes (**elec-compute**)
+[//]: # ()
 
-| Partition                                                          | Node Group | Nodes | CPU       | GHz | CPU/Node | Cores/Node | RAM/Node | RAM/Core | Total Cores | Total RAM |
-|--------------------------------------------------------------------|------------|-------|-----------|-----|----------|------------|----------|----------|-------------|-----------|
-| [elec.default.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink") | A          | 1     | 7601[^60] | 2.2 | 2        | 64         | 512      | 8        | 64          | 512       |
-
-GPU Nodes (**elec-gpu**)
-
-| Partition                                                           | Node Group | Nodes | CPU             | GHz | CPU/Node | Cores/Node | RAM/Node | RAM/Core | Total Cores | Total RAM | GPU                      | RAM/GPU | GPU/Node |
-|---------------------------------------------------------------------|------------|-------|-----------------|-----|----------|------------|----------|----------|-------------|-----------|--------------------------|---------|----------|
-| [elec.gpu.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink")      | A          | 1     | Gold 5218[^61]  | 2,3 | 2        | 32         | 768      | 24       | 32          | 768       | GeForce RTX 2080 Ti[^62] | 11      | 8        |
-| [elec-em.gpu.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink")   | B          | 1     | E5-2687Wv3[^63] | 3.1 | 2        | 20         | 256      | 12       | 20          | 256       | Tesla K80[^64]           | 12      | 2        |
-| [elec-phi.gpu.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink")  | C          | 1     | 7542[^65]       | 2.9 | 2        | 64         | 256      | 4        | 64          | 256       | Quadro RTX 6000[^66]     | 24      | 1        |
-| [elec.gpu-es02.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink") | D          | 1     | 7343[^67]       |     | 2        | 32         | 1024     | 32       | 32          | 1024      | A100[^68]                | 80      | 8        |
-
-### Industrial Design (ID)
-
-GPU Nodes (**id-gpu**)
-
-| Partition                                                   | Node Group | Nodes | CPU            | GHz | CPU/Node | Cores/Node | RAM/Node | RAM/Core | Total Cores | Total RAM | GPU             | RAM/GPU | GPU/Node |
-|-------------------------------------------------------------|------------|-------|----------------|-----|----------|------------|----------|----------|-------------|-----------|-----------------|---------|----------|
-| [id.fe.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink") | A          | 2     | Gold 6128[^69] | 3.4 | 2        | 12         | 128      | 10       | 24          | 256       | Tesla V100[^70] | 16      | 2        |
-
-### Mathematics & Computer Science (M&CS)
-
-Service Nodes
-
-| Type    | Hostname                | CPU         | GHz | CPU/Node | Cores/Node | RAM/Node | RAM/Core | Notes          |
-|---------|-------------------------|-------------|-----|----------|------------|----------|----------|----------------|
-| Login   | mcs-login001.win.tue.nl | E-2124[^71] | 3.3 | 1        | 4          | 32       | 8        | hpc.win.tue.nl |
-| Storage | mcs-storage001          | 7302P[^72]  | 3.0 | 1        | 16         | 64       | 4        | ZFS 128T /home |
-
-Compute Nodes (**mcs-compute**)
-
-| Partition                                                         | Node Group | Nodes | CPU                | GHz | CPU/Node | Cores/Node | RAM/Node | RAM/Core | Total Cores | Total RAM |
-|-------------------------------------------------------------------|------------|-------|--------------------|-----|----------|------------|----------|----------|-------------|-----------|
-| [mcs.default.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink") | A          | 12    | Platinum 8260[^73] | 2.4 | 2        | 48         | 512      | 10       | 576         | 6144      |
-
-GPU Nodes (**mcs-gpu**)
-
-| Partition                                                     | Node Group | Nodes | CPU             | GHz | CPU/Node | Cores/Node | RAM/Node | RAM/Core | Total Cores | Total RAM | GPU                      | RAM/GPU | GPU/Node |
-|---------------------------------------------------------------|------------|-------|-----------------|-----|----------|------------|----------|----------|-------------|-----------|--------------------------|---------|----------|
-| [mcs.gpu.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink") | A          | 1     | Gold 6134[^74]  | 3.2 | 2        | 16         | 256      | 16       | 16          | 256       | Tesla V100[^75]          | 16      | 2        |
-|                                                               | B          | 1     | Gold 6238R[^76] | 2.2 | 2        | 56         | 256      | 4        | 56          | 256       | GeForce RTX 2080 Ti[^77] | 11      | 8        |
-
-### Mechanical Engineering (ME)
-
-Service Nodes
-
-| Type    | Hostname        | CPU \[type\] | CPU | CPU/Node | Cores/Node | RAM/Node | RAM/Core | Notes         |
-|---------|-----------------|--------------|-----|----------|------------|----------|----------|---------------|
-| Storage | mech-storage001 | 7251[^78]    | 2.1 | 2        | 32[^79]    | 128      | 4        | ZFS 90T /home |
-
-Compute Nodes (**mech-compute**)
-
-| Partition                                                          | Node Group    | Nodes | CPU       | GHz  | CPU/Node | Cores/Node | RAM/Node | RAM/Core | Total Cores | Total RAM |
-|--------------------------------------------------------------------|---------------|-------|-----------|------|----------|------------|----------|----------|-------------|-----------|
-| [mech.pf.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink")      | A             | 9     | 7601[^80] | 2.2  | 2        | 64         | 512      | 8        | 576         | 4608      |
-|                                                                    | B001          | 1/7   | 7542[^81] | 2.9  | 2        | 64         | 768      | 12       | 448         | 4352      |
-|                                                                    | B002          | 1/7   |           |      |          |            | 1024     | 16       |             |           |
-|                                                                    | B\[^003-007\] | 5/7   |           |      |          |            | 512      | 8        |             |           |
-|                                                                    | C             | 3     | 7452[^82] | 2.35 | 2        | 64         | 512      | 8        | 192         | 1536      |
-| [mech.student.q](/HPC_TU/e_Cluster_Partitions_(Queues) "wikilink") | D             | 1     | 7742[^83] | 2.25 | 2        | 128        | 1024     | 8        | 128         | 1024      |
-
-## References
-
-General:
-
-<references group="HT" />
-
-Processor Specs:
-
-<references />
-
-GPU Specs:
-
-<references group="GPU" />
-
-
-{\| class="wikitable" \|+INTEL !Introduction !Codename
-!Microarchitecture !Socket !Process !Cores \|- \|April, 2010 \|Westmere
-\|Nehalem \|LGA 1366 \|32 nm \|2-10 \|- \|September, 2011 \|Sandy Bridge
-\| rowspan="2" \|Sandy Bridge \| \|32 nm \| \|- \|April, 2012 \|Ivy
-Bridge \| \|22 nm \| \|- \|Februari, 2013 \|Haswell \| rowspan="2"
-\|Haswell \| \|22nm \| \|- \|September, 2014 \|Broadwell \| \|14nm \|
-\|- \|August, 2015 \|Skylake \| rowspan="2" \|Skylake \| \|14nm \| \|-
-\|April, 2019 \|Caskade Lake \| \|14nm \| \|}
-
-| Introduction   | Codename | Microarchitecture | Socket | Process | Cores |
-|----------------|----------|-------------------|--------|---------|-------|
-| June, 2017     | Naples   | Zen 1             | SP3    | 14 nm   | 8-32  |
-| August, 2019   | Rome     | Zen 2             | SP3    | 7 nm    | 8-64  |
-| March, 2021    | Milan    | Zen 3             | SP3    | 7 nm+   | 8-64  |
-| November, 2022 | Genoa    | Zen 4             | SP5    | 5 nm    | 16-96 |
-
-AMD
-
-<references group="GPU" />
+[//]: # (AMD)
 
 [^1]: [Intel Xeon
 E3-1220v5](https://ark.intel.com/content/www/us/en/ark/products/88172/intel-xeon-processor-e31220-v5-8m-cache-3-00-ghz.html)
@@ -497,7 +586,7 @@ Rome
 This is a proposal for standard node configurations. In what form this
 will be implemented, \*if at all\*, is not known yet.
 
-## Hardware Purchases
+## Investment Options
 
 This section is meant for departments and groups who're willing to invest into the Umbrella HPC Cluster. This list below
 contains a subset of configuration options to keep in mind.
@@ -570,5 +659,14 @@ TBD
 
 ### Storage node
 
-*[HT]: Hyper Threading
+*[SMT]: Simultaneous Multi-Threading enabled (Hyper Threading)
 *[AMD EPYC™ 7502]: 2.5GHz (Max. Boost Clock: 3.35GHz)
+*[AMD EPYC™ 7262]: 3.2Hz (Max. Boost Clock: 3.4GHz)
+
+*[Intel® Xeon® E5-2640 v4]: 2.4Hz (Max. Boost Clock: 3.4GHz)
+
+*[NVIDIA Tesla P100]: 3584 (16GB memory)
+*[NVIDIA Tesla V100]: 5120 (16GB memory)
+*[NVIDIA A100]: 6912 Cuda Cores (80GB memory)
+*[NVIDIA GeForce RTX 2080 Ti]: 4352 Cuda Cores (11GB memory)
+*[NVIDIA TITAN Xp]: 3840 Cuda Cores (12GB memory)
