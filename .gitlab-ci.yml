@@ -1,9 +1,21 @@
+testing:
+  stage: test
+  image: python:latest
+  script:
+    - pip install --upgrade -r requirements.txt
+    - pip install -e .
+    - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.tue.nl/hpclab/website-cluster.git cluster
+    - mkdocs build --site-dir public
+  rules:
+    - if: '$CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH'
+
 pages:
   stage: deploy
   image: python:latest
   script:
     - pip install --upgrade -r requirements.txt
-    - mkdocs build --site-dir public
+    - pip install -e .
+    - pipenv run mkdocs build --site-dir public
   artifacts:
     paths:
       - public
