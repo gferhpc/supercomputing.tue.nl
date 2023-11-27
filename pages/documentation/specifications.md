@@ -97,7 +97,7 @@ experimental purposes to get familiar with HPC.
 
 !!! danger
 
-    The HPC Lab doesn't provide an archive or backup solution. Please check with X for available options to store your data for long term!
+    The HPC Lab doesn't provide an archive or backup solution. Please check the [Storage Finder](https://storagefinder.tue.nl){:target=_blank}} for available options to store your data for long term!
 
 ## Hardware
 
