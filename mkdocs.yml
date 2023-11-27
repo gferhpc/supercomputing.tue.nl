@@ -174,7 +174,7 @@ markdown_extensions:
   - pymdownx.tilde
 edit_uri: https://gitlab.tue.nl/hpclab/website/edit/main/docs/
 extra:
-  announcement: "⚠️ TU/e Umbrella HPC Cluster maintenance scheduled on 20, 21 and 22 January 2024 ⚠️"
+  announcement: "⚠️ TU/e Umbrella HPC Cluster maintenance scheduled on 12, 13 and 14 February 2024 (Carnival)⚠️"
   social:
     - name: Eindhoven Computing Center at LinkedIn
       icon: simple/linkedin
