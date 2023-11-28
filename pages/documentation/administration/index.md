@@ -23,21 +23,21 @@ racadm set idrac.nic.dnsracname HOST-idrac
 #### iDRAC Authentication
 ```{ .shell .annotate hl_lines="4" }
 racadm set idrac.ipmilan.enable 1
-racadm set idrac.ipmilan.orivlimit 3
-racadm set idrac.users.4.username bright
-racadm set idrac.users.4.password PASSWORD # (1)!
+racadm set idrac.ipmilan.privlimit 3
 racadm set idrac.users.4.privilege 0x1F3
 racadm set idrac.users.4.enable 1
+racadm set idrac.users.4.username bright
+racadm set idrac.users.4.password PASSWORD # (1)!
 ```
 
 1. Replace this value with the actual password which can be retrieved from our KeyPass database.
 
 #### IPMI Authentication
-```{ .shell .annotate hl_lines="3" }
+```{ .shell .annotate hl_lines="4" }
 module load ipmitool
+ipmitool user enable 4
 ipmitool user set name 4 bright
 ipmitool user set password 4 PASSWORD # (1)!
-ipmitool user enable 4
 ```
 
 1. Replace this value with the actual password which can be retrieved from our KeyPass database.
