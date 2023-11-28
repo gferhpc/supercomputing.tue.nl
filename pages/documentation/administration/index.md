@@ -21,7 +21,7 @@ racadm set idrac.nic.dnsracname HOST-idrac
 ```
 
 #### iDRAC Authentication
-```{ .shell .annotate hl_lines="4" }
+```{ .shell .annotate hl_lines="6" }
 racadm set idrac.ipmilan.enable 1
 racadm set idrac.ipmilan.privlimit 3
 racadm set idrac.users.4.privilege 0x1F3
