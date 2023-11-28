@@ -12,7 +12,8 @@ Data (incl. home directories) in the HPC Cluster is **NOT** backed up!
 The HPC Cluster is not a solution for archiving your work.
 
 !!! danger
-You are **FULLY** responsible for your own data management!
+
+    You are **FULLY** responsible for your own data management!
 
 ### Fair Use of Disk Space
 
@@ -52,91 +53,3 @@ notice you're doing this has gone down significantly.
 Same as in the previous point: Please do not try to do multiple SCP
 sessions in parallel. The chance of generating a speedup for yourself is
 smaller than the chance of causing trouble for others.
-
-## TEST
-
-=== "APSE"
-
-    | Filesystem     | Quota              | Mount Point                     | Backup          |
-    |----------------|--------------------|---------------------------------|-----------------|
-    | Home           | 200 GB             | `/home/phys/<username>`         | :no_entry_sign: No |
-    | Scratch (node) | varies             | `/local`                        | :no_entry_sign: No |
-    | Project        | based upon request | based upon request              | :no_entry_sign: No |
-
-=== "BmE"
-
-    | Filesystem     | Quota              | Mount Point                     | Backup          |
-    |----------------|--------------------|---------------------------------|-----------------|
-    | Home           | 200 GB             | `/home/bme001/<username>`       | :no_entry_sign: |
-    | Scratch (node) | varies             | `/local`                        | :no_entry_sign: |
-    | Project        | based upon request | based upon request              | :no_entry_sign: |
-
-=== "BE"
-
-    | Filesystem     | Quota              | Mount Point                     | Backup          |
-    |----------------|--------------------|---------------------------------|-----------------|
-    | Home           | 200 GB             | `/home/arch001/<username>`      | :no_entry_sign: |
-    | Scratch (node) | varies             | `/local`                        | :no_entry_sign: |
-    | Project        | based upon request | based upon request              | :no_entry_sign: |
-
-=== "CE&C"
-
-    | Filesystem     | Quota              | Mount Point                     | Backup          |
-    |----------------|--------------------|---------------------------------|-----------------|
-    | Home           | 200 GB             | `/home/chem002/<username>`      | :no_entry_sign: |
-    | Scratch (node) | varies             | `/local`                        | :no_entry_sign: |
-    | Project        | based upon request | based upon request              | :no_entry_sign: |
-
-=== "EE"
-
-    | Filesystem     | Quota              | Mount Point                     | Backup          |
-    |----------------|--------------------|---------------------------------|-----------------|
-    | Home           | 200 GB             | `/home/tue/<username>`          | :no_entry_sign: |
-    | Scratch (node) | varies             | `/local`                        | :no_entry_sign: |
-    | Project        | based upon request | based upon request              | :no_entry_sign: |
-
-=== "ID"
-
-    | Filesystem     | Quota              | Mount Point                     | Backup          |
-    |----------------|--------------------|---------------------------------|-----------------|
-    | Home           | 200 GB             | `/home/tue/<username>`          | :no_entry_sign: |
-    | Scratch (node) | varies             | `/local`                        | :no_entry_sign: |
-    | Project        | based upon request | based upon request              | :no_entry_sign: |
-
-=== "IE&IS"
-
-    | Filesystem     | Quota              | Mount Point                     | Backup          |
-    |----------------|--------------------|---------------------------------|-----------------|
-    | Home           | 200 GB             | `/home/tue/<username>`          | :no_entry_sign: |
-    | Scratch (node) | varies             | `/local`                        | :no_entry_sign: |
-    | Project        | based upon request | based upon request              | :no_entry_sign: |
-
-=== "M&CS"
-
-    | Filesystem     | Quota              | Mount Point                     | Backup          |
-    |----------------|--------------------|---------------------------------|-----------------|
-    | Home           | 200 GB             | `/home/mcs001/<username>`       | :no_entry_sign: |
-    | Scratch (node) | varies             | `/local`                        | :no_entry_sign: |
-    | Project        | based upon request | based upon request              | :no_entry_sign: |
-
-=== "ME"
-
-    | Filesystem     | Quota              | Mount Point                     | Backup          |
-    |----------------|--------------------|---------------------------------|-----------------|
-    | Home           | 200 GB             | `/home/mech001/<username>`      | :no_entry_sign: |
-    | Scratch (node) | varies             | `/local`                        | :no_entry_sign: |
-    | Project        | based upon request | based upon request              | :no_entry_sign: |
-
-!!! danger
-
-    The HPC Lab doesn't provide an archive or backup solution. Please check with X for available options to store your data for long term!
-
-*[APSE]: SApplied Physics & Science Education
-*[BmE]: Biomedical Engineering
-*[BE]: Built Environment
-*[CE&C]: Chemical Engineering & Chemistry
-*[EE]: Electrical Engineering
-*[ID]: Industrial Design
-*[IE&IS]: Industrial Engineering & Innovation Sciences
-*[M&CS]: Mathematics & Computer Science
-*[ME]: Mechanical Engineering
