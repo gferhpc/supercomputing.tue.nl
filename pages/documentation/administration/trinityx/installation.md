@@ -16,10 +16,12 @@ dnf install git
 
 Configure internal network interface
 ```shell
-nmcli con mod ens19 ipv4.address 10.141.255.254/16
-nmcli con mod ens19 ipv4.method manual
-nmcli con mod ens19 connection.autoconnect true
-nmcli con up ens19
+export NWNAME=enp0s8
+nmcli connection add type ethernet con-name $NWNAME
+nmcli con mod $NWNAME ipv4.address 10.141.255.254/16
+nmcli con mod $NWNAME ipv4.method manual
+nmcli con mod $NWNAME connection.autoconnect true
+nmcli con up $NWNAME
 ```
 
 !!! Note
@@ -30,10 +32,12 @@ nmcli con up ens19
 
 Configure internal network interface
 ```shell
-nmcli con mod ens19 ipv4.address 10.141.255.253/16
-nmcli con mod ens19 ipv4.method manual
-nmcli con mod ens19 connection.autoconnect true
-nmcli con up ens19
+export NWNAME=enp0s8
+nmcli connection add type ethernet con-name $NWNAME
+nmcli con mod $NWNAME ipv4.address 10.141.255.253/16
+nmcli con mod $NWNAME ipv4.method manual
+nmcli con mod $NWNAME connection.autoconnect true
+nmcli con up $NWNAME
 ```
 
 !!! Note
