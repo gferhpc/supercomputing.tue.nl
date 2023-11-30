@@ -42,7 +42,7 @@ nmcli con up $NWNAME
 
 !!! Note
 
-    Replace `ens19` with the name of your internal NIC.
+    Replace `enp0s8` with the name of your internal NIC.
 
 ## Installation
 
