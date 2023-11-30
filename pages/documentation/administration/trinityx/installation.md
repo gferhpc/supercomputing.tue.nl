@@ -87,4 +87,10 @@ cp /root/trinityX/site/hosts.example /root/trinityX/site/hosts
 
 Review and edit  the contents of the `hosts` file accordingly.
 
+Run the ansible-playbook
+```shell
+cd /root/trinityX/site
+ansible-playbook controller.yml
+```
+
 *[NIC]: Network Interface Controller
