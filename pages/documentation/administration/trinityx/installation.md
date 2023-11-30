@@ -60,6 +60,7 @@ keyfile /etc/chrony.keys
 leapsectz right/UTC
 logdir /var/log/chrony
 EOF
+systemctl restart chronyd
 ```
 
 ## Installation
