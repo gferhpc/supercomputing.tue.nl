@@ -49,6 +49,8 @@ nmcli con up $NWNAME
 
 ### Prepare environment
 
+As root: 
+
 ```shell
 git clone https://github.com/clustervision/trinityX.git /root/trinityX
 cd /root/trinityX
