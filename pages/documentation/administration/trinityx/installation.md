@@ -81,4 +81,10 @@ cp /root/trinityX/site/group_vars/all.yml.example /root/trinityX/site/group_vars
 
 Review and edit the contents of the `all.yml` file accordingly.
 
+```shell
+cp /root/trinityX/site/hosts.example /root/trinityX/site/hosts
+```
+
+Review and edit  the contents of the `hosts` file accordingly.
+
 *[NIC]: Network Interface Controller
