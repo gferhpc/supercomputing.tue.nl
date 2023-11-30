@@ -44,6 +44,24 @@ nmcli con up $NWNAME
 
     Replace `enp0s8` with the name of your internal NIC.
 
+### NTP Configuration
+
+```shell
+timedatectl set-timezone Europe/Amsterdam
+cat > /etc/chrony.conf << EOF
+allow 10.141.0.0/16
+local stratum 10 
+server ntp1.tue.nl
+server ntp2.tue.nl
+driftfile /var/lib/chrony/drift
+makestep 1.0 3
+rtcsync
+keyfile /etc/chrony.keys
+leapsectz right/UTC
+logdir /var/log/chrony
+EOF
+```
+
 ## Installation
 
 
