@@ -36,5 +36,3 @@ within your browser.
 ![Paraview](img_5.png){ width=225px }
 ![Matlab](img_6.png){ width=225px }
 
-!!! remark
-This article is partially based on a [GitHub help article](https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent){:target=_blank}
