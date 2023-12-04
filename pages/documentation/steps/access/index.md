@@ -16,6 +16,8 @@ Once there, the user can interact with the system and run (small) programs to ge
 There are currently two options to connect to the TU/e HPC Umbrella Cluster. Either by using a GUI/Website 
 via [Open Ondemand](openondemand.md) ^(suggested)^ or through [SSH/Command Line](ssh.md).
 
+![Image title](assets/images/HPC_Setup.png){ align=center width="200" }
+
 ## Secure Shell
 
 Secure Shell (ssh) is a commandline-tool for logging into a different computer over some network (e.g. the internet) and for executing commands on that machine, as if one would be sitting there instead of the own computer. So you use ssh to build a connection to the other computer and can then interact with it, using its shell. It is commonly used to login to the login nodes of a supercomputer.
