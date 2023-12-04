@@ -38,23 +38,3 @@ Logging in with OpenSSH on the HPC cluster is done with:
 '''$ ssh -l login@cluster'''
 
 Here <login> is your username and <cluster> is one of the login nodes of the system, you are trying to connect to. At the first login you will be asked to verify the authenticity of the host. If the shown host is correct, enter yes. After pressing RETURN you will be prompted to enter your password for the provided username.
-
-## Graphical Applications on the Login Node
-
-This might or might not work depending on the your operating system, because it requires an X11-Server running on your local machine, which is not available by default on Mac and Windows. To utilize graphical tools anyway, you might want to look into MobaXterm, which provides the necessary functionality for Windows or Xquartz for Mac.
-
-
-### Linux
-If you need to start graphical applications you need to enable X11 forwarding/X11 tunneling by your ssh client. For OpenSSH this is done by giving it the command line option -X (or -Y if the previous did not work):
-
-'''$ ssh -X -l login@cluster'''
-
-### Mac
-
-### Windows
-
-This might or might not work depending on the your operating system, because it requires an X11-Server running on your local machine, which is not available by default on Mac and Windows. To utilize graphical tools anyway, you might want to look into FastX, which provides the necessary functionality for Mac and Windows.
-
-For more security and ease of use you should consider setting up authentication via ssh keys.
-
-## OpenOnDemand
