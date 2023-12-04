@@ -9,17 +9,17 @@ build:
   <<: *deploy
   stage: build
   script:
-    - 'mkdocs build --no-directory-urls --site-dir static'
+    - 'mkdocs build --no-directory-urls --site-dir public'
     - 'echo "Preview URL: $PUBLIC_URL"'
   artifacts:
     paths:
-      - static
+      - public
   variables:
-    PUBLIC_URL: "https://$CI_PROJECT_NAMESPACE.pages.tue.nl/-/$CI_PROJECT_NAME/-/jobs/$CI_JOB_ID/artifacts/static/index.html"
+    PUBLIC_URL: "https://$CI_PROJECT_NAMESPACE.pages.tue.nl/-/$CI_PROJECT_NAME/-/jobs/$CI_JOB_ID/artifacts/public/index.html"
   rules:
     - if: '$CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH'
 
-deploy:
+pages:
   <<: *deploy
   stage: deploy
   script:
