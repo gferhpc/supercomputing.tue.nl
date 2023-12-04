@@ -72,24 +72,49 @@ Configure internal network interface
 
 ### NTP Configuration
 
-```shell
-timedatectl set-timezone Europe/Amsterdam
+=== "hpc-head01"
 
-cat > /etc/chrony.conf << EOF
-allow 10.141.0.0/16
-local stratum 10 
-server ntp1.tue.nl
-server ntp2.tue.nl
-driftfile /var/lib/chrony/drift
-makestep 1.0 3
-rtcsync
-keyfile /etc/chrony.keys
-leapsectz right/UTC
-logdir /var/log/chrony
-EOF
+    ```shell
+    timedatectl set-timezone Europe/Amsterdam
 
-systemctl restart chronyd.service
-```
+    cat > /etc/chrony.conf << EOF
+    allow 10.141.0.0/16
+    local stratum 10 
+    server ntp1.tue.nl
+    server ntp2.tue.nl
+    server 10.141.255.253
+    driftfile /var/lib/chrony/drift
+    makestep 1.0 3
+    rtcsync
+    keyfile /etc/chrony.keys
+    leapsectz right/UTC
+    logdir /var/log/chrony
+    EOF
+
+    systemctl restart chronyd.service
+    ```
+
+=== "hpc-head02"
+
+    ```shell
+    timedatectl set-timezone Europe/Amsterdam
+
+    cat > /etc/chrony.conf << EOF
+    allow 10.141.0.0/16
+    local stratum 10 
+    server ntp1.tue.nl
+    server ntp2.tue.nl
+    server 10.141.255.254
+    driftfile /var/lib/chrony/drift
+    makestep 1.0 3
+    rtcsync
+    keyfile /etc/chrony.keys
+    leapsectz right/UTC
+    logdir /var/log/chrony
+    EOF
+
+    systemctl restart chronyd.service
+    ```
 
 ### SMTP Configuration
 
