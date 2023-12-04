@@ -16,7 +16,8 @@ Once there, the user can interact with the system and run (small) programs to ge
 There are currently two options to connect to the TU/e HPC Umbrella Cluster. Either by using a GUI/Website 
 via [Open Ondemand](openondemand.md) ^(suggested)^ or through [SSH/Command Line](ssh.md).
 
-![Image title](../../../assets/images/HPC_Setup.png){ align=center }
+$~$
+![HPC Setup](../../../assets/images/HPC_Setup.png){ align=center }
 
 ## Secure Shell
 
@@ -31,7 +32,7 @@ On Windows, you can use Putty, Bitvise or the GitBash (coming with ssh) which is
 
 Sometimes access to a cluster's login nodes is restricted to certain networks within the university/facility, so you can connect while being on the campus, but not from your network at home or at other institutions. To nevertheless access those login nodes from external, one can 'pretend to be inside the network' by using a Virtual Private Network (VPN) provided by the university operating the cluster.
 
-[Alice and Bob](../images/Public_key_encryption.png)
+[Alice and Bob](../../../assets/images/Public_key_encryption.png)
 
 ## Usage
 
