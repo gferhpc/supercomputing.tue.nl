@@ -4,8 +4,7 @@ title: Onboarding
 
 # Mathematics & Computer Science
 
-*About the
-[hpc.win.tue.nl](../specifications.md#mathematics-computer-science)-cluster*
+*About the [hpc.win.tue.nl](../../specifications.md)-cluster*
 
 *Onboarding documentation: a mandatory read for all users*
 
@@ -38,7 +37,7 @@ for the options).
 ## Relevant technical aspects
 
 All specifications of the machines in the cluster are stated
-[here](../specifications.md#mathematics-computer-science).
+[here](../../specifications.md).
 There is a quota of 1 TB on every user's home directory. Because there
 is roughly 95TB in total, there is likely no room for everyone to fill
 up their quota completely. **Do not  use the cluster as a place to store
@@ -83,11 +82,8 @@ allocation of resources in your script does not reflect what you
 actually use)): this prevents others from using the unused resources.
 - Do not compile code on the log-in node.
 - Practical suggestions, tips, and practices on how to use the
-cluster are collected and shared in the [crowd-sourced
-wiki](/Main_Page#Best%20practices "wikilink"). For example, are you
-using Tensorflow on the GPUs? Read
-[here](/On_the_use_of_GPU_with_Tensorflow "wikilink") for best
-practices.
+cluster are collected and shared on this website. For example, are you
+using Tensorflow on the GPUs? Read [here](gpu.md) for best practices.
 
 In case you need compute resources for:
 

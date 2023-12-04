@@ -66,7 +66,7 @@ the following workflow:
     interface.
 
 More detailed instructions can be found
-[here](/Ansys_Lumerical "wikilink"). If you experience further issues,
+[here](../../documentation/software/recipes/ansys_lumerical.md). If you experience further issues,
 or if this workflow doesn't suit your needs, please contact us.
 
 ??? abstract "Planning & Considerations"
@@ -218,7 +218,7 @@ or if this workflow doesn't suit your needs, please contact us.
      ### Rejected activities
      
      -   Slurm: enable interactive X11 jobs. See
-         [<https://slurm.schedmd.com/faq.html#x11>](/https://slurm.schedmd.com/faq.html#x11 "wikilink").
+         [https://slurm.schedmd.com/faq.html#x11](https://slurm.schedmd.com/faq.html#x11){:target=_blank}.
          In practice: set `PrologFlags=X11` in slurm.conf.
          -   Won't. We direct users to use Open OnDemand for graphical use
              cases.
@@ -296,4 +296,3 @@ or if this workflow doesn't suit your needs, please contact us.
              to phase this in, i.e. configure this later.
      
      ## Log
-     

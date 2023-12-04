@@ -59,11 +59,16 @@ systems and file formats. Examples are provided in Algorithms 1 and 2.
 More information on how the specific functions listed in Algorithms 1
 and 2 make sure that overall training time does not increase due to
 buffering from local SSD storage can be found at the following
-[URL](https://www.tensorflow.org/guide/data_performance).
-[thumb\|*Algorithm 1. Tf.data API example when slicing into a large HDF5
-file*](/File:Afb1tensorflow.png "wikilink")
-[thumb\|*Algorithm 2. Tf.data API example when reading multiple text
-files*](/File:Afb2tensorflow.png "wikilink")
+
+<figure markdown>
+  ![](Afb1tensorflow.png)
+  <figcaption>Algorithm 1. Tf.data API example when slicing into a large HDF5 file</figcaption>
+</figure>
+
+<figure markdown>
+  ![](Afb2tensorflow.png)
+  <figcaption>Algorithm 2. Tf.data API example when reading multiple text files</figcaption>
+</figure>
 
 ### Job scheduling
 
@@ -80,8 +85,7 @@ following sbatch options:
 `   #SBATCH --gres`
 
 More information regarding the standard sbatch options can be found at
-[the following WIN HPC wiki
-page](/Scheduling_calculation_jobs_(Slurm) "wikilink"). In this section,
+[Submit Jobs](../../steps/jobs/index.md). In this section,
 we would like to put a bit more emphasis on the `--gres` option and why
 it is a mandatory option. The `--gres` option causes the job scheduler
 to change the environment variable `$CUDA_VISIBLE_DEVICES`. In this way,
@@ -93,5 +97,3 @@ GPU node that do not know of each other which GPU(s) they are accessing.
 This in turn results in a high likelihood of encountering job crashes
 caused by trying to allocate memory at a GPU of which all memory is
 already allocated by another job.
-
-__FORCETOC__

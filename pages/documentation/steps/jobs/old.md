@@ -123,8 +123,7 @@ Slurm sinfo states
 
 ## Submit a job
 
-Check the tutorial about [submitting a
-job](/Scheduling_calculation_jobs_(Slurm) "wikilink") using Slurm for
+Check the tutorial about [submitting a job](index.md) using Slurm for
 scripts for single and multi core jobs and the step-by-step procedure.
 
 ## Job arrays
@@ -227,9 +226,6 @@ To view the same information for all jobs of a user:
 
 `sacct -u `<username>` --format=JobID,JobName,MaxRSS,Elapsed`
 
-If you are curious how many cpu cores every user is currently running on
-and/or waiting for, see [usercores script](/usercores_script "wikilink")
-
 ## Controling jobs
 
 To cancel one job:
@@ -320,7 +316,7 @@ We'll go through the lines one by one:
 -   **#SBATCH --partition=tue.test.q** tells Slurm the partition it
     should use (this used to be called "queue" in the old system).
     Select a partition based on the [technical
-    specifications](/technical_specifications "wikilink") of the cluster
+    specifications](../../specifications.md) of the cluster
     you are using.
 
 <!-- -->
@@ -425,7 +421,7 @@ than needed.***
 
 In order to save the script, or any file, to the cluster, it is
 recommended to create a subdirectory in your [home
-directory](/Connecting_to_the_cluster#Personal_homedir "wikilink"). Use
+directory](../access/index.md). Use
 command
 
 `$ ls`
@@ -449,7 +445,7 @@ use a GUI, like WinSCP, to save your scripts to the cluster.
 
 To submit the script, you have to save this script somewhere on the
 cluster (recommended is a subdirectory of your [home
-directory](/Connecting_to_the_cluster#Personal_homedir "wikilink")).
+directory](../access/index.md)).
 Assuming you named it "myjob.run", to submit it, simply run:
 
 `$ sbatch myjob.run`
@@ -466,7 +462,7 @@ the cluster.
 
 The `--partition` option takes care of selecting a queue (partition in
 Slurm terminology). Select a partition based on the [technical
-specifications](/technical_specifications "wikilink") of the cluster you
+specifications](../../specifications.md) of the cluster you
 are using.
 
 In case there are different types of nodes within the partition you

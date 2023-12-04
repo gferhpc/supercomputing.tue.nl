@@ -44,8 +44,7 @@ non-interactive Python jobs; this is a detailed below as well.
 
 ### Initial setup
 
-1.  Log on to the cluster using [Open
-    OnDemand](/Open_OnDemand "wikilink"), and start an interactive
+1.  Log on to the cluster using [Open OnDemand](../../steps/access/openondemand.md), and start an interactive
     Lumerical session.
 2.  Within the interactive session, click "Solvers" → "New" → "FDTD". A
     new window opens.
@@ -80,8 +79,7 @@ non-interactive Python jobs; this is a detailed below as well.
 
 ### Prepare/postprocess with Lumerical GUI
 
-The Lumerical GUI can be run on the cluster through [Open
-OnDemand](/Open_OnDemand "wikilink").
+The Lumerical GUI can be run on the cluster through [Open OnDemand](../../steps/access/openondemand.md).
 
 ### Submitting a Lumerical job
 

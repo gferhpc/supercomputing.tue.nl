@@ -96,7 +96,6 @@ So, to unload the intel module, you would run `module unload intel`.
 
 #### Uploading
 
-You can upload your specific (or even custom) software to your [personal
-homedir](/Connecting_to_the_cluster#Personal_homedir "wikilink").
+You can upload your specific (or even custom) software to your [personal homedir](../access/index.md).
 
 For uploading modules, you should contact a system administrator.

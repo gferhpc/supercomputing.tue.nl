@@ -222,7 +222,7 @@ have to put your public key on the server.
     Execute, e.g., `cat ~/.ssh/id_rsa.pub` to retrieve the contents in
     your terminal. Then highlight the contents and copy them to your
     clipboard.
--   Then [log in](/Connecting_to_the_cluster "wikilink") to the cluster
+-   Then [log in](index.md#logging-in) to the cluster
     using your username and password.
 -   Make sure the `~/.ssh` directory exists: `mkdir -p ~/.ssh`. If it
     did not exist, also change the access rights to ensure only you can
@@ -242,8 +242,7 @@ rather than your password.
 
 ##### Using ssh-agent
 
-Either [make sure ssh-agent starts
-automatically](https://help.github.com/en/github/authenticating-to-github/working-with-ssh-key-passphrases#auto-launching-ssh-agent-on-git-for-windows)
+Either [make sure ssh-agent starts automatically](https://help.github.com/en/github/authenticating-to-github/working-with-ssh-key-passphrases#auto-launching-ssh-agent-on-git-for-windows){:target=_blank}
 or start it manually as follows:
 
 `eval $(ssh-agent -s)`

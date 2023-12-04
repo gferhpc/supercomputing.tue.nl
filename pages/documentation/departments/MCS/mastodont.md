@@ -10,9 +10,7 @@ title: Mastodont (big memory)
 `mastodont.win.tue.nl` is a Linux system designed to support
 long-running computations that require a large amount of RAM.
 It was *not* designed to support CPU-bound or parallel computations.
-For such computations please use one of the
-[<https://hpcwiki.tue.nl/wiki/Technical_specifications>
-clusters](/https://hpcwiki.tue.nl/wiki/Technical_specifications_clusters "wikilink")
+For such computations please use one of the [Cluster Partitions](../../specifications.md)
 .
 
 The mastodont server is *not* part of a cluster.
