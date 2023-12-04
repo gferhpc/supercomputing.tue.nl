@@ -14,7 +14,7 @@ As the TU/e Umbrella HPC Cluster is managed centrally, you can get access with y
 department/research group, you can get access to certain part of TU/e Umbrella HPC Cluster.
 
 Feel free to contribute by providing content and/or correcting mistakes as this documentation is intended as a 
-collaborative (crowd-sourced) platform. 
+collaborative platform.
 You can do this by clicking on the edit button (:material-pencil:) in the top right corner on every page or visit our [Gitlab Repository](https://gitlab.tue.nl/hpclab/website){:target=_blank}.
 All TU/e employees and students can contribute, provided the information is TU/e HPC specific (refer to online guides for more generic HPC information where possible)!
 
