@@ -16,8 +16,4 @@ Once there, the user can interact with the system and run (small) programs to ge
 There are currently two options to connect to the TU/e HPC Umbrella Cluster. Either by using a GUI/Website 
 via [Open Ondemand](openondemand.md) ^(suggested)^ or through [SSH/Command Line](ssh.md).
 
-# 
-
 ![HPC Setup](../../../assets/images/HPC_Setup.png){ align=center }
-
-

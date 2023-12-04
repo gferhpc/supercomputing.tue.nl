@@ -3,6 +3,7 @@ import logging
 import math
 import os
 import re
+from json import JSONDecodeError
 
 from mkdocs.config import Config
 from mkdocs.config.config_options import Type, ListOfItems, DictOfItems
@@ -24,8 +25,15 @@ class SpecsPlugin(BasePlugin[SpecsPluginConfig]):
         if not self.config.enabled:
             return
 
-        with open(os.path.join(self.config.cache_path, "sinfo.json")) as content:
-            data = json.load(content)
+        sinfo_path = os.path.join(self.config.cache_path, "sinfo.json")
+
+        try:
+            with open(sinfo_path) as content:
+                data = json.load(content)
+        except (FileNotFoundError, JSONDecodeError):
+            log.error("%s not found, disabled plugin as a result.", sinfo_path)
+            self.config.enabled = False
+            return
 
         for node in data['nodes'] + self.config.extra_nodes:
             self._register_node(node['hostname'], node['address'])
