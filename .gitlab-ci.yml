@@ -24,5 +24,8 @@ deploy:
   stage: deploy
   script:
     - 'mkdocs build --site-dir public'
+  artifacts:
+    paths:
+      - public
   rules:
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
