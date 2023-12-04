@@ -23,6 +23,6 @@ deploy:
   image: python:latest
   stage: deploy
   script:
-    - 'mkdocs build --no-directory-urls --site-dir public'
+    - 'mkdocs build --site-dir public'
   rules:
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
