@@ -55,6 +55,9 @@ plugins:
       blog_dir: news
       draft_if_future_date: true
   - glightbox
+  - redirects:
+      redirect_maps:
+        'documentation/index.md': 'documentation/introduction.md'
   - search
   - tags
   - umbrella-specs:

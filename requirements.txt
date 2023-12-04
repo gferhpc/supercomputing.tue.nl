@@ -1,5 +1,5 @@
-mkdocs
-mkdocs-material~=9.0
-mkdocs-glightbox
-mkdocs-awesome-pages-plugin
+mkdocs-material~=9.4
+mkdocs-redirects~=1.2
+mkdocs-glightbox~=0.3
+mkdocs-awesome-pages-plugin~=2.9
 setuptools~=68.2.0
