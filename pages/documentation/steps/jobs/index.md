@@ -26,8 +26,8 @@ Here's an example job script:
 #!/bin/bash
 
 #SBATCH --job-name=my_job
-#SBATCH --output=/home/%u/my_job_output_%j.txt
-#SBATCH --partition=normal
+#SBATCH --output=my_job_output_%j.txt
+#SBATCH --partition=tue.default.q
 #SBATCH --time=02:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
