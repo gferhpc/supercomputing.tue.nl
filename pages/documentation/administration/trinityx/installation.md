@@ -224,4 +224,9 @@ Current fix for failing sensu plugin installation, after first ansible run do:
 luna cluster change -n umbrella
 ```
 
+```shell
+/usr/local/bin/obol user add demo -p demo
+/usr/local/bin/obol group addusers admins demo
+```
+
 *[NIC]: Network Interface Controller
