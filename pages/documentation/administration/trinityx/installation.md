@@ -229,4 +229,8 @@ luna cluster change -n umbrella
 /usr/local/bin/obol group addusers admins demo
 ```
 
+```shell
+ansible-playbook compute-redhat.yml
+```
+
 *[NIC]: Network Interface Controller
