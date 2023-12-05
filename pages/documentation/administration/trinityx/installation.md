@@ -187,7 +187,7 @@ Review and edit the contents of the `all.yml` file accordingly, notable settings
 | administrator_email          | `root@localhost`             | Email address of the administrator                          |
 | project_id                   | `umbrella`                   | Project ID                                                  |
 | ha                           | `false` (default)            | High Availability; _MUST remain `false` at time of writing_ |
-| trix_external_fqdn           | `hpc.tue.nl`                 | FQDN of the external interface of the cluster               |
+| trix_external_fqdn           | `umbrella-cluster.hpc.tue.nl`| FQDN of the external interface of the cluster               |
 | trix_dns_forwarders          | `[131.155.2.3, 131.155.3.3]` | List of DNS forwarders to use for the cluster.              |
 | firewalld_public_interfaces  | `[enp0s3]`                   | List of public interfaces to use for the cluster.           |
 | firewalld_trusted_interfaces | `[enp0s8]`                   | List of trusted interfaces to use for the cluster.          |
