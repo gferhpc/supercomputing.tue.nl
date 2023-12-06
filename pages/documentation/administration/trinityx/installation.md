@@ -243,7 +243,7 @@ ansible-playbook compute-redhat.yml
 ```
 
 ```shell
-luna group change -qpost part.txt compute
+luna group change -qpart part.txt compute
 ```
 
 ??? example "part.txt"
