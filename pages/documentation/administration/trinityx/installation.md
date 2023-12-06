@@ -230,6 +230,12 @@ luna cluster change -n umbrella
 /usr/local/bin/obol group addusers admins demo
 ```
 
+Now the following Pages should available:
+
+http://umbrella-cluster.hpc.tue.nl:8080  TrinityX
+http://umbrella-cluster.hpc.tue.nl:3000  Grafana
+http://umbrella-cluster.hpc.tue.nl:3001  Sensu
+
 ```shell
 ansible-playbook compute-redhat.yml
 ```
