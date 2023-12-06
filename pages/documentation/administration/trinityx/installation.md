@@ -242,4 +242,31 @@ http://umbrella-cluster.hpc.tue.nl:3001  Sensu
 ansible-playbook compute-redhat.yml
 ```
 
+??? info "post.txt"
+    ```shell
+    cat << EOF >> /sysroot/etc/fstab
+    /dev/sda4   /       ext4    defaults        1 1
+    /dev/sda2   /boot   ext4    defaults        1 2
+    /dev/sda1   /boot/efi   vfat    defaults        1 2
+    /dev/sda3   swap    swap    defaults        0 0
+    /dev/sda5   /local     ext4    defaults        1 1
+    EOF
+    SH=`chroot /sysroot /bin/bash -c "efibootmgr -v|grep Shim1|grep -oE '^Boot[0-9]+'|grep -oE '[0-9]+'"`
+    if [ "$SH" ]; then
+            echo 'Shim found on boot '$SH
+            chroot /sysroot /bin/bash -c "efibootmgr -B -b $SH"
+            echo Remove
+            chroot /sysroot /bin/bash -c "efibootmgr -v"
+            echo Clean
+    fi
+    chroot /sysroot /bin/bash -c "efibootmgr --verbose --disk /dev/sda --part 1 --create --label \"Shim1\" --loader /EFI/rocky/shimx64. efi"
+    chroot /sysroot /bin/bash -c "grub2-mkconfig -o /boot/efi/EFI/rocky/grub.cfg"
+
+    umount /sysroot/sys
+    umount /sysroot/dev
+    umount /sysroot/proc
+
+        ```
+
+
 *[NIC]: Network Interface Controller
