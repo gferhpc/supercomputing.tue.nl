@@ -233,7 +233,9 @@ luna cluster change -n umbrella
 Now the following Pages should available:
 
 http://umbrella-cluster.hpc.tue.nl:8080  TrinityX (use demo:demo)
+
 http://umbrella-cluster.hpc.tue.nl:3000  Grafana
+
 http://umbrella-cluster.hpc.tue.nl:3001  Sensu
 
 ```shell
