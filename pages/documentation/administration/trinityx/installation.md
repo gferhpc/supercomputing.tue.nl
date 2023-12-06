@@ -249,12 +249,29 @@ luna group change -qpost part.txt compute
 ??? example "part.txt"
     
     ```shell
+    parted /dev/sda -s 'mklabel gpt'
+    parted /dev/sda -s 'mkpart efi fat32 1 1g'
+    parted /dev/sda -s 'mkpart boot ext4 1g 2g'
+    parted /dev/sda -s 'mkpart swap linux-swap 2g 4g'
+    parted /dev/sda -s 'mkpart root ext4 4g 32g'
+    parted /dev/sda -s 'mkpart local ext4 33g 100%'
+
+    while [[ ! -b /dev/sda1 ]] || [[ ! -b /dev/sda2 ]] || [[ ! -b /dev/sda3 ]] || [[ ! -b /dev/sda4 ]]; do sleep 1; done
+
+    mkswap /dev/sda3
+    swaplabel -L swappart /dev/sda3
+
+    mkfs.fat -F 16 /dev/sda1
+    mkfs.ext4 /dev/sda2
+    mkfs.ext4 /dev/sda4
+    mount /dev/sda4 /sysroot
+    mkdir /sysroot/boot
+    mkfs.ext4 /dev/sda5
     ```
 
 ```shell
 luna group change -qpost post.txt compute
 ```
-
 ??? example "post.txt"
     
     ```shell
@@ -279,8 +296,6 @@ luna group change -qpost post.txt compute
     umount /sysroot/sys
     umount /sysroot/dev
     umount /sysroot/proc
-
     ```
-
 
 *[NIC]: Network Interface Controller
