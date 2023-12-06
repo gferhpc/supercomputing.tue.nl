@@ -292,6 +292,7 @@ luna group change -qpost post.txt compute
     fi
     chroot /sysroot /bin/bash -c "efibootmgr --verbose --disk /dev/sda --part 1 --create --label \"Shim1\" --loader /EFI/rocky/shimx64. efi"
     chroot /sysroot /bin/bash -c "grub2-mkconfig -o /boot/efi/EFI/rocky/grub.cfg"
+    chroot /sysroot /bin/bash -c "systemctl set-default multi-user.target"
 
     umount /sysroot/sys
     umount /sysroot/dev
