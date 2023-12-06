@@ -246,7 +246,7 @@ ansible-playbook compute-redhat.yml
 luna group change -qpost part.txt compute
 ```
 
-??? example "post.txt"
+??? example "part.txt"
     
     ```shell
     ```
@@ -280,7 +280,7 @@ luna group change -qpost post.txt compute
     umount /sysroot/dev
     umount /sysroot/proc
 
-        ```
+    ```
 
 
 *[NIC]: Network Interface Controller
