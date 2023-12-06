@@ -243,6 +243,7 @@ ansible-playbook compute-redhat.yml
 ```
 
 ??? info "post.txt"
+    
     ```shell
     cat << EOF >> /sysroot/etc/fstab
     /dev/sda4   /       ext4    defaults        1 1
