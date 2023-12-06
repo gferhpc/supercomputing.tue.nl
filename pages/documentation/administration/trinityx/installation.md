@@ -242,7 +242,20 @@ http://umbrella-cluster.hpc.tue.nl:3001  Sensu
 ansible-playbook compute-redhat.yml
 ```
 
-??? info "post.txt"
+```shell
+luna group change -qpost part.txt compute
+```
+
+??? example "post.txt"
+    
+    ```shell
+    ```
+
+```shell
+luna group change -qpost post.txt compute
+```
+
+??? example "post.txt"
     
     ```shell
     cat << EOF >> /sysroot/etc/fstab
