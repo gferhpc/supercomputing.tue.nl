@@ -114,7 +114,7 @@ Configure internal network interface
 ### SMTP Configuration
 
 ```shell
-dnf install postfix
+dnf -y install postfix
 ```
 
 === "hpc-head01"
@@ -162,18 +162,12 @@ systemctl restart postfix.service
 
 ## TrinityX Installation
 
-### Required packages
-
-```shell
-dnf -y install git
-```
-
 ### Prepare environment
 
 As `root@hpc-head01`:
 
 ```shell
-dnf install git
+dnf -y install git
 ```
 
 ```shell
