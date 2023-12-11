@@ -165,7 +165,7 @@ systemctl restart postfix.service
 ### Required packages
 
 ```shell
-dnf install git
+dnf -y install git
 ```
 
 ### Prepare environment
