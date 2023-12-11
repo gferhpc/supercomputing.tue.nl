@@ -249,7 +249,7 @@ luna group change -qpart part.txt compute
     parted /dev/sda -s 'mkpart root ext4 4g 32g'
     parted /dev/sda -s 'mkpart local ext4 33g 100%'
 
-    while [[ ! -b /dev/sda1 ]] || [[ ! -b /dev/sda2 ]] || [[ ! -b /dev/sda3 ]] || [[ ! -b /dev/sda4 ]]; do sleep 1; done
+    while [[ ! -b /dev/sda1 ]] || [[ ! -b /dev/sda2 ]] || [[ ! -b /dev/sda3 ]] || [[ ! -b /dev/sda4 ]] || [[ ! -b /dev/sda5 ]]; do sleep 1; done
 
     mkswap /dev/sda3
     swaplabel -L swappart /dev/sda3
