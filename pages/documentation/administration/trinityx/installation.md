@@ -172,7 +172,6 @@ systemctl restart postfix.service
 As `root@hpc-head01`:
 
 ```shell
-dnf -y install git
 git clone https://github.com/clustervision/trinityX.git /root/trinityX
 cd /root/trinityX
 
