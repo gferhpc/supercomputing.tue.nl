@@ -30,11 +30,6 @@
 
 ## Server Configuration
 
-### Required packages
-
-```shell
-dnf install git
-```
 
 ### Network Configuration
 
@@ -167,9 +162,19 @@ systemctl restart postfix.service
 
 ## TrinityX Installation
 
+### Required packages
+
+```shell
+dnf install git
+```
+
 ### Prepare environment
 
 As `root@hpc-head01`:
+
+```shell
+dnf install git
+```
 
 ```shell
 git clone https://github.com/clustervision/trinityX.git /root/trinityX
