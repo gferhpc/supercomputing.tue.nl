@@ -211,10 +211,11 @@ Run the ansible-playbook
 cd /root/trinityX/site
 ansible-playbook controller.yml
 ```
-Current fix for failing sensu plugin installation, after first ansible run do:
+~~Current fix for failing sensu plugin installation, after first ansible run do:~~
 ```shell
-/opt/sensu/embedded/bin/gem install  domain_name -v 0.5.20190701
-/opt/sensu/embedded/bin/gem install  sensu-plugins-mailer
+~~/opt/sensu/embedded/bin/gem install  domain_name -v 0.5.20190701
+/opt/sensu/embedded/bin/gem install  sensu-plugins-mailer~~
+
 ```
 
 ### Configuration
