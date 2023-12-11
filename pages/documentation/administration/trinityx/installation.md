@@ -211,12 +211,6 @@ Run the ansible-playbook
 cd /root/trinityX/site
 ansible-playbook controller.yml
 ```
-~~Current fix for failing sensu plugin installation, after first ansible run do:~~
-```shell
-~~/opt/sensu/embedded/bin/gem install  domain_name -v 0.5.20190701
-/opt/sensu/embedded/bin/gem install  sensu-plugins-mailer~~
-
-```
 
 ### Configuration
 
@@ -225,8 +219,8 @@ luna cluster change -n umbrella
 ```
 
 ```shell
-/usr/local/bin/obol user add demo -p demo
-/usr/local/bin/obol group addusers admins demo
+obol user add demo -p demo
+obol group addusers admins demo
 ```
 
 Now the following Pages should available:
