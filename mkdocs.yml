@@ -1,4 +1,5 @@
 site_name: Eindhoven Supercomputing Center - HPC Lab
+site_url: https://supercomputing.tue.nl
 docs_dir: pages
 theme:
   name: material
