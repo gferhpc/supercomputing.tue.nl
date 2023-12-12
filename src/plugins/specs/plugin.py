@@ -1,10 +1,5 @@
-import json
-import logging
-import math
-import os
-import re
+import json, logging, re
 from json import JSONDecodeError
-
 from mkdocs.config import Config
 from mkdocs.config.config_options import Type, ListOfItems, DictOfItems
 from mkdocs.plugins import BasePlugin
@@ -12,7 +7,7 @@ from mkdocs.plugins import BasePlugin
 
 class SpecsPluginConfig(Config):
     enabled: bool = Type(bool, default=True)
-    cache_path: str = Type(str, default=".cache")
+    sinfo_path: str = Type(str, default="sinfo.json")
     extra_nodes: list = ListOfItems(Type(dict), default=[])
     hardware: dict = DictOfItems(Type((str, str)), default={})
     nodes: dict = DictOfItems(Type(dict), default={})
@@ -25,18 +20,16 @@ class SpecsPlugin(BasePlugin[SpecsPluginConfig]):
         if not self.config.enabled:
             return
 
-        sinfo_path = os.path.join(self.config.cache_path, "sinfo.json")
-
         try:
-            with open(sinfo_path) as content:
+            with open(self.config.sinfo_path) as content:
                 data = json.load(content)
         except (FileNotFoundError, JSONDecodeError):
-            log.error("%s not found, disabled plugin as a result.", sinfo_path)
+            log.error("%s not found, disabled plugin as a result.", self.config.sinfo_path)
             self.config.enabled = False
             return
 
         for node in data['nodes'] + self.config.extra_nodes:
-            self._register_node(node['hostname'], node['address'])
+            self._register_node(node)
 
             if "partitions" in node:
                 for partition in node['partitions']:
@@ -83,36 +76,38 @@ class SpecsPlugin(BasePlugin[SpecsPluginConfig]):
                     table += self._render_node_row(option, indents, f"Storage ^({option})^")
                 else:
                     table += self._render_node_row(option, indents)
-
-            if option in self.config.partitions:
+            elif option in self.config.partitions:
                 if table is None:
                     table = f"{indents}| Partition/Nodes | Threads | Memory | Processor/GPU |\n"
                     table += f"{indents}|-----------------|---------|--------|---------------|\n"
                 table += f"{indents}| **{option}** | **{self._sum_partition_category_cpu(option)}** | **{self._sum_partition_category_memory(option)}GB** | |\n"
                 for category, nodes in dict(self.config.partitions[option]).items():
                     table += self._render_node_row(nodes[0], indents, f"{len(nodes)}x ^({category})^")
+            else:
+                log.warning("No configuration found for: %s", option)
 
-        return table
+        return table if table is not None else ""
 
     def _render_node_row(self, hostname: str, indents: str, column: str = None):
-        info = self._get_node_info(hostname)
-        if info['processor']['SMT']:
-            if str(info['processor']['brand']).find('Intel') != -1:
-                cpus = f"{info['processor']['cpus']}^HT^"
+        node = self._get_node_info(hostname)
+
+        details = f"{round(node['boards'] * node['sockets'])}x {node['extra']['cpu']} @ {node['extra']['cpu_frq']}GHz[^{self._get_reference_index(node['extra']['cpu'])}]"
+
+        if node['threads'] >= 2:
+            if 'intel' in node['features']:
+                cpus = f"{node['cpus']}^HT^"
             else:
-                cpus = f"{info['processor']['cpus']}^SMT^"
+                cpus = f"{node['cpus']}^SMT^"
         else:
-            cpus = f"{info['processor']['cpus']}"
+            cpus = f"{node['cpus']}"
 
-        details = f"{info['processor']['sockets']}x {info['processor']['brand']} {info['processor']['model']} @ {info['processor']['speed']}GHz[^{self._get_reference_index(info['processor']['brand'], info['processor']['model'])}]"
-        if info['gpu']:
-            details += f"<br/>{info['gpu']['cards']}x {info['gpu']['brand']} {info['gpu']['model']}[^{self._get_reference_index(info['gpu']['brand'], info['gpu']['model'])}]"
+        if 'gpu' in node['extra'] and 'gres' in node:
+            if matches := re.match(r"gpu:((?P<mig_profile>.*):)?(?P<gpu_count>\d+)\(S:.*\)", node['gres'], re.IGNORECASE):
+                details += f"<br/>{matches['gpu_count']}x {node['extra']['gpu']}[^{self._get_reference_index(node['extra']['gpu'])}]"
+                if matches['mig_profile']:
+                    details += f" (MIG: {matches['mig_profile']})"
 
-            if info['gpu']['mig']:
-                for profile, count in dict(info['gpu']['mig']).items():
-                    details += f" (MIG: {count}x {profile})"
-
-        return f"{indents}| {column} | {cpus} | {info['memory']['size']}GB | {details} |\n"
+        return f"{indents}| {column} | {cpus} | {node['extra']['mem']}GB | {details} |\n"
 
     def _generate_references(self):
         references = ""
@@ -126,6 +121,9 @@ class SpecsPlugin(BasePlugin[SpecsPluginConfig]):
         return references
 
     def _get_node_info(self, hostname: str):
+        if hostname not in self.config.nodes:
+            raise RuntimeError(f"Node {hostname} not found.")
+
         return self.config.nodes[hostname]
 
     def _sum_partition_category_cpu(self, partition: str):
@@ -133,7 +131,7 @@ class SpecsPlugin(BasePlugin[SpecsPluginConfig]):
 
         for nodes in dict(self.config.partitions[partition]).values():
             for node in nodes:
-                accumulated = accumulated + self.config.nodes[node]['processor']['cpus']
+                accumulated = accumulated + self.config.nodes[node]['cpus']
 
         return accumulated
 
@@ -142,17 +140,17 @@ class SpecsPlugin(BasePlugin[SpecsPluginConfig]):
 
         for nodes in dict(self.config.partitions[partition]).values():
             for node in nodes:
-                accumulated = accumulated + self.config.nodes[node]['memory']['size']
+                accumulated = accumulated + int(self.config.nodes[node]['extra']['mem'])
 
         return accumulated
 
-    def _register_node(self, hostname: str, address: str):
-        self.config.nodes[hostname] = {
-            'address': address,
-            'processor': self._get_processor_info(hostname),
-            'memory': self._get_memory_info(hostname),
-            'gpu': self._get_gpu_info(hostname),
-        }
+    def _register_node(self, node: dict):
+        try:
+            node['extra'] = json.loads(node['extra'])
+            node['features'] = node['features'].split(',') if 'features' in node else []
+            self.config.nodes[node['name']] = node
+        except (JSONDecodeError, KeyError):
+            log.error("Failed to parse node %s extra information.", node['name'])
 
     def _register_partition(self, partition: str, hostname: str):
         if partition not in self.config.partitions:
@@ -172,128 +170,8 @@ class SpecsPlugin(BasePlugin[SpecsPluginConfig]):
 
         self.config.partitions[partition][category].append(hostname)
 
-    def _get_gpu_info(self, hostname: str):  # Parses "nvidia-smi -L" output.
-        gpu = None
-
-        with open(os.path.join(self.config.cache_path, hostname)) as content:
-            for line in content:
-                matches = re.match(r"^GPU \d+:( NVIDIA)? (?P<model>.+) \(.+", line, re.IGNORECASE)
-                if matches:
-                    if gpu is None:
-                        gpu = {"brand": "NVIDIA", "model": None, "cards": 0, "mig": None}
-
-                    gpu['cards'] = gpu['cards'] + 1
-                    gpu['model'] = matches.group('model')
-                matches = re.match(r"^\s+MIG (?P<profile>[a-z0-9.]+)\s+Device", line, re.IGNORECASE)
-                if matches:
-                    if gpu['mig'] is None:
-                        gpu['mig'] = {}
-
-                    if matches.group('profile') not in gpu['mig']:
-                        gpu['mig'][matches.group('profile')] = 0
-
-                    gpu['mig'] = {
-                        matches.group('profile'): gpu['mig'][matches.group('profile')] + 1
-                    }
-        return gpu
-
-    def _get_memory_info(self, hostname: str):  # Parses "dmidecode --type=memory" output.
-        memory = {
-            'type': None,
-            'speed': None,  # MT/s
-            'size': 0,      # GB
-            'modules': 0,
-        }
-
-        with open(os.path.join(self.config.cache_path, hostname)) as content:
-            for line in content:
-                matches = re.match(r"^\s+Type:\s+(\w+)", line)
-                if matches and (memory['type'] is None or memory['type'] == "Unknown"):
-                    memory['type'] = matches.group(1)
-
-                matches = re.match(r"^\s+Speed:\s+(\d+) MT/s", line)
-                if matches:
-                    memory['speed'] = matches.group(1)
-
-                matches = re.match(r"^\s+Size:\s+(\d+)\s+(MB|GB|TB)", line)
-                if matches:
-                    memory['modules'] = memory['modules'] + 1
-                    match matches.group(2):
-                        case "MB":
-                            memory['size'] = int(memory['size'] + (int(matches.group(1)) / 1024))
-                        case "GB":
-                            memory['size'] = int(memory['size'] + int(matches.group(1)))
-                        case "TB":
-                            memory['size'] = int(memory['size'] + (int(matches.group(1)) * 1024))
-        return memory
-
-    def _get_processor_info(self, hostname: str):  # Parses "lscpu" output.
-        processor = {
-            "brand": None,
-            "model": None,
-            "speed": None,  # GHz
-            "sockets": 0,
-            "cpus": 0,
-            "SMT": False,
-        }
-
-        with open(os.path.join(self.config.cache_path, hostname)) as content:
-            for line in content:
-                matches = re.match(r"^CPU\(s\):\s+(\d+)", line)
-                if matches:
-                    processor["cpus"] = int(matches.group(1))
-
-                matches = re.match(r"^Socket\(s\):\s+(\d+)", line)
-                if matches:
-                    processor["sockets"] = int(matches.group(1))
-
-                matches = re.match(r"^Thread\(s\) per core:\s+(\d+)", line)
-                if matches:
-                    processor["SMT"] = int(matches.group(1)) != 1
-
-                matches = re.match(r"^Model name:\s+AMD EPYC (?P<model>\w+) .+$", line, re.IGNORECASE)
-                if matches:
-                    processor["brand"] = "AMD EPYC™"
-                    processor["model"] = matches.group('model')
-                    processor["speed"] = float(self._get_processor_speed(hostname))
-
-                    return processor
-
-                matches = re.match(r"^Model name:\s+Intel.+(?P<model>(Bronze|Silver|Gold|Platinum) \w+).+@ (?P<speed>\d+\.\d+).+$", line, re.IGNORECASE)
-                if matches:
-                    processor["brand"] = "Intel® Xeon®"
-                    processor["model"] = matches.group('model')
-                    processor["speed"] = float(matches.group('speed'))
-
-                    return processor
-
-                matches = re.match(r"^Model name:\s+Intel.+CPU\s+(?P<model>[a-z0-9\-]+( v\d+)?).+@ (?P<speed>\d+\.\d+).+$", line, re.IGNORECASE)
-                if matches:
-                    processor["brand"] = "Intel® Xeon®"
-                    processor["model"] = matches.group('model')
-                    processor["speed"] = float(matches.group('speed'))
-
-                    return processor
-
-                matches = re.match(r"^Model name:\s+Intel.+\s+(?P<model>[a-z0-9\-]+( v\d+)?).+CPU @ (?P<speed>\d+\.\d+).+$", line, re.IGNORECASE)
-                if matches:
-                    processor["brand"] = "Intel® Xeon®"
-                    processor["model"] = matches.group('model')
-                    processor["speed"] = float(matches.group('speed'))
-
-                    return processor
-
-        return processor
-
-    def _get_processor_speed(self, hostname: str):
-        with open(os.path.join(self.config.cache_path, hostname)) as content:
-            for line in content:
-                matches = re.match(r"^CPU MHz:\s+(\d+)", line)
-                if matches:
-                    return f"{math.ceil(int(matches.group(1).split('.')[0]) / 10) / 100:.2f}"
-
-    def _get_reference_index(self, brand: str, model: str):
-        return list(self.config.hardware.keys()).index(f"{brand} {model}")
+    def _get_reference_index(self, version: str):
+        return list(self.config.hardware.keys()).index(f"{version}")
 
 
 log = logging.getLogger("mkdocs.material.umbrella-specs")

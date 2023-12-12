@@ -97,14 +97,13 @@ experimental purposes to get familiar with HPC.
 
 !!! danger
 
-    The HPC Lab doesn't provide an archive or backup solution. Please check the [Storage Finder](https://storagefinder.tue.nl){:target=_blank}} for available options to store your data for long term!
+    The HPC Lab doesn't provide an archive or backup solution. Please check the [Storage Finder](https://storagefinder.tue.nl){:target=_blank} for available options to store your data for long term!
 
 ## Hardware
 
 ### Generic Nodes
 
 { .umbrella-specs tue-login002,tue-storage001 }
-
 { .umbrella-specs tue.default.q,tue.gpu.q }
 
 ### Departmental Nodes
