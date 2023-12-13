@@ -23,9 +23,7 @@ Please read further for more information about the maintenance and expected chan
 - OS Upgrade/Replacement: the current OS running in the cluster is CentOS Linux 7 which will reach end of life (EOL) on June 30, 2024. It is therefore decided to upgrade the OS to [Rocky Linux 8](https://rockylinux.org/){:target=_blank}. To upgrade the OS there can be no running jobs on the cluster and all nodes need to reboot.
 - Cluster Manager Replacement: the current cluster manager software, Bright Cluster Manager, will be replaced by TrinityX. To upgrade this software there can be no running jobs on the cluster and all nodes need to reboot.
 - Maintenance: upgrade of the job scheduler (Slurm). The scheduler (Slurm) has a newer version available that fixes bugs and has additional functionality and features.
-- Security: firmware updates (hardware)
-
-Because a part of the nodes (especially the login nodes and storage nodes) have been continuously running for a long time, their operating system and firmware(s) are out-of-date and need a refresh. OS and firmware upgrades will address security issues. For nodes that are accessible from the TU/e Campus directly this is an urgent issue. For this the nodes need to reboot without any jobs running on those nodes.
+- Security: firmware updates (hardware) Because a part of the nodes (especially the login nodes and storage nodes) have been continuously running for a long time, their operating system and firmware(s) are out-of-date and need a refresh. OS and firmware upgrades will address security issues. For nodes that are accessible from the TU/e Campus directly this is an urgent issue. For this the nodes need to reboot without any jobs running on those nodes.
 
 ## What is the impact?
 
