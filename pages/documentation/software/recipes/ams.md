@@ -27,5 +27,7 @@ module load ams/2022.101
 
 <AMS CODE HERE>
 ```
-
-1.  Look ma, less line noise!
+On some nodes, AMS is not running due to the processor type. Adding the following option the the AMS startup command might help:
+```shell
+-C "amd|haswell|cascadelake|broadwell"
+```
