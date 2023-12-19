@@ -1,6 +1,6 @@
 # COMSOL
 
-### VERSION=62 VERSION_WITH_A_DOT=6.2
+**VERSION=62 VERSION_WITH_A_DOT=6.2**
 
 As a user on your laptop:
 
