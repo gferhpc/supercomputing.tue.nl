@@ -10,6 +10,7 @@ copy the COMSOL<VERSION>_dvd.iso to the login node into /local/COMSOL.
 
 As root on login node (no need for X11), mount the *.iso on /mnt/iso: 
 ```shell
+mkdir /mnt/iso
 mount -o loop /local/COMSOL/COMSOL<VERSION>_dvd.iso /mnt/iso
 ```
 Create a /local/COMSOL/setupconfig.ini for automated install (based on /mnt/iso/setupconfig.ini)
