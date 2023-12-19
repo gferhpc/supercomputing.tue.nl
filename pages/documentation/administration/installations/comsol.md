@@ -1,19 +1,21 @@
 # COMSOL
 
+## VERSION=62 VERSION_WITH_A_DOT=6.2
+
 As a user on your laptop:
 
 From/on the WebSite, Download the COLSOL <VERSION> Windows/Linux DVD ISO.
 
-copy the COMSOL<VERSION>_dvd.iso to the login node into /local/.
+copy the COMSOL<VERSION>_dvd.iso to the login node into /local/COMSOL.
 
-As root on login node (no need X11):
-
-mount the *.iso on /mnt/iso: mount -o loop /local/COMSOL<VERSION>_dvd.iso /mnt/iso
-
-Create a /local/setupconfig.ini for automated install (based on /mnt/iso/setupconfig.ini)
+As root on login node (no need for X11), mount the *.iso on /mnt/iso: 
+```shell
+mount -o loop /local/COMSOL/COMSOL<VERSION>_dvd.iso /mnt/iso
+```
+Create a /local/COMSOL/setupconfig.ini for automated install (based on /mnt/iso/setupconfig.ini)
 
 ```{ .ini }
-installdir = /cm/shared/apps/comsol/6.1/multiphysics
+installdir = /cm/shared/apps/comsol/VERSION_WITH_A_DOT/multiphysics
 installmode = install
 repair = 0
 showgui = 0
@@ -46,7 +48,7 @@ server.windowsauthentication = 0
 
 ```shell
 cd /mnt/iso
-./setup -s /local/setupconfig.ini
+./setup -s /local/COMSOL/setupconfig.ini
 ```
 
 Create a module: `/cm/shared/modulefiles/comsol/<VERSION_WITH_A_DOT>`
