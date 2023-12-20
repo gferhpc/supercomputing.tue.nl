@@ -46,10 +46,6 @@ vi /trinity/local/luna/daemon/templates/templ_dhcpd.cfg
 #### head02:
 
 ```shell
-export IFACE=enp0s8
-firewall-cmd --zone=trusted --change-interface=$IFACE --permanent
-firewall-cmd --reload
-
 dnf -y install bind
 
 cat > /etc/named.conf << EOF
@@ -117,7 +113,7 @@ zone "141.10.in-addr.arpa" IN {
 EOF
 ```
 ```shell
-systemckl enable named --now
+systemctl enable named --now
 ```
 
 
