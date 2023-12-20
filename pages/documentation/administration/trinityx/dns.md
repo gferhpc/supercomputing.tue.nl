@@ -1,5 +1,7 @@
 # Installation
 
+![DNS Logo](dns.png){ align=right heigth="100" }
+
 ## Requirements
 
 A succesfull (Non HA) installation (hpc-head01) of TrinityX using the ansible-playbook.
