@@ -10,7 +10,15 @@ A second server (hpc-head02) with a basic Rocky 8 install
 
 ## Server Configuration
 
-### head01:
+To avoid the external interface from setting /etc/resolv.conf by DHPC:
+
+```shell
+vi /etc/NetworkManager/NetworkManager.conf
+  [main]
+  dns=none
+```
+
+#### head01:
 
 ```shell
 cat > /trinity/local/luna/daemon/templates/templ_dns_zones_conf.cfg << EOF
@@ -35,7 +43,7 @@ vi /trinity/local/luna/daemon/templates/templ_dhcpd.cfg
 
    option domain-name-servers 10.141.255.254, 10.141.255.253;
 ```
-### head02:
+#### head02:
 
 ```shell
 export IFACE=enp0s8
@@ -108,10 +116,8 @@ zone "141.10.in-addr.arpa" IN {
 EOF
 ```
 ```shell
-systemckt enable named --now
+systemckl enable named --now
 ```
-
-
 
 
 
