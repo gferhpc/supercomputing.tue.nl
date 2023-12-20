@@ -56,8 +56,6 @@ A second server (hpc-head02) with a basic Rocky 8 install
 
 ### head01:
 
-The clients do not use DHCP to configure NTP so this does not help:
-
 ```shell
 vi /trinity/local/luna/daemon/templates/templ_dhcpd.cfg
 
