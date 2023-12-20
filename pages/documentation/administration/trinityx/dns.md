@@ -47,7 +47,8 @@ vi /trinity/local/luna/daemon/templates/templ_dhcpd.cfg
 
 ```shell
 export IFACE=enp0s8
-firewall-cmd --zone=trusted --change-interface=$IFACE
+firewall-cmd --zone=trusted --change-interface=$IFACE --permanent
+firewall-cmd --reload
 
 dnf -y install bind
 
