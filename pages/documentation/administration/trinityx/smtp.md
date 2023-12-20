@@ -1,5 +1,7 @@
 # Installation
 
+![Postfix Logo](postfix.png){ align=right width="250" }
+
 ## Requirements
 
 A succesfull (Non HA) installation of TrinityX using the ansible-playbook.
