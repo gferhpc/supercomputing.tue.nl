@@ -44,7 +44,6 @@ Configure internal network interface
     nmcli con mod $IFACE ipv4.address 10.141.255.254/16
     nmcli con mod $IFACE ipv4.method manual
     nmcli con mod $IFACE connection.autoconnect true
-
     nmcli con up $IFACE
     ```
 
@@ -57,8 +56,10 @@ Configure internal network interface
     nmcli con mod $IFACE ipv4.address 10.141.255.253/16
     nmcli con mod $IFACE ipv4.method manual
     nmcli con mod $IFACE connection.autoconnect true
-
     nmcli con up $IFACE
+
+    firewall-cmd --zone=trusted --change-interface=$IFACE --permanent
+    firewall-cmd --reload
     ```
 
 !!! Note
