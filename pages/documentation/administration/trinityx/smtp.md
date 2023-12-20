@@ -1,6 +1,6 @@
 # Installation
 
-![Postfix Logo](postfix.png){ align=right width="250" }
+![Postfix Logo](postfix.png){ align=right heigth="100" }
 
 ## Requirements
 
