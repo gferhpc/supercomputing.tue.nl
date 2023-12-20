@@ -1,4 +1,5 @@
 nav:
   - 1. Installation: installation.md
   - 2. DNS HA : dns.md
+  - 3. SMTP HA: smtp.md
   - ...
