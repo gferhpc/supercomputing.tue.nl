@@ -4,7 +4,7 @@
 
 A succesfull (Non HA) installation (hpc-head01) of TrinityX using the ansible-playbook.
 
-A second server (hpc-head02) with a basic Rocky 8 install 
+A second server (hpc-head02) with a basic Rocky 8 install and server Setup done [[installation.md]]
 
 ## Server Configuration
 
@@ -13,6 +13,7 @@ dnf -y install keepalived
 ```
 
 ```shell
+
 firewall-cmd --add-rich-rule='rule protocol value="vrrp" accept' --zone=public --permanent
 firewall-cmd --reload
 ```
