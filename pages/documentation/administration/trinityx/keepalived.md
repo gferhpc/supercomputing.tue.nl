@@ -72,7 +72,6 @@ firewall-cmd --reload
         }
     }
     vrrp_instance VI_2 {
-
         state BACKUP
         interface ens3f0np0
         virtual_router_id 51
