@@ -41,3 +41,22 @@ Please refer to the [current documentation]() for all available features and on 
     ```
 
 ## Known issues
+
+## Maintenace Plan
+
+* Replace Physical Head node(s)
+* Replace Bright Clustermanger with TrinityX
+* Update OS
+* Update Firmware
+
+### Replace Physical Headnode(s)
+
+Current Head Nodes:
+- hpc-primary (131.155.2.51 - 10.141.255.254)
+- hpc-secondary (131.155.2.52 - 10.141.255.253) 
+- VIP external hpc-cluster.tue.nl (131.155.2.50) 
+- VIP internal master.cm.cluster (10.141.255.252)
+
+New Head Nodes: 
+- hpc-head01 (131.155.7.102)
+- hpc-head02 (131.155.7.103)
