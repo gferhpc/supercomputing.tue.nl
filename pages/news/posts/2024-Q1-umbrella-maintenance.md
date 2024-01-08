@@ -46,17 +46,24 @@ Please refer to the [current documentation]() for all available features and on 
 
 * Replace Physical Head node(s)
 * Replace Bright Clustermanger with TrinityX
-* Update OS
+* Update OS login/compute/gpu nodes
+* Update EasyBuild Applications/toolchains
 * Update Firmware
 
 ### Replace Physical Headnode(s)
 
 Current Head Nodes:
-- hpc-primary (131.155.2.51 - 10.141.255.254)
-- hpc-secondary (131.155.2.52 - 10.141.255.253) 
+- hpc-primary.icts.tue.nl (131.155.2.51 - 10.141.255.254)
+- hpc-secondary.icts.tue.nl (131.155.2.52 - 10.141.255.253) 
 - VIP external hpc-cluster.tue.nl (131.155.2.50) 
 - VIP internal master.cm.cluster (10.141.255.252)
 
 New Head Nodes: 
-- hpc-head01 (131.155.7.102)
-- hpc-head02 (131.155.7.103)
+- hpc-head01.icts.tue.nl (131.155.7.102 - 10.141.100.100)
+- hpc-head02.icts.tue.nl (131.155.7.103 - 10.141.100.101)
+- VIP external hpc-vip.icts.tue.nl (131.155.7.104)
+
+### Replace Bright Clustermanger with TrinityX
+
+* Transfer Groups/Users LDAP
+* Transfer SLURM config 
