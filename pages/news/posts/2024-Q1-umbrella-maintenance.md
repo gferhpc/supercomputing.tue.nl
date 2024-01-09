@@ -42,6 +42,12 @@ Please refer to the [current documentation]() for all available features and on 
 
 ## Known issues
 
+## Pre Maintenance
+
+* Transfer and Test SLURM config
+* Transfer and Test Users (LDAP)
+* Create Stable TrinityX setup
+
 ## Maintenace Plan
 
 * Replace Physical Head node(s)
