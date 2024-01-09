@@ -45,11 +45,15 @@ Please refer to the [current documentation]() for all available features and on 
 ## Pre Maintenance
 
 * Transfer and Test SLURM config
-* Transfer and Test Users (LDAP)
+* Transfer and Test Users (LDAP); Test UID/GID mapping
 * Create Stable TrinityX setup
+* Seperate storage node from bright; test non-PXE boot & SSH login
+* Login image for TrinityX, cgroup/ulimit per user (+ OOD)
+* (re-)write user creation script 
 
 ## Maintenace Plan
 
+* Configure VLAN
 * Replace Physical Head node(s)
 * Replace Bright Clustermanger with TrinityX
 * Update OS login/compute/gpu nodes
