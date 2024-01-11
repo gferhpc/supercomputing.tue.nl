@@ -16,8 +16,8 @@ Create a group GROUP-NAME with an defined group-id GROUP-ID
 obol group add  <GROUP-NAME> --gid <GROUP-ID>
 ```
 
-Create a user USER-NAME with a define user-id USER-ID primary group-id GROUP-ID (number) and group membership of GROUP-A-NAME (string) and GROUP-B-NAME (string) and a home directory on HOMEDIR-PATH
+Create a user USER-NAME with a define user-id USER-ID primary group-id GROUP-ID (number) and group membership of GROUP-A-NAME (string) and GROUP-B-NAME (string), a home directory on HOMEDIR-PATH and an email <EMAIL>
 
 ```shell
-obol user add <USER-NAME> -uid <USER-ID> --gid <GROUP-ID> --groups  <GROUP-A-NAME>,<GROUP-B-NAME> --home <HOMEDIR-PATH>
+obol user add <USER-NAME> -uid <USER-ID> --gid <GROUP-ID> --groups  <GROUP-A-NAME>,<GROUP-B-NAME> --home <HOMEDIR-PATH> --mail <EMAIL>
 ```
