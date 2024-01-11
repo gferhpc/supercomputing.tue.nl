@@ -59,6 +59,7 @@ Please refer to the [current documentation]() for all available features and on 
 * Update OS login/compute/gpu nodes
 * Update EasyBuild Applications/toolchains
 * Update Firmware
+* Fix mgmt on arch-switch001
 
 ### Replace Physical Headnode(s)
 
