@@ -199,4 +199,17 @@ luna group change -qpost post.txt compute
     umount /sysroot/proc
     ```
 
+Authentication via AD
+```shell
+cat >> /etc/sssd/sssd.conf << EOF
+
+auth_provider = krb5
+krb5_server = campus.tue.nl
+krb5_kpasswd = campus.tue.nl
+krb5_realm = CAMPUS.TUE.NL
+cache_credentials = True
+EOF
+systemctl restart sssd
+```
+
 *[NIC]: Network Interface Controller
