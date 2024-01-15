@@ -140,6 +140,7 @@ http://umbrella-cluster.hpc.tue.nl:3001  Sensu
 
 ```shell
 ansible-playbook compute-redhat.yml
+luna osimage pack compute
 ```
 
 ```shell
