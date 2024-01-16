@@ -20,7 +20,7 @@ sinfo
 
 A batch job script is a shell script that includes SLURM directives within commented lines (prefixed with `#SBATCH`) followed by the commands you want to execute.
 
-Here's an example job script:
+Here's an example job script for a CPU only node:
 
 ```bash
 #!/bin/bash
@@ -40,6 +40,27 @@ Here's an example job script:
 # Execute the script or command
 python my_script.py
 ```
+Here's an example job script for a GPU node:
+
+```bash
+#!/bin/bash
+
+#SBATCH --job-name=my_job
+#SBATCH --output=my_job_output_%j.txt
+#SBATCH --partition=tue.gpu.q
+#SBATCH --time=16:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=1
+#SBATCH --mem-per-cpu=2G
+#SBATCH --gpus=1
+
+# Load modules or software if needed
+# module load python3
+
+# Execute the script or command
+python my_script.py
+```
 
 Here's what some of the key `sbatch` options mean:
 
@@ -51,6 +72,8 @@ Here's what some of the key `sbatch` options mean:
 - `--ntasks-per-node`: The number of tasks to launch on each node.
 - `--cpus-per-task`: The number of CPU cores per task.
 - `--mem-per-cpu`: The memory required per CPU core.
+- `--gpus`: The number of GPU to use.
+
 
 ## Submitting a Job with `sbatch`
 
