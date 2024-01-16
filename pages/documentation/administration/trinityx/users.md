@@ -21,3 +21,9 @@ Create a user USER-NAME with a define user-id USER-ID primary group-id GROUP-ID 
 ```shell
 obol user add <USER-NAME> -uid <USER-ID> --gid <GROUP-ID> --groups  <GROUP-A-NAME>,<GROUP-B-NAME> --home <HOMEDIR-PATH> --mail <EMAIL>
 ```
+
+Add a user USER-NAME to the group GROUP-NAME
+
+```shell
+obol group addusers <GROUP_NAME> <USER-NAME>
+```
