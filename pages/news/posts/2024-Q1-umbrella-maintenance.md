@@ -11,47 +11,92 @@ TBD.
 
 <!-- more -->
 
-## Changelog
-
-### SLURM node features
-
-We made the node selection based on node features more flexible and consistent. Old feature flags are removed as a result of this change.
-Please refer to the [current documentation]() for all available features and on how to use them.
-
-??? example "draft documentation"
-
-    ```
-    # -- Nodes --------------------------------------------------------------------
-    
-    # >> Nodes features
-    #
-    # -- CPU features
-    #   * CPU_VDR: CPU vendor     : INTEL|AMD
-    #   * CPU_GEN: CPU generation : 1|2|3|4|W|E|X|E3|E5|... (Intel)
-                                  : 1|2|3|4|... (AMD)
-    #   * CPU_SKU: CPU model      : E5-2640v2|7343|9654P|Gold 6240|X5650|...
-    #   * CPU_FRQ: CPU frequency  : 2.60|...
-    #
-    # -- GPU features
-    #   * GPU_GEN: GPU generation : KEPLER|MAXWELL|PASCAL|VOLTA|AMPERE|...
-    #   * GPU_BRD: GPU brand      : GEFORE|TESLA
-    #   * GPU_SKU: GPU model      : RTX_{2080TI,6000}|TITAN_{X,Xp}|TESLA_{K80,P100,V100}|A{10,30,40,100}
-    #   * GPU_MEM: GPU memory     : 8GB|...
-    #   * GPU_MIG: GPU mig profile: 1g.6gb|...
-    ```
-
-## Known issues
+# Changelog
 
 ## Pre Maintenance
 
-* Transfer and Test SLURM config
-* Transfer and Test Users (LDAP); Test UID/GID mapping
-* Create Stable TrinityX setup
-* Seperate storage node from bright; test non-PXE boot & SSH login
-* Login image for TrinityX, cgroup/ulimit per user (+ OOD)
-* (re-)write user creation script 
+### TrinityX
 
-## Maintenace Plan
+* [x] Prepare transfer users/groups LDAP
+* [ ] Transfer and Test Users (LDAP); Test UID/GID mapping
+
+* [ ] Write fstab file
+
+* [ ] test if Bright-storage nodes work without bright CM present
+* [ ] tue-login001: install as storage node with bright
+* [ ] connect node to test cluster
+* [ ] test non-PXE boot & SSH login
+
+* [ ] Login image for TrinityX
+* [ ] tue-login001: connect to test cluster for testing
+* [ ] cgroup/ulimit per user
+* [ ] OOD
+
+* [ ] GPU image for TrinityX
+* [ ] connect id-gpu for testing to test cluster
+
+* [ ] test job submission as mortal user (submit, wait, see results)
+* [ ] test OOD GUI session
+
+* [ ] mail
+* [ ] configure postfix relay on heads
+* [ ] configure postfix smarthost on compute images
+* [ ] configure postfix to read LDAP for aliases
+
+* [ ] (re-)write user creation script 
+
+* [ ] DNS
+* [ ] TrinityX: configure 2nd DNS server
+* [ ] head2: configure as follower of head1
+
+* [ ] DHCP
+* [ ] implement active-active dhcpd
+
+* [ ] NTP
+* [ ] ntpd on both head nodes
+* [ ] ntp config in compute images
+
+* [ ] Munge
+* [ ] test
+
+* [ ] Slurm controller
+* [ ] test: who adds nodes to slurm config?  TrinityX or no-one?  Can we make it no-one?
+* [ ] can we write slurm config using own templates and Luna database?
+* [ ] write the actual config
+
+* [ ] Slurm DBD
+* [x] for now we worry not about HA; we try to make the underlaying DB HA
+
+* [x] MariaDB HA
+* [x] We postpone this to next maintenance
+
+* [ ] software installation
+* [ ] keep /cm/shared only for old software
+* [ ] make path plan for installations in /sw
+* [ ] put new installations in /sw on tue-storage001
+
+* [ ] configure regular backups of databases etc.
+* [ ] MariaDB
+* [ ] /trinity/shared
+* [x] slurm config
+* [x] modulefiles
+* [x] installed apps
+* [ ] slurm state files ??? (necessary?)
+* [ ] compute images
+* [ ] head nodes /etc
+
+### Rest
+
+* Make network plan: which switch where
+* Make VLAN/network config plan
+
+* [ ] connect head1/2 to mgmt VLAN
+* [ ] put mgmt switch in/close to X05
+* [ ] connect X05/06 mgmt to switch in X05
+	(does network want to get rid of FEX in X07?)
+* [ ] put mgmt switch in W11
+
+## Maintenance Plan
 
 * Configure VLAN
 * Replace Physical Head node(s)
@@ -60,6 +105,17 @@ Please refer to the [current documentation]() for all available features and on 
 * Update EasyBuild Applications/toolchains
 * Update Firmware
 * Fix mgmt on arch-switch001
+* [ ] upgrade tue-storage001 to 10 Gbit
+
+## Post-maintenance
+
+* Remove TUe-side connections of storage nodes
+* Deregister storage node MAC addresses
+* Deregister storage nodes from Zabbix
+
+## Next maintenance
+
+* MariaDB HA
 
 ### Replace Physical Headnode(s)
 
@@ -73,8 +129,3 @@ New Head Nodes:
 - hpc-head01.icts.tue.nl (131.155.7.102 - 10.141.100.100)
 - hpc-head02.icts.tue.nl (131.155.7.103 - 10.141.100.101)
 - VIP external hpc-vip.icts.tue.nl (131.155.7.104)
-
-### Replace Bright Clustermanger with TrinityX
-
-* Transfer Groups/Users LDAP
-* Transfer SLURM config 
