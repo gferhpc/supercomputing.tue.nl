@@ -32,6 +32,37 @@ TBD.
 3. We kunnen gewoon in blijven loggen met het welbekende root wachtwoord, maar zou willen voorstellen om hiervoor een nieuwe private/public key te maken op de nieuwe headnode(s) en deze alvast klaar te zetten op de storage nodes. Zodat we hier zorgeloos op kunnen inloggen (wat ook nodig zal zijn om de quotas non-interactief in te kunnen stellen voor gebruikers).
 4. Zodra de node ontkoppeld is van Bright (en dus standalone kan booten), zullen er ook geen NFS exports aanwezig zijn. Deze zullen we zelf opnieuw moeten configureren. 
 Kortom, het is mogelijk om de storage nodes los te koppelen van Bright en te kunnen gebruiken binnen TrinityX.
+
+```shell
++ for node in '`cat StorageNodes.txt`'
++ ssh arch-storage001 exportfs -v
+/tank/home      10.141.0.0/16(async,wdelay,hide,no_subtree_check,sec=sys,rw,secure,no_root_squash,no_all_squash)
++ for node in '`cat StorageNodes.txt`'
++ ssh bme-storage001 exportfs -v
+/tank/home      10.141.0.0/16(async,wdelay,hide,no_subtree_check,sec=sys,rw,secure,no_root_squash,no_all_squash)
+/molml/home     10.141.0.0/16(async,wdelay,hide,no_subtree_check,sec=sys,rw,secure,no_root_squash,no_all_squash)
++ for node in '`cat StorageNodes.txt`'
++ ssh chem-storage001 exportfs -v
+/tank/scratch   10.141.0.0/16(async,wdelay,hide,no_subtree_check,sec=sys,rw,secure,no_root_squash,no_all_squash)
++ for node in '`cat StorageNodes.txt`'
++ ssh chem-storage002 exportfs -v
+/tank/home      10.141.0.0/16(async,wdelay,hide,no_subtree_check,sec=sys,rw,secure,no_root_squash,no_all_squash)
++ for node in '`cat StorageNodes.txt`'
++ ssh mcs-storage001 exportfs -v
+/tank/home      10.141.0.0/16(async,wdelay,hide,no_subtree_check,sec=sys,rw,secure,no_root_squash,no_all_squash)
++ for node in '`cat StorageNodes.txt`'
++ ssh mech-storage001 exportfs -v
+/tank/home      10.141.0.0/16(async,wdelay,hide,no_subtree_check,sec=sys,rw,secure,no_root_squash,no_all_squash)
++ for node in '`cat StorageNodes.txt`'
++ ssh phys-storage001 exportfs -v
+/tank/cmshared  10.141.0.0/16(async,wdelay,hide,no_subtree_check,sec=sys,rw,secure,no_root_squash,no_all_squash)
+/tank/home      10.141.0.0/16(async,wdelay,hide,no_subtree_check,sec=sys,rw,secure,no_root_squash,no_all_squash)
++ for node in '`cat StorageNodes.txt`'
++ ssh tue-storage001 exportfs -v
+/tank/home      10.141.0.0/16(async,wdelay,hide,no_subtree_check,sec=sys,rw,secure,no_root_squash,no_all_squash)
+/tank/cmshared  10.141.0.0/16(async,wdelay,hide,no_subtree_check,sec=sys,rw,secure,no_root_squash,no_all_squash)
+++ printf '\033]0;%s@%s:%s\007' root hpc-primary '~/ZFS'
+```
 ---
 * [ ] **Login image for TrinityX**
 * [ ] tue-login001: connect to test cluster for testing
