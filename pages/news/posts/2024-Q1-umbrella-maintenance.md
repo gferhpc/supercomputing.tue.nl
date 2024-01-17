@@ -34,34 +34,32 @@ TBD.
 Kortom, het is mogelijk om de storage nodes los te koppelen van Bright en te kunnen gebruiken binnen TrinityX.
 
 ```shell
-+ for node in '`cat StorageNodes.txt`'
 + ssh arch-storage001 exportfs -v
 /tank/home      10.141.0.0/16(async,wdelay,hide,no_subtree_check,sec=sys,rw,secure,no_root_squash,no_all_squash)
-+ for node in '`cat StorageNodes.txt`'
+
 + ssh bme-storage001 exportfs -v
 /tank/home      10.141.0.0/16(async,wdelay,hide,no_subtree_check,sec=sys,rw,secure,no_root_squash,no_all_squash)
 /molml/home     10.141.0.0/16(async,wdelay,hide,no_subtree_check,sec=sys,rw,secure,no_root_squash,no_all_squash)
-+ for node in '`cat StorageNodes.txt`'
+
 + ssh chem-storage001 exportfs -v
 /tank/scratch   10.141.0.0/16(async,wdelay,hide,no_subtree_check,sec=sys,rw,secure,no_root_squash,no_all_squash)
-+ for node in '`cat StorageNodes.txt`'
+
 + ssh chem-storage002 exportfs -v
 /tank/home      10.141.0.0/16(async,wdelay,hide,no_subtree_check,sec=sys,rw,secure,no_root_squash,no_all_squash)
-+ for node in '`cat StorageNodes.txt`'
+
 + ssh mcs-storage001 exportfs -v
 /tank/home      10.141.0.0/16(async,wdelay,hide,no_subtree_check,sec=sys,rw,secure,no_root_squash,no_all_squash)
-+ for node in '`cat StorageNodes.txt`'
+
 + ssh mech-storage001 exportfs -v
 /tank/home      10.141.0.0/16(async,wdelay,hide,no_subtree_check,sec=sys,rw,secure,no_root_squash,no_all_squash)
-+ for node in '`cat StorageNodes.txt`'
+
 + ssh phys-storage001 exportfs -v
 /tank/cmshared  10.141.0.0/16(async,wdelay,hide,no_subtree_check,sec=sys,rw,secure,no_root_squash,no_all_squash)
 /tank/home      10.141.0.0/16(async,wdelay,hide,no_subtree_check,sec=sys,rw,secure,no_root_squash,no_all_squash)
-+ for node in '`cat StorageNodes.txt`'
+
 + ssh tue-storage001 exportfs -v
 /tank/home      10.141.0.0/16(async,wdelay,hide,no_subtree_check,sec=sys,rw,secure,no_root_squash,no_all_squash)
 /tank/cmshared  10.141.0.0/16(async,wdelay,hide,no_subtree_check,sec=sys,rw,secure,no_root_squash,no_all_squash)
-++ printf '\033]0;%s@%s:%s\007' root hpc-primary '~/ZFS'
 ```
 ---
 * [ ] **Login image for TrinityX**
