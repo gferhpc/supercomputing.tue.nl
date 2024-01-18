@@ -31,7 +31,12 @@
 
 ## Server Configuration
 
-As root@hpc-head0X
+As root@hpc-head0X 
+
+**TIP**: use screen to mitigate connection loss during installation
+```shell
+dnf -y install screen
+```
 
 ### Network Configuration
 
