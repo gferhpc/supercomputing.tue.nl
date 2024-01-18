@@ -16,11 +16,11 @@ A second server (hpc-head02) with a basic Rocky 8 install
     timedatectl set-timezone Europe/Amsterdam
 
     cat > /etc/chrony.conf << EOF
-    allow 10.141.0.0/16
+    allow 10.150.0.0/16
     local stratum 10 
     server ntp1.tue.nl
     server ntp2.tue.nl
-    server 10.141.255.253
+    server 10.150.255.253
     driftfile /var/lib/chrony/drift
     makestep 1.0 3
     rtcsync
@@ -38,11 +38,11 @@ A second server (hpc-head02) with a basic Rocky 8 install
     timedatectl set-timezone Europe/Amsterdam
 
     cat > /etc/chrony.conf << EOF
-    allow 10.141.0.0/16
+    allow 10.150.0.0/16
     local stratum 10 
     server ntp1.tue.nl
     server ntp2.tue.nl
-    server 10.141.255.254
+    server 10.150.255.254
     driftfile /var/lib/chrony/drift
     makestep 1.0 3
     rtcsync
