@@ -69,6 +69,18 @@ Configure internal network interface
     Replace `enp0s8` with the name of your internal NIC.
 
 
+### Update the OS
+
+```shell
+dnf -y install git
+```
+
+### Reboot System
+
+```shell
+reboot
+```
+
 ## TrinityX Installation
 
 ### Prepare environment
