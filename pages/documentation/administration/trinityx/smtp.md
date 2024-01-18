@@ -15,7 +15,7 @@ A second server (hpc-head02) with a basic Rocky 8 install
 Run on both hosts unless otherwise indicated.
 
 ```shell
-dnf -y install postfix
+dnf -y install postfix libsasl cyrus-sasl cyrus-sasl-lib cyrus-sasl-plain
 ```
 
 === "hpc-head01"
@@ -44,6 +44,9 @@ smtp.tue.nl     USERNAME:PASSWORD
 chmod 640 /etc/postfix/sasl_passwd
 postmap /etc/postfix/sasl_passwd
 postconf -e 'relayhost=[smtp.tue.nl]:587'
+postconf -e 'sender_canonical_maps=static:svchpcsupport@tue.nl'
+postconf -e 'smtp_sasl_auth_enable=yes'
+postconf -e 'smtp_use_tls=yes'
 postconf -e 'smtp_tls_security_level=encrypt'
 postconf -e 'smtp_tls_mandatory_ciphers=high'
 postconf -e 'smtp_sasl_mechanism_filter=!gssapi, !external, static:all'
