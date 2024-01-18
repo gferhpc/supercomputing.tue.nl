@@ -71,7 +71,7 @@ Configure internal network interface
 
 !!! Note
 
-    Replace `enp0s8` with the name of your internal NIC.
+    Make sure to use the correct name of your internal NIC.
 
 
 ### Update the OS
@@ -149,6 +149,10 @@ ansible-playbook controller.yml
 
 ```shell
 luna cluster change -n umbrella
+```
+
+```shell
+luna network change -N 172.16.108.0/23 ipmi
 ```
 
 ```shell
