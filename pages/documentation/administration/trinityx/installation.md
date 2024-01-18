@@ -40,7 +40,7 @@ Configure internal network interface
 === "hpc-head01"
 
     ```shell
-    export IFACE=enp0s8    
+    export IFACE=ens3f0np0   
 
     nmcli connection add type ethernet con-name $IFACE
     nmcli con mod $IFACE ipv4.address 10.150.255.254/16
@@ -97,8 +97,8 @@ Review and edit the contents of the `all.yml` file accordingly, notable settings
 | ha                           | `false` (default)            | High Availability; _MUST remain `false` at time of writing_ |
 | trix_external_fqdn           | `umbrella-cluster.hpc.tue.nl`| FQDN of the external interface of the cluster               |
 | trix_dns_forwarders          | `[131.155.2.3, 131.155.3.3]` | List of DNS forwarders to use for the cluster.              |
-| firewalld_public_interfaces  | `[enp0s3]`                   | List of public interfaces to use for the cluster.           |
-| firewalld_trusted_interfaces | `[enp0s8]`                   | List of trusted interfaces to use for the cluster.          |
+| firewalld_public_interfaces  | `[eno1]`                   | List of public interfaces to use for the cluster.           |
+| firewalld_trusted_interfaces | `[ens3f0np0]`                   | List of trusted interfaces to use for the cluster.          |
 
 ```shell
 cp site/hosts.example site/hosts
