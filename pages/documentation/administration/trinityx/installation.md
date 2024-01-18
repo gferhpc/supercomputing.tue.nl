@@ -4,6 +4,7 @@
 
 - Node with at least 2 NIC interfaces (public & internal network)
 - [Rocky Linux](https://rockylinux.org){:target=_blank} 8.x
+- iDrac access hpc-head01 : ***172.16.108.55*** hpc-head02 : ***172.16.108.56***
 
     ??? example "Configuration"
 
