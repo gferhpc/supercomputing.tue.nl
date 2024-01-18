@@ -43,7 +43,7 @@ Configure internal network interface
     export IFACE=enp0s8    
 
     nmcli connection add type ethernet con-name $IFACE
-    nmcli con mod $IFACE ipv4.address 10.141.255.254/16
+    nmcli con mod $IFACE ipv4.address 10.150.255.254/16
     nmcli con mod $IFACE ipv4.method manual
     nmcli con mod $IFACE connection.autoconnect true
     nmcli con up $IFACE
@@ -55,7 +55,7 @@ Configure internal network interface
     export IFACE=enp0s8    
 
     nmcli connection add type ethernet con-name $IFACE
-    nmcli con mod $IFACE ipv4.address 10.141.255.253/16
+    nmcli con mod $IFACE ipv4.address 10.150.255.253/16
     nmcli con mod $IFACE ipv4.method manual
     nmcli con mod $IFACE connection.autoconnect true
     nmcli con up $IFACE
@@ -108,8 +108,8 @@ Review and edit the contents of the `hosts` file accordingly.
 
 ```ini
 [controllers]
-hpc-head01 ansible_host=10.141.255.254 ansible_connection=local
-#hpc-head02 ansible_host=10.141.255.253
+hpc-head01 ansible_host=10.150.255.254 ansible_connection=local
+#hpc-head02 ansible_host=10.150.255.253
 ```
 
 ### Installation
