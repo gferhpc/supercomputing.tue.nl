@@ -112,9 +112,9 @@ Review and edit the contents of the `all.yml` file accordingly, notable settings
 | administrator_email          | `hpc-umbrella@tue.nl`        | Email address of the administrator                          |
 | project_id                   | `umbrella`                   | Project ID                                                  |
 | ha                           | `false` (default)            | High Availability; _MUST remain `false` at time of writing_ |
-| trix_ctrl1_ip                | `10.150.255.254 `            | IP controller node
-| trix_ctrl1_bmcip             | `172.16.108.55`              | IP of iDRAC |
-| trix_ctrl1_hostname          | `hpc-head01`                 | Hostname    |
+| trix_ctrl1_ip                | `10.150.255.254 `            | IP controller node in Cluster Network                       |
+| trix_ctrl1_bmcip             | `172.16.108.??`              | IP controller node in BMC Network                           |
+| trix_ctrl1_hostname          | `hpc-head01`                 | Hostname                                                    |
 | trix_cluster_net.            | `10.150.0.0`                 | Cluster (Private) Network | 
 | trix_cluster_netprefix.      | `16`                         | CIDR of Cluster Network |
 | trix_cluster_dhcp_start      | `10.150.128.0`               | Start of DHCP range for nodes |
