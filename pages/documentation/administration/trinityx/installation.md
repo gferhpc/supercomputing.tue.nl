@@ -57,7 +57,7 @@ Configure internal network interface
 === "hpc-head02"
 
     ```shell
-    export IFACE=enp0s8    
+    export IFACE=ens3f0np0    
 
     nmcli connection add type ethernet con-name $IFACE
     nmcli con mod $IFACE ipv4.address 10.150.255.253/16
