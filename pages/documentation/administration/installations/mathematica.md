@@ -4,14 +4,14 @@ VERSION=13.3
 
 As a user on your laptop:
 
-From/on the WebSite, Download the Mathematica_<VERSION>.X_LINUX.sh
+From/on the WebSite, Download the Mathematica_<VERSION>.X_LINUX.sh (With online Documentation)
 
-copy the Mathematica_<VERSION>.X_LINUX.sh to the login node into /local
+copy the Mathematica_<VERSION>.X_LINUX.sh to the login node into /local/Mathematica
 
 as root on the login node:
 
 ```shell
-cd /local
+cd /local/Mathematica
 bash ./Mathematica_<VERSION>.X_LINUX.sh
 ```
 
