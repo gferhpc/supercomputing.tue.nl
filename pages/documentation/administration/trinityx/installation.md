@@ -115,10 +115,14 @@ Review and edit the contents of the `all.yml` file accordingly, notable settings
 | trix_ctrl1_ip                | `10.150.255.254 `            | IP controller node
 | trix_ctrl1_bmcip             | `172.16.108.55`              | IP of iDRAC |
 | trix_ctrl1_hostname          | `hpc-head01`                 | Hostname    |
+| trix_cluster_net.            | `10.150.0.0`                 | Cluster (Private) Network | 
+| trix_cluster_netprefix.      | `16`                         | CIDR of Cluster Network |
+| trix_cluster_dhcp_start      | `10.150.128.0`               | Start of DHCP range for nodes |
+| trix_cluster_dhcp_end        | `10.150.140.0`               | End of DHCP range for nodes |
 | trix_external_fqdn           | `umbrella-cluster.hpc.tue.nl`| FQDN of the external interface of the cluster               |
 | trix_dns_forwarders          | `[131.155.2.3, 131.155.3.3]` | List of DNS forwarders to use for the cluster.              |
-| firewalld_public_interfaces  | `[eno1]`                   | List of public interfaces to use for the cluster.           |
-| firewalld_trusted_interfaces | `[ens3f0np0]`                   | List of trusted interfaces to use for the cluster.          |
+| firewalld_public_interfaces  | `[eno1]`                     | List of public interfaces to use for the cluster.           |
+| firewalld_trusted_interfaces | `[ens3f0np0]`                | List of trusted interfaces to use for the cluster.          |
 
 ```shell
 cp site/hosts.example site/hosts
