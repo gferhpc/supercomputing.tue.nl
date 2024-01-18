@@ -43,6 +43,7 @@ smtp.tue.nl     USERNAME:PASSWORD
 ```shell
 chmod 640 /etc/postfix/sasl_passwd
 postmap /etc/postfix/sasl_passwd
+postconf -e 'mynetworks=127.0.0.1/32 [::1]/128 10.150.0.0/16'
 postconf -e 'relayhost=[smtp.tue.nl]:587'
 postconf -e 'sender_canonical_maps=static:svchpcsupport@tue.nl'
 postconf -e 'smtp_sasl_auth_enable=yes'
