@@ -30,7 +30,8 @@ TBD.
 1. We moeten alle nodes eerst een keer rebooten met bright om de boot record te kunnen installeren. Deze stond initieel uit (zojuist aangepast). Als dit gedaan is, is de bootrecord correct aanwezig en kan de node zonder PXE booten. IE eerste stap van het onderhoudsmoment
 2. Er zal geen (werkende) netwerkconfiguratie zijn, dus we moeten het IP adres statisch instellen in /etc/sysconfig/network-scripts/ifcfg-BOOTIF; specifiek moet je de DEVICE= goedzetten (eno1 in mijn test setup) gevolgd door systemctl restart network (or reboot van het systeem)
 3. We kunnen gewoon in blijven loggen met het welbekende root wachtwoord, maar zou willen voorstellen om hiervoor een nieuwe private/public key te maken op de nieuwe headnode(s) en deze alvast klaar te zetten op de storage nodes. Zodat we hier zorgeloos op kunnen inloggen (wat ook nodig zal zijn om de quotas non-interactief in te kunnen stellen voor gebruikers).
-4. Zodra de node ontkoppeld is van Bright (en dus standalone kan booten), zullen er ook geen NFS exports aanwezig zijn. Deze zullen we zelf opnieuw moeten configureren. 
+4. PXE boot uitschakelen! Anders komt de server niet online en blijft deze "hangen" op de Luna boot-loader.
+5. Zodra de node ontkoppeld is van Bright (en dus standalone kan booten), zullen er ook geen NFS exports aanwezig zijn. Deze zullen we zelf opnieuw moeten configureren. 
 Kortom, het is mogelijk om de storage nodes los te koppelen van Bright en te kunnen gebruiken binnen TrinityX.
 
 ```shell
