@@ -10,7 +10,7 @@ This guide will cover the essentials of using SLURM, focusing on the `sbatch` co
 
 A partition is a logical grouping of nodes, kind of like a queue, that specifies which nodes and job configurations are available to the jobs associated with it. Your cluster administrator will configure partitions according to the cluster's policies and available resources. You should choose a partition based on your job requirements and the partition specifications.
 
-List available partitions:
+List available partitions (Also known as Queues):
 
 ```bash
 sinfo
@@ -66,7 +66,7 @@ Here's what some of the key `sbatch` options mean:
 
 - `--job-name`: Set the name of the job.
 - `--output`: Designate the file to which SLURM will write the standard output.
-- `--partition`: Choose the partition on which the job should run.
+- `--partition`: Choose the partition on which the job should run (check with 'sinfo').
 - `--time`: Specify the wall clock limit for the job.
 - `--nodes`: The number of nodes on which to run.
 - `--ntasks-per-node`: The number of tasks to launch on each node.
