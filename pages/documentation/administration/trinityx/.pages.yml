@@ -1,8 +1,9 @@
 nav:
   - 1. Installation: installation.md
-  - 2. VIP HA: keepalived.md
-  - 2. NTP HA: ntp.md
-  - 3. DNS HA : dns.md
-  - 4. SMTP : smtp.md
-  - 5. Users : users.md
+  - 2. Node Provisioning: provisioning.md
+  - 3. VIP HA: keepalived.md
+  - 4. NTP HA: ntp.md
+  - 5. DNS HA : dns.md
+  - 6. SMTP : smtp.md
+  - 7. Users : users.md
   - ...
