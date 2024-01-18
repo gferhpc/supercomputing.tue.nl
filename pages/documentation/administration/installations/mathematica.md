@@ -1,6 +1,6 @@
 # Mathematica
 
-VERSION=13.3
+VERSION=14.0
 
 As a user on your laptop:
 
