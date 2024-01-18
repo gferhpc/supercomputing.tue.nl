@@ -88,8 +88,8 @@ Kortom, het is mogelijk om de storage nodes los te koppelen van Bright en te kun
 * [ ] **DHCP**
 * [ ] implement active-active dhcpd
 ---
-* [ ] **NTP**
-* [ ] ntpd on both head nodes
+* [/] **NTP**
+* [x] ntpd on both head nodes
 * [ ] ntp config in compute images
 ---
 * [ ] **Munge**
