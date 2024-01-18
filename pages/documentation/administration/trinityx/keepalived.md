@@ -21,7 +21,7 @@ firewall-cmd --reload
 === "hpc-head01"
 
     ```shell
-    cat > etc/keepalived/keepalived.conf << EOF
+    cat > /etc/keepalived/keepalived.conf << EOF
     vrrp_instance VI_1 {
         state MASTER
         interface eno1
@@ -47,7 +47,7 @@ firewall-cmd --reload
               auth_pass <PASSWD02>
         }
         virtual_ipaddress {
-              10.141.255.252/16
+              10.150.255.252/16
         }
     }
     EOF
@@ -56,7 +56,7 @@ firewall-cmd --reload
 === "hpc-head02"
 
     ```shell
-    cat > etc/keepalived/keepalived.conf << EOF
+    cat > /etc/keepalived/keepalived.conf << EOF
     vrrp_instance VI_1 {
         state BACKUP
         interface eno1
@@ -82,11 +82,11 @@ firewall-cmd --reload
               auth_pass <PASSWD02>
         }
         virtual_ipaddress {
-              10.141.255.252/16
+              10.150.255.252/16
         }
     }
     EOF
     ```
 ```shell
-systemctl enable keepalived now
+systemctl enable keepalived --now
 ```
