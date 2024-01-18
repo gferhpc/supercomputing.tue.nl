@@ -74,8 +74,8 @@ Kortom, het is mogelijk om de storage nodes los te koppelen van Bright en te kun
 * [ ] **test job submission as mortal user (submit, wait, see results)**
 * [ ] test OOD GUI session
 ---
-* [ ] **mail**
-* [ ] configure postfix relay on heads
+* [/] **mail**
+* [x] configure postfix relay on heads
 * [ ] configure postfix smarthost on compute images
 * [ ] configure postfix to read LDAP for aliases
 ---
