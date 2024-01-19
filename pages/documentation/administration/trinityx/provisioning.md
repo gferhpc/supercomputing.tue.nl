@@ -23,3 +23,13 @@ luna node clone tue-computeb001 tue-computeb002
 luna node changeinterface -M 14:23:F2:DD:B2:D0 tue-computeb001 BOOTIF
 luna node changeinterface -I 172.16.108.57 tue-computeb001 BMC
 ```
+
+### GPU Nodes
+```shell
+
+```
+
+### GPU packages
+```
+dnf -y install kmod-nvidia
+```
