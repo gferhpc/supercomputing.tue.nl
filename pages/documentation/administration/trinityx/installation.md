@@ -183,6 +183,18 @@ luna osimage pack compute
 ```
 
 ```shell
+luna group change -qpre pre.txt compute
+```
+??? example "pre.txt"
+
+    ```shell
+    ipmitool user set name 3 trinityx
+    ipmitool user set password 3 PASSWD
+    ipmitool user priv 3 4 1
+    ipmitool user enable 3
+    ```
+
+```shell
 luna group change -qpart part.txt compute
 ```
 
