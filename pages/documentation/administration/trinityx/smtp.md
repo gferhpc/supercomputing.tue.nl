@@ -59,3 +59,14 @@ postconf -e 'smtp_sasl_security_options=noanonymous'
 ```shell
 systemctl enable postfix --now
 ```
+
+### OSImages
+For every OS image (`luna osimage list`), perform;
+
+```shell
+lchroot [image name]
+postconf -e 'relayhost=[10.150.255.252]:25'
+exit
+
+luna osimage pack [image name]
+```
