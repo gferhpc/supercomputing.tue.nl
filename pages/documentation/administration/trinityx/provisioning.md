@@ -31,7 +31,7 @@ export GROUP=compute NAME=tue-computeX001 MAC=00:00:00:00:00 IPMI=172.16.0.0
 # GPU
 export GROUP=gpu NAME=tue-gpuX001 MAC=00:00:00:00:00 IPMI=172.16.0.0
 # LOGIN
-export GROUP=gpu NAME=tue-login001 MAC=00:00:00:00:00 IPMI=172.16.0.0
+export GROUP=login NAME=tue-login001 MAC=00:00:00:00:00 IPMI=172.16.0.0
 
 luna node add -g $GROUP -if BOOTIF -M $MAC $NAME
 luna node changeinterface -N ipmi -I $IPMI $NAME BMC
