@@ -157,7 +157,7 @@ ansible-playbook controller.yml
 ### Configuration
 
 ```shell
-luna cluster change -n umbrella
+luna cluster change -n umbrella -c hpc-umbrella@tue.nl
 ```
 
 ```shell
