@@ -95,27 +95,37 @@ module of Python, Anaconda environments are stored in a central location
 in your home directory. You can thus activate environments regardless of
 your current working directory.
 
-`$ module load anaconda`
-`$ conda config --set auto_activate_base false`
-`$ conda init bash`
-*`log out and back in, or`*` ``$ source ~/.bashrc`
-`$ conda create --name my-python-3.9 python=3.9`
+```shell
+module load anaconda
+conda config --set auto_activate_base false
+conda init bash
+
+source ~/.bashrc
+
+conda create --name my-python-3.9 python=3.9
+```
 
 After that, you can at all times activate your environment as follows:
 
-`$ module load anaconda`
-`$ conda activate my-python-3.9`
+```shell
+module load anaconda
+conda activate my-python-3.9
+```
 
 In an sbatch script, be sure to `source ~/.bashrc` as well, because
 Slurm does not do that automatically.
 
 To list your environments, use:
 
-`$ conda env list`
+```shell
+conda env list
+```
 
 And clean up environments you no longer need by running:
 
-`$ conda env remove --name my-python-3.9`
+```shell
+conda env remove --name my-python-3.9
+```
 
 Within an environment, you can `pip install` libraries just like in
 Python `venv` without impacting other environments.
