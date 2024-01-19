@@ -149,6 +149,8 @@ Kortom, het is mogelijk om de storage nodes los te koppelen van Bright en te kun
 * Deregister storage node MAC addresses
 * Deregister storage nodes from Zabbix
 
+* write script to periodically cleanup old osimage packs in: /trinity/local/luna/files
+
 ## Next maintenance
 
 * MariaDB HA
