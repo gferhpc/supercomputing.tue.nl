@@ -24,9 +24,17 @@ luna node changeinterface -M 14:23:F2:DD:B2:D0 tue-computeb001 BOOTIF
 luna node changeinterface -I 172.16.108.57 tue-computeb001 BMC
 ```
 
-### GPU Nodes
+### Provision Nodes (from scratch)
 ```shell
+# Compute
+export GROUP=compute NAME=tue-computeX001 MAC=00:00:00:00:00 IPMI=172.16.0.0
+# GPU
+export GROUP=gpu NAME=tue-gpuX001 MAC=00:00:00:00:00 IPMI=172.16.0.0
+# LOGIN
+export GROUP=gpu NAME=tue-login001 MAC=00:00:00:00:00 IPMI=172.16.0.0
 
+luna node add -g $GROUP -if BOOTIF -M $MAC $NAME
+luna node changeinterface -N ipmi -I $IPMI $NAME BMC
 ```
 
 ### GPU packages
