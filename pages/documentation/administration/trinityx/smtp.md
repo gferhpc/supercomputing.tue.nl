@@ -23,6 +23,7 @@ dnf -y install postfix libsasl cyrus-sasl cyrus-sasl-lib cyrus-sasl-plain
     ```shell
     postconf -e 'myhostname=hpc-head01.icts.tue.nl'
     postconf -e 'mydestination=$myhostname, hpc-head01, hpc-head01.cluster, localhost'
+    postconf -e 'inet_interfaces=localhost,10.150.255.254'
 
     ```
 
@@ -31,6 +32,7 @@ dnf -y install postfix libsasl cyrus-sasl cyrus-sasl-lib cyrus-sasl-plain
     ```shell
     postconf -e 'myhostname=hpc-head02.icts.tue.nl'
     postconf -e 'mydestination=$myhostname, hpc-head02, hpc-head02.cluster, localhost'
+    postconf -e 'inet_interfaces=localhost,10.150.255.253'
     ```
 
 #### SASL Authentication
