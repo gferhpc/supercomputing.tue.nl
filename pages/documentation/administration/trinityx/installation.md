@@ -97,7 +97,7 @@ reboot
 
 ## TrinityX Installation
 
-### Prepare environment
+### Prepare environment (hpc-head01 and hpc-head02)
 
 As `root@hpc-head01`:
 
@@ -108,9 +108,12 @@ dnf -y install git
 ```shell
 git clone https://github.com/clustervision/trinityX.git /root/trinityX
 cd /root/trinityX
-
 bash prepare.sh
+```
 
+### Configure environment (hpc-head01 only)
+
+```shell
 cp site/group_vars/all.yml.example site/group_vars/all.yml
 ```
 
@@ -145,7 +148,12 @@ hpc-head01 ansible_host=10.150.255.254 ansible_connection=local
 #hpc-head02 ansible_host=10.150.255.253
 ```
 
-### Installation
+### Installation (hpc-head01 only)
+
+Make sure the DHPC on the external interface (eno1) does not overwrite DNS entries in resolv.conf
+```shell
+nmcli con mod eno1 ipv4.ignore-auto-dns yes
+```
 
 Run the ansible-playbook
 
