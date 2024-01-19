@@ -68,6 +68,7 @@ For every OS image (`luna osimage list`), perform;
 ```shell
 lchroot [image name]
 postconf -e 'relayhost=[10.150.255.254]:25,[10.150.255.253]:25'
+postconf -e 'sender_canonical_maps=static:svchpcsupport@tue.nl'
 systemctl enable postfix.service
 
 exit
