@@ -67,7 +67,9 @@ For every OS image (`luna osimage list`), perform;
 
 ```shell
 lchroot [image name]
-postconf -e 'relayhost=[10.150.255.252]:25'
+postconf -e 'relayhost=[10.150.255.254]:25,[10.150.255.253]:25'
+systemctl enable postfix.service
+
 exit
 
 luna osimage pack [image name]
