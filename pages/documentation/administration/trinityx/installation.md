@@ -33,6 +33,15 @@
 
 As root@hpc-head0X 
 
+Remove the automatically created home directory;
+
+```shell
+umount /home
+lvremove /dev/rl/home
+
+vim /etc/fstab # and remove the corresponding fstab entry for /home mount.
+```
+
 **TIP**: use screen to mitigate connection loss during installation
 ```shell
 dnf -y install screen
