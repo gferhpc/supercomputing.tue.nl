@@ -76,7 +76,7 @@ Kortom, het is mogelijk om de storage nodes los te koppelen van Bright en te kun
 ---
 * [/] **mail**
 * [x] configure postfix relay on heads
-* [ ] configure postfix smarthost on compute images
+* [x] configure postfix smarthost on compute images
 * [ ] configure postfix to read LDAP for aliases
 ---
 * [/] **(re-)write user creation script **
