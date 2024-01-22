@@ -37,8 +37,11 @@ luna node changeinterface -N ipmi -I $IPMI $NAME BMC
 
 ## Use luna to creates nodes to provision
 
-tue-computeb001 - 14:23:F2:DD:BA:90 - ipmi 172.16.108.57
-tue-computeb002 - 14:23:F2:DD:B2:D0 - ipmi 172.16.108.58
+| Name                      | BOOTIF MAC          | ipmi IP         |
+|---------------------------|---------------------|-----------------|
+| tue-computeb001           | 14:23:f2:dd:bA:90   | 172.16.108.57   | 
+| tue-computeb002           | 14:23:f2:dd:b2:d0   | 172.16.108.58   |
+| tue-login001              | 50:9a:4c:a5:f3:c0.  | 172.16.108.150  |
 
 ```shell
 luna node clone node001 tue-computeb001 
