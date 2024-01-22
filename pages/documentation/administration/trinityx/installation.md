@@ -1,6 +1,6 @@
 # Installation
 
-| Controller Node | IPMI          | Internal IP.   | external IP (DHcP) |
+| Controller Node | IPMI          | Internal IP    | external IP (DHcP) |
 |:---------------:|:-------------:|:--------------:|:------------------:|
 | hpc-head01      | 172.16.108.55 | 10.150.255.254 | 131.155.7.102      |
 | hpc-head01      | 172.16.108.56 | 10.150.255.253 | 131.155.7.103      |                   |
