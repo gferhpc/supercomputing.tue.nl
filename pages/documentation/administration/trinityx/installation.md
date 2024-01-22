@@ -164,10 +164,11 @@ ansible-playbook controller.yml
 
 ### Configuration
 
+#### Set cluster settings 
 ```shell
 luna cluster change -n umbrella -c hpc-umbrella@tue.nl
 ```
-
+#### Configure the BMC(ipmi) network
 ```shell
 luna network change -N 172.16.108.0/23 ipmi
 ```
