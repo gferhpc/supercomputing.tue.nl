@@ -173,6 +173,7 @@ luna cluster change -n umbrella -c hpc-umbrella@tue.nl
 luna network change -N 172.16.108.0/23 ipmi
 ```
 
+#### Create a demo user (or not)
 ```shell
 obol user add demo -p demo
 obol group addusers admins demo
@@ -186,11 +187,14 @@ http://umbrella-cluster.hpc.tue.nl:3000  Grafana
 
 http://umbrella-cluster.hpc.tue.nl:3001  Sensu
 
+#### Create the basic OSimage (compute)
+
 ```shell
 ansible-playbook compute-redhat.yml
 luna osimage pack compute
 ```
 
+#### Add part.txt and post.txt to the part/post of the compute image
 ```shell
 luna group change -qpre pre.txt compute
 ```
