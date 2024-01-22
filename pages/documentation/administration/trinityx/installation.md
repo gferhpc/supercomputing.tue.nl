@@ -1,10 +1,15 @@
 # Installation
 
+| Controller Node | IPMI          | Internal IP.   | external IP (DHcP) |
+|-----------------|---------------|----------------|--------------------|
+| hpc-head01      | 172.16.108.55 | 10.150.255.254 | 131.155.7.102      |
+| hpc-head01      | 172.16.108.56 | 10.150.255.253 | 131.155.7.103      |                   |
+
 ## Requirements
 
 - Node with at least 2 NIC interfaces (public & internal network)
 - [Rocky Linux](https://rockylinux.org){:target=_blank} 8.x
-- iDrac access hpc-head01 : ***172.16.108.55*** hpc-head02 : ***172.16.108.56***
+- iDrac access to hpc-head01 and hpc-head02
 
     ??? example "Configuration"
 
