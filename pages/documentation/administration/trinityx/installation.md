@@ -110,6 +110,13 @@ As `root@hpc-head01`:
 dnf -y install git
 ```
 
+Make sure the DHPC on the external interface (eno1) does not overwrite DNS entries in resolv.conf
+```shell
+vi /etc/NetworkManager/NetworkManager.conf
+  [main]
+  dns=none
+```
+
 ```shell
 git clone https://github.com/clustervision/trinityX.git /root/trinityX
 cd /root/trinityX
@@ -154,11 +161,6 @@ hpc-head01 ansible_host=10.150.255.254 ansible_connection=local
 ```
 
 ### Installation (hpc-head01 only)
-
-Make sure the DHPC on the external interface (eno1) does not overwrite DNS entries in resolv.conf
-```shell
-nmcli con mod eno1 ipv4.ignore-auto-dns yes
-```
 
 Run the ansible-playbook
 
