@@ -26,7 +26,7 @@
 
         **System**
 
-          - Installation Destination: Local Standard Disks (sda), Storage Configuration: Automatic
+          - Installation Destination: Local Standard Disks (sda), Storage Configuration: Manual: '/' 'swap' and 'boot'
           - Network & Hostname: Configure Network, Hostname: hpc-head0X.icts.tue.nl
 
         **User Settings**
