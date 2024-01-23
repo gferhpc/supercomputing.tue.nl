@@ -80,14 +80,24 @@ EOF
 
 ```shell
 cat > /etc/named.luna.zones << EOF
+zone "cluster" IN {
+    type slave;
+    file "/var/named/cluster.luna.zone";
+    masters {10.150.255.254; };
+};
+zone "150.10.in-addr.arpa" IN {
+    type slave;
+    file "/var/named/150.10.in-addr.arpa.luna.zone";
+    masters {10.150.255.254; };
+};
 zone "ipmi" IN {
     type slave;
     file "/var/named/ipmi.luna.zone";
-    masters {10.141.255.254; };
+    masters {10.150.255.254; };
 };
-zone "148.10.in-addr.arpa" IN {
+zone "16.172.in-addr.arpa" IN {
     type slave;
-    file "/var/named/148.10.in-addr.arpa.luna.zone";
+    file "/var/named/16.172.in-addr.arpa.luna.zone";
     masters {10.150.255.254; };
 };
 zone "ib" IN {
@@ -98,16 +108,6 @@ zone "ib" IN {
 zone "149.10.in-addr.arpa" IN {
     type slave;
     file "/var/named/149.10.in-addr.arpa.luna.zone";
-    masters {10.150.255.254; };
-};
-zone "cluster.local" IN {
-    type slave;
-    file "/var/named/cluster.local.luna.zone";
-    masters {10.150.255.254; };
-};
-zone "141.10.in-addr.arpa" IN {
-    type slave;
-    file "/var/named/141.10.in-addr.arpa.luna.zone";
     masters {10.150.255.254; };
 };
 EOF
