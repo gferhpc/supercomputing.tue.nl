@@ -11,30 +11,25 @@
 
 ### TU/e
 
-- Subnet: 131.155.7.104/27 --- TU/e HPC
-    - 131.155.7.96 --- network.TUe-HPC.net.tue.nl.
-    - 131.155.7.97 --- gateway.TUe-HPC.net.tue.nl.
-    - 131.155.7.98 --- zst-int.c95-dchtc-w10.net.tue.nl.
-    - 131.155.7.99 --- zst-int.c95-dchtc-x10.net.tue.nl.
-    - 131.155.7.100 --- reserved.TUe-HPC.net.tue.nl.
-    - 131.155.7.101 --- reserved.TUe-HPC.net.tue.nl.
-    - 131.155.7.102 --- hpc-head01.icts.tue.nl.
-    - 131.155.7.103 --- hpc-head02.icts.tue.nl.
-    - 131.155.7.104 --- hpc-vip.icts.tue.nl.
-    - 131.155.7.109 --- tue-login002.icts.tue.nl.
-    - 131.155.7.127 --- broadcast.TUe-HPC.net.tue.nl.
-- Subnet: 172.16.108.0/23 --- TU/e IPMI
+- Subnet: 131.155.7.96/27 --- TU/e HPC
+    - 131.155.7.96–127
+    - 131.155.7.102–126 usable
+    - 131.155.7.102 `hpc-head01.icts.tue.nl`
+    - 131.155.7.103 `hpc-head02.icts.tue.nl`
+    - 131.155.7.104 `hpc-vip.icts.tue.nl`
+    - 131.155.7.109 `tue-login002.icts.tue.nl`
+- Subnet: 172.16.108.0/23 — TU/e IPMI
 
 ### Cluster internal
 
-- Subnet: 10.149.0.0/16 --- Umbrella Cluster InfiniBand
-- Subnet: 10.150.0.0/16 --- Umbrella Cluster Ethernet
-    - 10.150.0.1 --- First node; nodes number upwards from here
-    - 10.150.128-135.x --- DHCP pool
-    - 10.150.250.x --- VAST storage
-    - 10.150.255.252 --- head VIP
-    - 10.150.255.253 --- head02
-    - 10.150.255.254 --- head01
+- Subnet: 10.149.0.0/16 — Umbrella Cluster InfiniBand
+- Subnet: 10.150.0.0/16 — Umbrella Cluster Ethernet
+    - 10.150.0.1 — first node; nodes number upwards from here
+    - 10.150.128–135.x — DHCP pool
+    - 10.150.250.x — VAST storage
+    - 10.150.255.252 — head VIP
+    - 10.150.255.253 — head02
+    - 10.150.255.254 — head01
 
 ## Switch configurations
 
