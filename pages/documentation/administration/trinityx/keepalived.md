@@ -8,6 +8,11 @@ A second server (hpc-head02) with a basic Rocky 8 install and server Setup done 
 
 ## Server Configuration
 
+### VIP Configuration with keepalived
+
+Run on both hosts unless otherwise indicated.
+
+
 ```shell
 dnf -y install keepalived
 ```
