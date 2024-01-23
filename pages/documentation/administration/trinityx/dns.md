@@ -50,7 +50,7 @@ dnf -y install bind
 
 cat > /etc/named.conf << EOF
 options {
-        listen-on port 53 { 127.0.0.1;10.141.255.253; };
+        listen-on port 53 { 127.0.0.1;10.150.255.253; };
         listen-on-v6 port 53 { ::1; };
         statistics-file "/var/lib/named/data/named_stats.txt";
         memstatistics-file "/var/lib/named/data/named_mem_stats.txt";
@@ -58,8 +58,8 @@ options {
         recursing-file  "/var/lib/named/data/named.recursing";
         dump-file       "/var/lib/named/data/cache_dump.db";
         directory       "/var/named";
-        allow-query { 127.0.0.0/8;10.148.0.0/16;10.149.0.0/16;10.141.0.0/16; };
-        allow-notify { 10.141.255.254;};
+        allow-query { 127.0.0.0/8;10.150.0.0/16; };
+        allow-notify { 10.150.255.254;};
         recursion yes;
         forwarders { 131.155.2.3;131.155.3.3; };
         dnssec-enable no;
