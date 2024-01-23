@@ -105,6 +105,23 @@ sstat --format=MaxVMSize,MaxRSS,MaxDiskWrite,MaxDiskRead -j [JOBID]
 
 ## Advanced `sbatch` Options
 
+### Using features
+
+Nodes have SLURM-defined features that can be used to make sure a job uses a specific type of node(s). To check the available features on the nodes use to following:
+
+```bash
+sinfo -N -o "%20N  %4c  %10m  %60f"
+```
+The colomn AVAIL_FEATURES shows the configred features of the nodes.
+
+To select a feature (run a job on the nodes with the feature) use the --constrain="" option. For example to make sure an NVIDIA A30 is used in the example job script for a GPU above add the following to the sbatch script:
+
+```bash
+#SBATCH --constrain="a30"
+```
+
+### More options
+
 SLURM allows for a range of advanced options to precisely control the resources that a job requires. Here are some common advanced options:
 
 - `--gres`: Specifies generic resources, often used for requesting GPUs.
