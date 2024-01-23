@@ -64,8 +64,11 @@ python my_script.py
 
 Here's what some of the key `sbatch` options mean:
 
-- `--job-name`: Set the name of the job.
-- `--output`: Designate the file to which SLURM will write the standard output (%j is the jobID).
+`--job-name`
+:   Set the name of the job.
+`--output`
+:   Designate the file to which SLURM will write the standard output (%j is the jobID).
+
 - `--partition`: Choose the partition on which the job should run (check with 'sinfo').
 - `--time`: Specify the wall clock limit for the job (format 00-00:00:00 Days-Hours:Minutes:Seconds).
 - `--nodes`: The number of nodes on which to run.
