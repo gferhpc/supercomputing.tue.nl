@@ -114,10 +114,10 @@ sinfo -N -o "%20N  %4c  %10m  %60f"
 ```
 The colomn AVAIL_FEATURES shows the configred features of the nodes.
 
-To select a feature (run a job on the nodes with the feature) use the --constrain="" option. For example to make sure an NVIDIA A30 is used in the example job script for a GPU above add the following to the sbatch script:
+To select a feature (run a job on the nodes with the feature) use the --constraint="" option. For example to make sure an NVIDIA A30 is used in the example job script for a GPU above add the following to the sbatch script:
 
 ```bash
-#SBATCH --constrain="a30"
+#SBATCH --constraint="a30"
 ```
 
 ### More options
