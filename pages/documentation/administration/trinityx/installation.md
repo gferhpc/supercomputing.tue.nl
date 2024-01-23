@@ -38,9 +38,9 @@
 
 As root@hpc-head0X 
 
-**TIP**: use screen to mitigate connection loss during installation
+**TIP**: use tmux to mitigate connection loss during installation
 ```shell
-dnf -y install screen
+dnf -y install tmux
 ```
 
 ### Network Configuration
@@ -82,7 +82,7 @@ Configure internal network interface
 ### Update the OS
 
 ```shell
-dnf -y install git
+dnf -y update
 ```
 
 ### Reboot System
