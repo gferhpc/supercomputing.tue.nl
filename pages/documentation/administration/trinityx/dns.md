@@ -29,8 +29,8 @@ zone "{{ ZONE }}" IN {
     type master;
     file "/var/named/{{ ZONE }}.luna.zone";
     allow-update { none; };
-    allow-transfer { 10.141.255.253; };
-    also-notify { 10.141.255.253; };
+    allow-transfer { 10.150.255.253; };
+    also-notify { 10.150.255.253; };
 };
 {% endfor %}
 
