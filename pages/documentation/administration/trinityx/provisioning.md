@@ -6,15 +6,16 @@
 - A succesfill creation a compute image using the ansible-playbook (compute-redhat.yml)
 - part.txt and post.txt are added to the part/post of the compute image
 
-## Disable bmcsetup when provisioning
+## Disable bmcsetup for group compute when provisioning
 
 ```shell
 luna group change --setupbmc n compute
 ```
 
-## Change bmcsetup compute to match pre.txt settings
+## Renename bmcsetup compute to trinityx and match the pre.txt settings
 ```shell
-luna bmcsetup change -uid 3 -u trinityx -p PASSWD compute
+luna bmcsetup rename compute trinityx
+luna bmcsetup change -uid 3 -u trinityx -p PASSWD trinityx
 ```
 
 ## Create the extra node groups and osimages
