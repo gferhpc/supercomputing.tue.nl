@@ -35,16 +35,15 @@ luna group clone compute login -o login
 | login       | tue-login001          | 50:9a:4c:a5:f3:c0 | 172.16.108.150  |
 
 
-    ??? example "Create the Nodes"
-
-        ```shell
-        luna node add -g compute -if BOOTIF -M 14:23:f2:dd:bA:90 tue-computeb001
-        luna node changeinterface -N ipmi -I 172.16.108.57 tue-computeb001 BMC
-        luna node add -g compute -if BOOTIF -M 14:23:f2:dd:b2:d0 tue-computeb002
-        luna node changeinterface -N ipmi -I 172.16.108.58 tue-computeb002 BMC
-        luna node add -g login -if BOOTIF -M 50:9a:4c:a5:f3:c0 tue-login001
-        luna node changeinterface -N ipmi -I 172.16.108.150 tue-login001 BMC
-        ```        
+??? example "Create the Nodes"
+    ```shell
+    luna node add -g compute -if BOOTIF -M 14:23:f2:dd:bA:90 tue-computeb001
+    luna node changeinterface -N ipmi -I 172.16.108.57 tue-computeb001 BMC
+    luna node add -g compute -if BOOTIF -M 14:23:f2:dd:b2:d0 tue-computeb002
+    luna node changeinterface -N ipmi -I 172.16.108.58 tue-computeb002 BMC
+    luna node add -g login -if BOOTIF -M 50:9a:4c:a5:f3:c0 tue-login001
+    luna node changeinterface -N ipmi -I 172.16.108.150 tue-login001 BMC
+    ```        
 
 ```shell
 luna node add -g $GROUP -if BOOTIF -M $MAC $NAME
