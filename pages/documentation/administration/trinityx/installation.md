@@ -52,7 +52,7 @@ Configure internal network interface
     ```shell
     export IFACE=ens3f0np0   
 
-    nmcli connection add type ethernet con-name $IFACE
+    #nmcli connection add type ethernet con-name $IFACE
     nmcli con mod $IFACE ipv4.address 10.150.255.254/16
     nmcli con mod $IFACE ipv4.method manual
     nmcli con mod $IFACE connection.autoconnect true
@@ -64,7 +64,7 @@ Configure internal network interface
     ```shell
     export IFACE=ens3f0np0    
 
-    nmcli connection add type ethernet con-name $IFACE
+    #nmcli connection add type ethernet con-name $IFACE
     nmcli con mod $IFACE ipv4.address 10.150.255.253/16
     nmcli con mod $IFACE ipv4.method manual
     nmcli con mod $IFACE connection.autoconnect true
