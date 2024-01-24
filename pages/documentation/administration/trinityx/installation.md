@@ -103,7 +103,7 @@ dnf -y install git
 
 Make sure the DHPC on the external interface (eno1) does not overwrite DNS entries in resolv.conf
 ```shell
-sed -i '' 's/main]/main]\ndns=none/' /etc/NetworkManager/NetworkManager.conf
+sed -i 's/main]/main]\ndns=none/' /etc/NetworkManager/NetworkManager.conf
 ```
 
 Clone the TrinityX github repo
