@@ -137,6 +137,7 @@ Review and edit the contents of the `all.yml` file accordingly, notable settings
 | trix_dns_forwarders          | `[131.155.2.3, 131.155.3.3]` | List of DNS forwarders to use for the cluster.              |
 | firewalld_public_interfaces  | `[eno1]`                     | List of public interfaces to use for the cluster.           |
 | firewalld_trusted_interfaces | `[ens3f0np0]`                | List of trusted interfaces to use for the cluster.          |
+| el8_openhpc_repositories     | `OpenHPC/2/update.2.6.2/EL_8 | Activate latest update to OpenHPC 2.6                       |
 
 ```shell
 cp site/hosts.example site/hosts
