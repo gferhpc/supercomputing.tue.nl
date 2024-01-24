@@ -95,7 +95,7 @@ reboot
 
 ### Prepare environment (hpc-head01 and hpc-head02)
 
-As `root@hpc-head01`:
+As `root@hpc-head0X`:
 
 ```shell
 dnf -y install git
