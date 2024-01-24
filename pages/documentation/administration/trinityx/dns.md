@@ -77,7 +77,6 @@ include "/etc/named.root.key";
 include "/etc/named.luna.zones";
 EOF
 ```
-
 ```shell
 cat > /etc/named.luna.zones << EOF
 zone "cluster" IN {
@@ -112,6 +111,15 @@ zone "149.10.in-addr.arpa" IN {
 };
 EOF
 ```
+```shell
+cat > /etc/resolv.conf << EOF
+search cluster ipmi
+nameserver 10.150.255.253
+nameserver 131.155.2.3
+nameserver 131.155.3.3
+EOF
+```
+
 ```shell
 systemctl enable named --now
 ```
