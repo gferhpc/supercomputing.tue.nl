@@ -103,9 +103,7 @@ dnf -y install git
 
 Make sure the DHPC on the external interface (eno1) does not overwrite DNS entries in resolv.conf
 ```shell
-vi /etc/NetworkManager/NetworkManager.conf
-  [main]
-  dns=none
+sed -i '' 's/main]/main]\ndns=none/' /etc/NetworkManager/NetworkManager.conf
 ```
 
 ```shell
