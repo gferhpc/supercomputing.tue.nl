@@ -6,14 +6,6 @@
 - A succesfill creation a compute image using the ansible-playbook (compute-redhat.yml)
 - part.txt and post.txt are added to the part/post of the compute image 
 
-## Cleanup luna nodes that are auto-created
-```shell
-luna node remove node001
-luna node remove node002
-luna node remove node003
-luna node remove node004
-```
-
 ## Create the extra node groups and osimages
 ```shell
 luna osimage clone compute gpu
@@ -34,6 +26,16 @@ luna group clone compute login -o login
 luna node add -g $GROUP -if BOOTIF -M $MAC $NAME
 luna node changeinterface -N ipmi -I $IPMI $NAME BMC
 ```
+
+## Cleanup luna nodes that are auto-created (can only be done after creation of new node(s) due to bug in luna-cli)
+```shell
+luna node remove node001
+luna node remove node002
+luna node remove node003
+luna node remove node004
+```
+
+
 
 ## GPU packages
 ```
