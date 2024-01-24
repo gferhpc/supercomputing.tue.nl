@@ -12,6 +12,11 @@
 luna group change --setupbmc n compute
 ```
 
+## Change bmcsetup compute to match pre.txt settings
+```shell
+luna bmcsetup change -uid 3 -u trinityx -p PASSWD compute
+```
+
 ## Create the extra node groups and osimages
 ```shell
 luna osimage clone compute gpu
