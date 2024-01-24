@@ -29,7 +29,7 @@ luna group clone compute login -o login
 | login       | tue-login001          | 50:9a:4c:a5:f3:c0 | 172.16.108.150  |
 
 
-    ??? Create the Nodes
+    ??? example "Create the Nodes"
 
         luna node add -g compute -if BOOTIF -M 14:23:f2:dd:bA:90 tue-computeb001
         luna node changeinterface -N ipmi -I 172.16.108.57 tue-computeb001 BMC
