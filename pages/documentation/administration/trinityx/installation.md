@@ -192,7 +192,7 @@ ansible-playbook compute-redhat.yml
 luna osimage pack compute
 ```
 
-#### Add part.txt and post.txt to the part/post of the compute image
+#### Add pre.txt, part.txt and post.txt to the part/post of the compute image
 ```shell
 luna group change -qpre pre.txt compute
 ```
