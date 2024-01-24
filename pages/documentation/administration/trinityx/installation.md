@@ -106,6 +106,7 @@ Make sure the DHPC on the external interface (eno1) does not overwrite DNS entri
 sed -i '' 's/main]/main]\ndns=none/' /etc/NetworkManager/NetworkManager.conf
 ```
 
+Clone the TrinityX github repo
 ```shell
 git clone https://github.com/clustervision/trinityX.git /root/trinityX
 cd /root/trinityX
