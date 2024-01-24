@@ -171,7 +171,7 @@ luna cluster change -n umbrella -c hpc-umbrella@tue.nl
 luna network change -N 172.16.108.0/23 ipmi
 ```
 
-#### Create a demo user (or not)
+### Create a demo user (or not)
 ```shell
 obol user add demo -p demo
 obol group addusers admins demo
