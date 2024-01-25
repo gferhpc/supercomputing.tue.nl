@@ -61,23 +61,22 @@ luna node remove node004
 ## GPU image additions
 
 #### GPU packages
-```
+```shell
 dnf -y install kmod-nvidia
 ```
 
 ## LOGIN image additions
-```
+```shell
 sed -i '/slurm/d' /etc/pam.d/sshd
 ```
-```
+```shell
 cat > /etc/pam.d/sshd << EOF
 session    optional     pam_motd.so
 EOF
 ```
-```
+```shell
 sed -i '/^auth_provider/d' /etc/sssd/sssd.conf
-```
-```
+
 cat >> /etc/sssd/sssd.conf << EOF
 
 auth_provider = krb5
