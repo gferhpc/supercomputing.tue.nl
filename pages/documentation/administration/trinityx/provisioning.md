@@ -67,7 +67,7 @@ dnf -y install kmod-nvidia
 
 ## LOGIN image additions
 ```
-rm /etc/pam.d/slurm
+sed -i '/slurm/d' /etc/pam.d/sshd
 ```
 
 ```
