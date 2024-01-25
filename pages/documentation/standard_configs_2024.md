@@ -6,7 +6,7 @@ title: Standard node configurations (2024)
 
     These specifications are not finalized!
 
-[← 2023](standard_configs_2023.md) 2025 →
+[2023 ←](standard_configs_2023.md) → 2025
 
 # Overview
 
@@ -27,25 +27,25 @@ Specifications:
 
 - Brand: Dell preferred
 - Ethernet: 25 Gbit/s SFP28 with RoCEv2 support
-  - e.g. Broadcom 57414
-  - incl. SFP28 DAC cable, Dell-switch compatible
+    - e.g. Broadcom 57414
+    - incl. SFP28 DAC cable, Dell-switch compatible
 - Storage:
-  - Boot storage: RAID-1.
-    - For Dell: BOSS, cheapest size available.
-  - Local storage: on request.  Can be put on boot storage as well.
+    - Boot storage: RAID-1.
+      - For Dell: BOSS, cheapest size available.
+    - Local storage: on request.  Can be put on boot storage as well.
 - Power supply: 1+1 redundant.
-  - Connectors: C13-14 preferred; C19-20 if needed.
-  - Quote must state the connector type
-  - Power cables: not needed
+    - Connectors: C13-14 preferred; C19-20 if needed.
+    - Quote must state the connector type
+    - Power cables: not needed
 - Rack mount kit: yes
 - Bezel: no
 - Remote mgmt: required.
-  - For Dell: iDRAC with Enterprise and OpenManage license.
+    - For Dell: iDRAC with Enterprise and OpenManage license.
 - Support: 5 year next business day.
 
 Other constraints:
 
-- Nodes should be \<= 25 k€ (incl. VAT) to avoid financial issues.
+- Nodes should be ≤ 25 k€ (incl. VAT) to avoid financial issues.
 
 ### Rationale
 
@@ -58,7 +58,7 @@ hardware, but offers a good performance increase and is future-proof.
 - 384 GB RAM  (12x 32 GB; 4 GB/core)
 
 Est. cost: €20,400 incl. VAT.
-Of this: CPU €8000, RAM €5000, iDRAC €650, support €500.
+Of this: CPU €8000, RAM €5000.
 Amounts to €200 per core.
 (Jan 2024)
 
@@ -100,7 +100,7 @@ The GPUs can be split in virtual GPUs (NVIDIA MIG), to enable resource sharing.
 - 384 GB RAM  (12 GB/core)
 
 Est. cost: €21,000 incl. VAT.
-Of this: CPU €3000, RAM €5200, iDRAC €650, support €500.
+Of this: CPU €3000, RAM €5200.
 Amounts to €660 per core.
 (Jan 2024)
 
@@ -116,7 +116,7 @@ Est. power usage[^1]: 2 * 360 W + 384 GB * 0.3 W/GB = 835.2 W
 - 384 GB RAM (12x 32 GB; 8 GB/core)
 
 Est. cost: €18,000 incl. VAT.
-Of this: CPU €6600, RAM €5000, iDRAC €650, support €500.
+Of this: CPU €6600, RAM €5000.
 Amounts to €375 per core.
 (Jan 2024)
 
@@ -135,4 +135,4 @@ This configuration is intended for serial (single core) jobs.  It differs from t
 - Single-core jobs tend to need more memory per core than parallel jobs do,
   hence the increased amount of RAM in this configuration.
 
-[^1] Computed as: CPU TDP + 0.3 W/GB RAM.
+[^1]: Computed as: CPU TDP + 0.3 W/GB RAM.
