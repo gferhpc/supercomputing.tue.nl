@@ -71,6 +71,8 @@ rm /etc/pam.d/slurm
 ```
 
 ```
+sed -i '/^auth_provider/d' /etc/sssd/sssd.conf
+
 cat >> /etc/sssd/sssd.conf << EOF
 
 auth_provider = krb5
