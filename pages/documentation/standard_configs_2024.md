@@ -31,7 +31,7 @@ Specifications:
     - incl. SFP28 DAC cable, Dell-switch compatible
 - Storage:
     - Boot storage: RAID-1.
-      - For Dell: BOSS, cheapest size available.
+        - For Dell: BOSS, cheapest size available.
     - Local storage: on request.  Can be put on boot storage as well.
 - Power supply: 1+1 redundant.
     - Connectors: C13-14 preferred; C19-20 if needed.
@@ -67,6 +67,9 @@ Amounts to €200 per core.
     - 1236 per core
 
 Est. power usage[^1]: 360 W + 384 GB * 0.3 W/GB = 475.2 W
+
+- 4005 µW/Passmark
+- 4163 kWh/yr
 
 ### Rationale
 
@@ -110,6 +113,9 @@ Amounts to €660 per core.
 
 Est. power usage[^1]: 2 * 360 W + 384 GB * 0.3 W/GB = 835.2 W
 
+- 7526 µW/Passmark
+- 7316 kWh/yr
+
 ### 2
 
 - Single socket AMD EPYC 9474F (3.60 GHz, 48C, 256 MB L3)
@@ -125,6 +131,9 @@ Amounts to €375 per core.
     - 2185 per core (77% faster than thin CPU)
 
 Est. power usage[^1]: 1 * 360 W + 384 GB * 0.3 W/GB = 475.2 W
+
+- 4530 µW/Passmark
+- 4163 kWh/yr
 
 ### Rationale
 
