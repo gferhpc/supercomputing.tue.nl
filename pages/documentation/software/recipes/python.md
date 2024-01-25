@@ -13,13 +13,13 @@ the output of this line. Exit the session by typing `exit()` or press
 If you want to run a script (a `*.py` file), you must first
 create/upload the `*.py` file. Open a text editor and write your own
 Python script, or use this dummy example:
+```shell
+#!/usr/bin/env python3
+#SBATCH --partition=tue.test.q
+#SBATCH --output=openme.out
 
-`#!/usr/bin/env python3`
-`#SBATCH --partition=tue.test.q`
-`#SBATCH --output=openme.out`
-
-`print("This is clearly working") `
-
+print("This is clearly working")
+```
 Save it as `test.py`. Then use, e.g., Command Prompt to transfer this
 file to the cluster by typing in:
 
