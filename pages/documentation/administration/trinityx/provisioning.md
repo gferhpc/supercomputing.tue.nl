@@ -64,3 +64,20 @@ luna node remove node004
 ```
 dnf -y install kmod-nvidia
 ```
+
+## LOGIN image additions
+```
+rm /etc/pam.d/slurm
+```
+
+```
+cat >> /etc/sssd/sssd.conf << EOF
+
+auth_provider = krb5
+krb5_server = campus.tue.nl
+krb5_kpasswd = campus.tue.nl
+krb5_realm = CAMPUS.TUE.NL
+cache_credentials = True
+EOF
+```
+
