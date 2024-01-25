@@ -66,6 +66,12 @@ dnf -y install kmod-nvidia
 ```
 
 ## LOGIN image additions
+
+For the default route provided by the DHPC op the "external" interface to be prevered above the one set bij the internal interface the matric of the "clister" netweokr needs to be changes:
+```shell
+luna network change -gm 201 cluster
+```
+In the image (lchroot login) the foolowing was changed:
 ```shell
 sed -i '/slurm/d' /etc/pam.d/sshd
 ```
