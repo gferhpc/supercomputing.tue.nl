@@ -106,7 +106,7 @@ Amounts to €660 per core.
 
 - Passmark
     - 2x 55,485 = 110,970 total → 0.189 €/mark
-    - 3468 per core
+    - 3468 per core (181% faster than thin CPU)
 
 Est. power usage[^1]: 2 * 360 W + 384 GB * 0.3 W/GB = 835.2 W
 
@@ -122,7 +122,7 @@ Amounts to €375 per core.
 
 - Passmark:
     - 104,894 total → 0.172 €/mark
-    - 2185 per core
+    - 2185 per core (77% faster than thin CPU)
 
 Est. power usage[^1]: 1 * 360 W + 384 GB * 0.3 W/GB = 475.2 W
 
