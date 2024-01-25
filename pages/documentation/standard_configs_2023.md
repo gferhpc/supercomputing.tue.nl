@@ -4,7 +4,9 @@ title: Standard node configurations (2023)
 
 [→ 2024](standard_configs_2024.md)
 
-### Compute node
+# Standard node configurations (2023)
+
+## Compute node
 
 - RAM:
     - \>= 4 GB/core. Snellius thin nodes have 2 GB/core, which is good
@@ -55,7 +57,7 @@ For example:
 - Dell PowerEdge R6615, 1x (AMD EPYC 9654P, 2.40 GHz, 96c, 384 MB
   cache), 384 GB RAM, €26.500 incl. VAT
 
-### InfiniBand fabric
+## InfiniBand fabric
 
 - HDR
     - HBAs

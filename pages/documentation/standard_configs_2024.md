@@ -2,13 +2,13 @@
 title: Standard node configurations (2024)
 ---
 
+[2023 ←](standard_configs_2023.md) → 2025
+
+# Standard node configurations (2024)
+
 !!! warning
 
     These specifications are not finalized!
-
-[2023 ←](standard_configs_2023.md) → 2025
-
-# Overview
 
 We preferably offer the following classes of compute nodes:
 
@@ -21,38 +21,7 @@ We preferably don't offer fabrics such as InfiniBand due to the cost.  Compute j
 
 # Configurations
 
-## General
-
-Specifications:
-
-- Brand: Dell preferred
-- Ethernet: 25 Gbit/s SFP28 with RoCEv2 support
-    - e.g. Broadcom 57414
-    - incl. SFP28 DAC cable, Dell-switch compatible
-- Storage:
-    - Boot storage: RAID-1.
-        - For Dell: BOSS, cheapest size available.
-    - Local storage: on request.  Can be put on boot storage as well.
-- Power supply: 1+1 redundant.
-    - Connectors: C13-14 preferred; C19-20 if needed.
-    - Quote must state the connector type
-    - Power cables: not needed
-- Rack mount kit: yes
-- Bezel: no
-- Remote mgmt: required.
-    - For Dell: iDRAC with Enterprise and OpenManage license.
-- Support: 5 year next business day.
-
-Other constraints:
-
-- Nodes should be ≤ 25 k€ (incl. VAT) to avoid financial issues.
-
-### Rationale
-
-Ethernet: 25 Gbit hardware is only slightly more expensive than 10 Gbit
-hardware, but offers a good performance increase and is future-proof.
-
-## CPU
+## Thin CPU
 
 - Single socket AMD EPYC 9654P (2.40 GHz, 96C, 384 MB L3)
 - 384 GB RAM  (12x 32 GB; 4 GB/core)
@@ -143,5 +112,36 @@ This configuration is intended for serial (single core) jobs.  It differs from t
   jobs.
 - Single-core jobs tend to need more memory per core than parallel jobs do,
   hence the increased amount of RAM in this configuration.
+
+## General
+
+Specifications:
+
+- Brand: Dell preferred
+- Ethernet: 25 Gbit/s SFP28 with RoCEv2 support
+    - e.g. Broadcom 57414
+    - incl. SFP28 DAC cable, Dell-switch compatible
+- Storage:
+    - Boot storage: RAID-1.
+        - For Dell: BOSS, cheapest size available.
+    - Local storage: on request.  Can be put on boot storage as well.
+- Power supply: 1+1 redundant.
+    - Connectors: C13-14 preferred; C19-20 if needed.
+    - Quote must state the connector type
+    - Power cables: not needed
+- Rack mount kit: yes
+- Bezel: no
+- Remote mgmt: required.
+    - For Dell: iDRAC with Enterprise and OpenManage license.
+- Support: 5 year next business day.
+
+Other constraints:
+
+- Nodes should be ≤ 25 k€ (incl. VAT) to avoid financial issues.
+
+### Rationale
+
+Ethernet: 25 Gbit hardware is only slightly more expensive than 10 Gbit
+hardware, but offers a good performance increase and is future-proof.
 
 [^1]: Computed as: CPU TDP + 0.3 W/GB RAM.
