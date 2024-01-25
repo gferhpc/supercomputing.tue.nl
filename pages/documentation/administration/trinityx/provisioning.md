@@ -69,10 +69,15 @@ dnf -y install kmod-nvidia
 ```
 sed -i '/slurm/d' /etc/pam.d/sshd
 ```
-
+```
+cat > /etc/pam.d/sshd << EOF
+session    optional     pam_motd.so
+EOF
+```
 ```
 sed -i '/^auth_provider/d' /etc/sssd/sssd.conf
-
+```
+```
 cat >> /etc/sssd/sssd.conf << EOF
 
 auth_provider = krb5
