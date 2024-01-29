@@ -13,17 +13,19 @@ packages need to be reinstalled.
 1.  Use ssh/putty to access a login node
 2.  Load the module with a (newer) version of R
        ```shell
-       [20224765@tue-login001 ~]$ module avail R
-
-       R/(version #1)   R/(version #2)   ...
-
-       [20224765@tue-login001 ~]$ module load R/(version of choice)
+       module avail R
+       ```
+       R/(version 1)   R/(version 2)   ...
+       ```shel
+       module load R/(version of choice)
        ```
 3.  Create a Rlibs directory in your home directory
-        20224765@tue-login001 ~]$  mkdir Rlibs
+        $  mkdir Rlibs
 4.  Install a package and its dependency, in this example Rmpfr depends on gmp
-        [20224765@tue-login001 ~]$ Rscript -e "install.packages('gmp','~/Rlibs','<nowiki>http://ftp.ussg.iu.edu/CRAN'</nowiki>)"
-        [20224765@tue-login001 ~]$ Rscript -e "install.packages('Rmpfr','~/Rlibs','<nowiki>http://ftp.ussg.iu.edu/CRAN'</nowiki>)"
+        ```shell
+        Rscript -e "install.packages('gmp','~/Rlibs','http://ftp.ussg.iu.edu/CRAN')"
+        Rscript -e "install.packages('Rmpfr','~/Rlibs','http://ftp.ussg.iu.edu/CRAN')"
+        ```
 
 ### Running a job
 
