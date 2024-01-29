@@ -2,18 +2,13 @@
 
 ## Introduction
 
-HPC clusters that are most commonly operated via a [`Command Line
-Interface`
-(CLI)](https://en.wikipedia.org/wiki/Command-line_interface).
+HPC clusters that are most commonly operated via a [Command Line Interface (CLI)](https://en.wikipedia.org/wiki/Command-line_interface){:target=_blank}.
 
 Such a CLI can be accessed directly by attaching a monitor and keyboard
 to the cluster itself locally to create an operational "terminal",
 however it is more common to operate HPC clusters remotely over the
-(inter)network through [`Secure SHell`
-(SSH)](https://en.wikipedia.org/wiki/Secure_Shell) using a [Terminal
-Emulators](https://en.wikipedia.org/wiki/Terminal_emulator), as HPC
-clusters are usually geographically inconveniently located for their
-users.
+(inter)network through [Secure SHell (SSH)](https://en.wikipedia.org/wiki/Secure_Shell){:target=_blank} 
+using [Terminal Emulators](https://en.wikipedia.org/wiki/Terminal_emulator){:target=_blank}, as HPC clusters are usually geographically inconveniently located for their users.
 
 GNU/Linux and MacOS systems are usually equipped with powerful SSH tools
 by default out of the box. Microsoft Windows users can install openSSH
@@ -25,57 +20,128 @@ or install third-party software, e.g.:
 
 === ":fontawesome-brands-windows: Windows"
 
-    -   :free: [MobaXterm](https://mobaxterm.mobatek.net/) (Free Version); Enhanced terminal for Windows with X11 server, tabbed SSH client, network tools and much more.
-    -   :free: [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html); SSH CLI-terminal.
-    -   :free: [Git for Windows](https://git-scm.com/download/win) installs Git Bash:; Linux-like CLI environment on Windows, including SSH.
-    -   [SmarTTY](http://sysprogs.com/SmarTTY/); both an SSH CLI-terminal and file-explorer combined into one program.
+    For Windows you likely need a 3rd party tool to be able to use SSH. More modern versions of Windows _may_ include SSH by default, for more information see [:simple-powershell: PowerShell](#__tabbed_2_3).
+
+    === ":octicons-terminal-16: MobaXterm"
+
+        Download and install the **free** version of [MobaXterm](https://mobaxterm.mobatek.net/download.html){:target=_blank}.  
+
+    === ":material-network-pos: PuTTY"
+
+        Download and install from [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html){:target=_blank} from the *MSI ("Windows Installer")* section.
+
+        !!! info "GUI applications/X11 forwarding"
+
+            If you need to load X11/GUI applications from the terminal, please consider installing [VcXsrv](https://sourceforge.net/projects/vcxsrv/){:target=_blank} as well!
+
+    === ":simple-powershell: PowerShell"
+
+        SSH should be available by default for most Windows 11 installations. For windows 10 or manual installation please check the official [Microsoft documentation](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui#install-openssh-for-windows){:target=_blank} on how to install SSH for Windows.
+
+        !!! info
+        
+            You'll only need to install the "OpenSSH Client". Please **don't** install the "OpenSSH Server" if you don't know what you're doing!
+
+        !!! info "GUI applications/X11 forwarding"
+
+            If you need to load X11/GUI applications from the terminal, please consider installing [VcXsrv](https://sourceforge.net/projects/vcxsrv/){:target=_blank} as well!
 
 === ":fontawesome-brands-linux: Linux"
 
-    In most cases the `ssh` command is already available. If not this can install this depending on your distribution:
+    ???- success "Available by default, no action required!"
 
-    === ":fontawesome-brands-ubuntu: Ubuntu"
-
-        ```shell
-        apt install openssh-client
-        ```
-
-    === ":fontawesome-brands-debian: Debian"
-
-        ```shell
-        apt install openssh-client
-        ```
-
-    === ":fontawesome-brands-redhat: RHEL"
-
-        ```shell
-        yum install openssh
-        ```
-
-    === ":simple-archlinux: Arch Linux"
-
-        ```shell
-        pacman -S openssh
-        ```
+        === ":fontawesome-brands-ubuntu: Ubuntu"
+    
+            ```shell
+            apt install openssh-client
+            ```
+    
+        === ":fontawesome-brands-debian: Debian"
+    
+            ```shell
+            apt install openssh-client
+            ```
+    
+        === ":fontawesome-brands-redhat: RHEL"
+    
+            ```shell
+            dnf install openssh
+            ```
+    
+        === ":simple-archlinux: Arch Linux"
+    
+            ```shell
+            pacman -S openssh
+            ```
 
 === ":fontawesome-brands-apple: MacOS"
 
-    The `ssh` client should be available by default, if not this can be installed as a [brew.sh formula](https://formulae.brew.sh/formula/openssh){:target=_blank}.
+    ???- success "Available by default, no action required!"
+
+        === ":simple-homebrew: Homebrew"
+
+            ```shell
+            brew install openssh
+            ```
 
 ## Logging in
 
 === ":fontawesome-brands-windows: Windows"
 
-    1.  Open your SSH tool of choice (e.g. PuTTY).
-    2.  Fill-out the server address (e.g. hpc.tue.nl)\*
-    3.  Open the connection (click the \[Open\] button in the case of PuTTY).
-    4.  Answer the questions on-screen.
+    === ":octicons-terminal-16: MobaXterm"
+
+        ![img_7.png](img_7.png){ align=right width="300" } 
+
+        Open MobaXterm.
+
+        1. Click on Session (in top left menu)
+        2. Select SSH within the "Session Settings" popup
+        3. Fill in the Remote host: `hpc.tue.nl`
+        4. Enter your TU/e login name
+        5. Click on `Ok` to add the session and connect
+
+    === ":material-network-pos: PuTTY"
+
+        ![img_8.png](img_8.png){ align=right width="300" }
+
+        Open PuTTY.
+
+        1. Enter the "Host Name (or IP address)" field `USERNAME@hpc.tue.nl`
+        2. Click on `Open` to connect to the server
+
+    === ":simple-powershell: PowerShell"
+
+         ```powershell
+         > ssh USERNAME@hpc.tue.nl
+         USERNAME@hpc.tue.nl's password:
+         
+                _____ _   _  __                                ╮╭
+               |_   _| | | |/ /__                         ▄██████████▄
+                 | | | |_| / / -_)                     ▄████████████████▄
+                 |_|  \___/_/\___|                   ▄████████████████████▄
+                                                   ▄██████████████████████▄
+          Eindhoven University of Technology       ▐▀▀▀▀███▀▀▀▀██▀▀▀▀███▀▀▀▀▌
+         ------------------------------------                  ▐▌
+                                                               ▐▌  ▄
+         Welcome to the TU/e HPC Umbrella login node           ▐▌  █
+                                                                █▄█▀
+         For WIKI information on how to use this cluster go to:
+         https://hpcwiki.tue.nl/
+          
+         --------------------------------------------------------------------
+          Data (incl. home directories) in the HPC Cluster is NOT backed up!
+         
+              The HPC Cluster is not a solution for archiving your work!
+         --------------------------------------------------------------------
+          
+         [username@tue-login002 ~]$
+         ```
 
 === ":fontawesome-brands-linux: Linux"
 
     ``` { .shell .annotate }
-    $ ssh hpc.tue.nl -l username #(1)!
-    username@hpc.tue.nl's password: #(2)!
+    $ ssh USERNAME@hpc.tue.nl
+    USERNAME@hpc.tue.nl's password:
     
            _____ _   _  __                                ╮╭
           |_   _| | | |/ /__                         ▄██████████▄
@@ -98,18 +164,12 @@ or install third-party software, e.g.:
     
     [username@tue-login002 ~]$
     ```
-
-    1. The username is equal to your TU/e network login name, which is usually a numeric value or starts with a `s` for students.
-    2. Use the same password as the one you're using to log onto your TU/e account when prompted.
-
-    !!! info
-        The username is equal to your TU/e network login name. This is usually a numeric value or starts with a `s` for students. Use the same password as the one you're using to log onto your TU/e account when prompted.
 
 === ":fontawesome-brands-apple: MacOS"
 
     ``` { .shell .annotate }
-    $ ssh hpc.tue.nl -l username #(1)!
-    username@hpc.tue.nl's password: #(2)!
+    $ ssh USERNAME@hpc.tue.nl
+    USERNAME@hpc.tue.nl's password:
     
            _____ _   _  __                                ╮╭
           |_   _| | | |/ /__                         ▄██████████▄
@@ -133,11 +193,9 @@ or install third-party software, e.g.:
     [username@tue-login002 ~]$
     ```
 
-    1. The username is equal to your TU/e network login name, which is usually a numeric value or starts with a `s` for students.
-    2. Use the same password as the one you're using to log onto your TU/e account when prompted.
+!!! info
 
-    !!! info
-        The username is equal to your TU/e network login name. This is usually a numeric value or starts with a `s` for students. Use the same password as the one you're using to log onto your TU/e account when prompted.
+    The USERNAME is equal to your TU/e network login name. This is usually a numeric value or starts with a `s` for students. Use the same password as the one you're using to log onto your TU/e account when prompted.
 
 !!! note
 
@@ -163,166 +221,186 @@ their own login node:
 | phys-login001.phys.tue.nl | Applied Physics & Science Education (APSE) |
 | chem-login001.chem.tue.nl | Chemical Engineering & Chemistry (CE&C)    |
 
-## Advanced
-
-### Passwordless Authentication
+## Passwordless Authentication
 
 To authenticate with the HPC cluster and verify that you are who you
 claim you are (username), you provide a password. It is possible to use
 an alternative setup, where the server verifies that you own the right
 key. A key is, in the end, just a file on your computer, which can be
 (should be) password protected. The
-[idea](https://en.wikipedia.org/wiki/Public-key_cryptography) is to
+[idea](https://en.wikipedia.org/wiki/Public-key_cryptography){:target=_blank} is to
 generate two files: a public key and a private key. You put the public
 key on the server, and let the server verify that you own the private
 key when logging in.
 
 It is possible to copy the private key to other machines, so you have
 access from all those machines. Alternatively, you can make separate key
-pairs for all machines that need access to your account. **Don't lightly
-share your SSH key with others. They will have access to all servers you
-use the SSH key for. Prefer generating a new key pair.**
+pairs for all machines that need access to your account.
 
-If you protect your private key with a password, then you can use the
-[ssh-agent](https://en.wikipedia.org/wiki/Ssh-agent) to avoid having to
-type your password every time you use the key. This is useful if you use
-the same key pair to log in to different machines, or if you frequently
-log out and back in. The agent will ask for your password once and then
-remember it for the rest of the session.
+!!! danger
 
-#### Using the command line (recommended)
+    NEVER share your private key with others! They will have access to all servers you use the SSH key for. 
+    Prefer generating a new key pairs if necessary.
 
-##### Generating an SSH key pair
+=== ":fontawesome-brands-windows: Windows"
 
-**Windows**: To get a suitable environment, it is easiest to install
-[Git for Windows](https://git-scm.com/download/win). When done, you can
-open Git Bash to get a shell with the required functionality.
+    === ":octicons-terminal-16: MobaXterm"
 
-**Linux/Mac**: Open a terminal.
+        !!! success "Available by default, no action required!"
 
-Create an SSH key pair using the following command, substituting your
-email address (we recommend using your TU/e mail address):
+    === ":material-network-pos: PuTTY"
 
-`ssh-keygen -t rsa -b 4096 -C "y.o.u.r.email@tue.nl"`
+         ![img_11.png](img_11.png){ align=right width="250" } 
 
-You will be asked where to save the key pair. Accepting the default
-location by pressing enter is fine.
+         Open the application PutTTYgen.
 
-When prompted for a passphrase, enter the password that protects your
-key. It is possible to leave this empty, but we strongly recommend
-choosing a strong passphrase.
+         1. Select `RSA` as key type
+         2. Enter `4096` as number of bits to use (2048 by default).
+         3. Click on Generate (and follow the instructions on screen)
+         4. Enter your TU/e email address as Key comment
+         5. Enter a passphrase for your key
+         6. Save the private key to your computer (keep this file private!)
 
-##### Putting your public key on the HPC cluster
+         7. Copy the contents of the public key into your keyboard
+            1. Login into the HPC cluster (see [Logging In](#logging-in))
+            2. Create the directory `~/.ssh` if not exists with `mkdir ~/.ssh`
+            3. Open / Create the file `~/.ssh/authorized_keys`
+            4. Paste the content of your clipboard into the `~/.ssh/authorized_keys` file (and save the file).
 
-To be able to use your SSH key pair to log in to the HPC cluster, you
-have to put your public key on the server.
+         Open the saved private key (step 6) with the Pageant program (enter the passphrase of Step 5 if prompted) and connect to the cluster as usual. You'll have to repeat this step everytime you reboot your system.
 
--   First, copy the contents of your public key file. You can find it
-    (if you did not change the location) in `~/.ssh/id_rsa.pub`.
-    Execute, e.g., `cat ~/.ssh/id_rsa.pub` to retrieve the contents in
-    your terminal. Then highlight the contents and copy them to your
-    clipboard.
--   Then [log in](index.md#logging-in) to the cluster
-    using your username and password.
--   Make sure the `~/.ssh` directory exists: `mkdir -p ~/.ssh`. If it
-    did not exist, also change the access rights to ensure only you can
-    access that directory: `chmod 700 ~/.ssh`.
--   Ensure the `~/.ssh/authorized_keys` file exists and has correct
-    access rights:
-    `touch ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys`.
--   Append the line you copied to your clipboard to the
-    `~/.ssh/authorized_keys` file. For example:
-    -   Open a text editor: `nano ~/.ssh/authorized_keys`.
-    -   Paste your clipboard contents onto a new line in the file.
-    -   Save and exit: `Ctrl + O` followed by `Enter` followed by
-        `Ctrl + X`.
+    === ":simple-powershell: PowerShell"
 
-You should now be able to log in to the HPC cluster using your SSH key
-rather than your password.
+        ![img_12.png](img_12.png){ align=right width="200" }
 
-##### Using ssh-agent
+         Open another Windows PowerShell as Administrator and enter the command below to enable and start the SSH agent
 
-Either [make sure ssh-agent starts automatically](https://help.github.com/en/github/authenticating-to-github/working-with-ssh-key-passphrases#auto-launching-ssh-agent-on-git-for-windows){:target=_blank}
-or start it manually as follows:
+         ```powershell
+         Get-Service ssh-agent | Set-Service -StartupType Automatic -PassThru | Start-Service
+         ```
 
-`eval $(ssh-agent -s)`
+         Open Windows PowerShell as regular user.
 
-**Mac**: If you are using macOS Sierra 10.12.2 or later, you need to add
-the following configuration to your `~/.ssh/config` to automatically add
-keys to your agent and to store passphrases in your keychain:
+         1. Generate a public/private key
 
-`Host *`
-`  AddKeysToAgent yes`
-`  UseKeychain yes`
-`  IdentityFile ~/.ssh/id_rsa`
+             ```powershell
+             ssh-keygen -t rsa -b 4096 -C "y.o.u.r.email@tue.nl"
+             ```
 
-Then add your key (we use the default key location here, you may have to
-change this location if you picked a non-default one):
+         2. Upload your public key to the server
+             To be able to use your SSH key pair to log in to the HPC cluster, you have to put your public key on the server.
+      
+             ```powershell
+             ssh-copy-id USERNAME@hpc.tue.nl
+             ```
 
-**Mac**: Instead of the below, add the `-K` option to enable keychain
-integration (`ssh-add -K ~/.ssh/id_rsa`). If you get an error about the
-`-K` option being illegal, you may have to specify the full path to the
-standard Mac version of the `ssh-add` command:
-`/usr/bin/ssh-add -K ~/.ssh/id_rsa`.
+         3. Add the SSH key to the agent
+      
+             ```powershell
+             ssh-add
+             ```
 
-`ssh-add ~/.ssh/id_rsa`
+         4. Login into the cluster as usual (see [Logging In](#logging-in))
 
-#### Configuring the TU/e HPC host in SSH config
+=== ":fontawesome-brands-linux: Linux"
 
-You can make it easier to connect to the HPC cluster, and enforce the
-use of your SSH key.
 
-**Windows**: In the below, substitute `~/.ssh/config` for
-`c:\Program Files\Git\etc\ssh\ssh_config`. That file should already
-exist, and there should be no need to modify access rights.
+    Open a terminal.
 
-First, if you don't have a `~/.ssh` directory or `~/.ssh/config` file
-yet, create them as follows:
+    1. Generate the public/private key
 
--   Make sure the `~/.ssh` directory exists: `mkdir -p ~/.ssh`. If it
-    did not exist, also change the access rights to ensure only you can
-    access that directory: `chmod 700 ~/.ssh`.
--   Ensure the `~/.ssh/config` file exists and has correct access
-    rights: `touch ~/.ssh/config && chmod 600 ~/.ssh/config`.
+        ```shell
+        ssh-keygen -t rsa -b 4096 -C "y.o.u.r.email@tue.nl"
+        ```
 
-Now append the following section to your `~/.ssh/config`:
+        !!! info
+      
+            - You will be asked where to save the key pair. Accepting the default
+            location by pressing enter is fine.
+              - When prompted for a passphrase, enter the password that protects your
+              key. It is possible to leave this empty, but we **_strongly_** recommend
+              choosing a strong passphrase.
 
-`Host tue-hpc`
-`  Hostname hpc.tue.nl`
-`  User your-username`
-`  IdentityFile ~/.ssh/id_rsa`
-`  PasswordAuthentication no`
 
-Be sure to substitute your username, and the location of you SSH key if
-it is non-default. Once you have done this, you should be able to issue
+    2. Configure SSH config
 
-`ssh tue-hpc`
+        Add the following content to `~/.ssh/config`:
+        ```shell
+        Host *
+          AddKeysToAgent yes
+          UseKeychain yes
+          IdentityFile ~/.ssh/id_rsa
+        ```
+    
+        !!! info
+    
+            Then add your key (we use the default key location here, you may have to change this location if you picked a non-default one):
 
-to connect to the cluster.
+    3. Putting your public key on the HPC cluster
+   
+        To be able to use your SSH key pair to log in to the HPC cluster, you
+        have to put your public key on the server.
+   
+        ```shell
+        ssh-copy-id USERNAME@hpc.tue.nl
+        ```
 
-#### Using PuTTY
+    4. Add the SSH key to the agent
+   
+        ```shell
+        ssh-add
+        ```
+   
+    5. Login into the cluster as usual (see [Logging In](#logging-in))
 
-If you installed PuTTY to connect to the cluster, you also have
-installed the PuTTYgen program (its key generator tool) on your
-(Windows) computer.
 
-Open PuTTYgen by clicking on the Windows icon and typing *PuTTYgen*.
-This will open a window named *PuTTY Key Generator*. Under *Actions*,
-click the button *Generate*. Under *Key*, you follow the progress of
-your key pair generation. You should also move your mouse over this
-section because the program uses the moves as input for the key
-generation.
+=== ":fontawesome-brands-apple: MacOS"
 
-Once generated, copy the content in the top field *Public key for
-pasting into OpenSSH authorized_key file*. Then, except for the first
-step, follow the procedure described on the section *Putting your public
-key on the HPC cluster*.
 
-You can choose to put a passphrase to protect your private key and save
-it by clicking *Save private key*. Next time that you connect to the
-server via PuTTY, fill the *Host name* as usual. Then, expand the *SSH*
-menu under *Category* and click *Auth*. In the field *Private key file
-for authentication*, browse to your private key and then click *Open*.
+    Open a terminal.
 
-The program will ask for your user name and passphrase, in case you
-created one.
+    1. Generate the public/private key
+
+        ```shell
+        ssh-keygen -t rsa -b 4096 -C "y.o.u.r.email@tue.nl"
+        ```
+
+        !!! info
+      
+            - You will be asked where to save the key pair. Accepting the default
+            location by pressing enter is fine.
+              - When prompted for a passphrase, enter the password that protects your
+              key. It is possible to leave this empty, but we **_strongly_** recommend
+              choosing a strong passphrase.
+
+
+    2. Configure SSH config
+
+        Add the following content to `~/.ssh/config`:
+        ```shell
+        Host *
+          AddKeysToAgent yes
+          UseKeychain yes
+          IdentityFile ~/.ssh/id_rsa
+        ```
+    
+        !!! info
+    
+            Then add your key (we use the default key location here, you may have to change this location if you picked a non-default one):
+
+    3. Putting your public key on the HPC cluster
+   
+        To be able to use your SSH key pair to log in to the HPC cluster, you
+        have to put your public key on the server.
+   
+        ```shell
+        ssh-copy-id USERNAME@hpc.tue.nl
+        ```
+   
+    4. Add the SSH key to the agent
+   
+        ```shell
+        ssh-add
+        ```
+   
+    5. Login into the cluster as usual (see [Logging In](#logging-in))
