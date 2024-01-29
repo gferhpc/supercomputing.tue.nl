@@ -57,7 +57,5 @@ A second server (hpc-head02) with a basic Rocky 8 install
 ### head01:
 
 ```shell
-vi /trinity/local/luna/daemon/templates/templ_dhcpd.cfg
-
-   option ntp-servers 10.141.255.254, 10.141.255.253;
+luna cluster change -ntp 10.150.255.254,10.150.255.253 
 ```
