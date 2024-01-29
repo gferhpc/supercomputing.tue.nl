@@ -16,11 +16,15 @@ packages need to be reinstalled.
        module avail R
        ```
        R/(version 1)   R/(version 2)   ...
-       ```shel
+
+       ```shell
        module load R/(version of choice)
        ```
+
 3.  Create a Rlibs directory in your home directory
-        $  mkdir Rlibs
+        ```shell
+        mkdir Rlibs
+        ```
 4.  Install a package and its dependency, in this example Rmpfr depends on gmp
         ```shell
         Rscript -e "install.packages('gmp','~/Rlibs','http://ftp.ussg.iu.edu/CRAN')"
@@ -29,9 +33,11 @@ packages need to be reinstalled.
 
 ### Running a job
 
--   At the start of your job script, make sure that you load the same
-    version of R that you used while installing the package, i.e. do a
-    `module load R/(version)` at the start of your job script.
+-   At the start of your job script, make sure that you load the same version of R that you used while installing the package, i.e. do a
+    ```shell
+    module load R/(version)
+    ``` 
+    at the start of your job script.
 
 <!-- -->
 
