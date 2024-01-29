@@ -10,14 +10,6 @@ A second server (hpc-head02) with a basic Rocky 8 install
 
 ## Server Configuration
 
-To avoid the external interface from setting /etc/resolv.conf by DHPC:
-
-```shell
-vi /etc/NetworkManager/NetworkManager.conf
-  [main]
-  dns=none
-```
-
 #### head01:
 
 ```shell
@@ -44,6 +36,11 @@ vi /trinity/local/luna/daemon/templates/templ_dhcpd.cfg
    option domain-name-servers 10.141.255.254, 10.141.255.253;
 ```
 #### head02:
+
+Make sure the DHPC on the external interface (eno1) does not overwrite DNS entries in resolv.conf
+```shell
+sed -i 's/main]/main]\ndns=none/' /etc/NetworkManager/NetworkManager.conf
+```
 
 ```shell
 dnf -y install bind
