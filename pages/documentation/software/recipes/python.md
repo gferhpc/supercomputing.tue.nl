@@ -126,11 +126,21 @@ Python `venv` without impacting other environments.
 
 ### Using TensorFlow
 
-If you want to use [TensorFlow](https://www.tensorflow.org/){:target=_blank}, you should
+[TensorFlow](https://www.tensorflow.org/){:target=_blank} is available as a module:
+
+```shell
+module load TensorFlow/2.13.0-foss-2023a 
+```
+
+If you want to use an other version of TensorFlow than avaiable, you should
 create a [virtual environment](#virtual-environments),
 activate it and then
-`TMPDIR=~/.tmp/ pip install --build ~/.tmp/ tensorflow`. This is a
-slight variation on the `pip install tensorflow` command you might
+
+```shell
+TMPDIR=~/.tmp/ pip install --build ~/.tmp/ tensorflow`
+```
+
+This is a slight variation on the `pip install tensorflow` command you might
 expect, which is needed because of the limited size of the `/tmp`
 partition you get on the HPC cluster. Please try rerunning the command
 once or twice if it fails due to too little disk space, before reporting
