@@ -15,7 +15,7 @@ A second server (hpc-head02) with a basic Rocky 8 install
 Run on both hosts unless otherwise indicated.
 
 ```shell
-dnf -y install postfix libsasl cyrus-sasl cyrus-sasl-lib cyrus-sasl-plain
+dnf -y install postfix libgsasl cyrus-sasl cyrus-sasl-lib cyrus-sasl-plain
 ```
 
 === "hpc-head01"
