@@ -96,24 +96,18 @@ in your home directory. You can thus activate environments regardless of
 your current working directory.
 
 ```shell
-module load anaconda
-conda config --set auto_activate_base false
-conda init bash
-
-source ~/.bashrc
-
-conda create --name my-python-3.9 python=3.9
+module load Python/3.11.3-GCCcore-12.3.0 
+module load Anaconda3/2023.09-0
+conda create -n myconda
 ```
 
 After that, you can at all times activate your environment as follows:
 
 ```shell
-module load anaconda
-conda activate my-python-3.9
+module load Python/3.11.3-GCCcore-12.3.0 
+module load Anaconda3/2023.09-0
+conda activate myconda
 ```
-
-In an sbatch script, be sure to `source ~/.bashrc` as well, because
-Slurm does not do that automatically.
 
 To list your environments, use:
 
@@ -124,7 +118,7 @@ conda env list
 And clean up environments you no longer need by running:
 
 ```shell
-conda env remove --name my-python-3.9
+conda env remove -n myconda
 ```
 
 Within an environment, you can `pip install` libraries just like in
