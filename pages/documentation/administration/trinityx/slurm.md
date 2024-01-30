@@ -36,3 +36,7 @@ Mount the /trinity/shared directory
 mkdir -p /trinity/shared
 mount hpc-head01:/trinity/shared /trinity/shared
 ```
+Make /etc/slurm link to /trinity/shared/etc/slurm
+```shell
+ln -s /trinity/shared/etc/slurm /etc/slurm
+```
