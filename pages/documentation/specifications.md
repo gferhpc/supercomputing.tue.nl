@@ -156,8 +156,6 @@ experimental purposes to get familiar with HPC.
 configurations. In what form this will be implemented, \*if at all\*, is not
 known yet.
 
-### Storage node
-
 *[MIG]: Multi-Instance GPU
 *[HT]: Hyper Threading enabled
 *[SMT]: Simultaneous Multi-Threading enabled

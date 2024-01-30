@@ -121,6 +121,8 @@ Kortom, het is mogelijk om de storage nodes los te koppelen van Bright en te kun
 * [ ] slurm state files ??? (necessary?)
 * [ ] compute images
 * [ ] head nodes /etc
+---
+* [ ] **configure InfiniBand**
 
 ### Rest
 

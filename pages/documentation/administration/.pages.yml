@@ -1,4 +1,6 @@
 nav:
   - index.md
+  - networking.md
   - TrinityX: trinityx
+  - Installations: installations
   - ...
