@@ -46,7 +46,6 @@ Slurm needs to have the same uid and gid as on hpc-head01
 ```shell
 groupmod -g 891 slurm
 usermod -g 891 -u 891 slurm
-chown -R slurm:slurm /etc/slurm
 ```
 Create /var/log/slurm
 ```shell
