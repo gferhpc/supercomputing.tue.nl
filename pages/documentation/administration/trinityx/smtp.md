@@ -58,6 +58,12 @@ postconf -e 'smtp_sasl_password_maps=hash:/etc/postfix/sasl_passwd'
 postconf -e 'smtp_sasl_security_options=noanonymous'
 ```
 
+Send mail for root to hpc-umbrella@tue.nl
+```shell
+sed -i 's/#root.*marc/root hpc-umbrella@tue.nl/' /etc/aliases
+newaliases
+```
+
 ```shell
 systemctl enable postfix --now
 ```
@@ -69,6 +75,8 @@ For every OS image (`luna osimage list`), perform;
 lchroot [image name]
 postconf -e 'relayhost=[10.150.255.254]:25,[10.150.255.253]:25'
 postconf -e 'sender_canonical_maps=static:svchpcsupport@tue.nl'
+sed -i 's/#root.*marc/root root@controller/' /etc/aliases
+newaliases
 systemctl enable postfix.service
 
 exit
