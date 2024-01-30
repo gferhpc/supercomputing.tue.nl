@@ -40,6 +40,12 @@ Make /etc/slurm link to /trinity/shared/etc/slurm
 ```shell
 ln -s /trinity/shared/etc/slurm /etc/slurm
 ```
+Create /var/log/slurm
+```shell
+mkdir -p /var/log/slurm
+chown -R slurm:slurm /var/log/slurm
+chmod o-rx /var/log/slurm
+```shell
 Munge needs to have the same uid and gid as on hpc-head01
 ```shell
 groupmod -g 892 munge
