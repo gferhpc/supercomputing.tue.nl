@@ -72,6 +72,8 @@ Configure internal network interface
 
     firewall-cmd --zone=trusted --change-interface=$IFACE --permanent
     firewall-cmd --reload
+
+    dnf -y install nfs-utils
     ```
 
 !!! Note
