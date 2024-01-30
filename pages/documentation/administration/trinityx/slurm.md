@@ -40,3 +40,25 @@ Make /etc/slurm link to /trinity/shared/etc/slurm
 ```shell
 ln -s /trinity/shared/etc/slurm /etc/slurm
 ```
+Munge needs to have the same uid and gid as on hpc-head01
+```shell
+groupmod -g 892 munge
+usermod -g 892 -u 892 munge
+chown -R munge:munge /etc/munge
+chown -R munge:munge /var/log/munge
+chown -R munge:munge /var/lib/munge
+```
+Add an overwrite to the systemd service for munge
+```shell
+/etc/systemd/system/munge.service.d/
+cat > /etc/systemd/system/munge.service.d/trinity.conf << EOF
+[Unit]
+After=remote-fs.target
+Requires=remote-fs.target
+
+[Service]
+ExecStart=
+ExecStart=/usr/sbin/munged --key-file /trinity/shared/etc/munge/munge.key
+EOF
+```
+
