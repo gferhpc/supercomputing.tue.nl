@@ -83,3 +83,71 @@ exit
 
 luna osimage pack [image name]
 ```
+
+### LDAP alias lookup
+
+=== "hpc-head01"
+
+    ```shell
+    dnf -y install postfix-ldap
+    
+    postconf -e 'alias_maps=hash:/etc/aliases,ldap:/etc/postfix/ldap-aliases.cf'
+    
+    cat >> /etc/postfix/ldap-aliases.cf << EOF
+    version = 3
+    server_host = ldaps://10.150.255.254:636
+    search_base = ou=People,dc=local
+    query_filter = (&(uid=%s)(objectClass=posixAccount))
+    result_attribute = mail
+    bind = no
+    cache = yes
+    EOF
+    
+    systemctl restart postfix
+    ```
+
+=== "hpc-head02"
+
+    ```shell
+    dnf -y install postfix-ldap
+    
+    postconf -e 'alias_maps=hash:/etc/aliases,ldap:/etc/postfix/ldap-aliases.cf'
+    
+    cat >> /etc/postfix/ldap-aliases.cf << EOF
+    version = 3
+    server_host = ldaps://10.150.255.253:636
+    search_base = ou=People,dc=local
+    query_filter = (&(uid=%s)(objectClass=posixAccount))
+    result_attribute = mail
+    bind = no
+    cache = yes
+    EOF
+    
+    systemctl restart postfix
+    ```
+
+=== "nodes"
+
+    !!! info "Requires [VIP](keepalived.md) setup."
+
+    ```shell
+    lchroot [image name]
+
+    dnf -y install postfix-ldap
+    
+    postconf -e 'alias_maps=hash:/etc/aliases,ldap:/etc/postfix/ldap-aliases.cf'
+    
+    cat >> /etc/postfix/ldap-aliases.cf << EOF
+    version = 3
+    server_host = ldaps://10.150.255.252:636
+    search_base = ou=People,dc=local
+    query_filter = (&(uid=%s)(objectClass=posixAccount))
+    result_attribute = mail
+    bind = no
+    cache = yes
+    EOF
+
+    exit
+    
+    luna osimage pack [image name]
+    ```
