@@ -10,6 +10,8 @@ A second server (hpc-head02) with a basic Rocky 8 install
 
 ## Server Configuration
 
+As root on **hpc-head02**
+
 To allow hpc-head02 (the second server) to use the same packages as hpc-head01, add /etc/yum.repos.d/openhpc-base.repo and /etc/yum.repos.d/openhpc-updates.repo
 ```shell
 cat > /etc/yum.repos.d/openhpc-base.repo << EOF
