@@ -61,4 +61,8 @@ ExecStart=
 ExecStart=/usr/sbin/munged --key-file /trinity/shared/etc/munge/munge.key
 EOF
 ```
+Enable and start munge service
+```shell
+systemctl enable munge --now
+```
 
