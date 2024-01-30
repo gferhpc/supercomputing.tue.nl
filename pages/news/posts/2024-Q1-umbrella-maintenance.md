@@ -93,6 +93,7 @@ Kortom, het is mogelijk om de storage nodes los te koppelen van Bright en te kun
 * [ ] ntp config in compute images
 ---
 * [ ] **Munge**
+* [ ] munged on both head nodes
 * [ ] test
 ---
 * [ ] **Slurm controller**
@@ -164,6 +165,7 @@ Current Head Nodes:
 - VIP internal master.cm.cluster (10.141.255.252)
 
 New Head Nodes: 
-- hpc-head01.icts.tue.nl (131.155.7.102 - 10.141.100.100)
-- hpc-head02.icts.tue.nl (131.155.7.103 - 10.141.100.101)
+- hpc-head01.icts.tue.nl (131.155.7.102 - 10.150.255.254)
+- hpc-head02.icts.tue.nl (131.155.7.103 - 10.150.255.253)
 - VIP external hpc-vip.icts.tue.nl (131.155.7.104)
+- VIP internal controller.cluster (10.141.255.252)
