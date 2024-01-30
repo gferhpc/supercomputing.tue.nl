@@ -95,7 +95,7 @@ luna osimage pack [image name]
     
     cat >> /etc/postfix/ldap-aliases.cf << EOF
     version = 3
-    server_host = ldaps://10.150.255.254:636
+    server_host = ldaps://127.0.0.1:636
     search_base = ou=People,dc=local
     query_filter = (&(uid=%s)(objectClass=posixAccount))
     result_attribute = mail
@@ -115,7 +115,7 @@ luna osimage pack [image name]
     
     cat >> /etc/postfix/ldap-aliases.cf << EOF
     version = 3
-    server_host = ldaps://10.150.255.253:636
+    server_host = ldaps://127.0.0.1:636
     search_base = ou=People,dc=local
     query_filter = (&(uid=%s)(objectClass=posixAccount))
     result_attribute = mail
