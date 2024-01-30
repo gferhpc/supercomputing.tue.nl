@@ -78,14 +78,15 @@ follows:
 
 ### Using Anaconda
 
-If you want to use [Anaconda](https://www.anaconda.com/){:target=_blank}, you will have
-to load a module: `module load anaconda`. Several versions are
-available, as you can see by running `module avail anaconda`. The former
-command will load the current version of Anaconda (which is kept
-up-to-date on a best effort basis). Loading this module will make
-several executables available, among which `anaconda`, `conda`, `flask`
-and `jupyter`. You *can* then directly use those in your script. We do
-however recommend you to always work in a [virtual environment](#virtual-environments).
+If you want to use [Anaconda](https://www.anaconda.com/){:target=_blank}, you
+will have to load a module: `module load Anaconda3`. Several versions are
+available, as you can see by running `module avail anaconda` and `module avail
+Anaconda` (mind the capital A!). The former command will load the current
+version of Anaconda (which is kept up-to-date on a best effort basis). Loading
+this module will make several executables available, among which `anaconda`,
+`conda`, `flask` and `jupyter`. You *can* then directly use those in your
+script. We do however recommend you to always work in a
+[virtual environment](#virtual-environments).
 
 `conda` in fact allows you to create
 [environments](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html){:target="_blank"}
@@ -98,6 +99,7 @@ your current working directory.
 ```shell
 module load Python/3.11.3-GCCcore-12.3.0 
 module load Anaconda3/2023.09-0
+eval "$(conda shell.bash activate)"
 conda create -n myconda
 ```
 
@@ -106,6 +108,7 @@ After that, you can at all times activate your environment as follows:
 ```shell
 module load Python/3.11.3-GCCcore-12.3.0 
 module load Anaconda3/2023.09-0
+eval "$(conda shell.bash activate)"
 conda activate myconda
 ```
 
