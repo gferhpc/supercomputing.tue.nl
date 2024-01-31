@@ -172,6 +172,10 @@ luna cluster change -n umbrella -c hpc-umbrella@tue.nl
 ```shell
 luna network change -N 172.16.108.0/23 ipmi
 ```
+#### Fix uchiwa logrotate-script owner
+```shell
+chown root /etc/logrotate.d/uchiwa 
+```
 
 ### Create a demo user (or not)
 ```shell
