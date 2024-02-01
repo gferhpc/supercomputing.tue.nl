@@ -64,6 +64,11 @@ luna node remove node004
 ```shell
 dnf -y install kmod-nvidia
 ```
+```shell
+dnf config-manager --add-repo http://developer.download.nvidia.com/compute/cuda/repos/rhel8/x86_64/cuda-rhel8.repo
+dnf -y install acpid dkms libglvnd-devel libglvnd-opengl
+dnf module install nvidia-driver:latest-dkms
+```
 
 ## LOGIN image additions
 
