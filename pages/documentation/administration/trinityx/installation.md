@@ -281,4 +281,18 @@ EOF
 systemctl restart sssd
 ```
 
+#### BMC network
+
+### Heartbeat network
+
+```shell
+export IFACE=eno2   
+
+nmcli connection add type ethernet con-name $IFACE
+nmcli con mod $IFACE ipv4.method auto
+nmcli con mod $IFACE connection.autoconnect true
+nmcli con up $IFACE
+```
+
+
 *[NIC]: Network Interface Controller
