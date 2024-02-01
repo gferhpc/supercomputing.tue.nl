@@ -65,9 +65,17 @@ luna node remove node004
 ```shell
 dnf config-manager --add-repo http://developer.download.nvidia.com/compute/cuda/repos/rhel8/x86_64/cuda-rhel8.repo
 dnf -y install acpid dkms libglvnd-devel libglvnd-opengl
-dnf module install nvidia-driver:latest-dkms
+dnf -y module install nvidia-driver:latest-dkms
 ```
 TIP: use ```dnf module list nvidia-driver``` to list available versions
+
+## GPU image with 4xx NVIDIA drivers additions
+
+```shell
+dnf config-manager --add-repo http://developer.download.nvidia.com/compute/cuda/repos/rhel8/x86_64/cuda-rhel8.repo
+dnf -y install acpid dkms libglvnd-devel libglvnd-opengl
+dnf -y module install nvidia-driver:470-dkms
+```
 
 ## LOGIN image additions
 
