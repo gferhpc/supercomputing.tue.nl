@@ -67,7 +67,7 @@ dnf config-manager --add-repo http://developer.download.nvidia.com/compute/cuda/
 dnf -y install acpid dkms libglvnd-devel libglvnd-opengl
 dnf module install nvidia-driver:latest-dkms
 ```
-
+TIP: use ```dnf module list nvidia-driver``` to list available versions
 
 ## LOGIN image additions
 
