@@ -83,7 +83,7 @@ luna osimage pack gpu-470drv
 
 ## LOGIN image additions
 
-For the default route provided by the DHPC op the "external" interface to be prevered above the one set bij the internal interface the matric of the "clister" netweokr needs to be changes:
+For the default route provided by the DHPC op the "external" interface to be prevered above the one set bij the internal interface the matric of the "cluster" network needs to be changed:
 ```shell
 luna network change -gm 201 cluster
 ```
