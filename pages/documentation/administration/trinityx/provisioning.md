@@ -61,14 +61,13 @@ luna node remove node004
 ## GPU image additions
 
 #### GPU packages
-```shell
-dnf -y install kmod-nvidia
-```
+
 ```shell
 dnf config-manager --add-repo http://developer.download.nvidia.com/compute/cuda/repos/rhel8/x86_64/cuda-rhel8.repo
 dnf -y install acpid dkms libglvnd-devel libglvnd-opengl
 dnf module install nvidia-driver:latest-dkms
 ```
+
 
 ## LOGIN image additions
 
@@ -98,3 +97,17 @@ cache_credentials = True
 EOF
 ```
 
+## OS image Testing
+```shell
+luna osimage clone xxxx yyyy
+lchroot yyyy
+...
+exit
+luna osimage pack yyyy
+luna node change -o yyyy NODENAME
+ssh NODENAME reboot
+test..
+luna node change -o "" NODENAME #Set the osimage as defined in the group osimage
+luna osimage remove yyyy
+rm -rf /trinityx/images/yyyy
+```
