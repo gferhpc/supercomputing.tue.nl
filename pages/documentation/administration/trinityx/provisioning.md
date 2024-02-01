@@ -123,3 +123,14 @@ luna node change -o "" NODENAME #Set the osimage as defined in the group osimage
 luna osimage remove yyyy
 rm -rf /trinityx/images/yyyy
 ```
+
+## Apptainer support
+
+```shell
+lchroot [image name]
+
+dnf -y install apptainer
+exit
+
+luna osimage pack [image name]
+```
