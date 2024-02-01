@@ -8,6 +8,18 @@ A second server (hpc-head02) with a basic Rocky 8 install and server Setup done 
 
 ## Server Configuration
 
+### Heartbeat network
+
+```shell
+export IFACE=eno2   
+
+nmcli connection add type ethernet con-name $IFACE
+nmcli con mod $IFACE ipv4.method auto
+nmcli con mod $IFACE connection.autoconnect true
+nmcli con up $IFACE
+```
+
+
 ### VIP Configuration with keepalived
 
 Run on both hosts unless otherwise indicated.
