@@ -206,7 +206,7 @@ luna group change -qpre pre.txt compute
 
     ```shell
     ipmitool user set name 3 trinityx
-    ipmitool user set password 3 PASSWD
+    ipmitool user set password 3 <PASSWORD>
     ipmitool user priv 3 4 1
     ipmitool user enable 3
     ```
@@ -236,6 +236,9 @@ luna group change -qpart part.txt compute
     mount /dev/sda4 /sysroot
     mkdir /sysroot/boot
     mkfs.ext4 /dev/sda5
+    mkdir /sysroot/local
+    mount //dev/sda5 /sysroot/local
+    chmod 1777 /sysroot/local
     ```
 
 ```shell
