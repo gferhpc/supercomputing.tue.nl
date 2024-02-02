@@ -15,7 +15,7 @@ luna group change --setupbmc n compute
 ## Renename bmcsetup compute to trinityx and match the pre.txt settings
 ```shell
 luna bmcsetup rename compute trinityx
-luna bmcsetup change -uid 3 -u trinityx -p PASSWD trinityx
+luna bmcsetup change -uid 3 -u trinityx -p <PASSWORD> trinityx
 ```
 
 ## Create the extra node groups and osimages
