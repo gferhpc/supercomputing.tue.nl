@@ -22,6 +22,7 @@
 
 ### Cluster internal
 
+- Subnet: 10.148.0.0/16 - Umbrella Cluster heartbeat
 - Subnet: 10.149.0.0/16 — Umbrella Cluster InfiniBand
 - Subnet: 10.150.0.0/16 — Umbrella Cluster Ethernet
     - 10.150.0.1 — first node; nodes number upwards from here
@@ -30,6 +31,7 @@
     - 10.150.255.252 — head VIP
     - 10.150.255.253 — head02
     - 10.150.255.254 — head01
+- Subnet: 172.x.x.x ??? — VAST internal network
 
 ## Switch configurations
 
