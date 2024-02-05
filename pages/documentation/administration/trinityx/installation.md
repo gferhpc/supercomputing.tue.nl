@@ -13,28 +13,28 @@
 - [Rocky Linux](https://rockylinux.org){:target=_blank} 8.x
 - iDrac access to hpc-head01 and hpc-head02
 
-  ??? example "Configuration"
+??? example "Configuration"
 
-        **Localization**
-
-        - Keyboard: English (US)
-        - Language Support: English (United States)
-        - Time & Date: Europe/Amsterdam
-     
+    **Localization**
     
-        **Software**
-
-        - Software Selection: Minimal Install (Standard)
-
-        **System**
-
-          - Installation Destination: Local Standard Disks (sda), Storage Configuration: Manual: '/' 'swap' and 'boot'
-          - Network & Hostname: Configure Network, Hostname: hpc-head0X.icts.tue.nl
-
-        **User Settings**
-
-          - Root Password: ********
-          - User Creation: ********, Make this user administrator
+    - Keyboard: English (US)
+    - Language Support: English (United States)
+    - Time & Date: Europe/Amsterdam
+    
+    
+    **Software**
+    
+    - Software Selection: Minimal Install (Standard)
+    
+    **System**
+    
+    - Installation Destination: Local Standard Disks (sda), Storage Configuration: Manual: '/' 'swap' and 'boot'
+    - Network & Hostname: Configure Network, Hostname: hpc-head0X.icts.tue.nl
+    
+    **User Settings**
+    
+    - Root Password: ********
+    - User Creation: ********, Make this user administrator
 
 ## Server Configuration
 
