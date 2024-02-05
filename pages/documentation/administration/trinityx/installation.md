@@ -247,12 +247,21 @@ luna group change -qpost post.txt compute
 ??? example "post.txt"
     
     ```shell
+    chroot /sysroot /bin/bash -c "mkdir -p /sw /trinity/ohpc /trinity/shared"
+    chroot /sysroot /bin/bash -c "mkdir -p /home/tue /home/arch001 /home/bme001 /home/bme002 /home/chem002 /home/mcs001 /home/phys"
+    
     cat << EOF >> /sysroot/etc/fstab
     /dev/sda4   /       ext4    defaults        1 1
     /dev/sda2   /boot   ext4    defaults        1 2
     /dev/sda1   /boot/efi   vfat    defaults        1 2
     /dev/sda3   swap    swap    defaults        0 0
     /dev/sda5   /local     ext4    defaults        1 1
+    
+    10.150.254.1:/tank/sw      /sw              nfs     defaults,bg,_netdev     0 0
+    10.150.254.1:/tank/ohpc    /trinity/ohpc    nfs     defaults,bg,_netdev     0 0
+    10.150.254.1:/tank/trinity /trinity/shared  nfs     defaults,bg,_netdev     0 0
+    
+    10.150.254.1:/tank/home    /home/tue        nfs     defaults,bg,_netdev     0 0
     EOF
     SH=`chroot /sysroot /bin/bash -c "efibootmgr -v|grep Shim1|grep -oE '^Boot[0-9]+'|grep -oE '[0-9]+'"`
     if [ "$SH" ]; then
