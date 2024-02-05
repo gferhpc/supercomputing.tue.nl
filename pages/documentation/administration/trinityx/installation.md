@@ -319,15 +319,3 @@ nmcli con up $IFACE
 ```
 
 *[NIC]: Network Interface Controller
-
-## Network Overview
-
-The cluster is configured in the `10.150.0.0/16` network.
-
-### Reservations
-
-| Range             | Description   |
-|-------------------|---------------|
-| `10.150.255.0/24` | Head nodes    |
-| `10.150.254.0/24` | Storage nodes |
-| `10.150.250.0/24` | VAST          |
