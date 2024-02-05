@@ -18,7 +18,7 @@
     - 131.155.7.103 `hpc-head02.icts.tue.nl`
     - 131.155.7.104 `hpc-vip.icts.tue.nl`
     - 131.155.7.109 `tue-login002.icts.tue.nl`
-- Subnet: 172.16.108.0/23 — TU/e IPMI
+- Subnet: 172.16.108.0/23 — Mgmt-Infra-TUe-HPC (VLAN 301)
 
 ### Cluster internal
 
