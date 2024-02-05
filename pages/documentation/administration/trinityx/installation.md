@@ -1,9 +1,11 @@
 # Installation
 
-| Nodes               | IPMI          | Internal IP    | external IP (DHcP) |
-|:--------------------|:-------------:|:--------------:|:------------------:|
-| hpc-head01 ***TrinityX*** | 172.16.108.55 | 10.150.255.254 | 131.155.7.102      |
-| hpc-head02          | 172.16.108.56 | 10.150.255.253 | 131.155.7.103      |
+| Nodes                     |      IPMI      |   Internal IP   | External IP (DHCP) |
+|:--------------------------|:--------------:|:---------------:|:------------------:|
+| hpc-head01 ***TrinityX*** | 172.16.108.55  | 10.150.255.254  |   131.155.7.102    |
+| hpc-head02                | 172.16.108.56  | 10.150.255.253  |   131.155.7.103    |
+| tue-storage001            | 172.16.108.151 |  10.150.254.1   |        N/A         |
+| VAST                      |      N/A       | 10.150.250.0/24 |        N/A         |
 
 ## Requirements
 
@@ -11,7 +13,7 @@
 - [Rocky Linux](https://rockylinux.org){:target=_blank} 8.x
 - iDrac access to hpc-head01 and hpc-head02
 
-    ??? example "Configuration"
+  ??? example "Configuration"
 
         **Localization**
 
@@ -36,9 +38,10 @@
 
 ## Server Configuration
 
-As root@hpc-head0X 
+As root@hpc-head0X
 
 **TIP**: use tmux to mitigate connection loss during installation
+
 ```shell
 dnf -y install tmux
 ```
@@ -80,7 +83,6 @@ Configure internal network interface
 
     Make sure to use the correct name of your internal NIC.
 
-
 ### Update the OS
 
 ```shell
@@ -104,11 +106,13 @@ dnf -y install git
 ```
 
 Make sure the DHPC on the external interface (eno1) does not overwrite DNS entries in resolv.conf
+
 ```shell
 sed -i 's/main]/main]\ndns=none/' /etc/NetworkManager/NetworkManager.conf
 ```
 
 Clone the TrinityX github repo
+
 ```shell
 git clone https://github.com/clustervision/trinityX.git /root/trinityX
 cd /root/trinityX
@@ -123,23 +127,23 @@ cp site/group_vars/all.yml.example site/group_vars/all.yml
 
 Review and edit the contents of the `all.yml` file accordingly, notable settings:
 
-| Setting                      | Value                        | Description                                                 |
-|------------------------------|------------------------------|-------------------------------------------------------------|
-| administrator_email          | `hpc-umbrella@tue.nl`        | Email address of the administrator                          |
-| project_id                   | `umbrella`                   | Project ID                                                  |
-| ha                           | `false` (default)            | High Availability; _MUST remain `false` at time of writing_ |
-| trix_ctrl1_ip                | `10.150.255.254 `            | IP controller node in Cluster Network                       |
-| trix_ctrl1_bmcip             | `172.16.108.??`              | IP controller node in BMC Network                           |
-| trix_ctrl1_hostname          | `hpc-head01`                 | Hostname                                                    |
-| trix_cluster_net.            | `10.150.0.0`                 | Cluster (Private) Network | 
-| trix_cluster_netprefix.      | `16`                         | CIDR of Cluster Network |
-| trix_cluster_dhcp_start      | `10.150.128.0`               | Start of DHCP range for nodes |
-| trix_cluster_dhcp_end        | `10.150.135.255`             | End of DHCP range for nodes |
-| trix_external_fqdn           | `umbrella-cluster.hpc.tue.nl`| FQDN of the external interface of the cluster               |
-| trix_dns_forwarders          | `[131.155.2.3, 131.155.3.3]` | List of DNS forwarders to use for the cluster.              |
-| firewalld_public_interfaces  | `[eno1]`                     | List of public interfaces to use for the cluster.           |
-| firewalld_trusted_interfaces | `[ens3f0np0]`                | List of trusted interfaces to use for the cluster.          |
-| el8_openhpc_repositories     | `OpenHPC/2/update.2.6.2/EL_8`| Activate latest update to OpenHPC 2.6                       |
+| Setting                      | Value                         | Description                                                 |
+|------------------------------|-------------------------------|-------------------------------------------------------------|
+| administrator_email          | `hpc-umbrella@tue.nl`         | Email address of the administrator                          |
+| project_id                   | `umbrella`                    | Project ID                                                  |
+| ha                           | `false` (default)             | High Availability; _MUST remain `false` at time of writing_ |
+| trix_ctrl1_ip                | `10.150.255.254 `             | IP controller node in Cluster Network                       |
+| trix_ctrl1_bmcip             | `172.16.108.??`               | IP controller node in BMC Network                           |
+| trix_ctrl1_hostname          | `hpc-head01`                  | Hostname                                                    |
+| trix_cluster_net.            | `10.150.0.0`                  | Cluster (Private) Network                                   | 
+| trix_cluster_netprefix.      | `16`                          | CIDR of Cluster Network                                     |
+| trix_cluster_dhcp_start      | `10.150.128.0`                | Start of DHCP range for nodes                               |
+| trix_cluster_dhcp_end        | `10.150.135.255`              | End of DHCP range for nodes                                 |
+| trix_external_fqdn           | `umbrella-cluster.hpc.tue.nl` | FQDN of the external interface of the cluster               |
+| trix_dns_forwarders          | `[131.155.2.3, 131.155.3.3]`  | List of DNS forwarders to use for the cluster.              |
+| firewalld_public_interfaces  | `[eno1]`                      | List of public interfaces to use for the cluster.           |
+| firewalld_trusted_interfaces | `[ens3f0np0]`                 | List of trusted interfaces to use for the cluster.          |
+| el8_openhpc_repositories     | `OpenHPC/2/update.2.6.2/EL_8` | Activate latest update to OpenHPC 2.6                       |
 
 ```shell
 cp site/hosts.example site/hosts
@@ -164,20 +168,26 @@ ansible-playbook controller.yml
 
 ### Configuration
 
-#### Set cluster settings 
+#### Set cluster settings
+
 ```shell
 luna cluster change -n umbrella -c hpc-umbrella@tue.nl
 ```
+
 #### Configure the BMC(ipmi) network
+
 ```shell
 luna network change -N 172.16.108.0/23 ipmi
 ```
+
 #### Fix uchiwa logrotate-script owner
+
 ```shell
 chown root /etc/logrotate.d/uchiwa 
 ```
 
 ### Create a demo user (or not)
+
 ```shell
 obol user add demo -p demo
 obol group addusers admins demo
@@ -199,9 +209,11 @@ luna osimage pack compute
 ```
 
 #### Add pre.txt, part.txt and post.txt to the part/post of the compute image
+
 ```shell
 luna group change -qpre pre.txt compute
 ```
+
 ??? example "pre.txt"
 
     ```shell
@@ -216,7 +228,7 @@ luna group change -qpart part.txt compute
 ```
 
 ??? example "part.txt"
-    
+
     ```shell
     parted /dev/sda -s 'mklabel gpt'
     parted /dev/sda -s 'mkpart efi fat32 1 1g'
@@ -244,8 +256,9 @@ luna group change -qpart part.txt compute
 ```shell
 luna group change -qpost post.txt compute
 ```
+
 ??? example "post.txt"
-    
+
     ```shell
     chroot /sysroot /bin/bash -c "mkdir -p /sw /trinity/ohpc /trinity/shared"
     chroot /sysroot /bin/bash -c "mkdir -p /home/tue /home/arch001 /home/bme001 /home/bme002 /home/chem002 /home/mcs001 /home/phys"
@@ -281,6 +294,7 @@ luna group change -qpost post.txt compute
     ```
 
 Authentication via AD
+
 ```shell
 cat >> /etc/sssd/sssd.conf << EOF
 
