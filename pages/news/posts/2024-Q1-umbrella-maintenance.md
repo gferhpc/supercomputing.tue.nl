@@ -97,7 +97,7 @@ Kortom, het is mogelijk om de storage nodes los te koppelen van Bright en te kun
 * [ ] test
 ---
 * [ ] **Slurm controller**
-* [ ] test: who adds nodes to slurm config?  TrinityX or no-one?  Can we make it no-one?
+* [x] test: who adds nodes to slurm config?  TrinityX or no-one: answer is no-one.
 * [ ] can we write slurm config using own templates and Luna database?
 * [ ] write the actual config
 ---
@@ -150,7 +150,7 @@ Kortom, het is mogelijk om de storage nodes los te koppelen van Bright en te kun
 
 * Remove TUe-side connections of storage nodes
 * Deregister storage node MAC addresses
-[x] Deregister storage nodes from Zabbix (already done)
+* [x] Deregister storage nodes from Zabbix (already done)
 
 * write script to periodically cleanup old osimage packs in: /trinity/local/luna/files
 

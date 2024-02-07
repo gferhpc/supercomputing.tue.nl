@@ -53,7 +53,6 @@ mkdir -p /var/log/slurm
 chown -R slurm:slurm /var/log/slurm
 chmod o-rx /var/log/slurm
 ```
-```shell
 Munge needs to have the same uid and gid as on hpc-head01
 ```shell
 groupmod -g 892 munge
@@ -64,7 +63,7 @@ chown -R munge:munge /var/lib/munge
 ```
 Add an overwrite to the systemd service for munge
 ```shell
-/etc/systemd/system/munge.service.d/
+mkdir /etc/systemd/system/munge.service.d/
 cat > /etc/systemd/system/munge.service.d/trinity.conf << EOF
 [Unit]
 After=remote-fs.target
