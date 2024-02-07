@@ -260,9 +260,11 @@ luna group change -qpost post.txt compute
 ??? example "post.txt"
 
     ```shell
-    chroot /sysroot /bin/bash -c "mkdir -p /sw /trinity/ohpc /trinity/shared"
+    # Create required directories
+    chroot /sysroot /bin/bash -c "mkdir -p /sw /trinity/ohpc /trinity/shared /cm/shared"
     chroot /sysroot /bin/bash -c "mkdir -p /home/tue /home/arch001 /home/bme001 /home/bme002 /home/chem002 /home/mcs001 /home/phys"
     
+    # Write fstab
     cat << EOF >> /sysroot/etc/fstab
     /dev/sda4   /       ext4    defaults        1 1
     /dev/sda2   /boot   ext4    defaults        1 2
@@ -270,24 +272,34 @@ luna group change -qpost post.txt compute
     /dev/sda3   swap    swap    defaults        0 0
     /dev/sda5   /local     ext4    defaults        1 1
     
-    10.150.254.1:/tank/sw      /sw              nfs     defaults,bg,_netdev     0 0
-    10.150.254.1:/tank/ohpc    /trinity/ohpc    nfs     defaults,bg,_netdev     0 0
-    10.150.254.1:/tank/trinity /trinity/shared  nfs     defaults,bg,_netdev     0 0
+    10.150.254.1:/tank/cmshared/cm/shared /cm/shared       nfs     defaults,_netdev     0 0
     
-    10.150.254.1:/tank/home    /home/tue        nfs     defaults,bg,_netdev     0 0
+    10.150.254.1:/tank/sw      /sw              nfs     defaults,_netdev     0 0
+    10.150.254.1:/tank/ohpc    /trinity/ohpc    nfs     defaults,_netdev     0 0
+    10.150.254.1:/tank/trinity /trinity/shared  nfs     defaults,_netdev     0 0
+    
+    10.150.254.1:/tank/home    /home/tue        nfs     defaults,_netdev     0 0
     EOF
+    
+    # Install bootloader
     SH=`chroot /sysroot /bin/bash -c "efibootmgr -v|grep Shim1|grep -oE '^Boot[0-9]+'|grep -oE '[0-9]+'"`
     if [ "$SH" ]; then
-            echo 'Shim found on boot '$SH
-            chroot /sysroot /bin/bash -c "efibootmgr -B -b $SH"
-            echo Remove
-            chroot /sysroot /bin/bash -c "efibootmgr -v"
-            echo Clean
+    echo 'Shim found on boot '$SH
+    chroot /sysroot /bin/bash -c "efibootmgr -B -b $SH"
+    echo Remove
+    chroot /sysroot /bin/bash -c "efibootmgr -v"
+    echo Clean
     fi
     chroot /sysroot /bin/bash -c "efibootmgr --verbose --disk /dev/sda --part 1 --create --label \"Shim1\" --loader /EFI/rocky/shimx64. efi"
     chroot /sysroot /bin/bash -c "grub2-mkconfig -o /boot/efi/EFI/rocky/grub.cfg"
     chroot /sysroot /bin/bash -c "systemctl set-default multi-user.target"
 
+    # Configure modules
+    cat << EOF >> /sysroot/etc/profile.d/z_umbrella.sh
+    #!/bin/sh
+    export MODULEPATH=\$MODULEPATH:/sw/rl8/zen/mod/all:/cm/shared/modules/amd/all:/cm/shared/modulefiles
+    EOF
+    
     umount /sysroot/sys
     umount /sysroot/dev
     umount /sysroot/proc
