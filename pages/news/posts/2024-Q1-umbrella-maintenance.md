@@ -69,7 +69,11 @@ Kortom, het is mogelijk om de storage nodes los te koppelen van Bright en te kun
 * [ ] OOD
 ---
 * [ ] **GPU image for TrinityX**
-* [ ] connect id-gpu for testing to test cluster
+* [x] connect id-gpu for testing to test cluster
+* [x] create GPU osimage (and group) with nvida-drivers Rocky8
+* [x] test image on node (nvidia-smi)
+* [x] create GPU osimage with nvidia 470 Drivers Rocky 8 for elec-gpuB001 : gpu-470drv
+* [] test slurm (--gpus=) GPU reservation on gpu-node 
 ---
 * [ ] **test job submission as mortal user (submit, wait, see results)**
 * [ ] test OOD GUI session
