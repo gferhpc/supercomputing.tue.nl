@@ -293,12 +293,6 @@ luna group change -qpost post.txt compute
     chroot /sysroot /bin/bash -c "efibootmgr --verbose --disk /dev/sda --part 1 --create --label \"Shim1\" --loader /EFI/rocky/shimx64. efi"
     chroot /sysroot /bin/bash -c "grub2-mkconfig -o /boot/efi/EFI/rocky/grub.cfg"
     chroot /sysroot /bin/bash -c "systemctl set-default multi-user.target"
-
-    # Configure modules
-    cat << EOF >> /sysroot/etc/profile.d/z_umbrella.sh
-    #!/bin/sh
-    export MODULEPATH=\$MODULEPATH:/sw/rl8/zen/mod/all:/cm/shared/modules/amd/all:/cm/shared/modulefiles
-    EOF
     
     umount /sysroot/sys
     umount /sysroot/dev

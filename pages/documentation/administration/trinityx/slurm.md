@@ -79,3 +79,14 @@ Enable and start munge service
 systemctl enable munge --now
 ```
 
+## Database configuration
+
+Allow all hosts to access the slurm_accounting database (limited to `localhost` by default)
+
+```shell
+hpc-head01# mysql -uroot
+```
+
+```mysql
+UPDATE `mysql`.`user` SET `Host` = '%' WHERE `User` = 'slurm_accounting';
+```

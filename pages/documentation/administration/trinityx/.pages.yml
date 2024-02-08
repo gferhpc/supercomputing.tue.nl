@@ -8,4 +8,5 @@ nav:
   - 7. NTP HA: ntp.md
   - 8. DNS HA : dns.md
   - 9. Storage: storage.md
+  - 10. Software: modules.md
   - ...

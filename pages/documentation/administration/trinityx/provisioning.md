@@ -134,3 +134,11 @@ exit
 
 luna osimage pack [image name]
 ```
+
+## cgroups v2
+
+```shell
+luna osimage change -o [image name]
+```
+
+Add `systemd.unified_cgroup_hierarchy=1` and save/close the document to apply changes. 
