@@ -73,7 +73,7 @@ Kortom, het is mogelijk om de storage nodes los te koppelen van Bright en te kun
 * [x] create GPU osimage (and group) with nvida-drivers Rocky8
 * [x] test image on node (nvidia-smi)
 * [x] create GPU osimage with nvidia 470 Drivers Rocky 8 for elec-gpuB001 : gpu-470drv
-* [] test slurm (--gpus=) GPU reservation on gpu-node 
+* [ ] test slurm (--gpus=) GPU reservation on gpu-node 
 ---
 * [ ] **test job submission as mortal user (submit, wait, see results)**
 * [ ] test OOD GUI session
