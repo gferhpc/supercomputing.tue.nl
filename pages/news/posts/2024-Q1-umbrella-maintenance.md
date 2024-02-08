@@ -64,9 +64,10 @@ Kortom, het is mogelijk om de storage nodes los te koppelen van Bright en te kun
 ```
 ---
 * [ ] **Login image for TrinityX**
-* [ ] tue-login001: connect to test cluster for testing
+* [x] tue-login001: connect to test cluster for testing
 * [ ] cgroup/ulimit per user
-* [ ] OOD
+* [x] Ansible script for OOD install on a specific login node (login001).
+* [ ] Install OOD/Certs to use https://hpc.tue.nl
 ---
 * [ ] **GPU image for TrinityX**
 * [x] connect id-gpu for testing to test cluster
