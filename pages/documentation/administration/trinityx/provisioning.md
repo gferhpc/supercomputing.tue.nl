@@ -83,11 +83,11 @@ luna osimage pack gpu-470drv
 
 ## LOGIN image additions
 
-For the default route provided by the DHPC op the "external" interface to be prevered above the one set bij the internal interface the matric of the "cluster" network needs to be changed:
+For the default route provided by the DHPC on the "external" interface to be preserved above the one set by the internal interface the metric of the "cluster" network needs to be changed:
 ```shell
 luna network change -gm 201 cluster
 ```
-In the image (lchroot login) the foolowing was changed:
+In the image (lchroot login) the following was changed:
 ```shell
 sed -i '/slurm/d' /etc/pam.d/sshd
 ```
