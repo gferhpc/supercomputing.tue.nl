@@ -1,16 +1,74 @@
-# Installation
+# Slurm
 
-![SLURM Logo](slurm.png){ align=right heigth="100" }
+Requirements:
+
+* A succesfull (non HA) installation of TrinityX using the ansible-playbook.
+
+Order of operations:
+
+* Preparation
+* Set up Slurm DBD on head01
+* Set up Slurm controller on head01
+* Set up slurm controller on head02 (make HA Slurm controller)
+
+# Preparation
+
+```shell
+chown root:root /trinity/shared/etc
+chown -R root:root /trinity/shared/etc/slurm
+```
+
+# Slurmdbd on head01
+
+As root on **hpc-head01**.
+
+Allow all hosts to access the `slurm_accounting` database (limited to `localhost` by default):
+
+1. `mysql -uroot`
+2. ```UPDATE `mysql`.`user` SET `Host` = '%' WHERE `User` = 'slurm_accounting';```
+
+Configure Slurm DBD:
+
+1. set SlurmUser=slurm in slurmdbd.conf
+2. `chown slurm:slurm /etc/slurm/slurmdbd.conf`
+3. `chmod 600 /etc/slurm/slurmdbd.conf`
+4. `systemctl restart slurmdbd`
+
+Verify:
+
+* `systemctl status slurmdbd`
+* `tail /var/log/slurm/slurmdbd.log`
+
+# Slurmctld on head01
+
+As root on **hpc-head01**.
+
+## Base configuration
+
+As root on **hpc-head01**.
+
+## Testing
+
+## gres.conf
+
+OpenHPC's Slurm is compiled without NVML support, so GPUs must be configured manually.  This can be done as follows:
+
+```shell
+cd /etc/slurm
+F=gres-$(hostname).conf
+echo "Include $F" >> gres.conf
+./generate-gpu-gres.py > $F
+```
+
+# Slurmctld on head02
 
 ## Requirements
 
-A succesfull (Non HA) installation of TrinityX using the ansible-playbook.
-
 A second server (hpc-head02) with a basic Rocky 8 install
 
-## Server Configuration
+## Configuring 2nd controller (HA)
 
-As root on **hpc-head02**
+As root on **hpc-head02**.
 
 To allow hpc-head02 (the second server) to use the same packages as hpc-head01, add /etc/yum.repos.d/openhpc-base.repo and /etc/yum.repos.d/openhpc-updates.repo
 ```shell
@@ -79,14 +137,25 @@ Enable and start munge service
 systemctl enable munge --now
 ```
 
-## Database configuration
-
-Allow all hosts to access the slurm_accounting database (limited to `localhost` by default)
+### Verifying/fixing base installation
 
 ```shell
-hpc-head01# mysql -uroot
+/trinity/local/sbin/trix-config-manager pdsh-genders get-manager      # should return "TrinityX"
+/trinity/local/sbin/trix-config-manager slurm-nodes get-manager       # should return "None"
+/trinity/local/sbin/trix-config-manager slurm-partitions get-manager  # should return "None"
 ```
 
-```mysql
-UPDATE `mysql`.`user` SET `Host` = '%' WHERE `User` = 'slurm_accounting';
+```shell
+sinfo -N
 ```
+
+```shell
+chown root:root /trinity/shared/var/spool
+chown -R slurm:slurm /trinity/shared/var/spool/slurm
+```
+
+* On both head nodes: verify munged is running
+* On both head nodes: check munged log for strange things.
+* On both head nodes: verify slurmctld is running.
+* On both head nodes: check slurmctld log for strange things.
+
