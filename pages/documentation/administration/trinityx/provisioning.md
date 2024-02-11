@@ -135,10 +135,16 @@ exit
 luna osimage pack [image name]
 ```
 
-## cgroups v2
+## cgroups v2 (not implemented)
+
+Slurm 22.05's slurmd seems to be incompatible with CGroups v2 on Rocky Linux 8, hence we use CGroups v1 on compute nodes.  On login nodes, we use CGroups v2.
+
+Furthermore, Rocky 8 has some packages that are incompatible with CGroups v2; see https://www.redhat.com/en/blog/world-domination-cgroups-rhel-8-welcome-cgroups-v2.
+
+To enable for a specific osimage:
 
 ```shell
-luna osimage change -o [image name]
+EDITOR=vim luna osimage change -o [image name]
 ```
 
 Add `systemd.unified_cgroup_hierarchy=1` and save/close the document to apply changes. 
