@@ -137,7 +137,7 @@ luna osimage pack [image name]
 
 ## cgroups v2 (not implemented)
 
-Slurm 22.05's slurmd seems to be incompatible with CGroups v2 on Rocky Linux 8, hence we use CGroups v1 on compute nodes.  On login nodes, we use CGroups v2.
+Slurm 22.05's slurmd seems to be incompatible with CGroups v2 on Rocky Linux 8, hence we use CGroups v1 on compute nodes.  It is unclear what exactly goes wrong with cgroups v2.
 
 Furthermore, Rocky 8 has some packages that are incompatible with CGroups v2; see https://www.redhat.com/en/blog/world-domination-cgroups-rhel-8-welcome-cgroups-v2.
 
