@@ -9,14 +9,21 @@ Order of operations:
 * Preparation
 * Set up Slurm DBD on head01
 * Set up Slurm controller on head01
+* Set up Slurm REST daemon on head01
 * Set up slurm controller on head02 (make HA Slurm controller)
 
 # Preparation
 
-```shell
-chown root:root /trinity/shared/etc
-chown -R root:root /trinity/shared/etc/slurm
-```
+Clone git repo with config snippets:
+
+1. If `/root/misc-configs` does not exist: `cd /root && git clone https://gitlab.tue.nl/hpclab/configurations/misc-configs.git`
+2. `cd /root/misc-configs`
+3. `git pull --ff-only`
+
+Fix permissions:
+
+1. `chown root:root /trinity/shared/etc`
+2. `chown -R root:root /trinity/shared/etc/slurm`
 
 # Slurmdbd on head01
 
@@ -41,24 +48,20 @@ Verify:
 
 # Slurmctld on head01
 
-As root on **hpc-head01**.
+1. `cd /root/misc-configs/slurm`
+2. `make deploy`
+3. Run the rsync command manually; remove `--dry-run`.
+4. `systemctl restart slurmctld`
+5. `pdsh -g compute,gpu systemctl restart slurmd`
 
-## Base configuration
-
-As root on **hpc-head01**.
-
-## Testing
-
-## gres.conf
+## gres.conf: GPUs
 
 OpenHPC's Slurm is compiled without NVML support, so GPUs must be configured manually.  This can be done as follows:
 
-```shell
-cd /etc/slurm
-F=gres-$(hostname).conf
-echo "Include $F" >> gres.conf
-./generate-gpu-gres.py > $F
-```
+1. Run `/etc/slurm/generate-gpu-gres.py` on the GPU node.
+2. Add to `gres.conf`: `Include gres-hostname.conf` if it is not already there.
+
+WARNING: currently does not support MIG!!!
 
 # Slurmctld on head02
 

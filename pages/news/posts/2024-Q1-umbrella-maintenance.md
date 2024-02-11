@@ -74,7 +74,7 @@ Kortom, het is mogelijk om de storage nodes los te koppelen van Bright en te kun
 * [x] create GPU osimage (and group) with nvida-drivers Rocky8
 * [x] test image on node (nvidia-smi)
 * [x] create GPU osimage with nvidia 470 Drivers Rocky 8 for elec-gpuB001 : gpu-470drv
-* [ ] test slurm (--gpus=) GPU reservation on gpu-node 
+* [x] test slurm (--gpus=) GPU reservation on gpu-node  (Guus tested with his gpu-test1.job)
 ---
 * [ ] **test job submission as mortal user (submit, wait, see results)**
 * [ ] test OOD GUI session
@@ -103,10 +103,9 @@ Kortom, het is mogelijk om de storage nodes los te koppelen van Bright en te kun
 ---
 * [ ] **Slurm controller**
 * [x] test: who adds nodes to slurm config?  TrinityX or no-one: answer is no-one.
-* [ ] can we write slurm config using own templates and Luna database?
 * [ ] write the actual config
 ---
-* [ ] **Slurm DBD**
+* [x] **Slurm DBD**
 * [x] for now we worry not about HA; we try to make the underlaying DB HA
 ---
 * [x] **MariaDB HA**
@@ -128,6 +127,7 @@ Kortom, het is mogelijk om de storage nodes los te koppelen van Bright en te kun
 * [ ] head nodes /etc
 ---
 * [ ] **configure InfiniBand**
+* [ ] run OpenSM on at least a few compute nodes per fabric
 
 ### Rest
 
