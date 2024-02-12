@@ -176,3 +176,8 @@ New Head Nodes:
 - hpc-head02.icts.tue.nl (131.155.7.103 - 10.150.255.253)
 - VIP external hpc-vip.icts.tue.nl (131.155.7.104)
 - VIP internal controller.cluster (10.141.255.252)
+
+# Maintenance log:
+
+* tue-storage001: attempted to convert from PXE boot to disk boot, but failed.  Instead, installed a fresh Rocky 8.
+* tue-storage001: at each boot needs manual intervention: issue with PCIe device: PCIe link training failure observed in slot 3.

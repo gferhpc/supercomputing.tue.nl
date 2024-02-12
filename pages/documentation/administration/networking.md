@@ -19,6 +19,7 @@
     - 131.155.7.104 `hpc-vip.icts.tue.nl`
     - 131.155.7.109 `tue-login002.icts.tue.nl`
 - Subnet: 172.16.108.0/23 — Mgmt-Infra-TUe-HPC (VLAN 301)
+    - 172.16.108.240–255 — `hpc-vast-mgmt-1..16.infra.tue.nl` (C2402488)
 
 ### Cluster internal
 
@@ -28,6 +29,8 @@
     - 10.150.0.1 — first node; nodes number upwards from here
     - 10.150.128–135.x — DHCP pool
     - 10.150.250.x — VAST storage
+    - 10.150.254.x — classical storage nodes
+        - 10.150.254.1 — tue-storage001
     - 10.150.255.252 — head VIP
     - 10.150.255.253 — head02
     - 10.150.255.254 — head01
