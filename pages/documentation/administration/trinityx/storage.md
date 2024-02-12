@@ -35,8 +35,8 @@ mkdir -p /sw /trinity/ohpc /trinity/shared /home/tue /home/arch001 /home/bme001 
 10.150.254.31:/molml/home  /home/bme002     nfs     defaults,bg,soft,_netdev     0 0
 10.150.254.41:/tank/home   /home/mech001    nfs     defaults,bg,soft,_netdev     0 0
 10.150.254.51:/tank/home   /home/mcs001     nfs     defaults,bg,soft,_netdev     0 0
-10.150.254.61:/tank/home   /home/chem002    nfs     defaults,bg,soft,_netdev     0 0
-#10.150.254.62:/tank/home   /scratch        nfs     defaults,bg,soft,_netdev     0 0
+#10.150.254.61:/tank/home   /home/chem002    nfs     defaults,bg,soft,_netdev     0 0
+10.150.254.62:/tank/home   /home/chem002    nfs     defaults,bg,soft,_netdev     0 0
 ```
 
 # Clean install
