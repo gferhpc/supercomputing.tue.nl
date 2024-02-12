@@ -32,6 +32,13 @@
     - 10.150.250.x — VAST storage
     - 10.150.254.x — classical storage nodes
         - 10.150.254.1 — tue-storage001
+        - 10.150.254.11 - phys-storage001
+        - 10.150.254.21 - arch-storage001
+        - 10.150.254.31 - bme-storage001
+        - 10.150.254.41 - mech-storage001
+        - 10.250.254.51 - mcs-storage001
+        - 10.250.254.61 - chem-storage001
+        - 10.250.254.62 - chem-storage002
     - 10.150.255.252 — head VIP
     - 10.150.255.253 — head02
     - 10.150.255.254 — head01
