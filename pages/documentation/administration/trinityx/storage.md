@@ -48,12 +48,13 @@ mkdir -p /sw /trinity/ohpc /trinity/shared /home/tue /home/arch001 /home/bme001 
     - Gateway: 10.150.254.252
     - DNS servers: 10.150.254.253,10.150.254.254
     - DNS search domains: cluster
+
 1. `dnf -y install epel-release`
 1. `dnf -y update`
 1. `dnf -y install nfs-utils`
 1. `systemctl enable --now nfs-server.service`
 1. `firewall-cmd --add-service={nfs,nfs3,mountd,rpc-bind} --permanent`
-1. `firewall-cmd reload`
+1. `firewall-cmd --reload`
 1. `dnf -y install https://zfsonlinux.org/epel/zfs-release-2-3.el8.noarch.rpm`
 1. `dnf -y install zfs`
 1. `modprobe zfs`
