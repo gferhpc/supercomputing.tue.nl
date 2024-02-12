@@ -181,3 +181,5 @@ New Head Nodes:
 
 * tue-storage001: attempted to convert from PXE boot to disk boot, but failed.  Instead, installed a fresh Rocky 8.
 * tue-storage001: at each boot needs manual intervention: issue with PCIe device: PCIe link training failure observed in slot 3.
+* head01: doesn't boot correctly: missing TU/e interface: maybe firewall issue
+* head01/02: firewalld configs are very different; should be the same.
