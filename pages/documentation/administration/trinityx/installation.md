@@ -62,6 +62,12 @@ Configure internal network interface
     nmcli con up $IFACE
     ```
 
+    ```shell
+    ip address | grep -B4 172
+    nmcli connection show  # Select correct device UUID.
+    nmcli connection modify  UUID  ipv.never-default true
+    ```
+
 === "hpc-head02"
 
     ```shell

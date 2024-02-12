@@ -5,7 +5,8 @@
 ### Cluster internal
 
 - 1: `default-vlan`
-- 150: `umbrella-internal`
+- 141: `testcl-int`  test cluster internal
+- 150: `umbrella-int`  Umbrella cluster internal
 
 ## IP space
 
@@ -64,8 +65,11 @@ spanning-tree mode rstp
 interface vlan1
    description default-vlan
 
+interface vlan141
+   description testcl-int
+
 interface vlan150
-   description umbrella-internal
+   description umbrella-int
 ```
 
 ### Spine
