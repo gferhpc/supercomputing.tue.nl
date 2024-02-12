@@ -85,6 +85,12 @@ Configure internal network interface
     dnf -y install nfs-utils
     ```
 
+    ```shell
+    ip address | grep -B4 172
+    nmcli connection show  # Select correct device UUID.
+    nmcli connection modify  UUID  ipv.never-default true
+    ```
+
 !!! Note
 
     Make sure to use the correct name of your internal NIC.
