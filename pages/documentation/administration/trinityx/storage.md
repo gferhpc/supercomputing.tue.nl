@@ -18,7 +18,9 @@ Export NFS on storage nodes
 
 ### On all head nodes:
 ```shell
-mkdir -p /sw /trinity/ohpc /trinity/shared /home/tue /home/arch001 /home/bme001 /home/bme002 /home/chem002 /home/mcs001 /home/phys /home/mech001
+mkdir -p /sw /trinity/ohpc /trinity/shared 
+mkdir -p /home/tue /home/arch001 /home/bme001 /home/bme002 /home/chem002 /home/mcs001 /home/phys /home/mech001
+mkdir -p /scratch/chem001
 ```
 
 ## fstab
