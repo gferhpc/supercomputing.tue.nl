@@ -50,13 +50,11 @@ mkdir -p /sw /trinity/ohpc /trinity/shared /home/tue /home/arch001 /home/bme001 
     - DNS search domains: cluster
 
 ```shell
+dnf -y install epel-release https://zfsonlinux.org/epel/zfs-release-2-3.el8.noarch.rpm
 dnf -y update
-dnf -y install https://zfsonlinux.org/epel/zfs-release-2-3.el8.noarch.rpm
-dnf -y install epel-release nfs-utils
-dnf -y install zfs
+dnf -y install zfs nfs-utils
 systemctl enable --now nfs-server.service
 firewall-cmd --add-service={nfs,nfs3,mountd,rpc-bind} --permanent
-firewall-cmd --reload
 reboot
 
 zpool import -f tank
