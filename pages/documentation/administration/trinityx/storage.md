@@ -52,7 +52,8 @@ mkdir -p /sw /trinity/ohpc /trinity/shared /home/tue /home/arch001 /home/bme001 
 ```shell
 dnf -y update
 dnf -y install https://zfsonlinux.org/epel/zfs-release-2-3.el8.noarch.rpm
-dnf -y install epel-release nfs-utils zfs
+dnf -y install epel-release nfs-utils
+dnf -y install zfs
 systemctl enable --now nfs-server.service
 firewall-cmd --add-service={nfs,nfs3,mountd,rpc-bind} --permanent
 firewall-cmd --reload
