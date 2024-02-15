@@ -5,7 +5,6 @@
 ### Cluster internal
 
 - 1: `default-vlan`
-- 141: `testcl-int`  test cluster internal
 - 150: `umbrella-int`  Umbrella cluster internal
 
 ## IP space
@@ -52,6 +51,14 @@
 terminal monitor  ! Show live logging
 ```
 
+Enter configure mode with
+
+```
+configure terminal
+```
+
+In configure mode:
+
 ```
 ! Management
 
@@ -72,14 +79,17 @@ spanning-tree mode rstp
 interface vlan1
    description default-vlan
 
-interface vlan141
-   description testcl-int
-
 interface vlan150
    description umbrella-int
 ```
 
+Exit configure mode with `exit`.
+
+Write configuration to flash with `write memory`.
+
 ### Spine
+
+In configure mode:
 
 ```
 ! Spanning tree
@@ -115,25 +125,77 @@ interface ethernet :INTID
 
 ### Leaf
 
+In configure mode:
+
 ```
 ! Links to spine switches
 
 interface port-channel 1
-   description "spine LAG"
+   description spine-LAG
    switchport mode trunk
    switchport access vlan 1
    switchport trunk allowed vlan 150
    spanning-tree bpduguard disable
 
 interface range ethernet 1/1/25-1/1/26
-   description "spine LAG member"
+   description spine-LAG-member
    no switchport
    channel-group 1 mode active
 
-! Links to nodes
+! Inter-switch links
+! These remain until the spine is operational.
 
-interface range ethernet 1/1/1-1/1/24,1/1/27-1/1/30
+interface range ethernet 1/1/27-1/1/30
+   description inter-switch
+   switchport mode trunk
+   switchport access vlan 1
+   switchport trunk allowed vlan 150
+   spanning-tree bpduguard disable
+
+! Links to nodes
+! Once spine is operational, all ports can become node ports.
+! Then: internet range ethernet 1/1/1-1/1/24,1/1/27-1/1/30
+
+interface range ethernet 1/1/1-1/1/24
+   description umbrella-node
    switchport mode access
    switchport access vlan 150
    spanning-tree bpduguard enable
+```
+
+For M1000e chassis:
+
+```
+! Port channel to M1000e chassis switches
+
+interface port-channel 10       ! Use unique port channel ID
+   description umbrella-chassis
+   switchport mode access
+   switchport access vlan 150
+   spanning-tree bpduguard enable
+
+interface range ethernet 1/1/1-1/1/4   ! Substitute correct interfaces
+   description umbrella-chassis-LAG-member
+   no switchport
+   channel-group 10 mode active     ! substitute port channel ID
+
+```
+
+On the chassis switch itself:
+
+```
+enable  ! Password see KeePass
+configure terminal
+
+interface range gigabitethernet 1/0/17-20
+   no channel-group
+   channel-group 1 mode active
+
+interface port-channel 1
+   spanning-tree disable
+   spanning-tree portfast
+
+exit
+exit
+write memory
 ```
