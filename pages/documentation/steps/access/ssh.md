@@ -203,9 +203,10 @@ or install third-party software, e.g.:
     can verify them with the below values.
 
     ```shell
-    2048 SHA256:1XsJDtOvF640B+woZx1i3Jg3H6IhyrLZSmcfbdpePYI hpc.tue.nl (RSA)
-    256 SHA256:f397R3vn2cnR6gOq3FUwor3fs/ng0GOpA0pJva4L4Xg hpc.tue.nl (ECDSA)
-    256 SHA256:czSbafxnFyq581Rvlrl4buHLjEApG5dBZkGfjy09HhI hpc.tue.nl (ED25519)
+    1024 SHA256:vrd92GRLJ7TyjJHu8KmULfsYb6n4zMX7I7K7ICJRrHA hpc.tue.nl (DSA)
+    256 SHA256:kdpFd6RFR0rQ+76L7d2WRYsaYqSxS7jDBj/PzMlHyzg hpc.tue.nl (ECDSA)
+    256 SHA256:a0EWqBadQrhOezlF5HuhCo/diEBMl1ElskZ4LpNci3c hpc.tue.nl (ED25519)
+    3072 SHA256:S2BgcB7EnIZGnDHqPe9kBm20r0p7amTSoARbXjkOLPE hpc.tue.nl (RSA)
     ```
 
 ## Login nodes
