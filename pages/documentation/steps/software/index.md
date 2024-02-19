@@ -9,10 +9,11 @@ Since a lot of applications rely on 3rd party software, there is a program on mo
 
 A few common commands, to enter into the supercomputer commandline and talk to the module system, are
 
-- module list   lists loaded modules
-- module avail  lists available (loadable) modules
-- module load   loads module x
-- module purge  unload all modules
+
+- module avail  : lists available (loadable) modules
+- module list   : lists loaded modules
+- module load x : loads module x
+- module purge  : unload all modules
 
 If you recurrently need lots of modules, this loading can be automated with an (ba)sh-file, so that you just have to execute the file once and it loads all modules, you need.
 
@@ -23,11 +24,15 @@ To use commercial software a license is needed, depending on the software this i
 
 Available as [modules](#Modules):
 
-| Name         | Website                              | Module(s)                |
-| ------------ | ------------------------------------ | ------------------------ |
-| ANSYS/Fluent | [www.ansys.com](https://www.ansys.com/){:target="_blank"}             | `module avail ansys`     |
-| COMSOL       | :material-check-all: Update resource | `module avail comsol`    |
-| abacus       | :material-close:     Delete resource | `module avail abacus`    | 
+| Name         | Website                              | Module(s)                | https://hpc.tue.nl
+| ------------ | ------------------------------------ | ------------------------ | ------------------ |
+| Abacus       | [www.3ds.com](https://www.3ds.com/products/simulia/abaqus){:target="_blank"} | `module avail abacus`    | Yes |
+| ANSYS/Fluent | [www.ansys.com](https://www.ansys.com/){:target="_blank"} | `module avail ansys`     | Yes |
+| AMS          | [www.scm.com](https://www.scm.com/amsterdam-modeling-suite/){:target="_blank"} | `module avail ams` | Yes |
+| COMSOL       | [www.colsol.com](https://www.comsol.com/){:target="_blank"} | `module avail comsol`    | Yes |
+| CONVERGE     | [convergecfd.com](https://convergecfd.com/){:target="_blank"} | `module avail convergentscience` | Yes |
+
+
 
 
 ### Non-Commercial software
