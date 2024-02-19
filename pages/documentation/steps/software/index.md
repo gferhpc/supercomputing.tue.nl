@@ -24,14 +24,17 @@ To use commercial software a license is needed, depending on the software this i
 
 Available as [modules](#Modules):
 
-| Name         | Website                              | Module(s)                | https://hpc.tue.nl
-| ------------ | ------------------------------------ | ------------------------ | ------------------ |
-| Abacus       | [www.3ds.com](https://www.3ds.com/products/simulia/abaqus){:target="_blank"} | `module avail abacus`    | Yes |
-| ANSYS/Fluent | [www.ansys.com](https://www.ansys.com/){:target="_blank"} | `module avail ansys`     | Yes |
-| AMS          | [www.scm.com](https://www.scm.com/amsterdam-modeling-suite/){:target="_blank"} | `module avail ams` | Yes |
-| COMSOL       | [www.colsol.com](https://www.comsol.com/){:target="_blank"} | `module avail comsol`    | Yes |
-| CONVERGE     | [convergecfd.com](https://convergecfd.com/){:target="_blank"} | `module avail convergentscience` | Yes |
-
+| Name            | Website                              | Module(s)                | https://hpc.tue.nl |
+| --------------- | ------------------------------------ | ------------------------ | ------------------ |
+| Abacus          | [www.3ds.com](https://www.3ds.com/products/simulia/abaqus){:target="_blank"} | `module avail abacus`    | Yes |
+| ANSYS Fluent    | [www.ansys.com](https://www.ansys.com/){:target="_blank"} | `module avail ansys`     | Yes |
+| AMS             | [www.scm.com](https://www.scm.com/amsterdam-modeling-suite/){:target="_blank"} | `module avail ams` | Yes |
+| COMSOL          | [www.colsol.com](https://www.comsol.com/){:target="_blank"} | `module avail comsol`    | Yes |
+| CONVERGE        | [convergecfd.com](https://convergecfd.com/){:target="_blank"} | `module avail convergentscience` | Yes |
+| ANSYS Lumerical | [www.ansys.com](https://www.ansys.com/products/optics){:target="_blank"} | `module avail lumerical` | Yes |
+| Mathematica     | [www.wolfram.com](https://www.wolfram.com/mathematica/){:target="_blank"} | `module avail mathematica` | Yes |
+| MATLAB          | [www.mathworks.com](https://www.mathworks.com/products/matlab.html){:target="_blank"} | `module avail matlab` | Yes |
+ 
 
 
 
