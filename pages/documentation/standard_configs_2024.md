@@ -19,6 +19,39 @@ We preferably offer the following classes of compute nodes:
 
 We preferably don't offer fabrics such as InfiniBand due to the cost.  Compute jobs that require such fabrics should be run on other platforms, such as Snellius.
 
+<table>
+  <tr>
+    <th rowspan="2">Class</th>
+    <th rowspan="2">CPU</th>
+    <th rowspan="2">Memory</th>
+    <th rowspan="2">Price<br/>incl. VAT</th>
+    <th colspan="2">Performance[^1]</th>
+    <th colspan="3">Power usage[^2]</th>
+  </tr>
+  <tr>
+    <th>Raw [pp]</th>
+    <th>Per Euro [pp/€]</th>
+    <th>Raw [W]</th>
+    <th>Per Euro [pp/W]</th>
+    <td>Per year [kWh]</th>
+  </tr>
+  <tr>
+    <td>Thin</td>
+    <td>1x AMD EPYC 9654P<br/>(2.40 GHz, 96C, 384 MB L3)</td>
+    <td>384 GB<br/>(12x 32 GB)<br>(4 GB/core)</td>
+    <td>€20,400</td>
+    <td>118,641</td>
+    <td>5.82</td>
+    <td>475.2</td>
+    <td>250</td>
+    <td>4163</td>
+  </tr>
+</table>
+
+[^1]: As indicated by PassMark.  The unit "pp" stands for "performance point".
+
+[^2]: Power usage is estimated as: CPU TDP + 0.3 W/GB RAM.
+
 # Configurations
 
 ## Thin CPU
