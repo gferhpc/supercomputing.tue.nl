@@ -108,6 +108,10 @@ krb5_realm = CAMPUS.TUE.NL
 cache_credentials = True
 EOF
 ```
+```shell
+# Allows looking up man pages from e.g. /usr/share/man.
+echo MANPATH=: >> /etc/environment
+```
 
 ## OS image Testing
 ```shell
