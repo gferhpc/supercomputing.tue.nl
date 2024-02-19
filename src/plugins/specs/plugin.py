@@ -82,7 +82,7 @@ class SpecsPlugin(BasePlugin[SpecsPluginConfig]):
                     table += f"{indents}|-----------------|---------|--------|---------------|\n"
                 table += f"{indents}| **{option}** | **{self._sum_partition_category_cpu(option)}** | **{self._sum_partition_category_memory(option)}GB** | |\n"
                 for category, nodes in dict(self.config.partitions[option]).items():
-                    table += self._render_node_row(nodes[0], indents, f"{len(nodes)}x ^({category})^")
+                    table += self._render_node_row(nodes[0], indents, f"{len(nodes)}x ^({category[:-1] + category[-1].upper()})^")
             else:
                 log.warning("No configuration found for: %s", option)
 
@@ -156,7 +156,7 @@ class SpecsPlugin(BasePlugin[SpecsPluginConfig]):
         if partition not in self.config.partitions:
             self.config.partitions[partition] = {}
 
-        matches = re.match(r"^(?P<group>\w+)-(?P<category>(?P<type>[a-z]+)(?P<cat>[A-Z]+))\d+$", hostname)
+        matches = re.match(r"^(?P<group>\w+)-(?P<category>(?P<type>(compute|gpu|storage|login))(?P<cat>[A-Za-z]+))\d+$", hostname)
         if not matches:
             return
 
