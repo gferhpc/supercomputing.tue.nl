@@ -28,9 +28,11 @@ chmod -R o+rx /sw/rl8/zen/app/AMS/${AMS_VERSION}
 
 PACKAGE_NAME=m3gnet
 
-As root on ue-login002:
+As root on tue-login002:
 
 ```shell
 module load AMS/${AMS_VERSION}
 "$AMSBIN"/amspackages install PACKAGE_NAME
+chown -R easybuild:tue-support /sw/rl8/zen/app/AMS/${AMS_VERSION}
+chmod -R o+rx /sw/rl8/zen/app/AMS/${AMS_VERSION}
 ```
