@@ -13,25 +13,24 @@ As root on login node:
 ```shell
 export AMS_VERSION=2023.104
 cd /local/AMS
-mkdir /cm/shared/apps/ams/${AMS_VERSION}/
-tar -xzf ams${AMS_VERSION}.pc64_linux.openmpi.bin.tgz -C /cm/shared/apps/ams/${AMS_VERSION}/
-cd /cm/shared/apps/ams/${AMS_VERSION}
+mkdir /sw/rl8/zen/app/AMS/${AMS_VERSION}/
+tar -xzf ams${AMS_VERSION}.pc64_linux.openmpi.bin.tgz -C /sw/rl8/zen/app/AMS/${AMS_VERSION}/
+cd /sw/rl8/zen/app/AMS/${AMS_VERSION}
 mv  ams${AMS_VERSION}/* .
 rmdir ams${AMS_VERSION}
 cd
-chown -R root:root /cm/shared/apps/ams/${AMS_VERSION}
-chmod -R o+rx /cm/shared/apps/ams/${AMS_VERSION}
-# Create a module : /cm/shared/modulefiles/ams/${AMS_VERSION}
+chown -R easybuild:tue-support /sw/rl8/zen/app/AMS/${AMS_VERSION}
+chmod -R o+rx /sw/rl8/zen/app/AMS/${AMS_VERSION}
+# Create a module : /sw/rl8/zen/mod/AMS/${AMS_VERSION}
 ```
 
 ## AMS extra packages
 
 PACKAGE_NAME=m3gnet
 
-As root on hpc-secondary:
+As root on ue-login002:
 
 ```shell
-module load shared
-module load ams/<VERSION>
+module load AMS/${AMS_VERSION}
 "$AMSBIN"/amspackages install PACKAGE_NAME
 ```
