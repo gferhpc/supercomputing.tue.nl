@@ -26,8 +26,8 @@ We preferably don't offer fabrics such as InfiniBand due to the cost.  Compute j
     <th rowspan="2">Memory</th>
     <th rowspan="2">Accelerators</th>
     <th rowspan="2">Price<br/>incl. VAT</th>
-    <th colspan="3"><span markdown="1">Performance[^1]</span></th>
-    <th colspan="3"><span markdown="1">Power usage[^2]</span></th>
+    <th colspan="3" markdown="1">Performance[^1]</th>
+    <th colspan="3" markdown="1">Power usage[^2]</th>
   </tr>
   <tr>
     <th>Raw [pp]</th>
@@ -51,7 +51,7 @@ We preferably don't offer fabrics such as InfiniBand due to the cost.  Compute j
     <td>4163</td>
   </tr>
   <tr>
-    <td><span markdown="1">Fast 1[^3]</span></td>
+    <td markdown="1">Fast 1[^3]</td>
     <td>1x AMD EPYC 9474F<br/>(3.60 GHz, 48C, 256 MB L3)</td>
     <td>384 GB<br/>(12x 32 GB)<br>(8 GB/core)</td>
     <td>&mdash;</td>
@@ -64,7 +64,7 @@ We preferably don't offer fabrics such as InfiniBand due to the cost.  Compute j
     <td>4163</td>
   </tr>
   <tr>
-    <td><span markdown="1">Fast 2[^3]</span></td>
+    <td markdown="1">Fast 2[^3]</td>
     <td>2x AMD EPYC 9174F<br/>(4.10 GHz, 16C, 256 MB L3)</td>
     <td>384 GB<br/>(12x 32 GB)<br>(12 GB/core)</td>
     <td>&mdash;</td>
