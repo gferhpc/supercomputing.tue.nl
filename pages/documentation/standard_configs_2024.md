@@ -19,8 +19,8 @@ We preferably offer the following classes of compute nodes:
 
 We preferably don't offer fabrics such as InfiniBand due to the cost.  Compute jobs that require such fabrics should be run on other platforms, such as Snellius.
 
-<table style="white-space: nowrap;">
-  <tr>
+<table style="white-space: nowrap;" markdown="1">
+  <tr mardown="1">
     <th rowspan="2">Class</th>
     <th rowspan="2">CPU</th>
     <th rowspan="2">Memory</th>
@@ -34,7 +34,7 @@ We preferably don't offer fabrics such as InfiniBand due to the cost.  Compute j
     <th>/core [pp]</th>
     <th>/Euro [pp/€]</th>
     <th>Raw [W]</th>
-    <th>Perf. per Watt [pp/W]</th>
+    <th>/perf. [μW/pp]</th>
     <th>/year [kWh]</th>
   </tr>
   <tr>
@@ -47,10 +47,10 @@ We preferably don't offer fabrics such as InfiniBand due to the cost.  Compute j
     <td>1236</td>
     <td>5.82</td>
     <td>475.2</td>
-    <td>250</td>
+    <td>4005</td>
     <td>4163</td>
   </tr>
-  <tr>
+  <tr markdown="1">
     <td markdown="1">Fast 1[^3]</td>
     <td>1x AMD EPYC 9474F<br/>(3.60 GHz, 48C, 256 MB L3)</td>
     <td>384 GB<br/>(12x 32 GB)<br>(8 GB/core)</td>
@@ -60,10 +60,10 @@ We preferably don't offer fabrics such as InfiniBand due to the cost.  Compute j
     <td>2185</td>
     <td>5.83</td>
     <td>475.2</td>
-    <td>221</td>
+    <td>4530</td>
     <td>4163</td>
   </tr>
-  <tr>
+  <tr markdown="1">
     <td markdown="1">Fast 2[^3]</td>
     <td>2x AMD EPYC 9174F<br/>(4.10 GHz, 16C, 256 MB L3)</td>
     <td>384 GB<br/>(12x 32 GB)<br>(12 GB/core)</td>
@@ -73,7 +73,7 @@ We preferably don't offer fabrics such as InfiniBand due to the cost.  Compute j
     <td>6935</td>
     <td>5.28</td>
     <td>835.2</td>
-    <td>133</td>
+    <td>7526</td>
     <td>7316</td>
   </tr>
   <tr>
@@ -81,7 +81,7 @@ We preferably don't offer fabrics such as InfiniBand due to the cost.  Compute j
     <td>AMD EPYC 7313<br/>(3.0 GHz, 16C, 128 MB L3)</td>
     <td>256 GB<br/>(16x 16 GB)<br>(8 GB/core)</td>
     <td>2x NVIDIA A30</td>
-    <td></td>
+    <td>€23,100</td>
     <td></td>
     <td></td>
     <td></td>
