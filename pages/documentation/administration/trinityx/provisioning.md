@@ -112,6 +112,16 @@ EOF
 # Allows looking up man pages from e.g. /usr/share/man.
 echo MANPATH=: >> /etc/environment
 ```
+```shell
+# Don't check host key for hpc.tue.nl.  Fixes Open OnDemand shell issues.
+cat > /etc/ssh/ssh_config.d/ignore-hpctuenl-hostkey.conf <<EOF
+Host hpc.tue.nl
+	CheckHostIP no
+	HostbasedAuthentication no
+	StrictHostKeyChecking no
+	UserKnownHostsFile /dev/null
+EOF
+```
 
 ## OS image Testing
 ```shell
