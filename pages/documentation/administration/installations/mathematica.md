@@ -4,7 +4,7 @@ From/on the WebSite, Download the Mathematica_<VERSION>.X_LINUX.sh (With online 
 
 copy the Mathematica_<VERSION>.BNDL_LINUX.sh to the login node into ~/easyconfigs/m/Mathematica/.
 
-Use EasyBuild Mathematica-<VERSION>.eb
+Use EasyBuild Mathematica-```<VERSION>```.eb
 
 ```shell
 cd /local/Mathematica
