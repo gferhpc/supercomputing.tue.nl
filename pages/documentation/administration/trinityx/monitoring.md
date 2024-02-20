@@ -1,4 +1,4 @@
-# monitoring
+# Monitoring
 
 Installing monitoring clients on non-managed TrinityX machines
 
