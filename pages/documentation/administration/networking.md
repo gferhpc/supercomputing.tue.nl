@@ -89,6 +89,16 @@ Write configuration to flash with `write memory`.
 
 ### Spine
 
+Per spine switch, we reserve the following ports:
+
+* 1-4: VAST
+* (5-8: reserved for future VAST)
+* 9-10: devices in same rack (breakout to 4x25Gb)
+* (11-14: free)
+* 15-16: VLTi
+* 17-31: leaf switches  (15x)
+* 32: uplink to TU/e
+
 In configure mode:
 
 ```
@@ -96,31 +106,87 @@ In configure mode:
 
 spanning-tree rstp priority 16384
 
-! Links to leaf switches
+! VLT
+!
+! Make sure to substitute the correct mgmt IP addresses below.
 
-interface port-channel :INTID
-   description "leaf LAG"
+default interface range ethernet 1/1/15-1/1/16
+
+interface range ethernet 1/1/15-1/1/16
+   description VLTi
+   no switchport
+   no flowcontrol receive
+   no flowcontrol transmit
+   no shutdown
+
+vlt-domain 1
+   vlt-mac CA:C9:94:8E:33:9A
+   ! backup destination 172.16.108.xxx vrf management   ! On spine 1, use mgmt address of spine 2
+   ! backup destination 172.16.108.138 vrf management   ! On spine 2, use mgmt address of spine 1
+   ! Peer routing is not currently configured.
+
+discovery-interface ethernet 1/1/15-1/1/16
+```
+VAST: 100 Gbit, VLAN tagged, BPDU guard
+```
+! eth 1/1/1-1/1/4: VAST
+
+interface range ethernet 1/1/1-1/1/4
+   description VAST
    switchport mode trunk
    switchport access vlan 1
    switchport trunk allowed vlan 150
-   spanning-tree bpduguard disable
+   spanning-tree bpduguard enable
+   no shutdown
 
-interface ethernet :INTID
-   description "leaf LAG member"
-   no switchport
-   channel-group 1 mode active
+! eth 1/1/5-1/1/8: unused
 
-! Links to nodes
+default interface range ethernet 1/1/5-1/1/8
+```
+Links to devices: breakout too 25 Gbit, VLAN untagged, BPDU guard
+```
+! eth 1/1/9-1/1/10: links to devices  @ 25 Gbit
+
+interface breakout :INTID map 25g-4x
 
 interface ethernet :INTID
    switchport mode access
    switchport access vlan 150
    spanning-tree bpduguard enable
+```
+Link to leaf switch: 100 Gbit, VLAN tagged, LACP, NO BPDU guard
+```
+! Links to leaf switches
+!
+! :PCID  is the port channel ID
+! :INTID  is the ethernet interface ID
 
-! Unused ports
+interface port-channel :PCID
+   description leaf-LAG
+   switchport mode trunk
+   switchport access vlan 1
+   switchport trunk allowed vlan 150
+   spanning-tree bpduguard disable
+   vlt-port-channel :PCID
 
 interface ethernet :INTID
-   shutdown
+   description leaf-LAG-member
+   no switchport
+   channel-group :PCID mode active
+```
+Link to TU/e
+```
+! Link to TU/e
+!
+! Not implemented yet.
+```
+Everything else:
+```
+! Unused ports
+!
+! OS10 default on S5232 is shutdown
+
+default interface ethernet :INTID
 ```
 
 ### Leaf
