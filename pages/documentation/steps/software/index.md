@@ -28,15 +28,16 @@ Available as [modules](#Modules):
 | --------------- | ------------------------------------ | ------------------------ | ------------------ |
 | Abacus          | [www.3ds.com](https://www.3ds.com/products/simulia/abaqus){:target="_blank"} | `module avail abacus`    | Yes |
 | ANSYS Fluent    | [www.ansys.com](https://www.ansys.com/products/fluids/ansys-fluent){:target="_blank"} | `module avail ansys`     | Yes |
+| AMD-μProf       | [](){:target="_blank"} | `module avail amd-uprof` | Yes |
 | AMS             | [www.scm.com](https://www.scm.com/amsterdam-modeling-suite/){:target="_blank"} | `module avail ams` | Yes |
 | COMSOL          | [www.colsol.com](https://www.comsol.com/){:target="_blank"} | `module avail comsol`    | Yes |
 | CONVERGE        | [convergecfd.com](https://convergecfd.com/){:target="_blank"} | `module avail convergentscience` | Yes |
 | ANSYS Lumerical | [www.ansys.com](https://www.ansys.com/products/optics){:target="_blank"} | `module avail lumerical` | Yes |
 | Mathematica     | [www.wolfram.com](https://www.wolfram.com/mathematica/){:target="_blank"} | `module avail mathematica` | Yes |
 | MATLAB          | [www.mathworks.com](https://www.mathworks.com/products/matlab.html){:target="_blank"} | `module avail matlab` | Yes |
- 
-
-
+| StarCCM+        | [](){:target="_blank"} | `module avail starccm+` | Yes |
+| TecPlot 360     | [](){:target="_blank"} | `module avail tecplot` | Yes |
+| VTune           | [](){:target="_blank"} | `module avail vtune` | Yes |
 
 ### Non-Commercial software
 
