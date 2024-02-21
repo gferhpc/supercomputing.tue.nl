@@ -63,3 +63,4 @@ luna cluster change -ntp 10.150.255.254,10.150.255.253
 vi /trinity/local/luna/daemon/templates/templ_dhcpd.cfg
 
    option ntp-servers {{ TIMESERVERS }};
+```
