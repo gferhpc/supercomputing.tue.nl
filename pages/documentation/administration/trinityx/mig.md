@@ -23,7 +23,14 @@ Environment="MIG_PARTED_SELECTED_CONFIG=all-1g.6gb"
 EOF
 ```
 
-Doing the MIG settings without nvidia-mig-manager:
+## GPU Nodes that have enable MIG:
+
+tue-gpua001 (A30)
+
+bme-gpue001 (A30)
+
+
+### Doing the MIG settings without nvidia-mig-manager:
 ```shell
 nvidia-smi -mig 1 # reboot safe
 nvidia-smi mig -cgi 14,14,14,14 -C # removed after reboot
