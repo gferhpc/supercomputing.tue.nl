@@ -137,6 +137,7 @@ interface range ethernet 1/1/1-1/1/4
    switchport access vlan 1
    switchport trunk allowed vlan 150
    spanning-tree bpduguard enable
+   spanning-tree port type edge
    no shutdown
 
 ! eth 1/1/5-1/1/8: unused
@@ -153,6 +154,7 @@ interface ethernet :INTID
    switchport mode access
    switchport access vlan 150
    spanning-tree bpduguard enable
+   spanning-tree port type edge
 ```
 Link to leaf switch: 100 Gbit, VLAN tagged, LACP, NO BPDU guard
 ```
@@ -166,7 +168,6 @@ interface port-channel :PCID
    switchport mode trunk
    switchport access vlan 1
    switchport trunk allowed vlan 150
-   spanning-tree bpduguard disable
    vlt-port-channel :PCID
 
 interface ethernet :INTID
@@ -201,7 +202,6 @@ interface port-channel 1
    switchport mode trunk
    switchport access vlan 1
    switchport trunk allowed vlan 150
-   spanning-tree bpduguard disable
 
 interface range ethernet 1/1/25-1/1/26
    description spine-LAG-member
@@ -216,7 +216,6 @@ interface range ethernet 1/1/27-1/1/30
    switchport mode trunk
    switchport access vlan 1
    switchport trunk allowed vlan 150
-   spanning-tree bpduguard disable
 
 ! Links to nodes
 ! Once spine is operational, all ports can become node ports.
@@ -227,6 +226,7 @@ interface range ethernet 1/1/1-1/1/24
    switchport mode access
    switchport access vlan 150
    spanning-tree bpduguard enable
+   spanning-tree port type edge
 ```
 
 For M1000e chassis:
@@ -239,6 +239,7 @@ interface port-channel 10       ! Use unique port channel ID
    switchport mode access
    switchport access vlan 150
    spanning-tree bpduguard enable
+   spanning-tree port type edge
 
 interface range ethernet 1/1/1-1/1/4   ! Substitute correct interfaces
    description umbrella-chassis-LAG-member
