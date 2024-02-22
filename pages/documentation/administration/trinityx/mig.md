@@ -1,6 +1,6 @@
 Some nodes are equipped with GPU(s) that support MIG.  As the MIG settings are not reboot safe (MIG enable/disable is), the nvidia-mig-manager systemd service is used to keep the MIG setting across reboots. nvidia-mig-manager uses mig-parted (https://github.com/NVIDIA/mig-parted)
 
-![A30 MIG](mig-for-distributed-workloads.jpg){ align=right heigth="200" }
+![A30 MIG](mig-for-distributed-workloads.jpg){ align=center heigth="200" }
 
 On hpc-head01:
 
