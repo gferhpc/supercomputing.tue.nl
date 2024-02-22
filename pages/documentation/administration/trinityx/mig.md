@@ -1,4 +1,6 @@
-Some nodes are equipped with GPU(s) that support MIG.  As the MIG settings are not reboot safe (MIG enable/disable is), the nvidia-mig-manager systemd service is used to keep the MIG setting across reboots. nvidia-mig-manager uses mig-parted (https://github.com/NVIDIA/mig-parted) 
+Some nodes are equipped with GPU(s) that support MIG.  As the MIG settings are not reboot safe (MIG enable/disable is), the nvidia-mig-manager systemd service is used to keep the MIG setting across reboots. nvidia-mig-manager uses mig-parted (https://github.com/NVIDIA/mig-parted)
+
+![Postfix Logo](postfix.png){ align=right heigth="200" }
 
 On hpc-head01:
 
