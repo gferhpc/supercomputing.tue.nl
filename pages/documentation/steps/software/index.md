@@ -126,9 +126,12 @@ Python and related software avaiable.
 | -------------- | ------------------------------------ | ------------------------ | ------------------ |
 | Anaconda3      | Anaconda3-2023.09-0                  | `module avail Anaconda3` | |
 | IPython        | 8.5.0 8.14.0                         | `module avail IPython`   | |
-| JupyterLab     | 4.0.5-GCCcore-12.3.0                 | `module avail Jupyter`   | Yes |
+| JupyterLab     | 4.0.5-GCCcore-12.3.0                 | `module avail Jupyter`   | Yes, via Jupyter |
 | Python         | 2.7.18 3.10.4 3.10.13 3.11.3.        | `module avail Python/`   | |
-| SciPy          | 2022.05-foss-2022a 2023.07-gfbf-2023a | `module avail SciPy-bundle` | |
+| PyTorch        | 1.12.0-foss-2022a                    | `module avail PyTorch`   | Yes, included in Jupyter|
+| SciPy          | 2022.05-foss-2022a 2023.07-gfbf-2023a | `module avail SciPy-bundle` | Yes, included in Jupyter |
+| Tensorflow     | 2.11.0-foss-2022a 2.13.0-foss-2023a  | `module avail TensorFlow` | |
+
 
 
 ## Parallel Programming
