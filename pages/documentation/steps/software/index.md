@@ -78,7 +78,7 @@ Toolchains this are the tools to build software, it includes specific Compilers 
      22) ScaLAPACK/2.2.0-gompi-2023a-fb
      23) foss/2023a
     ```
-??? example "module load foss/2023a"
+??? example "module load gfbf/2023a"
     ```shell
     $ module list
 
