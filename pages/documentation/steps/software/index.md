@@ -93,7 +93,7 @@ Toolchains this are the tools to build software, it includes specific Compilers 
       8) gfbf/2023a
     ```
 
-??? example "module load intell/2023a"
+??? example "module load intel/2023a"
     ```shell
     $ module list
 
@@ -109,6 +109,7 @@ Toolchains this are the tools to build software, it includes specific Compilers 
       9) iimpi/2023a
      10) imkl-FFTW/2023.1.0-iimpi-2023a
      11) intel/2023a
+    ```
 
 Using the toolchain(s) the following software is avaiable. When the module is loaded the toolchain it depends on is automatically loaded.
 
