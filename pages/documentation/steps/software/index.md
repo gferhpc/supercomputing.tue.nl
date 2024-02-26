@@ -10,10 +10,10 @@ Since a lot of applications rely on 3rd party software, there is a program on mo
 A few common commands, to enter into the supercomputer commandline and talk to the module system, are
 
 
-- module avail  : lists available (loadable) modules
-- module list   : lists loaded modules
-- module load x : loads module x
-- module purge  : unload all modules
+- `module avail`  : lists available (loadable) modules
+- `module list`   : lists loaded modules
+- `module load x` : loads module x
+- `module purge`  : unload all modules
 
 If you recurrently need lots of modules, this loading can be automated with an (ba)sh-file, so that you just have to execute the file once and it loads all modules, you need.
 
