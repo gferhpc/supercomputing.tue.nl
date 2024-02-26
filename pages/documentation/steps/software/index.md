@@ -41,13 +41,15 @@ Available as [modules](#Modules):
 
 ### Non-Commercial software
 
-Toolchains this are the tools to build software, it includes specific Compilers and an MPI implementation, in case of foss also Open/FlexiBLAS, ScaLAPACK and FFTW(MPI) are included.   
+Toolchains this are the tools to build software, it includes specific Compilers and an MPI implementation, in case of foss also Open/FlexiBLAS, ScaLAPACK and FFTW(MPI) are included for example.   
 
 | Toolchain Name | Supported Versions                   | Module(s)                | Remarks |
 | -------------- | ------------------------------------ | ------------------------ | ------- |
 | foss           | 2022a 2023a                          | `module avail foss`      | |
 | gfbf           | 2023a                                | `module avail gfbf`      | gfbf is a subset of foss |
 | intel          | 2022a 2023a                          | `module avail intel`     | |
+
+foss = "Free and Open Source Software" gfbf = "Gcc + FlexiBlas + Fftw"
 
 ??? example "module load foss/2023a"
     ```shell
