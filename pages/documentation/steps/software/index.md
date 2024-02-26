@@ -51,6 +51,7 @@ Toolchains this are the tools to build software, it includes specific Compilers 
 ??? example "module load foss/2023a"
     ```shell
     $ module list
+
     Currently Loaded Modules:
       1) GCCcore/12.3.0
       2) zlib/1.2.13-GCCcore-12.3.0
@@ -76,6 +77,23 @@ Toolchains this are the tools to build software, it includes specific Compilers 
      22) ScaLAPACK/2.2.0-gompi-2023a-fb
      23) foss/2023a
     ```
+
+??? example "module load intell/2023a"
+    ```shell
+    $ module list
+
+    Currently Loaded Modules:
+      1) GCCcore/12.3.0
+      2) zlib/1.2.13-GCCcore-12.3.0
+      3) binutils/2.40-GCCcore-12.3.0
+      4) intel-compilers/2023.1.0
+      5) numactl/2.0.16-GCCcore-12.3.0
+      6) UCX/1.14.1-GCCcore-12.3.0
+      7) impi/2021.9.0-intel-compilers-2023.1.0
+      8) imkl/2023.1.0
+      9) iimpi/2023a
+     10) imkl-FFTW/2023.1.0-iimpi-2023a
+     11) intel/2023a
 
 Using the toolchain(s) the following software is avaiable. When the module is loaded the toolchain it depends on is automatically loaded.
 
