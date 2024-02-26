@@ -46,7 +46,8 @@ Toolchains this are the tools to build software, it includes specific Compilers 
 | Toolchain Name | Supported Versions                   | Module(s)                |
 | -------------- | ------------------------------------ | ------------------------ |
 | Foss           | 2022a 2023a                          | `module avail foss`      |
-| Intel          | 2022a 2023a                          | `module avail intel`.    |
+| GFBF           | 2023a                                | `module avail gfbf`      |
+| Intel          | 2022a 2023a                          | `module avail intel`     |
 
 ??? example "module load foss/2023a"
     ```shell
@@ -77,6 +78,20 @@ Toolchains this are the tools to build software, it includes specific Compilers 
      22) ScaLAPACK/2.2.0-gompi-2023a-fb
      23) foss/2023a
     ```
+??? example "module load foss/2023a"
+    ```shell
+    $ module list
+
+    Currently Loaded Modules:
+      1) GCCcore/12.3.0
+      2) zlib/1.2.13-GCCcore-12.3.0
+      3) binutils/2.40-GCCcore-12.3.0
+      4) GCC/12.3.0
+      5) OpenBLAS/0.3.23-GCC-12.3.0
+      6) FlexiBLAS/3.3.1-GCC-12.3.0
+      7) FFTW/3.3.10-GCC-12.3.0
+      8) gfbf/2023a
+    ```
 
 ??? example "module load intell/2023a"
     ```shell
@@ -97,10 +112,14 @@ Toolchains this are the tools to build software, it includes specific Compilers 
 
 Using the toolchain(s) the following software is avaiable. When the module is loaded the toolchain it depends on is automatically loaded.
 
-| Name           | Supported Versions                   | Module(s)                |
-| -------------- | ------------------------------------ | ------------------------ |
-| Openfoam       | OpenFOAM/8-foss-2022a                | `module avail OpenFOAM`  |
-| 
+| Name           | Supported Versions                   | Module(s)                | https://hpc.tue.nl |
+| -------------- | ------------------------------------ | ------------------------ | ------------------ |
+| Anaconda3      | Anaconda3-2023.09-0                  | `module avail Anaconda3` | |
+| Blender        | 4.0.2-linux-x86_64-CUDA-12.1.1.      | `module avail Blender`   | Yes |
+| OpenFOAM       | 8-foss-2022a                         | `module avail OpenFOAM`  | |
+| ParaViews      | 5.11.2-foss-2023a                    | `module avail ParaView`  | Yes |
+| R              | 4.2.1-foss-2022a  R-4.3.2-gfbf-2023a | `module avail R/`        | |
+| Rstudio        | 2022.07.2+576-foss-2022a-Java-11-R-4.2.1 | `module avail RStudio` | Yes |   
 
 
 
