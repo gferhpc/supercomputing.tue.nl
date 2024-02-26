@@ -36,8 +36,8 @@ Available as [modules](#Modules):
 | Mathematica     | [wolfram.com](https://www.wolfram.com/mathematica/){:target="_blank"} | `module avail mathematica` | Yes |
 | MATLAB          | [mathworks.com](https://www.mathworks.com/products/matlab.html){:target="_blank"} | `module avail matlab` | Yes |
 | StarCCM+        | [siemens.com](https://plm.sw.siemens.com/en-US/simcenter/fluids-thermal-simulation/star-ccm/){:target="_blank"} | `module avail starccm+` | Yes |
-| TecPlot 360     | [](){:target="_blank"} | `module avail tecplot` | Yes |
-| VTune           | [](){:target="_blank"} | `module avail vtune` | Yes |
+| TecPlot 360     | [tecplot.com](https://tecplot.com/products/tecplot-360/){:target="_blank"} | `module avail tecplot` | Yes |
+| VTune           | [intel.com](https://www.intel.com/content/www/us/en/developer/tools/oneapi/vtune-profiler.html){:target="_blank"} | `module avail vtune` | Yes |
 
 ### Non-Commercial software
 
