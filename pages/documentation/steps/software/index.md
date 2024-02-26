@@ -45,8 +45,8 @@ Toolchains this are the tools to build software, it includes specific Compilers 
 
 | Toolchain Name | Supported Versions                   | Module(s)                | Remarks |
 | -------------- | ------------------------------------ | ------------------------ | ------- |
-| foss           | 2022a 2023a                          | `module avail foss`      | 2022a:GCC-11.3.0 2023a:GCC-12.3.0 |
-| gfbf           | 2023a                                | `module avail gfbf`      | GCC-12.3.0 |
+| foss           | 2022a 2023a                          | `module avail foss`      | |
+| gfbf           | 2023a                                | `module avail gfbf`      | gfbf is a subset of foss |
 | intel          | 2022a 2023a                          | `module avail intel`     | |
 
 ??? example "module load foss/2023a"
@@ -114,15 +114,21 @@ Using the toolchain(s) the following software is avaiable. When the module is lo
 
 | Name           | Supported Versions                   | Module(s)                | https://hpc.tue.nl |
 | -------------- | ------------------------------------ | ------------------------ | ------------------ |
-| Anaconda3      | Anaconda3-2023.09-0                  | `module avail Anaconda3` | |
 | Blender        | 4.0.2-linux-x86_64-CUDA-12.1.1.      | `module avail Blender`   | Yes |
-| JupyterLab     | 4.0.5-GCCcore-12.3.0                 | `module avail Jupyter`   | Yes |
 | OpenFOAM       | 8-foss-2022a                         | `module avail OpenFOAM`  | |
 | ParaViews      | 5.11.2-foss-2023a                    | `module avail ParaView`  | Yes |
 | R              | 4.2.1-foss-2022a  4.3.2-gfbf-2023a   | `module avail R/`        | |
 | Rstudio        | 2022.07.2+576-foss-2022a-Java-11-R-4.2.1 | `module avail RStudio` | Yes |
  
+Python and related software avaiable.
 
+| Name           | Supported Versions                   | Module(s)                | https://hpc.tue.nl |
+| -------------- | ------------------------------------ | ------------------------ | ------------------ |
+| Anaconda3      | Anaconda3-2023.09-0                  | `module avail Anaconda3` | |
+| IPython        | 8.5.0 8.14.0                         | `module avail IPython`   | |
+| JupyterLab     | 4.0.5-GCCcore-12.3.0                 | `module avail Jupyter`   | Yes |
+| Python         | 2.7.18 3.10.4 3.10.13 3.11.3.        | `module avail Python/`   | |
+| SciPy          | 2022.05-foss-2022a 2023.07-gfbf-2023a | `module avail SciPy-bundle` | |
 
 
 ## Parallel Programming
