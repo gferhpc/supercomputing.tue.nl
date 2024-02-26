@@ -121,7 +121,7 @@ Using the toolchain(s) the following software is avaiable. When the module is lo
 | R              | 4.2.1-foss-2022a  4.3.2-gfbf-2023a   | `module avail R/`        | |
 | Rstudio        | 2022.07.2+576-foss-2022a-Java-11-R-4.2.1 | `module avail RStudio` | Yes |
  
-Python and related software avaiable.
+Python and related software available.
 
 | Name           | Supported Versions                   | Module(s)                | https://hpc.tue.nl |
 | -------------- | ------------------------------------ | ------------------------ | ------------------ |
