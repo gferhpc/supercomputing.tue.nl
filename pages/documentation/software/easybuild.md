@@ -47,7 +47,8 @@ Procedure:
     succeeds. This should take about 3 tries.
 6.  Dry-run build: `eb -Dr {easyconfig}`
 7.  Build and install: `eb -r {easyconfig} --parallel=8`
-8.  Add the easyconfig file `{easyconfig}` to the `~easybuild/easyconfig` directory and commit to GIT
+8.  Add the easyconfig file `{easyconfig}` to the `~easybuild/easyconfig` directory and
+    commit/push to GIT. Take note of the structure of that dir first!
 
 Fixes and workarounds:
 
@@ -61,7 +62,7 @@ Fixes and workarounds:
 <!-- -->
 
 -   If EasyBuild cannot download a source tarball, you can download it
-    manually and put it somewhere in `~/.local/easybuild/sources`. Take
+    manually and put it somewhere in `~/.local/easybuild/sources` or `~easybuild/easyconfig` (don't add sources to GIT). Take
     note of the structure of that dir first!
 
 ### Pain points
