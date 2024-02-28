@@ -6,12 +6,10 @@ tags: [Software]
 !!! note 
     This page serves as a reference to system administrators, but the curious user is welcomed to read it as well.
 
-## EasyBuild
-
 EasyBuild helps building and installing software packages and their
 dependencies using tested build scripts.
 
-### Implementation
+## Implementation
 
 -   Software is built and installed using the "easybuild" user.
 -   The easybuild user has a shell function `eb_env` that sets the
@@ -26,7 +24,7 @@ dependencies using tested build scripts.
     have. This produces builds that can run on all nodes, but with
     degraded performance.
 
-### Installation procedure
+## Installation procedure
 
 Prerequisites:
 
@@ -50,7 +48,7 @@ Procedure:
 8.  Add the easyconfig file `{easyconfig}` to the `~easybuild/easyconfig` directory and
     commit/push to GIT. Take note of the structure of that dir first!
 
-Fixes and workarounds:
+## Fixes and workarounds:
 
 -   Software that uses OpenMPI cannot correctly be started by EasyBuild,
     when EasyBuild is running from within srun, causing self-tests to
@@ -58,14 +56,11 @@ Fixes and workarounds:
     `srun {software-self-test}`, works. A workaround is to build such
     packages outside the srun session, e.g. through SSH on the same
     node.
-
-<!-- -->
-
 -   If EasyBuild cannot download a source tarball, you can download it
     manually and put it somewhere in `~/.local/easybuild/sources` or `~easybuild/easyconfig` (don't add sources to GIT). Take
     note of the structure of that dir first!
 
-### Pain points
+## Pain points
 
 -   EasyBuild offers very little flexibility in software versions built:
     only software versions for which easyscript files exist can be
