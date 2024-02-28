@@ -20,8 +20,8 @@ dependencies using tested build scripts.
     home dir.
 -   The production env is in `/sw/rl8/{arch}/{app,mod}`
     where `{arch}` is the result of `module load archspec;archspec cpu`
-    on a node in the tue.build.q.
--   Software is built and installed using the tue.build.q, which makes
+    on a node in the `tue.build.q`.
+-   Software is built and installed using the `tue.build.q`, which makes
     use of the lowest common denominator micro architecture that we
     have. This produces builds that can run on all nodes, but with
     degraded performance.
