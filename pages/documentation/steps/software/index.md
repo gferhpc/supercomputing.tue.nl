@@ -20,7 +20,7 @@ If you recurrently need lots of modules, this loading can be automated with an (
 
 ### Commercial software
 
-To use commercial software a license is needed, depending on the software this is a user or group sprecific license or a TU/e wide avaiable license.
+To use commercial software a license is needed, depending on the software this is a user or group sprecific license or a TU/e wide available license.
 
 Available as [modules](#Modules):
 
