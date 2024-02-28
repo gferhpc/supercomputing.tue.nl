@@ -40,12 +40,14 @@ Procedure:
 3.  `srun -p tue.build.q -N1 -n1 -c8 -t 1-0 --pty bash`
 4.  Search for available easyconfig files: `eb -S {software}`
 5.  Copy the name of the desired easyconfig file if you want to edit the
-    file and place it in de easyconfigs directory and GIT. `eb --copy-ec {easyconfig}`
+    file and place it in de easyconfigs directory and GIT.
+    `eb --copy-ec {easyconfig}` copies the easyconfig file to the current directory 
 5.  Switch EasyBuild env to production: `eb_env prod`
     If you get "WARNING: Did not unuse ...", repeat the command until it
     succeeds. This should take about 3 tries.
 6.  Dry-run build: `eb -Dr {easyconfig}`
 7.  Build and install: `eb -r {easyconfig} --parallel=8`
+8.  Add the easyconfig file `{easyconfig}` to the `~easybuild/easyconfig` directory and commit to GIT
 
 Fixes and workarounds:
 
