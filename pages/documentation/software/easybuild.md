@@ -18,7 +18,9 @@ dependencies using tested build scripts.
     environment for building in the test env or production env.
 -   The test env is a software installation tree in the easybuild user's
     home dir.
--   The production env is in `/sw/rl8/zen/{app,mod}`.
+-   The production env is in `/sw/rl8/{arch}/{app,mod}`
+    where `{arch}` is the result of `module load archspec;archspec cpu`
+    on a node in the tue.build.q.
 -   Software is built and installed using the tue.build.q, which makes
     use of the lowest common denominator micro architecture that we
     have. This produces builds that can run on all nodes, but with
