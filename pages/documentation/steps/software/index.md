@@ -118,7 +118,7 @@ Using the toolchain(s) the following software is avaiable. When the module is lo
 | Name           | Supported Versions                   | Module(s)                | https://hpc.tue.nl |
 | -------------- | ------------------------------------ | ------------------------ | ------------------ |
 | Blender        | 4.0.2-linux-x86_64-CUDA-12.1.1.      | `module avail Blender`   | Yes |
-| Julia.         | 1.9.3 1.10.1                         | `module avail Julia`     | |
+| Julia          | 1.9.3 1.10.1                         | `module avail Julia`     | |
 | OpenFOAM       | 8-foss-2022a                         | `module avail OpenFOAM`  | |
 | ParaViews      | 5.11.2-foss-2023a                    | `module avail ParaView`  | Yes |
 | R              | 4.2.1-foss-2022a  4.3.2-gfbf-2023a   | `module avail R/`        | |
