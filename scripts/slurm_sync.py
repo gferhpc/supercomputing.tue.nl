@@ -19,7 +19,7 @@ class SLURM:
     sinfo = "{}"
 
     def __init__(self):
-        result = self._run('hpc-primary', 'sinfo --json')
+        result = self._run('localhost', 'sinfo --json')
         self.sinfo = json.loads(result)
 
     def generate(self, filtered_hosts: list[str] = None):
