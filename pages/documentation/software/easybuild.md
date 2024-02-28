@@ -18,13 +18,11 @@ dependencies using tested build scripts.
     environment for building in the test env or production env.
 -   The test env is a software installation tree in the easybuild user's
     home dir.
--   The production env is in `/cm/shared/app/amd`.
--   Software is built and installed using the tue.default.q, which makes
+-   The production env is in `/sw/rl8/zen/{app,mod}`.
+-   Software is built and installed using the tue.build.q, which makes
     use of the lowest common denominator micro architecture that we
     have. This produces builds that can run on all nodes, but with
     degraded performance.
--   `eb` is an alias for `eb --allow-modules-tool-mismatch`, to work
-    around a bug due to Bright's module command; see M23086732.
 
 ### Installation procedure
 
@@ -36,10 +34,11 @@ Prerequisites:
 Procedure:
 
 1.  Connect via SSH to the cluster as user "easybuild".
-2.  `srun -p tue.build.q -N1 -n1 -c8 -t 1-0 --pty bash`
-3.  Search for available easyconfig files: `eb -S {software}`
-4.  Copy the name of the desired easyconfig file if you want to edit the
-    file and place it in de easyconfigs directory and GIT.
+2.  Start a screen/tmux so building can continue when you lose connection
+3.  `srun -p tue.build.q -N1 -n1 -c8 -t 1-0 --pty bash`
+4.  Search for available easyconfig files: `eb -S {software}`
+5.  Copy the name of the desired easyconfig file if you want to edit the
+    file and place it in de easyconfigs directory and GIT. `eb --copy-ec {easyconfig}`
 5.  Switch EasyBuild env to production: `eb_env prod`
     If you get "WARNING: Did not unuse ...", repeat the command until it
     succeeds. This should take about 3 tries.
