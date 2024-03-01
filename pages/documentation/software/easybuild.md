@@ -3,8 +3,8 @@ tags: [Software]
 ---
 # EasyBuild
 
-![EasyBuild logo](easybuild_logo_2022_vertical_dark_bg_transparent.png#only-dark){: align=right style="height:455px;width:400px"}
-![EasyBuild logo](easybuild_logo_2022_vertical_light_bg_transparent.png#only-light){: align=right style="height:455px;width:400px"}
+![EasyBuild logo](easybuild_logo_2022_vertical_dark_bg_transparent.png#only-dark){: align=right style="height:250px"}
+![EasyBuild logo](easybuild_logo_2022_vertical_light_bg_transparent.png#only-light){: align=right style="height:250px"}
 
 !!! note 
     This page serves as a reference to system administrators, but the curious user is welcomed to read it as well.
