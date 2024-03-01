@@ -17,7 +17,7 @@ Do you need to make big computations for your research or educational work? Like
 
 Maybe the TU/e HPC Lab can help!
 
-So, wait no longer and call us for speeding up your computations in Simulation and AI! We can be reached through e-mail at **[supercomputing@tue.nl](mailto:supercomputing@tue.nl)** or phone at **[(040 247) 2010](tel:+31402472010)**. Or you can visit us soon at the [EAISI institute](https://www.tue.nl/en/research/institutes/eindhoven-artificial-intelligence-systems-institute){:target="_blank"} in the Neuron building at TU/e Campus.
+So, wait no longer and call us for speeding up your computations in Simulation and AI! We can be reached through e-mail at **[supercomputing@tue.nl](mailto:supercomputing@tue.nl)** or phone at **[(040 247) 2010](tel:+31402472010)**. Or you can visit us at the [EAISI institute](https://www.tue.nl/en/research/institutes/eindhoven-artificial-intelligence-systems-institute){:target="_blank"} in the EAISI office (Neuron building, room 1.105) at TU/e Campus.
 
 ## Solutions
 ![The Solutions Staircase](assets/images/solution_staircase.png){ align=right width="600" loading=lazy }
