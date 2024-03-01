@@ -48,6 +48,10 @@ Procedure:
 8.  Add the easyconfig file `{easyconfig}` to the `~easybuild/easyconfig` directory and
     commit/push to GIT. Take note of the structure of that dir first!
 
+## Building GPU easyconfig (-CUDA-xx.xx)
+
+When Building CUDA releated software, easybuild may complain about the cuda-compute-capabilities if so add the this option to the eb command ```--cuda-compute-capabilities=3.7,6.0,6.1,7.0,7.5,8.0,8.6``` which relflect the CUDA capabilities in the Umbrella Cluster.
+
 ## Fixes and workarounds:
 
 -   Software that uses OpenMPI cannot correctly be started by EasyBuild,
