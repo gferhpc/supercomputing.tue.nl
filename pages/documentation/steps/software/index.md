@@ -131,7 +131,7 @@ Python and related software available.
 | -------------- | ------------------------------------ | ------------------------ | ------------------ |
 | Anaconda3      | Anaconda3-2023.09-0                  | `module avail Anaconda3` | |
 | IPython        | 8.5.0 8.14.0                         | `module avail IPython`   | |
-| Jax.           | 0.4.4-foss-2022a                     | `module avail IPython`   | |
+| Jax            | 0.4.4-foss-2022a                     | `module avail IPython`   | |
 | JupyterLab     | 4.0.5-GCCcore-12.3.0                 | `module avail Jupyter`   | Yes, via Jupyter |
 | Python         | 2.7.18 3.10.4 3.10.13 3.11.3.        | `module avail Python/`   | |
 | PyTorch        | 1.12.0-foss-2022a 2.1.2-foss-2022a   | `module avail PyTorch`   | Yes, included in Jupyter|
