@@ -125,7 +125,7 @@ Using the toolchain(s) the following software is avaiable. When the module is lo
 | R              | 4.2.1-foss-2022a  4.3.2-gfbf-2023a   | `module avail R/`        | |
 | Rstudio        | 2022.07.2+576-foss-2022a-Java-11-R-4.2.1 | `module avail RStudio` | Yes |
  
-Python and related software available.
+### Python and related software.
 
 | Name           | Supported Versions                   | Module(s)                | https://hpc.tue.nl |
 | -------------- | ------------------------------------ | ------------------------ | ------------------ |
@@ -137,8 +137,6 @@ Python and related software available.
 | PyTorch        | 1.12.0-foss-2022a 2.1.2-foss-2022a   | `module avail PyTorch`   | Yes, included in Jupyter|
 | SciPy          | 2022.05-foss-2022a 2023.07-gfbf-2023a | `module avail SciPy-bundle` | Yes, included in Jupyter |
 | Tensorflow     | 2.11.0-foss-2022a    2.13.0-foss-2023a  | `module avail TensorFlow` | Yes, included in Jupyter |
-
-
 
 ## Parallel Programming
 
@@ -163,10 +161,6 @@ out a list of available modules to the screen.
 #### Viewing loaded modules
 
 To show which modules are already loaded, run `module list`
-
-This will reveal that both "slurm/20.02.7" and "gcc/8.2.0" are loaded by
-default. In order to use any other modules, you should explicitly load
-them.
 
 #### Loading modules
 
