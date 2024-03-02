@@ -136,7 +136,7 @@ Python and related software available.
 | Python         | 2.7.18 3.10.4 3.10.13 3.11.3.        | `module avail Python/`   | |
 | PyTorch        | 1.12.0-foss-2022a 2.1.2-foss-2022a   | `module avail PyTorch`   | Yes, included in Jupyter|
 | SciPy          | 2022.05-foss-2022a 2023.07-gfbf-2023a | `module avail SciPy-bundle` | Yes, included in Jupyter |
-| Tensorflow     | 2.11.0-foss-2022a 2.13.0-foss-2023a  | `module avail TensorFlow` | Yes, included in Jupyter |
+| Tensorflow     | 2.11.0-foss-2022a    2.13.0-foss-2023a  | `module avail TensorFlow` | Yes, included in Jupyter |
 
 
 
