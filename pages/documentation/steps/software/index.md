@@ -118,6 +118,7 @@ Using the toolchain(s) the following software is avaiable. When the module is lo
 | Name           | Supported Versions                   | Module(s)                | https://hpc.tue.nl |
 | -------------- | ------------------------------------ | ------------------------ | ------------------ |
 | Blender        | 4.0.2-linux-x86_64-CUDA-12.1.1       | `module avail Blender`   | Yes |
+| CP2K           | 2023.1-foss-2023a                    | `module avail CP2K`      | |
 | GROMACS        | 2023.3-foss-2023a                    | `module avail GROMACS`   | |
 | Julia          | 1.9.3 1.10.1                         | `module avail Julia`     | |
 | OpenFOAM       | 8-foss-2022a                         | `module avail OpenFOAM`  | |
