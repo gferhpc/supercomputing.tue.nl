@@ -301,6 +301,7 @@ Using the toolchain(s) the following software is avaiable. When the module is lo
     xlrd                              2.0.1
     zipfile36                         0.1.3
     zipp                              3.15.0
+    ```
 
 ## Parallel Programming
 
