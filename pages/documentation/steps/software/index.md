@@ -145,10 +145,10 @@ Using the toolchain(s) the following software is avaiable. When the module is lo
 | SciPy          | 2022.05-foss-2022a 2023.07-gfbf-2023a | `module avail SciPy-bundle` | Yes, included in Jupyter |
 | Tensorflow     | 2.11.0-foss-2022a    2.13.0-foss-2023a  | `module avail TensorFlow` | Yes, included in Jupyter |
 
-??? example "available pip packages after running "module load SciPy-bundle/2023.07-gfbf-2023a"
+??? example "available pip packages after running module load SciPy-bundle/2023.07-gfbf-2023a"
     ```shell
     $ mdule load SciPy-bundle/2023.07-gfbf-2023a
-    $ pp list
+    $ pip list
     Package                          Version
     --------------------------------- -----------
     alabaster                         0.7.13
