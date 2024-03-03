@@ -130,9 +130,11 @@ Using the toolchain(s) the following software is avaiable. When the module is lo
 | Name           | Supported Versions                   | Module(s)                | https://hpc.tue.nl |
 | -------------- | ------------------------------------ | ------------------------ | ------------------ |
 | Anaconda3      | Anaconda3-2023.09-0                  | `module avail Anaconda3` | |
+| dask           | 2022.10.0-foss-2022a                 | `module avail dask`      | |
 | IPython        | 8.5.0 8.14.0                         | `module avail IPython`   | |
 | Jax            | 0.4.4-foss-2022a                     | `module avail IPython`   | |
 | JupyterLab     | 4.0.5-GCCcore-12.3.0                 | `module avail Jupyter`   | Yes, via Jupyter |
+| numba          | 0.56.4-foss-2022a                    | `module avail numpa`     | |
 | Python         | 2.7.18 3.10.4 3.10.13 3.11.3.        | `module avail Python/`   | |
 | PyTorch        | 1.12.0-foss-2022a 2.1.2-foss-2022a   | `module avail PyTorch`   | Yes, included in Jupyter|
 | SciPy          | 2022.05-foss-2022a 2023.07-gfbf-2023a | `module avail SciPy-bundle` | Yes, included in Jupyter |
