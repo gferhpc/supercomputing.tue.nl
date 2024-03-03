@@ -121,6 +121,7 @@ Using the toolchain(s) the following software is avaiable. When the module is lo
 | CP2K           | 2023.1-foss-2023a                    | `module avail CP2K`      | |
 | GROMACS        | 2023.3-foss-2023a                    | `module avail GROMACS`   | |
 | Julia          | 1.9.3 1.10.1                         | `module avail Julia`     | |
+| LAMMPS         | 23Jun2022-foss-2022a-kokkos          | `module avail LAMMPS`    | |
 | OpenFOAM       | 8-foss-2022a                         | `module avail OpenFOAM`  | |
 | ParaViews      | 5.11.2-foss-2023a                    | `module avail ParaView`  | Yes |
 | R              | 4.2.1-foss-2022a  4.3.2-gfbf-2023a   | `module avail R/`        | |
