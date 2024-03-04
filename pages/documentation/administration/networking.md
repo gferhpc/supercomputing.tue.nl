@@ -22,6 +22,14 @@
     - 172.16.108.240–255 — `hpc-vast-mgmt-1..16.infra.tue.nl` (C2402488)
         - hpc-vast-mgmt-1: VIP for web interface
 
+VAST:
+
+- Subnet: 172.16.0.0/16 --- VAST internal data
+    - Range can be moved, but must be a /16.
+- Subnet: 172.17.0.0/16 --- VAST internal Docker
+    - Range can be moved, but must be a /16.
+- For user-facing data streams: 4 IPs per CNode per pool
+
 ### Cluster internal
 
 - Subnet: 10.148.0.0/16 - Umbrella Cluster heartbeat
