@@ -125,7 +125,7 @@ Using the toolchain(s) the following software is avaiable. When the module is lo
 | LAMMPS         | 23Jun2022-foss-2022a-kokkos          | `module avail LAMMPS`    | Yes |
 | NetLogo        | 6.3.0-64 6.4.0-64                    | `module avail NetLogo`   | Yes |
 | OpenFOAM       | 8-foss-2022a                         | `module avail OpenFOAM`  | |
-| ParaViews      | 5.11.2-foss-2023a                    | `module avail ParaView`  | Yes |
+| ParaView       | 5.11.2-foss-2023a                    | `module avail ParaView`  | Yes |
 | R              | 4.2.1-foss-2022a  4.3.2-gfbf-2023a   | `module avail R/`        | |
 | Rstudio        | 2022.07.2+576-foss-2022a-Java-11-R-4.2.1 | `module avail RStudio` | Yes |
  
