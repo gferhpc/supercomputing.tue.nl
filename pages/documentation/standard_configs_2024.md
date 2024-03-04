@@ -51,7 +51,7 @@ We preferably don't offer fabrics such as InfiniBand due to the cost.  Compute j
     <td>4163</td>
   </tr>
   <tr>
-    <td markdown="1">Fast 1[^3]</td>
+    <td markdown="1">Fast</td>
     <td>1x AMD EPYC 9474F<br/>(3.60 GHz, 48C, 256 MB L3)</td>
     <td>384 GB<br/>(12x 32 GB)<br>(8 GB/core)</td>
     <td>&mdash;</td>
@@ -62,19 +62,6 @@ We preferably don't offer fabrics such as InfiniBand due to the cost.  Compute j
     <td>475.2</td>
     <td>4530</td>
     <td>4163</td>
-  </tr>
-  <tr>
-    <td markdown="1">Fast 2[^3]</td>
-    <td>2x AMD EPYC 9174F<br/>(4.10 GHz, 16C, 256 MB L3)</td>
-    <td>384 GB<br/>(12x 32 GB)<br>(12 GB/core)</td>
-    <td>&mdash;</td>
-    <td>€21,000</td>
-    <td>110,970</td>
-    <td>3468</td>
-    <td>5.28</td>
-    <td>835.2</td>
-    <td>7526</td>
-    <td>7316</td>
   </tr>
   <tr>
     <td>GPU</td>
@@ -89,14 +76,25 @@ We preferably don't offer fabrics such as InfiniBand due to the cost.  Compute j
     <td></td>
     <td></td>
   </tr>
+  <tr style="color: lightgray;">
+    <td>Thin (~2023)</td>
+    <td>1x AMD EPYC 7713P<br/>(2.00 GHz, 64C, 256 MB L3)</td>
+    <td>256 GB<br/>(8x 32 GB)<br>(4 GB/core)</td>
+    <td>&mdash;</td>
+    <td>€11,700<br/>(2023 quoted price)</td>
+    <td>80,373</td>
+    <td>1255</td>
+    <td>6.87</td>
+    <td>321.0</td>
+    <td>3994</td>
+    <td>2812</td>
+  </tr>
 </table>
 
 [^1]: Total for all CPUs in the system.  Per-CPU value is obtained from the
   PassMark database.  The unit "pp" stands for "performance point".
 
-[^2]: Power usage is estimated as: CPU TDP + 0.3 W/GB RAM.
-
-[^3]: As of the time of writing (Feb 2024) it is unclear which of these configurations will officially be offered.
+[^2]: Power usage is estimated as: CPU TDP + 0.3 W/GB RAM (for DDR5; for DDR4 it is 0.375 W/GB)
 
 # Rationales
 
