@@ -27,7 +27,7 @@ Available as [modules](#Modules):
 | Name            | Website                              | Module(s)                | https://hpc.tue.nl |
 | --------------- | ------------------------------------ | ------------------------ | ------------------ |
 | Abacus          | [3ds.com](https://www.3ds.com/products/simulia/abaqus){:target="_blank"} | `module avail abacus`    | Yes |
-| ANSYS CFX.      | [ansys.com](https://www.ansys.com/products/fluids/ansys-cfx){:target="_blank"} | `module avail ansys`     | Yes |
+| ANSYS CFX       | [ansys.com](https://www.ansys.com/products/fluids/ansys-cfx){:target="_blank"} | `module avail ansys`     | Yes |
 | ANSYS Fluent    | [ansys.com](https://www.ansys.com/products/fluids/ansys-fluent){:target="_blank"} | `module avail ansys`     | Yes |
 | AMD-μProf       | [amd.com](https://www.amd.com/en/developer/uprof.html){:target="_blank"} | `module avail amd-uprof` | Yes |
 | AMS             | [scm.com](https://www.scm.com/amsterdam-modeling-suite/){:target="_blank"} | `module avail ams` | Yes |
@@ -123,7 +123,7 @@ Using the toolchain(s) the following software is avaiable. When the module is lo
 | GROMACS        | 2023.3-foss-2023a                    | `module avail GROMACS`   | |
 | Julia          | 1.9.3 1.10.1                         | `module avail Julia`     | |
 | LAMMPS         | 23Jun2022-foss-2022a-kokkos          | `module avail LAMMPS`    | Yes |
-| NetLogo        | 6.3.0-64 6.4.0-64                    | `module avail NetLogo`   | |
+| NetLogo        | 6.3.0-64 6.4.0-64                    | `module avail NetLogo`   | Yes |
 | OpenFOAM       | 8-foss-2022a                         | `module avail OpenFOAM`  | |
 | ParaViews      | 5.11.2-foss-2023a                    | `module avail ParaView`  | Yes |
 | R              | 4.2.1-foss-2022a  4.3.2-gfbf-2023a   | `module avail R/`        | |
@@ -136,7 +136,7 @@ Using the toolchain(s) the following software is avaiable. When the module is lo
 | Anaconda3      | Anaconda3-2023.09-0                  | `module avail Anaconda3` | |
 | dask           | 2022.10.0-foss-2022a 2023.9.2-foss-2023a | `module avail dask`      | |
 | IPython        | 8.5.0 8.14.0                         | `module avail IPython`   | |
-| Jax            | 0.4.4-foss-2022a                     | `module avail IPython`   | |
+| Jax            | 0.4.4-foss-2022a                     | `module avail jax`   | |
 | JupyterLab     | 4.0.5-GCCcore-12.3.0                 | `module avail Jupyter`   | Yes, via Jupyter |
 | numba          | 0.56.4-foss-2022a                    | `module avail numba`     | |
 | Python         | 2.7.18 3.10.4 3.10.13 3.11.3.        | `module avail Python/`   | |
