@@ -27,6 +27,7 @@ Available as [modules](#Modules):
 | Name            | Website                              | Module(s)                | https://hpc.tue.nl |
 | --------------- | ------------------------------------ | ------------------------ | ------------------ |
 | Abacus          | [3ds.com](https://www.3ds.com/products/simulia/abaqus){:target="_blank"} | `module avail abacus`    | Yes |
+| ANSYS CFX.      | [ansys.com](https://www.ansys.com/products/fluids/ansys-cfx){:target="_blank"} | `module avail ansys`     | Yes |
 | ANSYS Fluent    | [ansys.com](https://www.ansys.com/products/fluids/ansys-fluent){:target="_blank"} | `module avail ansys`     | Yes |
 | AMD-μProf       | [amd.com](https://www.amd.com/en/developer/uprof.html){:target="_blank"} | `module avail amd-uprof` | Yes |
 | AMS             | [scm.com](https://www.scm.com/amsterdam-modeling-suite/){:target="_blank"} | `module avail ams` | Yes |
