@@ -125,6 +125,7 @@ Using the toolchain(s) the following software is avaiable. When the module is lo
 | LAMMPS         | 23Jun2022-foss-2022a-kokkos          | `module avail LAMMPS`    | Yes |
 | NetLogo        | 6.3.0-64 6.4.0-64                    | `module avail NetLogo`   | Yes |
 | OpenFOAM       | 8-foss-2022a                         | `module avail OpenFOAM`  | |
+| ORCA           | 5.0.4-gompi-2022a.                   | `module avail ORCA`      | |
 | ParaView       | 5.11.2-foss-2023a                    | `module avail ParaView`  | Yes |
 | R              | 4.2.1-foss-2022a  4.3.2-gfbf-2023a   | `module avail R/`        | |
 | Rstudio        | 2022.07.2+576-foss-2022a-Java-11-R-4.2.1 | `module avail RStudio` | Yes |
@@ -143,6 +144,7 @@ Using the toolchain(s) the following software is avaiable. When the module is lo
 | PyTorch        | 1.12.0-foss-2022a 2.1.2-foss-2022a   | `module avail PyTorch`   | Yes, included in Jupyter|
 | scikit-bio     | 0.5.7-foss-2022a                     | `module avail scikit-bio` | |
 | scikit-learn   | 1.1.2-foss-2022a                     | `module avail scikit-learn` | |
+| scikit-image   | 0.19.3-foss-2022a                     | `module avail scikit-bio` | |
 | SciPy          | 2022.05-foss-2022a 2023.07-gfbf-2023a | `module avail SciPy-bundle` | Yes, included in Jupyter |
 | Tensorflow     | 2.11.0-foss-2022a    2.13.0-foss-2023a  | `module avail TensorFlow` | Yes, included in Jupyter |
 
