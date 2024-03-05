@@ -146,7 +146,8 @@ Using the toolchain(s) the following software is avaiable. When the module is lo
 | scikit-learn   | 1.1.2-foss-2022a                     | `module avail scikit-learn` | |
 | scikit-image   | 0.19.3-foss-2022a                     | `module avail scikit-bio` | |
 | SciPy          | 2022.05-foss-2022a 2023.07-gfbf-2023a | `module avail SciPy-bundle` | Yes, included in Jupyter |
-| Tensorflow     | 2.11.0-foss-2022a    2.13.0-foss-2023a  | `module avail TensorFlow` | Yes, included in Jupyter |
+| Tensorflow     | 2.11.0-foss-2022a  2.13.0-foss-2023a  | `module avail TensorFlow` | Yes, included in Jupyter |
+| torchvision    | 0.13.1-foss-2022a                     | `module avail torchvision` | Yes, included in Jupyter |
 
 ??? example "available pip packages after running module load SciPy-bundle/2023.07-gfbf-2023a"
     ```shell
