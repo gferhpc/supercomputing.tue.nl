@@ -51,3 +51,15 @@ optional arguments:
   -h, --help  show this help message and exit
   -R, --raw   Raw JSON output
 ```
+
+## Create/modify groups
+
+```
+obol group add {group}
+obol group delete {group}
+
+obol group addusers {group} {user} [user ...]
+obol group delusers {group} {user} [user ...]
+
+obol group show {group}
+```
