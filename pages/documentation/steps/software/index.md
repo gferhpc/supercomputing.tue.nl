@@ -21,7 +21,7 @@ If you recurrently need lots of modules, this loading can be automated with an (
 
 ### Commercial software
 
-[commercial.md]
+[Here](../../../software/commercial.md)
 
 ### Non-Commercial software
 
