@@ -19,13 +19,9 @@ Note that `module avail` list modules case insensitive but `module load` **is ca
 If you recurrently need lots of modules, this loading can be automated with an (ba)sh-file, so that you just have to execute the file once and it loads all modules, you need.
 
 
-### Commercial software
+[Commercial software](../../../software/modules/commercial.md)
 
-[Here](../../../software/commercial.md)
-
-### Non-Commercial software
-
-[non-commercial.md]
+[Non-Commercial software](../../../software/modules/non-commercial.md)
 
 ## Parallel Programming
 
