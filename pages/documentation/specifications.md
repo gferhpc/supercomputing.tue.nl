@@ -4,10 +4,15 @@ title: Technical Specifications
 
 ## Cluster specifications
 
-OS: Rocky Linux 8
-Module system: Lmod
-Cluster Management: TrinityX
+Operating System: [Rocky Linux 8](https://rockylinux.org/) (100% bug-for-bug compatible with Red Hat Enterprise Linux®) 
+
+Cluster Management: [TrinityX](https://github.com/clustervision/trinityX)
+
 User Management: LDAP with Active Directory for Authentication
+
+Module system: [Lmod](https://lmod.readthedocs.io/en/latest/)
+
+Software build system: [EasyBuild](https://docs.easybuild.io/)
 
 ## Partition/Queues
 
