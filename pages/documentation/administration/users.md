@@ -54,6 +54,30 @@ optional arguments:
 
 ## Create/modify groups
 
+We use `obol` for this; see commands below.
+
+### Naming scheme
+
+We use the following naming scheme for user-managed groups:
+
+```
+[dept[-group[-subgroup]]]
+```
+
+with
+
+* `dept` the department that owns the POSIX group
+* `group` the research group that owns the POSIX group (optional)
+* `subgroup` the group within the research that owns the POSIX group (optional)
+
+Examples:
+
+```
+elec-ees-empso  ->  POSIX group representing a subgroup within the electrical engineering department
+```
+
+### Commands
+
 ```
 obol group add {group}
 obol group delete {group}
