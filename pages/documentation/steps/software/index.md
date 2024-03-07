@@ -15,6 +15,7 @@ A few common commands, to enter into the supercomputer commandline and talk to t
 - `module load x` : loads module x
 - `module purge`  : unload all modules
 
+Note that `module avail` list modules sase insensitive but `module load` **is case sensitive**.  
 If you recurrently need lots of modules, this loading can be automated with an (ba)sh-file, so that you just have to execute the file once and it loads all modules, you need.
 
 
@@ -129,6 +130,7 @@ Using the toolchain(s) the following software is avaiable. When the module is lo
 | ParaView       | 5.11.2-foss-2023a                    | `module avail ParaView`  | Yes |
 | R              | 4.2.1-foss-2022a  4.3.2-gfbf-2023a   | `module avail R/`        | |
 | Rstudio        | 2022.07.2+576-foss-2022a-Java-11-R-4.2.1 | `module avail RStudio` | Yes |
+| Spark          | 3.3.1-foss-2022a 3.5.0-foss-2023a    | `module avail Spark`        | |
  
 ### Python and related software.
 
