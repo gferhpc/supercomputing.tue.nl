@@ -11,14 +11,20 @@
 
 ### TU/e
 
-- Subnet: 131.155.7.96/27 --- TU/e HPC
+- Subnet: 131.155.2.0/24 --- `computerzaal`
+    - 131.155.2.50 `hpc-cluster.icts.tue.nl`
+    - 131.155.2.51 `hpc-primary.icts.tue.nl`
+    - 131.155.2.52 `hpc-secondary.icts.tue.nl`
+- Subnet: 131.155.11.224/27 --- `netwerk servers misc`
+    - 131.155.11.234 `tue-login001.icts.tue.nl`
+- Subnet: 131.155.7.96/27 --- `TUe-HPC`
     - 131.155.7.96–127
     - 131.155.7.102–126 usable
     - 131.155.7.102 `hpc-head01.icts.tue.nl`
     - 131.155.7.103 `hpc-head02.icts.tue.nl`
     - 131.155.7.104 `hpc-vip.icts.tue.nl`
     - 131.155.7.109 `tue-login002.icts.tue.nl`
-- Subnet: 172.16.108.0/23 — Mgmt-Infra-TUe-HPC (VLAN 301)
+- Subnet: 172.16.108.0/23 — `Mgmt-Infra-TUe-HPC` (VLAN 301)
     - 172.16.108.240–255 — `hpc-vast-mgmt-1..16.infra.tue.nl` (C2402488)
         - hpc-vast-mgmt-1: VIP for web interface
 
@@ -44,9 +50,9 @@ VAST:
         - 10.150.254.21 - arch-storage001
         - 10.150.254.31 - bme-storage001
         - 10.150.254.41 - mech-storage001
-        - 10.250.254.51 - mcs-storage001
-        - 10.250.254.61 - chem-storage001
-        - 10.250.254.62 - chem-storage002
+        - 10.150.254.51 - mcs-storage001
+        - 10.150.254.61 - chem-storage001
+        - 10.150.254.62 - chem-storage002
     - 10.150.255.252 — head VIP
     - 10.150.255.253 — head02
     - 10.150.255.254 — head01
