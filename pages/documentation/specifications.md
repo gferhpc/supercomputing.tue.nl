@@ -2,8 +2,17 @@
 title: Technical Specifications
 ---
 
+## Cluster specifications
+
+OS: Rocky Linux 8
+Module system: Lmod
+Cluster Management: TrinityX
+User Management: LDAP with Active Directory for Authentication
+
+## Partition/Queues
+
 Depending on your department/research group, you can get access to
-certain compute clusters (partitions/queues) of the TU/e Umbrella HPC Cluster. 
+certain parts (partitions/queues) of the TU/e Umbrella HPC Cluster. 
 The tables below list the specifications of the clusters per department.
 
 To find out which cluster partition(s)/queue(s) you have access to,
