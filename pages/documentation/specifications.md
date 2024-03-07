@@ -14,6 +14,8 @@ Module system: [Lmod](https://lmod.readthedocs.io/en/latest/)
 
 Software build system: [EasyBuild](https://docs.easybuild.io/)
 
+Remote web access: [Open Ondemand](https://openondemand.org/)
+
 ## Partition/Queues
 
 Depending on your department/research group, you can get access to
