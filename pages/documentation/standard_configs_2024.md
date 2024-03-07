@@ -144,7 +144,7 @@ The following specifications are used by system administrators when ordering com
 - Rack mount kit: yes
 - Bezel: no
 - Remote mgmt: required.
-    - For Dell: iDRAC with Enterprise and OpenManage license.
+    - For Dell: iDRAC with Enterprise and OpenManage license.  Factory-generated password.
 - Support: 5 year next business day.
 
 Other constraints:
