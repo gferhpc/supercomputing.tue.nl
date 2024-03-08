@@ -108,6 +108,7 @@ plugins:
         "AMD EPYC 7713P": "https://www.amd.com/en/products/cpu/amd-epyc-7713p"
         "AMD EPYC 7742": "https://www.amd.com/en/products/cpu/amd-epyc-7742"
         "AMD EPYC 7F72": "https://www.amd.com/en/products/cpu/amd-epyc-7f72"
+        "AMD EPYC 9474F": "https://www.amd.com/en/products/cpu/amd-epyc-9474f"
         "AMD EPYC 9654": "https://www.amd.com/en/products/cpu/amd-epyc-9654"
         "AMD EPYC 9654P": "https://www.amd.com/en/products/cpu/amd-epyc-9654p"
         "Intel Xeon E-2124": "https://ark.intel.com/content/www/us/en/ark/products/134856/intel-xeon-e-2124-processor-8m-cache-up-to-4-30-ghz.html"
