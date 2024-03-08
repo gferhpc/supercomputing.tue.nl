@@ -8,7 +8,7 @@ Operating System: [Rocky Linux 8](https://rockylinux.org/) (100% bug-for-bug com
 
 Cluster Management: [TrinityX](https://github.com/clustervision/trinityX)
 
-User Management: LDAP with Active Directory for Authentication
+User Management: LDAP with TU/e Active Directory for Authentication
 
 Module system: [Lmod](https://lmod.readthedocs.io/en/latest/)
 
