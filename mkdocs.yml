@@ -146,9 +146,9 @@ plugins:
         "NVIDIA Tesla V100-PCIE-16GB": "https://images.nvidia.com/content/technologies/volta/pdf/tesla-volta-v100-datasheet-letter-fnl-web.pdf"
         "NVIDIA TITAN Xp": "https://www.nvidia.com/nl-nl/titan/titan-xp/"
 extra_css:
-  - assets/stylesheets/extra.css
+  - assets/stylesheets/extra.css?1
 extra_javascript:
-  - assets/javascripts/extra.js
+  - assets/javascripts/extra.js?1
 #extra:
 #  consent:
 #    title: Cookie consent
