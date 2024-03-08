@@ -5,7 +5,7 @@ tags: [Software]
 ![EasyBuild logo](easybuild_logo_2022_vertical_light_bg_transparent.png#only-light){: align=right style="height:250px"}
 # EasyBuild
 !!! note 
-    This page serves as a reference to system administrators, but the curious user is welcomed to read it as well.
+    This page serves as a reference to system administrators, but the curious user is welcome to read it as well.
 
 EasyBuild helps building and installing software packages and their
 dependencies using tested build scripts.
@@ -20,6 +20,8 @@ dependencies using tested build scripts.
 -   The production env is in `/sw/rl8/{arch}/{app,mod}`
     where `{arch}` is the result of `module load archspec;archspec cpu`
     on a node in the `tue.build.q`.
+-   We keep a private repository of installed easyconfigs in `~/easyconfigs`.
+    Part of `~`, including the easyconfigs, is also on GitLab.
 -   Software is built and installed using the `tue.build.q`, which makes
     use of the lowest common denominator micro architecture that we
     have. This produces builds that can run on all nodes, but with
@@ -36,18 +38,27 @@ Procedure:
 
 1.  Connect via SSH to the cluster as user "easybuild".
 2.  Start a screen/tmux so building can continue when you lose connection
-3.  `srun -p tue.build.q -N1 -n1 -c8 -t 1-0 --pty bash`
-4.  Search for available easyconfig files: `eb -S {software}`
-5.  Copy the name of the desired easyconfig file if you want to edit the
-    file and place it in de easyconfigs directory and GIT.
-    `eb --copy-ec {easyconfig}` copies the easyconfig file to the current directory 
-5.  Switch EasyBuild env to production: `eb_env prod`
-    If you get "WARNING: Did not unuse ...", repeat the command until it
-    succeeds. This should take about 3 tries.
+
+Search for software (built-in easyconfigs):
+
+3.  Search for available easyconfig files: `eb -S {software}`
+4.  Copy the desired easyconfig file to the right place in `~/easyconfigs`.
+    `eb --copy-ec {easyconfig}` copies the easyconfig file to the current directory.
+
+Search for software (e.g. easyconfigs pull requests on GitHub):
+
+3.  Search for software in the [easyconfigs pull requests](https://github.com/easybuilders/easybuild-easyconfigs/pulls).
+4.  Download the raw files to the right place in `~easyconfigs`.
+
+Build:
+
+5.  Start a shell in `tue.build.q`: `eb_srun`  (Optionally add number of CPU cores)
 6.  Dry-run build: `eb -Dr {easyconfig}`
 7.  Build and install: `eb -r {easyconfig} --parallel=8`
-8.  Add the easyconfig file `{easyconfig}` to the `~easybuild/easyconfig` directory and
-    commit/push to GIT. Take note of the structure of that dir first!
+
+Add to GIT repo:
+
+8.  `git add`, `git commit`, `git push` as needed.
 
 ## Building GPU easyconfigs -CUDA-xx.xx
 
