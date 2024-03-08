@@ -127,12 +127,12 @@ experimental purposes to get familiar with HPC.
 === "APSE"
 
     { .umbrella-specs phys-login001,phys-storage001 }
-    { .umbrella-specs phys.default.q,phys.bigmem.q,phys.psn.q,phys.and.q,phys.edu.q,phys.gpu.q }
+    { .umbrella-specs phys.default.q,phys.gpu.q,phys.bigmem.q,phys.and.q,phys.edu.q,phys.psn.q }
 
 === "BE"
 
     { .umbrella-specs arch-login001,arch-storage001 }
-    { .umbrella-specs be.research.q,be.student.q,be.gpuresearch.q,be.gpustudent.q }
+    { .umbrella-specs be.research.q,be.gpuresearch.q,be.student.q,be.gpustudent.q }
 
 === "BmE"
 
@@ -142,11 +142,11 @@ experimental purposes to get familiar with HPC.
 === "CE&C"
 
     { .umbrella-specs chem-login001,chem-storage001,chem-storage002 }
-    { .umbrella-specs chem.smm01.q,chem.ppd.q,chem.default.q,chem.longterm.q,chem.smm02.q,chem.gpu.q }
+    { .umbrella-specs chem.default.q,chem.gpu.q,chem.longterm.q,chem.ppd.q,chem.smm01.q,chem.smm02.q }
 
 === "EE"
 
-    { .umbrella-specs elec.default.q,elec.gpu.q,elec-em.gpu.q,elec-phi.gpu.q,elec.gpu-es02.q }
+    { .umbrella-specs elec.default.q,elec.gpu.q,elec-em.gpu.q,elec-ees-empso.cpu.q,elec-phi.gpu.q,elec.gpu-es02.q }
 
 === "ID"
 
@@ -160,7 +160,7 @@ experimental purposes to get familiar with HPC.
 === "ME"
 
     { .umbrella-specs mech-storage001 }
-    { .umbrella-specs mech.pf.q,mech.pf-student.q,mech.student.q,mech.cm.q }
+    { .umbrella-specs mech-cst-mov.cpu.q,mech.pf.q,mech.pf-student.q,mech.student.q,mech.cm.q }
 
 !!! example "Auto Generated"
 
