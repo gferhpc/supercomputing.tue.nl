@@ -26,6 +26,7 @@ class SLURM:
         specifications = {}
         nodes = []
         commands = []
+        failed = []
 
         if filtered_hosts:
             for node in self.sinfo['nodes']:
@@ -37,15 +38,24 @@ class SLURM:
 
         print("[%d] " % len(nodes), end="")
         for index, node in enumerate(nodes):
-            specifications[node['name']] = self.gather_specs(node['address'])
-            if command := self.get_feature_commands(node, set(self.get_features_by_specifications(specifications[node['name']]))):
-                commands.append(command)
-            if command := self.get_extra_commands(node, self.get_extras_by_specification(specifications[node['name']])):
-                commands.append(command)
+            try:
+                specifications[node['name']] = self.gather_specs(node['address'])
+                if command := self.get_feature_commands(node, set(self.get_features_by_specifications(specifications[node['name']]))):
+                    commands.append(command)
+                if command := self.get_extra_commands(node, self.get_extras_by_specification(specifications[node['name']])):
+                    commands.append(command)
 
-            print(".", end="")
+                print(".", end="")
+            except RuntimeError as error:
+                failed.append(f"{node['name']}: {error}")
+                print("x", end="")
 
         print("Done!")
+
+        if len(failed) > 0:
+            print("FAILED:")
+            for fail in failed:
+                print(fail)
 
         for command in set(commands):
             print(command)
@@ -69,17 +79,11 @@ class SLURM:
     @staticmethod
     def get_feature_commands(node: dict, features: set):
         missing_features = features - set(node['features'].split(','))
-        category = re.sub(r'^([a-z]+-[a-zA-Z]+)\d+$', '\\1-cat', node['name'])
 
         if not missing_features:
             return None
 
-        command = f"cmsh -c 'category; roles {category}"
-
-        for feature in missing_features:
-            command += f"; append slurmclient features {feature}"
-
-        return command + "; commit'"
+        return f"Feature={','.join(missing_features)}"
 
     @staticmethod
     def get_features_by_specifications(specifications: dict):
@@ -261,15 +265,18 @@ class SLURM:
 
     @staticmethod
     def _run(host: str, command: str):
-        result = subprocess.run(
-            ['ssh', host, command],
-            capture_output=True,
-            text=True,
-            timeout=10
-        )
+        try:
+            result = subprocess.run(
+                ['ssh', host, command],
+                capture_output=True,
+                text=True,
+                timeout=10
+            )
 
-        if result.returncode != 0:
-            raise RuntimeError('Unable to run command (%s)'.format(command))
+            if result.returncode != 0:
+                raise RuntimeError(f'Unable to run command ({command}) on host: {host}')
+        except subprocess.TimeoutExpired as error:
+            raise RuntimeError(f'Unable to run command ({command}) on host: {host} (error: {error})')
 
         return result.stdout
 
