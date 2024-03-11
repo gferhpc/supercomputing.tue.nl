@@ -19,11 +19,11 @@ Note that `module avail` list modules case insensitive but `module load` **is ca
 If you recurrently need lots of modules, this loading can be automated with an (ba)sh-file, so that you just have to execute the file once and it loads all modules, you need.
 
 
-[Commercial software](../../software/modules/commercial.md)
+[Commercial software modules](../../software/modules/commercial.md)
 
-[Non-Commercial software](../../software/modules/non-commercial.md)
+[Non-Commercial software modules](../../software/modules/non-commercial.md)
 
-[Python related software](../../software/modules/python.md)
+[Python related software modules](../../software/modules/python.md)
 
 ## Parallel Programming
 
