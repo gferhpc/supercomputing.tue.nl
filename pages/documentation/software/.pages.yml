@@ -1,6 +1,6 @@
 nav:
   - "Available Modules": modules
   - licenses.md
-  - "Recipes": recipes.md 
+  - "Recipes": recipes
   - easybuild.md
 
