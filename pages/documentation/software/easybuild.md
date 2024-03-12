@@ -68,6 +68,8 @@ Search for software (e.g. easyconfigs pull requests on GitHub):
 3.  Search for software in the [easyconfigs pull requests](https://github.com/easybuilders/easybuild-easyconfigs/pulls).
 4.  Download the raw files to the right place in `~easyconfigs`.
 
+After modifying an {easyconfig} check the .eb with `eb --check-contrib {easyconfig}`
+
 Build:
 
 5.  Start a shell in `tue.build.q`: `eb_srun`  (Optionally add number of CPU cores)
