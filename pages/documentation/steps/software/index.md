@@ -7,19 +7,20 @@ title: 4. Using Software
 
 Environment Modules provide a convenient way to dynamically change the users’ environment through modulefiles. With this module system, different versions of software, like compilers or special math libraries, are easily accessable and usable. Different modules are available, varying from GCC  or Intel Compilers, Python versions and software compiled from source and ready to use. Environment modules can activate commercial software and thier licenses. 
 
-The most common used module commands are 
+The most common used module commands are:
 
-| Command            | Description                           |
-| ------------------ | ------------------------------------- |
-| `module avail`     | lists available (loadable) modules   |
-| `module list`      | lists loaded modules.                |
-| `module load MOD/X`| loads module MOD/X (and dependencies)  |
-| `module switch 
-| `module purge`   | unload all modules                   |
+| Command               | Description                           |
+| --------------------- | ------------------------------------- |
+| `module avail`        | Lists available (loadable) modules    |
+| `module list`         | Lists loaded modules                  |
+| `module load MOD/X`.  | Loads module MOD/X (and dependencies) |
+| `module switch MOD/Y` | Switch to version Y of MOD (and deps) |
+| `module purge`        | unload all modules                    |
 
 
-!!! note 
-`module avail` list modules case insensitive but `module load` **is case sensitive**.  
+!!! note
+    `module avail` list modules case insensitive but `module load` **is case sensitive**. 
+    
 If you recurrently need lots of modules, this loading can be automated with an (ba)sh-file, so that you just have to execute the file once and it loads all modules, you need.
 
 
