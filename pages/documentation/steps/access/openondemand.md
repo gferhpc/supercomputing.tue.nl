@@ -16,10 +16,10 @@ Terminal access to the cluster login-node available from the browser, no longer 
 
 <br/>
 
-## Upload and Download Files
+## Upload, Download and edit Files
 
 ![img_2.png](img_2.png){ align=right width=250px }
-Access to the files with upload and download capabilities, in your home-directory on the cluster via the browser.
+Access to the files with edit, upload and download capabilities, in your home-directory on the cluster via the browser.
 
 <br/><br/>
 
