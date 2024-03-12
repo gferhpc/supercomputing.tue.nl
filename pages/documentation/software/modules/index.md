@@ -19,3 +19,5 @@ The following modules are allready available, on request new ones can be added.
 ## Lmod
 
 The TU/e Umbrella HPC cluster uses [lmod](https://lmod.readthedocs.io/) a Lua based environment module system.
+
+![Lmod logo](lmod-_logo.png){: align=right style="height:100px"}
