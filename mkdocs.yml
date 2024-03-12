@@ -168,11 +168,6 @@ markdown_extensions:
   - toc:
       permalink: true
   # Python Markdown Extensions
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.betterem:
@@ -193,6 +188,11 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
 edit_uri: https://gitlab.tue.nl/hpclab/website/edit/main/pages/
 extra:
   # announcement: "⚠️ TU/e Umbrella HPC Cluster maintenance scheduled on 12, 13 and 14 February 2024 (Carnival) ⚠️"
