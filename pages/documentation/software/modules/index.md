@@ -12,7 +12,7 @@ The following modules are allready available, on request new ones can be added.
 
 :   Open Source software or free to use, the Open Source License may vary.
 
-[Python related software modules](/python.md)
+[Python related software modules](python.md)
 
 :   NOTE: Software modules are not python modules but they do have a relation, loading specific software modlules will also make Python modules available for 'import'.
 
