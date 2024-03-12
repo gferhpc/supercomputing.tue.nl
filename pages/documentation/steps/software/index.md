@@ -13,7 +13,7 @@ The most common used module commands are:
 | --------------------- | ------------------------------------- |
 | `module avail`        | Lists available (loadable) modules    |
 | `module list`         | Lists loaded modules                  |
-| `module load MOD/X`.  | Loads module MOD/X (and dependencies) |
+| `module load MOD/X`   | Loads module MOD/X (and dependencies) |
 | `module switch MOD/Y` | Switch to version Y of MOD (and deps) |
 | `module purge`        | unload all modules                    |
 
