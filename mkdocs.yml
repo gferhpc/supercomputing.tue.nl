@@ -59,7 +59,6 @@ plugins:
       redirect_maps:
         'documentation/index.md': 'documentation/introduction.md'
   - search
-  - mermaid2
   - rss:
       enabled: !ENV [CI, false]
       match_path: 'news/posts/.*'
@@ -170,11 +169,10 @@ markdown_extensions:
       permalink: true
   # Python Markdown Extensions
   - pymdownx.superfences:
-      # make exceptions to highlighting of code:
       custom_fences:
         - name: mermaid
           class: mermaid
-          format: !!python/name:mermaid2.fence_mermaid_custom
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.betterem:
