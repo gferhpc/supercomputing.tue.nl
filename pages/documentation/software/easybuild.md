@@ -10,7 +10,7 @@ tags: [Software]
 EasyBuild helps building and installing software packages and their
 dependencies using tested build scripts.
 
-``` mermaid
+``` 
 graph LR
   A[GCCcore] --> |binutils| B[GCC];
   A --> |binutils| C[intel-compilers];
