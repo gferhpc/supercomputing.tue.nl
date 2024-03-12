@@ -17,7 +17,7 @@ The following modules are allready available, on request new ones can be added.
 :   NOTE: Software modules are not python modules but they do have a relation, loading specific software modlules will also make Python modules available for 'import'.
 
 ## Lmod
-
+![Lmod logo](Lmod-logo.png){: align=right style="height:30px"}
 The TU/e Umbrella HPC cluster uses [lmod](https://lmod.readthedocs.io/) a Lua based environment module system.
 
-![Lmod logo](Lmod-logo.png){: align=right style="height:100px"}
+
