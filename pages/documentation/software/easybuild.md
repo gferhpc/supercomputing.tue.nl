@@ -7,7 +7,7 @@ tags: [Software]
 !!! note 
     This page serves as a reference to system administrators, but the curious user is welcome to read it as well.
 
-EasyBuild helps building and installing software packages and their
+[EasyBuild](https://docs.easybuild.io/) helps building and installing software packages and their
 dependencies using tested build scripts.
 
 ## Toolchains
