@@ -1,7 +1,12 @@
 # Licenses
 
-### FlexLM stands for "Flexible License Manager". It is used to restrict who
-can use what software on what computer, and is also a source of
+## License servers
+
+The TU/e provides centralized licenses for some commercial application via license servers. Some Facuties or Departments are also hosting their own license servers. Other commercial applications may depend on the excistance of a license file.
+
+### FlexLM
+
+FlexLM stands for "Flexible License Manager". It is used to restrict who can use what software on what computer, and is also a source of
 usability issues. This page aims to document various diagnostics that
 can be done.
 
