@@ -12,7 +12,7 @@ dependencies using tested build scripts.
 
 ## Toolchains
 
-For the TU/e Umbrella HPc cluster 2 easybuild toolchains are installed and used: foss (Free and Open Source Software) and intel (Intel oneAPI)
+For the TU/e Umbrella HPc cluster 2 easybuild toolchains are installed and used: **foss** (Free and Open Source Software) and **intel** (Intel oneAPI)
 
 ```mermaid
 graph LR
