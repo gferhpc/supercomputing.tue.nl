@@ -19,10 +19,11 @@ The most common used module commands are:
 
 
 !!! note "Modules are case insensitive"
-    `module avail` Finds and lists modules case insensitive but `module load` is **case sensitive**. 
+    The command `module avail` finds and lists modules case insensitive but `module load` is **case sensitive**. 
     
-If you recurrently need lots of modules, this loading can be automated with an (ba)sh-file, so that you just have to execute the file once and it loads all modules, you need.
+If you recurrently need lots of modules, this loading can be automated with a (ba)sh-file, so that you just have to execute the file once and it loads all modules, you need. Be aware the loading modules by default (via a (ba)sh-file) can result in conflics when loading modules from the command-line or in a Job-script.
 
+More deatailed infromation about what modules are available in the TU/e Umbrella HPC Cluster can be found here:
 
 [Commercial software modules](../../software/modules/commercial.md)
 
