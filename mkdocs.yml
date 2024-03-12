@@ -59,6 +59,7 @@ plugins:
       redirect_maps:
         'documentation/index.md': 'documentation/introduction.md'
   - search
+  - mermaid2
   - rss:
       enabled: !ENV [CI, false]
       match_path: 'news/posts/.*'
