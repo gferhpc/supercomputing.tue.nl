@@ -1,4 +1,7 @@
-Python and related software.
+---
+tags: [Software]
+---
+## Python and related software.
 
 | Name           | Supported Versions                   | Module(s)                | https://hpc.tue.nl |
 | -------------- | ------------------------------------ | ------------------------ | ------------------ |
