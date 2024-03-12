@@ -32,7 +32,7 @@ or install third-party software, e.g.:
 
         !!! info "GUI applications/X11 forwarding"
 
-            If you need to load X11/GUI applications from the terminal, please consider installing [VcXsrv](https://sourceforge.net/projects/vcxsrv/){:target=_blank} as well!
+            If you need to load X11/GUI applications from the terminal, please consider installing [VcXsrv](https://sourceforge.net/projects/vcxsrv/){:target=_blank} as well! Or even simpler and better: use the [Web Interface](https://hpc.tue.nl)
 
     === ":simple-powershell: PowerShell"
 
