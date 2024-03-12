@@ -9,16 +9,17 @@ Environment Modules provide a convenient way to dynamically change the users’ 
 
 The most common used module commands are 
 
-`module avail`
-:   lists available (loadable) modules
-`module list`
-:   lists loaded modules
-`module load x`
-:   loads module x
-`module purge`
-:   unload all modules
+| Command            | Description                           |
+| ------------------ | ------------------------------------- |
+| `module avail`     | lists available (loadable) modules   |
+| `module list`      | lists loaded modules.                |
+| `module load MOD/X`| loads module MOD/X (and dependencies)  |
+| `module switch 
+| `module purge`   | unload all modules                   |
 
-Note that `module avail` list modules case insensitive but `module load` **is case sensitive**.  
+
+!!! note 
+`module avail` list modules case insensitive but `module load` **is case sensitive**.  
 If you recurrently need lots of modules, this loading can be automated with an (ba)sh-file, so that you just have to execute the file once and it loads all modules, you need.
 
 
