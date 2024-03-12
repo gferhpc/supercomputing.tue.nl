@@ -3,7 +3,7 @@ tags: [Software]
 ---
 # Using Software
 
-## Modules
+## Environment Modules
 
 Environment Modules provide a convenient way to dynamically change the users’ environment through modulefiles. With this module system, different versions of software, like compilers or special math libraries, are easily accessable and usable. Different modules are available, varying from GCC  or Intel Compilers, Python versions and software compiled from source and ready to use. Environment modules can activate commercial software and thier licenses. 
 
