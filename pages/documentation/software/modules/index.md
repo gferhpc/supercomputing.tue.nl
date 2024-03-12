@@ -14,5 +14,5 @@ The following modules are allready available, on request new ones can be added.
 
 [Python related software modules](/python.md)
 
-:   NOTE: Software modules are not python modules but do they do have a relation, loading specific software modlules will also make Python modules available for 'import'.
+:   NOTE: Software modules are not python modules but they do have a relation, loading specific software modlules will also make Python modules available for 'import'.
 
