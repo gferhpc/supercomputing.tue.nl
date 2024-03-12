@@ -1,6 +1,6 @@
-# Modules available in the HPC Umbrella Cluster 
+# Modules available in the TU/e Umbrella HPC cluster 
 
-Available modules in the HPC Umbrella Cluster are build from source or binaries and are installed in a central location, available to all nodes (including the login nodes) in the HPC Umbella Cluster. 
+Available modules in the TU/e Umbrella HPC cluster are build from source or binaries and are installed in a central location, available to all nodes (including the login nodes) in the HPC Umbella Cluster. 
 
 The following modules are allready available, on request new ones can be added.
 
@@ -16,3 +16,6 @@ The following modules are allready available, on request new ones can be added.
 
 :   NOTE: Software modules are not python modules but they do have a relation, loading specific software modlules will also make Python modules available for 'import'.
 
+## Lmod
+
+The TU/e Umbrella HPC cluster uses [lmod](https://lmod.readthedocs.io/) a Lua based module system.
