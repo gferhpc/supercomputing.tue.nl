@@ -1,7 +1,5 @@
 ---
 tags: [Software]
----
----
 title: 4. Using Software
 ---
 # Using Software
@@ -33,6 +31,10 @@ More deatailed infromation about what modules are available in the TU/e Umbrella
 [Non-Commercial software modules](../../software/modules/non-commercial.md)
 
 [Python related software modules](../../software/modules/python.md)
+
+![Lmod logo](../../software/modules/Lmod-logo.png){: align=left style="height:30px"}
+The TU/e Umbrella HPC cluster uses [lmod](https://lmod.readthedocs.io/) a Lua based environment module system.
+
 
 ## Parallel Programming
 
