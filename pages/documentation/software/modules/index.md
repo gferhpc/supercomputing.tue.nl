@@ -4,9 +4,9 @@ Available modules in the HPC Umbrella Cluster are build from source or binaries 
 
 The following modules are allready available, on request new ones can be added.
 
-'[Commercial software modules](commercial.md)'
+`[Commercial software modules](commercial.md)`
 
-    : For most of these modules a license is needed. More info: [Licenses](../software/licenses.md)
+:   For most of these modules a license is needed. More info: [Licenses](../software/licenses.md)
 
 [Non-Commercial software modules](non-commercial.md), Open Source software or free to use, the Open Source License may vary.
 
