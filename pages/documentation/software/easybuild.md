@@ -10,6 +10,20 @@ tags: [Software]
 EasyBuild helps building and installing software packages and their
 dependencies using tested build scripts.
 
+``` mermaid
+graph LR
+  A[GCCcore] --> |binutils| B[GCC];
+  A --> |binutils| C[intel-compilers];
+  B --> |OpenMPI| E[gompi];
+  C --> |impi| F[iimpi];
+  B --> |FlexiBLAS + FFTW + ScaLAPACK| D[gfbf];
+  D --> |OpenMPI| G[foss];
+  E --> |FlexiBLAS + FFTW + ScaLAPACK| G[foss];
+  F --> |imkl| Z[intel];
+  C --> |imkl| H[iimkl];
+  H --> |impi| Z[intel];
+```
+
 ## Implementation
 
 -   Software is built and installed using the "easybuild" user.
