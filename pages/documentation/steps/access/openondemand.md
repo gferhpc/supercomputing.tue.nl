@@ -36,3 +36,5 @@ within your browser.
 ![Paraview](img_5.png){ width=225px }
 ![Matlab](img_6.png){ width=225px }
 
+![Open OnDemand logo](ood-logo.png){: align=left style="height:30px"}
+The TU/e Umbrella HPC cluster uses [Open OnDemand](https://openondemand.org/) for remote web access.
