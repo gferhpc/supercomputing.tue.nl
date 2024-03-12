@@ -15,8 +15,8 @@ can be done.
 `lmutil lmdiag [feature]`
 
 Often, an application-specific environment variable can be used to
-specify the location of the license file or license server. For Ansys
-Lumerical, for instance, this is `ANSYSLMD_LICENSE_FILE`. To specify a
+specify the location of the license file or license server. For ANSYS applications,
+for instance Lumerical, this is `ANSYSLMD_LICENSE_FILE`. To specify a
 license server, set this variable to `[port]:[hostname]`.
 
 Optionally, set the environment variable `FLEXLM_DIAGNOSTICS` to `1`,
