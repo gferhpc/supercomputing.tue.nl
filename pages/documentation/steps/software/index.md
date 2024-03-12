@@ -18,7 +18,7 @@ The most common used module commands are:
 | `module purge`        | unload all modules                    |
 
 
-!!! note
+!!! note "Modules case insensitive"
     `module avail` list modules case insensitive but `module load` **is case sensitive**. 
     
 If you recurrently need lots of modules, this loading can be automated with an (ba)sh-file, so that you just have to execute the file once and it loads all modules, you need.
