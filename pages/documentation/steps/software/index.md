@@ -5,15 +5,18 @@ title: 4. Using Software
 
 ## Modules
 
-Since a lot of applications rely on 3rd party software, there is a program on most supercomputers, called the Module system. With this system, other software, like compilers or special math libraries, are easily loadable and usable. Depending on the institution, different modules might be available, but there are usually common ones like the Intel or GCC Compilers.
+Environment Modules provide a convenient way to dynamically change the users’ environment through modulefiles. With this module system, different versions of software, like compilers or special math libraries, are easily accessable and usable. Different modules are available, varying from GCC  or Intel Compilers, Python versions and software compiled from source and ready to use. Environment modules can activate commercial software and thier licenses. 
 
-A few common commands, to enter into the supercomputer commandline and talk to the module system, are
+The most common used module commands are 
 
-
-- `module avail`  : lists available (loadable) modules
-- `module list`   : lists loaded modules
-- `module load x` : loads module x
-- `module purge`  : unload all modules
+`module avail`
+:   lists available (loadable) modules
+`module list`
+:   lists loaded modules
+`module load x`
+:   loads module x
+`module purge`
+:   unload all modules
 
 Note that `module avail` list modules case insensitive but `module load` **is case sensitive**.  
 If you recurrently need lots of modules, this loading can be automated with an (ba)sh-file, so that you just have to execute the file once and it loads all modules, you need.
