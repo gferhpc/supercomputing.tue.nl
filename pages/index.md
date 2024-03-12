@@ -7,7 +7,7 @@ template: intro.html
 ---
 
 # Simulation and AI
-![Image title](assets/images/esc-logo.png){ align=right width="200" }
+![Image title](assets/images/hpc-logo.webp){ align=right width="200" }
 The HPC Lab at the TU/e helps engineers, students and scientists with HPC application optimization and to pick the best-fit infrastructure to solve their questions. The aim is to broaden and deepen the use of HPC to advance science & engineering and to strengthen the HPC community.
 
 **[Join our HPC Supercomputing community at LinkedIn →](https://www.linkedin.com/in/supercomputing/){:target="_blank" }**
