@@ -3,7 +3,7 @@ tags: [Software]
 ---
 To use commercial software a license is needed, depending on the software this is a user or group specific license or a TU/e wide available license.
 
-Available as [modules](#Modules):
+Available as [modules](../../steps/software/index.md):
 
 | Name            | Website                              | Module(s)                | https://hpc.tue.nl |
 | --------------- | ------------------------------------ | ------------------------ | ------------------ |
