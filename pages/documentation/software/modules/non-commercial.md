@@ -84,7 +84,7 @@ Using the toolchain(s) the following software is avaiable. When the module is lo
 | LAMMPS         | 23Jun2022-foss-2022a-kokkos          | `LAMMPS`    | Yes |
 | NetLogo        | 6.3.0-64 6.4.0-64                    | `NetLogo`   | Yes |
 | OpenFOAM       | 8-foss-2022a                         | `OpenFOAM`  | |
-| OpenScrendGraph| 3.6.5-foss-2022a                     | `OpenSceneGraph`  | Yes via Interactive Desktop |
+| OpenSceneGraph | 3.6.5-foss-2022a                     | `OpenSceneGraph`  | Yes via Interactive Desktop |
 | ORCA           | 5.0.4-gompi-2022a.                   | `ORCA`      | |
 | ParaView       | 5.11.2-foss-2023a                    | `ParaView`  | Yes |
 | R              | 4.2.1-foss-2022a  4.3.2-gfbf-2023a   | `R/`        | |
