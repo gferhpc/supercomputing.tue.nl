@@ -77,16 +77,17 @@ Using the toolchain(s) the following software is avaiable. When the module is lo
 
 | Name           | Supported Versions                   | Module(s)                | https://hpc.tue.nl |
 | -------------- | ------------------------------------ | ------------------------ | ------------------ |
-| Blender        | 4.0.2-linux-x86_64-CUDA-12.1.1       | `module avail Blender`   | Yes |
-| CP2K           | 2023.1-foss-2023a                    | `module avail CP2K`      | |
-| GROMACS        | 2023.3-foss-2023a                    | `module avail GROMACS`   | |
-| Julia          | 1.9.3 1.10.1                         | `module avail Julia`     | |
-| LAMMPS         | 23Jun2022-foss-2022a-kokkos          | `module avail LAMMPS`    | Yes |
-| NetLogo        | 6.3.0-64 6.4.0-64                    | `module avail NetLogo`   | Yes |
-| OpenFOAM       | 8-foss-2022a                         | `module avail OpenFOAM`  | |
-| ORCA           | 5.0.4-gompi-2022a.                   | `module avail ORCA`      | |
-| ParaView       | 5.11.2-foss-2023a                    | `module avail ParaView`  | Yes |
-| R              | 4.2.1-foss-2022a  4.3.2-gfbf-2023a   | `module avail R/`        | |
-| Rstudio        | 2022.07.2+576-foss-2022a-Java-11-R-4.2.1 | `module avail RStudio` | Yes |
-| Spark          | 3.3.1-foss-2022a 3.5.0-foss-2023a    | `module avail Spark`        | |
+| Blender        | 4.0.2-linux-x86_64-CUDA-12.1.1       | `Blender`   | Yes |
+| CP2K           | 2023.1-foss-2023a                    | `CP2K`      | |
+| GROMACS        | 2023.3-foss-2023a                    | `GROMACS`   | |
+| Julia          | 1.9.3 1.10.1                         | `Julia`     | |
+| LAMMPS         | 23Jun2022-foss-2022a-kokkos          | `LAMMPS`    | Yes |
+| NetLogo        | 6.3.0-64 6.4.0-64                    | `NetLogo`   | Yes |
+| OpenFOAM       | 8-foss-2022a                         | `OpenFOAM`  | |
+| OpenScrendGraph| 3.6.5-foss-2022a                     | `OpenSceneGraph`  | Yes via Interactive Desktop |
+| ORCA           | 5.0.4-gompi-2022a.                   | `ORCA`      | |
+| ParaView       | 5.11.2-foss-2023a                    | `ParaView`  | Yes |
+| R              | 4.2.1-foss-2022a  4.3.2-gfbf-2023a   | `R/`        | |
+| Rstudio        | 2022.07.2+576-foss-2022a-Java-11-R-4.2.1 | `RStudio` | Yes |
+| Spark          | 3.3.1-foss-2022a 3.5.0-foss-2023a    | `Spark`        | |
  
