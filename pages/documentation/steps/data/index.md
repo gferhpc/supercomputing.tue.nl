@@ -6,8 +6,16 @@ title: 3. Transfer Data
 
 To get your data (files) onto the TU/e Umbrella HPC Cluster or back to your local machine, there are usually different ways.
 
-Commonly used and widely supported copying tools are rsync which mirrors directories (folders) between the supercomputer and your local machine. scp which is useful for a few single files or specified file-lists, and lastly the commonly used ftp or the encrypted version sftp (or ftps). A little bit more information can be found in the File Transfer article.
+Commonly used and widely supported copying tools are `rsync` which mirrors directories (folders) between the supercomputer and your local machine. `scp` which is useful for a few single files or specified file-lists, and lastly the commonly used ftp or the encrypted version `sftp` (or ftps).
 
+As all nodes in the Cluster have access to the same shared data as the login nodes (Home Directy, Project Directoy) therefore copying data from and to the login node is sufficient. 
+
+## Accessing Microsoft OneDrive
+
+### Setting up a connection to Microsoft OneDrive 
+
+1.  [Connect](../access/index.md) to the cluster's login node.
+2.  
 
 ## Accessing Windows file shares
 Windows file shares (aka. "Samba" shares or "CIFS" shares) can be
