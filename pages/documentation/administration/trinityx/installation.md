@@ -286,18 +286,19 @@ luna group change -qpart part.txt compute
     echo "SCRATCH: ${SCRATCH_DEVICE}"
     
     parted ${BOOT_DEVICE} -s 'mklabel gpt'
-    parted ${BOOT_DEVICE} -s 'mkpart root ext4 1 16g'
-    parted ${BOOT_DEVICE} -s 'mkpart linux-swap ext4 16g 20g'
+    parted ${BOOT_DEVICE} -s 'mkpart linux-swap ext4 1 2g'
+    parted ${BOOT_DEVICE} -s 'mkpart root ext4 2g 32g'
+
+    SWAP_PARTITION="${BOOT_DEVICE}${BOOT_DEVICE_DELIMITER}1"
+    ROOT_PARTITION="${BOOT_DEVICE}${BOOT_DEVICE_DELIMITER}2"
     
-    ROOT_PARTITION="${BOOT_DEVICE}${BOOT_DEVICE_DELIMITER}1"
-    SWAP_PARTITION="${BOOT_DEVICE}${BOOT_DEVICE_DELIMITER}2"
     if [ "${BOOT_DEVICE}" == "${SCRATCH_DEVICE}" ]; then
-    SCRATCH_PARTITION="${BOOT_DEVICE}${BOOT_DEVICE_DELIMITER}3"
-    parted ${BOOT_DEVICE} -s 'mkpart local ext4 20g 100%'
+        SCRATCH_PARTITION="${BOOT_DEVICE}${BOOT_DEVICE_DELIMITER}3"
+        parted ${BOOT_DEVICE} -s 'mkpart local ext4 32g 100%'
     else
-    SCRATCH_PARTITION="${SCRATCH_DEVICE}${SCRATCH_DEVICE_DELIMITER}1"
-    parted ${SCRATCH_DEVICE} -s 'mklabel gpt'
-    parted ${SCRATCH_DEVICE} -s 'mkpart local ext4 1 100%'
+        SCRATCH_PARTITION="${SCRATCH_DEVICE}${SCRATCH_DEVICE_DELIMITER}1"
+        parted ${SCRATCH_DEVICE} -s 'mklabel gpt'
+        parted ${SCRATCH_DEVICE} -s 'mkpart local ext4 1 100%'
     fi
     
     mkfs.ext4 ${ROOT_PARTITION}
@@ -357,14 +358,14 @@ luna group change -qpost post.txt compute
     done
     
     if [ "${BOOT_DEVICE}" == "${SCRATCH_DEVICE}" ]; then
-    SCRATCH_PARTITION="${SCRATCH_DEVICE}${SCRATCH_DEVICE_DELIMITER}3"
+        SCRATCH_PARTITION="${SCRATCH_DEVICE}${SCRATCH_DEVICE_DELIMITER}3"
     else
-    SCRATCH_PARTITION="${SCRATCH_DEVICE}${SCRATCH_DEVICE_DELIMITER}1"
+        SCRATCH_PARTITION="${SCRATCH_DEVICE}${SCRATCH_DEVICE_DELIMITER}1"
     fi
     
     cat << EOF >> /sysroot/etc/fstab
-    /dev/${BOOT_DEVICE}${BOOT_DEVICE_DELIMITER}1 / ext4 defaults 1 1
-    /dev/${BOOT_DEVICE}${BOOT_DEVICE_DELIMITER}2 swap swap defaults 0 0
+    /dev/${BOOT_DEVICE}${BOOT_DEVICE_DELIMITER}1 swap swap defaults 0 0
+    /dev/${BOOT_DEVICE}${BOOT_DEVICE_DELIMITER}2 / ext4 defaults 1 1
     /dev/${SCRATCH_PARTITION} /local ext4 defaults 1 1
     ```
 
