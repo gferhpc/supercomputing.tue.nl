@@ -12,12 +12,14 @@ tags: [Software]
 | JupyterLab     | 4.0.5-GCCcore-12.3.0                 | `module avail Jupyter`   | Yes, via Jupyter |
 | numba          | 0.56.4-foss-2022a                    | `module avail numba`     | |
 | OpenCV         | 4.6.0-foss-2022a-contrib 4.8.1-foss-2023a-contrib | `module avail OpenCV`     | |
+| petc4py        | 3.17.4-foss-2022a                    | `module avail petsc4py` | |
 | Python         | 2.7.18 3.10.4 3.10.13 3.11.3.        | `module avail Python/`   | |
 | PyTorch        | 1.12.0-foss-2022a 2.1.2-foss-2022a   | `module avail PyTorch`   | Yes, included in Jupyter|
 | scikit-bio     | 0.5.7-foss-2022a                     | `module avail scikit-bio` | |
 | scikit-learn   | 1.1.2-foss-2022a                     | `module avail scikit-learn` | |
 | scikit-image   | 0.19.3-foss-2022a                     | `module avail scikit-bio` | |
 | SciPy          | 2022.05-foss-2022a 2023.07-gfbf-2023a | `module avail SciPy-bundle` | Yes, included in Jupyter |
+| slepc4py       | 3.17.2-foss-2022a                     | `module avail slepc4py` | |
 | Tensorflow     | 2.11.0-foss-2022a  2.13.0-foss-2023a  | `module avail TensorFlow` | Yes, included in Jupyter |
 | torchvision    | 0.13.1-foss-2022a                     | `module avail torchvision` | Yes, included in Jupyter |
 
