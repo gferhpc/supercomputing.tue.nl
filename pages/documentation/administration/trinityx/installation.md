@@ -242,26 +242,75 @@ luna group change -qpart part.txt compute
 ??? example "part.txt"
 
     ```shell
-    parted /dev/sda -s 'mklabel gpt'
-    parted /dev/sda -s 'mkpart efi fat32 1 1g'
-    parted /dev/sda -s 'mkpart boot ext4 1g 2g'
-    parted /dev/sda -s 'mkpart swap linux-swap 2g 4g'
-    parted /dev/sda -s 'mkpart root ext4 4g 32g'
-    parted /dev/sda -s 'mkpart local ext4 33g 100%'
-
-    while [[ ! -b /dev/sda1 ]] || [[ ! -b /dev/sda2 ]] || [[ ! -b /dev/sda3 ]] || [[ ! -b /dev/sda4 ]] || [[ ! -b /dev/sda5 ]]; do sleep 1; done
-
-    mkswap /dev/sda3
-    swaplabel -L swappart /dev/sda3
-
-    mkfs.fat -F 16 /dev/sda1
-    mkfs.ext4 /dev/sda2
-    mkfs.ext4 /dev/sda4
-    mount /dev/sda4 /sysroot
-    mkdir /sysroot/boot
-    mkfs.ext4 /dev/sda5
+    #!/usr/bin/env bash
+    
+    BOOT_DEVICE=
+    BOOT_DEVICE_SIZE=
+    BOOT_DEVICE_DELIMITER=""
+    SCRATCH_DEVICE=
+    SCRATCH_DEVICE_SIZE=
+    SCRATCH_DEVICE_DELIMITER=""
+    
+    ROOT_PARTITION=
+    SWAP_PARTITION=
+    SCRATCH_PARTITION=
+    
+    for DEVICE in $(ls -1 /sys/block); do
+    DEVICE_SIZE=$(cat /sys/block/${DEVICE}/size)
+    echo "/dev/${DEVICE}: ${DEVICE_SIZE}"
+    
+            if [[ "${DEVICE_SIZE}" == "0" ]]; then
+                    continue
+            fi
+    
+            if [[ "$(cat /sys/block/${DEVICE}/removable)" == "1" ]]; then
+                    continue
+            fi
+    
+            # if BOOT_DEVICE is unset or parsed disk is smaller than currently set, configure current device as BOOT_DEVICE
+            if [[ -z "${BOOT_DEVICE}" || "${DEVICE_SIZE}" -lt "${BOOT_DEVICE_SIZE}" ]]; then
+                    BOOT_DEVICE="/dev/${DEVICE}"
+                    BOOT_DEVICE_SIZE=${DEVICE_SIZE}
+                    if [[ "${DEVICE}" =~ nvme ]]; then BOOT_DEVICE_DELIMITER="p"; fi
+            fi
+    
+            # if SCRATCH_DEVICE is unset or parsed disk is bigger than currently set, configure current device as SCRATCH_DEVICE
+            if [[ -z "${SCRATCH_DEVICE}" || "${DEVICE_SIZE}" -gt "${SCRATCH_DEVICE_SIZE}" ]]; then
+                    SCRATCH_DEVICE="/dev/${DEVICE}"
+                    SCRATCH_DEVICE_SIZE=${DEVICE_SIZE}
+                    if [[ "${DEVICE}" =~ nvme ]]; then SCRATCH_DEVICE_DELIMITER="p"; fi
+            fi
+    done
+    
+    echo "BOOT: ${BOOT_DEVICE}"
+    echo "SCRATCH: ${SCRATCH_DEVICE}"
+    
+    parted ${BOOT_DEVICE} -s 'mklabel gpt'
+    parted ${BOOT_DEVICE} -s 'mkpart root ext4 1 16g'
+    parted ${BOOT_DEVICE} -s 'mkpart linux-swap ext4 16g 20g'
+    
+    ROOT_PARTITION="${BOOT_DEVICE}${BOOT_DEVICE_DELIMITER}1"
+    SWAP_PARTITION="${BOOT_DEVICE}${BOOT_DEVICE_DELIMITER}2"
+    if [ "${BOOT_DEVICE}" == "${SCRATCH_DEVICE}" ]; then
+    SCRATCH_PARTITION="${BOOT_DEVICE}${BOOT_DEVICE_DELIMITER}3"
+    parted ${BOOT_DEVICE} -s 'mkpart local ext4 20g 100%'
+    else
+    SCRATCH_PARTITION="${SCRATCH_DEVICE}${SCRATCH_DEVICE_DELIMITER}1"
+    parted ${SCRATCH_DEVICE} -s 'mklabel gpt'
+    parted ${SCRATCH_DEVICE} -s 'mkpart local ext4 1 100%'
+    fi
+    
+    mkfs.ext4 ${ROOT_PARTITION}
+    mkfs.ext4 ${SCRATCH_PARTITION}
+    mkswap ${SWAP_PARTITION}
+    
+    echo "${ROOT_PARTITION}: / (ext4)"
+    echo "${SCRATCH_PARTITION}: /local (ext4)"
+    echo "${SWAP_PARTITION}: swap (swap)"
+    
+    mount ${ROOT_PARTITION} /sysroot
     mkdir /sysroot/local
-    mount //dev/sda5 /sysroot/local
+    mount ${SCRATCH_PARTITION} /sysroot/local
     chmod 1777 /sysroot/local
     ```
 
@@ -272,43 +321,51 @@ luna group change -qpost post.txt compute
 ??? example "post.txt"
 
     ```shell
-    # Create required directories
-    chroot /sysroot /bin/bash -c "mkdir -p /sw /trinity/ohpc /trinity/shared /cm/shared"
-    chroot /sysroot /bin/bash -c "mkdir -p /home/tue /home/arch001 /home/bme001 /home/bme002 /home/chem002 /home/mcs001 /home/phys"
+    #!/usr/bin/env bash
+
+    BOOT_DEVICE=
+    BOOT_DEVICE_SIZE=
+    BOOT_DEVICE_DELIMITER=""
+    SCRATCH_DEVICE=
+    SCRATCH_DEVICE_SIZE=
+    SCRATCH_DEVICE_DELIMITER=""
     
-    # Write fstab
-    cat << EOF >> /sysroot/etc/fstab
-    /dev/sda4   /       ext4    defaults        1 1
-    /dev/sda2   /boot   ext4    defaults        1 2
-    /dev/sda1   /boot/efi   vfat    defaults        1 2
-    /dev/sda3   swap    swap    defaults        0 0
-    /dev/sda5   /local     ext4    defaults        1 1
+    for DEVICE in $(ls -1 /sys/block); do
+    DEVICE_SIZE=$(cat /sys/block/${DEVICE}/size)
     
-    10.150.254.1:/tank/cmshared/cm/shared /cm/shared       nfs     defaults,_netdev     0 0
+            if [[ "${DEVICE_SIZE}" == "0" ]]; then
+                    continue
+            fi
     
-    10.150.254.1:/tank/sw      /sw              nfs     defaults,_netdev     0 0
-    10.150.254.1:/tank/ohpc    /trinity/ohpc    nfs     defaults,_netdev     0 0
-    10.150.254.1:/tank/trinity /trinity/shared  nfs     defaults,_netdev     0 0
+            if [[ "$(cat /sys/block/${DEVICE}/removable)" == "1" ]]; then
+                    continue
+            fi
     
-    10.150.254.1:/tank/home    /home/tue        nfs     defaults,_netdev     0 0
-    EOF
+            # if BOOT_DEVICE is unset or parsed disk is smaller than currently set, configure current device as BOOT_DEVICEi
+            if [[ -z "${BOOT_DEVICE}" || "${DEVICE_SIZE}" -lt "${BOOT_DEVICE_SIZE}" ]]; then
+                    BOOT_DEVICE="${DEVICE}"
+                    BOOT_DEVICE_SIZE=${DEVICE_SIZE}
+                    if [[ "${DEVICE}" =~ nvme ]]; then BOOT_DEVICE_DELIMITER="p"; fi
+            fi
     
-    # Install bootloader
-    SH=`chroot /sysroot /bin/bash -c "efibootmgr -v|grep Shim1|grep -oE '^Boot[0-9]+'|grep -oE '[0-9]+'"`
-    if [ "$SH" ]; then
-    echo 'Shim found on boot '$SH
-    chroot /sysroot /bin/bash -c "efibootmgr -B -b $SH"
-    echo Remove
-    chroot /sysroot /bin/bash -c "efibootmgr -v"
-    echo Clean
+            # if SCRATCH_DEVICE is unset or parsed disk is bigger than currently set, configure current device as BOOT_DEVICE
+            if [[ -z "${SCRATCH_DEVICE}" || "${DEVICE_SIZE}" -gt "${SCRATCH_DEVICE_SIZE}" ]]; then
+                    SCRATCH_DEVICE="${DEVICE}"
+                    SCRATCH_DEVICE_SIZE=${DEVICE_SIZE}
+                    if [[ "${DEVICE}" =~ nvme ]]; then SCRATCH_DEVICE_DELIMITER="p"; fi
+            fi
+    done
+    
+    if [ "${BOOT_DEVICE}" == "${SCRATCH_DEVICE}" ]; then
+    SCRATCH_PARTITION="${SCRATCH_DEVICE}${SCRATCH_DEVICE_DELIMITER}3"
+    else
+    SCRATCH_PARTITION="${SCRATCH_DEVICE}${SCRATCH_DEVICE_DELIMITER}1"
     fi
-    chroot /sysroot /bin/bash -c "efibootmgr --verbose --disk /dev/sda --part 1 --create --label \"Shim1\" --loader /EFI/rocky/shimx64. efi"
-    chroot /sysroot /bin/bash -c "grub2-mkconfig -o /boot/efi/EFI/rocky/grub.cfg"
-    chroot /sysroot /bin/bash -c "systemctl set-default multi-user.target"
     
-    umount /sysroot/sys
-    umount /sysroot/dev
-    umount /sysroot/proc
+    cat << EOF >> /sysroot/etc/fstab
+    /dev/${BOOT_DEVICE}${BOOT_DEVICE_DELIMITER}1 / ext4 defaults 1 1
+    /dev/${BOOT_DEVICE}${BOOT_DEVICE_DELIMITER}2 swap swap defaults 0 0
+    /dev/${SCRATCH_PARTITION} /local ext4 defaults 1 1
     ```
 
 Authentication via AD
