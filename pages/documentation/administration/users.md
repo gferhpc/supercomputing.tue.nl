@@ -6,17 +6,17 @@
 
 Typically, the following command is used to create a user:
 ```shell
-usercreate <username> <group>
+usercreate <username> [group ...]
 ```
 
 1. `username` is either a valid e-mail address or username
-2. `group` is usually the group the user need to be added to, i.e. `phys-tps`.
+2. `group` is usually the group(s) the user need to be added to, i.e. `phys-tps`. If omitted the user will only be added to the `umbrella` "user" group.
 
 
 Full help:
 ```shell
-usage: usercreate [-h] [-e DAYS] [-d DIR] [-y] [-q QUOTA]
-                  USERNAME GROUP [GROUP ...]
+usage: usercreate [-h] [-e EXPIRE] [-d DIR] [-m] [-y] [-q QUOTA]
+                  USERNAME [GROUP [GROUP ...]]
 
 Create user.
 
@@ -26,9 +26,10 @@ positional arguments:
 
 optional arguments:
   -h, --help  show this help message and exit
-  -e DAYS     Number of days after which the account expires. Set to -1 to
-              disable
+  -e EXPIRE   Number of days or date (YYYY-mm-dd) after which the account
+              expires. Set to -1 to disable
   -d DIR      Configure home dir location
+  -m          Do not sent an e-mail upon creation
   -y          Automatically answer yes for all questions (non-
               interactive/batch mode)
   -q QUOTA    User storage quota
