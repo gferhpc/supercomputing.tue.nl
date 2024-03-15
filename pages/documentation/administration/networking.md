@@ -1,5 +1,13 @@
 # Networking
 
+## Physical
+
+Links between rows:
+
+- RJ45
+- RJ45
+- MM fibre pair: W11 pair 12 <--> X07 pair 12
+
 ## VLANs
 
 ### Cluster internal
