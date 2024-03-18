@@ -74,7 +74,7 @@ Build:
 
 5.  Start a shell in `tue.build.q`: `eb_srun`  (Optionally add number of CPU cores)
 6.  Dry-run build: `eb -Dr {easyconfig}`
-7.  Build and install: `eb -r {easyconfig} --parallel=8`
+7.  Build and install: `eb -r {easyconfig} --parallel=8` (Change 8 to the number of CPU cores choosen in step 5)
 
 Add to GIT repo:
 
