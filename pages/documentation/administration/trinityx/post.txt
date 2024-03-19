@@ -44,5 +44,5 @@ cat << EOF >> /sysroot/etc/fstab
 /dev/${BOOT_DEVICE}${BOOT_DEVICE_DELIMITER}1 swap swap defaults 0 0
 /dev/${BOOT_DEVICE}${BOOT_DEVICE_DELIMITER}2 / ext4 defaults 1 1
 /dev/${SCRATCH_PARTITION} /local ext4 defaults 1 1
-tmpfs /tmp tmpfs defaults,nosuid,nodev 0 0
+tmpfs /tmp tmpfs defaults,nosuid,nodev,size=4G 0 0
 EOF
