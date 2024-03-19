@@ -3,7 +3,7 @@ title: 2. Access the cluster
 ---
 # Access the cluster
 
-The TU/e Umbrella HPC Cluster is a Linux environment with shell (commandline) access.
+The TU/e Umbrella HPC Cluster is a Linux environment with shell (commandline) access and [web access](https://hpc.tue.nl).
 To log in, one usually uses SSH to reach the respective Login Nodes (computers reserved for people just like you that 
 want to connect to the HPC Cluster). This access is restricted, so you can only connect, when you are within the 
 university/facility and its network. To still access the Login Nodes externally, you'll need to setup a VPN (Virtual Private Network) connection. 
