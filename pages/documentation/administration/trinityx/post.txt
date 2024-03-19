@@ -7,7 +7,7 @@ SCRATCH_DEVICE=
 SCRATCH_DEVICE_SIZE=
 SCRATCH_DEVICE_DELIMITER=""
 
-for DEVICE in /sys/block/*; do
+for DEVICE in $(ls -1 /sys/block); do
         DEVICE_SIZE=$(cat "/sys/block/${DEVICE}/size")
 
         if [[ "${DEVICE_SIZE}" == "0" ]]; then

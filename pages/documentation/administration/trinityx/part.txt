@@ -11,7 +11,7 @@ ROOT_PARTITION=
 SWAP_PARTITION=
 SCRATCH_PARTITION=
 
-for DEVICE in /sys/block/*; do
+for DEVICE in $(ls -1 /sys/block); do
         DEVICE_SIZE=$(cat "/sys/block/${DEVICE}/size")
         echo "/dev/${DEVICE}: ${DEVICE_SIZE}"
 
