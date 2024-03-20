@@ -90,11 +90,13 @@ obol group show {group}
 ```
 
 ```mermaid
-gantt
-    dateFormat HH:mm
-    axisFormat %H:%M
-    Initial milestone : milestone, m1, 17:49, 2m
-    Task A : 10m
-    Task B : 5m
-    Final milestone : milestone, m2, 18:08, 4m
-```
+stateDiagram
+    Account Created --> Send email 30days before end date
+    Send email 30days before end date --> Extend Account
+    Send email --> No reaction 30 day
+    No reaction 30 day --> Account disabled
+    Account disabled --> Account Deleted
+    Account Deleted --> Data archived
+    Data archived -> Data Removed
+``` 
+
