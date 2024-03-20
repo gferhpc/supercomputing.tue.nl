@@ -92,7 +92,7 @@ obol group show {group}
 ```mermaid
 stateDiagram
     Create --> Expire
-    Expite --> Delete
+    Expire --> Delete
     Delete --> Archive
 
 ``` 
