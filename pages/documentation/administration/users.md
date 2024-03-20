@@ -93,12 +93,14 @@ obol group show {group}
 stateDiagram
     s1: Set Expire Date
     s2: 30days before Expire data, Request Action
-    s3: Delete Account and Archive DATA
-    s4: Delete DATA
+    s3: Confirm Account
+    s4: Delete Account and Archive DATA
+    s5: Delete DATA
     s1 --> s2
-    s2 --> s3: No reaction for 30days
-    s2 --> s1: extension Requested
-    s3 --> s4
+    s2 --> s4: No reaction for 30days
+    s2 --> s3
+    s3 --> s1
+    s4 --> s5
 
 ``` 
 
