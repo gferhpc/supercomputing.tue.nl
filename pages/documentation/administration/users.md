@@ -91,12 +91,8 @@ obol group show {group}
 
 ```mermaid
 stateDiagram
-    Account Created --> Send email 30days before end date
-    Send email 30days before end date --> Extend Account
-    Send email --> No reaction 30 day
-    No reaction 30 day --> Account disabled
-    Account disabled --> Account Deleted
-    Account Deleted --> Data archived
-    Data archived -> Data Removed
+    "Account Created" --> "Send email 30days before end date"
+    "Send email 30days before end date" --> "Extend Account"
+
 ``` 
 
