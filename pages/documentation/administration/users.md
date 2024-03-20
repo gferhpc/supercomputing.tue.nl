@@ -91,7 +91,7 @@ obol group show {group}
 
 ```mermaid
 stateDiagram
-    Create --> Expire
+    Create --> Expire: Send email -30 days
     Expire --> Delete
     Delete --> Archive
 
