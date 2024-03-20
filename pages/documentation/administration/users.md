@@ -91,13 +91,14 @@ obol group show {group}
 
 ```mermaid
 stateDiagram
-    s1: Create Account
-    s2: Delete Acoount Archive DATA
-    s3: Delete DATA
-    s1 --> Expire: Send email -30 days
-    Expire --> Delete
-    Delete --> s2
-    s2 --> s3
+    s1: Set Expire Date
+    s2: 30days before Expire data, Request Action
+    s3: Delete Account and Archive DATA
+    s4: Delete DATA
+    s1 --> s2
+    s2 --> s3: No reaction for 30days
+    s2 --> s1: extension Requested
+    s3 --> s4
 
 ``` 
 
