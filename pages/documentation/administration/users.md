@@ -99,7 +99,7 @@ stateDiagram
     s6: Delete DATA
     s1 --> s2
     s2 --> s4
-    s3 --> s4
+    s3 --> s5
     s2 --> s3
     s4 --> s1
     s5 --> s6
