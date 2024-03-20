@@ -12,17 +12,15 @@ Bus 001 Device 003: ID 064f:2af9 WIBU-Systems AG CmStick (HID, article no. 1001-
 yum install ./CodeMeter-X.XX.XXX.x86_64.rpm
 systemctl stop codemeter-webadmin.service
 systemctl disable codemeter-webadmin.service
-systemctl disable codemeter.service
 systemctl stop codemeter.service
 /etc/wibu/CodeMeter/Server.ini:
-BindAddress=10.141.0.20
+BindAddress=<IP of phys-login001.cluster>
 IsNetworkServer=1
 ```
-
 ```shell
 tcp        0      0 127.0.0.1:22350         0.0.0.0:*               LISTEN      3097060/CodeMeterLi
-tcp        0      0 10.141.0.20:22350       0.0.0.0:*               LISTEN      3097060/CodeMeterLi
+tcp        0      0 <IP of phys-login001.cluster>:22350       0.0.0.0:*               LISTEN      3097060/CodeMeterLi
 ```
-
-!!! note
-    Create service codemeter for node phys-login001 in Bright ClusterManager
+```shell
+systemctl enable codemeter.service --now
+```
