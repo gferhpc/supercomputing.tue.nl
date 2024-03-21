@@ -6,7 +6,6 @@ tags: [Software]
 | Name           | Supported Versions                   | Module(s)                | https://hpc.tue.nl |
 | -------------- | ------------------------------------ | ------------------------ | ------------------ |
 | Anaconda3      | Anaconda3-2023.09-0                  | `module avail Anaconda3` | |
-| dask           | 2022.10.0-foss-2022a 2023.9.2-foss-2023a | `module avail dask`      | |
 | IPython        | 8.5.0 8.14.0                         | `module avail IPython`   | |
 | Jax            | 0.4.4-foss-2022a                     | `module avail jax`   | |
 | JupyterLab     | 4.0.5-GCCcore-12.3.0                 | `module avail Jupyter`   | Yes, via Jupyter |
