@@ -58,6 +58,36 @@ luna node remove node003
 luna node remove node004
 ```
 
+## Updating images (w/ kernel)
+
+1. Install pending updates
+```shell hl_lines="11"
+lchroot NAME
+
+# Update all packages
+dnf update
+
+# List current installed/available kernel versions
+dnf list installed kernel
+#Installed Packages
+#kernel.x86_64      4.18.0-513.11.1.el8_9
+#kernel.x86_64      4.18.0-513.11.1.el8_9.0.1
+#kernel.x86_64      4.18.0-513.18.1.el8_9
+
+exit
+```
+
+2. Changing the kernel version _(optional)_
+```shell
+# Update the kernel version of the image, corresponding to earlier list
+luna osimage change -ver "4.18.0-513.18.1.el8_9.x86_64" NAME
+```
+
+3. Repack the image
+```shell
+luna osimage pack NAME
+```
+
 ## GPU image additions
 
 #### GPU packages
@@ -69,7 +99,7 @@ dnf -y module install nvidia-driver:latest-dkms
 ```
 TIP: use ```dnf module list nvidia-driver``` to list available versions
 
-## GPU image with 4xx NVIDIA drivers additions
+### GPU image with 4xx NVIDIA drivers additions
 
 ```shell
 luna osimage clone compute gpu-470drv
