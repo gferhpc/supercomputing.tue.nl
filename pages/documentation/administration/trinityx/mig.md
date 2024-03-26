@@ -32,9 +32,10 @@ luna secrets add node -p /etc/systemd/system/nvidia-mig-manager.service.d/overri
 
 ## GPU Nodes that have enable MIG:
 
-- tue-gpua001 (A30)
-- bme-gpue001 (A30)
+All valid `MIG` configurations are defined in: `/etc/nvidia-mig-manager/config.yaml` of the `gpu` image.
 
+- tue-gpua001 (A30, Profile: `all-1g.6gb`)
+- bme-gpue001 (A30, Profile: `bme-gpue001`)
 
 ### Doing the MIG settings without nvidia-mig-manager:
 ```shell
