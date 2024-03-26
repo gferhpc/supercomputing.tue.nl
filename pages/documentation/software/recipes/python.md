@@ -3,6 +3,8 @@ title: Python
 tags: [Software, Module]
 ---
 
+The TU/e Umbrella HPc cluster has Python modules available, an overview can be found here: [../software/modules/python/] 
+
 Please open a terminal and log in to the cluster.
 
 To open an interactive Python session, simply type `python3`. If you
