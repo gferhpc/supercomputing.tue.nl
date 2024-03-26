@@ -14,22 +14,26 @@ luna osimage pack gpu
 ```
 
 The systemd needs a override with the correct setting (a 10 seconds sleep is added to allow the kernel to load the nvidia modules before starting).
-NOTE: these setting can/are part of the **luna post**.txt
+
 ``` shell
-cat > /etc/systemd/system/nvidia-mig-manager.service.d/override.conf << EOF
+export MIG_NODE=tue-gpua001
+export MIG_PROFILE=all-1g.6gb
+
+cat > $MIG_PROFILE << EOF
 [Unit]
 Before=slurmd.service
 [Service]
 ExecStartPre=/bin/sleep 10
-Environment="MIG_PARTED_SELECTED_CONFIG=all-1g.6gb"
+Environment="MIG_PARTED_SELECTED_CONFIG=$MIG_PROFILE"
 EOF
+
+luna secrets add node -p /etc/systemd/system/nvidia-mig-manager.service.d/override.conf -qc $MIG_PROFILE $MIG_NODE $MIG_PROFILE
 ```
 
 ## GPU Nodes that have enable MIG:
 
-tue-gpua001 (A30)
-
-bme-gpue001 (A30)
+- tue-gpua001 (A30)
+- bme-gpue001 (A30)
 
 
 ### Doing the MIG settings without nvidia-mig-manager:
