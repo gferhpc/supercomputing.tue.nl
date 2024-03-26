@@ -3,7 +3,7 @@ title: Python
 tags: [Software, Module]
 ---
 
-The TU/e Umbrella HPc cluster has environment modules available specially for Pyhton, an overview can be found here: [Python Modules] (../../modules/python/) 
+The TU/e Umbrella HPc cluster has environment modules available specially for Pyhton, an overview can be found here: [Python Modules](../../modules/python/) 
 
 Please open a terminal and log in to the cluster.
 
