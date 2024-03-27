@@ -48,3 +48,21 @@ Wed 27 Mar 2024 01:05:22 PM CET
 ```
 
 ## Abaqus jobscript example 
+
+```shell
+#!/bin/bash
+#SBATCH --job-name=test_abaqus
+#SBATCH --output=test_abaqus-%j.log
+#SBATCH --partition=tue.default.q
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=4
+
+module purge
+module load intel/2023a
+module load Abaqus/2024
+
+cd $HOME/Jobs/Abaqus
+
+abaqus interactive analysis  input=boltpipeflange_3d_solidgask.inp job=$SLURM_JOB_NAME cpus=$SLURM_CPUS_ON_NODE
+```
+
