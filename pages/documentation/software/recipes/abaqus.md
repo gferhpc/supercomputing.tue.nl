@@ -15,8 +15,8 @@ Check the fortran compiler
 
 ```shell
 [user@umbrella]$ ifort --version
-ifort (IFORT) 2021.2.0 20210228
-Copyright (C) 1985-2021 Intel Corporation.  All rights reserved.
+ifort (IFORT) 2021.9.0 20230302
+Copyright (C) 1985-2023 Intel Corporation.  All rights reserved.
 ```
 
 Check abaqus:
