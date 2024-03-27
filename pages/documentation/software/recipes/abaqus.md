@@ -5,14 +5,10 @@ Abaqus (https://www.3ds.com/products-services/simulia/products/abaqus/)
 is licensed software and only usable the the user is a member of the
 correct group.
 
-Version 2021 of abaqus and the 2021 Intel OneAPI compiler suite are
-available as a module
-
 ```shell 
 module purge
-module load slurm
-module load intel/2021a
-module load abaqus
+module load intel/2023a
+module load Abaqus/2024
 ```
 
 Check the fortran compiler
