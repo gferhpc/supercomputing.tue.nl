@@ -1,3 +1,4 @@
+
 ---
 tags: [Software, Module]
 ---
@@ -56,6 +57,7 @@ Wed 27 Mar 2024 01:05:22 PM CET
 #SBATCH --partition=tue.default.q
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
+#SBATCH --time=00:05:00
 
 module purge
 module load intel/2023a
