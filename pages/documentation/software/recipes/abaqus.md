@@ -63,6 +63,6 @@ module load Abaqus/2024
 
 cd $HOME/Jobs/Abaqus
 
-abaqus interactive analysis  input=boltpipeflange_3d_solidgask.inp job=$SLURM_JOB_NAME cpus=$SLURM_CPUS_ON_NODE
+abaqus interactive analysis input=boltpipeflange_3d_solidgask.inp job=$SLURM_JOB_NAME cpus=$SLURM_CPUS_ON_NODE
 ```
 
