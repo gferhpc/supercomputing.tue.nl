@@ -9,9 +9,9 @@ is licensed software and only usable if the user is a member of the correct grou
 Load the module(s)
 
 ```shell 
-module purge
-module load intel/2023a
-module load Abaqus/2024
+[user@umbrella]$ module purge
+[user@umbrella]$ module load intel/2023a
+[user@umbrella]$ module load Abaqus/2024
 ```
 
 Check the fortran compiler
