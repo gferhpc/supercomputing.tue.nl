@@ -6,6 +6,8 @@ is licensed software and only usable if the user is a member of the correct grou
 
 ## Test Abaqus
 
+Load the module(s)
+
 ```shell 
 module purge
 module load intel/2023a
