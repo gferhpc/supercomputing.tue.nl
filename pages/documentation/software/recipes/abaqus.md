@@ -23,22 +23,23 @@ Check abaqus:
 
 ```shell 
 [user@umbrella]$ abaqus verify -user_std
+------------------------------------------------------------
 
-Abaqus Product Install Verification...
+Abaqus Product Verification
 
-Wed Mar  8 14:54:18 2023
+Wed 27 Mar 2024 01:05:06 PM CET
 
-Making /path/to/Jobs/verify. All verification files will reside in
-this directory.
+------------------------------------------------------------
 
------------------------------------------------------------------------------
-Abaqus/Standard with user subroutines
+Verify test : Abaqus/Standard with user subroutines verification
 
-         ...PASS
-         Continuing...
+     result : PASS
 
------------------------------------------------------------------------------
-Clean-up...
+------------------------------------------------------------
 
-Verification directory /path/to/Jobs/verify has been deleted.
+Verification procedure complete
+
+Wed 27 Mar 2024 01:05:22 PM CET
+
+------------------------------------------------------------
 ```
