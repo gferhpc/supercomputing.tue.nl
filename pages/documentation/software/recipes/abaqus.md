@@ -1,9 +1,8 @@
 ---
 tags: [Software, Module]
 ---
-Abaqus (https://www.3ds.com/products-services/simulia/products/abaqus/)
-is licensed software and only usable if the user is a member of the
-correct group.
+[Abaqus by 3DS](https://www.3ds.com/products-services/simulia/products/abaqus/)
+is licensed software and only usable if the user is a member of the correct group.
 
 ```shell 
 module purge
