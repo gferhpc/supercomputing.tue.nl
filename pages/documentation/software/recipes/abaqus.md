@@ -48,7 +48,7 @@ Wed 27 Mar 2024 01:05:22 PM CET
 ------------------------------------------------------------
 ```
 
-## Abaqus jobscript example 
+## Abaqus Shared Memory jobscript example 
 
 ```shell
 #!/bin/bash
@@ -65,6 +65,6 @@ module load Abaqus/2024
 
 cd $HOME/Jobs/Abaqus
 
-abaqus interactive analysis input=boltpipeflange_3d_solidgask.inp job=$SLURM_JOB_NAME cpus=$SLURM_CPUS_ON_NODE
+abaqus interactive input=boltpipeflange_3d_solidgask.inp job=${SLURM_JOB_NAME} cpus=${SLURM_CPUS_PER_TASK} mp-mode=threads
 ```
 
