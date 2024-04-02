@@ -14,6 +14,7 @@ tags: [Software]
 | petc4py        | 3.17.4-foss-2022a                    | `module avail petsc4py` | |
 | Python         | 2.7.18 3.10.4 3.10.13 3.11.3.        | `module avail Python/`   | |
 | PyTorch        | 1.12.0-foss-2022a 2.1.2-foss-2022a   | `module avail PyTorch`   | Yes, included in Jupyter|
+| PyTorch-Lightning| 1.8.4-foss-2022a                   | `module avail PyTorch`   | |
 | scikit-bio     | 0.5.7-foss-2022a                     | `module avail scikit-bio` | |
 | scikit-learn   | 1.1.2-foss-2022a                     | `module avail scikit-learn` | |
 | scikit-image   | 0.19.3-foss-2022a                     | `module avail scikit-bio` | |
