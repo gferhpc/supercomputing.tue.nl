@@ -3,48 +3,16 @@ title: Ansys Fluent
 tags: [Software, Module]
 ---
 
-## Start-up Fluent with GUI (interactive)
+[ANSYS Fluent](https://www.ansys.com/products/fluids/ansys-fluent) is the industry-leading fluid simulation software known for its advanced physics modeling capabilities and industry leading accuracy
 
-By default we run Ansys Fluent jobs in batch mode with sbatch on the HPC
-cluster. For the model and mesh generation Ansys Fluent can be start
+## Start-up ANSYS Fluent with GUI (interactive)
+
+For the model and mesh generation Ansys Fluent can be started
 interactive in the following way:
 
 Use your browser to connect to https://hpc.tue.nl
 
-Obtain a Slurm job allocation (a set of nodes), execute a command, and
-then release the allocation when the command is finished.
-
-[`salloc`](https://slurm.schedmd.com/salloc.html)` -N 1  -n `<number of tasks>` -p `<partition name>
-
-With the standard Ansys Fluent license 4 cores can be used in parallel
-the number of tasks is then 4. If you have access to the HPC licenses
-you can set the number of tasks according your needs.
-
-Start a ssh session with the allocated resources with x11 enabled
-
-`ssh -X $SLURM_NODELIST`
-
-Depending on the configuration of the system you can be asked for your
-password.
-
-On the cluster different versions of Ansys are installed. A list of the
-installed versions can be displayed with
-
-`module avail ansys`
-
-Load the ansys module version of your choice with
-
-`module load ansys/`<version>
-
-Start Ansys Fluent interactive
-
-`fluent &`
-
-If you are ready with your interactive Ansys Fluent job exit from the
-ssh session with exit and release the reserved resources scancel <JOBID>
-or just type exit again.
-
-## How to submit Ansys Fluent jobs
+## ANSYS Fluent jobscript example
 
 1.  Create a batch script myfluent_job_xx.sbatch with the following
     contents, and adjust as needed for your job:
