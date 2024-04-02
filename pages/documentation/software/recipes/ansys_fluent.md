@@ -63,8 +63,6 @@ module load foss/2023a
 module load ANSYS/2023R2
 
 fluent 3ddp -g -t${SLURM_NTASKS} -mpitest -mpi=openmpi
-````
-
 ```
 
 ## ANSYS Fluent GUI (interactive)
