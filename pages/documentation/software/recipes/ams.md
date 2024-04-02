@@ -7,7 +7,7 @@ industrial researchers in all areas of chemistry, materials science, and
 engineering.
 
 Various versions are available, this SLURM sbatch file is known to work
-for `ams/2022.101`:
+for `AMS/2023.104`:
 
 ```shell
 #!/bin/bash
@@ -18,11 +18,12 @@ for `ams/2022.101`:
 #SBATCH --partition=tue.default.q
 #SBATCH --nodes=1
 #SBATCH --ntasks=16
-#SBATCH --time=1-00:00:00
+#SBATCH --mem-per-cpu=2gb
+#SBATCH --time=0-00:05:00
 
 module purge
-module load foss/2022a
-module load ams/2022.101
+module load foss/2023a
+module load AMS/2023.104
 
 <AMS CODE HERE>
 ```
