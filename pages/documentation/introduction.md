@@ -1,4 +1,8 @@
-# Introduction
+---
+hide: [toc]
+title: Introduction
+---
+# Umbrella HPC Documentation
 
 ![The Umbrella Cluster](../assets/images/hpc-umbrella-full.png){ align=right style="width=300" }
 
@@ -13,13 +17,8 @@ collaborative platform.
 You can do this by clicking on the edit button (:material-pencil:) in the top right corner on every page or visit our [Gitlab Repository](https://gitlab.tue.nl/hpclab/website){:target=_blank}.
 All TU/e employees and students can contribute, provided the information is TU/e HPC specific (refer to online guides for more generic HPC information where possible)!
 
-!!! note "Local Clusters"
+!!! info "Local Clusters"
 
     Note that at the TU/e, some departments/research groups have several local computation facilities. 
     These are **_not_** part of the TU/e HPC Umbrella Cluster, 
     please contact the [Reasearch IT contact of your department](https://tuenl.sharepoint.com/sites/intranet-LIS/SitePages/Research-IT.aspx){:target=_blank} for more information.
-
-!!! warning "Compass"
-
-    Some users refer to this cluster with the _old_ name `Compass`. 
-    Additional documentation for this department/group can be found on their [wiki pages](http://tps.phys.tue.nl/tpswiki/index.php/Main_Page){:target=_blank}. 
