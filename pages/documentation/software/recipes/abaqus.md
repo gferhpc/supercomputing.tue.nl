@@ -58,6 +58,7 @@ Wed 27 Mar 2024 01:05:22 PM CET
 #SBATCH --partition=tue.default.q
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
+#SBATCH --mem-per-cpu=2gb
 #SBATCH --time=00:05:00
 
 module purge
@@ -66,6 +67,6 @@ module load Abaqus/2024
 
 cd $HOME/Jobs/Abaqus
 
-abaqus interactive input=boltpipeflange_3d_solidgask.inp job=${SLURM_JOB_NAME} cpus=${SLURM_CPUS_PER_TASK} mp-mode=threads
+abaqus interactive job=${SLURM_JOB_NAME} cpus=${SLURM_CPUS_PER_TASK} mp-mode=threads input=boltpipeflange_3d_solidgask.inp 
 ```
 
