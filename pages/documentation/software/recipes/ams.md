@@ -6,8 +6,7 @@ The [Amsterdam Modeling Suite](https://www.scm.com){:target=_blank} is used by a
 industrial researchers in all areas of chemistry, materials science, and
 engineering.
 
-Various versions are available, this SLURM sbatch file is known to work
-for `AMS/2023.104`:
+## AMS OpenMPI jobscript example
 
 ```shell
 #!/bin/bash
