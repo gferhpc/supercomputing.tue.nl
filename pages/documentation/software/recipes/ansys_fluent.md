@@ -5,7 +5,7 @@ tags: [Software, Module]
 
 [ANSYS Fluent](https://www.ansys.com/products/fluids/ansys-fluent) is the industry-leading fluid simulation software known for its advanced physics modeling capabilities and industry leading accuracy
 
-## Test Abaqus
+## Test ANSYS Fluent
 
 Load the module(s)
 
