@@ -56,6 +56,7 @@ Wed 27 Mar 2024 01:05:22 PM CET
 #SBATCH --job-name=test_abaqus
 #SBATCH --output=test_abaqus-%j.log
 #SBATCH --partition=tue.default.q
+#SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem-per-cpu=2gb
