@@ -21,7 +21,6 @@ for `ams/2022.101`:
 #SBATCH --time=1-00:00:00
 
 module purge
-module load slurm
 module load foss/2022a
 module load ams/2022.101
 
