@@ -70,3 +70,6 @@ cd $HOME/Jobs/Abaqus
 abaqus interactive job=${SLURM_JOB_NAME} cpus=${SLURM_CPUS_PER_TASK} mp-mode=threads input=boltpipeflange_3d_solidgask.inp 
 ```
 
+## Abaqus CAE GUI (interactive)
+
+Use your browser to connect to https://hpc.tue.nl
