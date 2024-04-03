@@ -1,6 +1,8 @@
 ---
+title: Python software modules
 tags: [Software]
 ---
+
 ## Python and related software.
 
 | Name           | Supported Versions                   | Module(s)                | https://hpc.tue.nl |
