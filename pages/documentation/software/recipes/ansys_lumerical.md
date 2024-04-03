@@ -25,7 +25,7 @@ module load lumerical/2024-R1.1
 mpirun fdtd-engine-impi-lcl -logall -fullinfo mqwgain_getting_started_example.lsf
 ```
 
-## Lumerical GUI(interactive)
+## ANSYS Lumerical GUI(interactive)
 
 Use your browser to connect to https://hpc.tue.nl
 
