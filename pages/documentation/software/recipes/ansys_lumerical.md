@@ -1,7 +1,8 @@
 ---
+title: ANSYS Lumerical
 tags: [Software, Module]
 ---
-# Ansys Lumerical
+
 Ansys Lumerical, or Ansys Optics, is an optics simulation package. This
 page contains various bits of information on running Lumerical on an HPC
 system.
