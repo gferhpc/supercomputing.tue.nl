@@ -3,7 +3,7 @@ title: ANSYS Lumerical
 tags: [Software, Module]
 ---
 
-[ANSYS Lumerical](https://www.ansys.com/products/optics), part of the ANSYS Optics suite, is an optics simulation package.
+[ANSYS Lumerical](https://www.ansys.com/products/optics){:target="_blank"}, part of the ANSYS Optics suite, is an optics simulation package.
 
 ## ANSYS Lumerical FDTD OpenMPI jobscript example
 ```
