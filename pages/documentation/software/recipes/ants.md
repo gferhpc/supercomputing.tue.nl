@@ -3,21 +3,31 @@ tags: [Software, Module]
 ---
 # ANTs
 
-Advanced Normalization Tools
+[ANTs](http://stnava.github.io/ANTs/) ( Advanced Normalization Tools) extracts information 
+from complex datasets that include imaging. 
+ANTs is useful for managing, interpreting and visualizing multidimensional data.
 
-First, load the `cmake` module for a newer version of this software by
-typing `module load cmake`.
+## ANTs jobscript example 
 
-In the [ANTs page](https://stnava.github.io/ANTs/), choose to build it
-from source-code and follow the instructions provided there.
+```shell
+#!/bin/bash
+#SBATCH --job-name=test_ants
+#SBATCH --output=test_ants-%j.log
+#SBATCH --partition=tue.default.q
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=4
+#SBATCH --mem-per-cpu=2gb
+#SBATCH --time=00:05:00
 
-*Or try this*:
+module purge
+module load ANTs/2.5.1-foss-2023a
 
-ANTs (https://github.com/ANTsX/ANTs) is available as an experimental
-module build using easybuild (https://easybuild.io/).
+cd $HOME/Jobs/ANTs
 
-To get access to the module fisrt load the module NewBuild/AMD then load
-the ANTs module.
+ 
+```
+
 
 An example slurm batch script:
 
