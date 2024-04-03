@@ -5,43 +5,20 @@ tags: [Software, Module]
 
 The TU/e Umbrella HPc cluster has environment modules available specially for Pyhton, an overview can be found here: [Python Modules](../modules/python.md) 
 
-Please open a terminal and log in to the cluster.
+## Test Python
 
-To open an interactive Python session, simply type `python3`. If you
-then type in `print("This is clearly working")`, the text will appear in
-the output of this line. Exit the session by typing `exit()` or press
-\`Ctrl + D\`.
-
-If you want to run a script (a `*.py` file), you must first
-create/upload the `*.py` file. Open a text editor and write your own
-Python script, or use this dummy example:
-```shell
-#!/usr/bin/env python3
-#SBATCH --partition=tue.test.q
-#SBATCH --output=openme.out
-
-print("This is clearly working")
-```
-Save it as `test.py`. Then use, e.g., Command Prompt to transfer this
-file to the cluster by typing in:
-
-`scp test.py `<yourid>`@hpc.tue.nl:myjob/`
-
-You could now run the script on the login node by typing the command
-`python3 test.py`. This runs your script on Python 3.6.1. You could also
-choose to run it on Python 2.7.5 by changing it into `python2 test.py`.
-
-**However**, the login node of the cluster is not meant to run heavy
-calculations and your job will be terminated when it takes too much
-resources (CPU, memory, time). To properly [schedule](../../steps/jobs/index.md) the job like
-we did before, you have to run:
-
-```shell
-sbatch test.py
+```shell 
+[user@umbrella]$ module purge
+[user@umbrella]$ module load Python/3.11.3
+[user@umbrella]$ python --version
+Python 3.11.3
 ```
 
-Once the job completes, you will see that a file `openme.out` has been
-created which contains `This is clearly working` as expected.
+## Python jobscript example
+
+```shell
+
+```
 
 ### Virtual environments
 
