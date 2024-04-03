@@ -35,7 +35,7 @@ cd $HOME/Jobs/Python
 python test.py
 ```
 
-### Virtual environments
+## Virtual environments
 
 We recommend you to work within a [virtual environment](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/){:target="_blank"}
 if you work with Python packages. This is essentially a local directory
@@ -62,8 +62,8 @@ the package manager is on the latest version, followed by
 
 #### Check availability and install packages
 
-To check the availability of a package, use the command
-`pip show `<package>. If the package is installed, the command will
+To check the availability of a package, either use the command
+`pip show `<package> or `pip list`. If the package is installed, the command will
 return the version and some other information about it. Otherwise the
 command will issue a warning, and you can then install the package as
 follows:
