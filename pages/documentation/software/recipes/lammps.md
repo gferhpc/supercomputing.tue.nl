@@ -1,36 +1,29 @@
 ---
 title: LAMMPS
+tags: [Software, Module]
 ---
 
-LAMMPS Molecular Dynamics Simulator
+[LAMMPS](https://www.lammps.org/){:target="_blank"} (Molecular Dynamics Simulator) is a classical molecular dynamics code with a focus on materials modeling. It's an acronym for Large-scale Atomic/Molecular Massively Parallel Simulator.
 
-LAMMPS (https://www.lammps.org/) is available as an experimental module
-build using easybuild (https://easybuild.io/)
+## LAMMPS MPI and Threaded jobscript example 
 
-To get access to the module fisrt load the module NewBuild/AMD then load
-the LAMMPS module.
+```shell
+#!/bin/bash
+#SBATCH --job-name=test_lammps
+#SBATCH --output=test_lammps-%j.log
+#SBATCH --partition=tue.default.q
+#SBATCH --nodes=1
+#SBATCH --ntasks=4
+#SBATCH --cpus-per-task=2
+#SBATCH --mem-per-cpu=2gb
+#SBATCH --time=00:05:00
 
-An example slurm batch script:
+module purge
+module load LAMMPS/23Jun2022-foss-2022a-kokkos
 
-<div class="toccolours mw-collapsible mw-collapsed">
-<div style="font-weight: bold; line-height: 1.6;">
+cd $HOME/Jobs/LAMMPS
 
-`lammps_example.sbatch`
+export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK}
 
-</div>
-
-    #!/bin/bash
-    #SBATCH --job-name=friction
-    #SBATCH --partition=tue.default.q
-    #SBATCH --nodes=1
-    #SBATCH --ntasks-per-node=4
-    #SBATCH --mem-per-cpu=2gb
-    #SBATCH --output=slurm-%j.out
-    #SBATCH --time=00:00:05
-
-    cd $HOME/Jobs/LAMMPS
-    module load NewBuild/AMD
-    module load LAMMPS
-    mpirun lmp < in.friction
-
-</div>
+mpirun lmp < in.friction
+```
