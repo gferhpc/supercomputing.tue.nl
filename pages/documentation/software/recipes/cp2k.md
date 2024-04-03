@@ -8,7 +8,7 @@ tags: [Software, Module]
 ## CP2K jobscript example 
 
 
-```shell 
+``` 
 #!/bin/bash
 #SBATCH --job-name=test_cp2k
 #SBATCH --output=test_cp2k-%j.log
