@@ -1,5 +1,5 @@
 ---
-Title: ANTs
+title: ANTs
 tags: [Software, Module]
 ---
 
