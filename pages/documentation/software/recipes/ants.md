@@ -25,6 +25,7 @@ module load ANTs/2.5.1-foss-2023a
 
 cd $HOME/Jobs/ANTs
 
+antsRegistrationSyNQuick.sh -d 2 -f data/r16slice.jpg -m data/r64slice.jpg -t r -o ./output/rigid
  
 ```
 
