@@ -3,9 +3,35 @@ title: ANSYS Lumerical
 tags: [Software, Module]
 ---
 
-Ansys Lumerical, or Ansys Optics, is an optics simulation package. This
-page contains various bits of information on running Lumerical on an HPC
-system.
+[ANSYS Lumerical](https://www.ansys.com/products/optics), part of the ANSYS Optics suite, is an optics simulation package.
+
+## ANSYS Lumerical FDTD OpenMPI jobscript example
+```
+#!/bin/bash
+#
+#SBATCH --job-name=test_lumerical
+#SBATCH --error=test_lumerical-%j.log
+#SBATCH --partition=tue.default.q
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=8
+#SBATCH --cpus-per-task=1
+#SBATCH --mem-per-cpu=2gb
+#SBATCH --time=00:05:00
+
+module purge
+module load foss/2023a
+module load lumerical/2024-R1.1
+
+mpirun fdtd-engine-impi-lcl -logall -fullinfo mqwgain_getting_started_example.lsf
+```
+
+## Lumerical GUI(interactive)
+
+Use your browser to connect to https://hpc.tue.nl
+
+
+
+
 
 This is tested with Lumerical 2021-R1.
 
