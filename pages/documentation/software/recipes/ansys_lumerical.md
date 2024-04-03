@@ -19,10 +19,10 @@ tags: [Software, Module]
 #SBATCH --time=00:05:00
 
 module purge
-module load foss/2023a
+module load intel/2023a
 module load lumerical/2024-R1.1
 
-mpirun fdtd-engine-ompi-lcl -logall -fullinfo mqwgain_getting_started_example.lsf
+mpirun fdtd-engine-impi-lcl -logall -fullinfo mqwgain_getting_started_example.lsf
 ```
 
 ## Lumerical GUI(interactive)
