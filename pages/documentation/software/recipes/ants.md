@@ -3,7 +3,7 @@ title: ANTs
 tags: [Software, Module]
 ---
 
-[ANTs](http://stnava.github.io/ANTs/) ( Advanced Normalization Tools) extracts information 
+[ANTs](http://stnava.github.io/ANTs/){:target="_blank"} ( Advanced Normalization Tools) extracts information 
 from complex datasets that include imaging. 
 ANTs is useful for managing, interpreting and visualizing multidimensional data.
 
