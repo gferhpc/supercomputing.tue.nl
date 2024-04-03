@@ -1,4 +1,5 @@
 ---
+title: Commercial software modules
 tags: [Software]
 ---
 To use commercial software a license is needed, depending on the software this is a user or group specific license or a TU/e wide available license.
