@@ -3,27 +3,26 @@ title: CP2K
 tags: [Software, Module]
 ---
 
-Version 8.2 available as a module
+[CP2K](https://www.cp2k.org/) is a quantum chemistry and solid state physics software package that can perform atomistic simulations of solid state, liquid, molecular, periodic, material, crystal, and biological systems.
 
-```shell
-module purge
-module load slurm
-module load CP2K
-```
+## CP2K jobscript example 
 
-Slurm sbatch file:
 
 ```shell 
 #!/bin/bash
-
 #SBATCH --job-name=test_cp2k
-#SBATCH --output=test_cp2k-%j.out
-#SBATCH --error=test_cp2k-%j.err
+#SBATCH --output=test_cp2k-%j.log
 #SBATCH --partition=tue.default.q
-#SBATCH --ntasks=4
+#SBATCH --nodes=1
+#SBATCH --ntasks=2
+#SBATCH --cpus-per-task=4
+#SBATCH --mem-per-cpu=2gb
+#SBATCH --time=00:05:00
 
 module purge
-module load slurm
-module load NewBuild/AMD CP2K
+module load CP2K/2023.1-foss-2023a
+
+cd $HOME/Jobs/CP2K
+
 mpirun cp2k.popt H2O-32.inp
 ```
