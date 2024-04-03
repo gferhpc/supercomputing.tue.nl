@@ -51,7 +51,7 @@ Wed 27 Mar 2024 01:05:22 PM CET
 
 ## Abaqus Shared Memory jobscript example 
 
-```shell
+```
 #!/bin/bash
 #SBATCH --job-name=test_abaqus
 #SBATCH --output=test_abaqus-%j.log
