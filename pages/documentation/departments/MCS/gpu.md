@@ -75,14 +75,16 @@ buffering from local SSD storage can be found at the following
 Job scheduling at the GPU nodes needs to be done at least with the
 following sbatch options:
 
-`   #SBATCH --nodes`
-`   #SBATCH --ntasks`
-`   #SBATCH --partition`
-`   #SBATCH --error`
-`   #SBATCH --output`
-`   #SBATCH --time`
-`   #SBATCH --constraint`
-`   #SBATCH --gres`
+```
+#SBATCH --nodes
+#SBATCH --ntasks
+#SBATCH --partition
+#SBATCH --error
+#SBATCH --output
+#SBATCH --time
+#SBATCH --constraint
+#SBATCH --gres
+```
 
 More information regarding the standard sbatch options can be found at
 [Submit Jobs](../../steps/jobs/index.md). In this section,
