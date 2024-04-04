@@ -470,10 +470,12 @@ select, and you require specific hardware to run your job on, you can
 further constrain where your job can run using *features*. First, query
 which features the nodes have. For example:
 
-`$ sinfo -o "%16N  %16f  %8G" -p mcs.gpu.q   `
-`NODELIST          AVAIL_FEATURES    GRES     `
-`mcs-gpuA001       tesla,v100        gpu:2    `
-`mcs-gpuB001       gforce,2080ti     gpu:8`
+```
+$ sinfo -o "%16N  %16f  %8G" -p mcs.gpu.q
+NODELIST          AVAIL_FEATURES    GRES
+mcs-gpuA001       tesla,v100        gpu:2
+mcs-gpuB001       gforce,2080ti     gpu:8
+```
 
 To use the V100 GPU in your Slurm batch script, you can now add the
 parameter `--constraint=v100`. Refer to the
