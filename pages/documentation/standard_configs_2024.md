@@ -72,7 +72,7 @@ We preferably don't offer fabrics such as InfiniBand due to the cost.  Compute j
     <td></td>
     <td></td>
     <td></td>
-    <td></td>
+    <td>581.0</td>
     <td></td>
     <td></td>
   </tr>
@@ -94,7 +94,7 @@ We preferably don't offer fabrics such as InfiniBand due to the cost.  Compute j
 [^1]: Total for all CPUs in the system.  Per-CPU value is obtained from the
   PassMark database.  The unit "pp" stands for "performance point".
 
-[^2]: Power usage is estimated as: CPU TDP + 0.3 W/GB RAM (for DDR5; for DDR4 it is 0.375 W/GB)
+[^2]: Power usage is estimated as: CPU TDP + GPU TDP + RAM power.  RAM power is: 0.3 W/GB RAM for DDR5; 0.375 W/GB for DDR4.
 
 # Rationales
 
