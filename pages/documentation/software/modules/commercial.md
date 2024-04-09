@@ -16,6 +16,7 @@ Available as [modules](../../steps/software/index.md):
 | AMS             | [scm.com](https://www.scm.com/amsterdam-modeling-suite/){:target="_blank"} | `module avail ams` | Yes |
 | COMSOL          | [colsol.com](https://www.comsol.com/){:target="_blank"} | `module avail comsol`    | Yes |
 | CONVERGE        | [convergecfd.com](https://convergecfd.com/){:target="_blank"} | `module avail convergentscience` | Yes |
+| Gurobi          | [gurobi.com](https://www.gurobi.com/){:target="_blank"} | `module avail Gurobi` | Yes (via MATLAB) |
 | ANSYS Lumerical | [ansys.com](https://www.ansys.com/products/optics){:target="_blank"} | `module avail lumerical` | Yes |
 | Mathematica     | [wolfram.com](https://www.wolfram.com/mathematica/){:target="_blank"} | `module avail mathematica` | Yes |
 | MATLAB          | [mathworks.com](https://www.mathworks.com/products/matlab.html){:target="_blank"} | `module avail matlab` | Yes |
