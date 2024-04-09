@@ -8,7 +8,7 @@ Available as [modules](../../steps/software/index.md):
 
 | Name            | Website                              | Module(s)                | https://hpc.tue.nl |
 | --------------- | ------------------------------------ | ------------------------ | ------------------ |
-| Abaqus          | [3ds.com](https://www.3ds.com/products/simulia/abaqus){:target="_blank"} | `module avail abacus`    | Yes |
+| Abaqus          | [3ds.com](https://www.3ds.com/products/simulia/abaqus){:target="_blank"} | `module avail abaqus`    | Yes |
 | ANSYS CFX       | [ansys.com](https://www.ansys.com/products/fluids/ansys-cfx){:target="_blank"} | `module avail ansys`     | Yes |
 | ANSYS Fluent    | [ansys.com](https://www.ansys.com/products/fluids/ansys-fluent){:target="_blank"} | `module avail ansys`     | Yes |
 | ANSYS Workbench | [ansys.com](https://www.ansys.com/products/ansys-workbench){:target="_blank"} | `module avail ansys`     | Yes |
