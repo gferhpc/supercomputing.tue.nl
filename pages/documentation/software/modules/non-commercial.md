@@ -78,7 +78,7 @@ Using the toolchain(s) the following software is avaiable. When the module is lo
 
 | Name           | Supported Versions                   | Module(s)                | https://hpc.tue.nl |
 | -------------- | ------------------------------------ | ------------------------ | ------------------ |
-| Blender        | 4.0.2-linux-x86_64-CUDA-12.1.1       | `Blender`   | Yes |
+| Blender        | 4.0.2-linux-x86_64-CUDA-12.1.1 4.1.0-linux-x86_64-CUDA-12.1.1 | `Blender`   | Yes |
 | CP2K           | 2023.1-foss-2023a                    | `CP2K`      | |
 | dask           | 2022.10.0-foss-2022a 2023.9.2-foss-2023a | `dask`  | |
 | GROMACS        | 2023.3-foss-2023a                    | `GROMACS`   | |
