@@ -7,7 +7,7 @@ The HPC Umbrella Cluster uses the concept of Toolchains to build software, it in
 | Toolchain Name | Supported Versions                   | Module(s)                | Remarks |
 | -------------- | ------------------------------------ | ------------------------ | ------- |
 | foss           | 2022a 2023a                          | `module avail foss`      | |
-| gfbf           | 2023a                                | `module avail gfbf`      | gfbf is a subset of foss (no OpenPMI) |
+| gfbf           | 2023a                                | `module avail gfbf`      | gfbf is a subset of foss (no OpenMPI) |
 | intel          | 2022a 2023a                          | `module avail intel`     | |
 
 foss = "Free and Open Source Software" gfbf = "Gcc + FlexiBlas + Fftw"
