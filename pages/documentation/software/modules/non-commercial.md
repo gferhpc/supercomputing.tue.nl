@@ -87,9 +87,9 @@ Using the toolchain(s) the following software is avaiable. When the module is lo
 | NetLogo        | 6.3.0-64 6.4.0-64                    | `NetLogo`   | Yes |
 | OpenFOAM       | 10-foss-2023a 8-foss-2022a v2206-foss-2022a | `OpenFOAM`  | |
 | OpenSceneGraph | 3.6.5-foss-2022a                     | `OpenSceneGraph`  | Yes via Interactive Desktop |
-| ORCA           | 5.0.4-gompi-2022a.                   | `ORCA`      | |
+| ORCA           | 5.0.4-gompi-2022a                   | `ORCA`      | |
 | ParaView       | 5.11.2-foss-2023a                    | `ParaView`  | Yes |
-| QCG-PilotJob   | 0.13.1-foss-2022a 0.14.1-foss-2023a. | `QCG-PilotJob` | |
+| QCG-PilotJob   | 0.13.1-foss-2022a 0.14.1-foss-2023a | `QCG-PilotJob` | |
 | QuantumESPRESSO| 7.2-foss-2023a                        | `QuantumESPRESSO` | |
 | R              | 4.2.1-foss-2022a  4.3.2-gfbf-2023a   | `R/`        | |
 | Rstudio        | 2022.07.2+576-foss-2022a-Java-11-R-4.2.1 | `RStudio` | Yes |
