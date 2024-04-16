@@ -10,7 +10,7 @@ tags: [Software]
 | Anaconda3      | Anaconda3-2023.09-0                  | `module avail Anaconda3` | |
 | Cantera        | 2.6.0-foss-2022a 3.0.0-foss-2023a.   | `module avail Cantera`   | |
 | IPython        | 8.5.0 8.14.0                         | `module avail IPython`   | |
-| Jax            | 0.4.4-foss-2022a                     | `module avail jax`   | |
+| Jax            | 0.4.4-foss-2022a 0.4.4-foss-2022a-CUDA-11.7.0 | `module avail jax`   | |
 | JupyterLab     | 4.0.5-GCCcore-12.3.0                 | `module avail Jupyter`   | Yes, via Jupyter |
 | numba          | 0.56.4-foss-2022a                    | `module avail numba`     | |
 | OpenCV         | 4.6.0-foss-2022a-contrib 4.8.1-foss-2023a-contrib | `module avail OpenCV`     | |
