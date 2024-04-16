@@ -20,7 +20,7 @@ tags: [Software]
 | PyTorch-Lightning| 1.8.4-foss-2022a                   | `module avail PyTorch`   | |
 | scikit-bio     | 0.5.7-foss-2022a                     | `module avail scikit-bio` | |
 | scikit-learn   | 1.1.2-foss-2022a                     | `module avail scikit-learn` | |
-| scikit-image   | 0.19.3-foss-2022a                     | `module avail scikit-bio` | |
+| scikit-image   | 0.19.3-foss-2022a                     | `module avail scikit-image` | |
 | SciPy          | 2022.05-foss-2022a 2023.07-gfbf-2023a | `module avail SciPy-bundle` | Yes, included in Jupyter |
 | slepc4py       | 3.17.2-foss-2022a                     | `module avail slepc4py` | |
 | Tensorflow     | 2.11.0-foss-2022a  2.13.0-foss-2023a  | `module avail TensorFlow` | Yes, included in Jupyter |
