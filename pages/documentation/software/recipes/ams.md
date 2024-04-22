@@ -22,7 +22,7 @@ engineering.
 
 module purge
 module load foss/2023a
-module load AMS/2023.104
+module load AMS/2023.105
 
 <AMS CODE HERE>
 ```
