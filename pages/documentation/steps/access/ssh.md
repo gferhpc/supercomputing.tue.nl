@@ -28,7 +28,7 @@ or install third-party software, e.g.:
 
     === ":material-network-pos: PuTTY"
 
-        Download and install from [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html){:target=_blank} from the *MSI ("Windows Installer")* section.
+        Download (version 0.81 or newer) and install from [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html){:target=_blank} from the *MSI ("Windows Installer")* section.
 
         !!! info "GUI applications/X11 forwarding"
 
