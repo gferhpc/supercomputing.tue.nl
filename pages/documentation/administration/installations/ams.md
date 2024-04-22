@@ -6,9 +6,13 @@ As a user on your laptop:
 
 From/on the Website, Download the AMS Linux OpenMPI binary tgz - Login credentitials are in TopDesk Self Service Portal ( Installing AMS )
 
+`mkdir /local/AMS`
+
 copy the *.tgz to the login node into /local/AMS.
 
-As root on login node:
+`chown -R easybuild /local/AMS`
+
+As easybuild on login node:
 
 ```shell
 export AMS_VERSION=2023.105
