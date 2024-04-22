@@ -182,7 +182,7 @@ markdown_extensions:
   - pymdownx.keys
   - pymdownx.mark
   - pymdownx.smartsymbols
-  - pymdownx.snippets
+  - pymdownx.snippets:
       base_path: *base_path
   - pymdownx.superfences
   - pymdownx.tabbed:
