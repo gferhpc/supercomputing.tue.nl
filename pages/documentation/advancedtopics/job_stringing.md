@@ -48,10 +48,10 @@ Since 2 iterations is 50 seconds, which is slightly less than 1 minute, we can f
 * 2 iterations per subjob; and
 * 4 subjobs (thus 4 array elements).
 
-The job script would then be:
+The [job script](job-stringing-limited.job) would then be:
 
 ```bash title="job-stringing-limited.job"
---8<-- "job-stringing-limited.job"
+--8<-- "documentation/advancedtopics/job-stringing-limited.job"
 ```
 
 ## Case #2: software unlimited no. of iterations
@@ -67,10 +67,10 @@ Unlike in case #1, our software doesn't stop after 2 iterations.  Instead it wil
 
 Note that if our calculation is not finished, Slurm will kill the subjob half-way, i.e. it will kill at the `bash calculation.sh` line.  The rest of the job script will not be executed.  However, if the calculation _is_ finished, `bash calculation.sh` will be done, and the job script will proceed to the next line.  The next line can then tell Slurm to cancel all remaining subjobs.
 
-So:
+[The job script:](job-stringing-unlimited.job)
 
 ```bash title="job-stringing-unlimited.job"
---8<-- "job-stringing-unlimited.job"
+--8<-- "documentation/advancedtopics/job-stringing-unlimited.job"
 ```
 
 ## Alternatives
