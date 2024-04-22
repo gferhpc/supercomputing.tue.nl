@@ -33,7 +33,7 @@ chmod -R o+rx /sw/rl8/zen/app/AMS/${AMS_VERSION}
 
 PACKAGE_NAME=m3gnet
 
-As root on tue-login002:
+As easybuild on tue-login002:
 
 ```shell
 module load AMS/${AMS_VERSION}
