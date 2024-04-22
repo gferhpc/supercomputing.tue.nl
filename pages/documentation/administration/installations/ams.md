@@ -21,7 +21,7 @@ rmdir ams${AMS_VERSION}
 cd
 chown -R easybuild:easybuild /sw/rl8/zen/app/AMS/${AMS_VERSION}
 chmod -R o+rx /sw/rl8/zen/app/AMS/${AMS_VERSION}
-# Create a module : /sw/rl8/zen/mod/AMS/${AMS_VERSION}
+# Create a module : /sw/rl8/zen/mod/all/AMS/${AMS_VERSION}
 # Check the path to the license file (/sw/rl8/zen/lic/FloatADF/....)
 ```
 
