@@ -184,6 +184,7 @@ markdown_extensions:
   - pymdownx.smartsymbols
   - pymdownx.snippets:
       base_path: *base_path
+      check_paths: true
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
