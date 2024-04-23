@@ -13,7 +13,7 @@ Available as [modules](../../steps/software/index.md):
 | ANSYS Fluent    | [ansys.com](https://www.ansys.com/products/fluids/ansys-fluent){:target="_blank"} | `module avail ansys`     | Yes |
 | ANSYS Workbench | [ansys.com](https://www.ansys.com/products/ansys-workbench){:target="_blank"} | `module avail ansys`     | Yes |
 | AMD-μProf       | [amd.com](https://www.amd.com/en/developer/uprof.html){:target="_blank"} | `module avail amd-uprof` | Yes |
-| AMS             | [scm.com](https://www.scm.com/amsterdam-modeling-suite/){:target="_blank"} | `module avail ams` | Yes |
+| AMS             | [scm.com](https://www.scm.com/amsterdam-modeling-suite/){:target="_blank"} | `module avail ams` | No |
 | COMSOL          | [colsol.com](https://www.comsol.com/){:target="_blank"} | `module avail comsol`    | Yes |
 | CONVERGE        | [convergecfd.com](https://convergecfd.com/){:target="_blank"} | `module avail convergentscience` | Yes |
 | Gurobi          | [gurobi.com](https://www.gurobi.com/){:target="_blank"} | `module avail Gurobi` | Yes (via MATLAB) |
