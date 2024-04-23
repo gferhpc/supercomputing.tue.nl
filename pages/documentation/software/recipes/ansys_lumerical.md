@@ -29,12 +29,6 @@ mpirun fdtd-engine-impi-lcl -logall -fullinfo mqwgain_getting_started_example.ls
 
 Use your browser to connect to https://hpc.tue.nl
 
-
-
-
-
-This is tested with Lumerical 2021-R1.
-
 ## Method 1
 
 We will make Lumerical believe it is running on a "local computer"
