@@ -97,6 +97,12 @@ You can cancel a submitted job using `scancel`.
 scancel [JOBID]
 ```
 
+See all the jobs you submitted.
+
+```bash
+squeue -u $(whoami)
+```
+
 You may want to monitor the resources being used by your job in real-time. This can be done using the `sstat` command.
 
 ```bash
