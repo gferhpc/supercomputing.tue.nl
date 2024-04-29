@@ -35,7 +35,7 @@ Here's an example job script for a CPU only node:
 #SBATCH --mem-per-cpu=2G
 
 # Load modules or software if needed
-# module load python3
+# module load Python/3.11.3-GCCcore-12.3.0
 
 # Execute the script or command
 python my_script.py
@@ -56,7 +56,7 @@ Here's an example job script for a GPU node:
 #SBATCH --gpus=1
 
 # Load modules or software if needed
-# module load python3
+# module load Python/3.11.3-GCCcore-12.3.0
 
 # Execute the script or command
 python my_script.py
