@@ -1,5 +1,8 @@
 # SLURM User Guide
 
+![EasyBuild logo](200px-Slurm_logo-dark.png#only-dark){: align=right }
+![EasyBuild logo](200px-Slurm_logo-light.png#only-light){: align=right }
+
 ## Introduction to SLURM
 
 SLURM (Simple Linux Utility for Resource Management) is a powerful cluster management and job scheduling system. SLURM allows users to submit jobs to be performed on one or many nodes in a cluster, manage job queues, and query the status of jobs and queues.
