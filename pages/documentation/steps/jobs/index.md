@@ -1,4 +1,4 @@
-# SLURM User Guide
+# Submitting jobs using Slurm
 
 ![EasyBuild logo](200px-Slurm_logo-dark.png#only-dark){: align=right }
 ![EasyBuild logo](200px-Slurm_logo-light.png#only-light){: align=right }
