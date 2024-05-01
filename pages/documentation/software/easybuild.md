@@ -83,6 +83,7 @@ Add to GIT repo:
 ## Building GPU easyconfigs -CUDA-xx.xx
 
 When Building CUDA releated software, easybuild may complain about the cuda-compute-capabilities if so add the this option to the eb command ```--cuda-compute-capabilities=3.7,6.0,6.1,7.0,7.5,8.0,8.6``` which are the CUDA capabilities of the GPUs in the Umbrella Cluster. Or add this to the {easyconfig} ```cuda_compute_capabilities = {'3.7', '6.0', '6.1', '7.0', '7.5', '8.0', '8.6'}```
+
 NOTE: CUDA 12 does **not** supports **3.7** capabilities
 
 ## Fixes and workarounds:
