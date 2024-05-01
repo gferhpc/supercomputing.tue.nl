@@ -162,3 +162,88 @@ chown -R slurm:slurm /trinity/shared/var/spool/slurm
 * On both head nodes: verify slurmctld is running.
 * On both head nodes: check slurmctld log for strange things.
 
+# Prometheus (with its own Slurmrestd)
+
+Following https://github.com/ubccr/slurm-exporter:
+
+As root on hpc-head01 and hpc-head02:
+
+Prepare `prometheus` user:
+```bash
+NEWHOME=/var/lib/prometheus
+groupadd -r prometheus
+useradd -r -g prometheus -d $NEWHOME -s /sbin/nologin -c 'Prometheus user account' prometheus
+mkdir $NEWHOME
+chown prometheus:prometheus $NEWHOME
+```
+Install slurmrestd:
+```bash
+dnf install -y slurm-ohpc-slurmrestd
+```
+Create `/etc/systemd/system/slurm-exporter-slurmrestd.service`:
+```
+[Unit]
+Description=Prometheus Slurm Exporter Slurm REST daemon
+After=network-online.target slurmctld.service
+Wants=network-online.target
+ConditionPathExists=/etc/slurm/slurm.conf
+
+[Service]
+Type=simple
+User=prometheus
+Group=prometheus
+EnvironmentFile=-/etc/sysconfig/prometheus-slurmrestd
+EnvironmentFile=-/etc/default/prometheus-slurmrestd
+ExecStartPre=-rm -f /var/lib/prometheus/slurmrestd.socket
+ExecStart=/usr/sbin/slurmrestd $SLURMRESTD_OPTIONS unix:/var/lib/prometheus/slurmrestd.socket
+ExecReload=/bin/kill -HUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target
+```
+Start the slurmrestd service:
+```bash
+systemctl enable --now slurm-exporter-slurmrestd
+```
+Download and compile `slurm-exporter`:
+```bash
+cd ~
+git clone https://github.com/ubccr/slurm-exporter.git
+cd slurm-exporter
+module purge
+module load Go/1.21.2
+go build
+cp slurm-exporter /usr/local/bin
+chown root:root /usr/local/bin/slurm-exporter
+```
+Unit file `/etc/systemd/system/slurm-exporter.service`:
+```
+[Unit]
+Description=Prometheus Slurm Exporter
+After=network-online.target slurm-exporter-slurmrestd.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=prometheus
+Group=prometheus
+ExecStart=/usr/local/bin/slurm-exporter --listen-address=:8080 --unix-socket=/var/lib/prometheus/slurmrestd.socket
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
+```
+Start `slurm-exporter` service:
+```bash
+systemctl enable --now slurm-exporter
+```
+In `/etc/prometheus/prometheus.yaml`, add the following:
+```yaml
+  - job_name: slurm
+    static_configs:
+      - targets: ['hpc-head01:9098']
+```
+And reload Prometheus:
+```bash
+systemctl reload prometheus
+```
