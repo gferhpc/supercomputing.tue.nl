@@ -1,9 +1,9 @@
 # Installation
 
-| Nodes                     |      IPMI      |   Internal IP   | External IP (DHCP) |
+| Nodes                     |      iDrac0    |   Internal IP   | External IP (DHCP) |
 |:--------------------------|:--------------:|:---------------:|:------------------:|
-| test-head01               | 172.16.108.11  | 10.148.255.254  |   131.155.2.51     |
-| test-head02               | 172.16.108.12  | 10.148.255.253  |   131.155.2.52     |
+| test-head01               | 172.16.108.11  |       ?         |         ?          |
+| test-head02               | 172.16.108.12  |       ?         |         ?          |
 
 ## Requirements
 
