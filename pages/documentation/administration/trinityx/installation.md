@@ -28,12 +28,11 @@
     
     **System**
     
-    - Installation Destination: Local Standard Disks (sda), Storage Configuration: Manual: '/' 'swap' and 'boot'
+    - Installation Destination: Local Standard Disks (sda), Storage Configuration: Automatic
     - Network & Hostname: Configure Network, Hostname: hpc-head0X.icts.tue.nl
     
     **User Settings**
     
-    - Root Password: ********
     - User Creation: ********, Make this user administrator
 
 ## Server Configuration
