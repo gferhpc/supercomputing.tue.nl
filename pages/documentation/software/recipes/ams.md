@@ -24,9 +24,29 @@ module purge
 module load foss/2023a
 module load AMS/2023.105
 
+export SCM_TMPDIR=$SLURM_TMPDIR
+
 <AMS CODE HERE>
 ```
 On some nodes, AMS is not running due to the processor type. Adding the following option the the AMS startup command might help:
 ```shell
 -C "amd|haswell|cascadelake|broadwell"
+```
+
+## `AMSJob` Python example
+
+```python
+from scm.plams import *
+
+gr = GridRunner(parallel=True, maxjobs=16, grid='slurm')
+gr.settings.special.export = '--export='
+
+job_settings = Settings()
+job_settings.runscript.preamble_lines = [
+    'export SCM_TMPDIR=$SLURM_TMPDIR',
+]
+
+job = AMSJob(..., settings=job_settings)
+job.run(jobrunner=gr, queue='myqueue.q', cores=16, nodes=1, C="amd|cascadelake|broadwell")
+job.ok()
 ```
