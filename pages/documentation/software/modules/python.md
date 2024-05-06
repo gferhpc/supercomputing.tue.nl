@@ -8,14 +8,15 @@ tags: [Software]
 | Name           | Supported Versions                   | Module(s)                | https://hpc.tue.nl |
 | -------------- | ------------------------------------ | ------------------------ | ------------------ |
 | Anaconda3      | Anaconda3-2023.09-0                  | `module avail Anaconda3` | |
-| Cantera        | 2.6.0-foss-2022a 3.0.0-foss-2023a.   | `module avail Cantera`   | |
+| Cantera        | 2.6.0-foss-2022a 3.0.0-foss-2023a    | `module avail Cantera`   | |
+| CuPy           | CuPy-13.0.0-foss-2023a-CUDA-12.1.1   | `module avail CuPy`.     | |
 | IPython        | 8.5.0 8.14.0                         | `module avail IPython`   | |
 | Jax            | 0.4.4-foss-2022a 0.4.4-foss-2022a-CUDA-11.7.0 | `module avail jax`   | |
 | JupyterLab     | 4.0.5-GCCcore-12.3.0                 | `module avail Jupyter`   | Yes, via Jupyter |
 | numba          | 0.56.4-foss-2022a                    | `module avail numba`     | |
 | OpenCV         | 4.6.0-foss-2022a-contrib 4.8.1-foss-2023a-contrib | `module avail OpenCV`     | |
 | petc4py        | 3.17.4-foss-2022a                    | `module avail petsc4py` | |
-| Python         | 2.7.18 3.10.4 3.10.13 3.11.3.        | `module avail Python/`   | |
+| Python         | 2.7.18 3.10.4 3.10.13 3.11.3         | `module avail Python/`   | |
 | PyTorch        | 1.12.0-foss-2022a 2.1.2-foss-2022a/2023a | `module avail PyTorch`   | Yes, included in Jupyter|
 | PyTorch-Lightning| 1.8.4-foss-2022a 2.2.1-foss-2023a | `module avail PyTorch`   | |
 | scikit-bio     | 0.5.7-foss-2022a                     | `module avail scikit-bio` | |
