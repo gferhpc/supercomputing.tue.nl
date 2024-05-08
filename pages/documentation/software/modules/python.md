@@ -8,7 +8,7 @@ tags: [Software]
 | Name           | Supported Versions                   | Module(s)                | https://hpc.tue.nl |
 | -------------- | ------------------------------------ | ------------------------ | ------------------ |
 | AlphaFold      | 2.3.1-foss-2022a           | `module avail AlphFold`  | |
-| Anaconda3      | 2023.09-0                  | `module avail Anaconda3` | |
+| Anaconda3      | 2023.09-0 2024.02-1                 | `module avail Anaconda3` | |
 | Cantera        | 2.6.0-foss-2022a 3.0.0-foss-2023a    | `module avail Cantera`   | |
 | CuPy           | 13.0.0-foss-2023a-CUDA-12.1.1   | `module avail CuPy`.     | |
 | IPython        | 8.5.0 8.14.0                         | `module avail IPython`   | |
