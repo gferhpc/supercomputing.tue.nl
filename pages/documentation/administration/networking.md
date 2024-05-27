@@ -15,6 +15,15 @@ Links between rows:
 - 1: `default-vlan`
 - 150: `umbrella-int`  Umbrella cluster internal
 
+### TU/e
+
+### Test cluster
+
+TU/e-side switch ports:
+
+- 1/1/1-12: VLAN `422 HPC`
+- 1/1/13-24: VLAN `301 HPC-Mgmt`
+
 ## IP space
 
 ### TU/e
