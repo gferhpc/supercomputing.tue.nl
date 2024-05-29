@@ -29,7 +29,7 @@ math -script sample-script.wl
     Answer = A + B
     Quit[];
 
-  ```
+    ```
 
 in a Slurm batch script is all you need. However, these scripts will
 only use a single core. To fully leverage the parallel character of the
