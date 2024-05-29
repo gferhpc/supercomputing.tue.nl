@@ -11,6 +11,7 @@ Available as [modules](../../steps/software/index.md):
 | Abaqus          | [3ds.com](https://www.3ds.com/products/simulia/abaqus){:target="_blank"} | `module avail abaqus`    | Yes |
 | ANSYS CFX       | [ansys.com](https://www.ansys.com/products/fluids/ansys-cfx){:target="_blank"} | `module avail ansys`     | Yes |
 | ANSYS Fluent    | [ansys.com](https://www.ansys.com/products/fluids/ansys-fluent){:target="_blank"} | `module avail ansys`     | Yes |
+| ANSYS Electromagnetics | [ansys.com](https://www.ansys.com/products/electronics){:target="_blank"} | `module avail ansys-em`   | No |
 | ANSYS Workbench | [ansys.com](https://www.ansys.com/products/ansys-workbench){:target="_blank"} | `module avail ansys`     | Yes |
 | AMD-μProf       | [amd.com](https://www.amd.com/en/developer/uprof.html){:target="_blank"} | `module avail amd-uprof` | Yes |
 | AMS             | [scm.com](https://www.scm.com/amsterdam-modeling-suite/){:target="_blank"} | `module avail ams` | No |
