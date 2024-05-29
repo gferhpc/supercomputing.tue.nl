@@ -16,10 +16,17 @@ cluster:
 #SBATCH --time=00:05:00
 module purge
 module load Mathematica/14.0.0
-math -script script.wl
+math -script sample-script.wl
 ```
 
-
+??? example "sample-script.wl"
+  
+  ```mathematica
+  A = Sum[i, {i,1,100}]
+  B = Mean[{25, 36, 22, 16, 8, 42}]
+  Answer = A + B
+  Quit[];
+  ```
 
 
 in a Slurm batch script is all you need. However, these scripts will
