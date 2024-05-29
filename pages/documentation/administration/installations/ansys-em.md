@@ -23,7 +23,7 @@ mkdir /sw/rl8/zen/app/ANSYS-EM/${ANSYSEM_VERSION}/
 
 cd /sw/rl8/zen/app/ANSYS-EM/${ANSYSEM_VERSION}/v231/Linux64
 cp VerifyOS.bash VerifyOS.bash.orig 
-evho "exit 0" > VerifyOS.bash 
+echo "exit 0" > VerifyOS.bash 
 # Create a module : /sw/rl8/zen/mod/all/ANSYS-EM/${ANSYS-EM_VERSION}
 # Check the path to the license server
 ```
