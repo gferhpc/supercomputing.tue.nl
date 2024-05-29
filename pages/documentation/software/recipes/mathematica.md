@@ -1,8 +1,9 @@
-# Mathematica
+---
+title: Mathematica
+tags: [Software, Module]
+---
 
-It is straightforward to run
-[Mathematica](https://www.wolfram.com/mathematica/){:target=_blank} scripts on the
-cluster:
+[Mathematica](https://www.wolfram.com/mathematica/){:target=_blank} 
 
 ```slurm
 
