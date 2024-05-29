@@ -12,7 +12,7 @@ cd /local/ANSYS-EM
 tar -xzf ../ELECTRONICS_${ANSYS-EM_VERSION}_LINX64.tgz
 cd Electronics_231_linx64
 mv VerifyOS.bash VerifyOS.bash.orig 
-evho "exit 0" > VerifyOS.bash 
+echo "exit 0" > VerifyOS.bash 
 mkdir /sw/rl8/zen/app/ANSYS-EM/${ANSYS-EM_VERSION}/
 ./install
     installpath: /sw/rl8/zen/app/ANSYS-EM/${ANSYS-EM_VERSION}
