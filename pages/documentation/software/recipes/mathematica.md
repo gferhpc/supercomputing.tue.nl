@@ -5,6 +5,7 @@ It is straightforward to run
 cluster:
 
 ```slurm
+
 #!/bin/bash
 #SBATCH --job-name=test_mathematica
 #SBATCH --output=test.mathematica-%j.log
@@ -22,12 +23,11 @@ math -script sample-script.wl
 ??? example "sample-script.wl"
   
   ```mathematica
-  A = Sum[i, {i,1,100}]
-  B = Mean[{25, 36, 22, 16, 8, 42}]
-  Answer = A + B
-  Quit[];
+    A = Sum[i, {i,1,100}]
+    B = Mean[{25, 36, 22, 16, 8, 42}]
+    Answer = A + B
+    Quit[];
   ```
-
 
 in a Slurm batch script is all you need. However, these scripts will
 only use a single core. To fully leverage the parallel character of the
