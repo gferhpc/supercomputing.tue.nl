@@ -2,7 +2,26 @@
 
 It is straightforward to run
 [Mathematica](https://www.wolfram.com/mathematica/){:target=_blank} scripts on the
-cluster: `module load mathematica` followed by `math -script script.wl`
+cluster:
+
+```slurm
+#!/bin/bash
+#SBATCH --job-name=test_mathematica
+#SBATCH --output=test.mathematica-%j.log
+#SBATCH --partition=tue.default.q
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=4
+#SBATCH --mem-per-cpu=2gb
+#SBATCH --time=00:05:00
+module purge
+module load Mathematica/14.0.0
+math -script script.wl
+```
+
+
+
+
 in a Slurm batch script is all you need. However, these scripts will
 only use a single core. To fully leverage the parallel character of the
 HPC cluster, one can/should use (remote) subkernels. This can be done by
