@@ -1,4 +1,4 @@
-# Installation
+# Installation Prod
 
 | Nodes                     |      IPMI      |   Internal IP   | External IP (DHCP) |
 |:--------------------------|:--------------:|:---------------:|:------------------:|
