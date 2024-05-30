@@ -29,9 +29,11 @@ TU/e-side switch ports:
 ### TU/e
 
 - Subnet: 131.155.2.0/24 --- `computerzaal`
+    - 131.155.2.1 `gateway`
     - 131.155.2.50 `hpc-cluster.icts.tue.nl`
     - 131.155.2.51 `hpc-primary.icts.tue.nl`
     - 131.155.2.52 `hpc-secondary.icts.tue.nl`
+    - 131.155.2.53 `tue-login001.icts.tue.nl`
 - Subnet: 131.155.11.224/27 --- `netwerk servers misc`
     - 131.155.11.234 `tue-login001.icts.tue.nl`
 - Subnet: 131.155.7.96/27 --- `TUe-HPC`
