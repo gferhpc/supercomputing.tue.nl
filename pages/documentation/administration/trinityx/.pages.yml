@@ -1,14 +1,15 @@
 nav:
-  - 1. Installation: installation.md
-  - 2. Node Provisioning: provisioning.md
-  - 3. Infiniband: infiniband.md
-  - 4. MIG: mig.md
-  - 5. Users : users.md
-  - 6. SMTP : smtp.md
-  - 7. SLURM: slurm.md
-  - 8. VIP HA: keepalived.md
-  - 9. NTP HA: ntp.md
-  - 10. DNS HA : dns.md
-  - 11. Storage: storage.md
-  - 12. Software: modules.md
+  - 1. Installation Prod: installation.md
+  - 2. Installation Test: installation_test.md
+  - 3. Node Provisioning: provisioning.md
+  - 4. Infiniband: infiniband.md
+  - 5. MIG: mig.md
+  - 6. Users : users.md
+  - 7. SMTP : smtp.md
+  - 8. SLURM: slurm.md
+  - 9. VIP HA: keepalived.md
+  - 10. NTP HA: ntp.md
+  - 11. DNS HA : dns.md
+  - 12. Storage: storage.md
+  - 13. Software: modules.md
   - ...
