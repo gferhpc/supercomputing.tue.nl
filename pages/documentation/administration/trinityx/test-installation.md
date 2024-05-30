@@ -1,9 +1,13 @@
 # Installation
 
-| Nodes                     |      iDrac0    |   Internal IP   | External IP (DHCP) |
-|:--------------------------|:--------------:|:---------------:|:------------------:|
-| test-head01               | 172.16.108.11  |       ?         |         ?          |
-| test-head02               | 172.16.108.12  |       ?         |         ?          |
+| Nodes                 |      iDrac0    |   Internal IP   | External IP (DHCP) |       FKA       |
+|:----------------------|:--------------:|:---------------:|:------------------:|:----------------:
+| test-head01           | 172.16.108.11  |       ?         |         ?          | hpc-primary     |
+| test-head02           | 172.16.108.12  |       ?         |         ?          | hpc-secondary   |
+| test-login001         | 172.16.108.150 |       ?         |         ?          | tue-login001    |
+| test-compute001       | 172.16.108.161 |       ?         |         ?          | tue-computea001 | 
+| test-compute002       | 172.16.108.162 |       ?         |         ?          | tue-computea001 | 
+
 
 ## Requirements
 
