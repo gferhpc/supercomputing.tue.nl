@@ -12,7 +12,7 @@ tags: [Software, Module]
 #SBATCH --partition=tue.default.q
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=4
+#SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=2gb
 #SBATCH --time=00:05:00
 module purge
