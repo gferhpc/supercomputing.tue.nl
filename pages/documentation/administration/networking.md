@@ -28,22 +28,20 @@ TU/e-side switch ports:
 
 ### TU/e
 
-- Subnet: 131.155.2.0/24 --- `computerzaal`
+- Subnet: 131.155.2.0/24 --- VLAN 2 `computerzaal`
     - 131.155.2.1 `gateway`
     - 131.155.2.50 `hpc-cluster.icts.tue.nl`
     - 131.155.2.51 `hpc-primary.icts.tue.nl`
     - 131.155.2.52 `hpc-secondary.icts.tue.nl`
     - 131.155.2.53 `tue-login001.icts.tue.nl`
-- Subnet: 131.155.11.224/27 --- `netwerk servers misc`
-    - 131.155.11.234 `tue-login001.icts.tue.nl`
-- Subnet: 131.155.7.96/27 --- `TUe-HPC`
+- Subnet: 131.155.7.96/27 --- VLAN 422 `TUe-HPC`
     - 131.155.7.96–127
     - 131.155.7.102–126 usable
     - 131.155.7.102 `hpc-head01.icts.tue.nl`
     - 131.155.7.103 `hpc-head02.icts.tue.nl`
     - 131.155.7.104 `hpc-vip.icts.tue.nl`
     - 131.155.7.109 `tue-login002.icts.tue.nl`
-- Subnet: 172.16.108.0/23 — `Mgmt-Infra-TUe-HPC` (VLAN 301)
+- Subnet: 172.16.108.0/23 — VLAN 301 `Mgmt-Infra-TUe-HPC`
     - 172.16.108.240–255 — `hpc-vast-mgmt-1..16.infra.tue.nl` (C2402488)
         - hpc-vast-mgmt-1: VIP for web interface
 
