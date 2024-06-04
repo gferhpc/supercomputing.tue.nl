@@ -7,12 +7,12 @@ Copy ISO's to /local/ of the login node.
 
 As easybuild
 
-Create `~/easybuild/a/ANSYS/ANSYS-2014R1.eb` by copying a previous version.
+Create `~/easybuild/a/ANSYS/ANSYS-<VERSION>.eb` by copying a previous version.
 
 ```shell
 cd ~/easybuild/a/ANSYS/
 eb_env prod
 export EASYBUILD_SOURCEPATH=/local/
-eb ANSYS-2014R1.eb --inject-checksums
-eb ANSYS-2024R1.eb
+eb ANSYS-<VERSION>.eb --inject-checksums
+eb ANSYS-<VERSION>.eb
 ```
