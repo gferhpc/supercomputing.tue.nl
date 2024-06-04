@@ -21,4 +21,4 @@ chown -R easybuild:umbrella /sw/rl8/zen/app/Lumerical/<LUM_VERSION>
 
 ### As easybuild on login node
 
-Create a module : /sw/rl8/zen/mod/all/Lumerical/<LUM_VERSION>.lua
+Create a module : `/sw/rl8/zen/mod/all/Lumerical/<LUM_VERSION>.lua`
