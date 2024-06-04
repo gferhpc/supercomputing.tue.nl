@@ -5,7 +5,7 @@
 Download ISOs (3) from ANSYS download center (needs login) 
 Copy ISO's to /local/ of the login node.
 
-As easybuild
+As easybuild on loging node.
 
 Create `~/easybuild/a/ANSYS/ANSYS-<VERSION>.eb` by copying a previous version.
 
