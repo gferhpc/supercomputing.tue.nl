@@ -13,4 +13,6 @@ Create `~/easybuild/a/ANSYS/ANSYS-2014R1.eb` by copying a previous version.
 cd ~/easybuild/a/ANSYS/
 export EASYBUILD_SOURCEPATH=/local/ANSYS/
 eb ANSYS-2014R1.eb --inject-checksums
+eb_env prod
+eb ANSYS-2024R1.eb
 ```
