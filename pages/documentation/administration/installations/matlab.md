@@ -2,8 +2,9 @@
 
 **VERSION=2024a_Update_3**
 
-Request ISO (1) from LIS Workplace Management 
-Copy ISO's to /local/ of the login node.
+Request ISO (1) from LIS Workplace Management
+Generate Key on Matlab website (need login)
+Copy ISO to /local/ of the login node.
 
 As easybuild
 
