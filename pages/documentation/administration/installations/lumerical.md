@@ -1,12 +1,13 @@
 # ANSYS Lumerical
 
+**VERSION=2024-R1.3**
+
 - Download Lumercal for ANSYS lumerical site (login to ANSYS needed)
 - Copy tat.gz to /local on login node
 
 ### As easybuild on login node
 
 ```shell
-export LUM_VERSION=2024-R1.3
 cd /local
 tar -zxvf Lumerical*.tar.gz
 cd Lumerical*/rpm_install_files
