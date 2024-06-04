@@ -1,10 +1,24 @@
-# Lumerical
+# ANSYS Lumerical
+
+- Download Lumercal for ANSYS lumerical site (login to ANSYS needed)
+- Copy tat.gz to /local on login node
+
+### As easybuild on login node
 
 ```shell
-export LUM_VERSION=2023.R1.2
+export LUM_VERSION=2024-R1.3
 cd /local
 tar -zxvf Lumerical*.tar.gz
 cd Lumerical*/rpm_install_files
-rpm -ivh --prefix=/cm/shared/apps/lumerical/${LUM_VERSION}/ Lumerical*.el7.x86_64.rpm
-#Create a module : /cm/shared/modulefiles/lumerical/${LUM_VERSION}
+mkdir /sw/rl8/zen/app/Lumerical/<LUM_VERSION>
 ```
+
+### As root on the login node
+```shell
+rpm -ivh --prefix=/sw/rl8/zen/app/Lumerical/<LUM_VERSION>/ Lumerical*.el7.x86_64.rpm
+chown -R easybuild:umbrella /sw/rl8/zen/app/Lumerical/<LUM_VERSION>
+```
+
+### As easybuild on login node
+
+Create a module : /sw/rl8/zen/mod/all/Lumerical/<LUM_VERSION>.lua
