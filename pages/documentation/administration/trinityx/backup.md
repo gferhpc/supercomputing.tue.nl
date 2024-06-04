@@ -16,7 +16,7 @@ phys-storage001# zfs create tank/backup
 tue-storage001# cat >> /etc/cron.hourly/backup << EOF
 #!/usr/bin/bash
 
-rsync -avz --delete /tank/sw /tank/trinity /tank/ohpc /tank/cmshared/ phys-storage001:/tank/backup/
+ionice -c3 rsync -avz --delete --rsync-path='ionice -c3 rsync' /tank/sw /tank/trinity /tank/ohpc /tank/cmshared phys-storage001:/tank/backup/
 EOF
 
 tue-storage001# chmod u+x /etc/cron.hourly/backup
