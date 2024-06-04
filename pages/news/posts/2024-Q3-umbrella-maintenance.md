@@ -9,6 +9,7 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
 
 * dept. login nodes uitzetten
 * switch firmwares updaten
+    * check what updates can be done without screwing up BIOSes and having to RMA
 * tweede login node inzetten
 * TU/e-subnet naar HPC-infra verhuizen
 * VAST in gebruik nemen
@@ -18,3 +19,7 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
 * storage nodes naar centrale rack?
 * users chgrp'en naar umbrella group
 * OpenMPI opnieuw installeren met juiste PMIX settings (zie M24033369)
+* prolog/epilog:
+   * replace by Python scripts
+   * move `$SLURM_TMPDIR` to /local
+   * unmount before cleaning `$SLURM_TMPDIR` - see Guus's Python script
