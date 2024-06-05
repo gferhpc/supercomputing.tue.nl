@@ -5,7 +5,7 @@ tags: [Software, Module]
 
 [ANSYS Lumerical](https://www.ansys.com/products/optics){:target="_blank"}, part of the ANSYS Optics suite, is an optics simulation package.
 
-## ANSYS Lumerical FDTD OpenMPI jobscript example
+## Running ANSYS Lumerical FDTD in Slurm batch jobs using intelMPI
 ```
 #!/bin/bash
 #
