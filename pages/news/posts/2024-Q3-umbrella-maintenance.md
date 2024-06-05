@@ -23,3 +23,5 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
    * replace by Python scripts
    * move `$SLURM_TMPDIR` to /local
    * unmount before cleaning `$SLURM_TMPDIR` - see Guus's Python script
+* dnf update all
+* slurm user filesystem namespaces (Guus must test first)
