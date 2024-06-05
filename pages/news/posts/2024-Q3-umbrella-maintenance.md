@@ -25,3 +25,4 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
    * unmount before cleaning `$SLURM_TMPDIR` - see Guus's Python script
 * dnf update all
 * slurm user filesystem namespaces (Guus must test first)
+* install/enable/start lldpd
