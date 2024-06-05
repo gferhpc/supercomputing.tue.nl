@@ -54,6 +54,8 @@ mkdir -p /scratch/chem001
 ```shell
 dnf -y install epel-release https://zfsonlinux.org/epel/zfs-release-2-3.el8.noarch.rpm
 dnf -y update
+dnf -y remove mlocate
+dnf -y install iotop iftop
 dnf -y install zfs nfs-utils
 systemctl enable --now nfs-server.service
 firewall-cmd --add-service={nfs,nfs3,mountd,rpc-bind} --permanent
