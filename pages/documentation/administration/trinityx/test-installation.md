@@ -59,9 +59,10 @@ IPs: partially [here](../networking.md)
     **Post-installation**
 
     ```bash
+    dnf -y update
+
     nmcli conn add \
 	type vlan \
-	ifname '*' \
 	con-name int \
 	dev bond0 \
 	id 141 \
@@ -73,5 +74,8 @@ IPs: partially [here](../networking.md)
 	con-name mgmt \
 	ip4 172.16.108.1x/23 \  # Use correct IP!
 	ipv6.method disabled
+
+    dnf -y install lldpd
+    systemctl enable --now lldpd
     ```
 
