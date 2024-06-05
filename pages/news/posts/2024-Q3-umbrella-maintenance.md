@@ -26,3 +26,5 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
 * dnf update all
 * slurm user filesystem namespaces (Guus must test first)
 * install/enable/start lldpd
+
+-> check old maintenance logs to see what we postponed
