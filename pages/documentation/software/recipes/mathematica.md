@@ -19,10 +19,10 @@ tags: [Software, Module]
 #SBATCH --time=00:05:00
 module purge
 module load Mathematica/14.0.0
-math -script sample-script.wl
+math -script sample-simple.wl
 ```
 
-??? example "sample-script.wl"
+??? example "sample-simple.wl"
   
     ```mathematica
 
@@ -32,6 +32,38 @@ math -script sample-script.wl
     Quit[];
 
     ```
+
+## Using Multiple CPUs with Mathematica in Slurm batch jobs
+
+Mathematica can be run in parallel using the built in Parallel commands or by utilizing the parallel API. Parallel Mathematica jobs are limited to one node, but can utilize all CPU cores on the node. Here we request and use eight cores:
+
+```slurm
+#!/bin/bash
+#SBATCH --job-name=test_mathematica
+#SBATCH --output=test.mathematica-%j.log
+#SBATCH --partition=tue.default.q
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=8
+#SBATCH --mem-per-cpu=2gb
+#SBATCH --time=00:05:00
+module purge
+module load Mathematica/14.0.0
+math -script sample-parallel.wl
+```
+??? example "sample-parallel.wl"
+  
+    ```mathematica
+
+    (*Prints the machine name that each kernel is running on*)
+    Print[ParallelEvaluate[$MachineName]];
+
+    (*Prints all Mersenne Prime numbers less than 2000*)
+    Print[Parallelize[Select[Range[2000],PrimeQ[2^#-1]&]]];
+
+    ```
+
+
 
 
 in a Slurm batch script is all you need. However, these scripts will
