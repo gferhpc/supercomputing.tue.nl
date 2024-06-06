@@ -2,15 +2,15 @@
 
 IPs: partially [here](../networking.md)
 
-| Nodes                 |      iDrac0    |  Int. mgmt IP  |   Internal IP  | External IP   |       FKA       |
-|:----------------------|:--------------:|:--------------:|:--------------:|:-------------:|:----------------:
-| (subnet masks)        |     (/23)      |     (/23)      |     (/16)      |     (/24)     |        -        |
-| test-head01           | 172.16.108.11  | 172.16.108.13  | 10.141.255.254 | 131.155.2.51  | hpc-primary     |
-| test-head02           | 172.16.108.12  | 172.16.108.14  | 10.141.255.253 | 131.155.2.52  | hpc-secondary   |
-| test-vip              |       -        |       -        | 10.141.255.252 | 131.155.2.50  | hpc-cluster     |
-| test-login001         | 172.16.108.150 |       -        |       ?        | 131.155.2.53  | tue-login001    |
-| test-compute001       | 172.16.108.161 |       -        |       ?        |      ?        | tue-computea001 |
-| test-compute002       | 172.16.108.162 |       -        |       ?        |      ?        | tue-computea001 |
+| Nodes                 |      iDrac0    |  Int. mgmt IP  |   Internal IP  | External IP   |
+|:----------------------|:--------------:|:--------------:|:--------------:|:-------------:|
+| (subnet masks)        |     (/23)      |     (/23)      |     (/16)      |     (/24)     |
+| test-head01           | 172.16.108.11  | 172.16.108.13  | 10.141.255.254 | 131.155.2.51  |
+| test-head02           | 172.16.108.12  | 172.16.108.14  | 10.141.255.253 | 131.155.2.52  |
+| test-vip              |       -        |       -        | 10.141.255.252 | 131.155.2.50  |
+| test-login001         | 172.16.108.150 |       -        |       ?        | 131.155.2.53  |
+| test-compute001       | 172.16.108.161 |       -        |       ?        |      ?        |
+| test-compute002       | 172.16.108.162 |       -        |       ?        |      ?        |
 
 ## Requirements
 
@@ -78,4 +78,3 @@ IPs: partially [here](../networking.md)
     dnf -y install lldpd
     systemctl enable --now lldpd
     ```
-
