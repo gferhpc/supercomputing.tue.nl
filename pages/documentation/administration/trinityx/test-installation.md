@@ -62,18 +62,18 @@ IPs: partially [here](../networking.md)
     dnf -y update
 
     nmcli conn add \
-	type vlan \
-	con-name int \
-	dev bond0 \
-	id 141 \
-	ip4 10.141.255.25x/16 \   # Use correct IP!
-	ipv6.method disabled
+        type vlan \
+        con-name int \
+        dev bond0 \
+        id 141 \
+        ip4 10.141.255.25x/16 \   # Use correct IP!
+        ipv6.method disabled
     nmcli conn add \
-	type ethernet \
-	ifname eno1 \
-	con-name mgmt \
-	ip4 172.16.108.1x/23 \  # Use correct IP!
-	ipv6.method disabled
+        type ethernet \
+        ifname eno1 \
+        con-name mgmt \
+        ip4 172.16.108.1x/23 \  # Use correct IP!
+        ipv6.method disabled
 
     dnf -y install lldpd
     systemctl enable --now lldpd
