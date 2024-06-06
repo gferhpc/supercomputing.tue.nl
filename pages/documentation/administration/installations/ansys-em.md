@@ -2,7 +2,7 @@
 
 **VERSION=2023R1**
 
-From your laptop copy ELECTRONICS_${ANSYS-EM_VERSION}_LINX64.tgz to /local of the login node.
+From your laptop copy `ELECTRONICS_${ANSYS-EM_VERSION}_LINX64.tgz` to `/local` of the login node.
 
 As easybuild on login node with X forwarding enabled:
 
