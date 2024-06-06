@@ -27,3 +27,5 @@ echo "exit 0" > VerifyOS.bash
 # Create a module : /sw/rl8/zen/mod/all/ANSYS-EM/${ANSYS-EM_VERSION}
 # Check the path to the license server
 ```
+
+The module files for ANSYS-EM/<VERSION> need to be created.
