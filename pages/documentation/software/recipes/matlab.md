@@ -17,7 +17,7 @@ Load the module(s)
 Check if the licenses are availble:
 
 ```shell
-[user@umbrella]$ matlab -dmlworker -nodisplay -logfile ./ver_output.txt -r "ver;exit"
+[user@umbrella]$ matlab -dmlworker -nodisplay -r "ver;exit"
 ```
 
 Output to screen should start with: 
@@ -30,7 +30,6 @@ Java Version: Java 1.8.0_202-b08 with Oracle Corporation Java HotSpot(TM) 64-Bit
 -----------------------------------------------------------------------------------------------------
 MATLAB                                                Version 24.1        (R2024a)
 ```
-Just like the file ver_output.txt with all the output as content
 
 ## SBATCH
 
