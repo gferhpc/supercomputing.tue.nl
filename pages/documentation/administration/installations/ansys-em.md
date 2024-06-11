@@ -1,13 +1,14 @@
 # ANSYS ElectroMagnetics
 
-**VERSION=2023R1**
+**VERSION=2024R1**
+**SHORT_VERSION=241**
 
 From your laptop copy `ELECTRONICS_${VERSION}_LINX64.tgz` to `/local` of the login node.
 
 As easybuild on login node with X forwarding enabled:
 
 ```shell
-export ANSYSEM_VERSION=2023R1
+export ANSYSEM_VERSION=202R1
 cd /local/ANSYS-EM
 tar -xzf ../ELECTRONICS_${VERSION}_LINX64.tgz
 cd Electronics_231_linx64
@@ -18,7 +19,7 @@ mkdir /sw/rl8/zen/app/ANSYS-EM/${VERSION}/
     Install Electromagnetcs Suite
     installpath: /sw/rl8/zen/app/ANSYS-EM/${VERSION}
     use /tmp (no read/write for all)
-    shared application: /sw/rl8/zen/app/ANSYS-EM/${VERSION}
+    shared application: /sw/rl8/zen/app/ANSYS-EM/${VERSION}/ ${SHORT_VERSION}/Linux64
     license server: ansys-research.lic.tue.nl 1055
 
 cd /sw/rl8/zen/app/ANSYS-EM/${VERSION}/v231/Linux64
