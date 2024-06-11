@@ -1,6 +1,7 @@
 # ANSYS ElectroMagnetics
 
 **VERSION=2024R1**
+
 **SHORT_VERSION=241**
 
 From your laptop copy `ELECTRONICS_${VERSION}_LINX64.tgz` to `/local` of the login node.
@@ -8,7 +9,6 @@ From your laptop copy `ELECTRONICS_${VERSION}_LINX64.tgz` to `/local` of the log
 As easybuild on login node with X forwarding enabled:
 
 ```shell
-export ANSYSEM_VERSION=202R1
 cd /local/ANSYS-EM
 tar -xzf ../ELECTRONICS_${VERSION}_LINX64.tgz
 cd Electronics_231_linx64
