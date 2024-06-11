@@ -1,6 +1,39 @@
 ---
 title: MATLAB
+tags: [Software, Module]
 ---
+
+[MATLAB by MAthWorks](https://nl.mathworks.com/products/matlab.html){:target="_blank"}
+
+## Test MATLAB
+
+Load the module(s)
+
+```shell 
+[user@umbrella]$ module purge
+[user@umbrella]$ module load MATLAB/2024a_Update_3
+```
+
+Check if the licenses are availble:
+
+```shell
+matlab -dmlworker -nodisplay -logfile ./ver_output.txt -r "ver;exit"
+```
+
+Output to screen should start with: 
+```shell
+-----------------------------------------------------------------------------------------------------
+MATLAB Version: 24.1.0.2603908 (R2024a) Update 3
+MATLAB License Number: 284992
+Operating System: Linux 4.18.0-513.11.1.el8_9.x86_64 #1 SMP Wed Jan 10 22:58:54 UTC 2024 x86_64
+Java Version: Java 1.8.0_202-b08 with Oracle Corporation Java HotSpot(TM) 64-Bit Server VM mixed mode
+-----------------------------------------------------------------------------------------------------
+MATLAB                                                Version 24.1        (R2024a)
+```
+Just like the file ver_output.txt with all the output as content
+
+## SBATCH
+
 
 ## Example 1
 To use Matlab, simply load the module. You do however need to pass some
