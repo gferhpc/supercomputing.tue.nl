@@ -17,11 +17,11 @@ Load the module(s)
 Check if the licenses are availble:
 
 ```shell
-matlab -dmlworker -nodisplay -logfile ./ver_output.txt -r "ver;exit"
+[user@umbrella]$ matlab -dmlworker -nodisplay -logfile ./ver_output.txt -r "ver;exit"
 ```
 
 Output to screen should start with: 
-```shell
+```output
 -----------------------------------------------------------------------------------------------------
 MATLAB Version: 24.1.0.2603908 (R2024a) Update 3
 MATLAB License Number: 284992
