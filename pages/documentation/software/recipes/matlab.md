@@ -3,7 +3,7 @@ title: MATLAB
 tags: [Software, Module]
 ---
 
-[MATLAB by MAthWorks](https://nl.mathworks.com/products/matlab.html){:target="_blank"}
+[MATLAB by MAthWorks](https://nl.mathworks.com/products/matlab.html){:target="_blank"} is a programming and numeric computing platform used by millions of engineers and scientists to analyze data, develop algorithms, and create models.
 
 ## Test MATLAB
 
