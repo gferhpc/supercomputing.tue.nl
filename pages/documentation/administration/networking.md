@@ -41,6 +41,11 @@ TU/e-side switch ports:
     - 131.155.7.103 `hpc-head02.icts.tue.nl`
     - 131.155.7.104 `hpc-vip.icts.tue.nl`
     - 131.155.7.109 `tue-login002.icts.tue.nl`
+- Subnet: 131.155.x.x --- miscellaneous public IP addresses
+    - 131.155.0.100 `phys-login001.phys.tue.nl`
+    - 131.155.11.238 `mcs-login001.win.tue.nl`
+    - 131.155.11.240 `chem-login001.chem.tue.nl`
+    - 131.155.11.242 `arch-login001.bwk.tue.nl`
 - Subnet: 172.16.108.0/23 — VLAN 301 `Mgmt-Infra-TUe-HPC`
     - 172.16.108.240–255 — `hpc-vast-mgmt-1..16.infra.tue.nl` (C2402488)
         - hpc-vast-mgmt-1: VIP for web interface
