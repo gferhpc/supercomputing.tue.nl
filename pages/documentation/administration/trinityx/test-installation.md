@@ -101,7 +101,6 @@ Clone the TrinityX github repo
 git clone https://github.com/clustervision/trinityX.git /root/trinityX
 cd /root/trinityX
 git reset --hard 46538e9ab326c8249d9170be023de7b17bb42e49
-bash prepare.sh
 ```
 
 ### Configure environment (test-head01 only)
@@ -130,3 +129,27 @@ Review and edit the contents of the `all.yml` file accordingly, notable settings
 | firewalld_trusted_interfaces | `[bond0.141]`                 | List of trusted interfaces to use for the cluster.          |
 | el8_openhpc_repositories     | `OpenHPC/2/update.2.6.2/EL_8` | Activate latest update to OpenHPC 2.6                       |
 
+```shell
+cp site/hosts.example site/hosts
+```
+
+Review and edit the contents of the `hosts` file accordingly.
+
+```ini
+[controllers]
+hpc-head01 ansible_host=10.141.255.254 ansible_connection=local
+#hpc-head02 ansible_host=10.141.255.253
+```
+
+### Installation (test-head01 only)
+
+Install dependencies
+```shell
+cd /root/trinityX
+bash prepare.sh
+```
+Run the ansible-playbook
+```shell
+cd /root/trinityX/site
+ansible-playbook controller.yml
+```
