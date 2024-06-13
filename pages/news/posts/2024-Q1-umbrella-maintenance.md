@@ -67,17 +67,17 @@ Kortom, het is mogelijk om de storage nodes los te koppelen van Bright en te kun
 * [x] tue-login001: connect to test cluster for testing
 * [ ] cgroup/ulimit per user
 * [x] Ansible script for OOD install on a specific login node (login001).
-* [ ] Install OOD/Certs to use https://hpc.tue.nl
+* [x] Install OOD/Certs to use https://hpc.tue.nl
 ---
-* [ ] **GPU image for TrinityX**
+* [x] **GPU image for TrinityX**
 * [x] connect id-gpu for testing to test cluster
 * [x] create GPU osimage (and group) with nvida-drivers Rocky8
 * [x] test image on node (nvidia-smi)
 * [x] create GPU osimage with nvidia 470 Drivers Rocky 8 for elec-gpuB001 : gpu-470drv
 * [x] test slurm (--gpus=) GPU reservation on gpu-node  (Guus tested with his gpu-test1.job)
 ---
-* [ ] **test job submission as mortal user (submit, wait, see results)**
-* [ ] test OOD GUI session
+* [x] **test job submission as mortal user (submit, wait, see results)**
+* [x] test OOD GUI session
 ---
 * [x] **mail**
 * [x] configure postfix relay on heads
@@ -93,17 +93,17 @@ Kortom, het is mogelijk om de storage nodes los te koppelen van Bright en te kun
 * [ ] **DHCP**
 * [ ] implement active-active dhcpd
 ---
-* [/] **NTP**
+* [x] **NTP**
 * [x] ntpd on both head nodes
-* [ ] ntp config in compute images
+* [x] ntp config in compute images
 ---
-* [ ] **Munge**
-* [ ] munged on both head nodes
-* [ ] test
+* [x] **Munge**
+* [x] munged on both head nodes
+* [x] test
 ---
-* [ ] **Slurm controller**
+* [x] **Slurm controller**
 * [x] test: who adds nodes to slurm config?  TrinityX or no-one: answer is no-one.
-* [ ] write the actual config
+* [x] write the actual config
 ---
 * [x] **Slurm DBD**
 * [x] for now we worry not about HA; we try to make the underlaying DB HA
@@ -112,9 +112,9 @@ Kortom, het is mogelijk om de storage nodes los te koppelen van Bright en te kun
 * [x] We postpone this to next maintenance
 ---
 * [ ] **software installation**
-* [ ] keep /cm/shared only for old software
+* [x] keep /cm/shared only for old software
 * [ ] make path plan for installations in /sw
-* [ ] put new installations in /sw on tue-storage001
+* [x] put new installations in /sw on tue-storage001
 ---
 * [ ] **configure regular backups of databases etc.**
 * [ ] MariaDB
@@ -126,35 +126,35 @@ Kortom, het is mogelijk om de storage nodes los te koppelen van Bright en te kun
 * [ ] compute images
 * [ ] head nodes /etc
 ---
-* [ ] **configure InfiniBand**
-* [ ] run OpenSM on at least a few compute nodes per fabric
+* [x] **configure InfiniBand**
+* [x] run OpenSM on at least a few compute nodes per fabric
 
 ### Rest
 
 * Make network plan: which switch where
 * Make VLAN/network config plan
 
-* [ ] connect head1/2 to mgmt VLAN
-* [ ] put mgmt switch in/close to X05
-* [ ] connect X05/06 mgmt to switch in X05
+* [x] connect head1/2 to mgmt VLAN
+* [x] put mgmt switch in/close to X05
+* [x] connect X05/06 mgmt to switch in X05
 	(does network want to get rid of FEX in X07?)
-* [ ] put mgmt switch in W11
+* [x] put mgmt switch in W11
 
 ## Maintenance Plan
 
-* Configure VLAN
-* Replace Physical Head node(s)
-* Replace Bright Clustermanger with TrinityX
-* Update OS login/compute/gpu nodes
-* Update EasyBuild Applications/toolchains
-* Update Firmware
-* Fix mgmt on arch-switch001
-* [ ] upgrade tue-storage001 to 10 Gbit
+* [x] Configure VLAN
+* [x] Replace Physical Head node(s)
+* [x] Replace Bright Clustermanger with TrinityX
+* [x] Update OS login/compute/gpu nodes
+* [x] Update EasyBuild Applications/toolchains
+* [x] Update Firmware
+* [x] Fix mgmt on arch-switch001
+* [x] upgrade tue-storage001 to 10 Gbit
 
 ## Post-maintenance
 
-* Remove TUe-side connections of storage nodes
-* Deregister storage node MAC addresses
+* [x] Remove TUe-side connections of storage nodes
+* [x] Deregister storage node MAC addresses
 * [x] Deregister storage nodes from Zabbix (already done)
 
 * write script to periodically cleanup old osimage packs in: /trinity/local/luna/files
@@ -179,7 +179,5 @@ New Head Nodes:
 
 # Maintenance log:
 
-* tue-storage001: attempted to convert from PXE boot to disk boot, but failed.  Instead, installed a fresh Rocky 8.
 * tue-storage001: at each boot needs manual intervention: issue with PCIe device: PCIe link training failure observed in slot 3.
-* head01: doesn't boot correctly: missing TU/e interface: maybe firewall issue
 * head01/02: firewalld configs are very different; should be the same.
