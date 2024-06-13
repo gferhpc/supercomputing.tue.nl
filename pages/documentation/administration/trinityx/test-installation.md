@@ -118,7 +118,7 @@ Review and edit the contents of the `all.yml` file accordingly, notable settings
 | project_id                   | `test-umbrella`               | Project ID                                                  |
 | ha                           | `false` (default)             | High Availability; _MUST remain `false` at time of writing_ |
 | trix_ctrl1_ip                | `10.141.255.254 `             | IP controller node in Cluster Network                       |
-| trix_ctrl1_bmcip             | `172.16.108.??`               | IP controller node in BMC Network                           |
+| trix_ctrl1_bmcip             | `172.16.108.13`               | IP controller node in BMC Network                           |
 | trix_ctrl1_hostname          | `test-head01`                 | Hostname                                                    |
 | trix_cluster_net.            | `10.141.0.0`                  | Cluster (Private) Network                                   | 
 | trix_cluster_netprefix.      | `16`                          | CIDR of Cluster Network                                     |
