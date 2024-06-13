@@ -37,15 +37,19 @@ Windows storage, which would hinder everyone working at TU/e.
 1.  [Connect](../access/index.md) to any
     of the cluster's login nodes.
 2.  Connect to the Windows file share using the following command:
+    ```
     smbclient -U tue/20232655 //campushome.campus.tue.nl/20232655
-
+    ```
     and enter your password when prompted.
 
     Note: you need to use the appropriate username! If you want to
     connect to a non-centrally managed storage, such as a research group
     NAS, you may need to use a different username and password!
+
 3.  The `smbclient` tool now shows you the following prompt:
+    ```
     smb: \>
+    ```
 
 ### Navigating the Windows file share
 
