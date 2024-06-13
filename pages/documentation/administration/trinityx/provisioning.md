@@ -87,6 +87,21 @@ luna osimage change -ver "4.18.0-513.18.1.el8_9.x86_64" NAME
 ```shell
 luna osimage pack NAME
 ```
+## ALL images additions
+
+```shell
+dnf -y install pam-devel
+dnf -y install p7zip-plugins
+dnf -y install TurboVNC # Needs repo
+dnf -y install p7zip-plugins
+dnf -y remove xfce4-power-manager xfce4-screensaver
+dnf -y install libXScrnSaver 
+dnf -y install nano 
+dnf -y install freeglut mesa-libGLU ncurses-compat-libs redhat-lsb 
+dnf -y install xcb-util-image xcb-util-keysyms xcb-util-renderutil xcb-util-wm
+dnf -y install libglvnd-devel
+rm -rf /etc/xdg/autostart/xfce-polkit.desktop
+```
 
 ## GPU image additions
 
