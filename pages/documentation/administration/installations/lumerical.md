@@ -17,7 +17,7 @@ mkdir /sw/rl8/zen/app/Lumerical/<LUM_VERSION>
 ### As root on the login node
 ```shell
 rpm -ivh --prefix=/sw/rl8/zen/app/Lumerical/<LUM_VERSION>/ Lumerical*.el7.x86_64.rpm
-chown -R easybuild:umbrella /sw/rl8/zen/app/Lumerical/<LUM_VERSION>
+chown -R easybuild:easybuild /sw/rl8/zen/app/Lumerical/<LUM_VERSION>
 ```
 
 ### As easybuild on login node
