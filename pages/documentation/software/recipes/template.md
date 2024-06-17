@@ -16,11 +16,15 @@ Use your browser to connect to [Umbrella On Demand](https://hpc.tue.nl){:target=
 
 ## Test Application
 
-``` shell
-module purge
-module load Application/
+Load the modules
 
-Application --version
+``` shell
+[user@umbrella]$ module purge
+[user@umbrella]$ module load Application/
+```
+Check commandline version of Application
+```shell
+[user@umbrella]$ Application --version
 ```
 
 ### Application SLURM sbatch jobscript example using Shared Memory
@@ -37,7 +41,7 @@ Application --version
 #SBATCH --time=00:05:00
 
 module purge
-module load 
+module load Application
 
 cd $HOME/Jobs/Application
 ```
