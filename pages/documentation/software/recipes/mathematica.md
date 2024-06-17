@@ -5,9 +5,9 @@ tags: [Software, Module]
 
 [Wolfram Mathematica](https://www.wolfram.com/mathematica/){:target=_blank} a is a software system with built-in libraries for several areas of technical computing that allow machine learning, statistics, symbolic computation, data manipulation, network analysis, time series analysis, NLP, optimization, plotting functions and various types of data, implementation of algorithms, creation of user interfaces, and interfacing with programs written in other programming languages.
 
-## Using Mathematica interactive (Graphical User Interface)
-
 ![Mathematica in Umbrella On Demdand](mathematica-ood.png){: align=right style="height:150px"}
+
+## Using Mathematica interactive (Graphical User Interface)
 
 Use your browser to connect to [Umbrella On Demand](https://hpc.tue.nl){:target="_blank"}
 
