@@ -13,7 +13,7 @@ Use your browser to connect to [Umbrella On Demand](https://hpc.tue.nl){:target=
 
 ## Using Mathematica in SLURM batch jobs (Command Line Interface)
 
-## Test Mathematica
+### Test Mathematica
 
 Load the module(s)
 ``` shell
@@ -55,6 +55,7 @@ math -script sample-simple.wl
 
     ```
 
+
 ### Using Multiple CPUs with Mathematica in Slurm batch jobs
 
 Mathematica can be run in parallel using the built in Parallel commands or by utilizing the parallel API. Parallel Mathematica jobs are limited to one node, but can utilize all CPU cores on the node. Here we request and use eight cores:
@@ -86,7 +87,7 @@ math -script sample-parallel.wl
     ```
 
 
-
+### To Be Tested (Work In Progress)
 
 in a Slurm batch script is all you need. However, these scripts will
 only use a single core. To fully leverage the parallel character of the
