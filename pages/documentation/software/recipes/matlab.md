@@ -55,16 +55,45 @@ MATLAB                                                Version 24.1        (R2024
 module purge
 module load MATLAB/2024a_Update_3
 
-matlab -nodisplay -nosplash -nodesktop -singleCompThread -r simple.m
+matlab -nodisplay -nosplash -nodesktop -r simple.m
 ```
 
-??? example "sample-simple.wl"
+??? example "simple.m"
   
     ```matlab
 
     a=1;
     b=2;
     disp (a + b);
+
+    ```
+
+### MATLAB SLURM sbatch jobscript example using 8 CPU 
+
+```slurm
+#!/bin/bash
+#SBATCH --job-name=test_matlab
+#SBATCH --output=test_matlab-%j.log
+#SBATCH --partition=tue.default.q
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=8
+#SBATCH --mem-per-cpu=2gb
+#SBATCH --time=00:05:00
+
+module purge
+module load MATLAB/2024a_Update_3
+
+matlab -nodisplay -nosplash -nodesktop -r parallel.m
+```
+
+??? example "parallel.m"
+  
+    ```matlab
+
+    parfor idx = 1:10
+        pause(10);
+    end
 
     ```
 
