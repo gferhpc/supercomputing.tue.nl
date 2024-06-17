@@ -161,8 +161,6 @@ therefore less prone to user error.
 
 ## Method 3
 
-To be done: configure Lumerical so it can submit its own jobs. This
-speeds up e.g. parameter sweeps.
 Direct resource integration of the HPC node in the Lumerical GUI. Lumerical will handle file transfer from your PC to the HPC, run the simulation on HPC and will download the simulated file back to your PC.
 By default, the HPC node will not use the GUI license, but just a runner license.
 
