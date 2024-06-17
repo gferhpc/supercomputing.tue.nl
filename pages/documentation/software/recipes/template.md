@@ -4,9 +4,9 @@ title: Application
 tags: [Software, Module]
 ---
 
-![Application in Umbrella On Demdand](application-ood.png){: align=right style="height:250px"}
-
 [Application](URL){:target="_blank"} Small Description
+
+![Application in Umbrella On Demdand](application-ood.png){: align=right style="height:150px"}
 
 ## Using Application interactive (Graphical User Interface)
 
@@ -25,7 +25,7 @@ Application --version
 
 ### Application SLURM sbatch jobscript example using Shared Memory
 
-```
+```slurm
 #!/bin/bash
 #SBATCH --job-name=test_application
 #SBATCH --output=test_application-%j.log
@@ -40,6 +40,5 @@ module purge
 module load 
 
 cd $HOME/Jobs/Application
-
 ```
 
