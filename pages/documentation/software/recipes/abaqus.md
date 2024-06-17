@@ -8,11 +8,13 @@ tags: [Software, Module]
 [Abaqus by 3DS](https://www.3ds.com/products-services/simulia/products/abaqus/){:target="_blank"}
 is licensed software and only usable if the user is a member of the correct group.
 
-## Abaqus CAE GUI (interactive)
+## Using Abaqus interactive (Graphical User Interface)
 
 Use your browser to connect to [Umbrella On Demand](https://hpc.tue.nl){:target="_blank"}
 
-## Test Abaqus
+## Using Abaqus in SLURM batch jobs (Command Line Interface)
+
+### Test Abaqus
 
 Load the module(s)
 
@@ -55,7 +57,7 @@ Wed 27 Mar 2024 01:05:22 PM CET
 ------------------------------------------------------------
 ```
 
-## Abaqus Shared Memory jobscript example 
+### Abaqus SLURM sbatch jobscript example using Shared Memory 
 
 ```
 #!/bin/bash
