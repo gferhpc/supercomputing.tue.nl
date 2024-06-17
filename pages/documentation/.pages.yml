@@ -4,6 +4,7 @@ nav:
   - specifications.md
   - "Getting Started": steps
   - "Software": software
+  - "Datasets": datasets
   - "Advanced topics": advancedtopics
   - "Departments": departments
   - "Administration": administration
