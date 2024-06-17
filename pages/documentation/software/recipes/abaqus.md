@@ -3,12 +3,14 @@ title: Abaqus
 tags: [Software, Module]
 ---
 
+![Abaqus in Umbrella On Demdand](abaqus-ood.png){: align=right style="height:250px"}
+
 [Abaqus by 3DS](https://www.3ds.com/products-services/simulia/products/abaqus/){:target="_blank"}
 is licensed software and only usable if the user is a member of the correct group.
 
 ## Abaqus CAE GUI (interactive)
 
-Use your browser to connect to https://hpc.tue.nl
+Use your browser to connect to [Umbrella On Demand](https://hpc.tue.nl){:target="_blank"}
 
 ## Test Abaqus
 
