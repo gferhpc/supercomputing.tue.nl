@@ -7,7 +7,7 @@ is licensed software and only usable if the user is a member of the correct grou
 
 ## Using Abaqus interactive (Graphical User Interface)
 
-![Abaqus in Umbrella On Demdand](abaqus-ood.png){: align=right style="height:250px"}
+![Abaqus in Umbrella On Demdand](abaqus-ood.png){: align=right style="height:150px"}
 
 Use your browser to connect to [Umbrella On Demand](https://hpc.tue.nl){:target="_blank"}
 
