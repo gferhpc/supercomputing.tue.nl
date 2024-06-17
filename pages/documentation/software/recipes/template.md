@@ -1,0 +1,45 @@
+---
+draft: true
+title: Application
+tags: [Software, Module]
+---
+
+![Application in Umbrella On Demdand](application-ood.png){: align=right style="height:250px"}
+
+[Application](URL){:target="_blank"} Small Description
+
+## Using Application interactive (Graphical User Interface)
+
+Use your browser to connect to [Umbrella On Demand](https://hpc.tue.nl){:target="_blank"}
+
+## Using Application in SLURM batch jobs (Command Line Interface)
+
+## Test Application
+
+``` shell
+module purge
+module load Application/
+
+Application --version
+```
+
+### Application SLURM sbatch jobscript example using Shared Memory
+
+```
+#!/bin/bash
+#SBATCH --job-name=test_application
+#SBATCH --output=test_application-%j.log
+#SBATCH --partition=tue.default.q
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=4
+#SBATCH --mem-per-cpu=2gb
+#SBATCH --time=00:05:00
+
+module purge
+module load 
+
+cd $HOME/Jobs/Application
+
+```
+
