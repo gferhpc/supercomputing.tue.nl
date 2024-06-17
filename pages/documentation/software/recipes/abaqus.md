@@ -2,10 +2,10 @@
 title: Abaqus
 tags: [Software, Module]
 ---
-![Abaqus in Umbrella On Demdand](abaqus-ood.png){: align=right style="height:150px"}
-
 [Abaqus by 3DS](https://www.3ds.com/products-services/simulia/products/abaqus/){:target="_blank"}
 is licensed software and only usable if the user is a member of the correct group.
+
+![Abaqus in Umbrella On Demdand](abaqus-ood.png){: align=right style="height:150px"}
 
 ## Using Abaqus interactive (Graphical User Interface)
 
