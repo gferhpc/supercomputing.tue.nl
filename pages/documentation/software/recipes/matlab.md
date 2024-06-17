@@ -91,7 +91,7 @@ matlab -nodisplay -nosplash -nodesktop -r parallel.m
   
     ```matlab
 
-    parfor idx = 1:10
+    parfor idx = 1:8
         pause(10);
     end
 
