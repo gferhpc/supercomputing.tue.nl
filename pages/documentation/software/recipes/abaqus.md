@@ -6,6 +6,10 @@ tags: [Software, Module]
 [Abaqus by 3DS](https://www.3ds.com/products-services/simulia/products/abaqus/){:target="_blank"}
 is licensed software and only usable if the user is a member of the correct group.
 
+## Abaqus CAE GUI (interactive)
+
+Use your browser to connect to https://hpc.tue.nl
+
 ## Test Abaqus
 
 Load the module(s)
@@ -71,6 +75,3 @@ cd $HOME/Jobs/Abaqus
 abaqus interactive job=${SLURM_JOB_NAME} cpus=${SLURM_CPUS_PER_TASK} mp-mode=threads input=boltpipeflange_3d_solidgask.inp 
 ```
 
-## Abaqus CAE GUI (interactive)
-
-Use your browser to connect to https://hpc.tue.nl
