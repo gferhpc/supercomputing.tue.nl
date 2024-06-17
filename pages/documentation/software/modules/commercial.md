@@ -8,7 +8,7 @@ Available as [modules](../../steps/software/index.md):
 
 | Name            | Website                              | Usage Documentation      | https://hpc.tue.nl |
 | --------------- | ------------------------------------ | ------------------------ | ------------------ |
-| Abaqus          | [3ds.com](https://www.3ds.com/products/simulia/abaqus){:target="_blank"} | [Abaqus Recepies](../recipes/abaqus.md)   | Yes |
+| Abaqus          | [3ds.com](https://www.3ds.com/products/simulia/abaqus){:target="_blank"} | [Using Abaqus](../recipes/abaqus.md)   | Yes |
 | ANSYS CFX       | [ansys.com](https://www.ansys.com/products/fluids/ansys-cfx){:target="_blank"} | `module avail ansys`     | Yes |
 | ANSYS Fluent    | [ansys.com](https://www.ansys.com/products/fluids/ansys-fluent){:target="_blank"} | `module avail ansys`     | Yes |
 | ANSYS Electromagnetics | [ansys.com](https://www.ansys.com/products/electronics){:target="_blank"} | `module avail ansys-em`   | Yes |
@@ -19,7 +19,7 @@ Available as [modules](../../steps/software/index.md):
 | CONVERGE        | [convergecfd.com](https://convergecfd.com/){:target="_blank"} | `module avail convergentscience` | Yes |
 | Gurobi          | [gurobi.com](https://www.gurobi.com/){:target="_blank"} | `module avail Gurobi` | Yes (via MATLAB) |
 | ANSYS Lumerical | [ansys.com](https://www.ansys.com/products/optics){:target="_blank"} | `module avail lumerical` | Yes |
-| Mathematica     | [wolfram.com](https://www.wolfram.com/mathematica/){:target="_blank"} | `module avail mathematica` | Yes |
+| Mathematica     | [wolfram.com](https://www.wolfram.com/mathematica/){:target="_blank"} | [Using Mathematica](../recipes/mathematica.md) | Yes |
 | MATLAB          | [mathworks.com](https://www.mathworks.com/products/matlab.html){:target="_blank"} | `module avail matlab` | Yes |
 | StarCCM+        | [siemens.com](https://plm.sw.siemens.com/en-US/simcenter/fluids-thermal-simulation/star-ccm/){:target="_blank"} | `module avail starccm+` | Yes |
 | TecPlot 360     | [tecplot.com](https://tecplot.com/products/tecplot-360/){:target="_blank"} | `module avail tecplot` | Yes |
