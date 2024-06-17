@@ -27,7 +27,7 @@ Mathematica 14.0.0 Kernel for Linux x86 (64-bit)
 Copyright 1988-2023 Wolfram Research, Inc.
 ```
 
-### Running Mathematica in Slurm batch jobs
+### Mathematica SLURM sbatch jobscript example using 1 CPU
 
 ```slurm
 #!/bin/bash
@@ -56,7 +56,7 @@ math -script sample-simple.wl
     ```
 
 
-### Using Multiple CPUs with Mathematica in Slurm batch jobs
+### Mathematica SLURM sbatch jobscript example using Multiple CPUs
 
 Mathematica can be run in parallel using the built in Parallel commands or by utilizing the parallel API. Parallel Mathematica jobs are limited to one node, but can utilize all CPU cores on the node. Here we request and use eight cores:
 
@@ -87,7 +87,7 @@ math -script sample-parallel.wl
     ```
 
 
-### To Be Tested (Work In Progress)
+## To Be Tested (Work In Progress)
 
 in a Slurm batch script is all you need. However, these scripts will
 only use a single core. To fully leverage the parallel character of the
