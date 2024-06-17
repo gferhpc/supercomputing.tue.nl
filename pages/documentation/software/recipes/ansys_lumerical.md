@@ -163,6 +163,77 @@ therefore less prone to user error.
 
 To be done: configure Lumerical so it can submit its own jobs. This
 speeds up e.g. parameter sweeps.
+Direct resource integration of the HPC node in the Lumerical GUI. Lumerical will handle file transfer from your PC to the HPC, run the simulation on HPC and will download the simulated file back to your PC.
+By default, the HPC node will not use the GUI license, but just a runner license.
+
+### Workflow
+
+1.  Initial setup of Lumerical (first-time use only!)
+2.  Prepare Lumerical file on your local PC using the GUI
+3.  Run Lumerical job (which will transfer to HPC, run and transfer back)
+4.  Postprocess/view results of Lumerical file on your local PC using the GUI
+
+### Initial setup
+
+1. Configure SSH keys to connect to the HPC from you local PC [using this method](../../steps/access/ssh/#passwordless-authentication)
+2. Configure Lumerical config settings on the HPC
+   1. Connect to HPC using SSH
+   2. Add a new directory using: `mkdir -p ~/.config/Lumerical/`
+   3. Create a new file named License.ini inside the folder: `nano License.ini`
+   4. Add the following contents
+        ```
+        [license]
+        domain=2
+        default=user
+        ansysserver\host=1055@tue032938.ele.tue.nl
+        flexserver\host=27011@tue032938.ele.tue.nl
+        ```
+   5. Save and exit using *crtl+x* and press *y* to confirm saving
+3. Configure slurm.py on your local PC (if your Lumerical version is **older** than 2023 R2.2)
+   1. Locate the slurm.py file on your local Lumerical installation usually at `C:\Program Files\Lumerical\vxxx\scripts\job_schedulers\slurm.py`
+   2. Open the file and change the following lines to:
+        ```
+        USE_SSH = True
+        USE_SCP = True
+        CLUSTER_CWD = ''
+        if USE_SSH:
+            USER_NAME = "username" # TU/e username
+            SSH_LOGIN = f"{USER_NAME}@hpc.tue.nl"
+            SSH_KEY = expanduser('~/.ssh/privkeyname') # Location of your private key on your PC
+        ```
+   3. Save the file
+4. Configure job_scheduler_input.json on your local PC (if your Lumerical version is 2023 R2.2 or **newer**)
+   1. Please update according to [Lumericals documentation](https://optics.ansys.com/hc/en-us/articles/360034620113-Lumerical-job-scheduler-integration-Slurm-Torque-LSF-SGE)
+5. Add the HPC as resource in the Lumerical GUI
+   1. Open your Lumerical software tool (like FDTD)
+   2. Press the resources button in the top ribbon
+   3. Add new resource, select it and press edit
+   4. Change the job launcher preset to 'Job Scheduler: Slurm'
+   5. In the command field, add `sbatch -N 1`
+   6. In the submission script field add
+        ```
+        #!/usr/bin/bash
+        #SBATCH --nodes=1
+        #SBATCH --ntasks=16
+        #SBATCH --partition=elec-phi.gpu.q
+        #SBATCH --error=slurm-%j.err
+        #SBATCH --output=slurm-%j.out
+
+        module purge
+        module load intel/2023a
+        module load lumerical/2024-R1.1
+
+        mpirun fdtd-engine-impi-lcl {PROJECT_FILE_PATH}
+        ```
+
+### Prepare job & run on HPC
+
+Now that everything is configured, you can simply prepare your FDTD file and run the job like you are used to. The software will automatically upload the .fsp file to the HPC, and schedule the job. When the job is finished, it will automatically download it back to your PC.
+
+### Debug in case of errors
+
+In case the simulation is not running, or it stopped really quickly, you can look at the error and log files on the HPC. They will be automatically added when the file is transferred to the HPC.
+You can connect to HPC over SSH and check the contents of the log files to debug.
 
 ## Troubleshooting
 
