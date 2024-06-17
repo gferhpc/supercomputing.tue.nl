@@ -5,7 +5,29 @@ tags: [Software, Module]
 
 [Wolfram Mathematica](https://www.wolfram.com/mathematica/){:target=_blank} a is a software system with built-in libraries for several areas of technical computing that allow machine learning, statistics, symbolic computation, data manipulation, network analysis, time series analysis, NLP, optimization, plotting functions and various types of data, implementation of algorithms, creation of user interfaces, and interfacing with programs written in other programming languages.
 
-## Running Mathematica notebooks in Slurm batch jobs
+## Using Mathematica interactive (Graphical User Interface)
+
+![Mathematica in Umbrella On Demdand](mathematica-ood.png){: align=right style="height:150px"}
+
+Use your browser to connect to [Umbrella On Demand](https://hpc.tue.nl){:target="_blank"}
+
+## Using Mathematica in SLURM batch jobs (Command Line Interface)
+
+## Test Mathematica
+
+Load the module(s)
+``` shell
+[user@umbrella]$ module purge
+[user@umbrella]$ module Mathematica/14.0.0
+```
+Test the Mathematica command line version
+``` shell
+[user@umbrella]$ math -run 'Quit[];'
+Mathematica 14.0.0 Kernel for Linux x86 (64-bit)
+Copyright 1988-2023 Wolfram Research, Inc.
+```
+
+### Running Mathematica in Slurm batch jobs
 
 ```slurm
 #!/bin/bash
@@ -33,7 +55,7 @@ math -script sample-simple.wl
 
     ```
 
-## Using Multiple CPUs with Mathematica in Slurm batch jobs
+### Using Multiple CPUs with Mathematica in Slurm batch jobs
 
 Mathematica can be run in parallel using the built in Parallel commands or by utilizing the parallel API. Parallel Mathematica jobs are limited to one node, but can utilize all CPU cores on the node. Here we request and use eight cores:
 
