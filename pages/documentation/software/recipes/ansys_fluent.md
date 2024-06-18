@@ -5,7 +5,16 @@ tags: [Software, Module]
 
 [ANSYS Fluent](https://www.ansys.com/products/fluids/ansys-fluent){:target="_blank"} is the industry-leading fluid simulation software known for its advanced physics modeling capabilities and industry leading accuracy
 
-## Test ANSYS Fluent
+![ANSYS Fluent in Umbrella On Demdand](ansys-fluent-ood.png){: align=right style="height:150px"}
+
+
+## Using Application interactive (Graphical User Interface)
+
+Use your browser to connect to [Umbrella On Demand](https://hpc.tue.nl){:target="_blank"}
+
+## Using Application in SLURM batch jobs (Command Line Interface)
+
+### Test ANSYS Fluent
 
 Load the module(s)
 
@@ -45,7 +54,8 @@ FLUENT MPI test done.
 
 ```
 
-## ANSYS Fluent OpenMPI jobscript example
+### ANSYS Fluent SLURM sbatch jobscript example using OpenMPI
+
 ```shell
 #!/bin/bash
 #
@@ -64,7 +74,3 @@ module load ANSYS/2023R2
 
 fluent 3ddp -g -t${SLURM_NTASKS} -mpitest -mpi=openmpi
 ```
-
-## ANSYS Fluent GUI (interactive)
-
-Use your browser to connect to https://hpc.tue.nl
