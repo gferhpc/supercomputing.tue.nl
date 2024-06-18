@@ -1,7 +1,9 @@
 ---
+title:  COMSOL
 tags: [Software, Module]
 ---
-# COMSOL
+
+[COMSOL](https://www.comsol.com/){:target="_blank"} is licensed software and only usable if the user is a member of the correct group.
 
 ### Getting a license
 
@@ -9,14 +11,19 @@ Check the
 [intranet](https://intranet.tue.nl/en/university/services/information-management-services/software/comsol-multiphysics/){:target=_blank}
 for the procedure on how to get a license for using COMSOL.
 
-### Running simulations on the cluster
+![COMSOL in Umbrella On Demdand](comsol-ood.png){: align=right style="height:150px"}
+
+## Using Application interactive (Graphical User Interface)
+
+Use your browser to connect to [Umbrella On Demand](https://hpc.tue.nl){:target="_blank"}
+
+## Using COMSOL in SLURM batch jobs (Command Line Interface)
+
+## Using local COMSOL to run COMCOL SLURM batch jobs (Client/Server)
 
 ![Comsol Settings](comsol_settings.png){ align=right width=250 }
 
-If you want to use the cluster to compute COMSOL simulations, you have
-two possibilities. One is to [submit your job](../../steps/jobs/index.md) similarly as you
-do for other programs. Another possibility is to use the COMSOL
-interface in your local computer. This short tutorial is about this
+This short tutorial is about this
 second possibility. It is focused on configuring your simulation using a
 TU/e cluster. For more information, visit the [COMSOL
 blog](https://www.comsol.com/blogs/how-to-run-on-clusters-from-the-comsol-desktop-environment/){:target=_blank}
