@@ -1,7 +1,5 @@
 # Installation
 
-IPs: partially [here](../networking.md)
-
 | Nodes                 |      iDrac0    |  Int. mgmt IP  |   Internal IP  | External IP   |
 |:----------------------|:--------------:|:--------------:|:--------------:|:-------------:|
 | (subnet masks)        |     (/23)      |     (/23)      |     (/16)      |     (/24)     |
