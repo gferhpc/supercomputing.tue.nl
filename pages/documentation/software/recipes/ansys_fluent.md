@@ -7,7 +7,6 @@ tags: [Software, Module]
 
 ![ANSYS Fluent in Umbrella On Demdand](ansys-fluent-ood.png){: align=right style="height:150px"}
 
-
 ## Using Application interactive (Graphical User Interface)
 
 Use your browser to connect to [Umbrella On Demand](https://hpc.tue.nl){:target="_blank"}
