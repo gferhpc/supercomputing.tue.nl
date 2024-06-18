@@ -65,7 +65,7 @@ We preferably don't offer fabrics such as InfiniBand due to the cost.  Compute j
   </tr>
   <tr>
     <td>GPU</td>
-    <td>AMD EPYC 7313<br/>(3.0 GHz, 16C, 128 MB L3)</td>
+    <td>2x AMD EPYC 7313<br/>(3.0 GHz, 16C, 128 MB L3)</td>
     <td>256 GB<br/>(16x 16 GB)<br>(8 GB/core)</td>
     <td>2x NVIDIA A30</td>
     <td>€23,100</td>

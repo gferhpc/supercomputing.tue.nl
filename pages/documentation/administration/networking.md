@@ -8,14 +8,86 @@ Links between rows:
 - RJ45
 - MM fibre pair: W11 pair 12 <--> X07 pair 12
 
-## VLANs
+## VLANs / Subnets
+
+### TU/e
+
+<table>
+  <tr>
+    <th>VLAN ID</th>
+    <th>VLAN name</th>
+    <th>Subnet</th>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>computerzaal</td>
+    <td>131.155.2.0/24</td>
+  </tr>
+  <tr>
+    <td>422</td>
+    <td>TUe-HPC</td>
+    <td>131.155.7.96/27</td>
+  </tr>
+  <tr>
+    <td>301</td>
+    <td>Mgmt-Infra-TUe-HPC</td>
+    <td>172.16.108.0/23</td>
+  </tr>
+</table>
 
 ### Cluster internal
 
-- 1: `default-vlan`
-- 150: `umbrella-int`  Umbrella cluster internal
+<table>
+  <tr>
+    <th>VLAN ID</th>
+    <th>VLAN name</th>
+    <th>Subnet</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>default VLAN<br/>do not use</td>
+    <td>&mdash;</td>
+  </tr>
+  <tr>
+    <td>131</td>
+    <td>(coupled to TU/e)</td>
+    <td>(coupled to TU/e)</td>
+  </tr>
+  <tr>
+    <td>&mdash;</td>
+    <td>Umbrella Cluster heartbeat</td>
+    <td>10.148.0.0/16</td>
+  </tr>
+  <tr>
+    <td>&mdash;</td>
+    <td>Umbrella Cluster Infiniband</td>
+    <td>10.149.0.0/16</td>
+  </tr>
+  <tr>
+    <td>150</td>
+    <td>umbrella-int</td>
+    <td>10.150.0.0/16</td>
+  </tr>
+  <tr>
+    <td>&mdash;</td>
+    <td>VAST internal data</td>
+    <td>172.16.0.0/16</td>
+  </tr>
+  <tr>
+    <td>&mdash;</td>
+    <td>VAST internal Docker</td>
+    <td>172.17.0.0/16</td>
+  </tr>
+</table>
 
-### TU/e
+IP reservations:
+
+- Subnet: 10.150.0.0/16
+    - 10.150.0.1 — first node; nodes number upwards from here
+    - 10.150.128–135.x — DHCP pool
+    - 10.150.250.x — VAST storage
+    - 10.150.254.x — classical storage nodes
+    - 10.150.255.x — head nodes + VIP
 
 ### Test cluster
 
@@ -26,59 +98,7 @@ TU/e-side switch ports:
 
 ## IP space
 
-### TU/e
 
-- Subnet: 131.155.2.0/24 --- VLAN 2 `computerzaal`
-    - 131.155.2.1 `gateway`
-    - 131.155.2.50 `hpc-cluster.icts.tue.nl`
-    - 131.155.2.51 `hpc-primary.icts.tue.nl`
-    - 131.155.2.52 `hpc-secondary.icts.tue.nl`
-    - 131.155.2.53 `tue-login001.icts.tue.nl`
-- Subnet: 131.155.7.96/27 --- VLAN 422 `TUe-HPC`
-    - 131.155.7.96–127
-    - 131.155.7.102–126 usable
-    - 131.155.7.102 `hpc-head01.icts.tue.nl`
-    - 131.155.7.103 `hpc-head02.icts.tue.nl`
-    - 131.155.7.104 `hpc-vip.icts.tue.nl`
-    - 131.155.7.109 `tue-login002.icts.tue.nl`
-- Subnet: 131.155.x.x --- miscellaneous public IP addresses
-    - 131.155.0.100 `phys-login001.phys.tue.nl`
-    - 131.155.11.238 `mcs-login001.win.tue.nl`
-    - 131.155.11.240 `chem-login001.chem.tue.nl`
-    - 131.155.11.242 `arch-login001.bwk.tue.nl`
-- Subnet: 172.16.108.0/23 — VLAN 301 `Mgmt-Infra-TUe-HPC`
-    - 172.16.108.240–255 — `hpc-vast-mgmt-1..16.infra.tue.nl` (C2402488)
-        - hpc-vast-mgmt-1: VIP for web interface
-
-VAST:
-
-- Subnet: 172.16.0.0/16 --- VAST internal data
-    - Range can be moved, but must be a /16.
-- Subnet: 172.17.0.0/16 --- VAST internal Docker
-    - Range can be moved, but must be a /16.
-- For user-facing data streams: 4 IPs per CNode per pool
-
-### Cluster internal
-
-- Subnet: 10.148.0.0/16 - Umbrella Cluster heartbeat
-- Subnet: 10.149.0.0/16 — Umbrella Cluster InfiniBand
-- Subnet: 10.150.0.0/16 — Umbrella Cluster Ethernet
-    - 10.150.0.1 — first node; nodes number upwards from here
-    - 10.150.128–135.x — DHCP pool
-    - 10.150.250.1–16 — VAST storage
-    - 10.150.254.x — classical storage nodes
-        - 10.150.254.1 — tue-storage001
-        - 10.150.254.11 - phys-storage001
-        - 10.150.254.21 - arch-storage001
-        - 10.150.254.31 - bme-storage001
-        - 10.150.254.41 - mech-storage001
-        - 10.150.254.51 - mcs-storage001
-        - 10.150.254.61 - chem-storage001
-        - 10.150.254.62 - chem-storage002
-    - 10.150.255.252 — head VIP
-    - 10.150.255.253 — head02
-    - 10.150.255.254 — head01
-- Subnet: 172.x.x.x ??? — VAST internal network
 
 ## Switch configurations
 

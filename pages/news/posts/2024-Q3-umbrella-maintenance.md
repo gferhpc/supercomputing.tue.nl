@@ -122,3 +122,8 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
 * memory limits Slurm
 
 * TrinityX HA
+
+* remove old DNS-names login nodes
+   - hpc.win.tue.nl
+   - mcs-login001.icts.tue.nl
+   - add more here...
