@@ -1,13 +1,16 @@
 # StarCCM+
 
-**VERSION=2022.10.1**
+**VERSION=2024.0001**
+**StarCCM=19.02.013**
 
 - Request tgz (linux) for latest version from LIS Workplace Management
+- Copy to /local on Login Node
+- Untar on login node /local
 
 ```shell
-cd /local
-IATEMPDIR=/local ./STAR-CCM+17.06.008_01_linux-x86_64-2.17_gnu9.2-r8.sh \
+cd /local/starccm+_${StartCCM}
+IATEMPDIR=/local ./STAR-CCM+${StarCCM}_01_linux-x86_64-2.28_gnu11.2.sh \
  -i silent -DPRODUCTEXCELLENCEPROGRAM=0 \
  -DINSTALLFLEX=false \ 
- -DINSTALLDIR=/cm/shared/apps/StarCCM+/${VERSION}
+ -DINSTALLDIR= /sw/rl8/zen/app/StarCCM+/${VERSION}
 ```
