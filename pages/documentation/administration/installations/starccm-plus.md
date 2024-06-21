@@ -1,6 +1,8 @@
 # StarCCM+
 
-VERSION=2022.10.1
+**VERSION=2022.10.1**
+
+- Request tgz (linux) for latest version from LIS Workplace Management
 
 ```shell
 cd /local
