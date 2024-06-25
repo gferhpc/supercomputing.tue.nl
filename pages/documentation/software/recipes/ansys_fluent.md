@@ -1,5 +1,5 @@
 ---
-title: Ansys Fluent
+title: ANSYS Fluent
 tags: [Software, Module]
 ---
 
@@ -20,7 +20,7 @@ Load the module(s)
 ```shell 
 [user@umbrella]$ module purge
 [user@umbrella]$ module load foss/2023a # or intel/2023a for -mpi=intel)
-[user@umbrella]$ module load ANSYS/2023R2
+[user@umbrella]$ module load ANSYS/2024R1
 ```
 
 Check ANSYS Fluent:
@@ -53,7 +53,7 @@ FLUENT MPI test done.
 
 ```
 
-### ANSYS Fluent SLURM sbatch jobscript example using OpenMPI
+### ANSYS Fluent SLURM sbatch jobscript example using OpenMPI on 1 Node.
 
 ```shell
 #!/bin/bash
@@ -69,7 +69,30 @@ FLUENT MPI test done.
 
 module purge
 module load foss/2023a
-module load ANSYS/2023R2
+module load ANSYS/2024R1
 
 fluent 3ddp -g -t${SLURM_NTASKS} -mpitest -mpi=openmpi
+```
+
+### ANSYS Fluent SLURM sbatch jobscript example using OpenMPI on 2 Nodes.
+```shell
+#!/bin/bash
+#
+#SBATCH --job-name=test_ansys
+#SBATCH --error=test_ansys-%j.log
+#SBATCH --partition=tue.default.q
+#SBATCH --nodes=2
+#SBATCH --ntasks-per-node=8
+#SBATCH --cpus-per-task=1
+#SBATCH --mem-per-cpu=2gb
+#SBATCH --time=00:05:00
+
+module purge
+module load foss/2023a
+module load ANSYS/2024R1
+
+JOB_NODES="$(scontrol show hostnames)"
+JOB_NODES=$(echo ${JOB_NODES} | tr ' ' ',')
+
+fluent 3ddp -g -cnf=${JOB_NODES} -t${SLURM_NTASKS} -mpitest -mpi=openmpi
 ```
