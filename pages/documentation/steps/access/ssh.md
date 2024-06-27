@@ -218,7 +218,6 @@ their own login node:
 |---------------------------|--------------------------------------------|
 | hpc.tue.nl ^(suggested)^  | -                                          |
 | hpc.arch.tue.nl           | Built Environment (BE)                     |
-| hpc.win.tue.nl            | Mathematics & Computer Science (M&CS)      |
 | chem-login001.chem.tue.nl | Chemical Engineering & Chemistry (CE&C)    |
 
 ## Passwordless Authentication
