@@ -4,13 +4,13 @@ title: Onboarding
 
 # Mathematics & Computer Science
 
-*About the [hpc.win.tue.nl](../../specifications.md)-cluster*
+*About the [hpc.tue.nl](../../specifications.md)-cluster*
 
 *Onboarding documentation: a mandatory read for all users*
 
 ## Introduction
 
-The hpc.win.tue.nl-cluster is a cluster of compute resources (CPU/GPU)
+The hpc.tue.nl-cluster is a cluster of compute resources (CPU/GPU)
 that is made available for research staff. The facility originates from
 a collectively expressed need by M&CS research in 2019 for low-barrier
 (close to home but serviced) compute resources that could facilitate
