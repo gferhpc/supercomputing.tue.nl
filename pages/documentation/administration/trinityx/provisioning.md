@@ -128,7 +128,7 @@ luna osimage pack gpu-470drv
 
 ## LOGIN image additions
 
-For the default route provided by the DHPC on the "external" interface to be preserved above the one set by the internal interface the metric of the "cluster" network needs to be changed:
+For the default route provided by DHCP on the "external" interface to be preferred over the one set by the internal interface the metric of the "cluster" network needs to be changed:
 ```shell
 luna network change -gm 201 cluster
 ```
@@ -167,6 +167,29 @@ Host hpc.tue.nl
 	UserKnownHostsFile /dev/null
 EOF
 ```
+```shell
+# Limit users to 4 CPUs, 10 GB RAM, 1 GB swap (all users except root)
+mkdir -p /etc/systemd/system/user-.slice.d
+cat > /etc/systemd/system/user-.slice.d/50-hpclab.conf <<EOF
+[Slice]
+
+CPUAccounting=yes
+CPUQuota=400%
+
+MemoryAccounting=yes
+MemoryMax=10G
+MemorySwapMax=1G
+
+TasksAccounting=yes
+TasksMax=1000
+EOF
+
+mkdir -p /etc/systemd/system/user-0.slice.d
+cat > /etc/systemd/system/user-0.slice.d/50-hpclab.conf <<EOF
+# This file overrides the user-.slice.d/50-hpclab.conf file,
+# so that the HPC Lab settings do not apply to user root.
+EOF
+```
 
 ## OS image Testing
 ```shell
@@ -198,7 +221,7 @@ luna osimage pack [image name]
 
 Slurm 22.05's slurmd seems to be incompatible with CGroups v2 on Rocky Linux 8, hence we use CGroups v1 on compute nodes.  It is unclear what exactly goes wrong with cgroups v2.
 
-Furthermore, Rocky 8 has some packages that are incompatible with CGroups v2; see https://www.redhat.com/en/blog/world-domination-cgroups-rhel-8-welcome-cgroups-v2.
+Furthermore, Rocky 8 has some packages that are incompatible with CGroups v2, in particular libvirt, runc, and Kubernetes; see https://www.redhat.com/en/blog/world-domination-cgroups-rhel-8-welcome-cgroups-v2.
 
 To enable for a specific osimage:
 

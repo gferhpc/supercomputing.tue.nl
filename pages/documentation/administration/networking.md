@@ -201,7 +201,7 @@ interface range ethernet 1/1/1-1/1/4
 
 default interface range ethernet 1/1/5-1/1/8
 ```
-Links to devices: breakout too 25 Gbit, VLAN untagged, BPDU guard
+Links to devices: breakout to 25 Gbit, VLAN untagged, BPDU guard
 ```
 ! eth 1/1/9-1/1/10: links to devices  @ 25 Gbit
 
