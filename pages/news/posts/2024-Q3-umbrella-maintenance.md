@@ -23,9 +23,9 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
    - [ ] testen
 
 * cgroups user limiting
-   - [ ] testen op mcs-login001
-   - [ ] implementeren op tue-login002
-   - [ ] embedden in login-image
+   - [x] testen op mcs-login001
+   - [ ] implementeren op tue-login002 -> kan niet live, heeft reboot nodig
+   - [ ] embedden in login-image -> zie provisioning.md
 
 * dept. login nodes uitzetten
    - [ ] pas doen als tue-login001 er is
