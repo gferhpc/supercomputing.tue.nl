@@ -167,6 +167,7 @@ Host hpc.tue.nl
 	UserKnownHostsFile /dev/null
 EOF
 ```
+The following requires CGroups v2 on the login nodes; see [here](#cgroups-v2) for enabling it.
 ```shell
 # Limit users to 4 CPUs, 10 GB RAM, 1 GB swap (all users except root)
 mkdir -p /etc/systemd/system/user-.slice.d
@@ -217,7 +218,7 @@ exit
 luna osimage pack [image name]
 ```
 
-## cgroups v2 (not implemented)
+## CGroups v2
 
 Slurm 22.05's slurmd seems to be incompatible with CGroups v2 on Rocky Linux 8, hence we use CGroups v1 on compute nodes.  It is unclear what exactly goes wrong with cgroups v2.
 
