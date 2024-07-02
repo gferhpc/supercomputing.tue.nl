@@ -1,6 +1,6 @@
 # Installation
 
-| Nodes                 |      iDrac0    |  Int. mgmt IP  |   Internal IP  | External IP   |
+| Nodes                 |      iDrac0    |  Int. mgmt IP  |   Internal IP/MAC  | External IP   |
 |:----------------------|:--------------:|:--------------:|:--------------:|:-------------:|
 | (subnet masks)        |     (/23)      |     (/23)      |     (/16)      |     (/24)     |
 | test-head01           | 172.16.108.11  | 172.16.108.13  | 10.141.255.254 | 131.155.2.51  |
@@ -8,8 +8,8 @@
 | test-head-vip         |       -        |       -        | 10.141.255.252 | 131.155.2.50  |
 | test-login001         | 172.16.108.150 |       -        |       ?        | 131.155.2.53  |
 | test-login002         | 172.16.108.x |       -        |       ?        | 131.155.2.x  |
-| test-compute001       | 172.16.108.161 |       -        |       ?        |      -        |
-| test-compute002       | 172.16.108.162 |       -        |       ?        |      -        |
+| test-compute001       | 172.16.108.161 |       -        | 4C:D9:8F:49:7F:8F |      -        |
+| test-compute002       | 172.16.108.162 |       -        |  4C:D9:8F:49:7B:17 |      -        |
 
 ## Requirements
 
