@@ -136,7 +136,7 @@ Review and edit the contents of the `hosts` file accordingly.
 
 ```ini
 [controllers]
-hpc-head01 ansible_host=10.141.255.254 ansible_connection=local
+test-head01 ansible_host=10.141.255.254 ansible_connection=local
 #hpc-head02 ansible_host=10.141.255.253
 ```
 
