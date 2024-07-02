@@ -44,7 +44,7 @@
           - Name: `tue`
           - Parent interface: `bond0`
           - VLAN id: `131`
-          - IPv4 settings: method: manual - then set correct IP address, netmask, and GW.
+          - IPv4 settings: method: manual - then set correct IP address 131.155.2.5x, NM: 255.255.255.0, and GW: 131.155.2.1.
           - DNS servers: `131.155.2.3,131.155.3.3`
           - IPv6 settings: method: disabled
        - Host Name: `test-head0X.icts.tue.nl`
