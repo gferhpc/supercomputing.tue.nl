@@ -34,17 +34,17 @@
     - Network & Hostname:
        - Add interface:
           - Type: bond
-          - Name: `bond0`  *(Set name to make typing in terminal easy.)*
+          - Connection Name: `bond0`  *(Set name to make typing in terminal easy.)*
           - Mode: 802.3ad
           - Add appropriate interfaces
           - IPv4 settings: method: disabled
           - IPv6 settings: method: disabled
        - Add interface:
           - Type: VLAN
-          - Name: `tue`
+          - Connection Name: `tue`
           - Parent interface: `bond0`
           - VLAN id: `131`
-          - IPv4 settings: method: manual - then set correct IP address 131.155.2.5x, NM: 255.255.255.0, and GW: 131.155.2.1.
+          - IPv4 settings: method: manual - then set correct IP address `131.155.2.5x`, NM: `255.255.255.0`, and GW: `131.155.2.1`.
           - DNS servers: `131.155.2.3,131.155.3.3`
           - IPv6 settings: method: disabled
        - Host Name: `test-head0X.icts.tue.nl`
