@@ -202,8 +202,8 @@ extra:
   announcement: "⚠️ TU/e Umbrella HPC Cluster maintenance scheduled between 26th and 28th of August 2024 ⚠️"
   social:
     - name: Eindhoven Computing Center at LinkedIn
-      icon: simple/linkedin
+      icon: material/linkedin
       link: https://www.linkedin.com/in/supercomputing/
     - name: HPC Lab Teams Community @ TU/e
-      icon: simple/microsoft-teams
+      icon: material/microsoft-teams
       link: https://teams.microsoft.com/l/team/19:7830cc8a6f244d6689a374c60673b43c%40thread.tacv2/conversations?groupId=a07b9e15-8538-4889-8610-502177c36dc7&tenantId=cc7df247-60ce-4a0f-9d75-704cf60efc64
