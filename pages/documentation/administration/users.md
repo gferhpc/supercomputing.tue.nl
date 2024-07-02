@@ -89,6 +89,8 @@ obol group delusers {group} {user} [user ...]
 obol group show {group}
 ```
 
+## Account Policy
+
 ```mermaid
 stateDiagram
     s1: Set Expire Date (Max 1 year)
