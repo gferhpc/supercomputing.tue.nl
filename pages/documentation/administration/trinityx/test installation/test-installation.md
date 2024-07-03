@@ -82,6 +82,8 @@
 
 ## TrinityX Installation
 
+[NO HA Installation](test-installation-NO-HA.md)
+
 ### Prepare environment (test-head01 and test-head02)
 
 As `root@test-head0X`:
