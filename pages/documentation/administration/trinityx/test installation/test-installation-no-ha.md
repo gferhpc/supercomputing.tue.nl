@@ -5,8 +5,10 @@
 All as `root@test-head01`:
 
 ```shell
-dnf -y install git
+dnf -y install git screen
 ```
+
+Use screen to resume after network disconnects
 
 Make sure the DHPC on an interface does not overwrite DNS entries in resolv.conf
 
@@ -54,8 +56,7 @@ Review and edit the contents of the `hosts` file accordingly.
 
 ```ini
 [controllers]
-test-head01 ansible_host=10.141.255.254 ansible_connection=local
-#hpc-head02 ansible_host=10.141.255.253
+test-head01 ansible_host=127.0.0.1 ansible_connection=local
 ```
 
 ### Installation
@@ -65,8 +66,91 @@ Install dependencies
 cd /root/trinityX
 bash prepare.sh
 ```
-Run the ansible-playbook
+Run the ansible-playbook (use screen)
 ```shell
+dnf -y install screen
+screen
 cd /root/trinityX/site
 ansible-playbook controller.yml
+```
+
+### Configuration
+
+#### Set cluster settings
+
+```shell
+luna cluster change -n test-umbrella -c hpc-umbrella@tue.nl
+```
+
+#### Configure the BMC(ipmi) network
+
+```shell
+luna network change -N 172.16.108.0/23 ipmi
+```
+
+### Create a demo user (or not)
+
+```shell
+obol user add demo -p demo
+obol group addusers admins demo
+```
+
+#### Create the basic OSimage (compute)
+
+```shell
+ansible-playbook compute-redhat.yml
+luna osimage pack compute
+```
+
+#### Add [pre.txt](pre.txt){:target=_blank}, [part.txt](part.txt){:target=_blank} and [post.txt](post.txt){:target=_blank} to the part/post of the compute image
+
+```shell
+wget https://gitlab.tue.nl/hpclab/website/-/raw/main/pages/documentation/administration/trinityx/pre.txt
+wget https://gitlab.tue.nl/hpclab/website/-/raw/main/pages/documentation/administration/trinityx/part.txt
+wget https://gitlab.tue.nl/hpclab/website/-/raw/main/pages/documentation/administration/trinityx/post.txt
+luna group change -qpre pre.txt compute
+luna group change -qpart part.txt compute
+luna group change -qpost post.txt compute
+```
+
+Authentication via AD
+
+```shell
+cat >> /etc/sssd/sssd.conf << EOF
+
+auth_provider = krb5
+krb5_server = campus.tue.nl
+krb5_kpasswd = campus.tue.nl
+krb5_realm = CAMPUS.TUE.NL
+cache_credentials = True
+EOF
+systemctl restart sssd
+```
+
+### Delete the Auto-Generated Nodes
+```shell
+luna node remove node001
+luna node remove node002
+luna node remove node003
+luna node remove node004
+```
+
+### Create the Compute Nodes
+```shell
+luna node add -g compute -if BOOTIF -M 4C:D9:8F:49:7F:8F test-computea001
+luna node changeinterface -N ipmi -I 172.16.108.161 test-computea001 BMC
+luna node add -g compute -if BOOTIF -M 4C:D9:8F:49:7B:17 test-computea002
+luna node changeinterface -N ipmi -I 172.16.108.162 test-computea002 BMC
+```
+
+## Disable bmcsetup for group compute when provisioning
+
+```shell
+luna group change --setupbmc n compute
+```
+
+## Renename bmcsetup compute to trinityx and match the pre.txt settings
+```shell
+luna bmcsetup rename compute trinityx
+luna bmcsetup change -uid 3 -u trinityx -p <PASSWORD> trinityx
 ```
