@@ -76,6 +76,8 @@
 
     dnf -y install lldpd
     systemctl enable --now lldpd
+
+    reboot
     ```
 
 ## TrinityX Installation
