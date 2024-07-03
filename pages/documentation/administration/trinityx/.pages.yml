@@ -1,6 +1,6 @@
 nav:
   - 1. Installation Prod: installation.md
-  - 2. Installation Test: test-installation.md
+  - 2. Installation Test: test installation
   - 3. Node Provisioning: provisioning.md
   - 4. Infiniband: infiniband.md
   - 5. MIG: mig.md
