@@ -1,15 +1,15 @@
 # Installation
 
-| Nodes                 |      iDrac0    |  Int. mgmt IP  |   Internal IP/MAC  | External IP   |
-|:----------------------|:--------------:|:--------------:|:--------------:|:-------------:|
-| (subnet masks)        |     (/23)      |     (/23)      |     (/16)      |     (/24)     |
-| test-head01           | 172.16.108.11  | 172.16.108.13  | 10.141.255.254 | 131.155.2.51  |
-| test-head02           | 172.16.108.12  | 172.16.108.14  | 10.141.255.253 | 131.155.2.52  |
-| test-head-vip         |       -        |       -        | 10.141.255.252 | 131.155.2.50  |
-| test-login001         | 172.16.108.150 |       -        |       ?        | 131.155.2.53  |
-| test-login002         | 172.16.108.x |       -        |       ?        | 131.155.2.x  |
-| test-computea001       | 172.16.108.161 |       -        | 4C:D9:8F:49:7F:8F |      -        |
-| test-computea002       | 172.16.108.162 |       -        |  4C:D9:8F:49:7B:17 |      -        |
+| Nodes                 |      iDrac0    |  Int. mgmt IP  |   Internal IP/MAC  | External IP  |
+|:----------------------|:--------------:|:--------------:|:-----------------:|:-------------:|
+| (subnet masks)        |     (/23)      |     (/23)      |     (/16)         |     (/24)     |
+| test-head01           | 172.16.108.11  | 172.16.108.13  | 10.141.255.254    | 131.155.2.51  |
+| test-head02           | 172.16.108.12  | 172.16.108.14  | 10.141.255.253    | 131.155.2.52  |
+| test-head-vip         |       -        |       -        | 10.141.255.252    | 131.155.2.50  |
+| test-login001         | 172.16.108.150 |       -        |       ?           | 131.155.2.53  |
+| test-login002         | 172.16.108.x   |       -        |       ?           | 131.155.2.x   |
+| test-computea001      | 172.16.108.161 |       -        | 4C:D9:8F:49:7F:8F |      -        |
+| test-computea002      | 172.16.108.162 |       -        | 4C:D9:8F:49:7B:17 |      -        |
 
 ## Requirements
 
@@ -84,75 +84,4 @@
 
 [NO HA Installation](test-installation-NO-HA.md)
 
-### Prepare environment (test-head01 and test-head02)
-
-As `root@test-head0X`:
-
-```shell
-dnf -y install git
-```
-
-Make sure the DHPC on an interface does not overwrite DNS entries in resolv.conf
-
-```shell
-sed -i 's/main]/main]\ndns=none/' /etc/NetworkManager/NetworkManager.conf
-```
-
-Clone the TrinityX github repo
-
-```shell
-git clone https://github.com/clustervision/trinityX.git /root/trinityX
-cd /root/trinityX
-git reset --hard 46538e9ab326c8249d9170be023de7b17bb42e49
-```
-
-### Configure environment (test-head01 only)
-
-```shell
-cp site/group_vars/all.yml.example site/group_vars/all.yml
-```
-
-Review and edit the contents of the `all.yml` file accordingly, notable settings:
-
-| Setting                      | Value                         | Description                                                 |
-|------------------------------|-------------------------------|-------------------------------------------------------------|
-| administrator_email          | `hpc-umbrella@tue.nl`         | Email address of the administrator                          |
-| project_id                   | `test-umbrella`               | Project ID                                                  |
-| ha                           | `false` (default)             | High Availability; _MUST remain `false` at time of writing_ |
-| trix_ctrl1_ip                | `10.141.255.254 `             | IP controller node in Cluster Network                       |
-| trix_ctrl1_bmcip             | `172.16.108.13`               | IP controller node in BMC Network                           |
-| trix_ctrl1_hostname          | `test-head01`                 | Hostname                                                    |
-| trix_cluster_net.            | `10.141.0.0`                  | Cluster (Private) Network                                   | 
-| trix_cluster_netprefix.      | `16`                          | CIDR of Cluster Network                                     |
-| trix_cluster_dhcp_start      | `10.141.128.0`                | Start of DHCP range for nodes                               |
-| trix_cluster_dhcp_end        | `10.141.135.255`              | End of DHCP range for nodes                                 |
-| trix_external_fqdn           | `test-umbrella-cluster.hpc.tue.nl` | FQDN of the external interface of the cluster          |
-| trix_dns_forwarders          | `[131.155.2.3, 131.155.3.3]`  | List of DNS forwarders to use for the cluster.              |
-| firewalld_public_interfaces  | `[bond0.131]`                 | List of public interfaces to use for the cluster.           |
-| firewalld_trusted_interfaces | `[bond0.141]`                 | List of trusted interfaces to use for the cluster.          |
-| el8_openhpc_repositories     | `OpenHPC/2/update.2.6.2/EL_8` | Activate latest update to OpenHPC 2.6                       |
-
-```shell
-cp site/hosts.example site/hosts
-```
-
-Review and edit the contents of the `hosts` file accordingly.
-
-```ini
-[controllers]
-test-head01 ansible_host=10.141.255.254 ansible_connection=local
-#hpc-head02 ansible_host=10.141.255.253
-```
-
-### Installation (test-head01 only)
-
-Install dependencies
-```shell
-cd /root/trinityX
-bash prepare.sh
-```
-Run the ansible-playbook
-```shell
-cd /root/trinityX/site
-ansible-playbook controller.yml
-```
+[Ha Installation](test-installation-HA.md)
