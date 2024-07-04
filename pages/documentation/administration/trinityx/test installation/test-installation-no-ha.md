@@ -135,6 +135,7 @@ luna node remove node003
 luna node remove node004
 ```
 
+
 ### Create the Compute Nodes
 ```shell
 luna node add -g compute -if BOOTIF -M 4C:D9:8F:49:7F:8F test-computea001
@@ -153,4 +154,19 @@ luna group change --setupbmc n compute
 ```shell
 luna bmcsetup rename compute trinityx
 luna bmcsetup change -uid 3 -u trinityx -p <PASSWORD> trinityx
+```
+
+### Create the Login Nodes
+```shell
+luna osimage clone compute login
+luna osimage pack login
+
+luna group clone compute login -o login
+
+luna node add -g login -if BOOTIF -M 50:9A:4C:A5:F3:C0 test-login001
+luna node changeinterface -N ipmi -I 172.16.108.150 test-login001 BMC
+
+luna node add -g login -if BOOTIF -M B4:96:91:71:2C:4C test-login002
+luna node changeinterface -N ipmi -I 172.16.108.201 test-login002 BMC
+
 ```
