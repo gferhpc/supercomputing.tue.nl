@@ -10,7 +10,7 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
 ## Before maintenance:
 
 * tweede login node = tue-login001
-   - [ ] aansluiten
+   - [x] aansluiten
    - [ ] installeren
    - [ ] OOD testen
    - [ ] cgroups implementeren
@@ -25,7 +25,7 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
 * cgroups user limiting
    - [x] testen op mcs-login001
    - [ ] implementeren op tue-login002 -> kan niet live, heeft reboot nodig
-   - [ ] embedden in login-image -> zie provisioning.md
+   - [x] embedden in login-image
 
 * dept. login nodes uitzetten
    - [ ] pas doen als tue-login001 er is
