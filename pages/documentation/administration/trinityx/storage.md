@@ -19,7 +19,7 @@ Export NFS on storage nodes
 ### On all head nodes:
 ```shell
 mkdir -p /sw /trinity/ohpc /trinity/shared 
-mkdir -p /home/tue /home/arch001 /home/bme001 /home/bme002 /home/chem002 /home/mcs001 /home/phys /home/mech001
+mkdir -p /home/tue /home/arch001 /home/bme001 /home/bme002 /home/chem002 /home/mcs001 /home/phys /home/mech001 /home/elec001
 mkdir -p /scratch/chem001
 ```
 
@@ -39,6 +39,7 @@ mkdir -p /scratch/chem001
 10.150.254.51:/tank/home   /home/mcs001     nfs     defaults,bg,soft,_netdev     0 0
 10.150.254.61:/tank/scratch /scratch/chem001 nfs    defaults,bg,soft,_netdev     0 0
 10.150.254.62:/tank/home   /home/chem002    nfs     defaults,bg,soft,_netdev     0 0
+10.150.254.71:/tank/home   /home/elec001    nfs     defaults,bg,soft,_netdev     0 0
 ```
 
 # Clean install
@@ -47,8 +48,8 @@ mkdir -p /scratch/chem001
     - Like head nodes; see [here](installation.md).
     - Hostname: e.g. `tue-storage001.cluster`
     - IP address: fixed from 10.150.254.x/16.  Update networking.md accordingly.
-    - Gateway: 10.150.254.252
-    - DNS servers: 10.150.254.253,10.150.254.254
+    - Gateway: 10.150.255.252
+    - DNS servers: 10.150.255.253,10.150.255.254
     - DNS search domains: cluster
 
 ```shell
