@@ -26,6 +26,7 @@ tags: [Software]
 | scikit-image   | 0.19.3-foss-2022a                     | `module avail scikit-image` | |
 | SciPy          | 2022.05-foss-2022a 2023.07-gfbf-2023a | `module avail SciPy-bundle` | Yes, included in Jupyter |
 | slepc4py       | 3.17.2-foss-2022a                     | `module avail slepc4py` | |
+| Transformers   | 4.39.3-gfbf-2023a                     | `module avail Transformers` | |
 | Tensorflow     | 2.11.0-foss-2022a  2.13.0-foss-2023a  | `module avail TensorFlow` | Yes, included in Jupyter |
 | torchvision    | 0.13.1-foss-2022a                     | `module avail torchvision` | Yes, included in Jupyter |
 
