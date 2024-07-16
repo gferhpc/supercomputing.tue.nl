@@ -7,7 +7,7 @@ tags: [Software, Module]
 
 [MATLAB Basic Functions Reference](matlab-basic-functions-reference.pdf)
 
-![MATLAB in Umbrella On Demdand](matlab-ood.png){: align=right style="height:150px"}
+![MATLAB in Umbrella On Demand](matlab-ood.png){: align=right style="height:150px"}
 
 ## Using MATLAB interactive (Graphical User Interface)
 
