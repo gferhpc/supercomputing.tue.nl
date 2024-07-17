@@ -17,7 +17,7 @@ tags: [TrinityX, Test]
 | test-computea001      | 172.16.108.161 |       -        | 4C:D9:8F:49:7F:8F |      -        |
 | test-computea002      | 172.16.108.162 |       -        | 4C:D9:8F:49:7B:17 |      -        |
 
-## Requirements
+## Setup Head Node(s)
 
 - [Rocky Linux](https://rockylinux.org){:target=_blank} 8.x
 - iDrac access to test-head01 and test-head02
