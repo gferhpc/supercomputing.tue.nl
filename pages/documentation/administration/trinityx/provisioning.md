@@ -137,7 +137,7 @@ In the image (lchroot login) the following was changed:
 sed -i '/slurm/d' /etc/pam.d/sshd
 ```
 ```shell
-cat > /etc/pam.d/sshd << EOF
+cat >> /etc/pam.d/sshd << EOF
 session    optional     pam_motd.so
 EOF
 ```
