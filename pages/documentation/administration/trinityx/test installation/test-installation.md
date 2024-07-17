@@ -3,7 +3,7 @@ title: Test TrinityX Environment
 tags: [TrinityX, Test]
 ---
 
-# Installation Environment
+# Test Environment
 
 | Nodes                 |      iDrac0    |  Int. mgmt IP  |   Internal IP/MAC  | External IP  |
 |:----------------------|:--------------:|:--------------:|:-----------------:|:-------------:|
