@@ -1,3 +1,8 @@
+---
+title: HA TrinityX Install
+tags: [TrinityX, Test]
+---
+
 ## HA TrinityX (latest version) Installation on test-head01 and test-head02
 
 ### Prepare environment
