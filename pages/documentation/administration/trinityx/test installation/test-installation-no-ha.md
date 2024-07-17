@@ -1,3 +1,8 @@
+---
+title: NO-HA TrinityX install
+tags: [TrinityX, Test]
+---
+
 ## NO-HA TrinityX (latest version) Installation on test-head01
 
 ### Prepare environment
