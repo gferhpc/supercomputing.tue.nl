@@ -90,4 +90,4 @@ tags: [TrinityX, Test]
 
 [NO HA Installation](test-installation-NO-HA.md)
 
-[Ha Installation](test-installation-HA.md)
+[HA Installation](test-installation-HA.md)
