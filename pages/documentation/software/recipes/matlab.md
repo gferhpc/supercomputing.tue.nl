@@ -3,13 +3,13 @@ title: MATLAB
 tags: [Software, Module]
 ---
 
-[MATLAB](https://nl.mathworks.com/products/matlab.html){:target="_blank"} by MAthWorks is a programming and numeric computing platform used by millions of engineers and scientists to analyze data, develop algorithms, and create models.
+[MATLAB](https://nl.mathworks.com/products/matlab.html){:target="_blank"} by MathWorks is a programming and numeric computing platform used by millions of engineers and scientists to analyze data, develop algorithms, and create models.
 
 [MATLAB Basic Functions Reference](matlab-basic-functions-reference.pdf)
 
 ![MATLAB in Umbrella On Demand](matlab-ood.png){: align=right style="height:150px"}
 
-## Using MATLAB interactive
+## Using MATLAB interactive \
 (Graphical User Interface)
 
 Use your browser to connect to [Umbrella On Demand](https://hpc.tue.nl){:target="_blank"}
