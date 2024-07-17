@@ -191,7 +191,7 @@ sed -i 's/BOND0P2/eno2/' /sysroot/etc/sysconfig/network-scripts/ifcfg-bond0-port
 
 EOF
 
-luna node change -qpost post-login001.txt test-login001
+luna node change -qpost post-test-login001.txt test-login001
 
 cp post.txt post-test-login0002.txt
 cat >> post-test-login0002.txt << EOF
@@ -202,4 +202,4 @@ sed -i 's/BOND0P2/enp3s0f1/' /sysroot/etc/sysconfig/network-scripts/ifcfg-bond0-
 
 EOF
 
-luna node change -qpost post-login002.txt test-login002
+luna node change -qpost post-test-login002.txt test-login002
