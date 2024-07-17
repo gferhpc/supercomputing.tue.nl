@@ -168,5 +168,38 @@ luna node changeinterface -N ipmi -I 172.16.108.150 test-login001 BMC
 
 luna node add -g login -if BOOTIF -M B4:96:91:71:2C:4C test-login002
 luna node changeinterface -N ipmi -I 172.16.108.201 test-login002 BMC
-
 ```
+
+### Add the networkconfigs in the login image
+```shell
+wget https://gitlab.tue.nl/hpclab/website/-/raw/main/pages/documentation/administration/trinityx/test%20installation/ifcfg-bond0-port1
+wget https://gitlab.tue.nl/hpclab/website/-/raw/main/pages/documentation/administration/trinityx/test%20installation/ifcfg-bond0-port2
+wget https://gitlab.tue.nl/hpclab/website/-/raw/main/pages/documentation/administration/trinityx/test%20installation/ifcfg-bond0
+wget https://gitlab.tue.nl/hpclab/website/-/raw/main/pages/documentation/administration/trinityx/test%20installation/ifcfg-tue
+cp ifcfg-* /trinityx/images/login/etc/sysconfig/network-scripts/.
+luna osimage pack login
+```
+
+### Modify the post.txt for login001 and 002 (different interface names)
+```shell
+cp post.txt post-test-login0001.txt
+cat >> post-test-login0001.txt << EOF
+
+sed -i 's/IP_TUE/131.155.2.53/' /sysroot/etc/sysconfig/network-scripts/ifcfg-tue
+sed -i 's/BOND0P1/eno1/' /sysroot/etc/sysconfig/network-scripts/ifcfg-bond0-port1
+sed -i 's/BOND0P2/eno2/' /sysroot/etc/sysconfig/network-scripts/ifcfg-bond0-port2
+
+EOF
+
+luna node change -qpost post-login001.txt test-login001
+
+cp post.txt post-test-login0002.txt
+cat >> post-test-login0002.txt << EOF
+
+sed -i 's/IP_TUE/131.155.2.54/' /sysroot/etc/sysconfig/network-scripts/ifcfg-tue
+sed -i 's/BOND0P1/enp3s0f0/' /sysroot/etc/sysconfig/network-scripts/ifcfg-bond0-port1
+sed -i 's/BOND0P2/enp3s0f1/' /sysroot/etc/sysconfig/network-scripts/ifcfg-bond0-port2
+
+EOF
+
+luna node change -qpost post-login002.txt test-login002
