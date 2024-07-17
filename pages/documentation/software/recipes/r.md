@@ -3,6 +3,8 @@ title: R
 tags: [Software, Module]
 ---
 
+[R](https://www.r-project.org/){:target="_blank"} is a free software environment for statistical computing and graphics..
+
 ![RStudio in Umbrella On Demand](rstudio-ood.png){: align=right style="height:150px"}
 
 ## Using R via Rstudio interactive (Graphical User Interface)
