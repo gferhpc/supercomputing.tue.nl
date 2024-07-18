@@ -208,3 +208,12 @@ sed -i 's/BOND0P2/enp3s0f1/' /sysroot/etc/sysconfig/network-scripts/ifcfg-bond0-
 EOF
 
 luna node change -qpost post-test-login002.txt test-login002
+```
+
+```shell
+sed -i '/slurm/d' /trinityx/images/login/etc/pam.d/sshd
+cat >> /trinityx/images/login//etc/pam.d/sshd << EOF
+session    optional     pam_motd.so
+EOF
+luna osimage pack login
+```
