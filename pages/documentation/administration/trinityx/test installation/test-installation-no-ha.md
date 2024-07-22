@@ -211,11 +211,11 @@ luna node change -qpost post-test-login002.txt test-login002
 ```
 
 ```shell
-sed -i '/slurm/d' /trinityx/images/login/etc/pam.d/sshd
-cat >> /trinityx/images/login//etc/pam.d/sshd << EOF
+sed -i '/slurm/d' /trinity/images/login/etc/pam.d/sshd
+cat >> /trinity/images/login//etc/pam.d/sshd << EOF
 session    optional     pam_motd.so
 EOF
-cat >> /trinityx/images/login/etc/sssd/sssd.conf << EOF
+cat >> /trinity/images/login/etc/sssd/sssd.conf << EOF
 
 auth_provider = krb5
 krb5_server = campus.tue.nl
