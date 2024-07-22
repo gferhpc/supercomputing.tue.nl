@@ -17,9 +17,9 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
    - [ ] DAN PAS LIVE GAAN
 
 * OOD
-   - [ ] installeren op mcs-login001
-   - [ ] installeren op tue-login001
-   - [ ] temp. round-robin DNS registreren
+   - [x] installeren op test-login001  
+   - [x] installeren op test-login002
+   - [x] hpc.test.tue.nl round-robin DNS registreren 
    - [ ] testen
 
 * cgroups user limiting
