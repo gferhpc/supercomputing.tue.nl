@@ -215,5 +215,13 @@ sed -i '/slurm/d' /trinityx/images/login/etc/pam.d/sshd
 cat >> /trinityx/images/login//etc/pam.d/sshd << EOF
 session    optional     pam_motd.so
 EOF
+cat >> /trinityx/images/login/etc/sssd/sssd.conf << EOF
+
+auth_provider = krb5
+krb5_server = campus.tue.nl
+krb5_kpasswd = campus.tue.nl
+krb5_realm = CAMPUS.TUE.NL
+cache_credentials = True
+EOF
 luna osimage pack login
 ```
