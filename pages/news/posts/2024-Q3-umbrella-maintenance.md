@@ -28,7 +28,8 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
    - [x] embedden in login-image
 
 * dept. login nodes uitzetten
-   - [ ] pas doen als tue-login001 er is
+   - [x] arch-login001 (off) and mcs-login001 (-> test-login001)
+   - [ ] anderen pas doen als tue-login001 er is
    - [ ] vooraf communiceren met RIT, sleutelfiguren
    - [ ] DNS aanpassen
    - [ ] tijdens maintenance: verwijderen
