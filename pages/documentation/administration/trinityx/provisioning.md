@@ -90,9 +90,8 @@ luna osimage pack NAME
 ## ALL images additions
 
 ```shell
+dnf -y install python3-requests
 dnf -y install pam-devel
-dnf -y install p7zip-plugins
-dnf -y install TurboVNC # Needs repo
 dnf -y install p7zip-plugins
 dnf -y remove xfce4-power-manager xfce4-screensaver
 dnf -y install libXScrnSaver 
