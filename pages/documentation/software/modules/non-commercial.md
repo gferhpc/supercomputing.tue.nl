@@ -82,7 +82,7 @@ Using the toolchain(s) the following software is avaiable. When the module is lo
 | CP2K           | 2023.1-foss-2023a                    | `CP2K`      | |
 | dask           | 2022.10.0-foss-2022a 2023.9.2-foss-2023a | `dask`  | |
 | GROMACS        | 2023.3-foss-2023a                    | `GROMACS`   | |
-| Julia          | 1.9.3 1.10.1                         | `Julia`     | |
+| Julia          | 1.9.3 1.10.4                         | `Julia`     | |
 | LAMMPS         | 23Jun2022-foss-2022a-kokkos          | `LAMMPS`    | |
 | MCL            | 22.282-GCCcore-12.3.0                | `MCL`       | |
 | NetLogo        | 6.3.0-64 6.4.0-64                    | `NetLogo`   | Yes |
