@@ -13,7 +13,7 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
    - [x] aansluiten
    - [ ] installeren
    - [ ] OOD testen
-   - [ ] cgroups implementeren
+   - [x] cgroups implementeren
    - [ ] DAN PAS LIVE GAAN
 
 * OOD
@@ -34,6 +34,8 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
    - [ ] tijdens maintenance: verwijderen
 
 * bestellen 25 Gbit NICs voor heads + login002
+   - [x] quote aangevraagd
+   - [ ] besteld
 
 * VAST inrichten
    - [ ] bespreken met Richard: grootte home dirs + doorbelasting
@@ -55,6 +57,14 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
 * nieuwe racks regelen
    - PDUs: gecombineerd C13 C19
    - ... of alles C19, en dan kabels C20->C13 waar nodig
+
+* verhuizen in DC:
+   - [ ] mastodont naar research racks
+   - [ ] smm-trssl01 naar research racks
+
+* netwerk:
+   - [ ] regelen CX83 in main rack
+   - [x] checken of heads/logins 10 + 25 Gbit hebben
 
 ## During maintenance:
 
@@ -111,6 +121,16 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
    - [ ] unmount before cleaning `$SLURM_TMPDIR` - see Guus's Python script
    - [ ] add `seff` output to output file
    - [ ] test
+
+* move in DC:
+   - [ ] tue-login002 naar main rack
+   - [ ] tue-storage001 uitfaseren
+   - [ ] hpc-head001 naar main rack
+   - [ ] hpc-head002 naar main rack
+
+## After maintenance
+
+* Sort out old storage nodes
 
 ## Postpone to next maintenance:
 
