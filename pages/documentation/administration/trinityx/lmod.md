@@ -24,7 +24,7 @@ local function load_hook(t)
 
    if (userload == "yes" ) then
      local msg = string.format("user=%s module=%s path=%s", os.getenv("USER"), t.modFullName, t.fn)
-     lmod_system_execute("logger -t ModuleUsageTracking -p local0.info " .. msg)
+     lmod_system_execute("/usr/bin/logger -t ModuleUsageTracking -p local0.info " .. msg)
    end
 end
 
