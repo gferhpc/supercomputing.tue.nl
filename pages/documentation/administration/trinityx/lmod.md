@@ -2,7 +2,7 @@
 
 ## module logging/tracking
 
-[Lmod Documrntation about Tracking Module Usage](https://lmod.readthedocs.io/en/latest/300_tracking_module_usage.html){:target="_blank"}
+[Lmod Documentation about Tracking Module Usage](https://lmod.readthedocs.io/en/latest/300_tracking_module_usage.html){:target="_blank"}
 
 ### Create a hook in SitePackage.lua
 
