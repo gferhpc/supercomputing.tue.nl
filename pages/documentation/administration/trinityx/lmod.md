@@ -7,7 +7,7 @@
 
 ### Create a hook in SitePackage.lua
 
-SitePackage.lus is located in /opt/ohpc/admin/lmod/lmod/libexec on every node, thus the file needs to be updated in the TrinityX images of the nodes. For testing a login node is used ( eq. tue-login001 ).
+SitePackage.lua is located in /opt/ohpc/admin/lmod/lmod/libexec on every node, thus the file needs to be updated in the TrinityX images of the nodes. For testing a login node is used ( eq. tue-login001 ).
 
 ```lua
 require("strict")
