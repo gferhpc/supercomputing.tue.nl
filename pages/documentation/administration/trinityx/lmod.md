@@ -54,7 +54,7 @@ cat > /etc/logrotate.d/moduleUsage << EOF
 /var/log/moduleUsage.log{
    missingok
    copytruncate
-   rotate 4
+   rotate 30
    daily
    create 644 root root
    notifempty
