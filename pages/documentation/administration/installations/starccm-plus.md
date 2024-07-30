@@ -22,7 +22,7 @@ IATEMPDIR=/local ./STAR-CCM+${StarCCM}_01_linux-x86_64-2.28_gnu11.2.sh \
 Create a module
 
 ```shell
-cat > /sw/rl8/zen/mod/all/StarCCM+/2024.0001.lua << EOF
+cat > /sw/rl8/zen/mod/all/StarCCM+/${VERSION}.lua << EOF
 
 help([==[
 
@@ -41,7 +41,7 @@ whatis([==[Description: StarCCM+ is a multiphysics computational fluid dynamics 
 whatis([==[Homepage: https://plm.sw.siemens.com/en-US/simcenter/fluids-thermal-simulation/star-ccm/]==])
 whatis([==[URL: https://plm.sw.siemens.com/en-US/simcenter/fluids-thermal-simulation/star-ccm/]==])
 
-local root = "/sw/rl8/zen/app/StarCCM+/2024.0001/19.02.013/STAR-CCM+19.02.013/"
+local root = "/sw/rl8/zen/app/StarCCM+/${VERSION}/${StarCCM}/STAR-CCM+${StarCCM}/"
 
 conflict("StarCCM+")
 
