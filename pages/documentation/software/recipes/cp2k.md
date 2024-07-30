@@ -62,7 +62,7 @@ cp2k.psmp example.inp
 
 module purge
 module load CP2K/2023.1-foss-2023a
-mpirun cp2k.popt example.inp
+mpirun  -n ${SLURM_NTASKS} cp2k.popt example.inp
 ```
 
 ### CP2K SLURM sbatch jobscript example using Shared Memory and MPI
@@ -80,5 +80,5 @@ mpirun cp2k.popt example.inp
 
 module purge
 module load CP2K/2023.1-foss-2023a
-mpirun cp2k.psmp example.inp
+mpirun -n ${SLURM_NTASKS} cp2k.psmp example.inp
 ```
