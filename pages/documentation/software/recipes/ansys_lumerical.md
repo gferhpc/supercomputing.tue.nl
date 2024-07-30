@@ -45,8 +45,8 @@ Ansys Lumerical 2024 R1.3 FDTD Solver Version 8.31.3766 (Linux 64bit)
 
 ```slurm
 #!/bin/bash
-#SBATCH --job-name=test_application
-#SBATCH --output=test_application-%j.log
+#SBATCH --job-name=test_lumerical
+#SBATCH --output=test_lumerical-%j.log
 #SBATCH --partition=tue.default.q
 #SBATCH --nodes=1
 #SBATCH --ntasks=1

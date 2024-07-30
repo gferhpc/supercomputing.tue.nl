@@ -14,7 +14,7 @@ Use your browser to connect to [Umbrella On Demand](https://hpc.tue.nl){:target=
 
 ## Using Application in SLURM batch jobs (Command Line Interface)
 
-## Test Application
+### Test Application
 
 Load the modules
 
