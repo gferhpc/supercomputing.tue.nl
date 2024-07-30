@@ -5,8 +5,64 @@ tags: [Software, Module]
 
 [ANSYS Lumerical](https://www.ansys.com/products/optics){:target="_blank"}, part of the ANSYS Optics suite, is an optics simulation package.
 
-## Running ANSYS Lumerical FDTD in Slurm batch jobs using intelMPI
+![ANSYS Lumerical in Umbrella On Demdand](lumerical-ood.png){: align=right style="height:150px"}
+
+## Using ANSYS Lumerical interactive (Graphical User Interface)
+
+Use your browser to connect to [Umbrella On Demand](https://hpc.tue.nl){:target="_blank"}
+
+## Using ANSYS Lumerical in SLURM batch jobs (Command Line Interface)
+
+## Test ANSYS Lumerical Shared Memory
+
+Load the modules
+
+``` shell
+[user@umbrella]$ module purge
+[user@umbrella]$ module load Lumerical/2024-R1.3
 ```
+Check commandline version of Lumerical fdtd-engine
+```shell
+[user@umbrella]$ fdtd-engine -v
+Ansys Lumerical 2024 R1.3 FDTD Solver Version 8.31.3766 (Linux 64bit)
+```
+## Test ANSYS Lumerical Intel MPI
+
+Load the modules
+
+``` shell
+[user@umbrella]$ module purge
+[user@umbrella]$ module load intel/2023a
+[user@umbrella]$ module load Lumerical/2024-R1.3
+```
+Check commandline version of Lumerical fdtd-engine-impi-lcl
+```shell
+[user@umbrella]$ fdtd-engine-impi-lcl -v
+Ansys Lumerical 2024 R1.3 FDTD Solver Version 8.31.3766 (Linux 64bit)
+```
+
+### Lumerical SLURM sbatch jobscript example using Shared Memory
+
+```slurm
+#!/bin/bash
+#SBATCH --job-name=test_application
+#SBATCH --output=test_application-%j.log
+#SBATCH --partition=tue.default.q
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=4
+#SBATCH --mem-per-cpu=2gb
+#SBATCH --time=00:05:00
+
+module purge
+module load Lumerical/2024-R1.3
+
+fdtd-engine -t ${SLURM_CPUS_PER_TASK} -logall -fullinfo example.lsf
+```
+
+### Lumerical SLURM sbatch jobscript example using intelMPI
+
+```slurm
 #!/bin/bash
 #
 #SBATCH --job-name=test_lumerical
@@ -20,14 +76,10 @@ tags: [Software, Module]
 
 module purge
 module load intel/2023a
-module load lumerical/2024-R1.1
+module load Lumerical/2024-R1.3
 
-mpirun fdtd-engine-impi-lcl -logall -fullinfo mqwgain_getting_started_example.lsf
+mpirun fdtd-engine-impi-lcl -logall -fullinfo example.lsf
 ```
-
-## ANSYS Lumerical GUI (interactive)
-
-Use your browser to connect to https://hpc.tue.nl
 
 ## Method 1
 
