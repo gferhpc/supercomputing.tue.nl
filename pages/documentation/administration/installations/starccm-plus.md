@@ -50,3 +50,4 @@ prepend_path("PATH", pathJoin(root, "star/bin"))
 setenv("CDLMD_LICENSE_FILE","PORT@LICENCE_SERVER")
 
 EOF
+```
