@@ -13,7 +13,7 @@ Use your browser to connect to [Umbrella On Demand](https://hpc.tue.nl){:target=
 
 ## Using ANSYS Lumerical in SLURM batch jobs (Command Line Interface)
 
-## Test ANSYS Lumerical Shared Memory
+### Test ANSYS Lumerical Shared Memory
 
 Load the modules
 
@@ -26,7 +26,7 @@ Check commandline version of Lumerical fdtd-engine
 [user@umbrella]$ fdtd-engine -v
 Ansys Lumerical 2024 R1.3 FDTD Solver Version 8.31.3766 (Linux 64bit)
 ```
-## Test ANSYS Lumerical Intel MPI
+### Test ANSYS Lumerical Intel MPI
 
 Load the modules
 
