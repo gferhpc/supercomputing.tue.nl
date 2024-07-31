@@ -1,21 +1,25 @@
 # AMS
 
-**VERSION=2024.104**
+**VERSION=2024.102**
 
 As a user on your laptop:
 
-From/on the Website, Download the AMS Linux OpenMPI binary tgz - Login credentitials are in TopDesk Self Service Portal ( Installing AMS )
+From/on the Website, Download the AMS Linux OpenMPI binary tgz
+
+Login credentitials are in TopDesk Self Service Portal ( Search for: "Installing AMS" )
+
+As a user on ssh@hcp.tue.nl
 
 `mkdir /local/AMS`
 
 copy the *.tgz to the login node into /local/AMS.
 
-`chown -R easybuild /local/AMS`
+`chown -R a+rw /local/AMS`
 
 As easybuild user:
 
 ```shell
-export AMS_VERSION=2024.104
+export AMS_VERSION=2024.102
 cd /local/AMS
 mkdir /sw/rl8/zen/app/AMS/${AMS_VERSION}/
 tar -xzf ams${AMS_VERSION}.pc64_linux.openmpi.bin.tgz -C /sw/rl8/zen/app/AMS/${AMS_VERSION}/
