@@ -7,11 +7,26 @@ The TU/e Umbrella HPc cluster has environment modules available specially for Py
 
 ## Test Python
 
+Load a Python version via environment modules.
+
 ```shell 
 [user@umbrella]$ module purge
 [user@umbrella]$ module load Python/3.11.3
 [user@umbrella]$ python --version
 Python 3.11.3
+```
+
+Using environment modules to make packages available for import.
+
+```shell 
+[user@umbrella]$ module purge
+[user@umbrella]$ module load PyTorch/2.1.2-foss-2023a
+[user@umbrella]$ python
+Python 3.11.3 (main, Feb  2 2024, 18:52:27) [GCC 12.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import torch as t
+>>> print(t.__version__)
+2.1.2
 ```
 
 ## Python jobscript example
