@@ -1,6 +1,6 @@
 # AMS
 
-**VERSION=2023.105**
+**VERSION=2024.104**
 
 As a user on your laptop:
 
@@ -12,10 +12,10 @@ copy the *.tgz to the login node into /local/AMS.
 
 `chown -R easybuild /local/AMS`
 
-As easybuild on login node:
+As easybuild user:
 
 ```shell
-export AMS_VERSION=2023.105
+export AMS_VERSION=2024.104
 cd /local/AMS
 mkdir /sw/rl8/zen/app/AMS/${AMS_VERSION}/
 tar -xzf ams${AMS_VERSION}.pc64_linux.openmpi.bin.tgz -C /sw/rl8/zen/app/AMS/${AMS_VERSION}/
@@ -33,7 +33,7 @@ chmod -R o+rx /sw/rl8/zen/app/AMS/${AMS_VERSION}
 
 PACKAGE_NAME=m3gnet
 
-As easybuild on tue-login002:
+As easybuild user:
 
 ```shell
 module load AMS/${AMS_VERSION}
