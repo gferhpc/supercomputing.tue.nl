@@ -25,7 +25,7 @@ A batch job script is a shell script that includes Slurm directives within comme
 
 Here's an example job script for a CPU only node:
 
-```bash
+```slurm
 #!/bin/bash
 
 #SBATCH --job-name=my_job
@@ -45,18 +45,18 @@ python my_script.py
 ```
 Here's an example job script for a GPU node:
 
-```bash
+```slurm
 #!/bin/bash
 
 #SBATCH --job-name=my_job
 #SBATCH --output=my_job_output_%j.txt
-#SBATCH --partition=tue.gpu.q
+#SBATCH --partition=tue.gpu.q         # Choose a partition that has GPUs
 #SBATCH --time=16:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=2G
-#SBATCH --gpus=1
+#SBATCH --gpus=1                      # This is how to request a GPU
 
 # Load modules or software if needed
 # module load Python/3.11.3-GCCcore-12.3.0
