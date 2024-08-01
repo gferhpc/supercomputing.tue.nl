@@ -4,6 +4,8 @@ tags: [Software]
 ---
 To use commercial software a license is needed, depending on the software this is a user or group specific license or a TU/e wide available license.
 
+The command `module avail ansys` finds modules case insensitive, so it will show ansys/2023r1 and ANSYS/2024R1, but `module load` is case sensitive.
+
 Available as [modules](../../steps/software/index.md):
 
 | Name            | Website                              | Usage Documentation      | https://hpc.tue.nl |
