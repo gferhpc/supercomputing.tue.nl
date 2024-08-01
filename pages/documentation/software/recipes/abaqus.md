@@ -6,7 +6,7 @@ tags: [Software, Module]
 
 ![Abaqus in Umbrella On Demdand](abaqus-ood.png){: align=right style="height:150px"}
 
-## Using Abaqus interactive (Graphical User Interface)
+## Using Abaqus interactive<br>(Graphical User Interface)
 
 Use your browser to connect to [Umbrella On Demand](https://hpc.tue.nl){:target="_blank"}
 
