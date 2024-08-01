@@ -7,11 +7,11 @@ tags: [Software, Module]
 
 ![Mathematica in Umbrella On Demdand](mathematica-ood.png){: align=right style="height:150px"}
 
-## Using Mathematica interactive (Graphical User Interface)
+## Using Mathematica interactive<br>(Graphical User Interface)
 
 Use your browser to connect to [Umbrella On Demand](https://hpc.tue.nl){:target="_blank"}
 
-## Using Mathematica in SLURM batch jobs (Command Line Interface)
+## Using Mathematica in SLURM batch jobs<br>(Command Line Interface)
 
 ### Test Mathematica
 

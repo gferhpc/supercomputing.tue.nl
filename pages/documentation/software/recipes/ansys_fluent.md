@@ -7,11 +7,11 @@ tags: [Software, Module]
 
 ![ANSYS Fluent in Umbrella On Demdand](ansys-fluent-ood.png){: align=right style="height:150px"}
 
-## Using Application interactive (Graphical User Interface)
+## Using Application interactive<br>(Graphical User Interface)
 
 Use your browser to connect to [Umbrella On Demand](https://hpc.tue.nl){:target="_blank"}
 
-## Using Application in SLURM batch jobs (Command Line Interface)
+## Using Application in SLURM batch jobs<br>(Command Line Interface)
 
 ### Test ANSYS Fluent
 

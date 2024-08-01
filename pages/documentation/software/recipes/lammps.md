@@ -5,7 +5,7 @@ tags: [Software, Module]
 
 [LAMMPS](https://www.lammps.org/){:target="_blank"} (Molecular Dynamics Simulator) is a classical molecular dynamics code with a focus on materials modeling. It's an acronym for Large-scale Atomic/Molecular Massively Parallel Simulator.
 
-## Using LAMMPS in SLURM batch jobs (Command Line Interface)
+## Using LAMMPS in SLURM batch jobs<br>(Command Line Interface)
 
 ### Test LAMMPS
 

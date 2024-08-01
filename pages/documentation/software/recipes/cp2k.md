@@ -5,7 +5,7 @@ tags: [Software, Module]
 
 [CP2K](https://www.cp2k.org/) is a quantum chemistry and solid state physics software package that can perform atomistic simulations of solid state, liquid, molecular, periodic, material, crystal, and biological systems.
 
-## Using CP2K in SLURM batch jobs (Command Line Interface)
+## Using CP2K in SLURM batch jobs<br>(Command Line Interface)
 
 ### Test CP2K
 

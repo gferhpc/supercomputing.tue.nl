@@ -13,11 +13,11 @@ for the procedure on how to get a license for using COMSOL.
 
 ![COMSOL in Umbrella On Demdand](comsol-ood.png){: align=right style="height:150px"}
 
-## Using Application interactive (Graphical User Interface)
+## Using Application interactive<br>(Graphical User Interface)
 
 Use your browser to connect to [Umbrella On Demand](https://hpc.tue.nl){:target="_blank"}
 
-## Using COMSOL in SLURM batch jobs (Command Line Interface)
+## Using COMSOL in SLURM batch jobs<br>(Command Line Interface)
 
 ### COMSOL SLURM sbatch jobscript example using Shared Memory
 

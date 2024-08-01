@@ -10,7 +10,7 @@ tags: [Software, Module]
 
 Use your browser to connect to [Umbrella On Demand](https://hpc.tue.nl){:target="_blank"}
 
-## Using Abaqus in SLURM batch jobs (Command Line Interface)
+## Using Abaqus in SLURM batch jobs<br>(Command Line Interface)
 
 ### Test Abaqus
 

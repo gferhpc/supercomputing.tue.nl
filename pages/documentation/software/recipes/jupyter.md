@@ -7,10 +7,10 @@ tags: [Software]
 
 ![Jupyter in Umbrella On Demdand](jupyter-ood.png){: align=right style="height:150px"}
 
-## Using Jupyter interactive (Graphical User Interface)
+## Using Jupyter interactive<br>(Graphical User Interface)
 
 Use your browser to connect to [Umbrella On Demand](https://hpc.tue.nl){:target="_blank"}
 
-## Using Jupyther in SLURM batch jobs (Command Line Interface)
+## Using Jupyther in SLURM batch jobs<br>(Command Line Interface)
 
 As Jupyter is an Interactive Development Environment, running it as a batch job in SLURM is not useful. Running the Python code developed at scale is: [Python Recipes](python.md)

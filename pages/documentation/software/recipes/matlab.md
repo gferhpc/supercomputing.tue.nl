@@ -9,11 +9,11 @@ tags: [Software, Module]
 
 ![MATLAB in Umbrella On Demand](matlab-ood.png){: align=right style="height:150px"}
 
-## Using MATLAB interactive (Graphical User Interface)
+## Using MATLAB interactive<br>(Graphical User Interface)
 
 Use your browser to connect to [Umbrella On Demand](https://hpc.tue.nl){:target="_blank"}
 
-## Using MATLAB in SLURM batch jobs (Command Line Interface)
+## Using MATLAB in SLURM batch jobs<br>(Command Line Interface)
 
 ### Test MATLAB
 

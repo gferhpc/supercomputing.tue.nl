@@ -7,11 +7,11 @@ tags: [Software, Module]
 
 ![ANSYS Lumerical in Umbrella On Demdand](lumerical-ood.png){: align=right style="height:150px"}
 
-## Using ANSYS Lumerical interactive (Graphical User Interface)
+## Using ANSYS Lumerical interactive<br>(Graphical User Interface)
 
 Use your browser to connect to [Umbrella On Demand](https://hpc.tue.nl){:target="_blank"}
 
-## Using ANSYS Lumerical in SLURM batch jobs (Command Line Interface)
+## Using ANSYS Lumerical in SLURM batch jobs<br>(Command Line Interface)
 
 ### Test ANSYS Lumerical Shared Memory
 
