@@ -98,5 +98,5 @@ Using the toolchain(s) the following software is avaiable. When the module is lo
 | R              | 4.3.2-gfbf-2023a 4.4.0-gfbf-2023a  | `R/`        | |
 | Rstudio        | 2022.07.2+576-foss-2022a-Java-11-R-4.2.1 | `RStudio` | Yes |
 | Spark          | 3.5.0-foss-2023a    | `Spark`        | |
-| VSCode         | 1.91.1                               | `VSCode`   | Yes via codeserver |
+| VSCode         | 1.91.1  1.92.0                               | `VSCode`   | Yes via codeserver |
  
