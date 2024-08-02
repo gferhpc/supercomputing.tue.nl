@@ -83,8 +83,8 @@ Using the toolchain(s) the following software is avaiable. When the module is lo
 | CP2K           | 2023.1-foss-2023a                    | `CP2K`      | |
 | dask           | 2022.10.0-foss-2022a 2023.9.2-foss-2023a | `dask`  | |
 | GROMACS        | 2023.3-foss-2023a                    | `GROMACS`   | |
-| Julia          | 1.9.3 1.10.4                         | `Julia`     | |
-| LAMMPS         | 23Jun2022-foss-2022a-kokkos 2Aug2023_update2-foss-2023a-kokkos | `LAMMPS`    | |
+| Julia          | 1.10.4                         | `Julia`     | |
+| LAMMPS         | 2Aug2023_update2-foss-2023a-kokkos | `LAMMPS`    | |
 | MCL            | 22.282-GCCcore-12.3.0                | `MCL`       | |
 | NetLogo        | 6.4.0-64                    | `NetLogo`   | Yes |
 | OpenFOAM (ESI)      | v2206-foss-2022a v2312-foss-2023a | `OpenFOAM`  | |
@@ -92,11 +92,11 @@ Using the toolchain(s) the following software is avaiable. When the module is lo
 | OpenModelica   | 1.22.0-foss-2022a                    | `OpenModelica` | |
 | OpenSceneGraph | 3.6.5-foss-2022a                     | `OpenSceneGraph`  | Yes via Interactive Desktop |
 | ORCA           | 5.0.4-gompi-2023a                   | `ORCA`      | |
-| ParaView       | 5.11.2-foss-2023a                    | `ParaView`  | Yes |
+| ParaView       | 5.12.1-foss-2023a                    | `ParaView`  | Yes |
 | QCG-PilotJob   | 0.13.1-foss-2022a 0.14.1-foss-2023a | `QCG-PilotJob` | |
-| QuantumESPRESSO| 7.2-foss-2023a 7.3-foss-2023a    | `QuantumESPRESSO` | |
+| QuantumESPRESSO| 7.3-foss-2023a    | `QuantumESPRESSO` | |
 | R              | 4.3.2-gfbf-2023a 4.4.0-gfbf-2023a  | `R/`        | |
 | Rstudio        | 2022.07.2+576-foss-2022a-Java-11-R-4.2.1 | `RStudio` | Yes |
-| Spark          | 3.3.1-foss-2022a 3.5.0-foss-2023a    | `Spark`        | |
+| Spark          | 3.5.0-foss-2023a    | `Spark`        | |
 | VSCode         | 1.91.1                               | `VSCode`   | Yes via codeserver |
  
