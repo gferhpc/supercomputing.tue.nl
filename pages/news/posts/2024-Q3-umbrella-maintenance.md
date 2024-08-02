@@ -11,16 +11,16 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
 
 * tweede login node = tue-login001
    - [x] aansluiten
-   - [ ] installeren
-   - [ ] OOD testen
+   - [x] installeren
+   - [x] OOD testen
    - [x] cgroups implementeren
-   - [ ] DAN PAS LIVE GAAN
+   - [x] DAN PAS LIVE GAAN
 
 * OOD
    - [x] installeren op test-login001  
    - [x] installeren op test-login002
    - [x] hpc.test.tue.nl round-robin DNS registreren 
-   - [ ] testen
+   - [x] testen
 
 * cgroups user limiting
    - [x] testen op mcs-login001
@@ -36,13 +36,13 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
 
 * bestellen 25 Gbit NICs voor heads + login002
    - [x] quote aangevraagd
-   - [ ] besteld
+   - [x] besteld
 
 * VAST inrichten
    - [ ] bespreken met Richard: grootte home dirs + doorbelasting
    - [ ] inrichting VAST bespreken + documenteren
    - [ ] inrichting project dirs bespreken + documenteren
-   - [ ] Guus: NFSv4 ACLs testen
+   - [x] Guus: NFSv4 ACLs testen
    - [ ] AD join verwijderen
    - [ ] quota testen
    - [ ] home: initiële rsync  ( ionice -c3 !!! )
@@ -61,7 +61,7 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
 
 * verhuizen in DC:
    - [ ] mastodont naar research racks
-   - [ ] smm-trssl01 naar research racks
+   - [x] smm-trssl01 naar research racks
 
 * netwerk:
    - [ ] regelen CX83 in main rack
@@ -112,6 +112,10 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
 * slurm naar 23.x
    - [ ] head nodes
    - [ ] images
+   - [ ] check Open-MPI mpirun
+   - [ ] check Open-MPI srun
+   - [ ] check Intel MPI mpirun
+   - [ ] check Intel MPI srun
 
 * install/enable/start lldpd
    - [ ] head nodes
