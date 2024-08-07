@@ -35,6 +35,10 @@ application and do nothing. Source:
 
 MathLM is the license server software used by Wolfram Mathematica. It is used to restrict who can use what software on what computer, and is also a source of usability issues.
 
-### Checking the availability and available featres of a MAthlm license
+#### Checking the availablility of the MathLM license server
+
+`/sw/rl8/zen/lic/monitorlm [hostname] -health` 
+
+### Checking the availability and available featres of a MathLM license
 
 `/sw/rl8/zen/lic/monitorlm [hostname]`
