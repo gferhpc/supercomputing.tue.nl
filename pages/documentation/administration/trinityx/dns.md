@@ -121,6 +121,68 @@ EOF
 systemctl enable named --now
 ```
 
+## Umbrella Zone
 
+### hpc-head01
+```shell
+echo 'include "/etc/named.umbrella.zones";' >> /etc/named.conf
 
+cat > /etc/named.umbrella.zones << EOF
+zone "umbrella" IN {
+    type master;
+    file "/var/named/umbrella.zone";
+    allow-update { none; };
+    allow-transfer { 10.150.255.253; };
+    also-notify { 10.150.255.253; };
+};
+EOF
 
+cat > /var/named/umbrella.zone << EOF
+\$TTL 3600
+@ IN SOA                controller.umbrella. root.controller.umbrella. ( ; domain email
+                        1723024849 ; serial number
+                        86400        ; refresh
+                        14400        ; retry
+                        3628800      ; expire
+                        3600 )       ; min TTL
+
+                        IN NS controller.umbrella.
+
+controller                      IN A 10.150.255.254
+vast-storage                    IN A 10.150.250.1
+vast-storage                    IN A 10.150.250.2
+vast-storage                    IN A 10.150.250.3
+vast-storage                    IN A 10.150.250.4
+vast-storage                    IN A 10.150.250.5
+vast-storage                    IN A 10.150.250.6
+vast-storage                    IN A 10.150.250.7
+vast-storage                    IN A 10.150.250.8
+vast-storage                    IN A 10.150.250.9
+vast-storage                    IN A 10.150.250.10
+vast-storage                    IN A 10.150.250.11
+vast-storage                    IN A 10.150.250.12
+vast-storage                    IN A 10.150.250.13
+vast-storage                    IN A 10.150.250.14
+vast-storage                    IN A 10.150.250.15
+vast-storage                    IN A 10.150.250.16
+
+EOF
+
+systemctl reload named.service
+```
+
+### hpc-head02
+
+```shell
+echo 'include "/etc/named.umbrella.zones";' >> /etc/named.conf
+
+cat > /etc/named.umbrella.zones << EOF
+zone "umbrella" IN {
+    type slave;
+    file "/var/named/umbrella.zone";
+    masters {10.150.255.254; };
+};
+EOF
+
+systemctl reload named.service
+```
