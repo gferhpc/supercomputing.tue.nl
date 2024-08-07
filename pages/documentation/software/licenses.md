@@ -6,18 +6,26 @@ The TU/e provides centralized licenses for some commercial application via licen
 
 ### FlexLM
 
-FlexLM stands for "Flexible License Manager". It is used to restrict who can use what software on what computer, and is also a source of
-usability issues. This page aims to document various diagnostics that
-can be done.
+FlexLM stands for "Flexible License Manager". It is used to restrict who can use what software on what computer, and is also a source of usability issues. Below a selection of various diagnostics that can be done.
 
-### Checking out a license
+### Checking the availability and available featres of a license
 
-`lmutil lmdiag [feature]`
+`/sw/rl8/zen/lic/lmutil lmstat -a -c [port]:[hostname]`
+
+### Checking out a license feature
+
+`/sw/rl8/zen/lic/lmutil lmdiag [feature] -c [port]:[hostname]`
+
+### Using and Specifing a lisense
+
+When using the [module system](https://supercomputing.tue.nl/documentation/steps/software/) to load an application the application specific setting for the license are included. Sometimes to setup a different license sever for the same application, there is an extra module available.
+
+`ANSYS/2024R1` uses the default (research) license, while `ANSYS/2024R1-edu` uses the educational license.
 
 Often, an application-specific environment variable can be used to
 specify the location of the license file or license server. For ANSYS applications,
-for instance Lumerical, this is `ANSYSLMD_LICENSE_FILE`. To specify a
-license server, set this variable to `[port]:[hostname]`.
+like Lumerical, this is `ANSYSLMD_LICENSE_FILE`. To specify a
+specific license server, set this variable to `[port]:[hostname]`.
 
 Optionally, set the environment variable `FLEXLM_DIAGNOSTICS` to `1`,
 `2`, or `3`. This might provide more info, but also be blocked by the
