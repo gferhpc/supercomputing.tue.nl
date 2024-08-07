@@ -24,8 +24,7 @@ When using the [module system](https://supercomputing.tue.nl/documentation/steps
 
 Often, an application-specific environment variable can be used to
 specify the location of the license file or license server. For ANSYS applications,
-like Lumerical, this is `ANSYSLMD_LICENSE_FILE`. To specify a
-specific license server, set this variable to `[port]:[hostname]`.
+like Lumerical, this is `ANSYSLMD_LICENSE_FILE` (this environment variable is set when using. `module load Lumerical/2024-R1.3`). To specify a specific license server, set this variable to `[port]:[hostname]`.
 
 Optionally, set the environment variable `FLEXLM_DIAGNOSTICS` to `1`,
 `2`, or `3`. This might provide more info, but also be blocked by the
