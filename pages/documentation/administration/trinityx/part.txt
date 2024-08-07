@@ -11,7 +11,7 @@ ROOT_PARTITION=
 SWAP_PARTITION=
 SCRATCH_PARTITION=
 
-for DEVICE in $(ls -1 /sys/block); do
+for DEVICE in $(ls -1 /sys/block | sort); do
         DEVICE_SIZE=$(cat "/sys/block/${DEVICE}/size")
         echo "/dev/${DEVICE}: ${DEVICE_SIZE}"
 
@@ -19,7 +19,11 @@ for DEVICE in $(ls -1 /sys/block); do
                 continue
         fi
 
-        if [[ "$(cat "/sys/block/${DEVICE}/removable")" == "1" ]]; then
+        if [[ "$(lsblk -ndo TYPE "/dev/${DEVICE}")" != "disk" ]]; then
+                continue
+        fi
+
+        if [[ "$(lsblk -ndo TRAN "/dev/${DEVICE}")" == "usb" ]]; then
                 continue
         fi
 
@@ -29,8 +33,8 @@ for DEVICE in $(ls -1 /sys/block); do
                 BOOT_DEVICE_SIZE=${DEVICE_SIZE}
         fi
 
-        # if SCRATCH_DEVICE is unset or parsed disk is bigger than currently set, configure current device as SCRATCH_DEVICE
-        if [[ -z "${SCRATCH_DEVICE}" || "${DEVICE_SIZE}" -gt "${SCRATCH_DEVICE_SIZE}" ]]; then
+        # if SCRATCH_DEVICE is unset or parsed disk is bigger (or equal) than currently set, configure current device as SCRATCH_DEVICE
+        if [[ -z "${SCRATCH_DEVICE}" || "${DEVICE_SIZE}" -ge "${SCRATCH_DEVICE_SIZE}" ]]; then
                 SCRATCH_DEVICE="/dev/${DEVICE}"
                 SCRATCH_DEVICE_SIZE=${DEVICE_SIZE}
         fi
@@ -62,10 +66,11 @@ mkfs.ext4 "${SCRATCH_PARTITION}"
 mkswap "${SWAP_PARTITION}"
 
 echo "${ROOT_PARTITION}: / (ext4)"
-echo "${SCRATCH_PARTITION}: /local (ext4)"
+echo "${SCRATCH_PARTITION}: /scratch-node (ext4)"
 echo "${SWAP_PARTITION}: swap (swap)"
 
 mount "${ROOT_PARTITION}" /sysroot
-mkdir /sysroot/local
-mount "${SCRATCH_PARTITION}" /sysroot/local
-chmod 1777 /sysroot/local
+mkdir /sysroot/scratch-node
+mount "${SCRATCH_PARTITION}" /sysroot/scratch-node
+chmod 1777 /sysroot/scratch-node
+ln -sv /scratch-node /sysroot/local

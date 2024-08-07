@@ -7,14 +7,19 @@ SCRATCH_DEVICE=
 SCRATCH_DEVICE_SIZE=
 SCRATCH_DEVICE_DELIMITER=""
 
-for DEVICE in $(ls -1 /sys/block); do
+for DEVICE in $(ls -1 /sys/block | sort); do
         DEVICE_SIZE=$(cat "/sys/block/${DEVICE}/size")
+        echo "/dev/${DEVICE}: ${DEVICE_SIZE}"
 
         if [[ "${DEVICE_SIZE}" == "0" ]]; then
                 continue
         fi
 
-        if [[ "$(cat "/sys/block/${DEVICE}/removable")" == "1" ]]; then
+        if [[ "$(lsblk -ndo TYPE "/dev/${DEVICE}")" != "disk" ]]; then
+                continue
+        fi
+
+        if [[ "$(lsblk -ndo TRAN "/dev/${DEVICE}")" == "usb" ]]; then
                 continue
         fi
 
@@ -25,7 +30,7 @@ for DEVICE in $(ls -1 /sys/block); do
         fi
 
         # if SCRATCH_DEVICE is unset or parsed disk is bigger than currently set, configure current device as SCRATCH_DEVICE
-        if [[ -z "${SCRATCH_DEVICE}" || "${DEVICE_SIZE}" -gt "${SCRATCH_DEVICE_SIZE}" ]]; then
+        if [[ -z "${SCRATCH_DEVICE}" || "${DEVICE_SIZE}" -ge "${SCRATCH_DEVICE_SIZE}" ]]; then
                 SCRATCH_DEVICE="${DEVICE}"
                 SCRATCH_DEVICE_SIZE=${DEVICE_SIZE}
         fi
@@ -43,6 +48,6 @@ fi
 cat << EOF >> /sysroot/etc/fstab
 /dev/${BOOT_DEVICE}${BOOT_DEVICE_DELIMITER}1 swap swap defaults 0 0
 /dev/${BOOT_DEVICE}${BOOT_DEVICE_DELIMITER}2 / ext4 defaults 1 1
-/dev/${SCRATCH_PARTITION} /local ext4 defaults 1 1
+/dev/${SCRATCH_PARTITION} /scratch-node ext4 defaults 1 1
 tmpfs /tmp tmpfs defaults,nosuid,nodev,size=4G 0 0
 EOF
