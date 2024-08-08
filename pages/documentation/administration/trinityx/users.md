@@ -10,6 +10,10 @@ The Umbrella Cluster uses the TU/e Active Directory (AD) for the authentication,
 
 ## obol tool
 
+??? note "our `obol` is patched!"
+
+    When creating groups, `obol` by default searches for available GIDs starting at 150. We patched it so it starts at GID 1050. In particular, we changed the starting GID in the `_next_gid` function.
+
 Create a group GROUP-NAME with an defined group-id GROUP-ID
 
 ```shell
