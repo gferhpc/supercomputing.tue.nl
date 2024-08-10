@@ -124,6 +124,16 @@ systemctl enable named --now
 ## Umbrella Zone
 
 ### hpc-head01
+
+```shell
+vi /trinity/local/luna/daemon/templates/templ_dhcpd.cfg
+
+  include "/etc/named.luna.zones";
+  include "/etc/named.umbrella.zones";
+
+  {% endautoescape  %}
+```
+
 ```shell
 echo 'include "/etc/named.umbrella.zones";' >> /etc/named.conf
 
