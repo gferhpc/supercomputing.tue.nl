@@ -16,6 +16,11 @@ zfs filesystems:
 * `tank/project/NAME`: filesystem for project named "NAME".
    * by default all files are in project #0.
    * zfs properties `projectquota@0` and `projectobjquota@0` are set for each project filesystem.
+* `tank/archive`: the archives
+* `tank/archive/home`: archived home dirs
+   * home dirs can be `mv`ed here, or can be put in tarballs here.
+* `tank/archive/project`: archived project dirs
+   * project filesystems can be moved here with `zfs rename`.
 
 # Installation
 
