@@ -1,5 +1,24 @@
 Export NFS on storage nodes
 
+# Storage node layout
+
+zpools:
+
+* all disks in a zpool with raidz3
+
+zfs filesystems:
+
+* `tank`: root FS
+   * zfs propertie `sharenfs` is set. All other filesystems will automatically inherit this, unless set otherwise.
+* `tank/home`: home dirs go here.
+   * zfs properties `userquota@uid` and `userobjquota@uid` are set for each user.
+* `tank/project`: container for project filesystems
+* `tank/project/NAME`: filesystem for project named "NAME".
+   * by default all files are in project #0.
+   * zfs properties `projectquota@0` and `projectobjquota@0` are set for each project filesystem.
+
+# Installation
+
 === "tue-storage001"
     
     ```shell
@@ -65,6 +84,15 @@ dnf -y install zfs nfs-utils
 systemctl enable --now nfs-server.service
 firewall-cmd --add-service={nfs,nfs3,mountd,rpc-bind} --permanent
 reboot
-
+```
+For existing nodes:
+```shell
 zpool import -f tank
+```
+For new nodes:
+```shell
+zfs create -o sharenfs='rw=@10.150.0.0/16,async,no_root_squash,no_all_squash' tank
+zfs create tank/home
+zfs create tank/project
+zfs create -o sharenfs=off tank/archive
 ```
