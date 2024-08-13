@@ -9,7 +9,9 @@ zpools:
 zfs filesystems:
 
 * `tank`: root FS
-   * zfs propertie `sharenfs` is set. All other filesystems will automatically inherit this, unless set otherwise.
+   * zfs property `sharenfs` is set. All other filesystems will automatically inherit this, unless set otherwise.
+   * `xattr=sa` to prevent creation of two objects per file
+   * `dnodesize=auto` to increase performance with `xattr=sa`
 * `tank/home`: home dirs go here.
    * zfs properties `userquota@uid` and `userobjquota@uid` are set for each user.
 * `tank/project`: container for project filesystems
@@ -96,7 +98,7 @@ zpool import -f tank
 ```
 For new nodes:
 ```shell
-zfs create -o sharenfs='rw=@10.150.0.0/16,async,no_root_squash,no_all_squash' tank
+zfs create -o sharenfs='rw=@10.150.0.0/16,async,no_root_squash,no_all_squash' -o dnodesize=auto -o xattr=sa tank
 zfs create tank/home
 zfs create tank/project
 zfs create -o sharenfs=off tank/archive
