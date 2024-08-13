@@ -17,8 +17,9 @@ The HPC Cluster is not a solution for archiving your work.
 
 ### Fair Use of Disk Space
 
-Each user has a 200GB disk quota. The total disk space is however not
-enough for every user to actually use that much. Therefore:
+Each user has a 200GB disk quota and is limited to 1,000,000 files and
+directories maximum. The total disk space is however not enough for every user
+to actually use that much. Therefore:
 
 - Try to keep disk usage below 100GB as a general rule.
 - If your disk usage exceeds 150GB, think carefully about what can be
