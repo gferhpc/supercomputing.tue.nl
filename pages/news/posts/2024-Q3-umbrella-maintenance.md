@@ -40,14 +40,15 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
 
 * VAST inrichten
    - [ ] bespreken met Richard: grootte home dirs + doorbelasting
-   - [ ] inrichting VAST bespreken + documenteren
-   - [ ] inrichting project dirs bespreken + documenteren
+   - [x] inrichting VAST bespreken
+   - [ ] inrichting VAST documenteren
+   - [x] inrichting project dirs bespreken
+   - [ ] inrichting project dirs documenteren
    - [x] Guus: NFSv4 ACLs testen
-   - [ ] AD join verwijderen
+   - [x] AD join verwijderen
    - [ ] quota testen
-   - [ ] home: initiële rsync  ( ionice -c3 !!! )
-   - [ ] proj: initiële rsync
-   - [ ] sw: initiële rsync
+   - [ ] home/project: initiële rsync  ( ionice -c3 !!! )
+   - [x] sw: initiële rsync
 
 * slurm 23.x testen
    - [ ] testen met config van productie
@@ -93,7 +94,6 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
    - [ ] sw: final rsync
    - [ ] sw: quota instellen (safety net)
    - [ ] sw: omzetten mount points in images
-   - [ ] oude storage nodes uitzetten
 
 * users chgrp'en naar umbrella group
    - [ ] primaire group toevoegen aan secundaire groups
