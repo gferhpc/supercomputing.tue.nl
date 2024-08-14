@@ -102,4 +102,6 @@ zfs create -o sharenfs='rw=@10.150.0.0/16,async,no_root_squash,no_all_squash' -o
 zfs create tank/home
 zfs create tank/project
 zfs create -o sharenfs=off tank/archive
+zfs create tank/archive/home
+zfs create tank/archive/project
 ```
