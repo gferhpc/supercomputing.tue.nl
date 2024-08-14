@@ -24,41 +24,38 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
 
 * cgroups user limiting
    - [x] testen op mcs-login001
-   - [ ] implementeren op tue-login002 -> kan niet live, heeft reboot nodig
+   - [x] implementeren op tue-login002 -> kan niet live, heeft reboot nodig
    - [x] embedden in login-image
 
 * dept. login nodes uitzetten
    - [x] arch-login001 (off) and mcs-login001 (-> test-login001)
-   - [ ] anderen pas doen als tue-login001 er is
-   - [ ] vooraf communiceren met RIT, sleutelfiguren
-   - [ ] DNS aanpassen
-   - [ ] tijdens maintenance: verwijderen
+   - [x] all but phys-login001 are switched off
+   - remainder will be postponed to after maintenance
 
 * bestellen 25 Gbit NICs voor heads + login002
    - [x] quote aangevraagd
    - [x] besteld
 
 * VAST inrichten
-   - [ ] bespreken met Richard: grootte home dirs + doorbelasting
+   - [/] bespreken met Richard: grootte home dirs + doorbelasting
    - [x] inrichting VAST bespreken
-   - [ ] inrichting VAST documenteren
    - [x] inrichting project dirs bespreken
-   - [ ] inrichting project dirs documenteren
    - [x] Guus: NFSv4 ACLs testen
    - [x] AD join verwijderen
-   - [ ] quota testen
    - [ ] home/project: initiële rsync  ( ionice -c3 !!! )
    - [x] sw: initiële rsync
 
 * slurm 23.x testen
    - [ ] testen met config van productie
 
-* nhc node health check
+* "nhc" node health check
    - [ ] mee spelen en testen
 
 * nieuwe racks regelen
    - PDUs: gecombineerd C13 C19
    - ... of alles C19, en dan kabels C20->C13 waar nodig
+   - [x] racks
+   - [ ] netwerk
 
 * verhuizen in DC:
    - [ ] mastodont naar research racks
@@ -68,40 +65,59 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
    - [ ] regelen CX83 in main rack
    - [x] checken of heads/logins 10 + 25 Gbit hebben
 
+* slurm naar 23.x
+   - [ ] dit is toch upgrade naar OpenHPC 2.latest?
+   - [ ] check wat nodig is voor PMIx.
+
+* script schrijven om VAST-migratie te doen:  (Guus)
+   - [ ] zie plan hieronder
+
 ## During maintenance:
 
 * switch firmwares updaten
-
-* heads + logins op 25 Gbit
+   - [ ] spines
+   - [ ] leaves
 
 * heads + logins naar centrale rack (X09)
+   - [ ] tue-login002 naar main rack
+   - [ ] hpc-head001 naar main rack
+   - [ ] hpc-head002 naar main rack
+
+* heads + logins op 25 Gbit
+   - [ ] kaarten installeren
+   - [ ] LAG testen
 
 * ingebruiknemen hpc-esw-spine-2
 
 * vervangen mech switch
 
-* verhuizen BME nodes naar nieuw rack
+* verhuizen bme-computeAxxx en hpc-esw-w11-2 naar nieuwe racks
+   - [ ] fysiek verhuizen
+   - [ ] aanpassen DNS-registratie hpc-esw-w11-2 -> hpc-esw-w....
 
 * VAST in gebruik nemen
    - [ ] home: final rsync
    - [ ] home: quota instellen
    - [ ] home: omzetten mount points in images
-   - [ ] home: ACLs goedzetten
    - [ ] project: final rsync
    - [ ] project: quota instellen
    - [ ] project: omzetten mount points in images
-   - [ ] project: ACLs goedzetten
    - [ ] sw: final rsync
    - [ ] sw: quota instellen (safety net)
    - [ ] sw: omzetten mount points in images
 
-* users chgrp'en naar umbrella group
-   - [ ] primaire group toevoegen aan secundaire groups
-   - [ ] primaire group op 'umbrella' zetten
-
-* OpenMPI opnieuw installeren met juiste PMIX settings (zie M24033369)
-   - [ ] easybuild
-   - [ ] paar jobs testen  (intel mpirun/ompi mpirun/intel srun/ompi srun)
+* VAST script prep:
+   - [ ] sync scripts uitzetten
+   - [ ] symlinks in /umbrella/home-links maken -> /vast.mnt/home/USER of waar dan ook
+   - [ ] symlinks in /umbrella/home-links/dept maken -> ../USER
+   - [ ] quota opvragen / migreren
+   - [ ] default quota instellen
+   - [ ] home dirs in LDAP updaten: /home/USER
+   - [ ] move home directories in VAST
+   - [ ] move proj. dirs in VAST
+   - [ ] create proj. symlinks for legacy stuff
+   - [ ] move datasets in VAST
+   - [ ] create dataset symlinks in VAST
 
 * dnf update all
    - [ ] head-node01
@@ -117,25 +133,42 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
    - [ ] check Intel MPI mpirun
    - [ ] check Intel MPI srun
 
+* OpenMPI opnieuw installeren met juiste PMIX settings (zie M24033369)
+   - [ ] check if PMIx works with new Slurm?!
+   - [ ] easybuild
+   - [ ] paar jobs testen  (intel mpirun/ompi mpirun/intel srun/ompi srun)
+
 * install/enable/start lldpd
    - [ ] head nodes
    - [ ] images
 
 * prolog/epilog:
-   - [ ] move `$SLURM_TMPDIR` to /local
-   - [ ] unmount before cleaning `$SLURM_TMPDIR` - see Guus's Python script
-   - [ ] add `seff` output to output file
-   - [ ] test
-
-* move in DC:
-   - [ ] tue-login002 naar main rack
-   - [ ] tue-storage001 uitfaseren
-   - [ ] hpc-head001 naar main rack
-   - [ ] hpc-head002 naar main rack
+   - [ ] move `$SLURM_TMPDIR` to /scratch-node
 
 ## After maintenance
 
 * Sort out old storage nodes
+
+* Phase out remaining login nodes (should be only phys-login001)
+   - [ ] anderen pas doen als tue-login001 er is
+   - [ ] vooraf communiceren met RIT, sleutelfiguren
+   - [ ] DNS aanpassen
+   - [ ] tijdens maintenance: verwijderen
+
+* VAST:
+   - [ ] inrichting VAST documenteren
+   - [ ] inrichting project dirs documenteren
+   - [ ] maybe: home: ACLs goedzetten
+   - [ ] maybe: project: ACLs goedzetten
+
+* convergent science: migreren naar project dir
+
+* prolog/epilog
+   - [ ] add `seff` output to output file
+   - [ ] unmount before cleaning `$SLURM_TMPDIR` - see Guus's Python script
+
+* Slurm:
+   - test with Cgroup resources stuff (instead of proctrack)
 
 ## Postpone to next maintenance:
 
@@ -152,3 +185,12 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
    - hpc.win.tue.nl
    - mcs-login001.icts.tue.nl
    - add more here...
+
+* remove old dataset symlinks
+
+* maybe: remove old project symlinks
+
+* users chgrp'en naar umbrella group
+   - [ ] primaire group toevoegen aan secundaire groups
+   - [ ] primaire group op 'umbrella' zetten
+
