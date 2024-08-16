@@ -145,6 +145,11 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
 * prolog/epilog:
    - [ ] move `$SLURM_TMPDIR` to /scratch-node
 
+* sort out names elec-vca stuff
+   - [ ] remove 10 Gbit from elec-storage001 (it is currently active)
+   - [ ] check correspondence rack sheet - node sheet - IPMIs
+   - [ ] label nodes correctly
+
 ## After maintenance
 
 * Sort out old storage nodes
