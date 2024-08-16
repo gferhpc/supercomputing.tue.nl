@@ -150,6 +150,15 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
    - [ ] check correspondence rack sheet - node sheet - IPMIs
    - [ ] label nodes correctly
 
+* finish bme storage fixes
+   - [ ] run final rsync
+   - [ ] check permissions on project dirs
+   - [ ] set sharenfs correctly
+   - [ ] create symlinks in /project
+   - [ ] create symlinks in /home/bme00x
+   - [ ] archive projects  (move to archive, make unaccessible)
+   - [ ] update project sheet
+
 ## After maintenance
 
 * Sort out old storage nodes
