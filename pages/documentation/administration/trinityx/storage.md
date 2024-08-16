@@ -82,7 +82,7 @@ mkdir -p /scratch/chem001
 dnf -y install epel-release https://zfsonlinux.org/epel/zfs-release-2-3.el8.noarch.rpm
 dnf -y update
 dnf -y remove mlocate
-dnf -y install iotop iftop screen ncdu
+dnf -y install iotop iftop screen ncdu vim
 
 dnf -y install lldpd
 systemctl enable --now lldpd.service
