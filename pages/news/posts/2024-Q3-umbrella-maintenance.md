@@ -170,6 +170,10 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
    - [ ] slurm: enable accounting enforce
    - [ ] slurm: set multifactor prio weights
 
+* check all storage node exports and mountpoints
+   - [ ] export should be sharenfs on /tank
+   - [ ] mountpoint should be /nodenum.mnt
+
 ## After maintenance
 
 * Sort out old storage nodes
