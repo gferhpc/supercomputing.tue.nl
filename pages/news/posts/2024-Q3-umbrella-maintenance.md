@@ -159,6 +159,17 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
    - [ ] archive projects  (move to archive, make unaccessible)
    - [ ] update project sheet
 
+* upgrade ZFS storage pools
+
+* test apptainer
+   - [ ] can still access home dir?  (due to $HOME symlink; try apptainer run docker://alpine)
+
+* enable fairshare
+   - [ ] put accounts in sacctmgr
+   - [ ] add sacctmgr to usercreate script
+   - [ ] slurm: enable accounting enforce
+   - [ ] slurm: set multifactor prio weights
+
 ## After maintenance
 
 * Sort out old storage nodes
