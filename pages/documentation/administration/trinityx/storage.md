@@ -9,21 +9,21 @@ zpools:
 zfs filesystems:
 
 * `tank`: root FS
-   * zfs property `sharenfs` is set. All other filesystems will automatically inherit this, unless set otherwise.
-   * `xattr=sa` to prevent creation of two objects per file
-   * `dnodesize=auto` to increase performance with `xattr=sa`
+    * zfs property `sharenfs` is set. All other filesystems will automatically inherit this, unless set otherwise.
+    * `xattr=sa` to prevent creation of two objects per file
+    * `dnodesize=auto` to increase performance with `xattr=sa`
 * `tank/home`: home dirs go here.
-   * zfs properties `userquota@uid` and `userobjquota@uid` are set for each user.
+    * zfs properties `userquota@uid` and `userobjquota@uid` are set for each user.
 * `tank/project`: container for project filesystems
-   * `refquota=1G`: prevent projects from accidentally landing directly on this FS, without creating a sub-FS
+    * `refquota=1G`: prevent projects from accidentally landing directly on this FS, without creating a sub-FS
 * `tank/project/NAME`: filesystem for project named "NAME".
-   * by default all files are in project #0.
-   * zfs properties `projectquota@0` and `projectobjquota@0` are set for each project filesystem.
+    * by default all files are in project #0.
+    * zfs properties `projectquota@0` and `projectobjquota@0` are set for each project filesystem.
 * `tank/archive`: the archives
 * `tank/archive/home`: archived home dirs
-   * home dirs can be `mv`ed here, or can be put in tarballs here.
+    * home dirs can be `mv`ed here, or can be put in tarballs here.
 * `tank/archive/project`: archived project dirs
-   * project filesystems can be moved here with `zfs rename`.
+    * project filesystems can be moved here with `zfs rename`.
 
 # Installation
 
@@ -99,7 +99,11 @@ zpool import -f tank
 ```
 For new nodes:
 ```shell
-zfs create -o sharenfs='rw=@10.150.0.0/16,async,no_root_squash,no_all_squash' -o dnodesize=auto -o xattr=sa tank
+zfs create \
+	-o sharenfs='rw=@10.150.0.0/16,async,no_root_squash,no_all_squash' \
+	-o dnodesize=auto \
+	-o xattr=sa \
+	tank
 zfs create tank/home
 zfs create -o refquota=1G tank/project
 zfs create -o sharenfs=off tank/archive
