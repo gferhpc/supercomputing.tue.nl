@@ -119,6 +119,10 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
    - [ ] move datasets in VAST
    - [ ] create dataset symlinks in VAST
 
+* TrinityX upgrade
+   - [ ] git check-in of /etc/slurm  (Guus)
+   - [ ] TrinityX upgrade (with newest OpenHPC 2.x)
+
 * dnf update all
    - [ ] head-node01
    - [ ] head-node02
@@ -137,10 +141,6 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
    - [ ] check if PMIx works with new Slurm?!
    - [ ] easybuild
    - [ ] paar jobs testen  (intel mpirun/ompi mpirun/intel srun/ompi srun)
-
-* install/enable/start lldpd
-   - [ ] head nodes
-   - [ ] images
 
 * prolog/epilog:
    - [ ] move `$SLURM_TMPDIR` to /scratch-node
@@ -174,6 +174,8 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
    - [ ] export should be sharenfs on /tank
    - [ ] mountpoint should be /nodenum.mnt
 
+* luna storage nodes: either 'luna network dns' or 'luna node' ?
+
 ## After maintenance
 
 * Sort out old storage nodes
@@ -198,6 +200,12 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
 
 * Slurm:
    - test with Cgroup resources stuff (instead of proctrack)
+
+* Remove old arch-compute nodes
+
+* install/enable/start lldpd
+   - [ ] head nodes
+   - [ ] images
 
 ## Postpone to next maintenance:
 
