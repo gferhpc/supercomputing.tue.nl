@@ -55,14 +55,14 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
    - PDUs: gecombineerd C13 C19
    - ... of alles C19, en dan kabels C20->C13 waar nodig
    - [x] racks
-   - [ ] netwerk
+   - [x] netwerk
 
 * verhuizen in DC:
-   - [ ] mastodont naar research racks
+   - [x] mastodont naar research racks
    - [x] smm-trssl01 naar research racks
 
 * netwerk:
-   - [ ] regelen CX83 in main rack
+   - [x] regelen CX83 in main rack
    - [x] checken of heads/logins 10 + 25 Gbit hebben
 
 * slurm naar 23.x
@@ -79,21 +79,32 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
    - [ ] leaves
 
 * heads + logins naar centrale rack (X09)
-   - [ ] tue-login002 naar main rack
-   - [ ] hpc-head001 naar main rack
-   - [ ] hpc-head002 naar main rack
-
-* heads + logins op 25 Gbit
-   - [ ] kaarten installeren
-   - [ ] LAG testen
+   - [x] tue-login002 naar main rack
+   - [x] hpc-head01 naar main rack
+   - [x] hpc-head02 naar main rack
 
 * ingebruiknemen hpc-esw-spine-2
+   - [x] config identiek aan spine-1 (behalve waar verschillen nodig)
+
+* heads + logins op 25 Gbit
+   - [x] kaarten installeren
+   - [x] head01 LAG testen
+   - [x] head02 LAG testen
+   - [ ] login01 LAG testen
+   - [ ] login02 LAG testen
 
 * vervangen mech switch
+   - [x] switch ingebouwd
+   - [ ] config oude switch gekopieerd
+   - [ ] config naar nieuwe switch geschreven
+   - [ ] DHCP-registraties aanpassen
+   - [ ] switch sheet updaten
 
 * verhuizen bme-computeAxxx en hpc-esw-w11-2 naar nieuwe racks
-   - [ ] fysiek verhuizen
-   - [ ] aanpassen DNS-registratie hpc-esw-w11-2 -> hpc-esw-w....
+   - [ ] nodes fysiek verhuizen
+   - [ ] switch fyskiek verhuizen
+   - [ ] aanpassen switch config hostname
+   - [ ] aanpassen DHCP-registratie hpc-esw-w11-2 -> hpc-esw-w02-1
 
 * VAST in gebruik nemen
    - [ ] home: final rsync
@@ -120,7 +131,7 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
    - [ ] create dataset symlinks in VAST
 
 * TrinityX upgrade
-   - [ ] git check-in of /etc/slurm  (Guus)
+   - [x] git check-in of /etc/slurm  (Guus)
    - [ ] TrinityX upgrade (with newest OpenHPC 2.x)
 
 * dnf update all
@@ -130,28 +141,30 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
    - [ ] kernel versie zetten in Luna
 
 * slurm naar 23.x
-   - [ ] head nodes
-   - [ ] images
+   - [x] head nodes
+   - [x] images
+   - [ ] redo cgroups.conf
+
+* OpenMPI opnieuw installeren met juiste PMIX settings (zie M24033369)
+   - [ ] check if PMIx works with new Slurm?!
+   - [ ] easybuild
    - [ ] check Open-MPI mpirun
    - [ ] check Open-MPI srun
    - [ ] check Intel MPI mpirun
    - [ ] check Intel MPI srun
 
-* OpenMPI opnieuw installeren met juiste PMIX settings (zie M24033369)
-   - [ ] check if PMIx works with new Slurm?!
-   - [ ] easybuild
-   - [ ] paar jobs testen  (intel mpirun/ompi mpirun/intel srun/ompi srun)
-
 * prolog/epilog:
    - [ ] move `$SLURM_TMPDIR` to /scratch-node
 
 * sort out names elec-vca stuff
-   - [ ] remove 10 Gbit from elec-storage001 (it is currently active)
+   - [x] move IP config to 25 Gbit NIC elec-storage001
+   - [ ] remove 10 Gbit cable from elec-storage001
    - [ ] check correspondence rack sheet - node sheet - IPMIs
    - [ ] label nodes correctly
 
 * finish bme storage fixes
-   - [ ] run final rsync
+   - [x] run final rsync
+   - [ ] set quota
    - [ ] check permissions on project dirs
    - [ ] set sharenfs correctly
    - [ ] create symlinks in /project
@@ -159,7 +172,14 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
    - [ ] archive projects  (move to archive, make unaccessible)
    - [ ] update project sheet
 
-* upgrade ZFS storage pools
+* storage nodes
+   - [ ] dnf update
+   - [ ] upgrade ZFS storage pools
+   - [ ] export should be sharenfs on /tank, other inherit, /tank/archive sharenfs=off
+   - [ ] compression should be 'on' on tank, inherited on all others
+   - [ ] mountpoint should be /nodenum.mnt
+   - [ ] in luna: either 'luna network dns' or 'luna node' ?
+   - [ ] update storage node docs to reflect above ZFS settings
 
 * test apptainer
    - [ ] can still access home dir?  (due to $HOME symlink; try apptainer run docker://alpine)
@@ -170,11 +190,8 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
    - [ ] slurm: enable accounting enforce
    - [ ] slurm: set multifactor prio weights
 
-* check all storage node exports and mountpoints
-   - [ ] export should be sharenfs on /tank
-   - [ ] mountpoint should be /nodenum.mnt
-
-* luna storage nodes: either 'luna network dns' or 'luna node' ?
+* login nodes: /tmp -> /local
+   - /tmp is small.  pip & compilers use it.  use /local instead?
 
 ## After maintenance
 
@@ -204,7 +221,8 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
 * Remove old arch-compute nodes
 
 * install/enable/start lldpd
-   - [ ] head nodes
+   - [ ] head01
+   - [x] head02
    - [ ] images
 
 ## Postpone to next maintenance:
