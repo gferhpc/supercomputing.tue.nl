@@ -92,53 +92,49 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
    - [x] head02 LAG testen
    - [ ] login01 LAG testen
    - [ ] login02 LAG testen
+   - [ ] linux: check hashing algo
 
 * vervangen mech switch
    - [x] switch ingebouwd
-   - [ ] config oude switch gekopieerd
-   - [ ] config naar nieuwe switch geschreven
-   - [ ] DHCP-registraties aanpassen
+   - [x] config oude switch gekopieerd
+   - [x] config naar nieuwe switch geschreven
+   - [x] DHCP-registraties aanpassen  (C24081356)
+   - [ ] wachten op DNS-registraties
    - [ ] switch sheet updaten
+   - [ ] labels aanpassen
 
 * verhuizen bme-computeAxxx en hpc-esw-w11-2 naar nieuwe racks
-   - [ ] nodes fysiek verhuizen
-   - [ ] switch fyskiek verhuizen
-   - [ ] aanpassen switch config hostname
-   - [ ] aanpassen DHCP-registratie hpc-esw-w11-2 -> hpc-esw-w02-1
+   - [x] nodes fysiek verhuizen
+   - [x] switch fysiek verhuizen
+   - [x] aanpassen switch config hostname
+   - [x] aanpassen DHCP-registratie hpc-esw-w11-2 -> hpc-esw-w02-1  (C24081356)
+   - [ ] wachten op DNS-registraties
+   - [ ] switch sheet updaten
+   - [ ] labels aanpassen
 
 * VAST in gebruik nemen
-   - [ ] home: final rsync
-   - [ ] home: quota instellen
-   - [ ] home: omzetten mount points in images
-   - [ ] project: final rsync
-   - [ ] project: quota instellen
-   - [ ] project: omzetten mount points in images
-   - [ ] sw: final rsync
-   - [ ] sw: quota instellen (safety net)
-   - [ ] sw: omzetten mount points in images
-
-* VAST script prep:
-   - [ ] sync scripts uitzetten
-   - [ ] symlinks in /umbrella/home-links maken -> /vast.mnt/home/USER of waar dan ook
-   - [ ] symlinks in /umbrella/home-links/dept maken -> ../USER
-   - [ ] quota opvragen / migreren
-   - [ ] default quota instellen
-   - [ ] home dirs in LDAP updaten: /home/USER
-   - [ ] move home directories in VAST
-   - [ ] move proj. dirs in VAST
-   - [ ] create proj. symlinks for legacy stuff
-   - [ ] move datasets in VAST
-   - [ ] create dataset symlinks in VAST
+   - [x] home: final rsync
+   - [x] home: quota instellen
+   - [x] home: omzetten mount points in images
+   - [x] project: final rsync
+   - [x] project: quota instellen
+   - [x] project: omzetten mount points in images
+   - [x] sw: final rsync
+   - [x] sw: quota instellen (safety net)
+   - [x] sw: omzetten mount points in images
+   - [x] datasets: final rsync
+   - [x] datasets: omzetten mountpoints
+   - [x] datasets: docs update paths
 
 * TrinityX upgrade
    - [x] git check-in of /etc/slurm  (Guus)
-   - [ ] TrinityX upgrade (with newest OpenHPC 2.x)
+   - [x] TrinityX upgrade (with newest OpenHPC 2.x)
 
 * dnf update all
-   - [ ] head-node01
-   - [ ] head-node02
-   - [ ] images
-   - [ ] kernel versie zetten in Luna
+   - [x] hpc-head01
+   - [x] hpc-head02
+   - [x] images
+   - [x] kernel versie zetten in Luna
 
 * slurm naar 23.x
    - [x] head nodes
@@ -158,31 +154,63 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
 
 * sort out names elec-vca stuff
    - [x] move IP config to 25 Gbit NIC elec-storage001
-   - [ ] remove 10 Gbit cable from elec-storage001
+   - [x] remove 10 Gbit cable from elec-storage001
    - [ ] check correspondence rack sheet - node sheet - IPMIs
    - [ ] label nodes correctly
 
 * finish bme storage fixes
    - [x] run final rsync
+	molml/project/bme-dwvantilborg-sb_denovo
+	molml/project/bme-dwvantilborg-scaffold_decoration
+	molml/project/bme-ecriscuolo-MD-ML-bioactivity-prediction
+	molml/project/bme-lrossen-mpordon
+	molml/project/bme-rozcelik-embeddings-vs-encodings
+	molml/project/bme-rozcelik-low-data-peptide-discovery
+	molml/project/bme-rozcelik-sampling-clms
+	molml/project/bme-rozcelik-spiking-networks-for-drug-discovery
+	molml/project/bme-rozcelik-structured-state-space-models
+	tank/project/bme-IrisEvi
+	tank/project/bme-intrasurge
+	tank/project/bme-mood
+	tank/project/bme-qcardia
+	tank/project/bme-spectralligence
+   - [ ] set correct name
    - [ ] set quota
    - [ ] check permissions on project dirs
-   - [ ] set sharenfs correctly
    - [ ] create symlinks in /project
    - [ ] create symlinks in /home/bme00x
-   - [ ] archive projects  (move to archive, make unaccessible)
+   - [ ] archive projects  (move to archive, make unaccessible, chown root)
    - [ ] update project sheet
+   - [ ] fix user quota
 
 * storage nodes
-   - [ ] dnf update
+   - [x] dnf update
+   - [x] reboot
    - [ ] upgrade ZFS storage pools
-   - [ ] export should be sharenfs on /tank, other inherit, /tank/archive sharenfs=off
-   - [ ] compression should be 'on' on tank, inherited on all others
+	(mech001 - this step not done yet, pool was degraded)
+	(phys001 - this step not done yet, pool was resilvering)
+	(tue001 - this step not done yet, pool was degraded)
+   - [x] export should be sharenfs on /tank, other inherit, /tank/archive sharenfs=off
+   - [x] compression should be 'on' on tank, inherited on all others
+   - [x] all done
+	arch001
+	bme001
+	chem001
+	chem002
+	elec001
+	elec002
+	elec003
+	mcs001
+	mech001
+	phys001
+	tue001
    - [ ] mountpoint should be /nodenum.mnt
    - [ ] in luna: either 'luna network dns' or 'luna node' ?
    - [ ] update storage node docs to reflect above ZFS settings
+   - [ ] tank/archive refquota?
 
 * test apptainer
-   - [ ] can still access home dir?  (due to $HOME symlink; try apptainer run docker://alpine)
+   - [x] can still access home dir?  (due to $HOME symlink; try apptainer run docker://alpine)
 
 * enable fairshare
    - [ ] put accounts in sacctmgr
@@ -194,6 +222,12 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
    - /tmp is small.  pip & compilers use it.  use /local instead?
 
 ## After maintenance
+
+* message:
+   - location of datasets changed
+   - moved to faster storage
+   - quota set
+   - introduction of scratch
 
 * Sort out old storage nodes
 
