@@ -66,7 +66,7 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
    - [x] checken of heads/logins 10 + 25 Gbit hebben
 
 * slurm naar 23.x
-   - [ ] dit is toch upgrade naar OpenHPC 2.latest?
+   - [x] Upgrade naar OpenHPC 2.8
    - [ ] check wat nodig is voor PMIx.
 
 * script schrijven om VAST-migratie te doen:  (Guus)
