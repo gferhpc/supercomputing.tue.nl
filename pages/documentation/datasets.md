@@ -44,7 +44,7 @@ Even if access to a datasets is not restricted, it usually still has a license a
     <td>2.3.1</td>
     <td>&check;</td>
     <td>
-      <code>/home/tue/shared_data/ml-datasets/AlphaFold</code>
+      <code>/dataset/AlphaFold</code>
       <br/>
       Related module: <code>module load AlphaFold/2.3.1-foss-2022a</code>
     </td>
