@@ -99,8 +99,8 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
    - [x] config oude switch gekopieerd
    - [x] config naar nieuwe switch geschreven
    - [x] DHCP-registraties aanpassen  (C24081356)
-   - [ ] wachten op DNS-registraties
-   - [ ] switch sheet updaten
+   - [x] wachten op DNS-registraties
+   - [x] switch sheet updaten
    - [ ] labels aanpassen
 
 * verhuizen bme-computeAxxx en hpc-esw-w11-2 naar nieuwe racks
@@ -108,8 +108,8 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
    - [x] switch fysiek verhuizen
    - [x] aanpassen switch config hostname
    - [x] aanpassen DHCP-registratie hpc-esw-w11-2 -> hpc-esw-w02-1  (C24081356)
-   - [ ] wachten op DNS-registraties
-   - [ ] switch sheet updaten
+   - [x] wachten op DNS-registraties
+   - [x] switch sheet updaten
    - [ ] labels aanpassen
 
 * VAST in gebruik nemen
