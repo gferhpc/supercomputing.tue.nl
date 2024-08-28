@@ -139,18 +139,17 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
 * slurm naar 23.x
    - [x] head nodes
    - [x] images
-   - [ ] redo cgroups.conf
+   - [x] redo cgroups.conf
 
 * OpenMPI opnieuw installeren met juiste PMIX settings (zie M24033369)
-   - [ ] check if PMIx works with new Slurm?!
-   - [ ] easybuild
-   - [ ] check Open-MPI mpirun
-   - [ ] check Open-MPI srun
-   - [ ] check Intel MPI mpirun
-   - [ ] check Intel MPI srun
+   - [x] check if PMIx works with new Slurm?!  ->  Yes, it does!
+   - [x] check Open-MPI mpirun
+   - [x] check Open-MPI srun
+   - [x] check Intel MPI mpirun
+   - [x] check Intel MPI srun
 
 * prolog/epilog:
-   - [ ] move `$SLURM_TMPDIR` to /scratch-node
+   - [x] move `$SLURM_TMPDIR` to /scratch-node
 
 * sort out names elec-vca stuff
    - [x] move IP config to 25 Gbit NIC elec-storage001
@@ -160,27 +159,12 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
 
 * finish bme storage fixes
    - [x] run final rsync
-	molml/project/bme-dwvantilborg-sb_denovo
-	molml/project/bme-dwvantilborg-scaffold_decoration
-	molml/project/bme-ecriscuolo-MD-ML-bioactivity-prediction
-	molml/project/bme-lrossen-mpordon
-	molml/project/bme-rozcelik-embeddings-vs-encodings
-	molml/project/bme-rozcelik-low-data-peptide-discovery
-	molml/project/bme-rozcelik-sampling-clms
-	molml/project/bme-rozcelik-spiking-networks-for-drug-discovery
-	molml/project/bme-rozcelik-structured-state-space-models
-	tank/project/bme-IrisEvi
-	tank/project/bme-intrasurge
-	tank/project/bme-mood
-	tank/project/bme-qcardia
-	tank/project/bme-spectralligence
-   - [ ] set correct name
-   - [ ] set quota
-   - [ ] check permissions on project dirs
-   - [ ] create symlinks in /project
-   - [ ] create symlinks in /home/bme00x
-   - [ ] archive projects  (move to archive, make unaccessible, chown root)
-   - [ ] update project sheet
+   - [x] create symlinks in /project
+   - [x] create symlinks in /home/bme00x
+   - [x] set quota
+   - [x] check permissions on project dirs
+   - [x] archive projects  (move to archive, make unaccessible, chown root)
+   - [x] update project sheet
    - [ ] fix user quota
 
 * storage nodes
@@ -204,7 +188,7 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
 	mech001
 	phys001
 	tue001
-   - [ ] mountpoint should be /nodenum.mnt
+   - [x] mountpoint should be /nodenum.mnt
    - [ ] in luna: either 'luna network dns' or 'luna node' ?
    - [ ] update storage node docs to reflect above ZFS settings
    - [ ] tank/archive refquota?
@@ -226,8 +210,9 @@ authors: [a.van.hoof@tue.nl, e.loomeijer@tue.nl, a.c.m.bertens@tue.nl]
 * message:
    - location of datasets changed
    - moved to faster storage
-   - quota set
-   - introduction of scratch
+   - quota are newly set
+   - introduction of scratch-shared
+   - /home/tue/shared_data/ml-datasets have moved
 
 * Sort out old storage nodes
 
