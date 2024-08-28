@@ -50,6 +50,11 @@ unzip /dataset/ADE20K/ADE20K.zip -d $datadir
     <td><a href="https://github.com/google-deepmind/alphafold">GitHub</a></td>
   </tr>
   <tr>
+    <td colspan="6">
+      Note: AlphaFold has a related module: <code>module load AlphaFold/2.3.1-foss-2022a</code>
+    </td>
+  </tr>
+  <tr>
     <td>CAMELYON16</td>
     <td>&mdash;</td>
     <td>&check;</td>
