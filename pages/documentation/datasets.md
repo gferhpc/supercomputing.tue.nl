@@ -21,14 +21,14 @@ title: Datasets
   </tr>
   <tr>
     <td>ADE20K</td>
-    <td>&mdash;</td>
+    <td>2021-17-01</td>
     <td>&check;</td>
     <td><code>/dataset/ADE20K</code></td>
     <td><a href="https://groups.csail.mit.edu/vision/datasets/ADE20K/terms/">ADE20K license</a></td>
     <td><a href="https://groups.csail.mit.edu/vision/datasets/ADE20K/">Website</a><br/></td>
   </tr>
-  <tr colspan="6">
-    <td>
+  <tr>
+    <td colspan="6">
       <p>Note: the ADE20K dataset must be unzipped before use. E.g.:</p>
       <pre>
 datadir=$TMPDIR/ade20k  # &lt;-- use this in jobs (and Open OnDemand interactive; and through salloc, srun)
