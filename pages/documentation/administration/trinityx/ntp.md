@@ -15,12 +15,14 @@ A second server (hpc-head02) with a basic Rocky 8 install
     ```shell
     timedatectl set-timezone Europe/Amsterdam
 
+    chronyc keygen 110 >> /etc/chrony.keys
+
     cat > /etc/chrony.conf << EOF
     allow 10.150.0.0/16
     local stratum 10 
     server ntp1.tue.nl
     server ntp2.tue.nl
-    server 10.150.255.253
+    peer 10.150.255.253 key 110
     driftfile /var/lib/chrony/drift
     makestep 1.0 3
     rtcsync
@@ -37,12 +39,14 @@ A second server (hpc-head02) with a basic Rocky 8 install
     ```shell
     timedatectl set-timezone Europe/Amsterdam
 
+    scp hpc-head01:/etc/chrony.keys /etc/chrony.keys
+
     cat > /etc/chrony.conf << EOF
     allow 10.150.0.0/16
     local stratum 10 
     server ntp1.tue.nl
     server ntp2.tue.nl
-    server 10.150.255.254
+    peer 10.150.255.254 key 110
     driftfile /var/lib/chrony/drift
     makestep 1.0 3
     rtcsync
