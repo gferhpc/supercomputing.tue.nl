@@ -6,7 +6,7 @@ Code Meter License Server needs a USB Dongle available in phys-login001
 Bus 001 Device 003: ID 064f:2af9 WIBU-Systems AG CmStick (HID, article no. 1001-xx-xxx)
 ```
 
-64bit linux rpm can be downloaded from [https://www.wibu.com/support/user/user-software.html](https://www.wibu.com/support/user/user-software.html){:target=_blank}
+64bit linux rpm can be downloaded from [https://www.wibu.com/support/user/user-software.html](https://www.wibu.com/support/user/user-software.html){:target=_blank} (Search for "rpm")
 
 ```shell
 yum install ./CodeMeter-X.XX.XXX.x86_64.rpm
