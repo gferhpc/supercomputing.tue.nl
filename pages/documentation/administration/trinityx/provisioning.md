@@ -87,7 +87,7 @@ luna osimage change -ver "4.18.0-513.18.1.el8_9.x86_64" NAME
 ```shell
 luna osimage pack NAME
 ```
-## ALL images additions
+## ALL images additions/removals
 
 ```shell
 dnf -y install python3-requests
@@ -100,6 +100,18 @@ dnf -y install freeglut mesa-libGLU ncurses-compat-libs redhat-lsb
 dnf -y install xcb-util-image xcb-util-keysyms xcb-util-renderutil xcb-util-wm
 dnf -y install libglvnd-devel
 rm -rf /etc/xdg/autostart/xfce-polkit.desktop
+dnf -y remove mcelog
+dnf -y install rasdaemon
+systemctl enable rasdaemon
+dnf -y remove cups avahi
+systemctl disable dnf-makecache.timer
+systemctl disable mlocate-updatedb.timer
+systemctl disable sysstat-collect.timer
+systemctl disable sysstat-summary.timer
+systemctl disable unbound-anchor.timer
+systemctl disable bluetooth
+systemctl disable lm_sensors
+
 ```
 
 ## GPU image additions
@@ -189,6 +201,11 @@ cat > /etc/systemd/system/user-0.slice.d/50-hpclab.conf <<EOF
 # This file overrides the user-.slice.d/50-hpclab.conf file,
 # so that the HPC Lab settings do not apply to user root.
 EOF
+```
+
+The slurmd daemon should/cannot run on the login nodes.
+```shell
+systemctl disable slurmd
 ```
 
 ## OS image Testing
