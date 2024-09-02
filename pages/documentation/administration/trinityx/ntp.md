@@ -58,7 +58,7 @@ A second server (hpc-head02) with a basic Rocky 8 install
     systemctl restart chronyd.service
     ```
 
-### head01:
+#### head01:
 
 ```shell
 luna cluster change -ntp 10.150.255.254,10.150.255.253 
@@ -68,3 +68,17 @@ vi /trinity/local/luna/daemon/templates/templ_dhcpd.cfg
 
    option ntp-servers {{ TIMESERVERS }};
 ```
+
+#### os_images:
+
+```shell
+cat > /etc/chrony.conf << EOF 
+server 10.150.255.254 iburst
+server 10.150.255.253 iburst
+driftfile /var/lib/chrony/drift
+makestep 1.0 3
+rtcsync
+logdir /var/log/chrony
+EOF
+```
+
