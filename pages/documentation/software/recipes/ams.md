@@ -8,7 +8,7 @@ engineering.
 
 ## AMS OpenMPI jobscript example
 
-```shell
+```
 #!/bin/bash
 
 #SBATCH --job-name=test_ams
