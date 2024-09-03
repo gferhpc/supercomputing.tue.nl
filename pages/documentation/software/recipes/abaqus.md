@@ -81,6 +81,10 @@ abaqus interactive job=${SLURM_JOB_NAME} cpus=${SLURM_CPUS_PER_TASK} mp-mode=thr
 
 ### Abaqus Error: "main.f" does not contain an Abaqus user subroutine.
 
+```
+Abaqus Error: "main.f" does not contain an Abaqus user subroutine.
+```
+
 When using a user-provided material routine (i.e. `user=main`), then the file `main.f` must contain the `umat` subroutine.  It is not enough if `main.f` includes another file that contains `umat`; it **must** be in `main.f`.
 
 This check was not present in Abaqus 2020 and earlier.
