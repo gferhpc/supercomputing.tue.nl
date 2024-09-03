@@ -77,3 +77,23 @@ cd $HOME/Jobs/Abaqus
 abaqus interactive job=${SLURM_JOB_NAME} cpus=${SLURM_CPUS_PER_TASK} mp-mode=threads input=boltpipeflange_3d_solidgask.inp 
 ```
 
+## Abaqus 2024 notes
+
+### Abaqus Error: "main.f" does not contain an Abaqus user subroutine.
+
+When using a user-provided material routine (i.e. `user=main`), then the file `main.f` must contain the `umat` subroutine.  It is not enough if `main.f` includes another file that contains `umat`; it **must** be in `main.f`.
+
+This check was not present in Abaqus 2020 and earlier.
+
+### Python error: LookupError: unknown encoding: ISO-8859-1
+
+```
+...
+  File "/vast.mnt/sw/rl8/zen/app/Abaqus/2024/linux_a64/tools/SMApy/python3.10/lib/python3.10/configparser.py", line 697, in read
+    with open(filename, encoding=encoding) as fp:
+LookupError: unknown encoding: ISO-8859-1
+```
+Abaqus does something with the locale while reading config files.  The locale variables propagate through SSH, through sbatch, into your jobs, and may cause the above error message.  To prevent this, add the following line to your job scripts before calling Abaqus:
+```
+export LC_ALL=POSIX
+```
