@@ -55,7 +55,7 @@ FLUENT MPI test done.
 
 ### ANSYS Fluent SLURM sbatch jobscript example using OpenMPI on 1 Node.
 
-```shell
+```slurm
 #!/bin/bash
 #
 #SBATCH --job-name=test_ansys
@@ -75,7 +75,7 @@ fluent 3ddp -g -t${SLURM_NTASKS} -mpitest -mpi=openmpi
 ```
 
 ### ANSYS Fluent SLURM sbatch jobscript example using OpenMPI on 2 Nodes.
-```shell
+```slurm
 #!/bin/bash
 #
 #SBATCH --job-name=test_ansys

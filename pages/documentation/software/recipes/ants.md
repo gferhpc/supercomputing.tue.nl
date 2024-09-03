@@ -9,7 +9,7 @@ ANTs is useful for managing, interpreting and visualizing multidimensional data.
 
 ## ANTs jobscript example 
 
-```shell
+```slurm
 #!/bin/bash
 #SBATCH --job-name=test_ants
 #SBATCH --output=test_ants-%j.log
