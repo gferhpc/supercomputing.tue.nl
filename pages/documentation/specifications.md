@@ -39,77 +39,11 @@ experimental purposes to get familiar with HPC.
 
 ## Filesystems
 
-=== "APSE"
-
-    | Filesystem     | Quota              | Mount Point                     | Backup          |
-    |----------------|--------------------|---------------------------------|-----------------|
-    | Home           | 200 GB             | `/home/phys/<username>`         | :no_entry_sign: No |
-    | Scratch (node) | varies             | `/local`                        | :no_entry_sign: No |
-    | Project        | based upon request | based upon request              | :no_entry_sign: No |
-
-=== "BmE"
-
-    | Filesystem     | Quota              | Mount Point                     | Backup          |
-    |----------------|--------------------|---------------------------------|-----------------|
-    | Home           | 200 GB             | `/home/bme001/<username>`       | :no_entry_sign: No |
-    | Scratch (node) | varies             | `/local`                        | :no_entry_sign: No |
-    | Project        | based upon request | based upon request              | :no_entry_sign: No |
-
-=== "BE"
-
-    | Filesystem     | Quota              | Mount Point                     | Backup          |
-    |----------------|--------------------|---------------------------------|-----------------|
-    | Home           | 200 GB             | `/home/arch001/<username>`      | :no_entry_sign: No |
-    | Scratch (node) | varies             | `/local`                        | :no_entry_sign: No |
-    | Project        | based upon request | based upon request              | :no_entry_sign: No |
-
-=== "CE&C"
-
-    | Filesystem     | Quota              | Mount Point                     | Backup          |
-    |----------------|--------------------|---------------------------------|-----------------|
-    | Home           | 200 GB             | `/home/chem002/<username>`      | :no_entry_sign: No |
-    | Scratch (node) | varies             | `/local`                        | :no_entry_sign: No |
-    | Project        | based upon request | based upon request              | :no_entry_sign: No |
-
-=== "EE"
-
-    | Filesystem     | Quota              | Mount Point                     | Backup          |
-    |----------------|--------------------|---------------------------------|-----------------|
-    | Home           | 200 GB             | `/home/tue/<username>`          | :no_entry_sign: No |
-    | Scratch (node) | varies             | `/local`                        | :no_entry_sign: No |
-    | Project        | based upon request | based upon request              | :no_entry_sign: No |
-
-=== "ID"
-
-    | Filesystem     | Quota              | Mount Point                     | Backup          |
-    |----------------|--------------------|---------------------------------|-----------------|
-    | Home           | 200 GB             | `/home/tue/<username>`          | :no_entry_sign: No |
-    | Scratch (node) | varies             | `/local`                        | :no_entry_sign: No |
-    | Project        | based upon request | based upon request              | :no_entry_sign: No |
-
-=== "IE&IS"
-
-    | Filesystem     | Quota              | Mount Point                     | Backup          |
-    |----------------|--------------------|---------------------------------|-----------------|
-    | Home           | 200 GB             | `/home/tue/<username>`          | :no_entry_sign: No |
-    | Scratch (node) | varies             | `/local`                        | :no_entry_sign: No |
-    | Project        | based upon request | based upon request              | :no_entry_sign: No |
-
-=== "M&CS"
-
-    | Filesystem     | Quota              | Mount Point                     | Backup          |
-    |----------------|--------------------|---------------------------------|-----------------|
-    | Home           | 200 GB             | `/home/mcs001/<username>`       | :no_entry_sign: No |
-    | Scratch (node) | varies             | `/local`                        | :no_entry_sign: No |
-    | Project        | based upon request | based upon request              | :no_entry_sign: No |
-
-=== "ME"
-
-    | Filesystem     | Quota              | Mount Point                     | Backup          |
-    |----------------|--------------------|---------------------------------|-----------------|
-    | Home           | 200 GB             | `/home/mech001/<username>`      | :no_entry_sign: No |
-    | Scratch (node) | varies             | `/local`                        | :no_entry_sign: No |
-    | Project        | based upon request | based upon request              | :no_entry_sign: No |
+| Filesystem     | Quota                                                                                                                                  | Mount Point                                                                                                                            | Backup             |
+|----------------|----------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|--------------------|
+| Home           | 200 GB                                                                                                                                 | `/home/<username>`                                                                                                                     | :no_entry_sign: No |
+| Scratch (node) | varies                                                                                                                                 | `/scratch-node`                                                                                                                        | :no_entry_sign: No |
+| Project        | based upon [request](https://tue.topdesk.net/tas/public/ssp/content/serviceflow?unid=f950a580c8e34a7abb7d37d102c788e8){:target=_blank} | based upon [request](https://tue.topdesk.net/tas/public/ssp/content/serviceflow?unid=f950a580c8e34a7abb7d37d102c788e8){:target=_blank} | :no_entry_sign: No |
 
 !!! danger
 
