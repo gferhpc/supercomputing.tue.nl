@@ -112,6 +112,13 @@ systemctl disable unbound-anchor.timer
 systemctl disable bluetooth
 systemctl disable lm_sensors
 
+cat > /etc/profile.d/z_umbrella_sw.csh << EOF
+setenv PATH "/sw/rl8/gen/bin:\$PATH"
+EOF
+cat > /etc/profile.d/z_umbrella_sw.sh << EOF
+export PATH="/sw/rl8/gen/bin:\$PATH"
+EOF
+
 ```
 
 ## GPU image additions
@@ -206,6 +213,13 @@ EOF
 The slurmd daemon should/cannot run on the login nodes.
 ```shell
 systemctl disable slurmd
+```
+```
+cat > /etc/profile.d/zz_myquota.sh << EOF
+if tty --quiet; then
+        myquota
+fi
+EOF
 ```
 
 ## OS image Testing
