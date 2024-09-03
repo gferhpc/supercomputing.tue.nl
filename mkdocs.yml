@@ -202,7 +202,7 @@ markdown_extensions:
 
 edit_uri: https://gitlab.tue.nl/hpclab/website/edit/main/pages/
 extra:
-  announcement: "⚠️ TU/e Umbrella HPC Cluster maintenance scheduled between 26th and 28th of August 2024 ⚠️"
+#  announcement: "⚠️ TU/e Umbrella HPC Cluster maintenance scheduled between 26th and 28th of August 2024 ⚠️"
   social:
     - name: Eindhoven Computing Center at LinkedIn
       icon: material/linkedin
