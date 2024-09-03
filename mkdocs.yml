@@ -4,7 +4,7 @@ docs_dir: &base_path pages
 theme:
   name: material
   font:
-    text: Lato
+    text: Nunito
   language: en
   logo: assets/logo.png
   favicon: assets/favicon.webp
@@ -57,7 +57,7 @@ plugins:
   - glightbox
   - redirects:
       redirect_maps:
-        'documentation/index.md': 'documentation/introduction.md'
+        'documentation/introduction.md': 'documentation/index.md'
   - search
   - rss:
       enabled: !ENV [CI, false]

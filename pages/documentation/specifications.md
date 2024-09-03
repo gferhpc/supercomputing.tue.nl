@@ -4,17 +4,13 @@ title: Technical Specifications
 
 ## Cluster specifications
 
-Operating System: [Rocky Linux 8](https://rockylinux.org/) (100% bug-for-bug compatible with Red Hat Enterprise Linux®) 
-
-Cluster Management: [TrinityX](https://github.com/clustervision/trinityX)
-
-User Management: LDAP with TU/e Active Directory for Authentication
-
-Module system: [Lmod](https://lmod.readthedocs.io/en/latest/)
-
-Software build system: [EasyBuild](https://docs.easybuild.io/)
-
-Remote web access: [Open Ondemand](https://openondemand.org/)
+|                       | Software Stack                                               |
+|----------------------:|--------------------------------------------------------------|
+|      Operating System | :simple-rockylinux: [Rocky Linux 8](https://rockylinux.org/) |
+|    Cluster Management | [TrinityX](https://github.com/clustervision/trinityX)        |
+|         Module System | [Lmod](https://lmod.readthedocs.io/en/latest/)               |
+| Software Build System | [EasyBuild](https://docs.easybuild.io/)                      |
+|     Remote Web Access | [Open Ondemand](https://openondemand.org/)                   |
 
 ## Partition/Queues
 
@@ -39,11 +35,12 @@ experimental purposes to get familiar with HPC.
 
 ## Filesystems
 
-| Filesystem     | Quota                                                                                                                                  | Mount Point                                                                                                                            | Backup             |
-|----------------|----------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|--------------------|
-| Home           | 200 GB                                                                                                                                 | `/home/<username>`                                                                                                                     | :no_entry_sign: No |
-| Scratch (node) | varies                                                                                                                                 | `/scratch-node`                                                                                                                        | :no_entry_sign: No |
-| Project        | based upon [request](https://tue.topdesk.net/tas/public/ssp/content/serviceflow?unid=f950a580c8e34a7abb7d37d102c788e8){:target=_blank} | based upon [request](https://tue.topdesk.net/tas/public/ssp/content/serviceflow?unid=f950a580c8e34a7abb7d37d102c788e8){:target=_blank} | :no_entry_sign: No |
+| Filesystem       | Quota                                                                                                                                  | Mount Point                                                                                                                            | Backup             |
+|------------------|----------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|--------------------|
+| Home             | 200 GB                                                                                                                                 | `/home/<username>`                                                                                                                     | :no_entry_sign: No |
+| Scratch (node)   | varies                                                                                                                                 | `/scratch-node`                                                                                                                        | :no_entry_sign: No |
+| Scratch (shared) | 8 TB                                                                                                                                   | `/scratch-shared/<username>`                                                                                                           | :no_entry_sign: No |
+| Project          | based upon [request](https://tue.topdesk.net/tas/public/ssp/content/serviceflow?unid=f950a580c8e34a7abb7d37d102c788e8){:target=_blank} | based upon [request](https://tue.topdesk.net/tas/public/ssp/content/serviceflow?unid=f950a580c8e34a7abb7d37d102c788e8){:target=_blank} | :no_entry_sign: No |
 
 !!! danger
 
@@ -60,12 +57,10 @@ experimental purposes to get familiar with HPC.
 
 === "APSE"
 
-    { .umbrella-specs phys-storage001 }
     { .umbrella-specs phys.default.q,phys.gpu.q,phys.bigmem.q,phys.and.q,phys.edu.q,phys.psn.q }
 
 === "BE"
 
-    { .umbrella-specs arch-storage001 }
     { .umbrella-specs be.research.q,be.gpuresearch.q,be.student.q,be.gpustudent.q }
 
 === "BmE"
@@ -75,7 +70,7 @@ experimental purposes to get familiar with HPC.
 
 === "CE&C"
 
-    { .umbrella-specs chem-storage001,chem-storage002 }
+    { .umbrella-specs chem-storage001 }
     { .umbrella-specs chem.default.q,chem.gpu.q,chem.longterm.q,chem.smm01.q,chem.smm02.q }
 
 === "EE"
@@ -88,7 +83,6 @@ experimental purposes to get familiar with HPC.
 
 === "M&CS"
 
-    { .umbrella-specs mcs-storage001 }
     { .umbrella-specs mcs.default.q,mcs.gpu.q }
 
 === "ME"
