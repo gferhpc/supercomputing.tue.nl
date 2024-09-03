@@ -1,5 +1,0 @@
-ipmitool user set name 3 trinityx
-ipmitool user set password 3 PASSWD
-ipmitool user priv 3 4 1
-ipmitool user enable 3
-ipmitool channel setaccess 1 3 callin=false link=false ipmi=on privilege=4
