@@ -9,7 +9,7 @@ build:
   <<: *deploy
   stage: build
   script:
-    - 'mkdocs build --no-directory-urls --site-dir public'
+    - 'python3 -m mkdocs build --no-directory-urls --site-dir public'
     - 'echo "Preview URL: $PUBLIC_URL"'
   artifacts:
     paths:
@@ -26,7 +26,7 @@ pages:
   <<: *deploy
   stage: deploy
   script:
-    - 'mkdocs build --site-dir public'
+    - 'python3 -m mkdocs build --site-dir public'
   artifacts:
     paths:
       - public
