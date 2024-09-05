@@ -35,12 +35,12 @@ experimental purposes to get familiar with HPC.
 
 ## Filesystems
 
-|                                        Filesystem | Quota                                                                                                                          | Backup                                                                        |
-|--------------------------------------------------:|--------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|
-|                       Home<br/>`/home/<username>` | 200 GiB<br/>1.000.000 files                                                                                                    | :no_entry_sign: No                                                            |
-|                Scratch (node)<br/>`/scratch-node` | Varies                                                                                                                         | :no_entry_sign: No                                                            |
-| Scratch (shared)<br/>`/scratch-shared/<username>` | 8 TiB<br/>3.000.000 files                                                                                                      | :no_entry_sign: No<br/>Files **older than 14 days** are removed automatically |
-|                     Project<br/>`/project/<name>` | [On Request](https://tue.topdesk.net/tas/public/ssp/content/serviceflow?unid=f950a580c8e34a7abb7d37d102c788e8){:target=_blank} | :no_entry_sign: No                                                            |
+|                                        Filesystem | Quota                                                                                                                         | Backup                                                                        |
+|--------------------------------------------------:|-------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|
+|                       Home<br/>`/home/<username>` | 200 GiB<br/>1.000.000 files                                                                                                   | :no_entry_sign: No                                                            |
+|                Scratch (node)<br/>`/scratch-node` | Varies                                                                                                                        | :no_entry_sign: No                                                            |
+| Scratch (shared)<br/>`/scratch-shared/<username>` | 8 TiB<br/>3.000.000 files                                                                                                     | :no_entry_sign: No<br/>Files **older than 14 days** are removed automatically |
+|                     Project<br/>`/project/<name>` | [On Request](https://tue.topdesk.net/tas/public/ssp/content/serviceflow?unid=f950a580c8e34a7abb7d37d102c788e8){target=_blank} | :no_entry_sign: No                                                            |
 
 !!! danger
 

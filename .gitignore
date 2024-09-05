@@ -1,6 +1,7 @@
 /.cache
 /.idea
 /.vscode
+/public
 /Pipfile*
 /*.egg-info
 /cluster

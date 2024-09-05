@@ -1,7 +1,7 @@
 .deploy: &deploy
   image: python:latest
   before_script:
-    - pip install --upgrade -r requirements.txt
+    - pip install --user --upgrade -r requirements.txt
     - pip install -e .
     - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.tue.nl/hpclab/website-cluster.git cluster
 
