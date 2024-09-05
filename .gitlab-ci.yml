@@ -1,3 +1,6 @@
+job:
+  cache: []
+
 .deploy: &deploy
   image: python:latest
   before_script:
