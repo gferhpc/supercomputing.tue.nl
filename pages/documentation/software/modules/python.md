@@ -1,34 +1,34 @@
 ---
 title: Python software modules
-tags: [Software]
+tags: [ Software ]
 ---
 
 ## Python and related software.
 
-| Name           | Supported Versions                   | Module(s)                | https://hpc.tue.nl |
-| -------------- | ------------------------------------ | ------------------------ | ------------------ |
-| AlphaFold      | 2.3.1-foss-2022a           | `module avail AlphFold`  | |
-| Anaconda3      | 2023.09-0 2024.02-1                 | `module avail Anaconda3` | |
-| Cantera        | 2.6.0-foss-2022a 3.0.0-foss-2023a    | `module avail Cantera`   | |
-| CuPy           | 13.0.0-foss-2023a-CUDA-12.1.1   | `module avail CuPy`.     | |
-| IPython        | 8.5.0 8.14.0                         | `module avail IPython`   | |
-| Jax            | 0.4.4-foss-2022a 0.4.4-foss-2022a-CUDA-11.7.0 | `module avail jax`   | |
-| JupyterLab     | 4.0.5-GCCcore-12.3.0                 | `module avail Jupyter`   | Yes, via Jupyter |
-| numba          | 0.56.4-foss-2022a                    | `module avail numba`     | |
-| OpenCV         | 4.6.0-foss-2022a-contrib 4.8.1-foss-2023a-contrib | `module avail OpenCV`     | |
-| OpenMM         | 8.0.0-foss-2022a 8.0.0-foss-2022a-CUDA-11.7.0 8.0.0-foss-2023a |  `module avail OpenMM` | |
-| petc4py        | 3.17.4-foss-2022a                    | `module avail petsc4py` | |
-| Python         | 2.7.18 3.10.4 3.10.13 3.11.3         | `module avail Python/`   | |
-| PyTorch        | 1.12.0-foss-2022a 2.1.2-foss-2022a/2023a | `module avail PyTorch`   | Yes, included in Jupyter|
-| PyTorch-Lightning| 1.8.4-foss-2022a 2.2.1-foss-2023a | `module avail PyTorch`   | |
-| scikit-bio     | 0.5.7-foss-2022a                     | `module avail scikit-bio` | |
-| scikit-learn   | 1.1.2-foss-2022a                     | `module avail scikit-learn` | |
-| scikit-image   | 0.19.3-foss-2022a                     | `module avail scikit-image` | |
-| SciPy          | 2022.05-foss-2022a 2023.07-gfbf-2023a | `module avail SciPy-bundle` | Yes, included in Jupyter |
-| slepc4py       | 3.17.2-foss-2022a                     | `module avail slepc4py` | |
-| Transformers   | 4.39.3-gfbf-2023a                     | `module avail Transformers` | |
-| Tensorflow     | 2.11.0-foss-2022a  2.13.0-foss-2023a  | `module avail TensorFlow` | Yes, included in Jupyter |
-| torchvision    | 0.13.1-foss-2022a                     | `module avail torchvision` | Yes, included in Jupyter |
+| Name              | Supported Versions                                                           | Module(s)               |    [https://hpc.tue.nl](https://hpc.tue.nl){:target=_blank}     |
+|-------------------|------------------------------------------------------------------------------|-------------------------|:---------------------------------------------------------------:|
+| AlphaFold         | `2.3.1-foss-2022a`                                                           | `ml avail AlphFold`     |                                                                 |
+| Anaconda3         | `2024.02-1`<br/>`2023.09-0`                                                  | `ml avail Anaconda3`    |                                                                 |
+| Cantera           | `3.0.0-foss-2023a`<br/>`2.6.0-foss-2022a`                                    | `ml avail Cantera`      |                                                                 |
+| CuPy              | `13.0.0-foss-2023a-CUDA-12.1.1`                                              | `ml avail CuPy`.        |                                                                 |
+| IPython           | `8.14.0`<br/>`8.5.0`                                                         | `ml avail IPython`      |                                                                 |
+| Jax               | `0.4.4-foss-2022a`<br/>`0.4.4-foss-2022a-CUDA-11.7.0`                        | `ml avail jax`          |                                                                 |
+| JupyterLab        | `4.0.5-GCCcore-12.3.0`<br/>`3.5.0-GCCcore-11.3.0`                            | `ml avail Jupyter`      |     [Yes](https://hpc.tue.nl "via Jupyter"){:target=_blank}     |
+| numba             | `0.56.4-foss-2022a`                                                          | `ml avail numba`        |                                                                 |
+| OpenCV            | `4.8.1-foss-2023a-contrib`<br/>`4.6.0-foss-2022a-contrib`                    | `ml avail OpenCV`       |                                                                 |
+| OpenMM            | `8.0.0-foss-2023a`<br/>`8.0.0-foss-2022a`<br/>`8.0.0-foss-2022a-CUDA-11.7.0` | `ml avail OpenMM`       |                                                                 |
+| petc4py           | `3.17.4-foss-2022a`                                                          | `ml avail petsc4py`     |                                                                 |
+| Python            | `3.11.3`<br/>`3.10.13`<br/>`3.10.4`<br/>`2.7.18`                             | `ml avail Python/`      |                                                                 |
+| PyTorch           | `2.1.2-foss-2022a/2023a`<br/>`1.12.0-foss-2022a`                             | `ml avail PyTorch`      | [Yes](https://hpc.tue.nl "included in Jupyter"){:target=_blank} |
+| PyTorch-Lightning | `2.2.1-foss-2023a`<br/>`1.8.4-foss-2022a`                                    | `ml avail PyTorch`      |                                                                 |
+| scikit-bio        | `0.5.7-foss-2022a`                                                           | `ml avail scikit-bio`   |                                                                 |
+| scikit-learn      | `1.1.2-foss-2022a`                                                           | `ml avail scikit-learn` |                                                                 |
+| scikit-image      | `0.19.3-foss-2022a`                                                          | `ml avail scikit-image` |                                                                 |
+| SciPy             | `2023.07-gfbf-2023a`<br/>`2022.05-foss-2022a`                                | `ml avail SciPy-bundle` | [Yes](https://hpc.tue.nl "included in Jupyter"){:target=_blank} |
+| slepc4py          | `3.17.2-foss-2022a`                                                          | `ml avail slepc4py`     |                                                                 |
+| Transformers      | `4.39.3-gfbf-2023a`                                                          | `ml avail Transformers` |                                                                 |
+| Tensorflow        | `2.13.0-foss-2023a`<br/>`2.11.0-foss-2022a`                                  | `ml avail TensorFlow`   | [Yes](https://hpc.tue.nl "included in Jupyter"){:target=_blank} |
+| torchvision       | `0.13.1-foss-2022a`                                                          | `ml avail torchvision`  | [Yes](https://hpc.tue.nl "included in Jupyter"){:target=_blank} |
 
 ??? example "available pip packages after running module load SciPy-bundle/2023.07-gfbf-2023a"
     ```shell
