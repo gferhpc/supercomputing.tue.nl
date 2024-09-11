@@ -88,7 +88,7 @@ Using the toolchain(s) the following software is avaiable. When the module is lo
 | MCL            | 22.282-GCCcore-12.3.0                | `MCL`       | |
 | NetLogo        | 6.4.0-64                    | `NetLogo`   | Yes |
 | OpenFOAM (ESI)      | v2206-foss-2022a v2312-foss-2023a | `OpenFOAM`  | |
-| OpenFOAM (Foundation)       | 11-foss-2023a 10-foss-2023a 8-foss-2022a | `OpenFOAM`  | |
+| OpenFOAM (Foundation)       | 11-foss-2023a 10-foss-2023a 12-foss-2023a | `OpenFOAM`  | |
 | OpenModelica   | 1.22.0-foss-2022a                    | `OpenModelica` | |
 | OpenSceneGraph | 3.6.5-foss-2022a                     | `OpenSceneGraph`  | Yes via Interactive Desktop |
 | ORCA           | 5.0.4-gompi-2023a                   | `ORCA`      | |
