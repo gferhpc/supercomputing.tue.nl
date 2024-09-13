@@ -129,7 +129,6 @@ This configuration is intended for serial (single core) jobs.  It differs from t
 
 The following specifications are used by system administrators when ordering compute nodes:
 
-- Brand: Dell preferred
 - Ethernet: 25 Gbit/s SFP28 with RoCEv2 support
     - e.g. Broadcom 57414
     - incl. SFP28 DAC cable, Dell-switch compatible
@@ -138,13 +137,12 @@ The following specifications are used by system administrators when ordering com
         - For Dell: BOSS, cheapest size available.
     - Local storage: on request.  Can be put on boot storage as well.
 - Power supply: 1+1 redundant.
-    - Connectors: C13-14 preferred; C19-20 if needed.
-    - Quote must state the connector type
-    - Power cables: not needed
+- Power cables: included.  Grid-side connector: Schuko.
 - Rack mount kit: yes
-- Bezel: no
+- Bezel: yes
 - Remote mgmt: required.
     - For Dell: iDRAC with Enterprise and OpenManage license.  Factory-generated password.
+    - For other vendors: similar to above.
 - Support: 5 year next business day.
 
 Other constraints:
