@@ -12,7 +12,7 @@ As all nodes in the Cluster have access to the same shared data as the login nod
 
 ## Accessing Microsoft OneDrive (using rclone)
 
-All tough `rclone` is a command line tool (https://rclone.org/), to configure a OneDrive connection a graphical environment is need to authorize the connection to Microsoft OneDrive. Configuration of the connection only needs to be done once.
+All tough `rclone` is a command line tool (https://rclone.org/), to configure a OneDrive connection a graphical environment is needed to authorize the connection to Microsoft OneDrive. Configuration of the connection only needs to be done once.
 
 ### Start an interactive Desktop Session
 
