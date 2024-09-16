@@ -87,8 +87,8 @@ Using the toolchain(s) the following software is avaiable. When the module is lo
 | LAMMPS         | 2Aug2023_update2-foss-2023a-kokkos | `LAMMPS`    | |
 | MCL            | 22.282-GCCcore-12.3.0                | `MCL`       | |
 | NetLogo        | 6.4.0-64                    | `NetLogo`   | Yes |
-| OpenFOAM (ESI)      | v2206-foss-2022a v2312-foss-2023a | `OpenFOAM`  | |
-| OpenFOAM (Foundation)       | 10-foss-2023a 11-foss-2023a 12-foss-2023a | `OpenFOAM`  | |
+| OpenFOAM (ESI)      | v2206-foss-2022a<br>v2312-foss-2023a<br>OpenFOAM-v2406-foss-2023a | `OpenFOAM`  | |
+| OpenFOAM (Foundation)       | 10-foss-2023a<br>11-foss-2023a<br>12-foss-2023a | `OpenFOAM`  | |
 | OpenModelica   | 1.22.0-foss-2022a                    | `OpenModelica` | |
 | OpenSceneGraph | 3.6.5-foss-2022a                     | `OpenSceneGraph`  | Yes via Interactive Desktop |
 | ORCA           | 5.0.4-gompi-2023a                   | `ORCA`      | |
