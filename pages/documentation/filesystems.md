@@ -57,7 +57,7 @@ hide:
   </tr>
   <tr>
     <td>Project</td>
-    <td colspan="3">Varies per project</td>
+    <td colspan="3" style="text-align:center;">&mdash;Varies per project&mdash;</td>
     <td>Yes</td>
     <td><code>/project/&lt;project_name&gt;</code></td>
     <td>Varies per project</td>
