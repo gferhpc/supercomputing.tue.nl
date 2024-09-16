@@ -1,6 +1,7 @@
 nav:
   - index.md
   - policies.md
+  - filesystems.md
   - specifications.md
   - "Getting Started": steps
   - "Software": software

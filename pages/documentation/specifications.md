@@ -27,30 +27,13 @@ Read how to select these clusters, or even specific nodes within them,
 in the [Submit Jobs](steps/jobs/index.md) tutorial.
 
 In case you are not a part of the below-mentioned departments, and you
-still would like to compute, you can use the [generic nodes](#generic-nodes)(1) for
+still would like to compute, you can use the [generic nodes](#generic-nodes) for
 experimental purposes to get familiar with HPC.
-{ .annotate }
-
-1. Note that for some departments, these partitions are not accessible for technical reasons.
-
-## Filesystems
-
-|                                        Filesystem | Quota                                                                                                                         | Backup                                                                        |
-|--------------------------------------------------:|-------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|
-|                       Home<br/>`/home/<username>` | 200 GiB<br/>1.000.000 files                                                                                                   | :no_entry_sign: No                                                            |
-|                Scratch (node)<br/>`/scratch-node` | Varies                                                                                                                        | :no_entry_sign: No                                                            |
-| Scratch (shared)<br/>`/scratch-shared/<username>` | 8 TiB<br/>3.000.000 files                                                                                                     | :no_entry_sign: No<br/>Files **older than 14 days** are removed automatically |
-|                     Project<br/>`/project/<name>` | [On Request](https://tue.topdesk.net/tas/public/ssp/content/serviceflow?unid=f950a580c8e34a7abb7d37d102c788e8){target=_blank} | :no_entry_sign: No                                                            |
-
-!!! danger
-
-    The HPC Lab doesn't provide an archive or backup solution. Please check the [Storage Finder](https://storagefinder.tue.nl){:target=_blank} for available options to store your data for long term!
 
 ## Hardware
 
 ### Generic Nodes
 
-{ .umbrella-specs tue-login001,tue-login002,tue-storage001 }
 { .umbrella-specs tue.default.q,tue.gpu.q }
 
 ### Departmental Nodes

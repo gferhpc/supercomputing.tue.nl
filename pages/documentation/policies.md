@@ -18,7 +18,7 @@ The HPC Cluster is not a solution for archiving your work.
 ### Fair Use of Disk Space
 
 Each user has a 200GB disk quota and is limited to 1,000,000 files and
-directories maximum. The total disk space is however not enough for every user
+directories maximum (see [file systems](filesystems.md)). The total disk space is however not enough for every user
 to actually use that much. Therefore:
 
 - Try to keep disk usage below 100GB as a general rule.
@@ -37,7 +37,7 @@ Sometimes you just have to do a lot of operations on a lot of files.
 This is a regularly occurring cause for poor head node performance. How
 do we prevent being a nuisance?
 
-### Bulk Moving, deleting, tarring, files that are in home
+### Bulk moving, deleting, tarring, etc. files that are in home
 
 This is a common part of cleaning up your home directory. It can cause
 overloading of the disk system regardless of measures you take, but you
@@ -51,6 +51,6 @@ notice you're doing this has gone down significantly.
 
 ### Copying files from elsewhere on the cluster
 
-Same as in the previous point: Please do not try to do multiple SCP
+Same as in the previous point: please do not try to do multiple SCP
 sessions in parallel. The chance of generating a speedup for yourself is
 smaller than the chance of causing trouble for others.
