@@ -76,7 +76,7 @@ hide:
 
 Every user has their own home directory, which is accessible at <code>/home/&lt;login_name&gt;</code>.
 
-**Your home directory has default capacity quota of 200 GiB. The default inode quota is 1,000,000.**
+**Your home directory has default capacity quota of 200 GiB. The default inode quota is 1,000,000.**  To see your current quota usage, run the `myquota` command.
 
 Most home directories reside on fast (NVMe) storage. Some, however, may reside on slower (spinning disk) storage.
 
@@ -117,6 +117,6 @@ A project space can be used when:
 - you need additional storage space, but do not require a backup; or
 - you need to share files within a collaboration.
 
-Project spaces are accessible at <code>/project/&lt;project_name&gt;</code>.  They can reside on fast storage (NVMe) or slow (spinning disk) storage, and have project-dependent quota for space and number of files.  By default accounts on our systems are not provisioned with a project space. Project spaces can be requested separately, through the [web form](https://tue.topdesk.net/tas/public/ssp/content/serviceflow?unid=f950a580c8e34a7abb7d37d102c788e8){:target=_blank}.
+Project spaces are accessible at <code>/project/&lt;project_name&gt;</code>.  They can reside on fast storage (NVMe) or slow (spinning disk) storage, and have project-dependent quota for space and number of files.  (Current quota usage can be seen using the `myquota` command.)  By default accounts on our systems are not provisioned with a project space. Project spaces can be requested separately, through the [web form](https://tue.topdesk.net/tas/public/ssp/content/serviceflow?unid=f950a580c8e34a7abb7d37d102c788e8){:target=_blank}.
 
 Project spaces are not intended for long term storage of large data sets. For this purpose, the HPC Lab recommends using other (external) storages, such as the TU/e NetApp or SURF Research Drive. Please consult the [Storage Finder](https://storagefinder.tue.nl){:target=_blank}, your local hub, or your [Research IT representative](https://tuenl.sharepoint.com/sites/intranet-LIS/SitePages/Research-IT.aspx) for available options to store your data for long term!
