@@ -4,9 +4,10 @@ title: Open OnDemand
 
 ## Quick Start
 
-![login-ood.png](login-ood.png){ align=right width=250px }
-Based on [openondemand.org](https://openondemand.org/){:target=_blank} easy access to the TU/e Umbrella HPC Cluster is possible using a web browser. To get started visit [hpc.tue.nl](https://hpc.tue.nl){:target=_blank} and login with your TU/e credentials.
 
+Based on [openondemand.org](https://openondemand.org/){:target=_blank} easy access to the TU/e Umbrella HPC Cluster is possible using a web browser. To get started visit [hpc.tue.nl](https://hpc.tue.nl){:target=_blank} and login with your TU/e credentials.
+<br>
+![login-ood.png](login-ood.png){ align=left width=250px }
 <br/>
 
 ## Terminal in the Browser
