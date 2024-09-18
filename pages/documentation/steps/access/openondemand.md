@@ -2,7 +2,8 @@
 title: Open OnDemand
 ---
 
-![login-ood.png](login-ood.png){ align=left width=250px }
+![login-ood.png](login-ood.png){ align=left width=450px }
+<br/>
 
 ## Quick Start
 
