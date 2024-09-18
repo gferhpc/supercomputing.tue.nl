@@ -2,8 +2,6 @@
 title: Technical Specifications
 ---
 
-## Cluster specifications
-
 |                       | Software Stack                                               |
 |----------------------:|--------------------------------------------------------------|
 |      Operating System | :simple-rockylinux: [Rocky Linux 8](https://rockylinux.org/) |
