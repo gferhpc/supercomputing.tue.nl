@@ -57,7 +57,7 @@ MATLAB                                                Version 24.1        (R2024
 module purge
 module load MATLAB/2024a_Update_3
 
-matlab -nodisplay -nosplash -nodesktop -r simple.m
+matlab -nodisplay -nosplash -nodesktop -r simple
 ```
 
 ??? example "simple.m"
@@ -86,7 +86,7 @@ matlab -nodisplay -nosplash -nodesktop -r simple.m
 module purge
 module load MATLAB/2024a_Update_3
 
-matlab -nodisplay -nosplash -nodesktop -r parallel.m
+matlab -nodisplay -nosplash -nodesktop -r parallel
 ```
 
 ??? example "parallel.m"
