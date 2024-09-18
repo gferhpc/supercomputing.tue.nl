@@ -11,7 +11,7 @@ tags: [ Software ]
 | Cantera           | `3.0.0-foss-2023a`<br/>`2.6.0-foss-2022a`                                    | `ml avail Cantera`      |                                                                 |
 | CuPy              | `13.0.0-foss-2023a-CUDA-12.1.1`                                              | `ml avail CuPy`.        |                                                                 |
 | IPython           | `8.14.0`<br/>`8.5.0`                                                         | `ml avail IPython`      |                                                                 |
-| Jax               | `0.4.25-gfbf-2023a`<br/>`0.4.4-foss-2022a-CUDA-11.7.0`                        | `ml avail jax`          |                                                                 |
+| Jax               | `0.4.25-gfbf-2023a`<br/>`0.4.25-gfbf-2023a-CUDA-12.1.1`                        | `ml avail jax`          |                                                                 |
 | JupyterLab        | `4.0.5-GCCcore-12.3.0`<br/>`3.5.0-GCCcore-11.3.0`                            | `ml avail Jupyter`      |     [Yes](https://hpc.tue.nl "via Jupyter"){:target=_blank}     |
 | numba             | `0.58.1-foss-2023a`<br>`0.56.4-foss-2022a`                                                          | `ml avail numba`        |                                                                 |
 | OpenCV            | `4.8.1-foss-2023a-contrib`<br>`4.8.1-foss-2023a-CUDA-12.1.1-contrib`                    | `ml avail OpenCV`       |                                                                 |
