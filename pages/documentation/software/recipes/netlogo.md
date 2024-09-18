@@ -43,7 +43,7 @@ module load NetLogo/6.4.0-64
 
 mdl="model.nlogo"
 exp="experiment01"
-tab="${exp}.csv"
+tab="${exp}-${SLURM_JOBID}.csv"
 
 srun netlogo-headless.sh --model "${mdl}" --experiment "${exp}" --tab "${tab}" --threads ${SLURM_CPUS_PER_TASK}
 ```
