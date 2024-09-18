@@ -22,7 +22,7 @@ tags: [ Software ]
 | PyTorch           | `2.1.2-foss-2022a/2023a`<br/>`1.12.0-foss-2022a`                             | `ml avail PyTorch`      | [Yes](https://hpc.tue.nl "included in Jupyter"){:target=_blank} |
 | PyTorch-Lightning | `2.2.1-foss-2023a`<br/>`1.8.4-foss-2022a`                                    | `ml avail PyTorch`      |                                                                 |
 | scikit-bio        | `0.5.7-foss-2022a`                                                           | `ml avail scikit-bio`   |                                                                 |
-| scikit-learn      | `1.1.2-foss-2022a`                                                           | `ml avail scikit-learn` |                                                                 |
+| scikit-learn      | `1.4.2-gfbf-2023a`<br>`1.1.2-foss-2022a`                                                           | `ml avail scikit-learn` |                                                                 |
 | scikit-image      | `0.19.3-foss-2022a`                                                          | `ml avail scikit-image` |                                                                 |
 | SciPy             | `2023.07-gfbf-2023a`<br/>`2022.05-foss-2022a`                                | `ml avail SciPy-bundle` | [Yes](https://hpc.tue.nl "included in Jupyter"){:target=_blank} |
 | slepc4py          | `3.17.2-foss-2022a`                                                          | `ml avail slepc4py`     |                                                                 |
