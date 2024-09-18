@@ -6,7 +6,7 @@ tags: [Software, Module]
 
 [Application](URL){:target="_blank"} Small Description
 
-![Application in Umbrella On Demdand](application-ood.png){: align=right style="height:150px"}
+![Application in Umbrella On Demand](application-ood.png){: align=right style="height:150px"}
 
 ## Using Application interactive<br>(Graphical User Interface)
 
