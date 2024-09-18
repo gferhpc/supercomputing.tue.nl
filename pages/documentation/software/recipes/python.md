@@ -87,6 +87,8 @@ follows:
 
 ### Using Anaconda
 
+**NOTE:** Anaconda has great impact on your environment settings and using it is **not advised**.
+
 If you want to use [Anaconda](https://www.anaconda.com/){:target=_blank}, you
 will have to load a module: `module load Anaconda3`. Several versions are
 available, as you can see by running `module avail anaconda` and `module avail
