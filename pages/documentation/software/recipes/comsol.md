@@ -3,6 +3,7 @@ title:  COMSOL
 tags: [Software, Module]
 ---
 
+![COMSOL in Umbrella On Demdand](comsol-ood.png){: align=right style="height:100px"}
 [COMSOL](https://www.comsol.com/){:target="_blank"} is licensed software and only usable if the user is a member of the correct group.
 
 ### Getting a license
@@ -10,8 +11,6 @@ tags: [Software, Module]
 Check the
 [intranet](https://intranet.tue.nl/en/university/services/information-management-services/software/comsol-multiphysics/){:target=_blank}
 for the procedure on how to get a license for using COMSOL.
-
-![COMSOL in Umbrella On Demdand](comsol-ood.png){: align=right style="height:100px"}
 
 ## Using Application interactive<br>(Graphical User Interface)
 
