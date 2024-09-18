@@ -3,9 +3,10 @@ title: ANSYS Lumerical
 tags: [Software, Module]
 ---
 
+![ANSYS Lumerical in Umbrella On Demdand](lumerical-ood.png){ align=right style="height:150px"}
+
 [ANSYS Lumerical](https://www.ansys.com/products/optics){:target="_blank"}, part of the ANSYS Optics suite, is an optics simulation package.
 
-![ANSYS Lumerical in Umbrella On Demdand](lumerical-ood.png){: align=right style="height:150px"}
 
 ## Using ANSYS Lumerical interactive<br>(Graphical User Interface)
 

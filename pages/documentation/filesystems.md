@@ -1,12 +1,10 @@
 ---
 title: File systems
-hide:
-  - toc
 ---
 
 # File systems
 
-[TOC]
+This page gives an overview of the file systems of the Umbrella HPC cluster and details the various types system services available to end-users.
 
 ## Overview
 

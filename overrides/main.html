@@ -23,3 +23,28 @@
 </div>
 {% endif %}
 {% endblock %}
+
+{% block site_nav %}
+{% if nav %}
+{% if page.meta and page.meta.hide %}
+{% set hidden = "hidden" if "navigation" in page.meta.hide %}
+{% endif %}
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" {{ hidden }}>
+  <div class="md-sidebar__scrollwrap">
+    <div class="md-sidebar__inner">
+      {% include "partials/nav.html" %}
+    </div>
+  </div>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+{% if "toc.integrate" not in features %}
+{% if page.meta and page.meta.hide %}
+{% set hidden = "hidden" if "toc" in page.meta.hide %}
+{% endif %}
+  {% include "partials/toc.html" %}
+{% endif %}
+{{ super() }}
+{% endblock %}

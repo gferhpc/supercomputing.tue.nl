@@ -43,3 +43,24 @@ code {
 .green {
     color: #008000;
 }
+
+.md-nav--secondary {
+    float: right;
+    position: relative;
+    display: inline-block;
+    border: 1px solid var(--md-default-fg-color--lightest);
+    border-radius: 5px;
+
+    .md-nav__title {
+        box-shadow: none;
+        border-bottom: 1px solid var(--md-default-fg-color--lightest);
+        background-color: var(--md-default-fg-color--lightest);
+        padding: 5px;
+    }
+
+    margin-left: 10px;
+}
+
+article > h2 {
+    clear: right;
+}
