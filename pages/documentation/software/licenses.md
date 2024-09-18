@@ -48,5 +48,3 @@ MathLM is the license server software used by Wolfram Mathematica. It is used to
 #### Using and specifing a MathLM lisense
 
 When using the [module system](https://supercomputing.tue.nl/documentation/steps/software/) to load the Mathematica application, the application specific setting for the license are included. `module load Mathematica/14.1.0`. When starting a Interactive Session via [Umbrella OnDemand](https://supercomputing.tue.nl/documentation/steps/access/openondemand/) the license server is configured but can be changed using the Mathematica Interface.
-
-
