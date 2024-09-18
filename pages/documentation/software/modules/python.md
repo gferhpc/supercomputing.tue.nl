@@ -17,7 +17,7 @@ tags: [ Software ]
 | numba             | `0.58.1-foss-2023a`<br>`0.56.4-foss-2022a`                                                          | `ml avail numba`        |                                                                 |
 | OpenCV            | `4.8.1-foss-2023a-contrib`<br>`4.8.1-foss-2023a-CUDA-12.1.1-contrib`<br/>`4.6.0-foss-2022a-contrib`                    | `ml avail OpenCV`       |                                                                 |
 | OpenMM            | `8.0.0-foss-2023a`<br/>`8.0.0-foss-2022a`<br/>`8.0.0-foss-2022a-CUDA-11.7.0` | `ml avail OpenMM`       |                                                                 |
-| petc4py           | `3.17.4-foss-2022a`                                                          | `ml avail petsc4py`     |                                                                 |
+| petc4py           | `3.20.3-foss-2023a`<br>`3.17.4-foss-2022a`                                                          | `ml avail petsc4py`     |                                                                 |
 | Python            | `3.11.3`<br/>`3.10.13`<br/>`3.10.4`<br/>`2.7.18`                             | `ml avail Python/`      |                                                                 |
 | PyTorch           | `2.1.2-foss-2022a/2023a`<br/>`1.12.0-foss-2022a`                             | `ml avail PyTorch`      | [Yes](https://hpc.tue.nl "included in Jupyter"){:target=_blank} |
 | PyTorch-Lightning | `2.2.1-foss-2023a`<br/>`1.8.4-foss-2022a`                                    | `ml avail PyTorch`      |                                                                 |
