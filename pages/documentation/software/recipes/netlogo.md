@@ -45,5 +45,5 @@ mdl="model.nlogo"
 exp="experiment01"
 tab="${exp}.csv"
 
-srun netlogo-headless.sh --model "${mdl}" --experiment "${exp}" --tab "${tab}" --threads $SLURM_CPUS_PER_TASK
+srun netlogo-headless.sh --model "${mdl}" --experiment "${exp}" --tab "${tab}" --threads ${SLURM_CPUS_PER_TASK}
 ```
