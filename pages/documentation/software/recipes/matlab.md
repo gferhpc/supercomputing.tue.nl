@@ -67,7 +67,7 @@ matlab -nodisplay -nosplash -nodesktop -r simple
     a=1;
     b=2;
     disp (a + b);
-
+    exit;
     ```
 
 ### MATLAB SLURM sbatch jobscript example using 8 CPU 
@@ -96,6 +96,6 @@ matlab -nodisplay -nosplash -nodesktop -r parallel
     parfor idx = 1:8
         pause(10);
     end
-
+    exit;
     ```
 
