@@ -3,11 +3,11 @@ title: NetLogo
 tags: [Software, Module]
 ---
 
+![NetLogo in Umbrella On Demand](netlogo-ood.png){: align=right style="height:100px"}
 [NetLogo](https://ccl.northwestern.edu/netlogo/){:target="_blank"} is a multi-agent programmable modeling environment. It is used by many hundreds of thousands of students, teachers, and researchers worldwide.
 
 ## Using NetLogo interactive<br>(Graphical User Interface)
 
-![NetLogo in Umbrella On Demand](netlogo-ood.png){: align=right style="height:100px"}
 Use your browser to connect to [Umbrella On Demand](https://hpc.tue.nl){:target="_blank"}
 
 ## Using NetLogo in SLURM batch jobs<br>(Command Line Interface)
