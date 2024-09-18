@@ -5,7 +5,7 @@ tags: [Software, Module]
 
 [StarCCM+](https://plm.sw.siemens.com/en-US/simcenter/fluids-thermal-simulation/star-ccm/starccm){:target="_blank"} is a multiphysics computational fluid dynamics (CFD) simulation software that models the complexity products operating under real-world conditions.
 
-![StarCCM+ in Umbrella On Demdand](starccm-ood.png){: align=right style="height:150px"}
+![StarCCM+ in Umbrella On Demdand](starccm-ood.png){: align=right style="height:100px"}
 
 ## Using StarCCM+ interactive<br>(Graphical User Interface)
 

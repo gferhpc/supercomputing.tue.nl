@@ -11,7 +11,7 @@ Check the
 [intranet](https://intranet.tue.nl/en/university/services/information-management-services/software/comsol-multiphysics/){:target=_blank}
 for the procedure on how to get a license for using COMSOL.
 
-![COMSOL in Umbrella On Demdand](comsol-ood.png){: align=right style="height:150px"}
+![COMSOL in Umbrella On Demdand](comsol-ood.png){: align=right style="height:100px"}
 
 ## Using Application interactive<br>(Graphical User Interface)
 

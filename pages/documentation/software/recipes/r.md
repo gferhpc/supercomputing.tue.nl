@@ -5,7 +5,7 @@ tags: [Software, Module]
 
 [R](https://www.r-project.org/){:target="_blank"} is a free software environment for statistical computing and graphics..
 
-![RStudio in Umbrella On Demand](rstudio-ood.png){: align=right style="height:150px"}
+![RStudio in Umbrella On Demand](rstudio-ood.png){: align=right style="height:100px"}
 
 ## Using R via Rstudio interactive<br>(Graphical User Interface)
 

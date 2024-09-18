@@ -3,7 +3,7 @@ title: Mathematica
 tags: [Software, Module]
 ---
 
-![Mathematica in Umbrella On Demdand](mathematica-ood.png){ align=right style="height:150px"}
+![Mathematica in Umbrella On Demdand](mathematica-ood.png){ align=right style="height:100px"}
 [Wolfram Mathematica](https://www.wolfram.com/mathematica/){:target=_blank} a is a software system with built-in libraries for several areas of technical computing that allow machine learning, statistics, symbolic computation, data manipulation, network analysis, time series analysis, NLP, optimization, plotting functions and various types of data, implementation of algorithms, creation of user interfaces, and interfacing with programs written in other programming languages.
 
 
