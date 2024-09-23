@@ -39,6 +39,10 @@ Java Version: Java 1.8.0_202-b08 with Oracle Corporation Java HotSpot(TM) 64-Bit
 MATLAB                                                Version 24.1        (R2024a)
 ```
 
+Check the GPU(s) available. This command only gives output on nodes with GPU (MIG GPU(s) throw an Error)) installed and when requested:
+
+```gpuDeviceTable```
+
 ### MATLAB SLURM sbatch jobscript example using 1 CPU
 
 ```slurm
