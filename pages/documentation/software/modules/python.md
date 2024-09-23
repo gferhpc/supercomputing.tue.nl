@@ -16,10 +16,11 @@ tags: [ Software ]
 | numba             | `0.58.1-foss-2023a`<br>`0.56.4-foss-2022a`                                                          | `ml avail numba`        |                                                                 |
 | OpenCV            | `4.8.1-foss-2023a-contrib`<br>`4.8.1-foss-2023a-CUDA-12.1.1-contrib`                    | `ml avail OpenCV`       |                                                                 |
 | OpenMM            | `8.0.0-foss-2023a`<br>`8.0.0-foss-2023a-CUDA-12.1.1` | `ml avail OpenMM`       |                                                                 |
-| petc4py           | `3.20.3-foss-2023a`<br>`3.17.4-foss-2022a`                                                          | `ml avail petsc4py`     |                                                                 |
-| Python            | `3.12.3-GCCcore-13.3.0`<br>`3.11.3-GCCcore-12.3.0`<br/>`3.10.13-GCCcore-11.3.0`<br/>`3.10.4-GCCcore-11.3.0` | `ml avail Python/`      |                                                                 |
+| petc4py           | `3.20.3-foss-2023a`<br>`3.17.4-foss-2022a`  | `ml avail petsc4py`     |                                                                 |
+| Python            | `3.12.3-GCCcore-13.3.0`<br>`3.11.3-GCCcore-12.3.0`<br/>`3.10.13-GCCcore-11.3.0`<br/>`3.10.4-GCCcore-11.3.0` | `ml avail Python/`      |   |
 | PyTorch           | `2.1.2-foss-2022a/2023a`<br/>`1.12.0-foss-2022a`                             | `ml avail PyTorch`      | [Yes](https://hpc.tue.nl "included in Jupyter"){:target=_blank} |
 | PyTorch-Lightning | `2.2.1-foss-2023a`<br/>`2.2.1-foss-2023a--CUDA-12.1.1`<br>`1.8.4-foss-2022a`<br>`1.8.4-foss-2022a-CUDA-11.7.0` | `ml avail PyTorch`      |                                                                 |
+| RHEIA         | `1.1.11-foss-2023a`                                                           | `ml avail RHEIA`     |  |
 | scikit-bio        | `0.6.0-foss-2023a`<br>`0.5.7-foss-2022a`                                                           | `ml avail scikit-bio`   |                                                                 |
 | scikit-learn      | `1.4.2-gfbf-2023a`<br>`1.1.2-foss-2022a`                                                           | `ml avail scikit-learn` |                                                                 |
 | scikit-image      | `0.22.0-foss-2023a`<br>`0.19.3-foss-2022a`                                                          | `ml avail scikit-image` |                                                                 |
