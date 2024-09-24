@@ -8,11 +8,11 @@ tags: [Software, Module]
 [ANSYS Fluent](https://www.ansys.com/products/fluids/ansys-fluent){:target="_blank"} is the industry-leading fluid simulation software known for its advanced physics modeling capabilities and industry leading accuracy
 
 
-## Using Application interactive<br>(Graphical User Interface)
+## Using ANSYS Fluent interactive<br>(Graphical User Interface)
 
 Use your browser to connect to [Umbrella On Demand](https://hpc.tue.nl){:target="_blank"}
 
-## Using Application in SLURM batch jobs<br>(Command Line Interface)
+## Using ANSYS Fluent in SLURM batch jobs<br>(Command Line Interface)
 
 ### Test ANSYS Fluent
 
