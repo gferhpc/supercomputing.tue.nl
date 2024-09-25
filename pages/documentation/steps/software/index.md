@@ -7,13 +7,13 @@ Environment Modules provide a convenient way to dynamically change the users’ 
 
 The most common used module commands are:
 
-| Command               | Description                           |
-| --------------------- | ------------------------------------- |
-| `module avail`        | Lists available (loadable) modules    |
-| `module list`         | Lists loaded modules                  |
-| `module load MOD/X`   | Loads module MOD/X (and dependencies) |
-| `module switch MOD/Y` | Switch to version Y of MOD (and deps) |
-| `module purge`        | unload all modules                    |
+| Command               | Description                           | Alias    |
+| --------------------- | ------------------------------------- |----------|
+| `module avail`        | Lists available (loadable) modules    | `ml av`  |
+| `module list`         | Lists loaded modules                  | `ml.  `  |
+| `module load MOD/X`   | Loads module MOD/X (and dependencies) | `ml MOD/X` |
+| `module switch MOD/Y` | Switch to version Y of MOD (and deps) | `ml sw MOD/Y` |
+| `module purge`        | unload all modules                    | `ml purge` |
 
 
 !!! note "Modules are case insensitive"
