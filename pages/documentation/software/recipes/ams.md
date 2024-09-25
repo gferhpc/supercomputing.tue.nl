@@ -3,8 +3,7 @@ title: AMS
 tags: [Software, Module]
 ---
 The [Amsterdam Modeling Suite](https://www.scm.com){:target=_blank} is used by academic and
-industrial researchers in all areas of chemistry, materials science, and
-engineering.
+industrial researchers in all areas of chemistry, materials science, and engineering.
 
 ## AMS OpenMPI jobscript example
 
@@ -32,6 +31,8 @@ On some nodes, AMS is not running due to the processor type. Adding the followin
 ```shell
 -C "amd|haswell|cascadelake|broadwell"
 ```
+
+AMS [Documentation on running MPI Jobs](https://www.scm.com/doc/Installation/Additional_Information_and_Known_Issues.html#running-mpi-jobs)
 
 ## `AMSJob` Python example
 
