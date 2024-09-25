@@ -32,7 +32,7 @@ On some nodes, AMS is not running due to the processor type. Adding the followin
 -C "amd|haswell|cascadelake|broadwell"
 ```
 
-AMS [Documentation on running MPI Jobs](https://www.scm.com/doc/Installation/Additional_Information_and_Known_Issues.html#running-mpi-jobs)
+AMS [Documentation on running MPI Jobs](https://www.scm.com/doc/Installation/Additional_Information_and_Known_Issues.html#running-mpi-jobs){:target=_blank}
 
 ## `AMSJob` Python example
 
