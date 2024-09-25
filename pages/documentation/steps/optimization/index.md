@@ -26,8 +26,6 @@ cpus using the `--cpus-per-task` option, in which case you should
 replace any occurrences of `$SLURM_NTASKS` below with
 `$SLURM_CPUS_PER_TASK`.
 
-__TOC__
-
 ## Python / Numpy
 
 Numpy implementations may vary, but for example the
