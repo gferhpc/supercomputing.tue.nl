@@ -21,7 +21,9 @@ Load the modules
 [user@umbrella]$ module purge
 [user@umbrella]$ module load StarCCM+/2024.0001
 ```
+
 Check commandline version of StarCCM+
+
 ```shell
 [user@umbrella]$ starccm+ --version
 Simcenter STAR-CCM+ 2402.0001 Build 19.02.013 (linux-x86_64-2.28/gnu11.2)
