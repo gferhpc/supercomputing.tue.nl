@@ -10,7 +10,7 @@ The most common used module commands are:
 | Command               | Description                           | Alias    |
 | --------------------- | ------------------------------------- |----------|
 | `module avail`        | Lists available (loadable) modules    | `ml av`  |
-| `module list`         | Lists loaded modules                  | `ml.  `  |
+| `module list`         | Lists loaded modules                  | `ml`  |
 | `module load MOD/X`   | Loads module MOD/X (and dependencies) | `ml MOD/X` |
 | `module switch MOD/Y` | Switch to version Y of MOD (and deps) | `ml sw MOD/Y` |
 | `module purge`        | unload all modules                    | `ml purge` |
