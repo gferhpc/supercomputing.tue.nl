@@ -16,7 +16,7 @@ All tough `rclone` is a command line tool (https://rclone.org/), to configure a 
 
 ### Start an interactive Desktop Session
 
-Login to [The Umbrella Cluster](https://hpc.tue.nl) and request a Interactive Desktop (Scroll Down to the bottom of the list of Tiles), ! hour, 1 CPU and 4 GB of memmory should be sufficient to finish the configuration. 
+Login to [The Umbrella Cluster](https://hpc.tue.nl) and request a Interactive Desktop (Scroll Down to the bottom of the list of Tiles), ! hour, 1 CPU and 4 GB of memory should be sufficient to finish the configuration. 
 
 ### Setting up a connection to Microsoft OneDrive
 
