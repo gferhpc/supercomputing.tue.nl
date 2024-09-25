@@ -37,7 +37,7 @@ Check Rscript
 [1] "Hello!"
 ```
 
-### MATLAB SLURM sbatch jobscript example using 4 CPU
+### R SLURM sbatch jobscript example using 4 CPU
 
 ```slurm
 #!/bin/bash
