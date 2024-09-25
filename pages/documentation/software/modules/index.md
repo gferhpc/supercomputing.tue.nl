@@ -17,7 +17,7 @@ The following modules are allready available, on request new ones can be added.
 
 [Python related software modules](python.md)
 
-!!! note "Modules are case insensitive"
+!!! note "Environment modules are not Python packages"
     Software modules are **not** python modules but they do have a relation, loading specific software modules will also make Python modules available for 'import' 
     
 
