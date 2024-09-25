@@ -5,9 +5,12 @@ tags: [Software, Module]
 The [Amsterdam Modeling Suite](https://www.scm.com){:target=_blank} is used by academic and
 industrial researchers in all areas of chemistry, materials science, and engineering.
 
-## AMS OpenMPI jobscript example
+## Using ANSYS Fluent in SLURM batch jobs<br>(Command Line Interface)
 
-```
+### AMS SLURM sbatch jobscript example using OpenMPI on 1 Node
+
+```slurm
+
 #!/bin/bash
 
 #SBATCH --job-name=test_ams
@@ -27,14 +30,16 @@ export SCM_TMPDIR=$SLURM_TMPDIR
 
 <AMS CODE HERE>
 ```
+
 On some nodes, AMS is not running due to the processor type. Adding the following option the the AMS startup command might help:
+
 ```shell
 -C "amd|haswell|cascadelake|broadwell"
 ```
 
 AMS [Documentation on running MPI Jobs](https://www.scm.com/doc/Installation/Additional_Information_and_Known_Issues.html#running-mpi-jobs){:target=_blank}
 
-## `AMSJob` Python example
+### `AMSJob` Python example
 
 ```python
 from scm.plams import *
