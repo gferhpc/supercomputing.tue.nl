@@ -15,6 +15,7 @@ tags: [ Software ]
 | JupyterLab        | `4.0.5-GCCcore-12.3.0`<br/>`3.5.0-GCCcore-11.3.0`                            | `ml avail Jupyter`      |     [Yes](https://hpc.tue.nl "via Jupyter"){:target=_blank}     |
 | numba             | `0.58.1-foss-2023a`<br>`0.56.4-foss-2022a`                                                          | `ml avail numba`        |                                                                 |
 | OpenCV            | `4.8.1-foss-2023a-contrib`<br>`4.8.1-foss-2023a-CUDA-12.1.1-contrib`                    | `ml avail OpenCV`       |                                                                 |
+| OpenFold          | `1.0.1-foss-2022a-CUDA-11.7.0`                    | `ml av OpenFold`       |                                                                 |
 | OpenMM            | `8.0.0-foss-2023a`<br>`8.0.0-foss-2023a-CUDA-12.1.1` | `ml avail OpenMM`       |                                                                 |
 | petc4py           | `3.20.3-foss-2023a`<br>`3.17.4-foss-2022a`  | `ml avail petsc4py`     |                                                                 |
 | Python            | `3.12.3-GCCcore-13.3.0`<br>`3.11.3-GCCcore-12.3.0`<br/>`3.10.13-GCCcore-11.3.0`<br/>`3.10.4-GCCcore-11.3.0` | `ml avail Python/`      |   |
