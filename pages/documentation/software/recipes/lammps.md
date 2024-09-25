@@ -15,7 +15,9 @@ Load the modules
 [user@umbrella]$ module purge
 [user@umbrella]$ module load LAMMPS/2Aug2023_update2-foss-2023a-kokkos
 ```
+
 Check commandline version of LAMMPS
+
 ```shell
 [user@umbrella]$ lmp < /dev/null
 LAMMPS (2 Aug 2023 - Update 2)
