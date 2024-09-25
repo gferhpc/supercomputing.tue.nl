@@ -151,15 +151,14 @@ create a [virtual environment](#virtual-environments),
 activate it and then
 
 ```shell
-TMPDIR=~/.tmp/ pip install --build ~/.tmp/ tensorflow`
+TMPDIR=/scratch-node pip install --build /screatch-node tensorflow`
 ```
 
 This is a slight variation on the `pip install tensorflow` command you might
 expect, which is needed because of the limited size of the `/tmp`
 partition you get on the HPC cluster. Please try rerunning the command
 once or twice if it fails due to too little disk space, before reporting
-the problem. Please `rm -rf ~/.tmp` after the installation succeeds to
-clean up the temporary build files.
+the problem.
 
 When done, you can verify if the installation was successful by
 executing
