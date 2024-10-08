@@ -72,7 +72,9 @@ matlab -nodisplay -nosplash -nodesktop -r simple
     exit;
     ```
 
-### MATLAB SLURM sbatch jobscript example using 8 CPU 
+### MATLAB SLURM sbatch jobscript example using 8 CPU
+
+MATLAB by default creates a parpool("Processes") using the available CPUs (--cpus-per-task).
 
 ```slurm
 #!/bin/bash
