@@ -19,24 +19,24 @@ Load the module(s)
 
 ```shell 
 [user@umbrella]$ module purge
-[user@umbrella]$ module load MATLAB/2024a_Update_3
+[user@umbrella]$ module load MATLAB/2024b
 ```
 
-Check if the licenses are availble:
+Check if the licenses are available:
 
 ```shell
-[user@umbrella]$ matlab -dmlworker -nodisplay -singleCompThread -r "ver;exit"
+[user@umbrella]$ matlab -dmlworker -nodisplay -singleCompThread -r "ver -support;exit"
 ```
 
 Output to screen should start with: 
 ```output
 -----------------------------------------------------------------------------------------------------
-MATLAB Version: 24.1.0.2603908 (R2024a) Update 3
+MATLAB Version: 24.2.0.2712019 (R2024b)
 MATLAB License Number: 284992
-Operating System: Linux 4.18.0-513.11.1.el8_9.x86_64 #1 SMP Wed Jan 10 22:58:54 UTC 2024 x86_64
+Operating System: Linux 4.18.0-553.16.1.el8_10.x86_64 #1 SMP Thu Aug 8 17:47:08 UTC 2024 x86_64
 Java Version: Java 1.8.0_202-b08 with Oracle Corporation Java HotSpot(TM) 64-Bit Server VM mixed mode
 -----------------------------------------------------------------------------------------------------
-MATLAB                                                Version 24.1        (R2024a)
+MATLAB                                                Version 24.2        (R2024b)      License 284992
 ```
 
 Check the GPU(s) available. This command only gives output on nodes with GPU (MIG GPU(s) throw an Error)) installed and when requested:
@@ -57,7 +57,7 @@ Check the GPU(s) available. This command only gives output on nodes with GPU (MI
 #SBATCH --time=00:05:00
 
 module purge
-module load MATLAB/2024a_Update_3
+module load MATLAB/2024b
 
 matlab -nodisplay -nosplash -nodesktop -r simple
 ```
@@ -86,7 +86,7 @@ matlab -nodisplay -nosplash -nodesktop -r simple
 #SBATCH --time=00:05:00
 
 module purge
-module load MATLAB/2024a_Update_3
+module load MATLAB/2024b
 
 matlab -nodisplay -nosplash -nodesktop -r parallel
 ```
