@@ -3,13 +3,13 @@ title: Python
 tags: [Software, Module]
 ---
 
-The TU/e Umbrella HPc cluster has environment modules available specially for Pyhton, an overview can be found here: [Python Modules](../modules/python.md) 
+The TU/e Umbrella HPc cluster has environment modules available specially for Pyhton, an overview can be found here: [Python Modules](../modules/python.md)
 
 ## Test Python
 
 Load a Python version via environment modules.
 
-```shell 
+```shell
 [user@umbrella]$ module purge
 [user@umbrella]$ module load Python/3.11.3
 [user@umbrella]$ python --version
@@ -18,7 +18,7 @@ Python 3.11.3
 
 Using environment modules to make packages available for import.
 
-```shell 
+```shell
 [user@umbrella]$ module purge
 [user@umbrella]$ module load PyTorch/2.1.2-foss-2023a
 [user@umbrella]$ python
@@ -31,7 +31,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 ## Python jobscript example
 
-```
+```slurm
 #!/bin/bash
 #SBATCH --job-name=test_python
 #SBATCH --output=test_python-%j.log
@@ -51,6 +51,8 @@ python test.py
 ```
 
 ## Virtual environments
+
+### Python virtual env
 
 We recommend you to work within a [virtual environment](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/){:target="_blank"}
 if you work with Python packages. This is essentially a local directory
@@ -73,12 +75,12 @@ interactive session.
 Within this environment, you can freely install and upgrade packages
 using pip. You can start with `pip install --upgrade pip` to make sure
 the package manager is on the latest version, followed by
-`pip install `<package> to install whatever you need.
+`pip install <package>` to install whatever you need.
 
 #### Check availability and install packages
 
 To check the availability of a package, either use the command
-`pip show `<package> or `pip list`. If the package is installed, the command will
+`pip show <package>` or `pip list`. If the package is installed, the command will
 return the version and some other information about it. Otherwise the
 command will issue a warning, and you can then install the package as
 follows:
