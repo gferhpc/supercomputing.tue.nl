@@ -1,5 +1,6 @@
 ---
-Title: Training
+title: Training
+tags: [Training, HPC]
 ---
 
 HPC-Lab organizes a Sping and Autum HPC School:
