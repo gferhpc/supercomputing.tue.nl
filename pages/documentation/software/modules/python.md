@@ -13,8 +13,8 @@ tags: [ Software ]
 | IPython           | `8.14.0`<br/>`8.5.0`                                                         | `ml avail IPython`      |                                                                 |
 | Jax               | `0.4.25-gfbf-2023a`<br/>`0.4.25-gfbf-2023a-CUDA-12.1.1`                        | `ml avail jax`          |                                                                 |
 | JupyterLab        | `4.0.5-GCCcore-12.3.0`<br/>`3.5.0-GCCcore-11.3.0`                            | `ml avail Jupyter`      |     [Yes](https://hpc.tue.nl "via Jupyter"){:target=_blank}     |
+| MLflow        | ` MLflow/2.10.2-gfbf-2023a`                    | `ml avail MLflow`       | [Yes](https://hpc.tue.nl){:target=_blank} |
 | numba             | `0.58.1-foss-2023a`<br>`0.56.4-foss-2022a`                                                          | `ml avail numba`        |                                                                 |
-| MLflow        | ` MLflow/2.10.2-gfbf-2023a`                    | `ml avail MLflow`       | [Yes](https://hpc.tue.nl |
 | OpenCV            | `4.8.1-foss-2023a-contrib`<br>`4.8.1-foss-2023a-CUDA-12.1.1-contrib`                    | `ml avail OpenCV`       |                                                                 |
 | OpenFold          | `1.0.1-foss-2022a-CUDA-11.7.0`                    | `ml av OpenFold`       |                                                                 |
 | OpenMM            | `8.0.0-foss-2023a`<br>`8.0.0-foss-2023a-CUDA-12.1.1` | `ml avail OpenMM`       |                                                                 |
