@@ -72,8 +72,8 @@
             velocity: 0.15, // the higher the faster
             density: 9000, // the lower the denser
             netLineDistance: 250,
-            netLineColor: $("body[data-md-color-scheme]").css("--md-primary-fg-color--lightest"),
-            particleColors: [$("body[data-md-color-scheme]").css("--md-accent-fg-color--lightest")]
+            netLineColor: "#8A949B40",
+            particleColors: ["#8A949B60"]
         };
         this.canvas = parent.canvas;
         this.ctx = parent.ctx;
