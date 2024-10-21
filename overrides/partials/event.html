@@ -37,34 +37,34 @@
               <a title="Date" class="event-meta__title md-icon">
                 {% include ".icons/material/calendar.svg" %}
               </a>
-              {% if post.config.date.start|date != post.config.date.end|date %}
+              {% if post.config.start|date != post.config.end|date %}
                 <ul class="event-meta__list event-meta__date">
                   <li class="event-meta__item">
-                    <time datetime="{{ post.config.date.start }}">
+                    <time datetime="{{ post.config.start }}">
                       <div class="event-meta__title">From</div>
-                      {{ post.config.date.start | date(date_format) }}
+                      {{ post.config.start | date(date_format) }}
                     </time>
                   </li>
                   <li class="event-meta__item">
-                    <time datetime="{{ post.config.date.end }}">
+                    <time datetime="{{ post.config.end }}">
                       <div class="event-meta__title">Until</div>
-                      {{ post.config.date.end | date(date_format) }}
+                      {{ post.config.end | date(date_format) }}
                     </time>
                   </li>
                 </ul>
               {% else %}
-                <time datetime="{{ post.config.date.start }}">
-                  {{ post.config.date.start | date(date_format) }}
+                <time datetime="{{ post.config.start }}">
+                  {{ post.config.start | date(date_format) }}
                 </time>
               {% endif %}
             </li>
-            {% if post.config.date.start != post.config.date.end %}
+            {% if post.config.start != post.config.end %}
               <li class="event-meta__item">
                 <a title="Time" class="event-meta__title md-icon">
                   {% include ".icons/material/clock-outline.svg" %}
                 </a>
                 <time datetime="{{ post.config.time }}">
-                  {{ post.config.date.start | date("HH:mm") }} - {{ post.config.date.end | date("HH:mm") }}
+                  {{ post.config.start | date("HH:mm") }} - {{ post.config.end | date("HH:mm") }}
                 </time>
               </li>
             {% endif %}

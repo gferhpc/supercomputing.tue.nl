@@ -62,15 +62,12 @@ plugins:
         'documentation/introduction.md': 'documentation/index.md'
   - search:
       lang: en
-#  - rss:
-#      enabled: !ENV [CI, false]
-#      match_path: 'news/posts/.*'
-#      use_git: false
-#      date_from_meta:
-#        as_creation: date
-#        as_update: "false"
-#      categories:
-#        - categories
+  - rss:
+      match_path: 'blog.posts.(news|events|maintenance).[0-9]+..*'
+      date_from_meta:
+        as_creation: date
+      categories:
+        - categories
   - umbrella-specs:
       sinfo_path: cluster/.cache/sinfo.json
       extra_nodes:

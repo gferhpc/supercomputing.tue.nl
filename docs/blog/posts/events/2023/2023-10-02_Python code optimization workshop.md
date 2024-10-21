@@ -1,8 +1,7 @@
 ---
-date: 
-  created: 2023-09-19
-  start: 2023-09-29T09:00:00
-  end: 2023-09-29T16:00:00
+date: 2023-09-19
+start: 2023-09-29T09:00:00
+end: 2023-09-29T16:00:00
 categories: [ Trainings ]
 authors: [ r.kotian ]
 location: TU/e Campus

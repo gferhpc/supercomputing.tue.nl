@@ -1,8 +1,7 @@
 ---
-date:
-  created: 2024-10-29
-  start: 2024-10-29T09:00:00
-  end: 2024-11-08T17:00:00
+date: 2024-10-29
+start: 2024-10-29T09:00:00
+end: 2024-11-08T17:00:00
 hero:
   backdrop: /assets/images/poster-autumnschool-2024.jpg
   h1: Autumn HPC School

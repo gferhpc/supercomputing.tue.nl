@@ -1,9 +1,8 @@
 ---
 type: event
-date: 
-  created: 2024-09-05
-  start: 2024-09-17T10:30:00
-  end: 2024-09-17T16:00:00
+date: 2024-09-05
+start: 2024-09-17T10:30:00
+end: 2024-09-17T16:00:00
 categories: [ Trainings ]
 authors: [g.t.chepuck.fernandes, r.georgiev]
 price: 0.0

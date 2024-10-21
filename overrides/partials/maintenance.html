@@ -32,24 +32,24 @@
               <a title="Date" class="event-meta__title md-icon">
                 {% include ".icons/material/calendar.svg" %}
               </a>
-              {% if post.config.date.start|date != post.config.date.end|date %}
+              {% if post.config.start|date != post.config.end|date %}
                 <ul class="event-meta__list event-meta__date">
                   <li class="event-meta__item">
-                    <time datetime="{{ post.config.date.start }}">
+                    <time datetime="{{ post.config.start }}">
                       <div class="event-meta__title">From</div>
-                      {{ post.config.date.start | date("EEEE, d MMMM y HH:mm") }}
+                      {{ post.config.start | date("EEEE, d MMMM y HH:mm") }}
                     </time>
                   </li>
                   <li class="event-meta__item">
-                    <time datetime="{{ post.config.date.end }}">
+                    <time datetime="{{ post.config.end }}">
                       <div class="event-meta__title">Until</div>
-                      {{ post.config.date.end | date("EEEE, d MMMM y HH:mm") }}
+                      {{ post.config.end | date("EEEE, d MMMM y HH:mm") }}
                     </time>
                   </li>
                 </ul>
               {% else %}
-                <time datetime="{{ post.config.date.start }}">
-                  {{ post.config.date.start | date(date_format) }}
+                <time datetime="{{ post.config.start }}">
+                  {{ post.config.start | date(date_format) }}
                 </time>
               {% endif %}
             </li>

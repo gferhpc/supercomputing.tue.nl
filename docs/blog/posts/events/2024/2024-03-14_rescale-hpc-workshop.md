@@ -1,8 +1,7 @@
 ---
-date:
-  created: 2024-03-10
-  start: 2024-03-14T10:30:00
-  end: 2024-03-14T13:00:00
+date: 2024-03-10
+start: 2024-03-14T10:30:00
+end: 2024-03-14T13:00:00
 categories: [ Trainings ]
 authors: [ g.t.chepuck.fernandes, b.dobrzelecki ]
 price: 0.00

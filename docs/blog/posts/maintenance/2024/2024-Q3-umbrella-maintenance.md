@@ -1,8 +1,7 @@
 ---
-date: 
-  created: 2024-08-20
-  start: 2024-08-26T09:00:00
-  end: 2024-08-28T17:00:00
+date: 2024-08-20
+start: 2024-08-26T09:00:00
+end: 2024-08-28T17:00:00
 categories: [ Umbrella HPC Cluster ]
 authors: [e.loomeijer, a.van.hoof, a.c.m.bertens]
 type: maintenance

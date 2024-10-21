@@ -1,8 +1,7 @@
 ---
-date: 
-  created: 2024-10-08
-  start: 2024-11-12T10:00:00
-  end: 2024-11-12T16:00:00
+date: 2024-10-08
+start: 2024-11-12T10:00:00
+end: 2024-11-12T16:00:00
 categories: [ Trainings ]
 authors: [ r.norris ]
 price: 0.00
