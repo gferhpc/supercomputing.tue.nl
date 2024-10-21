@@ -71,7 +71,7 @@ plugins:
   - umbrella-specs:
       sinfo_path: cluster/.cache/sinfo.json
       extra_nodes:
-#       # Login Nodes
+        # Login Nodes
         - { name: tue-login001, address: 'hpc.tue.nl', multithreading: True, cpus: 48, extra: "{\"cpu\": \"AMD EPYC 9254\", \"cpu_frq\": \"2.90\", \"mem\": \"128\"}" }
         - { name: tue-login002, address: 'hpc.tue.nl', multithreading: True, cpus: 48, extra: "{\"cpu\": \"AMD EPYC 7402P\", \"cpu_frq\": \"2.80\", \"mem\": \"128\"}" }
         # Storage Nodes
