@@ -4,7 +4,8 @@ hero:
   backdrop: /assets/images/backdrops/contact.jpg
   attribution: { 
     title: Workplace,
-    url: "https://pxhere.com/en/photo/824719", 
+    url: "https://pxhere.com/en/photo/824719",
+    author: { name: "PxHere", url: "https://pxhere.com" },
     license: { name: "CC0 1.0 Public Domain", url: "https://creativecommons.org/publicdomain/zero/1.0/" }
   }
   h1: Contact
