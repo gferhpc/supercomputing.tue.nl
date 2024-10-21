@@ -72,75 +72,53 @@ plugins:
       sinfo_path: cluster/.cache/sinfo.json
       extra_nodes:
 #       # Login Nodes
-        - { name: arch-login001, address: 'hpc.arch.tue.nl', boards: 1, sockets: 1, threads: 1, cpus: 4, extra: "{\"cpu\": \"Intel Xeon E-2124\", \"cpu_frq\": \"3.30\", \"mem\": \"32\"}" }
-        - { name: chem-login001, address: 'chem-login001.chem.tue.nl', boards: 1, sockets: 1, threads: 1, cpus: 4, extra: "{\"cpu\": \"Intel Xeon E-2124\", \"cpu_frq\": \"3.30\", \"mem\": \"32\"}" }
-        - { name: mcs-login001, address: 'hpc.win.tue.nl', boards: 1, sockets: 1, threads: 1, cpus: 4, extra: "{\"cpu\": \"Intel Xeon E-2124\", \"cpu_frq\": \"3.30\", \"mem\": \"32\"}" }
-        - { name: phys-login001, address: 'compass.phys.tue.nl', boards: 1, sockets: 2, threads: 1, cpus: 8, extra: "{\"cpu\": \"Intel Xeon E5-2623 v4\", \"cpu_frq\": \"2.60\", \"mem\": \"32\"}" }
-        - { name: tue-login001, address: 'hpc.tue.nl', boards: 1, sockets: 1, threads: 2, cpus: 48, extra: "{\"cpu\": \"AMD EPYC 9254\", \"cpu_frq\": \"2.90\", \"mem\": \"128\"}" }
-        - { name: tue-login002, address: 'hpc.tue.nl', boards: 1, sockets: 1, threads: 2, cpus: 48, extra: "{\"cpu\": \"AMD EPYC 7402P\", \"cpu_frq\": \"2.80\", \"mem\": \"128\"}" }
+        - { name: tue-login001, address: 'hpc.tue.nl', multithreading: True, cpus: 48, extra: "{\"cpu\": \"AMD EPYC 9254\", \"cpu_frq\": \"2.90\", \"mem\": \"128\"}" }
+        - { name: tue-login002, address: 'hpc.tue.nl', multithreading: True, cpus: 48, extra: "{\"cpu\": \"AMD EPYC 7402P\", \"cpu_frq\": \"2.80\", \"mem\": \"128\"}" }
         # Storage Nodes
-        - { name: arch-storage001, boards: 1, sockets: 1, threads: 1, cpus: 16, extra: "{\"cpu\": \"AMD EPYC 7302P\", \"cpu_frq\": \"3.00\", \"mem\": \"64\"}" }
-        - { name: bme-storage001, boards: 1, sockets: 2, threads: 2, cpus: 32, extra: "{\"cpu\": \"AMD EPYC 7262\", \"cpu_frq\": \"3.20\", \"mem\": \"128\"}" }
-        - { name: chem-storage001, boards: 1, sockets: 2, threads: 1, cpus: 16, extra: "{\"cpu\": \"AMD EPYC 7251\", \"cpu_frq\": \"2.10\", \"mem\": \"128\"}" }
-        - { name: chem-storage002, boards: 1, sockets: 1, threads: 1, cpus: 16, extra: "{\"cpu\": \"AMD EPYC 7302P\", \"cpu_frq\": \"3.00\", \"mem\": \"64\"}" }
-        - { name: mech-storage001, boards: 1, sockets: 2, threads: 2, cpus: 32, extra: "{\"cpu\": \"AMD EPYC 7251\", \"cpu_frq\": \"2.10\", \"mem\": \"128\"}" }
-        - { name: mcs-storage001, boards: 1, sockets: 1, threads: 1, cpus: 16, extra: "{\"cpu\": \"AMD EPYC 7302P\", \"cpu_frq\": \"3.00\", \"mem\": \"64\"}" }
-        - { name: phys-storage001, boards: 1, sockets: 2, threads: 1, cpus: 16, extra: "{\"cpu\": \"Intel Xeon E5-2620 v4\", \"cpu_frq\": \"2.10\", \"mem\": \"128\"}" }
-        - { name: tue-storage001, boards: 1, sockets: 1, threads: 1, cpus: 16, extra: "{\"cpu\": \"AMD EPYC 7281\", \"cpu_frq\": \"3.10\", \"mem\": \"64\"}" }
+        - { name: bme-storage001, multithreading: True, cpus: 32, extra: "{\"cpu\": \"AMD EPYC 7262\", \"cpu_frq\": \"3.20\", \"mem\": \"128\"}" }
+        - { name: chem-storage001, multithreading: False, cpus: 16, extra: "{\"cpu\": \"AMD EPYC 7251\", \"cpu_frq\": \"2.10\", \"mem\": \"128\"}" }
+        - { name: mech-storage001, multithreading: True, cpus: 32, extra: "{\"cpu\": \"AMD EPYC 7251\", \"cpu_frq\": \"2.10\", \"mem\": \"128\"}" }
       hardware:
         "AMD EPYC 7251": "https://www.amd.com/en/support/cpu/amd-epyc/amd-epyc-7001-series/amd-epyc-7251"
         "AMD EPYC 7262": "https://www.amd.com/en/products/cpu/amd-epyc-7262"
         "AMD EPYC 7272": "https://www.amd.com/en/products/cpu/amd-epyc-7272"
-        "AMD EPYC 7281": "https://www.amd.com/en/support/cpu/amd-epyc/amd-epyc-7001-series/amd-epyc-7281"
-        "AMD EPYC 7302P": "https://www.amd.com/en/products/cpu/amd-epyc-7302p"
         "AMD EPYC 7313": "https://www.amd.com/en/products/cpu/amd-epyc-7313"
         "AMD EPYC 7343": "https://www.amd.com/en/products/cpu/amd-epyc-7343"
         "AMD EPYC 7352": "https://www.amd.com/en/products/cpu/amd-epyc-7352"
-        "AMD EPYC 7402": "https://www.amd.com/en/products/cpu/amd-epyc-7402"
         "AMD EPYC 7402P": "https://www.amd.com/en/products/cpu/amd-epyc-7402p"
-        "AMD EPYC 7413": "https://www.amd.com/en/products/cpu/amd-epyc-7413"
+        "AMD EPYC 7443P": "https://www.amd.com/en/products/processors/server/epyc/7003-series/amd-epyc-7443p.html"
         "AMD EPYC 7452": "https://www.amd.com/en/products/cpu/amd-epyc-7452"
         "AMD EPYC 7502": "https://www.amd.com/en/products/cpu/amd-epyc-7502"
         "AMD EPYC 7513": "https://www.amd.com/en/products/cpu/amd-epyc-7513"
         "AMD EPYC 7542": "https://www.amd.com/en/products/cpu/amd-epyc-7542"
         "AMD EPYC 7601": "https://www.amd.com/en/support/cpu/amd-epyc/amd-epyc-7001-series/amd-epyc-7601"
-        "AMD EPYC 7643": "https://www.amd.com/en/products/cpu/amd-epyc-7643"
         "AMD EPYC 7713P": "https://www.amd.com/en/products/cpu/amd-epyc-7713p"
-        "AMD EPYC 7742": "https://www.amd.com/en/products/cpu/amd-epyc-7742"
+        "AMD EPYC 7742": "https://www.amd.com/en/support/downloads/drivers.html/processors/epyc/epyc-7002-series/amd-epyc-7742.html"
         "AMD EPYC 7F72": "https://www.amd.com/en/products/cpu/amd-epyc-7f72"
         "AMD EPYC 9254": "https://www.amd.com/en/products/processors/server/epyc/4th-generation-9004-and-8004-series/amd-epyc-9254.html"
-        "AMD EPYC 9474F": "https://www.amd.com/en/products/cpu/amd-epyc-9474f"
-        "AMD EPYC 9654": "https://www.amd.com/en/products/cpu/amd-epyc-9654"
-        "AMD EPYC 9654P": "https://www.amd.com/en/products/cpu/amd-epyc-9654p"
-        "Intel Xeon E-2124": "https://ark.intel.com/content/www/us/en/ark/products/134856/intel-xeon-e-2124-processor-8m-cache-up-to-4-30-ghz.html"
-        "Intel Xeon E5-2620 v4": "https://ark.intel.com/content/www/us/en/ark/products/92986/intel-xeon-processor-e5-2620-v4-20m-cache-2-10-ghz.html"
-        "Intel Xeon E5-2623 v4": "https://ark.intel.com/content/www/us/en/ark/products/92980/intel-xeon-processor-e5-2623-v4-10m-cache-2-60-ghz.html"
+        "AMD EPYC 9474F": "https://www.amd.com/en/products/processors/server/epyc/4th-generation-9004-and-8004-series/amd-epyc-9474f.html"
+        "AMD EPYC 9654": "https://www.amd.com/en/products/processors/server/epyc/4th-generation-9004-and-8004-series/amd-epyc-9654.html"
         "Intel Xeon E5-2640 v4": "https://ark.intel.com/content/www/us/en/ark/products/92984/intel-xeon-processor-e5-2640-v4-25m-cache-2-40-ghz.html"
         "Intel Xeon E5-2643 v4": "https://ark.intel.com/content/www/us/en/ark/products/92989/intel-xeon-processor-e5-2643-v4-20m-cache-3-40-ghz.html"
-        "Intel Xeon E5-2650 v3": "https://ark.intel.com/content/www/us/en/ark/products/81705/intel-xeon-processor-e5-2650-v3-25m-cache-2-30-ghz.html"
         "Intel Xeon E5-2650 v4": "https://ark.intel.com/content/www/us/en/ark/products/91767/intel-xeon-processor-e5-2650-v4-30m-cache-2-20-ghz.html"
-        "Intel Xeon E5-2660": "https://www.intel.com/content/www/us/en/products/sku/64584/intel-xeon-processor-e52660-20m-cache-2-20-ghz-8-00-gts-intel-qpi/specifications.html"
-        "Intel Xeon E5-2660 v2": "https://ark.intel.com/content/www/us/en/ark/products/75272/intel-xeon-processor-e5-2660-v2-25m-cache-2-20-ghz.html"
         "Intel Xeon E5-2660 v3": "https://www.intel.com/content/www/us/en/products/sku/81706/intel-xeon-processor-e52660-v3-25m-cache-2-60-ghz/specifications.html"
         "Intel Xeon E5-2670 v3": "https://ark.intel.com/content/www/us/en/ark/products/81709/intel-xeon-processor-e5-2670-v3-30m-cache-2-30-ghz.html"
-        "Intel Xeon E5-2683 v4": "https://www.intel.com/content/www/us/en/products/sku/91766/intel-xeon-processor-e52683-v4-40m-cache-2-10-ghz/specifications.html"
         "Intel Xeon E5-2687W v3": "https://www.intel.com/content/www/us/en/products/sku/81909/intel-xeon-processor-e52687w-v3-25m-cache-3-10-ghz/specifications.html"
-        "Intel Xeon E5-2690": "https://www.intel.com/content/www/us/en/products/sku/64596/intel-xeon-processor-e52690-20m-cache-2-90-ghz-8-00-gts-intel-qpi/specifications.html"
         "Intel Xeon Gold 5218": "https://ark.intel.com/content/www/us/en/ark/products/192444/intel-xeon-gold-5218-processor-22m-cache-2-30-ghz.html"
         "Intel Xeon Gold 6128": "https://www.intel.com/content/www/us/en/products/sku/120482/intel-xeon-gold-6128-processor-19-25m-cache-3-40-ghz/specifications.html"
-        "Intel Xeon Gold 6130": "https://ark.intel.com/content/www/us/en/ark/products/120492/intel-xeon-gold-6130-processor-22m-cache-2-10-ghz.html"
         "Intel Xeon Gold 6134": "https://www.intel.com/content/www/us/en/products/sku/120493/intel-xeon-gold-6134-processor-24-75m-cache-3-20-ghz/specifications.html"
         "Intel Xeon Gold 6234": "https://ark.intel.com/content/www/us/en/ark/products/193954/intel-xeon-gold-6234-processor-24-75m-cache-3-30-ghz.html"
         "Intel Xeon Gold 6238R": "https://ark.intel.com/content/www/us/en/ark/products/199345/intel-xeon-gold-6238r-processor-38-5m-cache-2-20-ghz.html"
-        "Intel Xeon Gold 6240": "https://ark.intel.com/content/www/us/en/ark/products/192443/intel-xeon-gold-6240-processor-24-75m-cache-2-60-ghz.html"
         "Intel Xeon Platinum 8260": "https://ark.intel.com/content/www/us/en/ark/products/192474/intel-xeon-platinum-8260-processor-35-75m-cache-2-40-ghz.html"
         "Intel Xeon Silver 4214": "https://ark.intel.com/content/www/us/en/ark/products/193385/intel-xeon-silver-4214-processor-16-5m-cache-2-20-ghz.html"
-        "Intel Xeon X5650": "https://ark.intel.com/content/www/us/en/ark/products/47922/intel-xeon-processor-x5650-12m-cache-2-66-ghz-6-40-gt-s-intel-qpi.html"
+        "Intel Xeon Silver 4216": "https://ark.intel.com/content/www/us/en/ark/products/193394/intel-xeon-silver-4216-processor-22m-cache-2-10-ghz.html"
         "NVIDIA A30": "https://www.nvidia.com/content/dam/en-zz/Solutions/data-center/products/a30-gpu/pdf/a30-datasheet.pdf"
         "NVIDIA A40": "https://images.nvidia.com/content/Solutions/data-center/a40/nvidia-a40-datasheet.pdf"
         "NVIDIA A100 80GB PCIe": "https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/a100/pdf/nvidia-a100-datasheet-us-nvidia-1758950-r4-web.pdf"
         "NVIDIA GeForce RTX 2080 Ti": "https://www.nvidia.com/nl-nl/geforce/graphics-cards/compare/?section=compare-20"
+        "NVIDIA GeForce RTX 3090 Ti": "https://www.nvidia.com/en-gb/geforce/graphics-cards/compare/?section=compare-specs"
         "NVIDIA Quadro RTX 6000": "https://www.nvidia.com/content/dam/en-zz/Solutions/design-visualization/quadro-product-literature/quadro-rtx-6000-us-nvidia-704093-r4-web.pdf"
+        "NVIDIA RTX A4500": "https://www.nvidia.com/en-us/design-visualization/rtx-a4500/"
         "NVIDIA RTX A5000": "https://www.nvidia.com/en-us/design-visualization/rtx-a5000/"
         "NVIDIA Tesla K80": "https://www.nvidia.com/en-gb/data-center/tesla-k80/"
         "NVIDIA Tesla P100-PCIE-16GB": "https://images.nvidia.com/content/tesla/pdf/nvidia-tesla-p100-PCIe-datasheet.pdf"

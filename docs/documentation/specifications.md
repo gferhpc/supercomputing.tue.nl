@@ -32,7 +32,7 @@ experimental purposes to get familiar with HPC.
 
 ### Generic Nodes
 
-{ .umbrella-specs tue.default.q,tue.gpu.q }
+{ .umbrella-specs tue-login001,tue-login002,tue.default.q,tue.gpu.q }
 
 ### Departmental Nodes
 
@@ -47,7 +47,7 @@ experimental purposes to get familiar with HPC.
 === "BmE"
 
     { .umbrella-specs bme-storage001 }
-    { .umbrella-specs bme.research.q,bme.gpuresearch.q,bme.gpustudent.q,bme.gpumolml.q }
+    { .umbrella-specs bme.gpuresearch.q,bme.gpustudent.q,bme.gpumolml.q }
 
 === "CE&C"
 
@@ -70,6 +70,10 @@ experimental purposes to get familiar with HPC.
 
     { .umbrella-specs mech-storage001 }
     { .umbrella-specs mech.cm.q,mech.pf.q,mech.pf-student.q,mech.student.q,mech-cst-mov.cpu.q }
+
+=== "MaTe"
+    
+    { .umbrella-specs mate.cpu.q }
 
 !!! example "Auto Generated"
 

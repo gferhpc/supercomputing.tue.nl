@@ -28,13 +28,20 @@ class SLURM:
         commands = []
         failed = []
 
-        if filtered_hosts:
-            for node in self.sinfo['nodes']:
-                if node['name'] in filtered_hosts:
-                    nodes.append(node)
-            pass
-        else:
-            nodes = self.sinfo['nodes']
+        for item in self.sinfo['sinfo']:
+            for node_name in item["nodes"]["nodes"]:
+                node = {
+                    "name": node_name,
+                    "address": node_name,
+                    "extra": item["extra"],
+                    "features": item["features"]["active"],
+                }
+
+                if filtered_hosts:
+                    if node['name'] in filtered_hosts:
+                        pass
+
+                nodes.append(node)
 
         print("[%d] " % len(nodes), end="")
         for index, node in enumerate(nodes):

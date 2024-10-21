@@ -28,12 +28,27 @@ class SpecsPlugin(BasePlugin[SpecsPluginConfig]):
             self.config.enabled = False
             return
 
-        for node in data['nodes'] + self.config.extra_nodes:
+        for item in data["sinfo"]:
+            for node_name in item["nodes"]["nodes"]:
+                node = {
+                    "name": node_name,
+                    "extra": item["extra"],
+                    "features": item["features"]["active"],
+                    "cpus": item["cpus"]["maximum"],
+                    "multithreading": item["cpus"]["maximum"] != (item["sockets"]["maximum"] * item["cores"]["maximum"]),
+                    "memory": item["memory"]["maximum"],
+                    "gres": item["gres"]["total"],
+                }
+
+                self._register_node(node)
+
+        for node in self.config.extra_nodes:
             self._register_node(node)
 
-            if "partitions" in node:
-                for partition in node['partitions']:
-                    self._register_partition(partition, node['hostname'])
+        for item in data["sinfo"]:
+            for node_name in item["nodes"]["nodes"]:
+                if node_name in self.config.nodes:
+                    self._register_partition(item['partition']["name"], node_name)
 
     # Build and render specs index page
     def on_page_markdown(self, markdown, page, config, files):
@@ -91,9 +106,9 @@ class SpecsPlugin(BasePlugin[SpecsPluginConfig]):
     def _render_node_row(self, hostname: str, indents: str, column: str = None):
         node = self._get_node_info(hostname)
 
-        details = f"{round(node['boards'] * node['sockets'])}x {node['extra']['cpu']} @ {node['extra']['cpu_frq']}GHz[^{self._get_reference_index(node['extra']['cpu'])}]"
+        details = f"{node['cpus']}x {node['extra']['cpu']} @ {node['extra']['cpu_frq']}GHz[^{self._get_reference_index(node['extra']['cpu'])}]"
 
-        if node['threads'] >= 2:
+        if node['multithreading']:
             if 'intel' in node['features']:
                 cpus = f"{node['cpus']}^HT^"
             else:
@@ -156,11 +171,11 @@ class SpecsPlugin(BasePlugin[SpecsPluginConfig]):
         if partition not in self.config.partitions:
             self.config.partitions[partition] = {}
 
-        matches = re.match(r"^(?P<group>\w+)-(?P<category>(?P<type>(compute|gpu|storage|login))(?P<cat>[A-Za-z]+))\d+$", hostname)
+        matches = re.match(r"^(?P<group>\w+)([.\-])(?P<category>(?P<type>(compute|gpu|storage|login))(?P<cat>[A-Za-z]+))\d+$", hostname)
         if not matches:
             return
 
-        if partition.split('.')[0].split('-')[0] != matches.group('group') and matches.group('group') != 'arch':
+        if partition.split('.')[0].split('-')[0] != matches.group('group') and matches.group('group') not in ['arch', "bme"]:
             return  # exclude non-department nodes from groups in listing.
 
         category = matches.group('category')
@@ -171,7 +186,10 @@ class SpecsPlugin(BasePlugin[SpecsPluginConfig]):
         self.config.partitions[partition][category].append(hostname)
 
     def _get_reference_index(self, version: str):
-        return list(self.config.hardware.keys()).index(f"{version}")
+        try:
+            return list(self.config.hardware.keys()).index(f"{version}")
+        except ValueError as error:
+            log.error(error)
 
 
 log = logging.getLogger("mkdocs.material.umbrella-specs")

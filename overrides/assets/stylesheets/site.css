@@ -93,7 +93,7 @@
   z-index: -1;
 }
 
-.md-main__inner, .md-sidebar__inner {
+.md-main__inner {
   background: var(--md-default-bg-color);
   box-shadow: 0 0 50px 50px var(--md-default-bg-color);
 }

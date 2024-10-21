@@ -12,6 +12,7 @@
 [data-md-color-scheme="slate"] {
   --md-default-fg-color: #fafafa;
   --md-default-bg-color: #1a1a1a;
+  --md-default-content-bg-color: #1a1a1a;
 
   --md-primary-fg-color: #1a1a1a;
   --md-primary-bg-color: #fafafa;
