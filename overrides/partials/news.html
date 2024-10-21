@@ -1,0 +1,114 @@
+{% if not date_format %}
+  {% set date_format = "full" %}
+{% endif %}
+{% set class = "event event-card md-typeset" %}
+{% if page == post %}
+  {% set class = class ~ " box" %}
+{% endif %}
+<article{% if post.config.scheme %} data-md-color-scheme="{{ post.config.scheme }}"{% endif %}>
+  <div class="{{ class }}">
+    <div class="event-header">
+      <div class="event-image">
+        <div class="event-label">
+          {% if post.config.draft %}
+            <div class="badge badge--danger">{{ lang.t("blog.draft") }}</div>
+          {% endif %}
+        </div>
+        {% if post.config.image %}
+          <img src="{{ post.config.image | trim("/") | url }}" alt="{{ post.title }}">
+        {% endif %}
+      </div>
+      <div class="event-info">
+        <div class="event-title">
+          {% if page == event %}
+            {{ post.title }}
+          {% else %}
+            <a href="{{ post.url | url }}">{{ post.title }}</a>
+          {% endif %}
+        </div>
+        <div class="event-meta">
+          <ul class="event-meta__list">
+            <li class="event-meta__item">
+              <a title="Date" class="event-meta__title md-icon">
+                {% include ".icons/material/calendar.svg" %}
+              </a>
+              {% if post.config.date.start|date != post.config.date.end|date %}
+                <ul class="event-meta__list event-meta__date">
+                  <li class="event-meta__item">
+                    <time datetime="{{ post.config.date.start }}">
+                      <div class="event-meta__title">From</div>
+                      {{ post.config.date.start | date("EEEE, d MMMM y HH:mm") }}
+                    </time>
+                  </li>
+                  <li class="event-meta__item">
+                    <time datetime="{{ post.config.date.end }}">
+                      <div class="event-meta__title">Until</div>
+                      {{ post.config.date.end | date("EEEE, d MMMM y HH:mm") }}
+                    </time>
+                  </li>
+                </ul>
+              {% else %}
+                <time datetime="{{ post.config.date.start }}">
+                  {{ post.config.date.start | date(date_format) }}
+                </time>
+              {% endif %}
+            </li>
+            {% if post.config.location %}
+              <li class="event-meta__item">
+                <a title="Location" class="event-meta__title md-icon">
+                  {% include ".icons/material/map-marker.svg" %}
+                </a>
+                {% if post.config.location_url %}
+                  <a href="{{ post.config.location_url }}" target="_blank">{{ post.config.location }}</a>
+                {% else %}
+                  {{ post.config.location }}
+                {% endif %}
+              </li>
+            {% endif %}
+            {% if post.config.price != None %}
+              <li class="event-meta__item">
+                <a title="Price" class="event-meta__title md-icon">
+                  {% include ".icons/material/currency-eur.svg" %}
+                </a>
+                {% if post.config.price == 0.0 %}
+                  Free
+                {% else %}
+                  {{ post.config.price | replace(".", ",") }}
+                {% endif %}
+              </li>
+            {% endif %}
+            {% if post.authors %}
+              <li class="event-meta__item">
+                <a title="Speakers" class="event-meta__title md-icon">
+                  {% include ".icons/material/bullhorn.svg" %}
+                </a>
+                <ul class="author__list">
+                  {% for author in post.authors %}
+                    <li class="author__item">
+                      {% if author.url %}
+                        <a class="author__link" title="{{ author.name }}" href="{{ author.url | url }}" target="_blank">
+                          <img src="{{ author.avatar | trim("/") | url }}" alt="{{ author.name }}"/>
+                        </a>
+                      {% else %}
+                        <a class="author__link" title="{{ author.name }}">
+                          <img src="{{ author.avatar | trim("/") | url }}" alt="{{ author.name }}"/>
+                        </a>
+                      {% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="event__content">
+      {% if page == event or not post.excerpt %}
+        {{ post.content }}
+      {% elif post.excerpt %}
+        {{ post.excerpt.content }}
+      {% endif %}
+    </div>
+  </div>
+</article>

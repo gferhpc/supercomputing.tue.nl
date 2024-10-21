@@ -16,9 +16,9 @@ build:
       - public
   environment:
     name: review/$CI_COMMIT_REF_NAME
-    url: "https://$CI_PROJECT_NAMESPACE.pages.tue.nl/-/$CI_PROJECT_NAME/-/jobs/$CI_JOB_ID/artifacts/public/index.html"
+    url: &url "https://$CI_PROJECT_ROOT_NAMESPACE.$CI_PAGES_DOMAIN/-/sites/$CI_PROJECT_NAME/-/jobs/$CI_JOB_ID/artifacts/public/index.html"
   variables:
-    PUBLIC_URL: "https://$CI_PROJECT_NAMESPACE.pages.tue.nl/-/$CI_PROJECT_NAME/-/jobs/$CI_JOB_ID/artifacts/public/index.html"
+    PUBLIC_URL: *url
   rules:
     - if: '$CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH'
 

@@ -1,0 +1,34 @@
+{% extends "main.html" %}
+
+{% block content %}
+  <div class="landing">
+    {{ super() }}
+    <h2>Latest Events</h2>
+    {{ events(["event"]) }}
+
+    <h2>Latest News</h2>
+    {{ events(["news", "maintenance"]) }}
+  </div>
+{% endblock %}
+
+{% macro events(type = None, limit = 3) %}
+  {% set posts = [] %}
+
+  {% if type %}
+    {% for post in page.blog.posts if post.config.type in type %}
+      {% set na = posts.insert(loop.index, post) %}
+    {% endfor %}
+  {% else %}
+    {% set posts = page.blog.posts %}
+  {% endif %}
+
+  <div class="grid cards">
+    <ul>
+      {% for post in posts[:limit] %}
+        {% set date_format = "full" %}
+        {% set event = post %}
+        <li>{% include "partials/" ~ post.config.type ~ ".html" %}</li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endmacro %}

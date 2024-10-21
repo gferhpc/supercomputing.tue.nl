@@ -1,50 +1,20 @@
 {% extends "base.html" %}
 
-<!--https://squidfunk.github.io/mkdocs-material/customization/-->
+<!-- https://squidfunk.github.io/mkdocs-material/customization/ -->
 
 {% block header %}
-{{ super() }}
-{% if config.extra.announcement %}
-<div data-md-component="announce">
-    <aside class="md-banner">
-        <div class="md-banner__inner md-grid md-typeset">
-            {% if "announce.dismiss" in features %}
-            <button class="md-banner__button md-icon" aria-label="{{ lang.t('announce.dismiss') }}">
-                {% set icon = config.theme.icon.close or "material/close" %}
-                {% include ".icons/" ~ icon ~ ".svg" %}
-            </button>
-            {% endif %}
-            <div style="text-align: center;">{{ config.extra.announcement }}</div>
-        </div>
-        {% if "announce.dismiss" in features %}
-        {% include "partials/javascripts/announce.html" %}
-        {% endif %}
-    </aside>
-</div>
-{% endif %}
+  <div class="particle-network-animation"></div>
+  {{ super() }}
 {% endblock %}
 
-{% block site_nav %}
-{% if nav %}
-{% if page.meta and page.meta.hide %}
-{% set hidden = "hidden" if "navigation" in page.meta.hide %}
-{% endif %}
-<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" {{ hidden }}>
-  <div class="md-sidebar__scrollwrap">
-    <div class="md-sidebar__inner">
-      {% include "partials/nav.html" %}
-    </div>
-  </div>
-</div>
-{% endif %}
+{% block hero %}
+  {% if page.meta and page.meta.hero %}
+    {% include 'partials/hero.html' %}
+  {% endif %}
 {% endblock %}
 
 {% block content %}
-{% if "toc.integrate" not in features %}
-{% if page.meta and page.meta.hide %}
-{% set hidden = "hidden" if "toc" in page.meta.hide %}
-{% endif %}
-  {% include "partials/toc.html" %}
-{% endif %}
-{{ super() }}
+  <div class="{{ page.meta.scheme }}">
+    {{ super() }}
+  </div>
 {% endblock %}

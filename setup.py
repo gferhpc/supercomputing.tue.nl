@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='mkdocs-umbrella-specs-plugin',
+    name='umbrella',
     version='0.0.1',
     description='An MkDocs plugin',
     long_description='',
@@ -26,6 +26,7 @@ setup(
     entry_points={
         'mkdocs.plugins': [
             'umbrella-specs = src.plugins.specs.plugin:SpecsPlugin',
+            'custom-blog = src.plugins.event.plugin:EventPlugin',
         ]
     }
 )

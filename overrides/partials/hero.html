@@ -1,0 +1,52 @@
+{% set item = page.meta.hero %}
+<div class="hero md-typeset" data-md-color-scheme="{{ page.meta.scheme }}">
+  <hgroup>
+    {% if item.h1 %}
+      <h1>{{ item.h1 }}</h1>
+    {% endif %}
+    {% if item.h2 %}
+      <h2>{{ item.h2 }}</h2>
+    {% endif %}
+    {% if item.h3 %}
+      <h3>{{ item.h3 }}</h3>
+    {% endif %}
+    {% if item.h4 %}
+      <h4>{{ item.h4 }}</h4>
+    {% endif %}
+    {% if item.h5 %}
+      <h5>{{ item.h5 }}</h5>
+    {% endif %}
+    {% if item.h6 %}
+      <h6>{{ item.h6 }}</h6>
+    {% endif %}
+    {% if item.button %}
+      <a class="md-button md-button--secondary" href="{{ item.button.url | url }}">{{ item.button.title }}</a>
+    {% endif %}
+  </hgroup>
+  <img src="{{ item.backdrop | default("/assets/images/backdrops/default.png") | trim("/") | url }}" alt=""/>
+  {% if item.attribution %}
+    <div class="hero__attribution">
+      {% if item.attribution.url %}
+        <a href="{{ item.attribution.url | url }}" target="_blank">{{ item.attribution.title }}</a>
+      {% else %}
+        {{ item.attribution.title }}
+      {% endif %}
+      {% if item.attribution.author %}
+        , by
+        {% if item.attribution.author.url %}
+          <a href="{{ item.attribution.author.url | url }}" target="_blank">{{ item.attribution.author.name }}</a>
+        {% else %}
+          {{ item.attribution.author.name }}
+        {% endif %}
+      {% endif %}
+      {% if item.attribution.license %}
+        , licensed under
+        {% if item.attribution.license.url %}
+          <a href="{{ item.attribution.license.url | url }}" target="_blank">{{ item.attribution.license.name }}</a>
+        {% else %}
+          {{ item.attribution.license.name }}
+        {% endif %}
+      {% endif %}
+    </div>
+  {% endif %}
+</div>

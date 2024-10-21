@@ -1,0 +1,243 @@
+{% if not date_format %}
+  {% set date_format = "full" %}
+{% endif %}
+{% set class = "event event-card md-typeset" %}
+{% if page == post %}
+  {% set class = class ~ " box" %}
+{% endif %}
+<article {% if post.config.scheme %} data-md-color-scheme="{{ post.config.scheme }}"{% endif %}>
+  <div class="{{ class }}">
+    <div class="event-header">
+      {% if post.meta.hero and page != post or not post.meta.hero %}
+        <div class="event-image">
+          <div class="event-label">
+            {% if post.config.draft %}
+              <div class="badge badge--danger">{{ lang.t("blog.draft") }}</div>
+            {% endif %}
+            {% if post.config.past %}
+              <div class="badge badge--light">Past Event</div>
+            {% endif %}
+          </div>
+          {% if post.config.image %}
+            <img src="{{ post.config.image | trim("/") | url }}" alt="{{ post.title }}">
+          {% endif %}
+        </div>
+      {% endif %}
+      <div class="event-info">
+        <div class="event-title">
+          {% if page == event %}
+            {{ post.title }}
+          {% else %}
+            <a href="{{ post.url | url }}">{{ post.title }}</a>
+          {% endif %}
+        </div>
+        <div class="event-meta">
+          <ul class="event-meta__list">
+            <li class="event-meta__item">
+              <a title="Date" class="event-meta__title md-icon">
+                {% include ".icons/material/calendar.svg" %}
+              </a>
+              {% if post.config.date.start|date != post.config.date.end|date %}
+                <ul class="event-meta__list event-meta__date">
+                  <li class="event-meta__item">
+                    <time datetime="{{ post.config.date.start }}">
+                      <div class="event-meta__title">From</div>
+                      {{ post.config.date.start | date(date_format) }}
+                    </time>
+                  </li>
+                  <li class="event-meta__item">
+                    <time datetime="{{ post.config.date.end }}">
+                      <div class="event-meta__title">Until</div>
+                      {{ post.config.date.end | date(date_format) }}
+                    </time>
+                  </li>
+                </ul>
+              {% else %}
+                <time datetime="{{ post.config.date.start }}">
+                  {{ post.config.date.start | date(date_format) }}
+                </time>
+              {% endif %}
+            </li>
+            {% if post.config.date.start != post.config.date.end %}
+              <li class="event-meta__item">
+                <a title="Time" class="event-meta__title md-icon">
+                  {% include ".icons/material/clock-outline.svg" %}
+                </a>
+                <time datetime="{{ post.config.time }}">
+                  {{ post.config.date.start | date("HH:mm") }} - {{ post.config.date.end | date("HH:mm") }}
+                </time>
+              </li>
+            {% endif %}
+            {% if post.config.location %}
+              <li class="event-meta__item">
+                <a title="Location" class="event-meta__title md-icon">
+                  {% include ".icons/material/map-marker.svg" %}
+                </a>
+                {% if post.config.location_url %}
+                  <a href="{{ post.config.location_url }}" target="_blank">{{ post.config.location }}</a>
+                {% else %}
+                  {{ post.config.location }}
+                {% endif %}
+              </li>
+            {% endif %}
+            {% if post.config.price != None %}
+              <li class="event-meta__item">
+                <a title="Price" class="event-meta__title md-icon">
+                  {% include ".icons/material/currency-eur.svg" %}
+                </a>
+                {% if post.config.price == 0.0 %}
+                  Free
+                {% else %}
+                  {{ post.config.price | replace(".", ",") }}
+                {% endif %}
+              </li>
+            {% endif %}
+            {% if post.authors %}
+              <li class="event-meta__item">
+                <a title="Speakers" class="event-meta__title md-icon">
+                  {% include ".icons/material/bullhorn.svg" %}
+                </a>
+                <ul class="author__list">
+                  {% for author in post.authors %}
+                    <li class="author__item">
+                      {% if author.url %}
+                        <a class="author__link" title="{{ author.name }}" href="{{ author.url | url }}" target="_blank">
+                          <img src="{{ author.avatar | trim("/") | url }}" alt="{{ author.name }}"/>
+                        </a>
+                      {% else %}
+                        <a class="author__link" title="{{ author.name }}">
+                          <img src="{{ author.avatar | trim("/") | url }}" alt="{{ author.name }}"/>
+                        </a>
+                      {% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              </li>
+            {% endif %}
+            <li style="margin-left: auto;">
+              <ul class="md-meta__list">
+                {% if post.config.pin %}
+                  <li class="event-meta__item" style="rotate: 45deg;">
+                    <div class="md-icon">
+                      {% include ".icons/material/pin.svg" %}
+                    </div>
+                  </li>
+                {% endif %}
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="event__content">
+      {% if page == event %}
+        {{ post.content }}
+      {% elif not post.excerpt %}
+        {{ post.content }}
+      {% endif %}
+      {% if post.config.actions and not post.config.past %}
+        <div class="event-actions">
+          <ul>
+            {% for action in post.config.actions %}
+              <li>
+                <a class="md-button md-button--primary" href="{{ action.url | url }}" target="_blank">{{ action.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+      {% if post.config.sponsors %}
+        <ul class="event-meta__list" style="float: right;">
+          <li class="event-meta__title" style="justify-content: right">
+            <div style="font-weight: 700;">Supported by</div>
+          </li>
+          <li class="event-meta__item" style="justify-content: right">
+            <ul class="sponsor__list">
+              {% for sponsor in post.config.sponsors %}
+                <li class="sponsor__item">
+                  {% if sponsor.url %}
+                    <a class="sponsor__link" title="{{ sponsor.name }}" href="{{ sponsor.url | url }}" target="_blank">
+                      <img src="{{ sponsor.avatar | trim("/") | url }}" alt="{{ sponsor.name }}"/>
+                    </a>
+                  {% else %}
+                    <a class="sponsor__link" title="{{ sponsor.name }}">
+                      <img src="{{ sponsor.avatar | trim("/") | url }}" alt="{{ sponsor.name }}"/>
+                    </a>
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+          </li>
+        </ul>
+      {% endif %}
+    </div>
+  </div>
+
+  {% if page == event %}
+    {% if post.config.schedule %}
+      <h2>Schedule</h2>
+      <div class="schedule">
+        <ul class="table">
+          {% for item in post.config.schedule %}
+            <li class="row main">
+              {% include "partials/schedule.html" %}
+            </li>
+            {% for item in item.schedule %}
+              <li class="row child">
+                {% include "partials/schedule.html" %}
+              </li>
+            {% endfor %}
+            <li class="row break">
+              <div class="cell"></div>
+              <div class="cell"></div>
+              <div class="cell"></div>
+              <div class="cell"></div>
+              <div class="cell"></div>
+              <div class="cell"></div>
+              <div class="cell"></div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+
+    {% if post.authors %}
+      <h2>Speakers</h2>
+      <div class="grid cards author">
+        <ul>
+          {% for author in post.authors %}
+            <li>
+              <div class="flex">
+                <ul class="author__list">
+                  <li class="author__item">
+                    {% if author.url %}
+                      <a class="author__link" title="{{ author.name }}" href="{{ author.url }}" target="_blank">
+                        <img src="{{ author.avatar | trim("/") | url }}" alt="{{ author.name }}"/>
+                      </a>
+                    {% else %}
+                      <a class="author__link" title="{{ author.name }}">
+                        <img src="{{ author.avatar | trim("/") | url }}" alt="{{ author.name }}"/>
+                      </a>
+                    {% endif %}
+                  </li>
+                </ul>
+                <div class="author__title">
+                  {% if author.url %}
+                    <a class="author__link" href="{{ author.url }}" target="_blank">
+                      {{ author.name }}
+                    </a>
+                  {% else %}
+                    {{ author.name }}
+                  {% endif %}
+                </div>
+              </div>
+              <div class="author__description">
+                {{ author.description }}
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+  {% endif %}
+</article>

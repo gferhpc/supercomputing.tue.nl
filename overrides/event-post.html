@@ -1,0 +1,13 @@
+{% extends "main.html" %}
+
+{% block content %}
+  {% set event = page %}
+  {% set post = page %}
+  <div class="md-nav__title md-nav__container">
+    <a href="{{ page.parent.url | url }}" class="md-nav__link">
+      {% include ".icons/material/arrow-left.svg" %}
+      <span class="md-ellipsis">Back to events</span>
+    </a>
+  </div>
+  {% include "partials/" ~ post.config.type ~ ".html" %}
+{% endblock %}

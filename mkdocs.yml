@@ -1,16 +1,20 @@
-site_name: Supercomputing Center - HPC Lab
-site_url: https://supercomputing.tue.nl
-docs_dir: &base_path pages
+site_name: Supercomputing Center
+site_url: https://supercomputing.tue.nl/
+docs_dir: &base_path docs
+not_in_nav: |
+  solutions
 theme:
   name: material
+  custom_dir: overrides
   font:
-    text: Nunito
+    text: Lato
   language: en
-  logo: assets/logo.png
-  favicon: assets/favicon.webp
+  logo: assets/images/logo.svg
+  favicon: assets/images/favicon.ico
   features:
     - navigation.instant
     - navigation.instant.progress
+    - navigation.path
     - navigation.tracking
     - navigation.tabs
     - navigation.tabs.sticky
@@ -18,6 +22,7 @@ theme:
     - navigation.indexes
     - navigation.top
     - toc.follow
+    - toc.integrate
     - search
     - search.suggest
     - search.highlight
@@ -29,13 +34,6 @@ theme:
     - content.tabs.link
     - content.tooltips
   palette:
-    - media: "(prefers-color-scheme: light)"
-      scheme: hpc
-      primary: custom
-      accent: custom
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: custom
@@ -43,7 +41,12 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
-  custom_dir: overrides
+    - scheme: tuesc
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
   icon:
     repo: fontawesome/brands/gitlab
     edit: material/pencil
@@ -51,24 +54,23 @@ theme:
 plugins:
   - awesome-pages:
       filename: .pages.yml
-  - blog:
-      blog_dir: news
-      draft_if_future_date: true
+  - custom-blog:
+      post_excerpt_max_authors: 10
   - glightbox
   - redirects:
       redirect_maps:
         'documentation/introduction.md': 'documentation/index.md'
-  - search
-  - rss:
-      enabled: !ENV [CI, false]
-      match_path: 'news/posts/.*'
-      use_git: false
-      date_from_meta:
-        as_creation: date
-        as_update: "false"
-      categories:
-        - categories
-  - tags
+  - search:
+      lang: en
+#  - rss:
+#      enabled: !ENV [CI, false]
+#      match_path: 'news/posts/.*'
+#      use_git: false
+#      date_from_meta:
+#        as_creation: date
+#        as_update: "false"
+#      categories:
+#        - categories
   - umbrella-specs:
       sinfo_path: cluster/.cache/sinfo.json
       extra_nodes:
@@ -149,17 +151,12 @@ plugins:
         "NVIDIA TITAN RTX": "https://www.nvidia.com/en-eu/deep-learning-ai/products/titan-rtx/"
         "NVIDIA TITAN Xp": "https://www.nvidia.com/nl-nl/titan/titan-xp/"
 extra_css:
-  - assets/stylesheets/extra.css?1
+  - assets/stylesheets/scheme.css
+  - assets/stylesheets/site.css
+  - assets/stylesheets/event.css
 extra_javascript:
-  - assets/javascripts/extra.js?1
-#extra:
-#  consent:
-#    title: Cookie consent
-#    description: >-
-#      We use cookies to recognize your repeated visits and preferences, as well
-#      as to measure the effectiveness of our documentation and whether users
-#      find what they're searching for. With your consent, you're helping us to
-#      make our documentation better
+  - https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js
+  - assets/javascripts/extra.js
 markdown_extensions:
   # Python Markdown
   - abbr
@@ -169,7 +166,7 @@ markdown_extensions:
   - footnotes
   - md_in_html
   - toc:
-      permalink: true
+      permalink: false
   # Python Markdown Extensions
   - pymdownx.arithmatex:
       generic: true
@@ -199,14 +196,23 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-
-edit_uri: https://gitlab.tue.nl/hpclab/website/edit/main/pages/
+#edit_uri: https://gitlab.tue.nl/hpclab/website/edit/main/pages/
 extra:
-#  announcement: "⚠️ TU/e Umbrella HPC Cluster maintenance scheduled between 26th and 28th of August 2024 ⚠️"
+#  announcement: ["⚠️ TU/e Umbrella HPC Cluster maintenance scheduled between 26th and 28th of August 2024 ⚠️"]
   social:
     - name: Eindhoven Computing Center at LinkedIn
       icon: material/linkedin
+      short: /in/supercomputing
       link: https://www.linkedin.com/in/supercomputing/
     - name: HPC Lab Teams Community @ TU/e
       icon: material/microsoft-teams
+      short: HPC Lab TU/e
       link: https://teams.microsoft.com/l/team/19:7830cc8a6f244d6689a374c60673b43c%40thread.tacv2/conversations?groupId=a07b9e15-8538-4889-8610-502177c36dc7&tenantId=cc7df247-60ce-4a0f-9d75-704cf60efc64
+#  consent:
+#    title: Cookie consent
+#    actions: [accept, reject, manage]
+#    description: >-
+#      We use cookies to recognize your repeated visits and preferences, as well
+#      as to measure the effectiveness of our documentation and whether users
+#      find what they're searching for. With your consent, you're helping us to
+#      make our documentation better

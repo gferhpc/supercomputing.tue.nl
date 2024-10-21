@@ -1,0 +1,84 @@
+authors:
+  "a.c.m.bertens":
+    name: Guus Bertens
+    description: Quantum Computing / Cluster Administrator
+    avatar: "/assets/images/avatars/a.c.m.bertens.webp"
+  "j.h.m.verbiesen":
+    name: Han Verbiesen
+    description: Service Manager
+    avatar: "/assets/images/avatars/j.h.m.verbiesen.png"
+  "a.van.hoof":
+    name: Alain van Hoof
+    description: Cluster Administrator
+    avatar: "/assets/images/avatars/a.van.hoof.webp"
+  "e.loomeijer":
+    name: Emily Loomeijer
+    description: Cluster Administrator
+    avatar: "/assets/images/avatars/e.loomeijer.webp"
+  "r.j.zoontjens":
+    name: Richard Zoontjens
+    description: HPC & AI Lead
+    avatar: "/assets/images/avatars/r.j.zoontjens.webp"
+  "r.kotian":
+    name: Roshan Kotian
+    description: ML/AI application specialist
+    avatar: "/assets/images/avatars/r.kotian.jfif"
+  "g.t.chepuck.fernandes":
+    name: Gérson Chepuck Fernandes
+    description: HPC Simulations Specialist
+    avatar: "/assets/images/avatars/g.t.chepuck.fernandes.jpg"
+  "f.toschi":
+    name: Frederico Toschi
+    description: Federico Toschi is full professor at the departments of Applied Physics and of Mathematics and Computer Science at Eindhoven University of Technology (TU/e). His research focuses on the emerging complexity in challenging multi-scale problems at the crossroad between statistical physics, fluid mechanics, soft condensed matter and bio-physics. How do small-scale interactions and forces lead to large-scale complexity and chaos? How to analytically and numerically model complex flow problems? Federico’s research employs experimental, numerical and theoretical methods and covers -amongst others- fluid dynamics turbulence; lagrangian turbulence; thermal convection; complex fluids; soft condensed matter; active matter; crowd dynamics; scientific computing and Lattice Boltzmann methods.
+    avatar: "/assets/images/avatars/f.toschi.png"
+    url: https://www.tue.nl/en/research/researchers/federico-toschi/
+  "s.x.tao":
+    name: Shuxia Tao
+    description: Shuxia Tao is an Associate Professor of Computational Materials Physics within the Department of Applied Physics at TU/e. Her research revolves around the development and application of atomistic and multiscale computational methodologies for the design of novel semiconducting materials for energy and optoelectronic applications. These materials and their applications inherently embody a highly interdisciplinary character, situated at the intersection of Chemistry, Physics, and Materials Science. Computational Materials Science serves as an invaluable tool for probing the intricate interplay between chemical and physical phenomena, thereby affording novel insights into the relationship between the atomistic characteristics of materials and their overall performance.
+    avatar: "/assets/images/avatars/s.x.tao.png"
+    url: https://www.tue.nl/en/research/researchers/shuxia-tao/
+  "r.georgiev":
+    name: Rumen Georgiev
+    avatar: /assets/images/avatars/r.georgiev.png
+    url: https://www.linkedin.com/in/rumen-georgiev-90a96789/
+    description: My name is Rumen Georgiev, an Application Engineer at COMSOL -- Zoetermeer, and I have been working on CFD, Chemical Reaction Engineering, and Cluster Computing problems for a bit over a year now. I did my Master's degree in Nanomaterials - Chemistry & Physics @ Utrecht University and my doctoral studies in microhydrodynamics @ TU Delft. It was at Delft where I got acquainted with COMSOL Multiphysics and started using it for high-performance computing.
+  "j.proll":
+    name: Josefine Proll
+    avatar: /assets/images/avatars/j.proll.png
+    url: https://www.tue.nl/en/research/researchers/josefine-proll/
+    description: Josefine Proll is an Assistant Professor in the Department of Applied Physics at Eindhoven University of Technology (TU/e). Since secondary school, she has been passionate about solving the worlds energy problem. On learning about nuclear fusion and its potential to solve exactly that problem Josefine decided she wanted to work on making nuclear fusion a reality.
+  "i.filot":
+    name: Ivo Filot
+    avatar: /assets/images/avatars/i.filot.png
+    url: https://www.tue.nl/en/research/researchers/ivo-filot/
+    description: Ivo Filot is a theoretical chemist. His research involves developing new computational techniques in multiscale modeling of catalytic reactions, in particular for the elucidation of the complex Fischer-Tropsch reaction mechanism, employing density functional theory and microkinetic modeling.
+  "c.campos":
+    name: Cassio De Campos
+    avatar: /assets/images/avatars/c.campos.png
+    url: https://www.tue.nl/en/research/researchers/cassio-de-campos/
+    description: Cassio De Campos main research interests are reliable machine learning and robust artificial intelligence, focused on theoretical and foundational developments for learning and reasoning with graphical models such as Bayesian networks, (hidden) Markov models, Markov random fields, influence diagrams, Markov decision processes, sum-product networks, and their use in applications.
+  "y.tang":
+    name: Yali Tang
+    avatar: /assets/images/avatars/y.tang.png
+    url: https://www.tue.nl/en/research/researchers/yali-tang/
+    description: Yali Tang is an assistant professor at the Power and Flow group in the Department of Mechanical Engineering at Eindhoven University of Technology (TU/e). Her research expertise focuses on the fundamentals of multiphase flows using computational fluid dynamics modelling. An important research topic is the hydrodynamics, mass and heat transfer in fluid-particle systems such as in packed and fluidized beds, as well as bubble column reactors.
+  "b.dobrzelecki":
+    name: Bartek Dobrzelecki
+    avatar: /assets/images/avatars/b.dobrzelecki.png
+    url: https://www.linkedin.com/in/bardobrze/
+    description: An experienced IT professional able to move fluently through the entire spectrum of challenges in software product delivery. Feeling equally at home developing product ideas with clients, architecting software solutions, leading teams, researching the state-of-the-art, bringing products into the market, and diving into implementation details.
+  "j.vanschoren":
+    name: Joaquin Vanschoren
+    avatar: /assets/images/avatars/j.vanschoren.png
+    url: https://www.tue.nl/en/research/researchers/joaquin-vanschoren/
+    description: dr. ir. Joaquin Vanschoren is an Associate Professor of Machine Learning at the Eindhoven University of Technology (TU/e). He aims to deeply understand, explain, and democratize AI to build learning systems that help humanity. He and his team build AI systems that learn continually and assemble themselves to learn faster and better, much like the human brain. He founded OpenML, an open science platform for machine learning, started the NeurIPS Datasets and Benchmarks track to incentivize better training data and evaluations, and works with MLCommons on AI Safety, ML standards, and data-centric AI. He is always eager to collaborate with new people. Do reach out!
+  "r.norris":
+    name: Raymond Norris
+    avatar: /assets/images/avatars/r.norris.png
+    url: https://www.linkedin.com/in/raymondnorris/
+    description: Raymond Norris is an Application Engineer Manager who has worked at MathWorks for over 30 years and leads a team of engineers to integrate MathWorks parallel tools with end-users' HPC cluster and cloud environments as well as gives talks and workshops focused on parallelization of MATLAB. Raymond holds a B.S. in computer science and applied mathematics from the University of Massachusetts Boston and an M.S. in software engineering from Brandeis.
+  "surf":
+    name: SURF
+    avatar: /assets/images/avatars/surf.png
+    url: https://www.surf.nl/
+    description: ""

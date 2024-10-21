@@ -1,0 +1,10 @@
+nav:
+  - index.md
+  - "TU/e Umbrella HPC Cluster": "#"
+  - "Snellius JupyterHub Service": "#"
+  - "Rescale": "#"
+  - "Research Cloud": "#"
+  - "Azure Labs": "#"
+  - "Granting System": grants
+
+  - ...

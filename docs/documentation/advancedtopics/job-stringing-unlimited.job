@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Each subjob runs for at most 1 minute.  In 1 minute, we will run
+# at minimum 2 iterations of our calculation.
+#SBATCH --time=1
+
+# Each subjob does at minimum 2 iterations, and we want 8 iterations, so
+# we need at most 4 subjobs.  The array here has 4 elements (1 to 4
+# inclusive), of which at most 1 can run at a time (indicated by "%1").
+#SBATCH --array=1-4%1
+
+# Put the job ID in the checkpoint file name.
+checkpoint_file=job-stringing-$SLURM_ARRAY_JOB_ID.ckp
+
+# -N 8 -- number of iterations total
+# -c   -- path to checkpoint file
+bash job-stringing-calculation.sh -N 8 -c $checkpoint_file
+
+# The job script only reaches this point, if the calculation is
+# completely finished.  If that happens, we can cancel the remaining
+# subjobs.
+scancel $SLURM_ARRAY_JOB_ID

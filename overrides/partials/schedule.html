@@ -1,0 +1,85 @@
+<div class="cell">
+  <div class="flex">
+    {% if item.schedule %}
+      <span class="md-icon">{% include ".icons/material/calendar.svg" %}</span>
+      <span style="white-space: nowrap">{{ item.start | date("E, d MMM") }}</span>
+    {% endif %}
+  </div>
+  {#  <div class="flex">#}
+  {#    <span class="md-icon">{% include ".icons/material/clock-outline.svg" %}</span>#}
+  {#    <span style="white-space: nowrap">{{ item.start | date("HH:mm") }} - {{ item.end | date("HH:mm") }}</span>#}
+  {#  </div>#}
+</div>
+
+<div class="cell">
+  <div class="flex">
+    <span class="md-icon">{% include ".icons/material/clock-outline.svg" %}</span>
+    <span style="white-space: nowrap">{{ item.start | date("HH:mm") }} - {{ item.end | date("HH:mm") }}</span>
+  </div>
+</div>
+
+<div class="cell">
+  <div class="flex">
+    {% if item.location %}
+      <span class="md-icon">{% include ".icons/material/map-marker.svg" %}</span>
+      <span style="white-space: nowrap">{{ item.location }}</span>
+    {% endif %}
+  </div>
+</div>
+
+<div class="cell mobile-hide" style="padding-right: .1rem">
+  {% if item.authors %}
+    <ul class="author__list" style="justify-content: right">
+      {% for author in item.authors %}
+        <li class="author__item">
+          {% if author.url %}
+            <a class="author__link" title="{{ author.name }}" href="{{ author.url | url }}" target="_blank">
+              <img src="{{ author.avatar | trim("/") | url }}" alt="{{ author.name }}"/>
+            </a>
+          {% else %}
+            <a class="author__link" title="{{ author.name }}">
+              <img src="{{ author.avatar | trim("/") | url }}" alt="{{ author.name }}"/>
+            </a>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% elif item.icon %}
+    <div class="flex" style="justify-content: right">
+      <span class="md-icon">{% include ".icons/material/" ~ item.icon ~ ".svg" %}</span>
+    </div>
+  {% endif %}
+</div>
+
+<div class="cell" style="padding-left: .1rem;">
+  <div class="flex">
+    {% if item.url %}
+      <div style="font-weight: 700; white-space: nowrap">
+        <a href="{{ item.url | url }}" target="_blank">{{ item.title }}</a>
+      </div>
+    {% elif item.schedule %}
+      <span style="font-weight: 700; white-space: nowrap">{{ item.title }}</span>
+    {% else %}
+      <span style="white-space: nowrap">{{ item.title }}</span>
+    {% endif %}
+  </div>
+</div>
+
+<div class="cell" style="width: 100%">
+</div>
+
+<div class="cell" style="padding-left: .1rem;">
+  <div class="flex">
+    {% if item.actions %}
+      {% for action in item.actions %}
+        <div class="schedule__action" style="white-space: nowrap;">
+          {% if action.url %}
+            <a class="md-button md-button--primary" href="{{ action.url | url }}" target="_blank">{{ action.title }}</a>
+          {% else %}
+            <a class="md-button" target="_blank">{{ action.title }}</a>
+          {% endif %}
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>
