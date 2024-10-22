@@ -1,0 +1,32 @@
+{% extends "main.html" %}
+
+{% set posts = [] %}
+{% for post in page.blog.posts if post.config.type == "event" and "HPC School" in post.config.categories %}
+  {% set na = posts.insert(loop.index, post) %}
+{% endfor %}
+
+{% block hero %}
+  {% for post in posts if not post.config.past %}
+    {% set page = post %}
+    {% include "partials/hero.html" %}
+  {% endfor %}
+{% endblock %}
+
+{% block content %}
+  {% for post in posts if not post.config.past %}
+    {% set date_format = "full" %}
+    {% set page = post %}
+    {% include "partials/event.html" %}
+  {% else %}
+    {{ super() }}
+  {% endfor %}
+
+  <h2>Past HPC School Events</h2>
+  <div class="grid cards">
+    <ul>
+      {% for post in posts if post.config.past %}
+        <li>{% include "partials/event.html" %}</li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}

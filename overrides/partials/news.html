@@ -20,7 +20,7 @@
       </div>
       <div class="event-info">
         <div class="event-title">
-          {% if page == event %}
+          {% if page == post %}
             {{ post.title }}
           {% else %}
             <a href="{{ post.url | url }}">{{ post.title }}</a>
@@ -104,7 +104,7 @@
       </div>
     </div>
     <div class="event__content">
-      {% if page == event or not post.excerpt %}
+      {% if page == post or not post.excerpt %}
         {{ post.content }}
       {% elif post.excerpt %}
         {{ post.excerpt.content }}
@@ -112,3 +112,14 @@
     </div>
   </div>
 </article>
+
+{% if page == post %}
+  <h2>Related News</h2>
+  <div class="grid cards">
+    <ul>
+      {% for post in page.blog.posts if page != post and post.config.type == page.config.type and page.config.categories|first in post.config.categories %}
+        <li>{% include "partials/news.html" %}</li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}

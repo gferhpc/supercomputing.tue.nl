@@ -71,6 +71,9 @@ class EventPlugin(BlogPlugin):
             # Nothing more to be done for views
             return
 
+
+        page.blog = self.blog
+
         # Extract and assign authors to post, if enabled
         if self.config.authors:
             for name in page.config.authors:

@@ -4,6 +4,7 @@ docs_dir: &base_path docs
 not_in_nav: |
   solutions
   events.md
+  hpc-school.md
 theme:
   name: material
   custom_dir: overrides
@@ -62,6 +63,7 @@ plugins:
   - redirects:
       redirect_maps:
         'documentation/introduction.md': 'documentation/index.md'
+        'hpc-school.md': 'blog/posts/events/2024/2024-10-29_autumn_hpc_school.md'
   - privacy:
       enabled: !ENV [CI, false]
   - search:
