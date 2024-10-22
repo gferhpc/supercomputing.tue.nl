@@ -1,5 +1,4 @@
 ---
-#hide: [navigation, toc]
 title: News 
 hero:
   backdrop: /assets/images/backdrops/events.jpg

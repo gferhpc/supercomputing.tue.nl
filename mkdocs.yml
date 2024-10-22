@@ -3,6 +3,7 @@ site_url: https://supercomputing.tue.nl/
 docs_dir: &base_path docs
 not_in_nav: |
   solutions
+  events.md
 theme:
   name: material
   custom_dir: overrides

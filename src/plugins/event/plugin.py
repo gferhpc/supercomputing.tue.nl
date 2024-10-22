@@ -47,7 +47,7 @@ class EventPlugin(BlogPlugin):
                     if post.excerpt:
                         post.excerpt.render(page, self.config.post_excerpt_separator)
 
-            if page.is_homepage:
+            if page.is_homepage or page.is_top_level:
                 page.blog = self.blog
 
             if not self.config.pagination:
