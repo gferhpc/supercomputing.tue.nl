@@ -28,7 +28,8 @@
           {% if page == post %}
             {{ post.title }}
           {% else %}
-            <a href="{{ post.url }}">{{ post.title }}</a>
+            {% set post_url = post_url|default(post.url) %}
+            <a href="{{ post_url | url }}">{{ post.title }}</a>
           {% endif %}
         </div>
         <div class="event-meta">
