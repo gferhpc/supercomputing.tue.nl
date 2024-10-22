@@ -63,7 +63,6 @@ plugins:
   - redirects:
       redirect_maps:
         'documentation/introduction.md': 'documentation/index.md'
-        'hpc-school.md': 'blog/posts/events/2024/2024-10-29_autumn_hpc_school.md'
   - privacy:
       enabled: !ENV [CI, false]
   - search:
