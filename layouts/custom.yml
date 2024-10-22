@@ -1,0 +1,42 @@
+size: { width: 1200, height: 630 }
+layers:
+  - background:
+      color: "#1a1a1a"
+  - size: { width: 1170, height: 485 }
+    offset: { x: 15, y: 130 }
+    background:
+      image: '{% if "hero" in page.meta %}docs/{{ page.meta.hero.backdrop  }}{% endif %}'
+      color: "#1a1a1ac3"
+  - size: { width: 175, height: 100 }
+    offset: { x: 15, y: 15 }
+    background:
+      image: 'overrides/{{ config.theme.logo }}'
+    typography:
+      overflow: shrink
+  - size: { width: 980, height: 100 }
+    offset: { x: 15, y: 15 }
+    origin: end top
+    typography:
+      content: "{{ config.site_name }}"
+      align: center top
+      color: #fafafa
+      font:
+        family: AvenirNext
+        style: Bold
+  - size: { width: 1140, height: 100 }
+    offset: { x: 30, y: 280 }
+    typography:
+      content: "{{ page.title }}"
+      align: center
+      color: #fafafa
+      font:
+        family: Lato
+        style: Bold
+  - size: { width: 1140, height: 40 }
+    offset: { x: 30, y: 400 }
+    typography:
+      content: '{% if "hero" in page.meta %}{{ page.meta.hero.h2 }}{% endif %}'
+      align: center top
+      color: '{% if "spring" == page.meta.scheme %}#73ae34{% elif "autumn" == page.meta.scheme %}#d58936{% else %}#c81919{% endif %}'
+      font:
+        family: Lato

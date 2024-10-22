@@ -59,26 +59,28 @@ plugins:
   - custom-blog:
       post_excerpt_max_authors: 10
   - glightbox
+  - privacy:
+      enabled: !ENV [CI, false]
   - redirects:
       redirect_maps:
         'documentation/introduction.md': 'documentation/index.md'
-  - privacy:
-      enabled: !ENV [CI, false]
-  - search:
-      lang: en
   - rss:
       match_path: 'blog.posts.(news|events|maintenance).[0-9]+..*'
       date_from_meta:
         as_creation: date
       categories:
         - categories
+  - search:
+      lang: en
+  - social:
+      enabled: !ENV [CI, false]
+      cards_layout_dir: layouts
+      cards_layout: custom
   - umbrella-specs:
       sinfo_path: cluster/.cache/sinfo.json
       extra_nodes:
-        # Login Nodes
         - { name: tue-login001, address: 'hpc.tue.nl', multithreading: True, cpus: 48, extra: "{\"cpu\": \"AMD EPYC 9254\", \"cpu_frq\": \"2.90\", \"mem\": \"128\"}" }
         - { name: tue-login002, address: 'hpc.tue.nl', multithreading: True, cpus: 48, extra: "{\"cpu\": \"AMD EPYC 7402P\", \"cpu_frq\": \"2.80\", \"mem\": \"128\"}" }
-        # Storage Nodes
         - { name: bme-storage001, multithreading: True, cpus: 32, extra: "{\"cpu\": \"AMD EPYC 7262\", \"cpu_frq\": \"3.20\", \"mem\": \"128\"}" }
         - { name: chem-storage001, multithreading: False, cpus: 16, extra: "{\"cpu\": \"AMD EPYC 7251\", \"cpu_frq\": \"2.10\", \"mem\": \"128\"}" }
         - { name: mech-storage001, multithreading: True, cpus: 32, extra: "{\"cpu\": \"AMD EPYC 7251\", \"cpu_frq\": \"2.10\", \"mem\": \"128\"}" }

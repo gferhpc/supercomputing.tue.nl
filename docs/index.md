@@ -3,7 +3,7 @@ hide:
   - navigation
   - toc
 template: landing.html
-title: TU/e Supercomputing Center
+title: Home
 hero:
   backdrop: /assets/images/backdrops/home.png
   h1: TU/e Supercomputing Center

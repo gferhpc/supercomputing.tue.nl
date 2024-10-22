@@ -1,6 +1,6 @@
 ---
 hide: [toc]
-title: Introduction
+title: Documentation
 ---
 # Umbrella HPC Documentation
 

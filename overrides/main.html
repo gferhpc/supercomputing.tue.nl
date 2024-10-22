@@ -7,6 +7,16 @@
   {{ super() }}
 {% endblock %}
 
+{% block htmltitle %}
+  {% if page.meta and page.meta.title %}
+    <title>{{ page.meta.title }} - TU/e {{ config.site_name }}</title>
+  {% elif page.title and not page.is_homepage %}
+    <title>{{ page.title | striptags }} - TU/e {{ config.site_name }}</title>
+  {% else %}
+    <title>TU/e {{ config.site_name }}</title>
+  {% endif %}
+{% endblock %}
+
 {% block hero %}
   {% if page.meta and page.meta.hero %}
     {% include 'partials/hero.html' %}
