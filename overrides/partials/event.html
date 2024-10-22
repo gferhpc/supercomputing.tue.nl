@@ -248,6 +248,9 @@
   <div class="grid cards">
     <ul>
       {% for post in page.blog.posts if page != post and post.config.type == page.config.type and page.config.categories|first in post.config.categories %}
+        {% if landing %}
+          {% set post_url = "/" ~ post.url %}
+        {% endif %}
         <li>{% include "partials/event.html" %}</li>
       {% endfor %}
     </ul>

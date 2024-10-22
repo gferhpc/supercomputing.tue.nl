@@ -12,7 +12,7 @@
 {% block content %}
   {% if posts %}
     {% set post = page %}
-    {% set post_url = "/" ~ post.url %}
+    {% set landing = True %}
     {% include "partials/event.html" %}
   {% else %}
     {{ super() }}
