@@ -142,12 +142,12 @@ class EventPlugin(BlogPlugin):
         post = Post(file, config)
 
         # @TODO fix in jinja2 template...
-        post.config.past = post.config.date.end < datetime.now() if post.config.date.end else post.config.date.created < datetime.now()
+        post.config.past = post.config.end < datetime.now() if post.config.end else post.config.date.created < datetime.now()
 
-        if not post.config.date.start:
-            post.config.date.start = post.config.date.created
-        if not post.config.date.end:
-            post.config.date.end = post.config.date.created
+        if not post.config.start:
+            post.config.start = post.config.date.created
+        if not post.config.end:
+            post.config.end = post.config.date.created
 
         # Compute path and create a temporary file for path resolution
         path = self._format_path_for_post(post, config)

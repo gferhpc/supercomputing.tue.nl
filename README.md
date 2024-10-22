@@ -30,25 +30,25 @@ the [official documentation](https://squidfunk.github.io/mkdocs-material/plugins
 
 In addition to `news`:
 
-| Property   | Value                              | Description                        |
-|------------|------------------------------------|------------------------------------|
-| date.start | YYYY-MM-DD<br/>YYYY-MM-DDTHH:II:SS | Start date/time of the maintenance | 
-| date.end   | YYYY-MM-DD<br/>YYYY-MM-DDTHH:II:SS | End date/time of the maintenance   | 
+| Property | Value                              | Description                        |
+|----------|------------------------------------|------------------------------------|
+| start    | YYYY-MM-DD<br/>YYYY-MM-DDTHH:II:SS | Start date/time of the maintenance | 
+| end      | YYYY-MM-DD<br/>YYYY-MM-DDTHH:II:SS | End date/time of the maintenance   | 
 
 ### Type `event`
 
 In addition to `news`:
 
-| Property   | Value                                        | Description                                        |
-|------------|----------------------------------------------|----------------------------------------------------|
-| date.start | YYYY-MM-DD<br/>YYYY-MM-DDTHH:II:SS           | Start date/time of the event                       | 
-| date.end   | YYYY-MM-DD<br/>YYYY-MM-DDTHH:II:SS           | End date/time of the event                         | 
-| price      | 0.00 (free), or any other digit number       | The entree fee of the event                        |
-| location   | String, Event location                       | Location of where the event will take place        |
-| image      | URL or relative path from the `/docs` folder | Image shown with the event                         |
-| scheme     | `autumn`, `spring`                           | Change default color scheme for the specific event |
-| sponsors   | see [sponsors](#sponsors)                    | The sponsors of the event                          |
-| schedule   | see [schedule](#schedule)                    | The detailed schedule of the event                 |
+| Property | Value                                        | Description                                        |
+|----------|----------------------------------------------|----------------------------------------------------|
+| start    | YYYY-MM-DD<br/>YYYY-MM-DDTHH:II:SS           | Start date/time of the event                       | 
+| end      | YYYY-MM-DD<br/>YYYY-MM-DDTHH:II:SS           | End date/time of the event                         | 
+| price    | 0.00 (free), or any other digit number       | The entree fee of the event                        |
+| location | String, Event location                       | Location of where the event will take place        |
+| image    | URL or relative path from the `/docs` folder | Image shown with the event                         |
+| scheme   | `autumn`, `spring`                           | Change default color scheme for the specific event |
+| sponsors | see [sponsors](#sponsors)                    | The sponsors of the event                          |
+| schedule | see [schedule](#schedule)                    | The detailed schedule of the event                 |
 
 #### `sponsors`
 

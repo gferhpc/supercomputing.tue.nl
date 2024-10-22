@@ -19,16 +19,16 @@ We preferably offer the following classes of compute nodes:
 
 We preferably don't offer fabrics such as InfiniBand due to the cost.  Compute jobs that require such fabrics should be run on other platforms, such as Snellius.
 
-<table style="white-space: nowrap;">
-  <tr>
-    <th rowspan="2">Class</th>
-    <th rowspan="2">CPU</th>
-    <th rowspan="2">Memory</th>
-    <th rowspan="2">Accelerators</th>
-    <th rowspan="2">Price<br/>incl. VAT</th>
-    <th colspan="3" markdown="1">Performance[^1]</th>
-    <th colspan="3" markdown="1">Power usage[^2]</th>
-  </tr>
+<table style="white-space: nowrap;" markdown>
+<tr markdown>
+<th rowspan="2">Class</th>
+<th rowspan="2">CPU</th>
+<th rowspan="2">Memory</th>
+<th rowspan="2">Accelerators</th>
+<th rowspan="2">Price<br/>incl. VAT</th>
+<th colspan="3" markdown>Performance[^1]</th>
+<th colspan="3" markdown>Power usage[^2]</th>
+</tr>
   <tr>
     <th>Raw [pp]</th>
     <th>/core [pp]</th>
@@ -91,9 +91,7 @@ We preferably don't offer fabrics such as InfiniBand due to the cost.  Compute j
   </tr>
 </table>
 
-[^1]: Total for all CPUs in the system.  Per-CPU value is obtained from the
-  PassMark database.  The unit "pp" stands for "performance point".
-
+[^1]: Total for all CPUs in the system.  Per-CPU value is obtained from the PassMark database.  The unit "pp" stands for "performance point".
 [^2]: Power usage is estimated as: CPU TDP + GPU TDP + RAM power.  RAM power is: 0.3 W/GB RAM for DDR5; 0.375 W/GB for DDR4.
 
 # Rationales
@@ -153,3 +151,4 @@ Other constraints:
 
 Ethernet: 25 Gbit hardware is only slightly more expensive than 10 Gbit
 hardware, but offers a good performance increase and is future-proof.
+

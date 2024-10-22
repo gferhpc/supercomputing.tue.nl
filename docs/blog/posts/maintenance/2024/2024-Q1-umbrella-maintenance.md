@@ -32,7 +32,7 @@ Please read further for more information about the maintenance and expected chan
 
 After the upgrade/replacement of the OS from CentOS7 to Rocky8 it is not guaranteed that you applications are still able to run. Especially self-compiled C/C++/FORTRAN code can have dependencies on the OS that are no longer valid.
 
-- This maintenance involves all nodes for all departments being part of the TU/e HPC Umbrella Cluster. Head nodes, login nodes, storage nodes, compute nodes and GPU nodes. See also [Technical Specifications](../../../documentation/specifications.md)
+- This maintenance involves all nodes for all departments being part of the TU/e HPC Umbrella Cluster. Head nodes, login nodes, storage nodes, compute nodes and GPU nodes. See also [Technical Specifications](../../../../documentation/specifications.md)
 - During the downtime/maintenance no compute jobs will be running nor can be started or scheduled.
 - All running jobs on Monday 12 February 2024 09:00 will be cancelled.
 - All login nodes will be rebooted killing any processes running and the nodes are unavailable during maintenance

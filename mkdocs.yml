@@ -33,6 +33,7 @@ theme:
     - content.code.annotate
     - content.tabs.link
     - content.tooltips
+    - content.footnote.tooltips
   palette:
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
@@ -60,6 +61,8 @@ plugins:
   - redirects:
       redirect_maps:
         'documentation/introduction.md': 'documentation/index.md'
+  - privacy:
+      enabled: !ENV [CI, false]
   - search:
       lang: en
   - rss:
@@ -174,6 +177,9 @@ markdown_extensions:
 #edit_uri: https://gitlab.tue.nl/hpclab/website/edit/main/pages/
 extra:
 #  announcement: ["⚠️ TU/e Umbrella HPC Cluster maintenance scheduled between 26th and 28th of August 2024 ⚠️"]
+  analytics:
+    provider: google
+    property: GTM-MSH9NTC5
   social:
     - name: Eindhoven Computing Center at LinkedIn
       icon: material/linkedin
@@ -183,11 +189,10 @@ extra:
       icon: material/microsoft-teams
       short: HPC Lab TU/e
       link: https://teams.microsoft.com/l/team/19:7830cc8a6f244d6689a374c60673b43c%40thread.tacv2/conversations?groupId=a07b9e15-8538-4889-8610-502177c36dc7&tenantId=cc7df247-60ce-4a0f-9d75-704cf60efc64
-#  consent:
-#    title: Cookie consent
-#    actions: [accept, reject, manage]
-#    description: >-
-#      We use cookies to recognize your repeated visits and preferences, as well
-#      as to measure the effectiveness of our documentation and whether users
-#      find what they're searching for. With your consent, you're helping us to
-#      make our documentation better
+  consent:
+    title: Our website uses cookies
+    description: >-
+      It allows us to offer you the best website experience. By accepting the cookies, 
+      you allow us to use these cookies to optimize the user-friendliness of our website, 
+      to analyze website usage, and to support our marketing activities.
+    actions: [accept, reject, manage]

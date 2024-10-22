@@ -18,7 +18,7 @@ Python code optimization workshop. Techniques to use the computing resources eff
 
 ### User stories
 
-![](2023-10-02_Python%20code%20optimization%20workshoprkshop/eee07ee1-daa1-4c03-ab11-67b15f430c61.png)
+![](2023-10-02_Python%20code%20optimization%20workshop/eee07ee1-daa1-4c03-ab11-67b15f430c61.png)
 
 Scenarios like the one depicted above are common. Researchers tend to reserve more computing
 resources than required and in some cases request for more resources without truly understanding

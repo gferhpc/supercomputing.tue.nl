@@ -35,8 +35,7 @@ Cluster maintenance completed. For more details click on the "Continue reading" 
 ### What do you need to do?
 
 Just use the cluster as always. If have issues, first check the
-maintenance FAQ: [Known
-Issues](https://hpcwiki.tue.nl/wiki/Detailed_Information_Maintenance_August_2023#Known_issues)
+maintenance FAQ: [Known Issues](https://hpcwiki.tue.nl/wiki/Detailed_Information_Maintenance_August_2023#Known_issues)
 
 ### Reminder:
 
@@ -67,7 +66,7 @@ the following workflow:
     interface.
 
 More detailed instructions can be found
-[here](../../../documentation/software/recipes/ansys_lumerical.md). If you experience further issues,
+[here](../../../../documentation/software/recipes/ansys_lumerical.md). If you experience further issues,
 or if this workflow doesn't suit your needs, please contact us.
 
 ??? abstract "Planning & Considerations"

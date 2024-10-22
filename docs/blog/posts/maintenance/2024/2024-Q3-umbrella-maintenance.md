@@ -23,7 +23,7 @@ The Umbrella HPC Cluster scheduled downtime for maintenance is finished and jobs
 
 ## Changes
 
-- **ML datasets**: previously, some common machine learning datasets were available on `/home/tue/shared_data/ml_datasets`. We've moved these datasets to `/dataset`. A description of these datasets can be found [here](../../../documentation/datasets.md) .
+- **ML datasets**: previously, some common machine learning datasets were available on `/home/tue/shared_data/ml_datasets`. We've moved these datasets to `/dataset`. A description of these datasets can be found [here](../../../../documentation/datasets.md) .
 - **Quota**: previously, quota were sometimes set incorrectly or not set at all. We've rectified the situation, and are now setting quota on the total space used and number of files created, both on home directories and project directories.
 
 ### New features:

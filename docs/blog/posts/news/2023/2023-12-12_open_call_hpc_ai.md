@@ -27,6 +27,7 @@ The Call for Proposals is continuously open, with a reviewing period of maximum 
 This continuation shall be duly justified, limited to a maximum of one (1) additional year, and will depend on an assessment of the ongoing awarded project.
 
 ## Applicants can only have one Regular Access awarded at any given time.
+
 The computer system provided for the Regular Access call by EuroCC Netherlands is [Snellius](https://www.surf.nl/en/dutch-national-supercomputer-snellius){:target=_blank}, hosted by [SURF](https://surf.nl/){:target=_blank} in Amsterdam.
 
 This Regular Access mode offers three distinctive application tracks:
@@ -37,4 +38,4 @@ This Regular Access mode offers three distinctive application tracks:
 
 [Apply Now!](https://u17cmwrnl4v.typeform.com/to/S1vqNsUV){ .md-button }
 
-[^1]: _source: [https://eurocc-netherlands.nl/open-call-hpc-ai/](https://eurocc-netherlands.nl/open-call-hpc-ai/){:target=_blank}_
+_source: [https://eurocc-netherlands.nl/open-call-hpc-ai/](https://eurocc-netherlands.nl/open-call-hpc-ai/){:target=_blank}_
