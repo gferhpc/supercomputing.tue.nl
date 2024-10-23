@@ -6,7 +6,7 @@ hero:
   backdrop: /assets/images/poster-autumnschool-2024.jpg
   h1: Autumn HPC School
   h2: 29-31 October & 4-8 November
-  button: { title: "Register now!", url: "https://hpcschool.tue.nl/register/" }
+#  button: { title: "Register now!", url: "https://hpcschool.tue.nl/register/" }
 title: Autumn HPC School '24
 categories: [ HPC School ]
 authors: [ g.t.chepuck.fernandes, a.van.hoof, f.toschi, s.x.tao, j.vanschoren ]
@@ -18,8 +18,8 @@ scheme: autumn
 sponsors:
   - { name: "SURF", url: "https://www.surf.nl/", avatar: "/assets/images/logo/surf.svg" }
   - { name: "EuroCC", url: "https://eurocc-netherlands.nl/", avatar: "/assets/images/logo/eurocc.svg" }
-actions:
-  - { title: Register Now!, url: https://hpcschool.tue.nl/register }
+#actions:
+#  - { title: Register Now!, url: https://hpcschool.tue.nl/register }
 schedule:
   - { title: Supercomputing Primer I, start: 2024-10-29T09:00:00, end: 2024-10-29T14:00:00, location: Neuron 0.354, authors: [ g.t.chepuck.fernandes, a.van.hoof ],
       schedule: [
@@ -75,3 +75,5 @@ Supercomputing at the Autumn HPC School! This 2-week program is perfect for stud
 This event is free of charge with only limited seats available, please register yourself quickly if you're interested! 
 
 This HPC School is made possible through the collaboration between the [TU/e Supercomputing Center](https://www.linkedin.com/in/supercomputing/){:target=_blank}, [SURF](https://www.surf.nl){:target=_blank} & [EuroCC Netherlands](https://eurocc-netherlands.nl/nl/){:target=_blank}.
+
+<strong style="color: var(--md-accent-fg-color)">Registrations for the Autumn HPC School 2024 are closed. Please contact [hpc-training@tue.nl](mailto:hpc-training@tue.nl) for further information</strong>
