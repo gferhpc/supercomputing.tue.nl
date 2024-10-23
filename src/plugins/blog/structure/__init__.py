@@ -39,7 +39,8 @@ from mkdocs.utils.meta import YAML_RE
 from re import Match
 from yaml import SafeLoader
 
-from .config import PostConfig
+from .config import PostConfig, EventConfig, NewsConfig, MaintenanceConfig
+
 
 # -----------------------------------------------------------------------------
 # Classes
@@ -98,6 +99,20 @@ class Post(Page):
             )
         })
 
+        if "event" == self.config.type:
+            self.config: EventConfig = EventConfig(file.abs_src_path)
+        elif "news" == self.config.type:
+            self.config: NewsConfig = NewsConfig(file.abs_src_path)
+        elif "maintenance" == self.config.type:
+            self.config: MaintenanceConfig = MaintenanceConfig(file.abs_src_path)
+
+        self.config.load_dict({
+            key: self.meta[key] for key in (
+                    set(self.meta.keys()) &
+                    set(self.config.keys())
+            )
+        })
+
         # Validate configuration and throw if errors occurred
         errors, warnings = self.config.validate()
         for _, w in warnings:
@@ -133,6 +148,15 @@ class Post(Page):
     # in `read_source` as for pages), so this function must be set to a no-op
     def read_source(self, config: MkDocsConfig):
         pass
+
+    def is_event(self):
+        return isinstance(self.config, EventConfig)
+
+    def is_news(self):
+        return isinstance(self.config, NewsConfig)
+
+    def is_maintenance(self):
+        return isinstance(self.config, MaintenanceConfig)
 
 # -----------------------------------------------------------------------------
 
@@ -212,8 +236,8 @@ class Excerpt(Page):
         if more:
             self.more = more[0]
 
-        if not self.config.description:
-            self.config.description, *paragraphs = self.content.split("</p>", 1)
+        # if not self.config.description:
+        #     self.config.description, *paragraphs = self.content.split("</p>", 1)
 
         # Extract table of contents and reset post URL - if we wouldn't reset
         # the excerpt URL, linking to the excerpt from the view would not work
@@ -266,4 +290,4 @@ def _patch(config: MkDocsConfig):
 # -----------------------------------------------------------------------------
 
 # Set up logging
-log = logging.getLogger("mkdocs.material.event")
+log = logging.getLogger("mkdocs.material.blog")

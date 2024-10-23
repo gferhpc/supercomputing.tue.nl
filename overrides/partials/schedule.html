@@ -28,17 +28,17 @@
 </div>
 
 <div class="cell mobile-hide" style="padding-right: .1rem">
-  {% if item.authors %}
+  {% if item.speakers %}
     <ul class="author__list" style="justify-content: right">
-      {% for author in item.authors %}
+      {% for speaker in item.speakers %}
         <li class="author__item">
-          {% if author.url %}
-            <a class="author__link" title="{{ author.name }}" href="{{ author.url | url }}" target="_blank">
-              <img src="{{ author.avatar | trim("/") | url }}" alt="{{ author.name }}"/>
+          {% if speaker.url %}
+            <a class="author__link" title="{{ speaker.name }}" href="{{ speaker.url | url }}" target="_blank">
+              <img src="{{ speaker.avatar | trim("/") | url }}" alt="{{ speaker.name }}"/>
             </a>
           {% else %}
-            <a class="author__link" title="{{ author.name }}">
-              <img src="{{ author.avatar | trim("/") | url }}" alt="{{ author.name }}"/>
+            <a class="author__link" title="{{ speaker.name }}">
+              <img src="{{ speaker.avatar | trim("/") | url }}" alt="{{ speaker.name }}"/>
             </a>
           {% endif %}
         </li>

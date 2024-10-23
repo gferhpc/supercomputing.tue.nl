@@ -19,23 +19,52 @@
 # IN THE SOFTWARE.
 
 from datetime import datetime
+
 from material.plugins.blog.structure import PostConfig
-from mkdocs.config.config_options import ListOfItems, Optional, Type, Choice
+from material.plugins.blog.structure.options import UniqueListOfItems
+from mkdocs.config.base import Config
+from mkdocs.config.config_options import ListOfItems, Optional, Type, Choice, SubConfig, URL
 
 
 class PostConfig(PostConfig):
     type = Optional(Choice(["news", "maintenance", "event"]))
-    start = Optional(Type(datetime))
-    end = Optional(Type(datetime))
-    speakers = ListOfItems(Type(str), default = []) # = authors
-    sponsors = ListOfItems(Type(dict), default = [])
+
+class NewsConfig(PostConfig):
+    pass # no additional properties
+
+class MaintenanceConfig(PostConfig):
+    start = Type(datetime)
+    end = Type(datetime)
+
+class ScheduleItem(Config):
+    title = Type(str)
+    start = Type(datetime)
+    end = Type(datetime)
+    icon = Optional(Type(str))
     location = Optional(Type(str))
-    location_url = Optional(Type(str))
+    speakers = UniqueListOfItems(Type(str), default = [])
+
+class Schedule(ScheduleItem):
+    schedule = ListOfItems(SubConfig(ScheduleItem), default = [])
+
+class RegistrationOption(Config):
+    title = Type(str)
+    url = URL()
+    qr = Type(bool, default = False)
+
+class Registration(Config):
+    enabled = Type(bool, default = False)
+    description = Optional(Type(str))
+    options: list[RegistrationOption] = ListOfItems(SubConfig(RegistrationOption), default = [])
+
+class EventConfig(PostConfig):
+    start = Type(datetime)
+    end = Type(datetime)
+    location = Optional(Type(str))
     price = Optional(Type(float))
-    past = Optional(Type(bool))
+    speakers = ListOfItems(Type(str), default = [])
+    sponsors = ListOfItems(Type(dict), default = [])
+    registration = SubConfig(Registration)
+    schedule = ListOfItems(SubConfig(Schedule), default = [])
     image = Optional(Type(str))
     scheme = Optional(Type(str))
-    title = Optional(Type(str))
-    description = Optional(Type(str))
-    actions = ListOfItems(Type(dict), default = [])
-    schedule = ListOfItems(Type(dict), default = [])

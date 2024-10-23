@@ -3,15 +3,17 @@ date: 2024-10-08
 start: 2024-11-12T10:00:00
 end: 2024-11-12T16:00:00
 categories: [ Trainings ]
-authors: [ r.norris ]
+speakers: [ r.norris ]
 price: 0.00
 location: TU/e Campus
 image: /assets/images/logo/matlab.png
 type: event
 sponsors:
   - { name: "SURF", url: "https://www.surf.nl/", avatar: "/assets/images/logo/surf.svg" }
-actions:
-  - {title: Register Now!, url: https://events.surf.nl/kort14/open/97298a30-3e1f-4d55-a450-55305393d810 }
+registration:
+  enabled: True
+  options:
+  - { title: Register Now!, url: https://events.surf.nl/kort14/open/97298a30-3e1f-4d55-a450-55305393d810, qr: true }
 #description: Join us this one-day course where you'll learn how to tackle compute- and data-intensive problems using multicore processors and GPUs on the SURF HPC cluster.
 #hero:
 #  backdrop: /assets/images/poster-autumnschool-2024.jpg

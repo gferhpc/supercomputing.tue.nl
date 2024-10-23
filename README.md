@@ -39,16 +39,17 @@ In addition to `news`:
 
 In addition to `news`:
 
-| Property | Value                                        | Description                                        |
-|----------|----------------------------------------------|----------------------------------------------------|
-| start    | YYYY-MM-DD<br/>YYYY-MM-DDTHH:II:SS           | Start date/time of the event                       | 
-| end      | YYYY-MM-DD<br/>YYYY-MM-DDTHH:II:SS           | End date/time of the event                         | 
-| price    | 0.00 (free), or any other digit number       | The entree fee of the event                        |
-| location | String, Event location                       | Location of where the event will take place        |
-| image    | URL or relative path from the `/docs` folder | Image shown with the event                         |
-| scheme   | `autumn`, `spring`                           | Change default color scheme for the specific event |
-| sponsors | see [sponsors](#sponsors)                    | The sponsors of the event                          |
-| schedule | see [schedule](#schedule)                    | The detailed schedule of the event                 |
+| Property | Value                                                                                                | Description                                        |
+|----------|------------------------------------------------------------------------------------------------------|----------------------------------------------------|
+| start    | YYYY-MM-DD<br/>YYYY-MM-DDTHH:II:SS                                                                   | Start date/time of the event                       | 
+| end      | YYYY-MM-DD<br/>YYYY-MM-DDTHH:II:SS                                                                   | End date/time of the event                         | 
+| price    | 0.00 (free), or any other digit number                                                               | The entree fee of the event                        |
+| location | String, Event location                                                                               | Location of where the event will take place        |
+| image    | URL or relative path from the `/docs` folder                                                         | Image shown with the event                         |
+| scheme   | `autumn`, `spring`                                                                                   | Change default color scheme for the specific event |
+| speakers | see [authors](https://squidfunk.github.io/mkdocs-material/plugins/blog/#meta.authors){target=_blank} | The speaker(s) of the event                        |
+| sponsors | see [sponsors](#sponsors)                                                                            | The sponsors of the event                          |
+| schedule | see [schedule](#schedule)                                                                            | The detailed schedule of the event                 |
 
 #### `sponsors`
 
@@ -66,5 +67,5 @@ In addition to `news`:
 | end      | YYYY-MM-DD<br/>YYYY-MM-DDTHH:II:SS                                                                        | End date/time of the item   |
 | title    | String                                                                                                    | The shown title of the item |
 | icon     | See [supported icons](https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/){target=_blank} | Icon of the item            |
-| authors  | see [authors](https://squidfunk.github.io/mkdocs-material/plugins/blog/#meta.authors){target=_blank}      | The speaker(s) of the event |
+| speakers | see [authors](https://squidfunk.github.io/mkdocs-material/plugins/blog/#meta.authors){target=_blank}      | The speaker(s) of the event |
 | schedule | see [schedule](#schedule)                                                                                 | The subschedule of the item |

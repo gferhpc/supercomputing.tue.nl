@@ -20,20 +20,65 @@
 
 from __future__ import annotations
 
+import json
 import os
+import posixpath
 from datetime import datetime
-from material.plugins.blog.author import Author
+import qrcode
 from material.plugins.blog.plugin import BlogPlugin
+from material.plugins.social.plugin import _digest
 from mkdocs.config.defaults import MkDocsConfig
 from mkdocs.exceptions import PluginError
-from mkdocs.plugins import event_priority
+from mkdocs.plugins import event_priority, BasePlugin
 from mkdocs.structure.files import File
+from qrcode.image.styles.moduledrawers.svg import SvgCircleDrawer
+from qrcode.image.svg import SvgImage
+from qrcode.main import QRCode
+
+from .config import BlogConfig
 from .structure import Excerpt, Post, View
+from .structure.config import Registration
 
 
-class EventPlugin(BlogPlugin):
+class BlogPlugin(BlogPlugin[BlogConfig]):
+    manifest: dict[str, str] = {}
+
+    config: BlogConfig
+
+    def on_config(self, config):
+        if not self.config.enabled:
+            return
+        super().on_config(config)
+
+        # Resolve cache directory (once) - this is necessary, so the cache is
+        # always relative to the configuration file, and thus project, and not
+        # relative to the current working directory, or it would not work with
+        # the projects plugin.
+        path = os.path.abspath(self.config.cache_dir)
+        if path != self.config.cache_dir:
+            self.config.cache_dir = os.path.join(
+                os.path.dirname(config.config_file_path),
+                os.path.normpath(self.config.cache_dir)
+            )
+
+            # Ensure cache directory exists
+            os.makedirs(self.config.cache_dir, exist_ok = True)
+
+        # Initialize manifest
+        self.manifest_file = os.path.join(
+            self.config.cache_dir, "manifest.json"
+        )
+
+        # Load manifest if it exists and the cache should be used
+        if os.path.isfile(self.manifest_file) and self.config.cache:
+            try:
+                with open(self.manifest_file) as f:
+                    self.manifest = json.load(f)
+            except:
+                pass
+
     @event_priority(-50)
-    def on_page_markdown(self, markdown, *, page, config, files):
+    def on_page_markdown(self, markdown, *, page: Post, config, files):
         if not self.config.enabled:
             return
 
@@ -83,15 +128,16 @@ class EventPlugin(BlogPlugin):
                 # Append to list of authors
                 page.authors.append(self.authors[name])
 
-        if page.config.schedule:
-            for schedule in page.config.schedule:
-                if "authors" in schedule:
-                    schedule["authors"] = self._populate_authors(schedule["authors"])
+            if page.is_event():
+                for key, name in enumerate(page.config.speakers):
+                    page.config.speakers[key] = self.authors[name]
 
-                    if "schedule" in schedule:
-                        for sub_schedule in schedule["schedule"]:
-                            if "authors" in sub_schedule:
-                                sub_schedule["authors"] = self._populate_authors(sub_schedule["authors"])
+                for schedule in page.config.schedule:
+                    for key, name in enumerate(schedule.speakers):
+                        schedule.speakers[key] = self.authors[name]
+                    for child_schedule in schedule.schedule:
+                        for key, name in enumerate(child_schedule.speakers):
+                            child_schedule.speakers[key] = self.authors[name]
 
         # Extract settings for excerpts
         separator = self.config.post_excerpt_separator
@@ -116,17 +162,42 @@ class EventPlugin(BlogPlugin):
         page.excerpt.authors = page.authors[:max_authors]
         page.excerpt.categories = page.categories[:max_categories]
 
-    def _populate_authors(self, authors: list):
-        resolved_authors: list[Author] = []
+    def _generate_qr(self, post: Post, config: MkDocsConfig):
+        registration: Registration = post.config.registration
 
-        for name in authors:
-            if name not in self.authors:
-                raise PluginError(f"Couldn't find author '{name}'")
+        if not registration.enabled:
+            return
 
-            # Append to list of authors
-            resolved_authors.append(self.authors[name])
+        for option in registration.options:
+            if not option.qr:
+                continue
 
-        return resolved_authors
+            # Compute digest of all fingerprints - we use this value to check if
+            # the exact same card was already generated and cached
+            hash = _digest(option.url)
+
+            file = self._path_to_qr_file(f"{hash}.svg", config)
+
+            qr = QRCode()
+            qr.add_data(option.url)
+
+            img = qr.make_image(image_factory = SvgImage, module_drawer = SvgCircleDrawer())
+            os.makedirs(os.path.dirname(file.abs_src_path), exist_ok = True)
+            img.save(file.abs_src_path)
+
+            # Update manifest by associating file with hash
+            self.manifest[file.url] = hash
+            option.qr_url = file.url
+            file.copy_file()
+
+    def _path_to_qr_file(self, path: str, config: MkDocsConfig):
+        assert path.endswith(".svg")
+        return File(
+            posixpath.join(self.config.qr_dir, path),
+            self.config.cache_dir,
+            config.site_dir,
+            False
+        )
 
     # Register template filters for plugin
     def on_env(self, env, *, config, files):
@@ -138,19 +209,25 @@ class EventPlugin(BlogPlugin):
 
         # Register custom template filters
         env.filters["date"] = date_filter
+        env.globals['now'] = datetime.now
+
+    # Save manifest after build
+    def on_post_build(self, *, config):
+        if not self.config.enabled:
+            return
+
+        # Save manifest if cache should be used
+        if self.config.cache:
+            with open(self.manifest_file, "w") as f:
+                f.write(json.dumps(self.manifest, indent = 2, sort_keys = True))
 
     # Resolve post - the caller must make sure that the given file points to an
     # actual post (and not a page), or behavior might be unpredictable
     def _resolve_post(self, file: File, config: MkDocsConfig):
         post = Post(file, config)
 
-        # @TODO fix in jinja2 template...
-        post.config.past = post.config.end < datetime.now() if post.config.end else post.config.date.created < datetime.now()
-
-        if not post.config.start:
-            post.config.start = post.config.date.created
-        if not post.config.end:
-            post.config.end = post.config.date.created
+        if post.is_event():
+            self._generate_qr(post, config)
 
         # Compute path and create a temporary file for path resolution
         path = self._format_path_for_post(post, config)

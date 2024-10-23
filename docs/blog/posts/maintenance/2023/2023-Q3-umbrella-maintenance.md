@@ -1,6 +1,8 @@
 ---
 draft: false 
 date: 2023-08-09
+start: 2023-08-07T09:00:00
+end: 2023-08-09T17:00:00
 categories: [ Umbrella HPC Cluster ]
 tags: [HPC]
 authors: [a.c.m.bertens, a.van.hoof, e.loomeijer]

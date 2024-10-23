@@ -1,7 +1,7 @@
 {% extends "main.html" %}
 
 {% set posts = [] %}
-{% for post in page.blog.posts if not post.config.past and post.config.type == "event" and "HPC School" in post.config.categories %}
+{% for post in page.blog.posts if post.config.type == "event" and "HPC School" in post.config.categories and not post.config.end < now() %}
   {% set na = posts.insert(loop.index, post) %}
 {% endfor %}
 
@@ -16,7 +16,6 @@
     {% include "partials/event.html" %}
   {% else %}
     {{ super() }}
-
     <h2>Past Events</h2>
     <div class="grid cards">
       <ul>

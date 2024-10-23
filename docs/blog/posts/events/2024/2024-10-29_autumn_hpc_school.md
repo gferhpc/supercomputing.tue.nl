@@ -9,7 +9,7 @@ hero:
 #  button: { title: "Register now!", url: "https://hpcschool.tue.nl/register/" }
 title: Autumn HPC School '24
 categories: [ HPC School ]
-authors: [ g.t.chepuck.fernandes, a.van.hoof, f.toschi, s.x.tao, j.vanschoren ]
+speakers: [ g.t.chepuck.fernandes, a.van.hoof, f.toschi, s.x.tao, j.vanschoren ]
 price: 0.00
 location: TU/e Campus
 image: /assets/images/poster-autumnschool-2024.jpg
@@ -18,15 +18,19 @@ scheme: autumn
 sponsors:
   - { name: "SURF", url: "https://www.surf.nl/", avatar: "/assets/images/logo/surf.svg" }
   - { name: "EuroCC", url: "https://eurocc-netherlands.nl/", avatar: "/assets/images/logo/eurocc.svg" }
-#actions:
-#  - { title: Register Now!, url: https://hpcschool.tue.nl/register }
+registration:
+  enabled: false
+  description: Limited seats available, register quickly!
+  options:
+    - { title: Register TU/e, url: https://hpcschool.tue.nl/register/, qr: true }
+    - { title: Register External, url: https://hpcschool.tue.nl/register-ext/, qr: true }
 schedule:
-  - { title: Supercomputing Primer I, start: 2024-10-29T09:00:00, end: 2024-10-29T14:00:00, location: Neuron 0.354, authors: [ g.t.chepuck.fernandes, a.van.hoof ],
+  - { title: Supercomputing Primer I, start: 2024-10-29T09:00:00, end: 2024-10-29T14:00:00, location: Neuron 0.354, speakers: [ g.t.chepuck.fernandes, a.van.hoof ],
       schedule: [
         { start: 2024-10-29T12:00:00, end: 2024-10-29T13:00:00, icon: food-fork-drink, title: Lunch },
       ]
     }
-  - { title: Supercomputing Primer II, start: 2024-10-30T09:00:00, end: 2024-10-30T14:00:00, location: Neuron 0.354, authors: [ g.t.chepuck.fernandes, a.van.hoof ],
+  - { title: Supercomputing Primer II, start: 2024-10-30T09:00:00, end: 2024-10-30T14:00:00, location: Neuron 0.354, speakers: [ g.t.chepuck.fernandes, a.van.hoof ],
       schedule: [
         { start: 2024-10-30T12:00:00, end: 2024-10-30T13:00:00, icon: food-fork-drink, title: Lunch },
       ]
@@ -36,15 +40,15 @@ schedule:
         { start: 2024-10-31T12:00:00, end: 2024-10-31T13:00:00, icon: food-fork-drink, title: Lunch },
       ]
     }
-  - { title: Managing multiple job submissions with QCG-PilotJob, start: 2024-11-04T09:00:00, end: 2024-11-04T14:00:00, location: Neuron 0.354, authors: [],
+  - { title: Managing multiple job submissions with QCG-PilotJob, start: 2024-11-04T09:00:00, end: 2024-11-04T14:00:00, location: Neuron 0.354, speakers: [],
       schedule: [
-        { start: 2024-11-04T11:00:00, end: 2024-11-04T12:00:00, title: "Keynote: Frederico Toschi", authors: [ f.toschi ] },
+        { start: 2024-11-04T11:00:00, end: 2024-11-04T12:00:00, title: "Keynote: Frederico Toschi", speakers: [ f.toschi ] },
         { start: 2024-11-04T12:00:00, end: 2024-11-04T13:00:00, icon: food-fork-drink, title: Lunch },
       ]
     }
-  - { title: High Performance Deep Learning I, start: 2024-11-05T09:00:00, end: 2024-11-05T17:00:00, location: Neuron 0.354, authors: [],
+  - { title: High Performance Deep Learning I, start: 2024-11-05T09:00:00, end: 2024-11-05T17:00:00, location: Neuron 0.354, speakers: [],
       schedule: [
-        { start: 2024-11-05T11:00:00, end: 2024-11-05T12:00:00, title: "Keynote: Shuxia Tao", authors: [ s.x.tao ] },
+        { start: 2024-11-05T11:00:00, end: 2024-11-05T12:00:00, title: "Keynote: Shuxia Tao", speakers: [ s.x.tao ] },
         { start: 2024-11-05T12:00:00, end: 2024-11-05T13:00:00, icon: food-fork-drink, title: Lunch },
       ]
     }
@@ -58,9 +62,9 @@ schedule:
         { start: 2024-11-07T12:00:00, end: 2024-11-07T13:00:00, icon: food-fork-drink, title: Lunch },
       ]
     }
-  - { title: ParaView for (remote) visualisations, start: 2024-11-08T09:00:00, end: 2024-11-08T14:00:00, location: Neuron 0.354, authors: [],
+  - { title: ParaView for (remote) visualisations, start: 2024-11-08T09:00:00, end: 2024-11-08T14:00:00, location: Neuron 0.354, speakers: [],
       schedule: [
-        { start: 2024-11-07T11:00:00, end: 2024-11-07T12:00:00, title: "Keynote: Joaquin Vanschoren", authors: [ j.vanschoren ] },
+        { start: 2024-11-07T11:00:00, end: 2024-11-07T12:00:00, title: "Keynote: Joaquin Vanschoren", speakers: [ j.vanschoren ] },
         { start: 2024-11-07T12:00:00, end: 2024-11-07T13:00:00, icon: food-fork-drink, title: Lunch },
       ]
   }

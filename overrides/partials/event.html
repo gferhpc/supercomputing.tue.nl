@@ -14,7 +14,7 @@
             {% if post.config.draft %}
               <div class="badge badge--danger">{{ lang.t("blog.draft") }}</div>
             {% endif %}
-            {% if post.config.past %}
+            {% if post.config.end < now() %}
               <div class="badge badge--light">Past Event</div>
             {% endif %}
           </div>
@@ -93,21 +93,21 @@
                 {% endif %}
               </li>
             {% endif %}
-            {% if post.authors %}
+            {% if post.config.speakers %}
               <li class="event-meta__item">
                 <a title="Speakers" class="event-meta__title md-icon">
                   {% include ".icons/material/bullhorn.svg" %}
                 </a>
                 <ul class="author__list">
-                  {% for author in post.authors %}
+                  {% for speaker in post.config.speakers %}
                     <li class="author__item">
-                      {% if author.url %}
-                        <a class="author__link" title="{{ author.name }}" href="{{ author.url | url }}" target="_blank">
-                          <img src="{{ author.avatar | trim("/") | url }}" alt="{{ author.name }}"/>
+                      {% if speaker.url %}
+                        <a class="author__link" title="{{ speaker.name }}" href="{{ speaker.url | url }}" target="_blank">
+                          <img src="{{ speaker.avatar | trim("/") | url }}" alt="{{ speaker.name }}"/>
                         </a>
                       {% else %}
-                        <a class="author__link" title="{{ author.name }}">
-                          <img src="{{ author.avatar | trim("/") | url }}" alt="{{ author.name }}"/>
+                        <a class="author__link" title="{{ speaker.name }}">
+                          <img src="{{ speaker.avatar | trim("/") | url }}" alt="{{ speaker.name }}"/>
                         </a>
                       {% endif %}
                     </li>
@@ -136,12 +136,22 @@
       {% elif post.excerpt and show_content|default(True) %}
         {{ post.excerpt.content }}
       {% endif %}
-      {% if post.config.actions and not post.config.past %}
-        <div class="event-actions">
-          <ul>
-            {% for action in post.config.actions %}
-              <li>
-                <a class="md-button md-button--primary" href="{{ action.url | url }}" target="_blank">{{ action.title }}</a>
+      {% if post.config.registration.enabled %}
+        {% if post.config.registration.description %}
+          <h5 style="grid-column: 1 / -1;text-align: center">{{ post.config.registration.description }}</h5>
+        {% endif %}
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 6rem), 1fr))">
+          <ul style="display: contents">
+            {% for option in post.config.registration.options %}
+              <li style="display: block; text-align: center; margin: 0; padding: 0">
+                <div style="display: grid; justify-content: center; text-align: center">
+                  <a class="md-button md-button--primary" href="{{ option.url }}" target="_blank">
+                    {{ option.title }}
+                  </a>
+                  {% if option.qr %}
+                    <img src="{{ option.qr_url | url }}" alt="{{ option.title }}" style="width: 175px;margin: .2rem auto;background-color: #ffffff;"/>
+                  {% endif %}
+                </div>
               </li>
             {% endfor %}
           </ul>
@@ -202,38 +212,38 @@
       </div>
     {% endif %}
 
-    {% if post.authors %}
+    {% if post.config.speakers %}
       <h2>Speakers</h2>
       <div class="grid cards author">
         <ul>
-          {% for author in post.authors %}
+          {% for speaker in post.config.speakers %}
             <li>
               <div class="flex">
                 <ul class="author__list">
                   <li class="author__item">
-                    {% if author.url %}
-                      <a class="author__link" title="{{ author.name }}" href="{{ author.url }}" target="_blank">
-                        <img src="{{ author.avatar | trim("/") | url }}" alt="{{ author.name }}"/>
+                    {% if speaker.url %}
+                      <a class="author__link" title="{{ speaker.name }}" href="{{ speaker.url }}" target="_blank">
+                        <img src="{{ speaker.avatar | trim("/") | url }}" alt="{{ speaker.name }}"/>
                       </a>
                     {% else %}
-                      <a class="author__link" title="{{ author.name }}">
-                        <img src="{{ author.avatar | trim("/") | url }}" alt="{{ author.name }}"/>
+                      <a class="author__link" title="{{ speaker.name }}">
+                        <img src="{{ speaker.avatar | trim("/") | url }}" alt="{{ speaker.name }}"/>
                       </a>
                     {% endif %}
                   </li>
                 </ul>
                 <div class="author__title">
-                  {% if author.url %}
-                    <a class="author__link" href="{{ author.url }}" target="_blank">
-                      {{ author.name }}
+                  {% if speaker.url %}
+                    <a class="author__link" href="{{ speaker.url }}" target="_blank">
+                      {{ speaker.name }}
                     </a>
                   {% else %}
-                    {{ author.name }}
+                    {{ speaker.name }}
                   {% endif %}
                 </div>
               </div>
               <div class="author__description">
-                {{ author.description }}
+                {{ speaker.description }}
               </div>
             </li>
           {% endfor %}

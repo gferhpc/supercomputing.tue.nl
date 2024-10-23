@@ -3,7 +3,7 @@ date: 2023-09-19
 start: 2023-09-29T09:00:00
 end: 2023-09-29T16:00:00
 categories: [ Trainings ]
-authors: [ r.kotian ]
+speakers: [ r.kotian ]
 location: TU/e Campus
 price: 0.0
 image: /assets/images/logo/python.png
