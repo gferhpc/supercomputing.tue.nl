@@ -102,6 +102,7 @@ plugins:
         "AMD EPYC 7742": "https://www.amd.com/en/support/downloads/drivers.html/processors/epyc/epyc-7002-series/amd-epyc-7742.html"
         "AMD EPYC 7F72": "https://www.amd.com/en/products/cpu/amd-epyc-7f72"
         "AMD EPYC 9254": "https://www.amd.com/en/products/processors/server/epyc/4th-generation-9004-and-8004-series/amd-epyc-9254.html"
+        "AMD EPYC 9374F": "https://www.amd.com/en/products/processors/server/epyc/4th-generation-9004-and-8004-series/amd-epyc-9374f.html"
         "AMD EPYC 9474F": "https://www.amd.com/en/products/processors/server/epyc/4th-generation-9004-and-8004-series/amd-epyc-9474f.html"
         "AMD EPYC 9654": "https://www.amd.com/en/products/processors/server/epyc/4th-generation-9004-and-8004-series/amd-epyc-9654.html"
         "Intel Xeon E5-2640 v4": "https://ark.intel.com/content/www/us/en/ark/products/92984/intel-xeon-processor-e5-2640-v4-25m-cache-2-40-ghz.html"
