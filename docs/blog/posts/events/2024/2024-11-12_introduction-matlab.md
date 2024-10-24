@@ -8,8 +8,7 @@ price: 0.00
 location: TU/e Campus
 image: /assets/images/logo/matlab.png
 type: event
-sponsors:
-  - { name: "SURF", url: "https://www.surf.nl/", avatar: "/assets/images/logo/surf.svg" }
+sponsors: [ surf.nl ]
 registration:
   enabled: True
   options:

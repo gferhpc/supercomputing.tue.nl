@@ -24,7 +24,6 @@ import json
 import os
 import posixpath
 from datetime import datetime
-import qrcode
 from material.plugins.blog.plugin import BlogPlugin
 from material.plugins.social.plugin import _digest
 from mkdocs.config.defaults import MkDocsConfig
@@ -35,15 +34,15 @@ from qrcode.image.styles.moduledrawers.svg import SvgCircleDrawer
 from qrcode.image.svg import SvgImage
 from qrcode.main import QRCode
 
-from .config import BlogConfig
+from .config import CustomBlogConfig
 from .structure import Excerpt, Post, View
 from .structure.config import Registration
 
 
-class BlogPlugin(BlogPlugin[BlogConfig]):
+class CustomBlogPlugin(BlogPlugin[CustomBlogConfig]):
     manifest: dict[str, str] = {}
 
-    config: BlogConfig
+    config: CustomBlogConfig
 
     def on_config(self, config):
         if not self.config.enabled:
@@ -123,21 +122,33 @@ class BlogPlugin(BlogPlugin[BlogConfig]):
         if self.config.authors:
             for name in page.config.authors:
                 if name not in self.authors:
-                    raise PluginError(f"Couldn't find speaker '{name}'")
+                    raise PluginError(f"Couldn't find author '{name}'")
 
                 # Append to list of authors
                 page.authors.append(self.authors[name])
 
-            if page.is_event():
-                for key, name in enumerate(page.config.speakers):
-                    page.config.speakers[key] = self.authors[name]
+        if self.config.speakers and page.is_event():
+            for key, name in enumerate(page.config.speakers):
+                if name not in self.authors:
+                    raise PluginError(f"Couldn't find speaker '{name}'")
+                page.config.speakers[key] = self.authors[name]
 
-                for schedule in page.config.schedule:
-                    for key, name in enumerate(schedule.speakers):
-                        schedule.speakers[key] = self.authors[name]
-                    for child_schedule in schedule.schedule:
-                        for key, name in enumerate(child_schedule.speakers):
-                            child_schedule.speakers[key] = self.authors[name]
+            for schedule in page.config.schedule:
+                for key, name in enumerate(schedule.speakers):
+                    if name not in self.authors:
+                        raise PluginError(f"Couldn't find speaker '{name}'")
+                    schedule.speakers[key] = self.authors[name]
+                for child_schedule in schedule.schedule:
+                    for key, name in enumerate(child_schedule.speakers):
+                        if name not in self.authors:
+                            raise PluginError(f"Couldn't find speaker '{name}'")
+                        child_schedule.speakers[key] = self.authors[name]
+
+        if self.config.sponsors and page.is_event():
+            for key, name in enumerate(page.config.sponsors):
+                if name not in self.authors:
+                    raise PluginError(f"Couldn't find sponsor '{name}'")
+                page.config.sponsors[key] = self.authors[name]
 
         # Extract settings for excerpts
         separator = self.config.post_excerpt_separator

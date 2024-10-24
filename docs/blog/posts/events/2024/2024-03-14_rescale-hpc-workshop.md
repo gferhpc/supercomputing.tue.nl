@@ -8,8 +8,7 @@ price: 0.00
 location: Neuron 0.262
 image: /assets/images/logo/rescale.svg
 type: event
-sponsors:
-  - { name: "Rescale", url: "https://eu.rescale.com/", avatar: "/assets/images/logo/rescale.svg" }
+sponsors: [ rescale.com ]
 ---
 
 # Rescale HPC Workshop

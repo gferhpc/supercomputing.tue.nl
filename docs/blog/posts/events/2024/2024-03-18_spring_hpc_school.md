@@ -14,9 +14,7 @@ hero:
   h2: 8-11 April & 15-19 April
   backdrop: /assets/images/poster-springschool-2025.png
 scheme: spring
-sponsors:
-  - { name: "SURF", url: "https://www.surf.nl/", avatar: "/assets/images/logo/surf.svg" }
-  - { name: "EuroCC", url: "https://eurocc-netherlands.nl/", avatar: "/assets/images/logo/eurocc.svg" }
+sponsors: [ surf.nl, eurocc-netherlands.nl ]
 schedule:
   - { title: Supercomputing Primer I, start: 2024-04-08T09:00:00, end: 2024-04-08T14:00:00, location: Neuron 0.246, speakers: [ g.t.chepuck.fernandes, a.van.hoof ],
       schedule: [

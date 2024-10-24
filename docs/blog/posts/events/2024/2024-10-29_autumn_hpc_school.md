@@ -15,9 +15,7 @@ location: TU/e Campus
 image: /assets/images/poster-autumnschool-2024.jpg
 type: event
 scheme: autumn
-sponsors:
-  - { name: "SURF", url: "https://www.surf.nl/", avatar: "/assets/images/logo/surf.svg" }
-  - { name: "EuroCC", url: "https://eurocc-netherlands.nl/", avatar: "/assets/images/logo/eurocc.svg" }
+sponsors: [ surf.nl, eurocc-netherlands.nl ]
 registration:
   enabled: false
   description: Limited seats available, register quickly!

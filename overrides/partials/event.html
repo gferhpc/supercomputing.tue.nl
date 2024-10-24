@@ -162,7 +162,7 @@
           <li class="event-meta__title" style="justify-content: right">
             <div style="font-weight: 700;">Supported by</div>
           </li>
-          <li class="event-meta__item" style="justify-content: right">
+          <li class="event-meta__item" style="justify-content: right;float: right;">
             <ul class="sponsor__list">
               {% for sponsor in post.config.sponsors %}
                 <li class="sponsor__item">
@@ -250,6 +250,45 @@
         </ul>
       </div>
     {% endif %}
+
+    {% if post.config.sponsors %}
+          <h2>Supported By</h2>
+          <div class="grid cards sponsor">
+            <ul>
+              {% for sponsor in post.config.sponsors %}
+                <li>
+                  <div class="flex">
+                    <ul class="sponsor__list">
+                      <li class="sponsor__item">
+                        {% if sponsor.url %}
+                          <a class="sponsor__link" title="{{ sponsor.name }}" href="{{ sponsor.url }}" target="_blank">
+                            <img src="{{ sponsor.avatar | trim("/") | url }}" alt="{{ sponsor.name }}"/>
+                          </a>
+                        {% else %}
+                          <a class="sponsor__link" title="{{ sponsor.name }}">
+                            <img src="{{ sponsor.avatar | trim("/") | url }}" alt="{{ sponsor.name }}"/>
+                          </a>
+                        {% endif %}
+                      </li>
+                    </ul>
+                    <div class="sponsor__title">
+                      {% if sponsor.url %}
+                        <a class="sponsor__link" href="{{ sponsor.url }}" target="_blank">
+                          {{ sponsor.name }}
+                        </a>
+                      {% else %}
+                        {{ sponsor.name }}
+                      {% endif %}
+                    </div>
+                  </div>
+                  <div class="sponsor__description">
+                    {{ sponsor.description }}
+                  </div>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
   {% endif %}
 </article>
 

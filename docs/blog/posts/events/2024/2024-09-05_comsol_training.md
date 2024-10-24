@@ -23,4 +23,4 @@ schedule:
 # COMSOL Training
 
 We are organizing a COMSOL training event at the TU/e. 
-Open to all TU/e researchers who use or want to use COMSOL: [https://events.hpc.tue.nl/](https://events.hpc.tue.nl/){target=_blank}. Only a few seats left!
+Open to all TU/e researchers who use or want to use COMSOL. Only a few seats left!

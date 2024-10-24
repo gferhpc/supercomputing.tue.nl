@@ -26,7 +26,7 @@ setup(
     entry_points={
         'mkdocs.plugins': [
             'umbrella-specs = src.plugins.specs.plugin:SpecsPlugin',
-            'custom-blog = src.plugins.blog.plugin:BlogPlugin',
+            'custom-blog = src.plugins.blog.plugin:CustomBlogPlugin',
         ]
     }
 )

@@ -39,7 +39,7 @@ from mkdocs.utils.meta import YAML_RE
 from re import Match
 from yaml import SafeLoader
 
-from .config import PostConfig, EventConfig, NewsConfig, MaintenanceConfig
+from .config import CustomPostConfig, EventConfig, NewsConfig, MaintenanceConfig
 
 
 # -----------------------------------------------------------------------------
@@ -91,7 +91,7 @@ class Post(Page):
 
         # Initialize post configuration, but remove all keys that this plugin
         # doesn't care about, or they will be reported as invalid configuration
-        self.config: PostConfig = PostConfig(file.abs_src_path)
+        self.config: CustomPostConfig = CustomPostConfig(file.abs_src_path)
         self.config.load_dict({
             key: self.meta[key] for key in (
                 set(self.meta.keys()) &

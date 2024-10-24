@@ -26,13 +26,13 @@ from mkdocs.config.base import Config
 from mkdocs.config.config_options import ListOfItems, Optional, Type, Choice, SubConfig, URL
 
 
-class PostConfig(PostConfig):
+class CustomPostConfig(PostConfig):
     type = Optional(Choice(["news", "maintenance", "event"]))
 
-class NewsConfig(PostConfig):
+class NewsConfig(CustomPostConfig):
     pass # no additional properties
 
-class MaintenanceConfig(PostConfig):
+class MaintenanceConfig(CustomPostConfig):
     start = Type(datetime)
     end = Type(datetime)
 
@@ -57,13 +57,13 @@ class Registration(Config):
     description = Optional(Type(str))
     options: list[RegistrationOption] = ListOfItems(SubConfig(RegistrationOption), default = [])
 
-class EventConfig(PostConfig):
+class EventConfig(CustomPostConfig):
     start = Type(datetime)
     end = Type(datetime)
     location = Optional(Type(str))
     price = Optional(Type(float))
-    speakers = ListOfItems(Type(str), default = [])
-    sponsors = ListOfItems(Type(dict), default = [])
+    speakers = UniqueListOfItems(Type(str), default = [])
+    sponsors = UniqueListOfItems(Type(str), default = [])
     registration = SubConfig(Registration)
     schedule = ListOfItems(SubConfig(Schedule), default = [])
     image = Optional(Type(str))
