@@ -322,3 +322,7 @@
 .box:hover {
   box-shadow: var(--md-shadow-z2);
 }
+
+a:not([href]) {
+  color: var(--md-default-fg-color);
+}
