@@ -2,8 +2,8 @@
   --md-default-fg-color: #1a1a1a;
   --md-default-bg-color: #fafafa;
 
-  --md-primary-fg-color: #1a1a1a;
-  --md-primary-bg-color: #fafafa;
+  --md-primary-fg-color: var(--md-default-fg-color);
+  --md-primary-bg-color: var(--md-default-bg-color);
 
   --md-accent-fg-color: #c81919;
   --md-accent-bg-color: #fafafa;
@@ -15,11 +15,11 @@
   --md-default-fg-color: #fafafa;
   --md-default-bg-color: #1a1a1a;
 
-  --md-primary-fg-color: #c81919;
-  --md-primary-bg-color: #fafafa;
+  --md-primary-fg-color: var(--md-default-fg-color);
+  --md-primary-bg-color: var(--md-default-bg-color);
 
-  --md-accent-fg-color: #fafafa;
-  --md-accent-bg-color: #c81919;
+  --md-accent-fg-color: #c81919;
+  --md-accent-bg-color: #fafafa;
 
   --md-typeset-a-color: #c81919;
 }
