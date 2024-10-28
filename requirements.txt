@@ -1,9 +1,8 @@
-mkdocs~=1.5
-mkdocs-material @ git+https://${GH_TOKEN}@github.com/ChrisCompton/mkdocs-material-insiders.git
+mkdocs~=1.6
+mkdocs-material~=9.5
 mkdocs-material[imaging]
 mkdocs-awesome-pages-plugin~=2.9
 mkdocs-glightbox~=0.3
 mkdocs-redirects~=1.2
 mkdocs-rss-plugin~=1.8
-setuptools~=68.2.0
 qrcode~=8.0

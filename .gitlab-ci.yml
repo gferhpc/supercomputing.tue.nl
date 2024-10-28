@@ -2,6 +2,7 @@
   image: python:latest
   before_script:
     - pip install --user --upgrade -r requirements.txt
+    - pip install --user --upgrade mkdocs-material@git+https://${GH_TOKEN}@github.com/ChrisCompton/mkdocs-material-insiders.git
     - pip install -e .
     - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.tue.nl/hpclab/website-cluster.git cluster
 

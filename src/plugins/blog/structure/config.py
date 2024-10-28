@@ -21,7 +21,6 @@
 from datetime import datetime
 
 from material.plugins.blog.structure import PostConfig
-from material.plugins.blog.structure.options import UniqueListOfItems
 from mkdocs.config.base import Config
 from mkdocs.config.config_options import ListOfItems, Optional, Type, Choice, SubConfig, URL
 
@@ -47,7 +46,7 @@ class ScheduleItem(Config):
     end = Type(datetime)
     icon = Optional(Type(str))
     location = Optional(Type(str))
-    speakers = UniqueListOfItems(Type(str), default = [])
+    speakers = ListOfItems(Type(str), default = [])
 
 class Schedule(ScheduleItem):
     schedule = ListOfItems(SubConfig(ScheduleItem), default = [])
@@ -67,8 +66,8 @@ class EventConfig(CustomPostConfig):
     end = Type(datetime)
     location = Optional(Type(str))
     price = Optional(Type(float))
-    speakers = UniqueListOfItems(Type(str), default = [])
-    sponsors = UniqueListOfItems(Type(str), default = [])
+    speakers = ListOfItems(Type(str), default = [])
+    sponsors = ListOfItems(Type(str), default = [])
     registration = SubConfig(Registration)
     schedule = ListOfItems(SubConfig(Schedule), default = [])
     image = Optional(Type(str))

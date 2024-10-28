@@ -141,6 +141,9 @@ plugins:
         "NVIDIA Tesla V100-PCIE-16GB": "https://images.nvidia.com/content/technologies/volta/pdf/tesla-volta-v100-datasheet-letter-fnl-web.pdf"
         "NVIDIA TITAN RTX": "https://www.nvidia.com/en-eu/deep-learning-ai/products/titan-rtx/"
         "NVIDIA TITAN Xp": "https://www.nvidia.com/nl-nl/titan/titan-xp/"
+watch:
+  - overrides
+  - layouts
 extra_css:
   - assets/stylesheets/scheme.css
   - assets/stylesheets/site.css

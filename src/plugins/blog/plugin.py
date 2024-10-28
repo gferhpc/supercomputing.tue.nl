@@ -20,15 +20,17 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import posixpath
 from datetime import datetime
+from idlelib.iomenu import encoding
+
 from material.plugins.blog.plugin import BlogPlugin
-from material.plugins.social.plugin import _digest
 from mkdocs.config.defaults import MkDocsConfig
 from mkdocs.exceptions import PluginError
-from mkdocs.plugins import event_priority, BasePlugin
+from mkdocs.plugins import event_priority
 from mkdocs.structure.files import File
 from qrcode.image.styles.moduledrawers.svg import SvgCircleDrawer
 from qrcode.image.svg import SvgImage
@@ -185,9 +187,9 @@ class CustomBlogPlugin(BlogPlugin[CustomBlogConfig]):
 
             # Compute digest of all fingerprints - we use this value to check if
             # the exact same card was already generated and cached
-            hash = _digest(option.url)
+            checksum = hashlib.sha256(str(option.url).encode()).hexdigest()
 
-            file = self._path_to_qr_file(f"{hash}.svg", config)
+            file = self._path_to_qr_file(f"{checksum}.svg", config)
 
             qr = QRCode()
             qr.add_data(option.url)
@@ -197,7 +199,7 @@ class CustomBlogPlugin(BlogPlugin[CustomBlogConfig]):
             img.save(file.abs_src_path)
 
             # Update manifest by associating file with hash
-            self.manifest[file.url] = hash
+            self.manifest[file.url] = str(checksum)
             option.qr_url = file.url
             file.copy_file()
 
