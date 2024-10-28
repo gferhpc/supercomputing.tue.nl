@@ -9,7 +9,7 @@
 
 {% block site_meta %}
   {{ super() }}
-  <meta name="google-site-verification" content="EszpbmOhrtUb-zhbLaBgbdYxUqhVdPY78HTukrucFpg" />
+  <meta name="google-site-verification" content="EszpbmOhrtUb-zhbLaBgbdYxUqhVdPY78HTukrucFpg"/>
 {% endblock %}
 
 {% block htmltitle %}
@@ -25,6 +25,36 @@
 {% block hero %}
   {% if page.meta and page.meta.hero %}
     {% include 'partials/hero.html' %}
+  {% endif %}
+  {% if page.blog %}
+    <div data-md-component="announce">
+      {% for post in page.blog.posts if "news" != post.config.type and not post.config.draft and post.config.banner.enabled and post.config.end >= now() %}
+        <aside class="md-banner"{% if post.config.scheme %} data-md-color-scheme="{{ post.config.scheme }}"{% endif %}>
+          <div class="md-banner__inner md-grid md-typeset">
+            {% if "announce.dismiss" in features %}
+              <button class="md-banner__button md-icon" aria-label="{{ lang.t('announce.dismiss') }}">
+                {% set icon = config.theme.icon.close or "material/close" %}
+                {% include ".icons/" ~ icon ~ ".svg" %}
+              </button>
+            {% endif %}
+            <div class="md-banner__content">
+              <a style="color: var(--md-accent-bg-color)" href="{{ post.url | url }}">
+                {% if post.config.banner.message %}
+                  {{ post.config.banner.message }}
+                {% else %}
+                  {{ post.title }}
+                {% endif %}
+                from <strong>{{ post.config.start | date("EEEE, d MMMM y HH:mm") }}</strong>
+                to <strong>{{ post.config.end | date("EEEE, d MMMM y HH:mm") }}</strong>
+              </a>
+            </div>
+          </div>
+          {% if "announce.dismiss" in features %}
+            {% include "partials/javascripts/announce.html" %}
+          {% endif %}
+        </aside>
+      {% endfor %}
+    </div>
   {% endif %}
 {% endblock %}
 

@@ -1,0 +1,25 @@
+<li class="event-meta__item">
+  <a title="Date" class="event-meta__title md-icon">
+    {% include ".icons/material/calendar.svg" %}
+  </a>
+  {% if post.config.start|date != post.config.end|date %}
+    <ul class="event-meta__list event-meta__date">
+      <li class="event-meta__item">
+        <time datetime="{{ post.config.start }}">
+          <div class="event-meta__title">From</div>
+          {{ post.config.start | date("EEEE, d MMMM y HH:mm") }}
+        </time>
+      </li>
+      <li class="event-meta__item">
+        <time datetime="{{ post.config.end }}">
+          <div class="event-meta__title">Until</div>
+          {{ post.config.end | date("EEEE, d MMMM y HH:mm") }}
+        </time>
+      </li>
+    </ul>
+  {% else %}
+    <time datetime="{{ post.config.start }}">
+      {{ post.config.start | date(date_format) }}
+    </time>
+  {% endif %}
+</li>

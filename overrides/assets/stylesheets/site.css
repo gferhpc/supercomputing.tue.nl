@@ -244,6 +244,16 @@
   align-items: center;
 }
 
+.md-banner {
+  position: relative;
+  z-index: 2;
+  background: var(--md-accent-fg-color);
+  color: var(--md-accent-bg-color);
+  .md-banner__content {
+    text-align: center;
+  }
+}
+
 .hero {
   display: flex;
 

@@ -16,6 +16,8 @@ image: /assets/images/poster-autumnschool-2024.jpg
 type: event
 scheme: autumn
 sponsors: [ surf.nl, eurocc-netherlands.nl ]
+banner:
+  enabled: true
 registration:
   enabled: false
   description: Limited seats available, register quickly!

@@ -179,19 +179,19 @@ markdown_extensions:
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
 #edit_uri: https://gitlab.tue.nl/hpclab/website/edit/main/pages/
+copyright: Copyright © 2020 — TU/e Supercomputing Center
 extra:
-#  announcement: ["⚠️ TU/e Umbrella HPC Cluster maintenance scheduled between 26th and 28th of August 2024 ⚠️"]
   analytics:
     provider: google
     property: GTM-MSH9NTC5
   social:
-    - name: Eindhoven Computing Center at LinkedIn
+    - name: TU/e Supercomputing Center at LinkedIn
       icon: material/linkedin
       short: /in/supercomputing
       link: https://www.linkedin.com/in/supercomputing/
-    - name: HPC Lab Teams Community @ TU/e
+    - name: TU/e Supercomputing Center at MS Teams
       icon: material/microsoft-teams
-      short: HPC Lab TU/e
+      short: TU/e SCC
       link: https://teams.microsoft.com/l/team/19:7830cc8a6f244d6689a374c60673b43c%40thread.tacv2/conversations?groupId=a07b9e15-8538-4889-8610-502177c36dc7&tenantId=cc7df247-60ce-4a0f-9d75-704cf60efc64
   consent:
     title: Our website uses cookies

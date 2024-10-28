@@ -19,13 +19,7 @@
         {% endif %}
       </div>
       <div class="event-info">
-        <div class="event-title">
-          {% if page == post %}
-            {{ post.title }}
-          {% else %}
-            <a href="{{ post.url | url }}">{{ post.title }}</a>
-          {% endif %}
-        </div>
+        {% include "blog/title.html" %}
         <div class="event-meta">
           <ul class="event-meta__list">
             <li class="event-meta__item">

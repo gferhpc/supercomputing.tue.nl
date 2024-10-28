@@ -32,9 +32,14 @@ class CustomPostConfig(PostConfig):
 class NewsConfig(CustomPostConfig):
     pass # no additional properties
 
+class AnnouncementBanner(Config):
+    enabled = Type(bool, default = False)
+    message = Optional(Type(str))
+
 class MaintenanceConfig(CustomPostConfig):
     start = Type(datetime)
     end = Type(datetime)
+    banner = SubConfig(AnnouncementBanner)
 
 class ScheduleItem(Config):
     title = Type(str)
@@ -68,3 +73,4 @@ class EventConfig(CustomPostConfig):
     schedule = ListOfItems(SubConfig(Schedule), default = [])
     image = Optional(Type(str))
     scheme = Optional(Type(str))
+    banner = SubConfig(AnnouncementBanner)

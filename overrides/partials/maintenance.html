@@ -19,64 +19,10 @@
         {% endif %}
       </div>
       <div class="event-info">
-        <div class="event-title">
-          {% if page == post %}
-            {{ post.title }}
-          {% else %}
-            <a href="{{ post.url | url }}">{{ post.title }}</a>
-          {% endif %}
-        </div>
+        {% include "blog/title.html" %}
         <div class="event-meta">
           <ul class="event-meta__list">
-            <li class="event-meta__item">
-              <a title="Date" class="event-meta__title md-icon">
-                {% include ".icons/material/calendar.svg" %}
-              </a>
-              {% if post.config.start|date != post.config.end|date %}
-                <ul class="event-meta__list event-meta__date">
-                  <li class="event-meta__item">
-                    <time datetime="{{ post.config.start }}">
-                      <div class="event-meta__title">From</div>
-                      {{ post.config.start | date("EEEE, d MMMM y HH:mm") }}
-                    </time>
-                  </li>
-                  <li class="event-meta__item">
-                    <time datetime="{{ post.config.end }}">
-                      <div class="event-meta__title">Until</div>
-                      {{ post.config.end | date("EEEE, d MMMM y HH:mm") }}
-                    </time>
-                  </li>
-                </ul>
-              {% else %}
-                <time datetime="{{ post.config.start }}">
-                  {{ post.config.start | date(date_format) }}
-                </time>
-              {% endif %}
-            </li>
-            {% if post.config.location %}
-              <li class="event-meta__item">
-                <a title="Location" class="event-meta__title md-icon">
-                  {% include ".icons/material/map-marker.svg" %}
-                </a>
-                {% if post.config.location_url %}
-                  <a href="{{ post.config.location_url }}" target="_blank">{{ post.config.location }}</a>
-                {% else %}
-                  {{ post.config.location }}
-                {% endif %}
-              </li>
-            {% endif %}
-            {% if post.config.price != None %}
-              <li class="event-meta__item">
-                <a title="Price" class="event-meta__title md-icon">
-                  {% include ".icons/material/currency-eur.svg" %}
-                </a>
-                {% if post.config.price == 0.0 %}
-                  Free
-                {% else %}
-                  {{ post.config.price | replace(".", ",") }}
-                {% endif %}
-              </li>
-            {% endif %}
+            {% include "blog/meta/date.html" %}
             {% if post.authors %}
               <li class="event-meta__item">
                 <a title="Speakers" class="event-meta__title md-icon">

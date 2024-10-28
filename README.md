@@ -30,10 +30,12 @@ the [official documentation](https://squidfunk.github.io/mkdocs-material/plugins
 
 In addition to `news`:
 
-| Property | Value                              | Description                        |
-|----------|------------------------------------|------------------------------------|
-| start    | YYYY-MM-DD<br/>YYYY-MM-DDTHH:II:SS | Start date/time of the maintenance | 
-| end      | YYYY-MM-DD<br/>YYYY-MM-DDTHH:II:SS | End date/time of the maintenance   | 
+| Property       | Value                              | Description                        |
+|----------------|------------------------------------|------------------------------------|
+| start          | YYYY-MM-DD<br/>YYYY-MM-DDTHH:II:SS | Start date/time of the maintenance | 
+| end            | YYYY-MM-DD<br/>YYYY-MM-DDTHH:II:SS | End date/time of the maintenance   | 
+| banner.enabled | Boolean                            | Show banner                        |
+| banner.message | String                             | Message to show within the banner  | 
 
 ### Type `event`
 

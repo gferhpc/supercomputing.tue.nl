@@ -24,39 +24,10 @@
         </div>
       {% endif %}
       <div class="event-info">
-        {% if page == post %}
-          <h1 class="event-title">{{ post.title }}</h1>
-        {% else %}
-          {% set post_url = post_url|default(post.url) %}
-          <h2 class="event-title"><a href="{{ post_url | url }}">{{ post.title }}</a></h2>
-        {% endif %}
+        {% include "blog/title.html" %}
         <div class="event-meta">
           <ul class="event-meta__list">
-            <li class="event-meta__item">
-              <a title="Date" class="event-meta__title md-icon">
-                {% include ".icons/material/calendar.svg" %}
-              </a>
-              {% if post.config.start|date != post.config.end|date %}
-                <ul class="event-meta__list event-meta__date">
-                  <li class="event-meta__item">
-                    <time datetime="{{ post.config.start }}">
-                      <div class="event-meta__title">From</div>
-                      {{ post.config.start | date(date_format) }}
-                    </time>
-                  </li>
-                  <li class="event-meta__item">
-                    <time datetime="{{ post.config.end }}">
-                      <div class="event-meta__title">Until</div>
-                      {{ post.config.end | date(date_format) }}
-                    </time>
-                  </li>
-                </ul>
-              {% else %}
-                <time datetime="{{ post.config.start }}">
-                  {{ post.config.start | date(date_format) }}
-                </time>
-              {% endif %}
-            </li>
+            {% include "blog/meta/date.html" %}
             {% if post.config.start != post.config.end %}
               <li class="event-meta__item">
                 <a title="Time" class="event-meta__title md-icon">
