@@ -1,6 +1,7 @@
 MIT License
 
-Copyright (c) 2023 HPC Lab https://supercomputing@tue.nl/
+Copyright (c) 2023 Emily Loomeijer <e.loomeijer@tue.nl>
+Copyright (c) 2020 [TU/e Supercomputing Center](https://supercomputing.tue.nl/) <supercomputing@tue.nl>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

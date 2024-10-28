@@ -57,7 +57,7 @@ have very basic Python knowledge.
 ### Target audience
 This workshop will greatly benefit all levels (undergraduates, Masters, and PhDs) of students who need
 to optimize their code to run faster with fewer computing resources in any infrastructure(SURF,
-Rescale) that the HPC lab provides.
+Rescale) that the TU/e Supercomputing Center provides.
 
 ### Modules description
 This workshop will have 10 modules. Each module is independent of the others.

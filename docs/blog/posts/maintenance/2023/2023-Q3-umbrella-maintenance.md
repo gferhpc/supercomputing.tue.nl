@@ -31,7 +31,7 @@ Cluster maintenance completed. For more details click on the "Continue reading" 
     a few. The foss/2022a module has a more recent GCC and OpenMPI.
 -   When using more memory than available on a node swap will not be
     utilized and the job will be cancelled.
--   Other changes allow the HPC Lab to implement more features and add
+-   Other changes allow the TU/e Supercomputing Center to implement more features and add
     usability; more information will follow.
 
 ### What do you need to do?

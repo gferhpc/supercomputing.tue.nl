@@ -1,7 +1,5 @@
 ---
-hide:
-  - navigation
-  - toc
+hide: [ navigation, meta ]
 template: landing.html
 title: Home
 hero:

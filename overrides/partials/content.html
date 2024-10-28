@@ -1,0 +1,12 @@
+{% if "material/tags" in config.plugins and tags %}
+  {% include "partials/tags.html" %}
+{% endif %}
+{% if "meta" not in page.meta.hide %}
+  {% include "partials/source-file.html" %}
+{% endif %}
+{% if "\x3ch1" not in page.content %}
+  <h1>{{ page.title | d(config.site_name, true)}}</h1>
+{% endif %}
+{{ page.content }}
+{% include "partials/feedback.html" %}
+{% include "partials/comments.html" %}

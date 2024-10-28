@@ -345,3 +345,8 @@
 a:not([href]) {
   color: var(--md-default-fg-color);
 }
+
+.md-source-file {
+  float: right;
+  opacity: .7;
+}

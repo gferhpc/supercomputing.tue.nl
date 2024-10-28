@@ -5,7 +5,8 @@ title: Mastodont (big memory)
 # Mastodont
 
 !!! note
-    This machine isn't managed by the HPC Lab and is only documented here for historic reasons.
+
+    This machine isn't managed by the TU/e Supercomputing Center and is only documented here for historic reasons.
 
 `mastodont.win.tue.nl` is a Linux system designed to support
 long-running computations that require a large amount of RAM.

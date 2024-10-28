@@ -1,5 +1,5 @@
 ---
-hide: [ navigation ]
+hide: [ navigation, meta ]
 hero:
   backdrop: /assets/images/backdrops/contact.jpg
   #  attribution: { 

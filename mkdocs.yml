@@ -59,6 +59,13 @@ plugins:
   - custom-blog:
       post_excerpt_max_authors: 10
   - glightbox
+#  - git-authors:
+#      ignore_authors: [ "Not Committed Yet", "not.committed.yet" ]
+#      fallback_to_empty: true
+  - git-revision-date-localized:
+      enabled: !ENV [CI, false]
+      enable_creation_date: true
+      type: timeago
   - privacy:
       enabled: !ENV [CI, false]
   - redirects:
@@ -178,7 +185,8 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-#edit_uri: https://gitlab.tue.nl/hpclab/website/edit/main/pages/
+repo_url: https://gitlab.tue.nl/hpclab/website/
+edit_uri: https://gitlab.tue.nl/hpclab/website/edit/main/docs
 copyright: Copyright © 2020 — TU/e Supercomputing Center
 extra:
   analytics:
