@@ -7,4 +7,3 @@ mkdocs-redirects~=1.2
 mkdocs-rss-plugin~=1.8
 setuptools~=68.2.0
 qrcode~=8.0
-mkdocs-git-revision-date-localized-plugin~=1.3
