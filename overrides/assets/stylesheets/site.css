@@ -1,18 +1,21 @@
 @font-face {
-  font-family: "AvenirNext";
-  font-weight: 700;
+  font-family: "AvenirNext Bold";
   src: url('/assets/fonts/AvenirNext-Bold.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: "AvenirNext";
-  font-weight: 500;
+  font-family: "AvenirNext Medium";
   src: url('/assets/fonts/AvenirNext-Medium.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: "AvenirNext";
+  font-family: "AvenirNext Regular";
   src: url('/assets/fonts/AvenirNext-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Gilroy Bold";
+  src: url('/assets/fonts/Gilroy-Bold.woff2') format('woff2');
 }
 
 [data-md-color-scheme] {
@@ -44,7 +47,7 @@
 
   .md-header__title {
     margin-right: 2em;
-    font-family: "AvenirNext", Lato, sans-serif;
+    font-family: "AvenirNext Bold", "Gilroy Bold", Lato, sans-serif;
     text-rendering: geometricPrecision;
     z-index: 1;
 
@@ -119,6 +122,8 @@
 }
 
 .md-typeset {
+  text-rendering: geometricPrecision;
+
   a:hover, button:hover {
     color: var(--md-typeset-a-hover-color);
   }
@@ -138,6 +143,14 @@
 
   .admonition {
     background-color: var(--md-default-bg-color--light);
+  }
+
+  h1 {
+    font-family: "AvenirNext Bold", "Gilroy Bold", Lato, sans-serif;
+  }
+
+  h2, h3, h4, h5, h6 {
+    font-family: "Gilroy Bold", Lato, sans-serif;
   }
 }
 
@@ -273,14 +286,10 @@
 
     h1 {
       font-size: clamp(1.3rem, 2.5vw, 2.5rem);
-      font-family: "AvenirNext", Lato, sans-serif;
-      font-weight: 700;
     }
 
     h2 {
       font-size: clamp(1.3rem, 2.5vw, 2.5rem);
-      font-family: "AvenirNext", Lato, sans-serif;
-      font-weight: 500;
     }
 
     h1, h2 {

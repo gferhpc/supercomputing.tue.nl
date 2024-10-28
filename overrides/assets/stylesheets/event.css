@@ -75,10 +75,8 @@
   }
 
   .event-title {
-    margin-bottom: .1rem;
-    font-size: 1.5em;
+    margin: .1rem;
     color: var(--md-primary-fg-color);
-    font-weight: 400;
   }
 
   .event-image {
