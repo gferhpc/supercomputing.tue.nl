@@ -160,7 +160,9 @@
         <ul class="table">
           {% for item in post.config.schedule %}
             {% set type = "main" %}
-            {% include "partials/schedule.html" %}
+            {% if post.config.schedule | length > 1 %}
+              {% include "partials/schedule.html" %}
+            {% endif %}
             {% for item in item.schedule %}
               {% set type = "child" %}
               {% include "partials/schedule.html" %}
