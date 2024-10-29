@@ -30,9 +30,9 @@ schedule:
         { start: 2024-10-29T12:00:00, end: 2024-10-29T13:00:00, icon: food-fork-drink, title: Lunch },
       ]
     }
-  - { title: Supercomputing Primer II, start: 2024-10-30T09:00:00, end: 2024-10-30T14:00:00, location: Neuron 0.354, speakers: [ g.t.chepuck.fernandes, a.van.hoof ],
+  - { title: Supercomputing Primer II, start: 2024-10-30T09:00:00, end: 2024-10-30T14:00:00, location: Neuron 0.354, speakers: [ g.t.chepuck.fernandes, a.van.hoof ], disabled: "CANCELED",
       schedule: [
-        { start: 2024-10-30T12:00:00, end: 2024-10-30T13:00:00, icon: food-fork-drink, title: Lunch },
+        { start: 2024-10-30T12:00:00, end: 2024-10-30T13:00:00, icon: food-fork-drink, title: Lunch, disabled: True },
       ]
     }
   - { title: Introduction to Supercomputing + Filesystems, start: 2024-10-31T09:00:00, end: 2024-10-31T14:00:00, location: Neuron 0.262,
@@ -46,7 +46,7 @@ schedule:
         { start: 2024-11-04T12:00:00, end: 2024-11-04T13:00:00, icon: food-fork-drink, title: Lunch },
       ]
     }
-  - { title: High Performance Deep Learning I, start: 2024-11-05T09:00:00, end: 2024-11-05T17:00:00, location: Neuron 0.354, speakers: [],
+  - { title: High Performance Deep Learning I, start: 2024-11-05T09:00:00, end: 2024-11-05T17:00:00, location: Neuron 0.266, speakers: [],
       schedule: [
         { start: 2024-11-05T11:00:00, end: 2024-11-05T12:00:00, title: "Keynote: Shuxia Tao", speakers: [ s.x.tao ] },
         { start: 2024-11-05T12:00:00, end: 2024-11-05T13:00:00, icon: food-fork-drink, title: Lunch },

@@ -1,4 +1,9 @@
-<div class="cell">
+{% set class = "cell" %}
+{% if item.disabled %}
+  {% set class = class ~ " disabled" %}
+{% endif %}
+
+<div class="{{ class }}">
   <div class="flex">
     {% if item.schedule %}
       <span class="md-icon">{% include ".icons/material/calendar.svg" %}</span>
@@ -11,14 +16,14 @@
   {#  </div>#}
 </div>
 
-<div class="cell">
+<div class="{{ class }}">
   <div class="flex">
     <span class="md-icon">{% include ".icons/material/clock-outline.svg" %}</span>
     <span style="white-space: nowrap">{{ item.start | date("HH:mm") }} - {{ item.end | date("HH:mm") }}</span>
   </div>
 </div>
 
-<div class="cell">
+<div class="{{ class }}">
   <div class="flex">
     {% if item.location %}
       <span class="md-icon">{% include ".icons/material/map-marker.svg" %}</span>
@@ -27,7 +32,7 @@
   </div>
 </div>
 
-<div class="cell mobile-hide" style="padding-right: .1rem">
+<div class="{{ class }} mobile-hide" style="padding-right: .1rem">
   {% if item.speakers %}
     <ul class="author__list" style="justify-content: right">
       {% for speaker in item.speakers %}
@@ -51,7 +56,7 @@
   {% endif %}
 </div>
 
-<div class="cell" style="padding-left: .1rem;">
+<div class="{{ class }}" style="padding-left: .1rem;">
   <div class="flex">
     {% if item.url %}
       <div style="font-weight: 700; white-space: nowrap">
@@ -65,21 +70,27 @@
   </div>
 </div>
 
-<div class="cell" style="width: 100%">
+<div class="{{ class }}" style="width: 100%">
 </div>
 
 <div class="cell" style="padding-left: .1rem;">
-  <div class="flex">
-    {% if item.actions %}
-      {% for action in item.actions %}
-        <div class="schedule__action" style="white-space: nowrap;">
-          {% if action.url %}
-            <a class="md-button md-button--primary" href="{{ action.url | url }}" target="_blank">{{ action.title }}</a>
-          {% else %}
-            <a class="md-button" target="_blank">{{ action.title }}</a>
-          {% endif %}
-        </div>
-      {% endfor %}
-    {% endif %}
-  </div>
+  {% if item.disabled and item.schedule %}
+    <span style="font-weight: 700; font-size: 1.6rem; position: absolute; left: 50%; transform: translate(-50%, -50%) rotate(-5deg); color: crimson;">
+      {{ item.disabled }}
+    </span>
+  {% else %}
+    <div class="flex">
+      {% if item.actions %}
+        {% for action in item.actions %}
+          <div class="schedule__action" style="white-space: nowrap;">
+            {% if action.url %}
+              <a class="md-button md-button--primary" href="{{ action.url | url }}" target="_blank">{{ action.title }}</a>
+            {% else %}
+              <a class="md-button" target="_blank">{{ action.title }}</a>
+            {% endif %}
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+  {% endif %}
 </div>

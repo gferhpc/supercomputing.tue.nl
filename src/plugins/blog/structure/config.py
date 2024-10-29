@@ -1,4 +1,6 @@
 from datetime import datetime
+from email.policy import default
+
 from material.plugins.blog.structure import PostConfig
 from mkdocs.config.base import Config
 from mkdocs.config.config_options import ListOfItems, Optional, Type, Choice, SubConfig, URL
@@ -26,6 +28,7 @@ class ScheduleItem(Config):
     icon = Optional(Type(str))
     location = Optional(Type(str))
     speakers = ListOfItems(Type(str), default = [])
+    disabled = Optional(Type(str|bool))
 
 class Schedule(ScheduleItem):
     schedule = ListOfItems(SubConfig(ScheduleItem), default = [])

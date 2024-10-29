@@ -249,6 +249,7 @@
   z-index: 2;
   background: var(--md-accent-fg-color);
   color: var(--md-accent-bg-color);
+
   .md-banner__content {
     text-align: center;
   }
@@ -275,6 +276,7 @@
     right: 0;
     align-self: end;
     z-index: 1;
+
     a {
       color: var(--md-default-bg-color--light);
       font-style: italic;
@@ -532,6 +534,7 @@ a:not([href]) {
     font-weight: 700;
     margin-left: .2rem;
   }
+
   .author__description {
     margin-top: .2rem;
   }
@@ -539,6 +542,12 @@ a:not([href]) {
 
 .schedule {
   border-top: .05rem solid var(--md-primary-fg-color--lighter);
+
+  .cell.disabled > * {
+    opacity: .25 !important;
+    filter: grayscale(1);
+    text-decoration: line-through;
+  }
 
   .main .cell {
     border-bottom: 1px solid var(--md-default-fg-color--lightest);
@@ -620,6 +629,7 @@ ul.author__list {
     font-weight: 700;
     margin-left: .2rem;
   }
+
   .sponsor__description {
     margin-top: .2rem;
   }
