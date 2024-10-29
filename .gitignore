@@ -3,5 +3,5 @@
 /public
 /site
 /Pipfile*
-/*.egg-info
 /cluster
+*.egg-info

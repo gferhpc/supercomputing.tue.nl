@@ -1,35 +1,29 @@
 .deploy: &deploy
+  artifacts:
+    paths:
+      - public
   image: python:latest
   before_script:
-    - pip install --user --upgrade -r requirements.txt
-    - pip install --user --upgrade mkdocs-material@git+https://${GH_TOKEN}@github.com/ChrisCompton/mkdocs-material-insiders.git
-    - pip install -e .
+    - python3 -m pip install --user --upgrade --upgrade-strategy eager -e .
     - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.tue.nl/hpclab/website-cluster.git cluster
+  variables:
+    GIT_DEPTH: 1000
 
 build:
   <<: *deploy
   stage: build
   script:
-    - 'python3 -m mkdocs build --no-directory-urls --site-dir public'
-    - 'echo "Preview URL: $PUBLIC_URL"'
-  artifacts:
-    paths:
-      - public
+    - "python3 -m mkdocs build --no-directory-urls --site-dir public"
   environment:
     name: review/$CI_COMMIT_REF_NAME
-    url: &url "https://$CI_PROJECT_ROOT_NAMESPACE.$CI_PAGES_DOMAIN/-/sites/$CI_PROJECT_NAME/-/jobs/$CI_JOB_ID/artifacts/public/index.html"
-  variables:
-    PUBLIC_URL: *url
+    url: "https://$CI_PROJECT_ROOT_NAMESPACE.$CI_PAGES_DOMAIN/-/sites/$CI_PROJECT_NAME/-/jobs/$CI_JOB_ID/artifacts/public/index.html"
   rules:
-    - if: '$CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH'
+    - if: "$CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH"
 
 pages:
   <<: *deploy
   stage: deploy
   script:
-    - 'python3 -m mkdocs build --site-dir public'
-  artifacts:
-    paths:
-      - public
+    - "python3 -m mkdocs build --site-dir public"
   rules:
-    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+    - if: "$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH"

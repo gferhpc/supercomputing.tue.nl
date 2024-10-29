@@ -53,21 +53,35 @@ theme:
     repo: fontawesome/brands/gitlab
     edit: material/pencil
     view: material/eye
+extra_css:
+  - assets/css/scheme.css
+  - assets/css/site.css
+extra_javascript:
+  - assets/js/vendor/jquery.min.js
+  - assets/js/particles.js
 plugins:
   - awesome-pages:
       filename: .pages.yml
-  - custom-blog:
-      post_excerpt_max_authors: 10
   - glightbox
-#  - git-authors:
-#      ignore_authors: [ "Not Committed Yet", "not.committed.yet" ]
-#      fallback_to_empty: true
-#  - git-revision-date-localized:
-#      enabled: !ENV [CI, false]
-#      fallback_to_build_date: true
-#      enable_creation_date: true
-#      timezone: Europe/Amsterdam
-#      type: timeago
+  - git-revision-date-localized:
+      enabled: !ENV [CI, false]
+      fallback_to_build_date: true
+      enable_creation_date: true
+      timezone: Europe/Amsterdam
+      type: timeago
+  - minify:
+      enabled: !ENV [CI, false]
+      minify_html: true
+      htmlmin_opts:
+        remove_comments: true
+      minify_js: true
+      minify_css: true
+      cache_safe: true
+      js_files:
+        - assets/js/particles.js
+      css_files:
+        - assets/css/scheme.css
+        - assets/css/site.css
   - privacy:
       enabled: !ENV [CI, false]
   - redirects:
@@ -79,13 +93,9 @@ plugins:
         as_creation: date
       categories:
         - categories
-  - search:
-      lang: en
-  - social:
-      enabled: !ENV [CI, false]
-      cards_layout_dir: layouts
-      cards_layout: custom
-  - umbrella-specs:
+  - scc/blog:
+      post_excerpt_max_authors: 10
+  - scc/specs:
       sinfo_path: cluster/.cache/sinfo.json
       extra_nodes:
         - { name: tue-login001, address: 'hpc.tue.nl', multithreading: True, cpus: 48, extra: "{\"cpu\": \"AMD EPYC 9254\", \"cpu_frq\": \"2.90\", \"mem\": \"128\"}" }
@@ -141,16 +151,13 @@ plugins:
         "NVIDIA Tesla V100-PCIE-16GB": "https://images.nvidia.com/content/technologies/volta/pdf/tesla-volta-v100-datasheet-letter-fnl-web.pdf"
         "NVIDIA TITAN RTX": "https://www.nvidia.com/en-eu/deep-learning-ai/products/titan-rtx/"
         "NVIDIA TITAN Xp": "https://www.nvidia.com/nl-nl/titan/titan-xp/"
+  - search:
+      lang: en
+  - social:
+      enabled: !ENV [CI, false]
 watch:
   - overrides
   - layouts
-extra_css:
-  - assets/stylesheets/scheme.css
-  - assets/stylesheets/site.css
-  - assets/stylesheets/event.css
-extra_javascript:
-  - https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js
-  - assets/javascripts/extra.js
 markdown_extensions:
   # Python Markdown
   - abbr

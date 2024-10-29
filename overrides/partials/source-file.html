@@ -25,12 +25,7 @@
       {% endif %}
     </span>
     <nav>
-      {% set names = authors[:4] | join(", ", attribute="name") %}
-      {% set more = authors[4:] | length %}
-      {% if more %}
-        {% set names = names ~ ", +" ~ more ~ " more" %}
-      {% endif %}
-      <span style="font-weight: 700;" title="{{ names }}">{{ authors | length }}</span>
+      <span style="font-weight: 700;">{{ authors | length }}</span>
     </nav>
   </span>
 {% endmacro %}

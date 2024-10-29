@@ -6,6 +6,7 @@
     <option name="PARENT_ENVS" value="true" />
     <envs>
       <env name="PYTHONUNBUFFERED" value="1" />
+      <env name="GH_TOKEN" value="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" />
     </envs>
     <option name="SDK_HOME" value="" />
     <option name="WORKING_DIRECTORY" value="" />

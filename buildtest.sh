@@ -6,12 +6,11 @@
 set -e
 
 if [ ! -e pyvenv ]; then
-	python3 -m venv --upgrade-deps pyvenv
-	pip install --upgrade -r requirements.txt
-	pip install -e .
+  python3 -m venv --upgrade-deps pyvenv
+  pip install --user --upgrade --upgrade-strategy eager -e .
 else
-	echo "Pyvenv already exists; not reinstalling it."
-	echo "If packages changed, please remove venv dir, then rerun this script."
+  echo "Pyvenv already exists; not reinstalling it."
+  echo "If packages changed, please remove venv dir, then rerun this script."
 fi
 . pyvenv/bin/activate
 
