@@ -35,7 +35,7 @@ schedule:
         { start: 2024-10-30T12:00:00, end: 2024-10-30T13:00:00, icon: food-fork-drink, title: Lunch },
       ]
     }
-  - { title: Introduction to Supercomputing + Filesystems, start: 2024-10-31T09:00:00, end: 2024-10-31T14:00:00, location: Neuron 0.354,
+  - { title: Introduction to Supercomputing + Filesystems, start: 2024-10-31T09:00:00, end: 2024-10-31T14:00:00, location: Neuron 0.262,
       schedule: [
         { start: 2024-10-31T12:00:00, end: 2024-10-31T13:00:00, icon: food-fork-drink, title: Lunch },
       ]
@@ -52,7 +52,7 @@ schedule:
         { start: 2024-11-05T12:00:00, end: 2024-11-05T13:00:00, icon: food-fork-drink, title: Lunch },
       ]
     }
-  - { title: High Performance Deep Learning II, start: 2024-11-06T09:00:00, end: 2024-11-06T17:00:00, location: Neuron 0.354,
+  - { title: High Performance Deep Learning II, start: 2024-11-06T09:00:00, end: 2024-11-06T17:00:00, location: Neuron 0.262,
       schedule: [
         { start: 2024-11-06T12:00:00, end: 2024-11-06T13:00:00, icon: food-fork-drink, title: Lunch },
       ]
