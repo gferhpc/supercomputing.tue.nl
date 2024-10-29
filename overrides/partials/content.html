@@ -4,7 +4,7 @@
 {% if "meta" not in page.meta.hide %}
   {% include "partials/source-file.html" %}
 {% endif %}
-{% if "\x3ch1" not in page.content %}
+{% if "title" not in page.meta.hide and "\x3ch1" not in page.content %}
   <h1>{{ page.title | d(config.site_name, true)}}</h1>
 {% endif %}
 {{ page.content }}

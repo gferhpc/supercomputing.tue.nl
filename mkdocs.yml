@@ -88,6 +88,7 @@ plugins:
       redirect_maps:
         'documentation/introduction.md': 'documentation/index.md'
   - rss:
+      enabled: !ENV [CI, false]
       match_path: 'blog.posts.(news|events|maintenance).[0-9]+..*'
       date_from_meta:
         as_creation: date

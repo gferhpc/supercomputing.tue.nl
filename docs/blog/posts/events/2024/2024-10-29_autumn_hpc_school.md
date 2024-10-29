@@ -17,7 +17,7 @@ type: event
 scheme: autumn
 sponsors: [ surf.nl, eurocc-netherlands.nl ]
 banner:
-  enabled: true
+  enabled: false
 registration:
   enabled: false
   description: Limited seats available, register quickly!
