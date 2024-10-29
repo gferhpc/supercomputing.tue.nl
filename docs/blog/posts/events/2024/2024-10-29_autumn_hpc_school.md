@@ -25,12 +25,12 @@ registration:
     - { title: Register TU/e, url: https://hpcschool.tue.nl/register/, qr: true }
     - { title: Register External, url: https://hpcschool.tue.nl/register-ext/, qr: true }
 schedule:
-  - { title: Supercomputing Primer I, start: 2024-10-29T09:00:00, end: 2024-10-29T14:00:00, location: Neuron 0.354, speakers: [ g.t.chepuck.fernandes, a.van.hoof ],
+  - { title: Supercomputing Primer I, start: 2024-10-29T09:00:00, end: 2024-10-29T14:00:00, location: Neuron 0.354, speakers: [ g.t.chepuck.fernandes ],
       schedule: [
         { start: 2024-10-29T12:00:00, end: 2024-10-29T13:00:00, icon: food-fork-drink, title: Lunch },
       ]
     }
-  - { title: Supercomputing Primer II, start: 2024-10-30T09:00:00, end: 2024-10-30T14:00:00, location: Neuron 0.354, speakers: [ g.t.chepuck.fernandes, a.van.hoof ], disabled: "CANCELED",
+  - { title: Supercomputing Primer II, start: 2024-10-30T09:00:00, end: 2024-10-30T14:00:00, location: Neuron 0.354, speakers: [ a.van.hoof ], disabled: "CANCELED",
       schedule: [
         { start: 2024-10-30T12:00:00, end: 2024-10-30T13:00:00, icon: food-fork-drink, title: Lunch, disabled: True },
       ]

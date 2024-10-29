@@ -159,19 +159,13 @@
       <div class="schedule">
         <ul class="table">
           {% for item in post.config.schedule %}
-            <li class="row main">
-              {% include "partials/schedule.html" %}
-            </li>
+            {% set type = "main" %}
+            {% include "partials/schedule.html" %}
             {% for item in item.schedule %}
-              <li class="row child">
-                {% include "partials/schedule.html" %}
-              </li>
+              {% set type = "child" %}
+              {% include "partials/schedule.html" %}
             {% endfor %}
             <li class="row break">
-              <div class="cell"></div>
-              <div class="cell"></div>
-              <div class="cell"></div>
-              <div class="cell"></div>
               <div class="cell"></div>
               <div class="cell"></div>
               <div class="cell"></div>
@@ -221,43 +215,43 @@
     {% endif %}
 
     {% if post.config.sponsors %}
-          <h2>Supported By</h2>
-          <div class="grid cards sponsor">
-            <ul>
-              {% for sponsor in post.config.sponsors %}
-                <li>
-                  <div class="flex">
-                    <ul class="sponsor__list">
-                      <li class="sponsor__item">
-                        {% if sponsor.url %}
-                          <a class="sponsor__link" title="{{ sponsor.name }}" href="{{ sponsor.url }}" target="_blank">
-                            <img src="{{ sponsor.avatar | trim("/") | url }}" alt="{{ sponsor.name }}"/>
-                          </a>
-                        {% else %}
-                          <a class="sponsor__link" title="{{ sponsor.name }}">
-                            <img src="{{ sponsor.avatar | trim("/") | url }}" alt="{{ sponsor.name }}"/>
-                          </a>
-                        {% endif %}
-                      </li>
-                    </ul>
-                    <div class="sponsor__title">
-                      {% if sponsor.url %}
-                        <a class="sponsor__link" href="{{ sponsor.url }}" target="_blank">
-                          {{ sponsor.name }}
-                        </a>
-                      {% else %}
-                        {{ sponsor.name }}
-                      {% endif %}
-                    </div>
-                  </div>
-                  <div class="sponsor__description">
-                    {{ sponsor.description }}
-                  </div>
-                </li>
-              {% endfor %}
-            </ul>
-          </div>
-        {% endif %}
+      <h2>Supported By</h2>
+      <div class="grid cards sponsor">
+        <ul>
+          {% for sponsor in post.config.sponsors %}
+            <li>
+              <div class="flex">
+                <ul class="sponsor__list">
+                  <li class="sponsor__item">
+                    {% if sponsor.url %}
+                      <a class="sponsor__link" title="{{ sponsor.name }}" href="{{ sponsor.url }}" target="_blank">
+                        <img src="{{ sponsor.avatar | trim("/") | url }}" alt="{{ sponsor.name }}"/>
+                      </a>
+                    {% else %}
+                      <a class="sponsor__link" title="{{ sponsor.name }}">
+                        <img src="{{ sponsor.avatar | trim("/") | url }}" alt="{{ sponsor.name }}"/>
+                      </a>
+                    {% endif %}
+                  </li>
+                </ul>
+                <div class="sponsor__title">
+                  {% if sponsor.url %}
+                    <a class="sponsor__link" href="{{ sponsor.url }}" target="_blank">
+                      {{ sponsor.name }}
+                    </a>
+                  {% else %}
+                    {{ sponsor.name }}
+                  {% endif %}
+                </div>
+              </div>
+              <div class="sponsor__description">
+                {{ sponsor.description }}
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
   {% endif %}
 </article>
 

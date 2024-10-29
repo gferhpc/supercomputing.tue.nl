@@ -1,96 +1,86 @@
-{% set class = "cell" %}
+{% set class = "flex" %}
 {% if item.disabled %}
   {% set class = class ~ " disabled" %}
 {% endif %}
 
-<div class="{{ class }}">
-  <div class="flex">
-    {% if item.schedule %}
-      <span class="md-icon">{% include ".icons/material/calendar.svg" %}</span>
-      <span style="white-space: nowrap">{{ item.start | date("E, d MMM") }}</span>
-    {% endif %}
-  </div>
-  {#  <div class="flex">#}
-  {#    <span class="md-icon">{% include ".icons/material/clock-outline.svg" %}</span>#}
-  {#    <span style="white-space: nowrap">{{ item.start | date("HH:mm") }} - {{ item.end | date("HH:mm") }}</span>#}
-  {#  </div>#}
-</div>
-
-<div class="{{ class }}">
-  <div class="flex">
-    <span class="md-icon">{% include ".icons/material/clock-outline.svg" %}</span>
-    <span style="white-space: nowrap">{{ item.start | date("HH:mm") }} - {{ item.end | date("HH:mm") }}</span>
-  </div>
-</div>
-
-<div class="{{ class }}">
-  <div class="flex">
-    {% if item.location %}
-      <span class="md-icon">{% include ".icons/material/map-marker.svg" %}</span>
-      <span style="white-space: nowrap">{{ item.location }}</span>
-    {% endif %}
-  </div>
-</div>
-
-<div class="{{ class }} mobile-hide" style="padding-right: .1rem">
-  {% if item.speakers %}
-    <ul class="author__list" style="justify-content: right">
-      {% for speaker in item.speakers %}
-        <li class="author__item">
-          {% if speaker.url %}
-            <a class="author__link" title="{{ speaker.name }}" href="{{ speaker.url | url }}" target="_blank">
-              <img src="{{ speaker.avatar | trim("/") | url }}" alt="{{ speaker.name }}"/>
-            </a>
-          {% else %}
-            <a class="author__link" title="{{ speaker.name }}">
-              <img src="{{ speaker.avatar | trim("/") | url }}" alt="{{ speaker.name }}"/>
-            </a>
-          {% endif %}
-        </li>
-      {% endfor %}
-    </ul>
-  {% elif item.icon %}
-    <div class="flex" style="justify-content: right">
-      <span class="md-icon">{% include ".icons/material/" ~ item.icon ~ ".svg" %}</span>
-    </div>
-  {% endif %}
-</div>
-
-<div class="{{ class }}" style="padding-left: .1rem;">
-  <div class="flex">
-    {% if item.url %}
-      <div style="font-weight: 700; white-space: nowrap">
-        <a href="{{ item.url | url }}" target="_blank">{{ item.title }}</a>
-      </div>
-    {% elif item.schedule %}
-      <span style="font-weight: 700; white-space: nowrap">{{ item.title }}</span>
-    {% else %}
-      <span style="white-space: nowrap">{{ item.title }}</span>
-    {% endif %}
-  </div>
-</div>
-
-<div class="{{ class }}" style="width: 100%">
-</div>
-
-<div class="cell" style="padding-left: .1rem;">
-  {% if item.disabled and item.schedule %}
-    <span style="font-weight: 700; font-size: 1.6rem; position: absolute; left: 50%; transform: translate(-50%, -50%) rotate(-5deg); color: crimson;">
-      {{ item.disabled }}
-    </span>
-  {% else %}
-    <div class="flex">
-      {% if item.actions %}
-        {% for action in item.actions %}
-          <div class="schedule__action" style="white-space: nowrap;">
-            {% if action.url %}
-              <a class="md-button md-button--primary" href="{{ action.url | url }}" target="_blank">{{ action.title }}</a>
-            {% else %}
-              <a class="md-button" target="_blank">{{ action.title }}</a>
-            {% endif %}
-          </div>
-        {% endfor %}
+<li class="row {{ type }}">
+  <div class="cell" style="white-space: nowrap">
+    <div class="{{ class }}">
+      {% if item.schedule %}
+        <span class="md-icon">{% include ".icons/material/calendar.svg" %}</span>
+        <span>{{ item.start | date("E, d MMM") }}</span>
       {% endif %}
     </div>
-  {% endif %}
-</div>
+    <div class="{{ class }}">
+      <span class="md-icon" style="white-space: nowrap;">{% include ".icons/material/clock-outline.svg" %}</span>
+      <span>{{ item.start | date("HH:mm") }} - {{ item.end | date("HH:mm") }}</span>
+    </div>
+    {% if item.location %}
+      <div class="{{ class }}">
+        <span class="md-icon">{% include ".icons/material/map-marker.svg" %}</span>
+        <span style="white-space: nowrap">{{ item.location }}</span>
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="cell" style="padding-right: .1rem">
+    {% if item.speakers %}
+      <div class="{{ class }}" style="justify-content: center">
+        <ul class="author__list">
+          {% for speaker in item.speakers %}
+            <li class="author__item">
+              {% if speaker.url %}
+                <a class="author__link" title="{{ speaker.name }}" href="{{ speaker.url | url }}" target="_blank">
+                  <img src="{{ speaker.avatar | trim("/") | url }}" alt="{{ speaker.name }}"/>
+                </a>
+              {% else %}
+                <a class="author__link" title="{{ speaker.name }}">
+                  <img src="{{ speaker.avatar | trim("/") | url }}" alt="{{ speaker.name }}"/>
+                </a>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% elif item.icon %}
+      <div class="{{ class }}" style="justify-content: center">
+        <span class="md-icon">{% include ".icons/material/" ~ item.icon ~ ".svg" %}</span>
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="cell" style="padding-left: .1rem;">
+    <div class="{{ class }}">
+      {% if item.url %}
+        <div style="font-weight: 700; ">
+          <a href="{{ item.url | url }}" target="_blank">{{ item.title }}</a>
+        </div>
+      {% elif item.schedule %}
+        <span style="font-weight: 700; ">{{ item.title }}</span>
+      {% else %}
+        <span>{{ item.title }}</span>
+      {% endif %}
+    </div>
+    {% if item.disabled and item.schedule %}
+      <div style="font-weight: 700; font-size: 1.6rem; position: absolute; left: 50%; transform: translate(-50%, -75%) rotate(-10deg); color: crimson;">
+        {{ item.disabled }}
+      </div>
+    {% endif %}
+  </div>
+
+{#  <div class="cell" style="padding-left: .1rem;">#}
+{#    <div class="{{ class }}">#}
+{#      {% if item.actions %}#}
+{#        {% for action in item.actions %}#}
+{#          <div class="schedule__action" style=";">#}
+{#            {% if action.url %}#}
+{#              <a class="md-button md-button--primary" href="{{ action.url | url }}" target="_blank">{{ action.title }}</a>#}
+{#            {% else %}#}
+{#              <a class="md-button" target="_blank">{{ action.title }}</a>#}
+{#            {% endif %}#}
+{#          </div>#}
+{#        {% endfor %}#}
+{#      {% endif %}#}
+{#    </div>#}
+{#  </div>#}
+</li>

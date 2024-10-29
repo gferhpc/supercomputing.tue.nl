@@ -218,8 +218,7 @@
     .cell {
       display: table-cell;
       vertical-align: middle;
-      padding: 0 .3rem;
-      height: 65px;
+      padding: .5rem .3rem;
 
       .md-icon {
         opacity: .75;
@@ -543,10 +542,9 @@ a:not([href]) {
 .schedule {
   border-top: .05rem solid var(--md-primary-fg-color--lighter);
 
-  .cell.disabled > * {
+  .disabled {
     opacity: .25 !important;
     filter: grayscale(1);
-    text-decoration: line-through;
   }
 
   .main .cell {
@@ -578,7 +576,7 @@ a:not([href]) {
   }
 
   .break .cell {
-    height: .4rem;
+    padding: .1rem;
     border-top: .05rem solid var(--md-primary-fg-color--lighter);
     border-bottom: .05rem solid var(--md-primary-fg-color--lighter);
   }
@@ -653,5 +651,11 @@ ul.sponsor__list {
       width: auto;
       height: 45px;
     }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .mobile-hide {
+    display: none !important;
   }
 }
