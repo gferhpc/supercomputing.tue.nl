@@ -155,6 +155,7 @@ plugins:
       lang: en
   - social:
       enabled: !ENV [CI, false]
+      cards: false
       cards_layout_options:
         background_color: "#1a1a1a"
         color: "#fafafa"
