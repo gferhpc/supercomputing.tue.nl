@@ -9,7 +9,7 @@ The official website of the TU/e Supercomputing Center (TUeSC).
 Normal development installation
 
 ```shell
-pip install --user --upgrade --upgrade-strategy eager -e .
+pip install --user --upgrade -e .
 ```
 
 ## Customizations

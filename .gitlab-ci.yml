@@ -4,7 +4,7 @@
       - public
   image: python:latest
   before_script:
-    - python3 -m pip install --user --upgrade --upgrade-strategy eager -e .
+    - python3 -m pip install --user --upgrade -e .
     - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.tue.nl/hpclab/website-cluster.git cluster
   variables:
     GIT_DEPTH: 1000
