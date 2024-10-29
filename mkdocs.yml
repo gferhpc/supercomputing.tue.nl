@@ -1,4 +1,4 @@
-site_name: Supercomputing Center
+site_name: TU/e Supercomputing Center
 site_url: https://supercomputing.tue.nl/
 docs_dir: &base_path docs
 not_in_nav: |
@@ -155,6 +155,9 @@ plugins:
       lang: en
   - social:
       enabled: !ENV [CI, false]
+      cards_layout_options:
+        background_color: "#1a1a1a"
+        color: "#fafafa"
 watch:
   - overrides
   - layouts

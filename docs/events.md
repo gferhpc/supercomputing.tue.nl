@@ -1,5 +1,9 @@
 ---
 title: Events
+description: >
+  Stay updated on the latest events at the TU/e Supercomputing Center. Join us for workshops, seminars, and conferences 
+  that focus on high-performance computing, research advancements, and networking opportunities for researchers and 
+  industry professionals.
 hide: [ navigation ]
 template: events.html
 ---

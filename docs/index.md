@@ -1,7 +1,11 @@
 ---
+title: Home
+description: >
+  The TU/e Supercomputing Center provides high-performance computing resources and expertise to support scientific 
+  research and innovation. Our facilities enable advanced simulations, data analysis, and collaboration across 
+  disciplines, driving breakthroughs in technology and science.
 hide: [ navigation, meta ]
 template: landing.html
-title: Home
 hero:
   backdrop: /assets/images/backdrops/home.png
   h1: TU/e Supercomputing Center

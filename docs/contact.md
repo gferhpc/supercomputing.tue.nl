@@ -1,4 +1,9 @@
 ---
+title: Contact
+description: >
+  Get in touch with the TU/e Supercomputing Center for inquiries about our services, collaborations, or support. 
+  Our dedicated team is here to assist researchers and industry partners in accessing high-performance computing 
+  resources and expertise.
 hide: [ navigation, meta ]
 hero:
   backdrop: /assets/images/backdrops/contact.jpg
