@@ -283,48 +283,50 @@
     }
   }
 
-  hgroup {
+  .hero__inner {
     margin-top: 40px;
     position: absolute;
     width: 100%;
     text-align: center;
     align-self: center;
     z-index: 1;
+    font-family: "AvenirNext Bold", "Gilroy Bold", Lato, sans-serif;
+    text-rendering: geometricPrecision;
 
-    h1, h2, h3, h4, h5, h6 {
-      color: #fafafa;
-      margin: 0;
-      font-weight: 400;
+    .small {
+      font-size: clamp(.6rem, 2.5vw, .9rem);
     }
 
-    h1 {
-      font-size: clamp(1.3rem, 2.5vw, 2.5rem);
-    }
-
-    h2 {
-      font-size: clamp(1.3rem, 2.5vw, 2.5rem);
-    }
-
-    h1, h2 {
-      font-size: clamp(1.3rem, 2.5vw, 2.5rem);
-    }
-
-    h3, h4 {
+    .medium {
       font-size: clamp(1rem, 2.5vw, 1.3rem);
     }
 
-    h5, h6 {
-      font-size: clamp(.6rem, 2.5vw, .9rem);
+    .large {
+      font-size: clamp(1.3rem, 2.5vw, 2.5rem);
     }
 
-    h2 {
+    .default {
+      color: var(--md-accent-bg-color);
+    }
+
+    .primary {
       color: var(--md-primary-fg-color);
     }
 
-    a.md-button {
+    .secondary {
+      color: var(--md-accent-fg-color);
+    }
+
+    .md-button {
       margin-top: 1em;
+      color: var(--md-primary-bg-color);
+      background: var(--md-primary-fg-color);
       font-size: clamp(.6rem, 2.5vw, .9rem);
       padding: clamp(.2em, 2.5vw, .625em) clamp(1.5em, 2.5vw, 2em);
+    }
+
+    .md-button:hover {
+      background: var(--md-accent-fg-color);
     }
   }
 }
@@ -499,7 +501,7 @@ a:not([href]) {
     padding: 0 1rem .5rem 1rem;
 
     > h1 {
-      display: none;
+      /*display: none;*/
     }
   }
 

@@ -14,11 +14,19 @@ pip install --user --upgrade -e .
 
 ## Customizations
 
-### Backdrop / Hero frontpage
+### Meta
 
-- Backdrop images should, ideally, have an aspect ratio of 16:9 (720p, 1080p etc.)
+- Backdrop images should, ideally, have an aspect ratio of 21:9 (ultrawide)
 
-## Events
+#### `hero` property
+
+| Property | Value                  | Description                 |
+|----------|------------------------|-----------------------------|
+| backdrop | path (or URL) to image | The image shown as backdrop |
+| messages | See messages           | The messages to show        |
+| button   | Button to show         | The button to show          |
+
+#### Events
 
 We're using a customized plugin for our events, based on the
 official [mkdocs-material blog plugin](https://squidfunk.github.io/mkdocs-material/plugins/blog/). All settings listed
@@ -29,12 +37,12 @@ following [Metadata](https://squidfunk.github.io/mkdocs-material/plugins/blog/#m
 |-----------------|--------------------------------|--------------------------|
 | type (required) | `news`, `maintenance`, `event` | Article type (see below) | 
 
-### Type `news`
+##### Type `news`
 
 No additional properties available. Please refer to
 the [official documentation](https://squidfunk.github.io/mkdocs-material/plugins/blog/) of this plugin.
 
-### Type `maintenance`
+##### Type `maintenance`
 
 In addition to `news`:
 
@@ -45,31 +53,23 @@ In addition to `news`:
 | banner.enabled | Boolean                            | Show banner                        |
 | banner.message | String                             | Message to show within the banner  | 
 
-### Type `event`
+##### Type `event`
 
 In addition to `news`:
 
-| Property | Value                                                                                                | Description                                        |
-|----------|------------------------------------------------------------------------------------------------------|----------------------------------------------------|
-| start    | YYYY-MM-DD<br/>YYYY-MM-DDTHH:II:SS                                                                   | Start date/time of the event                       | 
-| end      | YYYY-MM-DD<br/>YYYY-MM-DDTHH:II:SS                                                                   | End date/time of the event                         | 
-| price    | 0.00 (free), or any other digit number                                                               | The entree fee of the event                        |
-| location | String, Event location                                                                               | Location of where the event will take place        |
-| image    | URL or relative path from the `/docs` folder                                                         | Image shown with the event                         |
-| scheme   | `autumn`, `spring`                                                                                   | Change default color scheme for the specific event |
-| speakers | see [authors](https://squidfunk.github.io/mkdocs-material/plugins/blog/#meta.authors){target=_blank} | The speaker(s) of the event                        |
-| sponsors | see [sponsors](#sponsors)                                                                            | The sponsors of the event                          |
-| schedule | see [schedule](#schedule)                                                                            | The detailed schedule of the event                 |
+| Property | Value                                                                                                           | Description                                        |
+|----------|-----------------------------------------------------------------------------------------------------------------|----------------------------------------------------|
+| start    | YYYY-MM-DD<br/>YYYY-MM-DDTHH:II:SS                                                                              | Start date/time of the event                       | 
+| end      | YYYY-MM-DD<br/>YYYY-MM-DDTHH:II:SS                                                                              | End date/time of the event                         | 
+| price    | 0.00 (free), or any other digit number                                                                          | The entree fee of the event                        |
+| location | String, Event location                                                                                          | Location of where the event will take place        |
+| image    | URL or relative path from the `/docs` folder                                                                    | Image shown with the event                         |
+| scheme   | `autumn`, `spring`                                                                                              | Change default color scheme for the specific event |
+| speakers | see [authors](https://squidfunk.github.io/mkdocs-material/plugins/blog/#meta.authors){target=_blank}            | The speaker(s) of the event                        |
+| sponsors | same syntax as [authors](https://squidfunk.github.io/mkdocs-material/plugins/blog/#meta.authors){target=_blank} | The sponsors of the event                          |
+| schedule | see [schedule](#schedule)                                                                                       | The detailed schedule of the event                 |
 
-#### `sponsors`
-
-| Property | Value                                        | Description            |
-|----------|----------------------------------------------|------------------------|
-| name     | String                                       | Name of the sponsor    |
-| url      | String                                       | Website of the sponsor |
-| avatar   | URL or relative path from the `/docs` folder | Logo of the sponsor    |
-
-#### `schedule`
+##### `schedule`
 
 | Property | Value                                                                                                     | Description                 |
 |----------|-----------------------------------------------------------------------------------------------------------|-----------------------------|

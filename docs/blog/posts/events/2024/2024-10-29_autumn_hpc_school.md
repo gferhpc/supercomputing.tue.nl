@@ -4,9 +4,9 @@ start: 2024-10-29T09:00:00
 end: 2024-11-08T17:00:00
 hero:
   backdrop: /assets/images/poster-autumnschool-2024.jpg
-  h1: Autumn HPC School
-  h2: 29-31 October & 4-8 November
-#  button: { title: "Register now!", url: "https://hpcschool.tue.nl/register/" }
+  messages:
+    - { message: "Autumn HPC School", color: "primary" }
+    - { message: "29-31 October & 4-8 November", size: "medium" }
 title: Autumn HPC School '24
 categories: [ HPC School ]
 speakers: [ g.t.chepuck.fernandes, a.van.hoof, f.toschi, s.x.tao, j.vanschoren ]

@@ -96,6 +96,7 @@ plugins:
         - categories
   - scc/blog:
       post_excerpt_max_authors: 10
+  - scc/meta
   - scc/specs:
       sinfo_path: cluster/.cache/sinfo.json
       extra_nodes:

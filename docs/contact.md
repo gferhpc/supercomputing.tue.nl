@@ -1,19 +1,19 @@
 ---
 title: Contact
 description: >
-  Get in touch with the TU/e Supercomputing Center for inquiries about our services, collaborations, or support. 
-  Our dedicated team is here to assist researchers and industry partners in accessing high-performance computing 
-  resources and expertise.
+  Contact the TU/e Supercomputing Center for support, inquiries, or collaboration opportunities in high-performance 
+  computing and scientific research. Get in touch with our team for assistance and access to resources.
 hide: [ navigation, meta ]
 hero:
   backdrop: /assets/images/backdrops/contact.jpg
+  messages: 
+  - { message: "Contact" }
   #  attribution: { 
   #    title: Workplace,
   #    url: "https://pxhere.com/en/photo/824719",
   #    author: { name: "PxHere", url: "https://pxhere.com" },
   #    license: { name: "CC0 1.0 Public Domain", url: "https://creativecommons.org/publicdomain/zero/1.0/" }
   #  }
-  h1: Contact
 ---
 
 # Contact

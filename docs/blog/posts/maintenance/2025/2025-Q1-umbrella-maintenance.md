@@ -1,14 +1,14 @@
 ---
-draft: true
+title: Umbrella HPC Cluster maintenance 2025-Q1
 date: 2025-01-01
 start: 2025-02-24T09:00:00
 end: 2025-02-26T17:00:00
+draft: true
 categories: [ Umbrella HPC Cluster ]
 tags: [ HPC ]
 authors: [ a.van.hoof, e.loomeijer, a.c.m.bertens ]
 type: maintenance
 slug: Q1-2025-umbrella-maintenance
-title: Umbrella HPC Cluster maintenance
 banner:
   enabled: true
 ---

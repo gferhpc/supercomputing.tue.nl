@@ -4,6 +4,7 @@ import hashlib
 import json
 import os
 import posixpath
+import re
 from datetime import datetime
 from idlelib.iomenu import encoding
 
@@ -200,7 +201,14 @@ class CustomBlogPlugin(BlogPlugin[CustomBlogConfig]):
         def date_filter(date: datetime, format: str = None):
             return self._format_date_for_post(date, config, format)
 
+        def strip_tags(content: str, tags: list = []):
+            for tag in tags:
+                content = re.sub(f'<{tag}.+?</{tag}>', '', content)
+
+            return content
+
         # Register custom template filters
+        env.filters["strip_tags"] = strip_tags
         env.filters["date"] = date_filter
         env.globals['now'] = datetime.now
 

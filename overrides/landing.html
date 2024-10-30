@@ -26,7 +26,6 @@
     <ul>
       {% for post in posts[:limit] %}
         {% set date_format = "full" %}
-        {% set event = post %}
         {% set show_content = False %}
         <li>{% include "partials/" ~ post.config.type ~ ".html" %}</li>
       {% endfor %}

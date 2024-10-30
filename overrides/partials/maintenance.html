@@ -51,9 +51,9 @@
     </div>
     <div class="event__content">
       {% if page == post or not post.excerpt %}
-        {{ post.content }}
+        {{ post.content | strip_tags(['h1']) }}
       {% elif post.excerpt %}
-        {{ post.excerpt.content }}
+        {{ post.excerpt.content | strip_tags(['h1']) }}
       {% endif %}
     </div>
   </div>
