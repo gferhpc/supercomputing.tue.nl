@@ -375,7 +375,7 @@ a:not([href]) {
       object-fit: cover;
       margin: 0;
       opacity: .9;
-      background-color: #fafafa;
+      background-color: #ffffff;
 
       img {
         height: 150px;
