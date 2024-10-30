@@ -1,8 +1,8 @@
 ---
 title: Events
 description: >
-  Discover upcoming events, workshops, and training sessions at the TU/e Supercomputing Center, designed to enhance 
-  skills and foster collaboration in high-performance computing and scientific research.
+  Explore events and workshops at the TU/e Supercomputing Center, designed to enhance skills in high-performance 
+  computing and foster research collaboration.
 hide: [ navigation ]
 template: events.html
 ---

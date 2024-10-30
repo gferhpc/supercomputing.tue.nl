@@ -1,8 +1,8 @@
 ---
 title: Home
 description: >
-  TU/e Supercomputing Center offers high-performance computing resources for advanced research, data analysis, and 
-  interdisciplinary collaboration, supporting breakthroughs in technology and science.
+  High-performance computing resources at TU/e Supercomputing Center drive research, data analysis, and collaboration 
+  for science and technology advancements.
 hide: [ navigation, meta ]
 template: landing.html
 hero:

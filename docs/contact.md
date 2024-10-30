@@ -1,8 +1,8 @@
 ---
 title: Contact
 description: >
-  Contact the TU/e Supercomputing Center for support, inquiries, or collaboration opportunities in high-performance 
-  computing and scientific research. Get in touch with our team for assistance and access to resources.
+  Contact the TU/e Supercomputing Center for inquiries about high-performance computing resources, support, and 
+  collaboration opportunities in research.
 hide: [ navigation, meta ]
 hero:
   backdrop: /assets/images/backdrops/contact.jpg

@@ -1,9 +1,9 @@
 ---
 title: News
 description: >
-  Stay informed with the latest news, maintenance updates, and upcoming events from the TU/e Supercomputing Center.
-  Explore insights into high-performance computing advancements and join our community in driving innovation and 
-  collaboration.
+
+  Stay updated with the latest news and developments from the TU/e Supercomputing Center, featuring insights on 
+  research, events, and high-performance computing advancements.
 hero:
   backdrop: /assets/images/backdrops/events.jpg
   messages:

@@ -1,8 +1,8 @@
 ---
 title: HPC School
 description: >
-  Join the TU/e HPC School for hands-on training in high-performance computing, designed to equip researchers and 
-  students with skills in advanced data processing, simulations, and computational techniques.
+  Join the TU/e HPC School for hands-on training in high-performance computing, enhancing skills in data processing and 
+  simulations for researchers and students.
 hide: [ navigation ]
 template: hpc-school.html
 ---
