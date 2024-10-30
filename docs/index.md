@@ -8,7 +8,7 @@ template: landing.html
 hero:
   backdrop: /assets/images/backdrops/home.png
   messages:
-    - { message: "Compute to Compete", size: "medium" }
+    - { message: "Compute to Compete" }
 ---
 
 # TU/e Supercomputing Center
