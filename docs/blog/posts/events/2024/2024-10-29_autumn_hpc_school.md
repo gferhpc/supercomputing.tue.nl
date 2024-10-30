@@ -30,9 +30,9 @@ schedule:
         { start: 2024-10-29T12:00:00, end: 2024-10-29T13:00:00, icon: food-fork-drink, title: Lunch },
       ]
     }
-  - { title: Supercomputing Primer II, start: 2024-10-30T09:00:00, end: 2024-10-30T14:00:00, location: Neuron 0.354, speakers: [ a.van.hoof ], disabled: "CANCELED",
+  - { title: Supercomputing Primer II, start: 2024-10-30T09:00:00, end: 2024-10-30T14:00:00, location: Neuron 0.354, speakers: [ a.van.hoof ],
       schedule: [
-        { start: 2024-10-30T12:00:00, end: 2024-10-30T13:00:00, icon: food-fork-drink, title: Lunch, disabled: True },
+        { start: 2024-10-30T12:00:00, end: 2024-10-30T13:00:00, icon: food-fork-drink, title: Lunch },
       ]
     }
   - { title: Introduction to Supercomputing + Filesystems, start: 2024-10-31T09:00:00, end: 2024-10-31T14:00:00, location: Neuron 0.262,
