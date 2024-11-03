@@ -77,8 +77,8 @@ plugins:
       css_files:
         - assets/css/scheme.css
         - assets/css/site.css
-  - privacy:
-      enabled: !ENV [CI, false]
+#  - privacy:
+#      enabled: !ENV [CI, false]
   - redirects:
       redirect_maps:
         'documentation/introduction.md': 'documentation/index.md'
