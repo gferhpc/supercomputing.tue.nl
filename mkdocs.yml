@@ -36,19 +36,19 @@ theme:
     - content.tooltips
     - content.footnote.tooltips
   palette:
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: custom
-      accent: custom
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
+#    - media: "(prefers-color-scheme: dark)"
+#      scheme: slate
+#      primary: custom
+#      accent: custom
+#      toggle:
+#        icon: material/brightness-4
+#        name: Switch to light mode
     - scheme: tuesc
       primary: custom
       accent: custom
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
+#      toggle:
+#        icon: material/brightness-7
+#        name: Switch to dark mode
   icon:
     repo: fontawesome/brands/gitlab
     edit: material/pencil
@@ -56,9 +56,6 @@ theme:
 extra_css:
   - assets/css/scheme.css
   - assets/css/site.css
-extra_javascript:
-  - assets/js/vendor/jquery.min.js
-  - assets/js/particles.js
 plugins:
   - awesome-pages:
       filename: .pages.yml
@@ -77,8 +74,6 @@ plugins:
       minify_js: true
       minify_css: true
       cache_safe: true
-      js_files:
-        - assets/js/particles.js
       css_files:
         - assets/css/scheme.css
         - assets/css/site.css
@@ -161,6 +156,7 @@ plugins:
       cards_layout_options:
         background_color: "#1a1a1a"
         color: "#fafafa"
+  - tags
 watch:
   - overrides
   - layouts

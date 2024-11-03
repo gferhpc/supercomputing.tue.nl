@@ -20,10 +20,8 @@ banner:
   enabled: false
 registration:
   enabled: false
-  description: Limited seats available, register quickly!
   options:
-    - { title: Register TU/e, url: https://hpcschool.tue.nl/register/, qr: true }
-    - { title: Register External, url: https://hpcschool.tue.nl/register-ext/, qr: true }
+    - { title: Register Now, url: https://hpcschool.tue.nl/register/, qr: true }
 schedule:
   - { title: Supercomputing Primer I, start: 2024-10-29T09:00:00, end: 2024-10-29T14:00:00, location: Neuron 0.354, speakers: [ g.t.chepuck.fernandes ],
       schedule: [

@@ -1,0 +1,101 @@
+{% if page == post %}
+  {% set scheme = post.config.scheme %}
+{% endif %}
+<article class="post" data-md-color-scheme="{{ scheme }}">
+  <div{% if page == post %} class="card" {% endif %}>
+    <div class="container post__header">
+      <div class="overlay">
+        {% if post.config.start and post.config.end %}
+          <div class="top-left post__badge">
+            {% if post.config.start | date == post.config.end | date %}
+              <div class="post__badge--inner">
+                <div class="post__badge--section post__badge--large">{{ post.config.start | date("dd") }}</div>
+                <div class="post__badge--section">{{ post.config.start | date("MMM") }}</div>
+              </div>
+            {% else %}
+              <div class="post__badge--inner">
+                <div class="post__badge--section post__badge--large">{{ post.config.start | date("dd") }}</div>
+                <div class="post__badge--section">{{ post.config.start | date("MMM") }}</div>
+              </div>
+              <div class="post__badge--inner">
+                <div class="post__badge--seperator">-</div>
+              </div>
+              <div class="post__badge--inner">
+                <div class="post__badge--section post__badge--large">{{ post.config.end | date("dd") }}</div>
+                <div class="post__badge--section">{{ post.config.end | date("MMM") }}</div>
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+        {% if post.config.speakers %}
+          {% set speakers = post.config.speakers %}
+          <div class="top-right post__speakers">
+            {% include "blog/event/speakers-badges.html" %}
+          </div>
+        {% endif %}
+        {% if post.config.registration and post.config.registration.enabled %}
+          <div class="bottom-right post__registration">
+            {% for option in post.config.registration.options %}
+              <a class="post__registration--link" href="{{ option.url | url }}" target="_blank">
+                <div class="post__registration--title">{{ option.title }}</div>
+                <img class="post__registration--image" src="{{ option.qr_url | url }}" alt="{{ option.title }}"/>
+              </a>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+      <div class="post__image">
+        <a href="{{ post.url | url }}">
+          <img src="{{ post.meta.image | default("assets/images/416x234.svg") | url }}" alt="{{ post.title }}"/>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="post__meta">
+    {{ post.config.date.created | date }}
+    <div class="post__meta--badges">
+      {% for category in post.categories %}
+        <a href="{{ category.url | url }}" class="badge badge--default">
+          {{ category.title }}
+        </a>
+      {% endfor %}
+      <div class="md-draft badge badge--light">{{ post.meta.type }}</div>
+      {% if post.config.draft %}
+        <div class="md-draft">{{ lang.t("blog.draft") }}</div>
+      {% endif %}
+    </div>
+  </div>
+  <div class="post__title">
+    {% if page == post %}
+      <h1>{{ post.title }}</h1>
+    {% else %}
+      <a href="{{ post.url | url }}">{{ post.title }}</a>
+    {% endif %}
+  </div>
+  <div class="post__content">
+    {% if page == post or not post.excerpt %}
+      {{ post.content | strip_tags(['h1']) }}
+    {% elif post.excerpt %}
+      {{ post.excerpt.content | strip_tags(['h1']) }}
+    {% endif %}
+  </div>
+  {% if page != post %}
+    <a class="post__more" href="{{ post.url | url }}">{{ lang.t("blog.continue") }}</a>
+  {% else %}
+    {% if page.config.schedule %}
+      <section class="secondary">
+        {% include "blog/event/program.html" %}
+      </section>
+    {% endif %}
+    {% if post.config.speakers %}
+      <section class="primary">
+        {% include "blog/event/speakers.html" %}
+      </section>
+    {% endif %}
+    {% if post.config.sponsors %}
+      <section class="secondary">
+        {% include "blog/event/sponsors.html" %}
+      </section>
+    {% endif %}
+  {% endif %}
+</article>

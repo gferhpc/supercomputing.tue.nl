@@ -12,12 +12,10 @@
 
       <!-- Posts -->
       <div class="md-typeset all-scheduled-events space-y-[30px]">
-        <div class="grid cards">
+        <div class="grid cards post">
           <ul>
             {% for post in posts %}
-              {% set date_format = "full" %}
-              {% set event = post %}
-              <li>{% include "partials/" ~ post.config.type ~ ".html" %}</li>
+              <li class="post__item">{% include "blog/card-full.html" %}</li>
             {% endfor %}
           </ul>
         </div>

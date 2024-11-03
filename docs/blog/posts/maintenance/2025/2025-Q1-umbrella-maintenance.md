@@ -1,22 +1,23 @@
 ---
-title: Umbrella HPC Cluster maintenance 2025-Q1
+title: Umbrella Maintenance 2025 Q1
 date: 2025-01-01
-start: 2025-02-24T09:00:00
-end: 2025-02-26T17:00:00
+start: 2025-03-03T09:00:00
+end: 2025-03-05T17:00:00
 draft: true
-categories: [ Umbrella HPC Cluster ]
-tags: [ HPC ]
+categories: [ Umbrella ]
+tags: [ Maintenance ]
 authors: [ a.van.hoof, e.loomeijer, a.c.m.bertens ]
 type: maintenance
 slug: Q1-2025-umbrella-maintenance
+image: assets/images/maintenance.webp
 banner:
   enabled: true
 ---
 
 # 2025 Q1 Umbrella HPC Cluster maintenance
 
-TU/e Umbrella HPC Cluster has a scheduled downtime for maintenance from **Monday 24 Feb 09:00 CET** to **Wednesday 26
-Feb 17:00 CET**. The cluster will be unavailable during this time. Please make sure that your jobs are finished before
+TU/e Umbrella HPC Cluster has a scheduled downtime for maintenance from **Monday 03 March 09:00 CET** to **Wednesday 05
+March 17:00 CET**. The cluster will be unavailable during this time. Please make sure that your jobs are finished before
 the start of the maintenance or that they are able to continue after they were (hard) killed/cancelled.
 
 <!-- more -->

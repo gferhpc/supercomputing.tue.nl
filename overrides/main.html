@@ -25,8 +25,10 @@
 
 {% block hero %}
   {% if page.meta and page.meta.hero %}
+    {% set item = page.meta.hero %}
     {% include 'partials/hero.html' %}
   {% endif %}
+
   {% if page.blog %}
     <div data-md-component="announce">
       {% for post in page.blog.posts if "news" != post.config.type and not post.config.draft and post.config.banner.enabled and post.config.end >= now() %}

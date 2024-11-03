@@ -3,11 +3,12 @@ type: event
 date: 2024-09-05
 start: 2024-09-17T10:30:00
 end: 2024-09-17T16:00:00
-categories: [ Trainings ]
+categories: [ Training ]
 speakers: [g.t.chepuck.fernandes, r.georgiev]
 price: 0.0
 location: Neuron 0.262
 image: /assets/images/logo/comsol.png
+thumbnail: /assets/images/thumbnail/comsol.png
 actions:
   - { title: Register Now!, url: https://forms.office.com/e/XTv9sGUQQH }
 schedule:

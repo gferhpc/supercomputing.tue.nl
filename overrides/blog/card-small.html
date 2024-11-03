@@ -1,0 +1,44 @@
+<article class="post small">
+  <div class="container">
+    <div class="overlay">
+      {% if post.config.start and post.config.end %}
+        <div class="top-left post__badge">
+          {% if post.config.start | date == post.config.end | date %}
+            <div class="post__badge--inner">
+              <div class="post__badge--section post__badge--large">{{ post.config.start | date("dd") }}</div>
+              <div class="post__badge--section">{{ post.config.start | date("MMM") }}</div>
+            </div>
+          {% else %}
+            <div class="post__badge--inner">
+              <div class="post__badge--section post__badge--large">{{ post.config.start | date("dd") }}</div>
+              <div class="post__badge--section">{{ post.config.start | date("MMM") }}</div>
+            </div>
+            <div class="post__badge--inner">
+              <div class="post__badge--seperator">-</div>
+            </div>
+            <div class="post__badge--inner">
+              <div class="post__badge--section post__badge--large">{{ post.config.end | date("dd") }}</div>
+              <div class="post__badge--section">{{ post.config.end | date("MMM") }}</div>
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+    <div class="post__image--thumbnail">
+      <a href="{{ post.url | url }}">
+        <img src="{{ post.meta.image | default("assets/images/112x63.svg") | url }}" alt="{{ post.title }}"/>
+      </a>
+    </div>
+  </div>
+  <div class="post__inner">
+    <div class="post__meta">
+      {{ post.config.date.created | date }}
+      <div class="post__meta--badges">
+        <div class="md-draft badge badge--light">{{ post.meta.type }}</div>
+      </div>
+    </div>
+    <div class="post__title">
+      <a href="{{ post.url | url }}">{{ post.title }}</a>
+    </div>
+  </div>
+</article>

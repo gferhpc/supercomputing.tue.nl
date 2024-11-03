@@ -101,9 +101,9 @@
     </div>
     <div class="event__content">
       {% if page == post or not post.excerpt %}
-        {{ post.content }}
+        {{ post.content | strip_tags(['h1']) }}
       {% elif post.excerpt and show_content|default(True) %}
-        {{ post.excerpt.content }}
+        {{ post.excerpt.content | strip_tags(['h1']) }}
       {% endif %}
       {% if post.config.registration.enabled %}
         {% if post.config.registration.description %}
@@ -152,109 +152,6 @@
       {% endif %}
     </div>
   </div>
-
-  {% if page == post %}
-    {% if post.config.schedule %}
-      <h2>Schedule</h2>
-      <div class="schedule">
-        <ul class="table">
-          {% for item in post.config.schedule %}
-            {% set type = "main" %}
-            {% if post.config.schedule | length > 1 %}
-              {% include "partials/schedule.html" %}
-            {% endif %}
-            {% for item in item.schedule %}
-              {% set type = "child" %}
-              {% include "partials/schedule.html" %}
-            {% endfor %}
-            <li class="row break">
-              <div class="cell"></div>
-              <div class="cell"></div>
-              <div class="cell"></div>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-    {% endif %}
-
-    {% if post.config.speakers %}
-      <h2>Speakers</h2>
-      <div class="grid cards author">
-        <ul>
-          {% for speaker in post.config.speakers %}
-            <li>
-              <div class="flex">
-                <ul class="author__list">
-                  <li class="author__item">
-                    {% if speaker.url %}
-                      <a class="author__link" title="{{ speaker.name }}" href="{{ speaker.url }}" target="_blank">
-                        <img src="{{ speaker.avatar | trim("/") | url }}" alt="{{ speaker.name }}"/>
-                      </a>
-                    {% else %}
-                      <a class="author__link" title="{{ speaker.name }}">
-                        <img src="{{ speaker.avatar | trim("/") | url }}" alt="{{ speaker.name }}"/>
-                      </a>
-                    {% endif %}
-                  </li>
-                </ul>
-                <div class="author__title">
-                  {% if speaker.url %}
-                    <a class="author__link" href="{{ speaker.url }}" target="_blank">
-                      {{ speaker.name }}
-                    </a>
-                  {% else %}
-                    {{ speaker.name }}
-                  {% endif %}
-                </div>
-              </div>
-              <div class="author__description">
-                {{ speaker.description }}
-              </div>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-    {% endif %}
-
-    {% if post.config.sponsors %}
-      <h2>Supported By</h2>
-      <div class="grid cards sponsor">
-        <ul>
-          {% for sponsor in post.config.sponsors %}
-            <li>
-              <div class="flex">
-                <ul class="sponsor__list">
-                  <li class="sponsor__item">
-                    {% if sponsor.url %}
-                      <a class="sponsor__link" title="{{ sponsor.name }}" href="{{ sponsor.url }}" target="_blank">
-                        <img src="{{ sponsor.avatar | trim("/") | url }}" alt="{{ sponsor.name }}"/>
-                      </a>
-                    {% else %}
-                      <a class="sponsor__link" title="{{ sponsor.name }}">
-                        <img src="{{ sponsor.avatar | trim("/") | url }}" alt="{{ sponsor.name }}"/>
-                      </a>
-                    {% endif %}
-                  </li>
-                </ul>
-                <div class="sponsor__title">
-                  {% if sponsor.url %}
-                    <a class="sponsor__link" href="{{ sponsor.url }}" target="_blank">
-                      {{ sponsor.name }}
-                    </a>
-                  {% else %}
-                    {{ sponsor.name }}
-                  {% endif %}
-                </div>
-              </div>
-              <div class="sponsor__description">
-                {{ sponsor.description }}
-              </div>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-    {% endif %}
-  {% endif %}
 </article>
 
 {% if page == post %}

@@ -2,13 +2,15 @@
 date: 2024-10-08
 start: 2024-11-12T10:00:00
 end: 2024-11-12T16:00:00
-categories: [ Trainings ]
+categories: [ Training ]
 speakers: [ r.norris ]
 price: 0.00
 location: TU/e Campus
 image: /assets/images/logo/matlab.png
 type: event
 sponsors: [ surf.nl ]
+hero:
+  backdrop: assets/images/backdrops/matlab.png
 registration:
   enabled: True
   options:

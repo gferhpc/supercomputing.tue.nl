@@ -133,6 +133,7 @@ class CustomBlogPlugin(BlogPlugin[CustomBlogConfig]):
                     raise PluginError(f"Couldn't find sponsor '{name}'")
                 page.config.sponsors[key] = self.authors[name]
 
+
         # Extract settings for excerpts
         separator = self.config.post_excerpt_separator
         max_authors = self.config.post_excerpt_max_authors

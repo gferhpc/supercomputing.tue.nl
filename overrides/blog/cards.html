@@ -1,0 +1,40 @@
+{% if not full %}
+  {% set full = 2 %}
+{% endif %}
+{% if not limit %}
+  {% set limit = 7 %}
+{% endif %}
+<div class="grid cards">
+  <ul>
+    {% for post in posts[:full] %}
+      <li class="container">
+        {% include "blog/card-full.html" %}
+      </li>
+    {% endfor %}
+    {% if posts[2:limit] %}
+      <li>
+        <div class="container">
+          <strong>
+            MORE ITEMS
+            {% set post = posts | first %}
+            {% if post %}
+              <a style="float: right" href="{{ post.parent.url | url }}">Read more</a>
+            {% endif %}
+          </strong>
+        </div>
+        <dl>
+          {% for post in posts[full:limit] %}
+            <dt class="container">
+              {% include "blog/card-small.html" %}
+            </dt>
+            {% if not loop.last %}
+              <dt>
+                <hr/>
+              </dt>
+            {% endif %}
+          {% endfor %}
+        </dl>
+      </li>
+    {% endif %}
+  </ul>
+</div>

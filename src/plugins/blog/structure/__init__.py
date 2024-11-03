@@ -14,7 +14,7 @@ from mkdocs.config.defaults import MkDocsConfig
 from mkdocs.exceptions import PluginError
 from mkdocs.structure.files import File, Files
 from mkdocs.structure.pages import Page, _RelativePathTreeprocessor
-from mkdocs.structure.toc import get_toc
+from mkdocs.structure.toc import get_toc, TableOfContents, AnchorLink
 from mkdocs.utils.meta import YAML_RE
 from re import Match
 from yaml import SafeLoader
@@ -114,7 +114,7 @@ class Post(Page):
         self.categories: list[Category] = []
 
         # Ensure template is set or use default
-        self.meta.setdefault("template", "event-post.html")
+        self.meta.setdefault("template", "blog-post.html")
 
         # Ensure template hides navigation
         self.meta["hide"] = self.meta.get("hide", [])
@@ -137,6 +137,19 @@ class Post(Page):
 
     def is_maintenance(self):
         return isinstance(self.config, MaintenanceConfig)
+
+    def render(self, config: MkDocsConfig, files: Files) -> None:
+        super().render(config, files)
+
+        if "schedule" in self.config:
+            self.toc.items[0].children.append(AnchorLink("Schedule", "schedule", 0))
+        if "speakers" in self.config:
+            self.toc.items[0].children.append(AnchorLink("Speakers", "speakers", 0))
+        if "sponsors" in self.config:
+            self.toc.items[0].children.append(AnchorLink("Sponsors", "sponsors", 0))
+
+        self.toc.items[0].children.append(AnchorLink("Related", "related-items", 0))
+
 
 # -----------------------------------------------------------------------------
 

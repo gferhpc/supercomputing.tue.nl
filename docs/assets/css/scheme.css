@@ -2,11 +2,11 @@
   --md-default-fg-color: #1a1a1a;
   --md-default-bg-color: #fafafa;
 
-  --md-primary-fg-color: var(--md-default-fg-color);
+  --md-primary-fg-color: #fafafa;
   --md-primary-bg-color: var(--md-default-bg-color);
 
   --md-accent-fg-color: #c81919;
-  --md-accent-bg-color: #fafafa;
+  --md-accent-bg-color: #f0f0f0;
 
   --md-typeset-a-color: #c81919;
 }
@@ -19,7 +19,7 @@
   --md-primary-bg-color: var(--md-default-bg-color);
 
   --md-accent-fg-color: #c81919;
-  --md-accent-bg-color: #fafafa;
+  --md-accent-bg-color: #0a0a0a;
 
   --md-typeset-a-color: #c81919;
 }
@@ -29,7 +29,7 @@
   --md-primary-bg-color: #fafafa;
 
   --md-accent-fg-color: #a44200;
-  --md-accent-bg-color: #fafafa;
+  --md-accent-bg-color: #f0f0f0;
 
   --md-typeset-a-color: #d58936;
 }
@@ -39,7 +39,7 @@
   --md-primary-bg-color: #fafafa;
 
   --md-accent-fg-color: #38511a;
-  --md-accent-bg-color: #fafafa;
+  --md-accent-bg-color: #f0f0f0;
 
   --md-typeset-a-color: #73ae34;
 }
@@ -49,7 +49,7 @@
   --md-primary-bg-color: #fafafa;
 
   --md-accent-fg-color: #103f4f;
-  --md-accent-bg-color: #fafafa;
+  --md-accent-bg-color: #f0f0f0;
 
   --md-typeset-a-color: #339aa9;
 }

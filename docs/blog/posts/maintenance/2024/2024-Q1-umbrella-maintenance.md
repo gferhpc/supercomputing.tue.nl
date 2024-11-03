@@ -1,9 +1,12 @@
 ---
+title: Umbrella Maintenance 2024 Q1
 date: 2023-12-13
 start: 2024-02-12T09:00:00
 end: 2024-02-14T17:00:00
-categories: [ Umbrella HPC Cluster ]
+categories: [ Umbrella ]
+tags: [ Maintenance ]
 authors: [e.loomeijer, a.van.hoof, a.c.m.bertens]
+image: assets/images/maintenance.webp
 type: maintenance
 ---
 

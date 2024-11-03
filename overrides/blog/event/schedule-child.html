@@ -1,0 +1,41 @@
+<li class="test" style="padding: .5trm .5rem">
+  <div style="display: flex; align-items: center">
+    <div class="flex" style="margin-right: 1rem;">
+      <div style="font-weight: 700; color: var(--md-default-fg-color--light);">
+        <div style="display: flex">
+          <span class="md-icon">{% include ".icons/material/clock-outline.svg" %}</span>
+          <span>{{ item.start | date("HH:mm") }} - {{ item.end | date("HH:mm") }}</span>
+{##}
+{#          <span class="md-icon">{% include ".icons/material/map-marker.svg" %}</span>#}
+{#          <span>{{ item.location }}</span>#}
+        </div>
+      </div>
+    </div>
+
+    {% if item.speakers %}
+      <div class="{{ class }}" style="justify-content: center">
+        <ul class="author__list">
+          {% for speaker in item.speakers %}
+            <li class="author__item">
+              {% if speaker.url %}
+                <a class="author__link" title="{{ speaker.name }}" href="{{ speaker.url | url }}" target="_blank">
+                  <img src="{{ speaker.avatar | trim("/") | url }}" alt="{{ speaker.name }}"/>
+                </a>
+              {% else %}
+                <a class="author__link" title="{{ speaker.name }}">
+                  <img src="{{ speaker.avatar | trim("/") | url }}" alt="{{ speaker.name }}"/>
+                </a>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% elif item.icon %}
+      <div class="{{ class }}" style="justify-content: center">
+        <span class="md-icon">{% include ".icons/material/" ~ item.icon ~ ".svg" %}</span>
+      </div>
+    {% endif %}
+
+    <div style="font-weight: 700">{{ item.title }}</div>
+  </div>
+</li>

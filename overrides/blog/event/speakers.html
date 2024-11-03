@@ -1,0 +1,36 @@
+<h2 id="speakers">Speakers</h2>
+<div class="grid cards author">
+  <ul>
+    {% for speaker in post.config.speakers %}
+      <li>
+        <div class="flex">
+          <ul class="author__list">
+            <li class="author__item">
+              {% if speaker.url %}
+                <a class="author__link" title="{{ speaker.name }}" href="{{ speaker.url }}" target="_blank">
+                  <img src="{{ speaker.avatar | trim("/") | url }}" alt="{{ speaker.name }}"/>
+                </a>
+              {% else %}
+                <a class="author__link" title="{{ speaker.name }}">
+                  <img src="{{ speaker.avatar | trim("/") | url }}" alt="{{ speaker.name }}"/>
+                </a>
+              {% endif %}
+            </li>
+          </ul>
+          <div class="author__title">
+            {% if speaker.url %}
+              <a class="author__link" href="{{ speaker.url }}" target="_blank">
+                {{ speaker.name }}
+              </a>
+            {% else %}
+              {{ speaker.name }}
+            {% endif %}
+          </div>
+        </div>
+        <div class="author__description">
+          {{ speaker.description }}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

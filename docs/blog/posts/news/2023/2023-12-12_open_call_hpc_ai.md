@@ -2,6 +2,7 @@
 date: 2023-12-12
 authors: [j.h.m.verbiesen]
 type: news
+image: blog/news/2023/2023-12-12_open_call_hpc_ai.png
 ---
 
 # Open Call HPC AI

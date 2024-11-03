@@ -2,11 +2,12 @@
 date: 2023-09-19
 start: 2023-09-29T09:00:00
 end: 2023-09-29T16:00:00
-categories: [ Trainings ]
+categories: [ Training ]
 speakers: [ r.kotian ]
 location: TU/e Campus
 price: 0.0
-image: /assets/images/logo/python.png
+image: /blog/events/2023/Python-Logo.png
+title: Python Optimization Workshop
 type: event
 ---
 
@@ -25,7 +26,7 @@ resources than required and in some cases request for more resources without tru
 the importance of refactoring the code. Achieving scalability by adding more resources is not an
 efficient way of scaling your application.
 
-<blockquote style="text-align: center;">“Code that can efficiently utilize the computing resources is the best costeffective way to scale up”</blockquote>
+<blockquote style="text-align: center;">“Code that can efficiently utilize the computing resources is the best cost-effective way to scale up”</blockquote>
 
 ### Goal
 
