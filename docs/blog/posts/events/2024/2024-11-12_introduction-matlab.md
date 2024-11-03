@@ -14,7 +14,7 @@ hero:
 registration:
   enabled: True
   options:
-  - { title: Register Now!, url: https://events.surf.nl/kort14/open/97298a30-3e1f-4d55-a450-55305393d810, qr: true }
+  - { title: Register Now, url: https://events.surf.nl/kort14/open/97298a30-3e1f-4d55-a450-55305393d810, qr: true }
 #description: Join us this one-day course where you'll learn how to tackle compute- and data-intensive problems using multicore processors and GPUs on the SURF HPC cluster.
 #hero:
 #  backdrop: /assets/images/poster-autumnschool-2024.jpg
