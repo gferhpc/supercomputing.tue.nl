@@ -303,7 +303,7 @@ section.secondary {
     text-align: center;
     align-self: center;
     z-index: 1;
-    font-family: "AvenirNext Bold", "Gilroy Bold", Lato, sans-serif;
+    font-family: "Gilroy Bold", Lato, sans-serif;
     text-rendering: geometricPrecision;
 
     .small {
@@ -549,17 +549,24 @@ ul.sponsor__list {
     .post__meta--date {
     }
 
+    .post__source {
+      font-style: italic;
+      a {
+        text-transform: none;
+      }
+    }
+
     .post__meta--badges {
       float: right;
-    }
 
-    a {
-      color: var(--md-default-bg-color) !important;
-      transition: background-color 300ms !important;
-    }
+      a {
+        color: var(--md-default-bg-color) !important;
+        transition: background-color 300ms !important;
+      }
 
-    a:hover {
-      background-color: var(--md-accent-fg-color) !important;
+      a:hover {
+        background-color: var(--md-accent-fg-color) !important;
+      }
     }
   }
 
@@ -584,6 +591,7 @@ ul.sponsor__list {
 
   .post__content {
     margin-bottom: 1em;
+    font-size: .7rem;
   }
 
   .post__more {

@@ -1,28 +1,32 @@
 {% extends "main.html" %}
 
 {% block hero %}
-  <div class="hero md-typeset">
-    <div class="hero__inner" data-md-color-scheme="{{ page.meta.scheme }}">
-      <div class="default large">{{ page.title }}</div>
-      {% if page.meta.type in ["maintenance", "event"] and page.config.start | date == page.config.end | date %}
-        <div class="default medium">{{ page.config.start | date }}</div>
-      {% elif page.meta.type in ["maintenance", "event"] %}
-        <div class="primary medium" style="text-transform: uppercase">
-          {{ page.config.start | date("d MMMM") }} - {{ page.config.end | date("d MMMM") }}
-        </div>
+  {% if page.meta.hero and page.meta.hero.messages %}
+    {% set item = page.meta.hero.messages|first %}
+    {{ super() }}
+  {% else %}
+    <div class="hero md-typeset">
+      <div class="hero__inner" data-md-color-scheme="{{ page.meta.scheme }}">
+        <div class="default large">{{ page.title }}</div>
+        {% if page.meta.type in ["maintenance", "event"] and page.config.start | date == page.config.end | date %}
+          <div class="default medium">{{ page.config.start | date }}</div>
+        {% elif page.meta.type in ["maintenance", "event"] %}
+          <div class="primary medium" style="text-transform: uppercase">
+            {{ page.config.start | date("d MMMM") }} - {{ page.config.end | date("d MMMM") }}
+          </div>
+        {% endif %}
+      </div>
+      {% if page.meta.hero and page.meta.hero.backdrop %}
+        {% set image = page.meta.hero.backdrop %}
+      {% elif page.meta.image %}
+        {% set image = page.meta.image %}
+      {% else %}
+        {% set image = "assets/images/backdrop.png" %}
       {% endif %}
+      <img src="{{ image | url }}" alt="backdrop"/>
     </div>
-    {% if page.meta.hero and page.meta.hero.backdrop %}
-      {% set image = page.meta.hero.backdrop %}
-    {% elif page.meta.image %}
-      {% set image = page.meta.image %}
-    {% else %}
-      {% set image = "assets/images/backdrop.png" %}
-    {% endif %}
-    <img src="{{ image | url }}" alt="backdrop"/>
-  </div>
+  {% endif %}
 {% endblock %}
-
 
 {% block content %}
   <div class="md-nav__title md-nav__container">

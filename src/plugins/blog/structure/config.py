@@ -9,8 +9,12 @@ from mkdocs.config.config_options import ListOfItems, Optional, Type, Choice, Su
 class CustomPostConfig(PostConfig):
     type = Optional(Choice(["news", "maintenance", "event"]))
 
+class NewsSourceConfig(Config):
+    title: Type(str)
+    url: Type(str)
+
 class NewsConfig(CustomPostConfig):
-    pass # no additional properties
+    source = SubConfig(NewsSourceConfig)
 
 class AnnouncementBanner(Config):
     enabled = Type(bool, default = False)
