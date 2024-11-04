@@ -5,7 +5,7 @@ type: news
 image: &image blog/news/2024/2024-11-04_nvidia-dgx-superpod.png
 title: TU/e among first to acquire NVIDIA’s newest AI supercomputer powered by world’s most powerful AI platform
 source:
-  title: Official TU/e Website
+  title: TU/e
   url: https://www.tue.nl/en/news-and-events/news-overview/04-11-2024-tue-among-first-to-acquire-nvidias-newest-ai-supercomputer-powered-by-worlds-most-powerful-ai-platform
 hero:
   backdrop: *image 
