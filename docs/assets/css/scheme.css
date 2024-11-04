@@ -2,7 +2,7 @@
   --md-default-fg-color: #1a1a1a;
   --md-default-bg-color: #fafafa;
 
-  --md-primary-fg-color: #fafafa;
+  --md-primary-fg-color: var(--md-default-fg-color);
   --md-primary-bg-color: var(--md-default-bg-color);
 
   --md-accent-fg-color: #c81919;
