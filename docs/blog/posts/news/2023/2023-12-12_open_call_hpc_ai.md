@@ -3,6 +3,9 @@ date: 2023-12-12
 authors: [j.h.m.verbiesen]
 type: news
 image: blog/news/2023/2023-12-12_open_call_hpc_ai.png
+source:
+  title: EuroCC Netherlands
+  url: https://eurocc-netherlands.nl/open-call-hpc-ai/
 ---
 
 # Open Call HPC AI
@@ -39,4 +42,3 @@ This Regular Access mode offers three distinctive application tracks:
 
 [Apply Now!](https://u17cmwrnl4v.typeform.com/to/S1vqNsUV){ .md-button }
 
-_source: [https://eurocc-netherlands.nl/open-call-hpc-ai/](https://eurocc-netherlands.nl/open-call-hpc-ai/){:target=_blank}_

@@ -3,18 +3,18 @@ from email.policy import default
 
 from material.plugins.blog.structure import PostConfig
 from mkdocs.config.base import Config
-from mkdocs.config.config_options import ListOfItems, Optional, Type, Choice, SubConfig, URL
+from mkdocs.config.config_options import ListOfItems, Optional, Type, Choice, SubConfig, URL, OptionallyRequired
 
 
 class CustomPostConfig(PostConfig):
     type = Optional(Choice(["news", "maintenance", "event"]))
 
 class NewsSourceConfig(Config):
-    title: Type(str)
-    url: Type(str)
+    title = Type(str)
+    url = URL()
 
 class NewsConfig(CustomPostConfig):
-    source = SubConfig(NewsSourceConfig)
+    source = OptionallyRequired(SubConfig(NewsSourceConfig))
 
 class AnnouncementBanner(Config):
     enabled = Type(bool, default = False)
