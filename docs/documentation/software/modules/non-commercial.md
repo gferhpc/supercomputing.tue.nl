@@ -91,7 +91,7 @@ Using the toolchain(s) the following software is avaiable. When the module is lo
 | OpenFOAM (Foundation)       | 10-foss-2023a<br>11-foss-2023a<br>12-foss-2023a | `OpenFOAM`  | |
 | OpenModelica   | 1.22.0-foss-2022a                    | `OpenModelica` | |
 | OpenSceneGraph | 3.6.5-foss-2022a                     | `OpenSceneGraph`  | Yes via Interactive Desktop |
-| ORCA           | 6.0.0-gompi-2023a<br>5.0.4-gompi-2023a                   | `ORCA`      | |
+| ORCA           | 6.0.1-gompi-2023a<br>5.0.4-gompi-2023a                   | `ORCA`      | |
 | ParaView       | 5.12.1-foss-2023a                    | `ParaView`  | Yes |
 | QCG-PilotJob   | 0.14.1-foss-2023a | `QCG-PilotJob` | |
 | QuantumESPRESSO| 7.3.1-foss-2023a    | `QuantumESPRESSO` | |
