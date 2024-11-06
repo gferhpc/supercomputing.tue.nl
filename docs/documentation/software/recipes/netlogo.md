@@ -47,3 +47,13 @@ tab="${exp}-${SLURM_JOBID}.csv"
 
 srun netlogo-headless.sh --model "${mdl}" --experiment "${exp}" --tab "${tab}" --threads ${SLURM_CPUS_PER_TASK}
 ```
+
+### Netlogo running in SLURM Issues
+
+#### No SLURM output and/or NetLogo csv generated
+
+This is possibly due to an incorrect stop condition in the Netlogo experiment.
+
+#### Exit code 137 in SLURM output
+
+Out of memmory of the Netlogo/Java process. Reserving more `--mem-per-cpu` (eq. 4gb) can fix this.
