@@ -52,7 +52,7 @@ experimental purposes to get familiar with HPC.
 === "CE&C"
 
     { .umbrella-specs chem-storage001 }
-    { .umbrella-specs chem.default.q,chem.gpu.q,chem.longterm.q,chem.smm01.q,chem.smm02.q }
+    { .umbrella-specs chem.default.q,chem.gpu.q,chem.longterm.q,chem.smm01.q,chem.smm02.q,chem.smm03.q }
 
 === "EE"
 
