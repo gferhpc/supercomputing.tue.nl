@@ -1,5 +1,6 @@
 nav:
   - index.md
-  - gpu.md
-  - mastodont.md
-  - virtual_machines.md
+  - "HPC cluster": hpc.md
+  - "HPC GPU nodes": gpu.md
+  - "Mastodont": mastodont.md
+  - "Virtual machines": virtual_machines.md

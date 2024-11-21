@@ -8,8 +8,8 @@ tags: [Software, Module]
 
 ### Getting a license
 
-Check the
-[intranet](https://intranet.tue.nl/en/university/services/information-management-services/software/comsol-multiphysics/){:target=_blank}
+Please check
+[KI 6824](https://tue.topdesk.net/tas/public/ssp/content/search?q=KI%206824){:target=_blank}
 for the procedure on how to get a license for using COMSOL.
 
 ## Using Application interactive<br>(Graphical User Interface)

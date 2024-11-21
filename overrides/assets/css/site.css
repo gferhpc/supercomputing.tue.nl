@@ -151,6 +151,10 @@ section.secondary {
     }
   }
 
+  .linenos pre {
+    border: none;
+  }
+
   .admonition {
     background-color: var(--md-default-bg-color--light);
   }
