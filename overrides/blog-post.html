@@ -29,13 +29,15 @@
 {% endblock %}
 
 {% block content %}
-  <div class="md-nav__title md-nav__container">
-    <a href="{{ page.parent.url | url }}" class="md-nav__link">
-      {% include ".icons/material/arrow-left.svg" %}
-      <span class="md-ellipsis">{{ lang.t("blog.index") }}</span>
-    </a>
-    <hr/>
-  </div>
+  {% if "back" not in hide|default(page.meta.hide) %}
+    <div class="md-nav__title md-nav__container">
+      <a href="{{ page.parent.url | url }}" class="md-nav__link">
+        {% include ".icons/material/arrow-left.svg" %}
+        <span class="md-ellipsis">{{ lang.t("blog.index") }}</span>
+      </a>
+      <hr/>
+    </div>
+  {% endif %}
   {% set post = page %}
   {% include "blog/card-full.html" %}
   {% set posts = [] %}
@@ -50,4 +52,3 @@
     {% include "blog/cards.html" %}
   {% endif %}
 {% endblock %}
-

@@ -4,7 +4,3 @@
 {% for post in page.blog.posts if post.config.type == "event" %}
   {% set na = posts.insert(loop.index, post) %}
 {% endfor %}
-
-{% block container %}
-  {{ super() }}
-{% endblock %}

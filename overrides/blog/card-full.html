@@ -45,7 +45,7 @@
         {% endif %}
       </div>
       <div class="post__image">
-        <a href="{{ post.url | url }}">
+        <a href="{{ post_url | default(post.url) | url }}">
           <img src="{{ post.meta.image | default("assets/images/416x234.svg") | url }}" alt="{{ post.title }}"/>
         </a>
       </div>
@@ -54,7 +54,8 @@
   <div class="post__meta">
     {{ post.config.date.created | date }}
     {%- if page == post and post.config.source -%}
-      <span class="post__source">, Source: <a href="{{ post.config.source.url }}" target="_blank">{{ post.config.source.title }}</a></span>
+      <span class="post__source">, Source: <a href="{{ post.config.source.url }}"
+                                              target="_blank">{{ post.config.source.title }}</a></span>
     {% endif %}
     <div class="post__meta--badges">
       {% for category in post.categories %}
@@ -72,7 +73,7 @@
     {% if page == post %}
       <h1>{{ post.title }}</h1>
     {% else %}
-      <a href="{{ post.url | url }}">{{ post.title }}</a>
+      <a href="{{ post_url | default(post.url) | url }}">{{ post.title }}</a>
     {% endif %}
   </div>
   <div class="post__content">
@@ -83,20 +84,20 @@
     {% endif %}
   </div>
   {% if page != post %}
-    <a class="post__more" href="{{ post.url | url }}">{{ lang.t("blog.continue") }}</a>
+    <a class="post__more" href="{{ post_url | default(post.url) | url }}">{{ lang.t("blog.continue") }}</a>
   {% else %}
     {% if page.config.schedule %}
-      <section class="secondary">
+      <section class="alternate">
         {% include "blog/event/program.html" %}
       </section>
     {% endif %}
     {% if post.config.speakers %}
-      <section class="primary">
+      <section class="alternate">
         {% include "blog/event/speakers.html" %}
       </section>
     {% endif %}
     {% if post.config.sponsors %}
-      <section class="secondary">
+      <section class="alternate">
         {% include "blog/event/sponsors.html" %}
       </section>
     {% endif %}

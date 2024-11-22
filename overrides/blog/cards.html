@@ -7,11 +7,14 @@
 <div class="grid cards">
   <ul>
     {% for post in posts[:full] %}
+      {% if url_prefix %}
+        {% set post_url = url_prefix ~ post.url %}
+      {% endif %}
       <li class="container">
         {% include "blog/card-full.html" %}
       </li>
     {% endfor %}
-    {% if posts[2:limit] %}
+    {% if posts[full:limit] %}
       <li>
         <div class="container">
           <strong>
@@ -24,6 +27,9 @@
         </div>
         <dl>
           {% for post in posts[full:limit] %}
+            {% if url_prefix %}
+              {% set post_url = url_prefix ~ post.url %}
+            {% endif %}
             <dt class="container">
               {% include "blog/card-small.html" %}
             </dt>

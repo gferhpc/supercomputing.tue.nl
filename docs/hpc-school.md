@@ -3,7 +3,7 @@ title: HPC School
 description: >
   Join the TU/e HPC School for hands-on training in high-performance computing, enhancing skills in data processing and 
   simulations for researchers and students.
-hide: [ navigation ]
+hide: [ navigation, back ]
 template: hpc-school.html
 ---
 
@@ -21,3 +21,5 @@ topics like deep learning, simulation, and energy-efficient computing. The HPC S
 enhancing computational skills and fostering collaboration within the HPC community.
 
 Stay tuned for announcements on future editions through the official channels.
+
+## Past Events

@@ -1,28 +1,21 @@
-{% extends "main.html" %}
-
 {% set posts = [] %}
-{% for post in page.blog.posts if post.config.type == "event" and "HPC School" in post.config.categories and not post.config.end < now() %}
+{% for post in page.blog.posts if post.config.type == "event" and "HPC School" %}
   {% set na = posts.insert(loop.index, post) %}
 {% endfor %}
 
-{% if posts %}
-  {% set page = posts|first %}
-{% endif %}
+{% set url_prefix = "blog/" %}
 
-{% block content %}
-  {% if posts %}
-    {% set post = page %}
-    {% set landing = True %}
-    {% include "partials/event.html" %}
+{% if posts %}
+  {% set event = posts|first %}
+  {% if event.config.end >= now() %}
+    {% set hide = page.meta.hide %}
+    {% set page = event %}
+    {% extends "blog-post.html" %}
   {% else %}
-    {{ super() }}
-    <h2>Past Events</h2>
-    <div class="grid cards">
-      <ul>
-        {% for post in page.blog.posts if post.config.type == "event" and "HPC School" in post.config.categories %}
-          <li>{% include "partials/event.html" %}</li>
-        {% endfor %}
-      </ul>
-    </div>
+    {% set posts = [] %}
+    {% for post in page.blog.posts if post.config.type == "event" and "HPC School" in post.config.categories %}
+      {% set na = posts.insert(loop.index, post) %}
+    {% endfor %}
+    {% extends "blog.html" %}
   {% endif %}
-{% endblock %}
+{% endif %}
