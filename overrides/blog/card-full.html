@@ -33,7 +33,7 @@
             {% include "blog/event/speakers-badges.html" %}
           </div>
         {% endif %}
-        {% if post.config.registration and post.config.registration.enabled %}
+        {% if post.config.registration and post.config.registration.enabled and post.config.end >= now() %}
           <div class="bottom-right post__registration">
             {% for option in post.config.registration.options %}
               <a class="post__registration--link" href="{{ option.url | url }}" target="_blank">
