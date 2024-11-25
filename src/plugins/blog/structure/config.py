@@ -27,6 +27,7 @@ class MaintenanceConfig(CustomPostConfig):
 
 class ScheduleItem(Config):
     title = Type(str)
+    description = OptionallyRequired(Type(str))
     start = Type(datetime)
     end = Type(datetime)
     icon = Optional(Type(str))
