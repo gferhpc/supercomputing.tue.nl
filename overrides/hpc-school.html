@@ -1,5 +1,5 @@
 {% set posts = [] %}
-{% for post in page.blog.posts if post.config.type == "event" and "HPC School" %}
+{% for post in page.blog.posts if post.config.type == "event" and "HPC School" in post.config.categories %}
   {% set na = posts.insert(loop.index, post) %}
 {% endfor %}
 
@@ -12,10 +12,13 @@
     {% set page = event %}
     {% extends "blog-post.html" %}
   {% else %}
-    {% set posts = [] %}
-    {% for post in page.blog.posts if post.config.type == "event" and "HPC School" in post.config.categories %}
-      {% set na = posts.insert(loop.index, post) %}
-    {% endfor %}
-    {% extends "blog.html" %}
+    {% extends "main.html" %}
   {% endif %}
 {% endif %}
+
+{% block content %}
+  {{ super() }}
+  {% if event.config.end < now() %}
+    {% include "blog/cards.html" %}
+  {% endif %}
+{% endblock %}
