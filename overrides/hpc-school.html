@@ -3,8 +3,6 @@
   {% set na = posts.insert(loop.index, post) %}
 {% endfor %}
 
-{% set url_prefix = "blog/" %}
-
 {% if posts %}
   {% set event = posts|first %}
   {% if event.config.end >= now() %}
