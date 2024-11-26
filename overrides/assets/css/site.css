@@ -1,21 +1,81 @@
 @font-face {
-  font-family: "AvenirNext Bold";
+  font-family: "Avenir Next";
   src: url('/assets/fonts/AvenirNext-Bold.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: "AvenirNext Medium";
-  src: url('/assets/fonts/AvenirNext-Medium.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: "AvenirNext Regular";
-  src: url('/assets/fonts/AvenirNext-Regular.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: "Gilroy Bold";
+  font-family: "Gilroy";
   src: url('/assets/fonts/Gilroy-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url('/assets/fonts/Lato-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url('/assets/fonts/Lato-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url('/assets/fonts/Lato-Regular.ttf') format('truetype');
+}
+
+
+@font-face {
+  font-family: "Lato";
+  src: url('/assets/fonts/Lato-Italic.ttf') format('truetype');
+  font-style: italic;
+}
+
+
+@font-face {
+  font-family: "Lato";
+  src: url('/assets/fonts/Lato-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url('/assets/fonts/Lato-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Roboto Mono";
+  src: url('/assets/fonts/RobotoMono-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Roboto Mono";
+  src: url('/assets/fonts/RobotoMono-Italic.ttf') format('truetype');
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Roboto Mono";
+  src: url('/assets/fonts/RobotoMono-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Roboto Mono";
+  src: url('/assets/fonts/RobotoMono-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+:root {
+  --md-text-font: "Lato";
+  --md-code-font: "Roboto Mono";
 }
 
 [data-md-color-scheme] {
@@ -47,7 +107,7 @@
 
   .md-header__title {
     margin-right: 2em;
-    font-family: "AvenirNext Bold", "Gilroy Bold", Lato, sans-serif;
+    font-family: "Avenir Next", "Gilroy", var(--md-text-font,_),-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif;
     text-rendering: geometricPrecision;
     z-index: 1;
 
@@ -156,13 +216,12 @@ section.alternate {
   }
 
   h1 {
-    font-family: "AvenirNext Bold", "Gilroy Bold", Lato, sans-serif;
     color: var(--md-default-fg-color);
     font-size: 1.85em;
   }
 
-  h2, h3, h4, h5, h6 {
-    font-family: "Gilroy Bold", Lato, sans-serif;
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Gilroy", var(--md-text-font,_),-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif;;
   }
 }
 
@@ -303,7 +362,7 @@ section.alternate {
     text-align: center;
     align-self: center;
     z-index: 1;
-    font-family: "Gilroy Bold", Lato, sans-serif;
+    font-family: "Gilroy", var(--md-text-font,_),-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif;;
     text-rendering: geometricPrecision;
 
     .small {
@@ -540,7 +599,7 @@ ul.sponsor__list {
   }
 
   .post__meta {
-    font-family: "Gilroy Bold", Lato, sans-serif;
+    font-family: "Gilroy", var(--md-text-font,_),-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif;;
     font-weight: 300;
     font-size: .6rem;
     color: var(--md-default-fg-color--light);
@@ -572,7 +631,7 @@ ul.sponsor__list {
   }
 
   .post__title {
-    font-family: "Gilroy Bold", Lato, sans-serif;
+    font-family: "Gilroy", var(--md-text-font,_),-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif;;
     font-weight: 700;
     font-size: 1rem;
 

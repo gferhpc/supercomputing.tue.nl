@@ -8,8 +8,7 @@ not_in_nav: |
 theme:
   name: material
   custom_dir: overrides
-  font:
-    text: Lato
+  font: false
   language: en
   logo: assets/images/logo.svg
   favicon: assets/images/favicon.ico
