@@ -20,7 +20,7 @@ or install third-party software, e.g.:
 
 === ":fontawesome-brands-windows: Windows"
 
-    For Windows you likely need a 3rd party tool to be able to use SSH. More modern versions of Windows _may_ include SSH by default, for more information see [:simple-powershell: PowerShell](#__tabbed_2_3).
+    For Windows you likely need a 3rd party tool to be able to use SSH. More modern versions of Windows _may_ include SSH by default, for more information see [:material-powershell: PowerShell](#__tabbed_2_3).
 
     === ":octicons-terminal-16: MobaXterm"
 
@@ -34,7 +34,7 @@ or install third-party software, e.g.:
 
             If you need to load X11/GUI applications from the terminal, please consider installing [VcXsrv](https://sourceforge.net/projects/vcxsrv/){:target=_blank} as well! Or even simpler and better: use the [Web Interface](https://hpc.tue.nl)
 
-    === ":simple-powershell: PowerShell"
+    === ":material-powershell: PowerShell"
 
         SSH should be available by default for most Windows 11 installations. For windows 10 or manual installation please check the official [Microsoft documentation](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui#install-openssh-for-windows){:target=_blank} on how to install SSH for Windows.
 
@@ -109,7 +109,7 @@ or install third-party software, e.g.:
         1. Enter the "Host Name (or IP address)" field `USERNAME@hpc.tue.nl`
         2. Click on `Open` to connect to the server
 
-    === ":simple-powershell: PowerShell"
+    === ":material-powershell: PowerShell"
 
          ```powershell
          > ssh USERNAME@hpc.tue.nl
@@ -268,7 +268,7 @@ pairs for all machines that need access to your account.
 
          Open the saved private key (step 6) with the Pageant program (enter the passphrase of Step 5 if prompted) and connect to the cluster as usual. You'll have to repeat this step everytime you reboot your system.
 
-    === ":simple-powershell: PowerShell"
+    === ":material-powershell: PowerShell"
 
         ![img_12.png](img_12.png){ align=right width="200" }
 
