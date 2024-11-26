@@ -290,7 +290,7 @@ pairs for all machines that need access to your account.
              To be able to use your SSH key pair to log in to the HPC cluster, you have to put your public key on the server.
       
              ```powershell
-             ssh-copy-id USERNAME@hpc.tue.nl
+             type $env:USERPROFILE\.ssh\id_rsa.pub | ssh <your account>@hpc.tue.nl "cat >> .ssh/authorized_keys"
              ```
 
          3. Add the SSH key to the agent
