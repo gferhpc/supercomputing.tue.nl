@@ -53,7 +53,7 @@
   </div>
   <div class="post__meta">
     {{ post.config.date.created | date }}
-    {%- if page == post and post.config.source -%}
+    {%- if page == post and post.config.source and post.config.source.title -%}
       <span class="post__source">, Source: <a href="{{ post.config.source.url }}"
                                               target="_blank">{{ post.config.source.title }}</a></span>
     {% endif %}

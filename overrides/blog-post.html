@@ -15,6 +15,9 @@
             {{ page.config.start | date("d MMMM") }} - {{ page.config.end | date("d MMMM") }}
           </div>
         {% endif %}
+        {% if page.meta.description %}
+          <div class="default small">{{ page.meta.description }}</div>
+        {% endif %}
       </div>
       {% if page.meta.hero and page.meta.hero.backdrop %}
         {% set image = page.meta.hero.backdrop %}
