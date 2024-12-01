@@ -3,7 +3,7 @@ title: Technical Specifications
 ---
 
 
-|                       | Software Stack                                               |
+|                       | Software Stack                                               |![UmbrellaServers](UmbrellaServers.png){: align=ricght style="height:300px"}
 |----------------------:|--------------------------------------------------------------|
 |      Operating System | :simple-rockylinux: [Rocky Linux 8](https://rockylinux.org/) |
 |    Cluster Management | [TrinityX](https://github.com/clustervision/trinityX)        |
