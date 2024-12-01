@@ -2,6 +2,8 @@
 title: Technical Specifications
 ---
 
+![UmbrellaServers](UmbrellaServers.png){: align=ricght style="height:200px"}
+
 |                       | Software Stack                                               |
 |----------------------:|--------------------------------------------------------------|
 |      Operating System | :simple-rockylinux: [Rocky Linux 8](https://rockylinux.org/) |
