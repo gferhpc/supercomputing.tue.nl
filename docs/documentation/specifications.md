@@ -2,16 +2,13 @@
 title: Technical Specifications
 ---
 
-
-|                       | Software Stack                                               |![UmbrellaServers](UmbrellaServers.png){: align=ricght style="height:300px"}
+|                       | Software Stack                                               |
 |----------------------:|--------------------------------------------------------------|
 |      Operating System | :simple-rockylinux: [Rocky Linux 8](https://rockylinux.org/) |
 |    Cluster Management | [TrinityX](https://github.com/clustervision/trinityX)        |
 |         Module System | [Lmod](https://lmod.readthedocs.io/en/latest/)               |
 | Software Build System | [EasyBuild](https://docs.easybuild.io/)                      |
 |     Remote Web Access | [Open Ondemand](https://openondemand.org/)                   |
-
-![UmbrellaServers](UmbrellaServers.png){: align=ricght style="height:300px"}
 
 ## Partition/Queues
 
