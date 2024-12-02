@@ -97,6 +97,7 @@ Using the toolchain(s) the following software is avaiable. When the module is lo
 | QuantumESPRESSO| 7.3.1-foss-2023a    | `QuantumESPRESSO` | |
 | R              | 4.4.0-gfbf-2023a<br>4.4.1-gfbf-2023a  | `R/`        | |
 | Rstudio        | 2022.07.2+576-foss-2022a-Java-11-R-4.2.1<br>2023.12.1+402-gfbf-2023a-Java-11-R-4.4.1 | `RStudio` | Yes |
+| SlurmViewer.   | 1.0.1-GCCcore-12.3.0  | `slurm-SlurmViewer/`        | |
 | Spark          | 3.5.0-foss-2023a<br>3.5.1-foss-2023a-Java-17 | `Spark`        | |
 | VSCode         | 1.95.3      | `VSCode`   | Yes via codeserver |
  
