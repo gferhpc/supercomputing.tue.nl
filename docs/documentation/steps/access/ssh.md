@@ -211,14 +211,7 @@ or install third-party software, e.g.:
 
 ## Login nodes
 
-Most TU/e HPC clusters are logged-into via the general log-in nodes from the TU/e: *hpc.tue.nl*, but some clusters have
-their own login node:
-
-| Hostname                  | Department                                 |
-|---------------------------|--------------------------------------------|
-| hpc.tue.nl ^(suggested)^  | -                                          |
-| hpc.arch.tue.nl           | Built Environment (BE)                     |
-| chem-login001.chem.tue.nl | Chemical Engineering & Chemistry (CE&C)    |
+Most TU/e HPC clusters are logged-into via the general log-in nodes from the TU/e: *hpc.tue.nl*
 
 ## Passwordless Authentication
 
