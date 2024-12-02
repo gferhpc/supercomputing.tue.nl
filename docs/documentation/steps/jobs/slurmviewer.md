@@ -21,3 +21,5 @@ user@umbrella$ slurm-Viewer
 ```
 
 ![SlurmViewerExample](SlurmViewerExample.png)
+
+Use 'q' to quit. The interface can be used with a mouse (it's clickable)
