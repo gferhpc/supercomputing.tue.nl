@@ -20,3 +20,4 @@ Start SlurmViewer
 user@umbrella$ slurm-Viewer
 ```
 
+![SlurmViewerExample](SlurmViewerExample.png)
