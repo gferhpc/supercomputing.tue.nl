@@ -25,6 +25,6 @@ Available as [modules](../../steps/software/index.md):
 | MATLAB          | [mathworks.com](https://www.mathworks.com/products/matlab.html){:target="_blank"} | [Using MATLAB](../recipes/matlab.md) | Yes |
 | StarCCM+        | [siemens.com](https://plm.sw.siemens.com/en-US/simcenter/fluids-thermal-simulation/star-ccm/){:target="_blank"} | `module avail starccm+` | Yes |
 | TecPlot 360     | [tecplot.com](https://tecplot.com/products/tecplot-360/){:target="_blank"} | `module avail tecplot` | Yes |
-| VASP            | [vasp.at](https://www.vasp.at/) |  `module avail VASP` | No |
+| VASP            | [vasp.at](https://www.vasp.at/){:target="_blank"} |  `module avail VASP` | No |
 | VTune           | [intel.com](https://www.intel.com/content/www/us/en/developer/tools/oneapi/vtune-profiler.html){:target="_blank"} | `module avail vtune` | Yes |
 
