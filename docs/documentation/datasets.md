@@ -46,7 +46,10 @@ unzip /dataset/ADE20K/ADE20K.zip -d $datadir
       <code>/dataset/AlphaFold</code><br/>
       Related module: <code>module load AlphaFold/2.3.1-foss-2022a</code>
     </td>
-    <td>Apache 2.0</td>
+    <td>
+      Model params: <a href="https://creativecommons.org/licenses/by/4.0/legalcode">CC BY 4.0</a><br/>
+      Mirrored DBs: various; see website
+    </td>
     <td><a href="https://github.com/google-deepmind/alphafold">GitHub</a></td>
   </tr>
   <tr>
