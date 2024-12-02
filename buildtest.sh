@@ -5,14 +5,17 @@
 
 set -e
 
-if [ ! -e pyvenv ]; then
-  python3 -m venv --upgrade-deps pyvenv
-  . pyvenv/bin/activate
-  pip install --user --upgrade -e .
+venvdir="$(dirname $0)/pyvenv"
+python="${PYTHON:-python3}"
+
+if [ ! -e "$venvdir" ]; then
+  "$python" -m venv --upgrade-deps "$venvdir"
+  . "$venvdir"/bin/activate
+  pip install --upgrade -e .
 else
   echo "Pyvenv already exists; not reinstalling it."
   echo "If packages changed, please remove venv dir, then rerun this script."
-  . pyvenv/bin/activate
+  . "$venvdir"/bin/activate
 fi
 
-python3 -m mkdocs build --no-directory-urls --site-dir public
+"$python" -m mkdocs build --no-directory-urls --site-dir public
