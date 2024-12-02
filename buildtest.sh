@@ -7,11 +7,12 @@ set -e
 
 if [ ! -e pyvenv ]; then
   python3 -m venv --upgrade-deps pyvenv
+  . pyvenv/bin/activate
   pip install --user --upgrade -e .
 else
   echo "Pyvenv already exists; not reinstalling it."
   echo "If packages changed, please remove venv dir, then rerun this script."
+  . pyvenv/bin/activate
 fi
-. pyvenv/bin/activate
 
 python3 -m mkdocs build --no-directory-urls --site-dir public
