@@ -1,6 +1,6 @@
 # Slurm Viewer
 
-Slurm Viewer is a Graphical Command Line Interface to the Slurm Schduler. View the status of a SLURM cluster, including nodes and patitions/queues. It is avaialbe as a [module](https://supercomputing.tue.nl/documentation/steps/software/) on the login node and needs initialisation once.
+Slurm Viewer (**slurm-viewer**) is a Graphical Command Line Interface to the Slurm Schduler. View the status of a SLURM cluster, including nodes and patitions/queues. It is avaialbe as a [module](https://supercomputing.tue.nl/documentation/steps/software/) on the login node and needs initialisation once.
 
 Load the module
 
