@@ -6,7 +6,6 @@ import os
 import posixpath
 import re
 from datetime import datetime
-from idlelib.iomenu import encoding
 
 from material.plugins.blog.plugin import BlogPlugin
 from mkdocs.config.defaults import MkDocsConfig
