@@ -1,29 +1,75 @@
-.deploy: &deploy
-  artifacts:
-    paths:
-      - public
-  image: python:latest
-  before_script:
-    - python3 -m pip install --user --upgrade -e .
-    - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.tue.nl/hpclab/website-cluster.git cluster
-  variables:
-    GIT_DEPTH: 1000
+workflow:
+  auto_cancel:
+    on_new_commit: interruptible
 
-build:
-  <<: *deploy
+default:
+  image: "python:latest"
+  before_script:
+    - "python3 -m pip install --no-warn-script-location --user --upgrade -e ."
+  artifacts:
+    paths: [ "public/" ]
+  cache:
+    paths:
+      - ".cache/pip"
+      - ".cache/plugin"
+
+variables:
+  GIT_DEPTH: 1000
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+
+staging:
   stage: build
   script:
     - "python3 -m mkdocs build --no-directory-urls --site-dir public"
+  interruptible: true
+  rules:
+    - if: "$CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH"
+
+production:
+  stage: build
+  script:
+    - "git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.tue.nl/hpclab/website-cluster.git cluster"
+    - "python3 -m mkdocs build --site-dir public"
+  interruptible: true
+  rules:
+    - if: "$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH"
+
+python:
+  stage: test
+  image: "python:$VERSION"
+  script:
+    - "python3 -m mkdocs build --no-directory-urls --site-dir public"
+  interruptible: true
+  parallel:
+    matrix:
+      - VERSION: [ "3.11", "3.12", "3.13" ]
+  rules:
+    - if: "$CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH"
+
+preview:
+  stage: deploy
+  dependencies: [ staging ]
+  before_script: [ ]
+  variables:
+    PREVIEW_URL: "https://$CI_PROJECT_ROOT_NAMESPACE.$CI_PAGES_DOMAIN/-/sites/$CI_PROJECT_NAME/-/jobs/$CI_JOB_ID/artifacts/public/index.html"
+  script:
+    - "echo $PREVIEW_URL"
   environment:
-    name: review/$CI_COMMIT_REF_NAME
-    url: "https://$CI_PROJECT_ROOT_NAMESPACE.$CI_PAGES_DOMAIN/-/sites/$CI_PROJECT_NAME/-/jobs/$CI_JOB_ID/artifacts/public/index.html"
+    name: "review/$CI_COMMIT_REF_NAME"
+    url: $PREVIEW_URL
+    deployment_tier: development
   rules:
     - if: "$CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH"
 
 pages:
-  <<: *deploy
   stage: deploy
+  dependencies: [ production ]
+  before_script: [ ]
   script:
-    - "python3 -m mkdocs build --site-dir public"
+    - "echo Publishing release to https://supercomputing.tue.nl/"
+  environment:
+    name: production
+    url: https://supercomputing.tue.nl
+    deployment_tier: production
   rules:
     - if: "$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH"
