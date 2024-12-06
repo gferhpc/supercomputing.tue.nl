@@ -1,6 +1,8 @@
 # Slurm Viewer
 
-Slurm Viewer (**slurm-viewer**) is a Graphical Command Line Interface to the Slurm Schduler. View the status of a SLURM cluster, including nodes and patitions/queues. It is avaialbe as a [module](https://supercomputing.tue.nl/documentation/steps/software/) on the login node and needs initialisation once.
+[Slurm Viewer](https://gitlab.com/lkeb/slurm_viewer){:target=_blank} (**slurm-viewer**) is a Graphical Command Line
+Interface to the Slurm Scheduler. View the status of a SLURM cluster, including nodes and partitions/queues. It is
+available as a [module](../../steps/software/index.md) on the login node and needs initialization once.
 
 Load the module
 
@@ -8,7 +10,7 @@ Load the module
 user@umbrella$ module load SlurmViewer
 ```
 
-Initialise SlurmViewer, only needed once, after this you can edit `~/.config/slurm-viewer/settings.toml` anytime.
+Initialize SlurmViewer, only needed once, after this you can edit `~/.config/slurm-viewer/settings.toml` anytime.
 
 ```shell
 user@umbrella$ slurm-viewer-init
