@@ -3,7 +3,6 @@ title:  COMSOL
 tags: [Software, Module]
 ---
 
-![COMSOL in Umbrella On Demdand](comsol-ood.png){: align=right style="height:100px"}
 [COMSOL](https://www.comsol.com/){:target="_blank"} is licensed software and only usable if the user is a member of the correct group.
 
 ### Getting a license
@@ -14,6 +13,7 @@ for the procedure on how to get a license for using COMSOL.
 
 ## Using Application interactive<br>(Graphical User Interface)
 
+![COMSOL in Umbrella On Demdand](comsol-ood.png){: style="height:100px"}
 Use your browser to connect to [Umbrella On Demand](https://hpc.tue.nl){:target="_blank"}
 
 ## Using COMSOL in SLURM batch jobs<br>(Command Line Interface)
