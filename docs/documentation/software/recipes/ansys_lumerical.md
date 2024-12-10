@@ -7,7 +7,7 @@ tags: [Software, Module]
 
 ## Using ANSYS Lumerical interactive<br>(Graphical User Interface)
 
-![ANSYS Lumerical in Umbrella On Demdand](lumerical-ood.png){style="height:100px"}
+![ANSYS Lumerical in Umbrella On Demdand](lumerical-ood.png){: style="height:100px"}
 Use your browser to connect to [Umbrella On Demand](https://hpc.tue.nl){:target="_blank"}
 
 ## Using ANSYS Lumerical in SLURM batch jobs<br>(Command Line Interface)
