@@ -8,7 +8,6 @@ tags: [Software, Module]
 ## Using ANSYS Fluent interactive<br>(Graphical User Interface)
 
 ![ANSYS Fluent in Umbrella On Demdand](ansys-fluent-ood.png){: allign=right style="height:100px"}
-
 Use your browser to connect to [Umbrella On Demand](https://hpc.tue.nl){:target="_blank"}
 
 ## Using ANSYS Fluent in SLURM batch jobs<br>(Command Line Interface)
