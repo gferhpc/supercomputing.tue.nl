@@ -5,10 +5,9 @@ tags: [Software]
 
 [Jupyter](https://jupyter.org/){:target="_blank"} Jupyter(Lab) is the latest web-based interactive development environment for notebooks, code, and data. Its flexible interface allows users to configure and arrange workflows in data science, scientific computing, computational journalism, and machine learning.
 
-![Jupyter in Umbrella On Demdand](jupyter-ood.png){: align=right style="height:100px"}
-
 ## Using Jupyter interactive<br>(Graphical User Interface)
 
+![Jupyter in Umbrella On Demdand](jupyter-ood.png){: style="height:100px"}
 Use your browser to connect to [Umbrella On Demand](https://hpc.tue.nl){:target="_blank"}
 
 ## Using Jupyter in SLURM batch jobs<br>(Command Line Interface)
