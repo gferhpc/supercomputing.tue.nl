@@ -3,7 +3,7 @@ title: ANSYS Fluent
 tags: [Software, Module]
 ---
 
-![ANSYS Fluent in Umbrella On Demdand](ansys-fluent-ood.png){ align=right style="height:100px"}
+![ANSYS Fluent in Umbrella On Demdand](ansys-fluent-ood.png){ style="height:100px"}
 
 [ANSYS Fluent](https://www.ansys.com/products/fluids/ansys-fluent){:target="_blank"} is the industry-leading fluid simulation software known for its advanced physics modeling capabilities and industry leading accuracy
 
