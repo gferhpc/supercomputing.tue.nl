@@ -4,11 +4,11 @@ title: ANSYS WorkBench
 tags: [Software, Module]
 ---
 
-![ANSYS WorkBench in Umbrella On Demand](ansys-workbench-ood.png){: align=right style="height:100px"}
 [ANSYS WorkBench](https://www.ansys.com/products/ansys-workbench){:target="_blank"} lets you integrate data across engineering simulations to create more accurate models more efficiently.
 
 ## Using Application interactive<br>(Graphical User Interface)
 
+![ANSYS WorkBench in Umbrella On Demand](ansys-workbench-ood.png){: align=right style="height:100px"}
 Use your browser to connect to [Umbrella On Demand](https://hpc.tue.nl){:target="_blank"}
 
 ## Using ANSYS WorkBench in SLURM batch jobs<br>(Command Line Interface)
