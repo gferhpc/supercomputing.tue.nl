@@ -7,7 +7,7 @@ tags: [Software]
 
 ## Using Jupyter interactive<br>(Graphical User Interface)
 
-![Jupyter in Umbrella On Demdand](jupyter-ood.png){: style="height:100px"}
+![Jupyter in Umbrella On Demdand](jupyter-ood.png){: text-align=center style="height:100px"}
 Use your browser to connect to [Umbrella On Demand](https://hpc.tue.nl){:target="_blank"}
 
 ## Using Jupyter in SLURM batch jobs<br>(Command Line Interface)
