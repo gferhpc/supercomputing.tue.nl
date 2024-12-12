@@ -33,20 +33,47 @@
     }
   }
 </style>
+
+{% if item.title %}
+  {% set title = item.title %}
+{% else %}
+  {% set title = post.meta.title %}
+{% endif %}
+
+{% if item.speakers %}
+  {% set speakers = item.speakers %}
+{% else %}
+  {% set speakers = post.config.speakers %}
+{% endif %}
+
+{% if item.start %}
+  {% set start = item.start %}
+{% else %}
+  {% set start = post.config.start %}
+{% endif %}
+{% if item.end %}
+  {% set end = item.end %}
+{% else %}
+  {% set end = post.config.end %}
+{% endif %}
+{% if item.location %}
+  {% set location = item.location %}
+{% else %}
+  {% set location = post.config.location %}
+{% endif %}
+
 <li class="test">
   <div style="display: flex; align-items: center">
-    {% if item.schedule %}
-      <div class="schedule__badge">
-        <div class="post__badge--inner">
-          <div class="post__badge--section">{{ item.start | date("EEE") }}</div>
-          <div class="post__badge--large">{{ item.start | date("dd") }}</div>
-          <div class="post__badge--section">{{ item.start | date("MMM") }}</div>
-        </div>
+    <div class="schedule__badge">
+      <div class="post__badge--inner">
+        <div class="post__badge--section">{{ start | date("EEE") }}</div>
+        <div class="post__badge--large">{{ start | date("dd") }}</div>
+        <div class="post__badge--section">{{ start | date("MMM") }}</div>
       </div>
-    {% endif %}
+    </div>
 
     <div class="test">
-      <div style="font-weight: 700; font-size: .9rem">{{ item.title }}</div>
+      <div style="font-weight: 700; font-size: .9rem">{{ title }}</div>
       {% if item.description %}
         <div style="font-size: .7rem">{{ item.description }}</div>
       {% endif %}
@@ -70,11 +97,11 @@
             </ul>
           {% endif %}
           <span class="md-icon">{% include ".icons/material/clock-outline.svg" %}</span>
-          <span>{{ item.start | date("HH:mm") }} - {{ item.end | date("HH:mm") }}</span>
+          <span>{{ start | date("HH:mm") }} - {{ end | date("HH:mm") }}</span>
 
-          {% if item.location %}
+          {% if location %}
             <span class="md-icon">{% include ".icons/material/map-marker.svg" %}</span>
-            <span>{{ item.location }}</span>
+            <span>{{ location }}</span>
           {% endif %}
         </div>
       </div>

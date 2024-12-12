@@ -5,6 +5,11 @@
     <ul>
       {% for item in post.config.schedule %}
         {% include "blog/event/schedule-item.html" %}
+      {% else %}
+        {% if post.is_event() %}
+          {% set item = post.config %}
+          {% include "blog/event/schedule-item.html" %}
+        {% endif %}
       {% endfor %}
     </ul>
   </div>

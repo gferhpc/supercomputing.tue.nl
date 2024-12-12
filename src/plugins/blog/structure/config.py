@@ -26,12 +26,12 @@ class MaintenanceConfig(CustomPostConfig):
     banner = SubConfig(AnnouncementBanner)
 
 class ScheduleItem(Config):
-    title = Type(str)
+    title = Optional(Type(str, default=None))
     description = OptionallyRequired(Type(str))
-    start = Type(datetime)
-    end = Type(datetime)
+    start = Optional(Type(datetime, default=None))
+    end = Optional(Type(datetime, default=None))
     icon = Optional(Type(str))
-    location = Optional(Type(str))
+    location = Optional(Type(str, default=None))
     speakers = ListOfItems(Type(str), default = [])
     disabled = Optional(Type(str|bool))
 
