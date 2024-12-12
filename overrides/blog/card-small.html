@@ -32,7 +32,11 @@
   </div>
   <div class="post__inner">
     <div class="post__meta">
-      {{ post.config.date.created | date }}
+      {% if post.config.start and post.config.end %}
+        {{ post.config.start | date }}
+      {% else %}
+        {{ post.config.date.created | date }}
+      {% endif %}
       <div class="post__meta--badges">
         <div class="md-draft badge badge--light">{{ post.meta.type }}</div>
       </div>

@@ -50,9 +50,22 @@
         </a>
       </div>
     </div>
+    {% if post == page and post.config.registration and post.config.registration.enabled and post.config.end >= now() %}
+      <div class="bottom-right post__registration" style="justify-self: right">
+        {% for option in post.config.registration.options %}
+          <a class="md-button md-button--primary" href="{{ option.url | url }}" target="_blank">
+            {{ option.title }}
+          </a>
+        {% endfor %}
+      </div>
+    {% endif %}
   </div>
   <div class="post__meta">
-    {{ post.config.date.created | date }}
+    {% if post.config.start and post.config.end %}
+      {{ post.config.start | date }}
+    {% else %}
+      {{ post.config.date.created | date }}
+    {% endif %}
     {%- if page == post and post.config.source and post.config.source.title -%}
       <span class="post__source">, Source: <a href="{{ post.config.source.url }}"
                                               target="_blank">{{ post.config.source.title }}</a></span>
