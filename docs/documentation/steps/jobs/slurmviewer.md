@@ -10,12 +10,6 @@ Load the module
 user@umbrella$ module load SlurmViewer
 ```
 
-Initialize SlurmViewer, only needed once, after this you can edit `~/.config/slurm-viewer/settings.toml` anytime.
-
-```shell
-user@umbrella$ slurm-viewer-init
-```
-
 Start SlurmViewer
 
 ```shell
