@@ -21,6 +21,7 @@ Available as [modules](../../steps/software/index.md):
 | CONVERGE        | [convergecfd.com](https://convergecfd.com/){:target="_blank"} | `module avail convergentscience` | Yes |
 | Gurobi          | [gurobi.com](https://www.gurobi.com/){:target="_blank"} | `module avail Gurobi` | Yes (via MATLAB) |
 | ANSYS Lumerical | [ansys.com](https://www.ansys.com/products/optics){:target="_blank"} | `module avail lumerical` | Yes |
+| Marc Mentat     | [hexagon.com](https://hexagon.com/products/marc){:target="_blank"} | `module avail MarcMentat` | Yes |
 | Mathematica     | [wolfram.com](https://www.wolfram.com/mathematica/){:target="_blank"} | [Using Mathematica](../recipes/mathematica.md) | Yes |
 | MATLAB          | [mathworks.com](https://www.mathworks.com/products/matlab.html){:target="_blank"} | [Using MATLAB](../recipes/matlab.md) | Yes |
 | StarCCM+        | [siemens.com](https://plm.sw.siemens.com/en-US/simcenter/fluids-thermal-simulation/star-ccm/){:target="_blank"} | `module avail starccm+` | Yes |
