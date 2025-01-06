@@ -61,6 +61,24 @@ Mon Jan  6 11:36:25 CET 2025
      Date: Mon Jan  6 11:36:25 2025
 
                               Marc execution begins
+......
 ```
-.....
 
+### Marc SLURM sbatch jobscript example using Shared Memory
+
+``` text
+#!/bin/bash
+#SBATCH --job-name=test_marc
+#SBATCH --output=test_marc-%j.log
+#SBATCH --partition=tue.default.q
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=4
+#SBATCH --mem-per-cpu=2gb
+#SBATCH --time=00:05:00
+
+module purge
+module load MarcMentat/2024.1-intel-2023a
+
+run_marc -j e2x1.dat -v no -b no -nte ${SLURM_CPUS_PER_TASK} -nts ${SLURM_CPUS_PER_TASK}
+```
