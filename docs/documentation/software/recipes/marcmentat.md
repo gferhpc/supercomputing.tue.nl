@@ -3,7 +3,7 @@ title: Marc Mentat
 tags: [Software, Module]
 ---
 
-[Marc Mentat by Hexagon](https://hexagon.com/products/marc){:target="_blank"} 
+[Marc Mentat by Hexagon](https://hexagon.com/products/marc){:target="_blank"} Marc is a general purpose finite element program capable of solving structural and thermal problems. Marc input is graphically generated using the program Mentat.
 
 ## Using Marc Mentat interactive<br>(Graphical User Interface)
 
@@ -11,3 +11,56 @@ tags: [Software, Module]
 Use your browser to connect to [Umbrella On Demand](https://hpc.tue.nl){:target="_blank"}
 
 ## Using Marc Mentat in SLURM batch jobs<br>(Command Line Interface)
+
+### Test Marc
+
+Load the module
+
+```shell 
+[user@umbrella]$ module purge
+[user@umbrella]$ module load MarcMentat/2024.1-intel-2023a
+```
+
+Check execution on empty data file (test.dat)
+
+```shell
+[user@umbrella]$ touch test.dat
+[user@umbrella]$ run_marc -jid test
+
+Program name         : marc
+Marc shared lib      : 
+Version type         : i8
+.....
+.....
+running the job in the background, see test.log
+
+ 
+Final run stream value
+ RUNJOB= /sw/rl8/zen/app/MarcMentat/marc2024.1/bin/linux64i8/marc -jid test -dirjid /home/20224765/. -maxnum 1000000 -dirjob /home/20224765 -ml 128474 -ci yes -cr yes
+```
+
+test.log file has more info
+
+```shell
+[user@umbrella]$ cat test.log
+.....
+Mon Jan  6 11:36:25 CET 2025
+ Marc test begins execution
+
+     (c) COPYRIGHT 2024 Hexagon Manufacturing Intelligence, Inc., all rights reserved
+
+
+ Requested number of element threads                     =    1
+ Requested number of solver threads                      =    1
+
+
+ VERSION: Marc 2024.1, build 942447 (2024/05/08)
+
+
+
+     Date: Mon Jan  6 11:36:25 2025
+
+                              Marc execution begins
+```
+.....
+
