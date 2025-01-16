@@ -18,3 +18,7 @@ tags: [Training, HPC]
 **EuroCC** has a great overview of HPC related trainings available in Europe:
 
 [EuroCC Trainings](https://www.eurocc-access.eu/services/training/){:target="_blank"}
+
+Interactive **SLURM** Tutorial
+
+[Slurm Learning](http://slurmlearning.deic.dk/){:target="_blank"}
