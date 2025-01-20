@@ -3,6 +3,7 @@ nav:
   - policies.md
   - filesystems.md
   - specifications.md
+#  - faq.md
   - "Getting Started": steps
   - "Software": software
   - "Datasets": datasets.md

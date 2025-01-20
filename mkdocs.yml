@@ -2,6 +2,7 @@ site_name: TU/e Supercomputing Center
 site_url: https://supercomputing.tue.nl/
 docs_dir: &base_path docs
 not_in_nav: |
+  includes
   solutions
   events.md
   hpc-school.md
@@ -191,6 +192,9 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde

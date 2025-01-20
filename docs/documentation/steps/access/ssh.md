@@ -1,398 +1,92 @@
 # SSH
 
-## Introduction
+High-Performance Computing (HPC) clusters are typically accessed via a Command Line Interface (CLI). Remote access is
+the standard method for connecting to these clusters.
 
-HPC clusters that are most commonly operated via a [Command Line Interface (CLI)](https://en.wikipedia.org/wiki/Command-line_interface){:target=_blank}.
-
-Such a CLI can be accessed directly by attaching a monitor and keyboard
-to the cluster itself locally to create an operational "terminal",
-however it is more common to operate HPC clusters remotely over the
-(inter)network through [Secure SHell (SSH)](https://en.wikipedia.org/wiki/Secure_Shell){:target=_blank} 
-using [Terminal Emulators](https://en.wikipedia.org/wiki/Terminal_emulator){:target=_blank}, as HPC clusters are usually geographically inconveniently located for their users.
-
-GNU/Linux and MacOS systems are usually equipped with powerful SSH tools
-by default out of the box. Microsoft Windows users can install openSSH
-on windows
-[1](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse),
-or install third-party software, e.g.:
+This is achieved using the Secure SHell (SSH) protocol. GNU/Linux and MacOS systems have built-in SSH tools. 
+For Windows 11 users, OpenSSH can be installed, or you can use third-party software like MobaXterm, 
+which offers a user-friendly interface for SSH connections.
 
 ## Required Software
 
-=== ":fontawesome-brands-windows: Windows"
-
-    For Windows you likely need a 3rd party tool to be able to use SSH. More modern versions of Windows _may_ include SSH by default, for more information see [:material-powershell: PowerShell](#__tabbed_2_3).
-
-    === ":octicons-terminal-16: MobaXterm"
-
-        Download and install the **free** version of [MobaXterm](https://mobaxterm.mobatek.net/download.html){:target=_blank}.  
-
-    === ":material-network-pos: PuTTY"
-
-        Download (version 0.81 or newer) and install from [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html){:target=_blank} from the *MSI ("Windows Installer")* section.
-
-        !!! info "GUI applications/X11 forwarding"
-
-            If you need to load X11/GUI applications from the terminal, please consider installing [VcXsrv](https://sourceforge.net/projects/vcxsrv/){:target=_blank} as well! Or even simpler and better: use the [Web Interface](https://hpc.tue.nl)
-
-    === ":material-powershell: PowerShell"
-
-        SSH should be available by default for most Windows 11 installations. For windows 10 or manual installation please check the official [Microsoft documentation](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui#install-openssh-for-windows){:target=_blank} on how to install SSH for Windows.
-
-        !!! info
-        
-            You'll only need to install the "OpenSSH Client". Please **don't** install the "OpenSSH Server" if you don't know what you're doing!
-
-        !!! info "GUI applications/X11 forwarding"
-
-            If you need to load X11/GUI applications from the terminal, please consider installing [VcXsrv](https://sourceforge.net/projects/vcxsrv/){:target=_blank} as well!
-
-=== ":fontawesome-brands-linux: Linux"
-
-    ???- success "Available by default, no action required!"
-
-        === ":fontawesome-brands-ubuntu: Ubuntu"
-    
-            ```shell
-            apt install openssh-client
-            ```
-    
-        === ":fontawesome-brands-debian: Debian"
-    
-            ```shell
-            apt install openssh-client
-            ```
-    
-        === ":fontawesome-brands-redhat: RHEL"
-    
-            ```shell
-            dnf install openssh
-            ```
-    
-        === ":simple-archlinux: Arch Linux"
-    
-            ```shell
-            pacman -S openssh
-            ```
-
-=== ":fontawesome-brands-apple: MacOS"
-
-    ???- success "Available by default, no action required!"
-
-        === ":simple-homebrew: Homebrew"
-
-            ```shell
-            brew install openssh
-            ```
+--8<-- "includes/ssh/software.md"
 
 ## Logging in
 
-=== ":fontawesome-brands-windows: Windows"
+To access the TU/e HPC Umbrella cluster use SSH with the address `hpc.tue.nl`. Typically, this can be done by using: 
 
-    === ":octicons-terminal-16: MobaXterm"
+```shell 
+ssh username@hpc.tue.nl
+```
 
-        ![img_7.png](img_7.png){ align=right width="300" } 
+!!! example "If your TU/e username is `s123123`, enter the following command in your terminal:"
 
-        Open MobaXterm.
-
-        1. Click on Session (in top left menu)
-        2. Select SSH within the "Session Settings" popup
-        3. Fill in the Remote host: `hpc.tue.nl`
-        4. Enter your TU/e login name
-        5. Click on `Ok` to add the session and connect
-
-    === ":material-network-pos: PuTTY"
-
-        ![img_8.png](img_8.png){ align=right width="300" }
-
-        Open PuTTY.
-
-        1. Enter the "Host Name (or IP address)" field `USERNAME@hpc.tue.nl`
-        2. Click on `Open` to connect to the server
-
-    === ":material-powershell: PowerShell"
-
-         ```powershell
-         > ssh USERNAME@hpc.tue.nl
-         USERNAME@hpc.tue.nl's password:
-         
-                _____ _   _  __                                ╮╭
-               |_   _| | | |/ /__                         ▄██████████▄
-                 | | | |_| / / -_)                     ▄████████████████▄
-                 |_|  \___/_/\___|                   ▄████████████████████▄
-                                                   ▄██████████████████████▄
-          Eindhoven University of Technology       ▐▀▀▀▀███▀▀▀▀██▀▀▀▀███▀▀▀▀▌
-         ------------------------------------                  ▐▌
-                                                               ▐▌  ▄
-         Welcome to the TU/e HPC Umbrella login node           ▐▌  █
-                                                                █▄█▀
-         For WIKI information on how to use this cluster go to:
-         https://hpcwiki.tue.nl/
-          
-         --------------------------------------------------------------------
-          Data (incl. home directories) in the HPC Cluster is NOT backed up!
-         
-              The HPC Cluster is not a solution for archiving your work!
-         --------------------------------------------------------------------
-          
-         [username@tue-login002 ~]$
-         ```
-
-=== ":fontawesome-brands-linux: Linux"
-
-    ``` { .shell .annotate }
-    $ ssh USERNAME@hpc.tue.nl
-    USERNAME@hpc.tue.nl's password:
-    
-           _____ _   _  __                                ╮╭
-          |_   _| | | |/ /__                         ▄██████████▄
-            | | | |_| / / -_)                     ▄████████████████▄
-            |_|  \___/_/\___|                   ▄████████████████████▄
-                                               ▄██████████████████████▄
-     Eindhoven University of Technology       ▐▀▀▀▀███▀▀▀▀██▀▀▀▀███▀▀▀▀▌
-    ------------------------------------                  ▐▌
-                                                          ▐▌  ▄
-    Welcome to the TU/e HPC Umbrella login node           ▐▌  █
-                                                           █▄█▀
-    For WIKI information on how to use this cluster go to:
-    https://hpcwiki.tue.nl/
-    
-    --------------------------------------------------------------------
-     Data (incl. home directories) in the HPC Cluster is NOT backed up!
-    
-         The HPC Cluster is not a solution for archiving your work!
-    --------------------------------------------------------------------
-    
-    [username@tue-login002 ~]$
+    ```
+    ssh s123123@hpc.tue.nl
     ```
 
-=== ":fontawesome-brands-apple: MacOS"
+    The majority of usernames are numeric, ranging from `0` to `9`, although some may begin with an `s` for students.
 
-    ``` { .shell .annotate }
-    $ ssh USERNAME@hpc.tue.nl
-    USERNAME@hpc.tue.nl's password:
-    
-           _____ _   _  __                                ╮╭
-          |_   _| | | |/ /__                         ▄██████████▄
-            | | | |_| / / -_)                     ▄████████████████▄
-            |_|  \___/_/\___|                   ▄████████████████████▄
-                                               ▄██████████████████████▄
-     Eindhoven University of Technology       ▐▀▀▀▀███▀▀▀▀██▀▀▀▀███▀▀▀▀▌
-    ------------------------------------                  ▐▌
-                                                          ▐▌  ▄
-    Welcome to the TU/e HPC Umbrella login node           ▐▌  █
-                                                           █▄█▀
-    For WIKI information on how to use this cluster go to:
-    https://hpcwiki.tue.nl/
-    
-    --------------------------------------------------------------------
-     Data (incl. home directories) in the HPC Cluster is NOT backed up!
-    
-         The HPC Cluster is not a solution for archiving your work!
-    --------------------------------------------------------------------
-    
-    [username@tue-login002 ~]$
-    ```
+??? note "Click here if you need detailed instructions on how to connect to the cluster"
 
-!!! info
+    --8<-- "includes/ssh/access.md"
 
-    The USERNAME is equal to your TU/e network login name. This is usually a numeric value or starts with a `s` for students. Use the same password as the one you're using to log onto your TU/e account when prompted.
-
-!!! note
+??? info "Server Key Fingerprints Overview for Verification"
 
     If you get a question about SSH key fingerprints from the server, you
-    can verify them with the below values.
+    can verify them with the values below.
 
-    ```shell
-    1024 SHA256:vrd92GRLJ7TyjJHu8KmULfsYb6n4zMX7I7K7ICJRrHA hpc.tue.nl (DSA)
-    256 SHA256:kdpFd6RFR0rQ+76L7d2WRYsaYqSxS7jDBj/PzMlHyzg hpc.tue.nl (ECDSA)
-    256 SHA256:a0EWqBadQrhOezlF5HuhCo/diEBMl1ElskZ4LpNci3c hpc.tue.nl (ED25519)
-    3072 SHA256:S2BgcB7EnIZGnDHqPe9kBm20r0p7amTSoARbXjkOLPE hpc.tue.nl (RSA)
-    ```
-
-## Login nodes
-
-Most TU/e HPC clusters are logged-into via the general log-in nodes from the TU/e: *hpc.tue.nl*
+    | Key Length | Fingerprint                                        | Hostname   | Key Type |
+    |------------|----------------------------------------------------|------------|----------|
+    | 1024       | SHA256:vrd92GRLJ7TyjJHu8KmULfsYb6n4zMX7I7K7ICJRrHA | hpc.tue.nl | DSA      |
+    | 256        | SHA256:kdpFd6RFR0rQ+76L7d2WRYsaYqSxS7jDBj/PzMlHyzg | hpc.tue.nl | ECDSA    |
+    | 256        | SHA256:a0EWqBadQrhOezlF5HuhCo/diEBMl1ElskZ4LpNci3c | hpc.tue.nl | ED25519  |
+    | 3072       | SHA256:S2BgcB7EnIZGnDHqPe9kBm20r0p7amTSoARbXjkOLPE | hpc.tue.nl | RSA      |
 
 ## Passwordless Authentication
 
-To authenticate with the HPC cluster and verify that you are who you
-claim you are (username), you provide a password. It is possible to use
-an alternative setup, where the server verifies that you own the right
-key. A key is, in the end, just a file on your computer, which can be
-(should be) password protected. The
-[idea](https://en.wikipedia.org/wiki/Public-key_cryptography){:target=_blank} is to
-generate two files: a public key and a private key. You put the public
-key on the server, and let the server verify that you own the private
-key when logging in.
+A critical aspect of SSH is its key-based authentication, which employs a pair of cryptographic keys: a public key and a
+private key.
 
-It is possible to copy the private key to other machines, so you have
-access from all those machines. Alternatively, you can make separate key
-pairs for all machines that need access to your account.
+Imagine you need to securely access a house, but instead of using a traditional lock and key, you're using a digital
+system. This is essentially how Secure Shell (SSH) operates—by ensuring secure communication between devices using a
+pair of cryptographic keys.
 
-!!! danger
+The public key acts like a lock that you install on the house (the server). It can be shared openly with anyone who
+needs to access the server securely. The private key, on the other hand, is your personal key that unlocks this lock,
+and it's crucial to keep it safe and secret.
 
-    NEVER share your private key with others! They will have access to all servers you use the SSH key for. 
-    Prefer generating a new key pairs if necessary.
+In this analogy, servers are like houses, each one secured and waiting for your lock (your public key) to be added. Once
+your lock is in place, only your private key can grant you access. Consequently, this system ensures that your data and
+connections remain private and protected.
 
-=== ":fontawesome-brands-windows: Windows"
+- **Server (:material-home:)** — Represents the "house" you're accessing securely.
+- **Public key (:material-lock:)** — The "lock" you install on the **server (:material-home:)**.
+- **Private key (:material-key:)** — Your personal key that unlocks the "lock".
 
-    === ":octicons-terminal-16: MobaXterm"
+??? abstract "Why Use Keys Instead of Password Authentication?"
 
-        !!! success "Available by default, no action required!"
+    While password authentication is common, it has several drawbacks:
 
-    === ":material-network-pos: PuTTY"
+    1. **Vulnerability to Brute Force Attacks**: Passwords can be guessed through repeated attempts, especially if they are weak or reused across multiple accounts.
+    2. **Phishing Risks**: Users can be tricked into revealing passwords through malicious websites or emails.
+    3. **Management Challenges**: Strong, unique passwords are hard to remember, and storing them securely can be cumbersome.
 
-         ![img_11.png](img_11.png){ align=right width="250" } 
-
-         Open the application PutTTYgen.
-
-         1. Select `RSA` as key type
-         2. Enter `4096` as number of bits to use (2048 by default).
-         3. Click on Generate (and follow the instructions on screen)
-         4. Enter your TU/e email address as Key comment
-         5. Enter a passphrase for your key
-         6. Save the private key to your computer (keep this file private!)
-
-         7. Copy the contents of the public key into your keyboard
-            1. Login into the HPC cluster (see [Logging In](#logging-in))
-            2. Create the directory `~/.ssh` if not exists with `mkdir ~/.ssh`
-            3. Open / Create the file `~/.ssh/authorized_keys`
-            4. Paste the content of your clipboard into the `~/.ssh/authorized_keys` file (and save the file).
-
-         Open the saved private key (step 6) with the Pageant program (enter the passphrase of Step 5 if prompted) and connect to the cluster as usual. You'll have to repeat this step everytime you reboot your system.
-
-    === ":material-powershell: PowerShell"
-
-        ![img_12.png](img_12.png){ align=right width="200" }
-
-         Open another Windows PowerShell as Administrator and enter the command below to enable and start the SSH agent
-
-         ```powershell
-         Get-Service ssh-agent | Set-Service -StartupType Automatic -PassThru | Start-Service
-         ```
-
-         Open Windows PowerShell as regular user.
-
-         1. Generate a public/private key
-
-             ```powershell
-             ssh-keygen -t rsa -b 4096 -C "y.o.u.r.email@tue.nl"
-             ```
-
-         2. Upload your public key to the server
-             To be able to use your SSH key pair to log in to the HPC cluster, you have to put your public key on the server.
-      
-             ```powershell
-             type $env:USERPROFILE\.ssh\id_rsa.pub | ssh <your account>@hpc.tue.nl "cat >> .ssh/authorized_keys"
-             ```
-
-         3. Add the SSH key to the agent
-      
-             ```powershell
-             ssh-add
-             ```
-
-         4. Login into the cluster as usual (see [Logging In](#logging-in))
-
-=== ":fontawesome-brands-linux: Linux"
-
-
-    Open a terminal.
-
-    1. Generate the public/private key
-
-        ```shell
-        ssh-keygen -t rsa -b 4096 -C "y.o.u.r.email@tue.nl"
-        ```
-
-        !!! info
-      
-            - You will be asked where to save the key pair. Accepting the default
-            location by pressing enter is fine.
-              - When prompted for a passphrase, enter the password that protects your
-              key. It is possible to leave this empty, but we **_strongly_** recommend
-              choosing a strong passphrase.
-
-
-    2. Configure SSH config
-
-        Add the following content to `~/.ssh/config`:
-        ```shell
-        Host *
-          AddKeysToAgent yes
-          UseKeychain yes
-          IdentityFile ~/.ssh/id_rsa
-        ```
+    Key-based authentication addresses these issues:
     
-        !!! info
-    
-            Then add your key (we use the default key location here, you may have to change this location if you picked a non-default one):
+    - **Stronger Security**: Private keys are much longer and more complex than passwords, making them resistant to brute force attacks.
+    - **No Password Transmission**: Since passwords are not transmitted over the network, phishing attacks are ineffective.
+    - **Convenience**: Once set up, key-based authentication allows seamless access without repeatedly entering passwords.
 
-    3. Putting your public key on the HPC cluster
-   
-        To be able to use your SSH key pair to log in to the HPC cluster, you
-        have to put your public key on the server.
-   
-        ```shell
-        ssh-copy-id USERNAME@hpc.tue.nl
-        ```
+!!! danger ""
 
-    4. Add the SSH key to the agent
-   
-        ```shell
-        ssh-add
-        ```
-   
-    5. Login into the cluster as usual (see [Logging In](#logging-in))
+    You (as a user) are responsible for keeping your private key safe, as it serves as the personal key to unlock 
+    systems where your public key is accepted, including the TU/e network and systems. If compromised, your private key 
+    can allow unauthorized access, leading to data breaches and system abuse, with attackers potentially infiltrating 
+    sensitive research data or exploiting the network for further attacks. This not only jeopardizes your personal data 
+    but also threatens the integrity and security of the entire network and its systems. To prevent such risks, store 
+    your private key securely, use strong encryption, and monitor for unauthorized access.
 
+Now that you understand the analogy, let’s set up your secure access and ensure your communications are protected.
 
-=== ":fontawesome-brands-apple: MacOS"
-
-
-    Open a terminal.
-
-    1. Generate the public/private key
-
-        ```shell
-        ssh-keygen -t rsa -b 4096 -C "y.o.u.r.email@tue.nl"
-        ```
-
-        !!! info
-      
-            - You will be asked where to save the key pair. Accepting the default
-            location by pressing enter is fine.
-              - When prompted for a passphrase, enter the password that protects your
-              key. It is possible to leave this empty, but we **_strongly_** recommend
-              choosing a strong passphrase.
-
-
-    2. Configure SSH config
-
-        Add the following content to `~/.ssh/config`:
-        ```shell
-        Host *
-          AddKeysToAgent yes
-          UseKeychain yes
-          IdentityFile ~/.ssh/id_rsa
-        ```
-    
-        !!! info
-    
-            Then add your key (we use the default key location here, you may have to change this location if you picked a non-default one):
-
-    3. Putting your public key on the HPC cluster
-   
-        To be able to use your SSH key pair to log in to the HPC cluster, you
-        have to put your public key on the server.
-   
-        ```shell
-        ssh-copy-id USERNAME@hpc.tue.nl
-        ```
-   
-    4. Add the SSH key to the agent
-   
-        ```shell
-        ssh-add
-        ```
-   
-    5. Login into the cluster as usual (see [Logging In](#logging-in))
+[Start Guide to SSH Key-Based Authentication](ssh/step-1.md){ .md-button .md-button--primary }
