@@ -56,6 +56,7 @@ class EventConfig(CustomPostConfig):
     speakers = ListOfItems(Type(str), default = [])
     sponsors = ListOfItems(Type(str), default = [])
     registration = SubConfig(Registration)
+    schedule_hide = Type(bool, default = False)
     schedule = ListOfItems(SubConfig(Schedule), default = [])
     image = Optional(Type(str))
     scheme = Optional(Type(str))
