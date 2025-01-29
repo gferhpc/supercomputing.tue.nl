@@ -1,8 +1,4 @@
----
-title: 3. Transfer Data
----
-
-# Transfer Data
+# SCP (SSH)
 
 ## Transferring data
 
