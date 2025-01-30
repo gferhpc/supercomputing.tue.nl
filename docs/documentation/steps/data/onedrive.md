@@ -84,4 +84,4 @@ rclone copyto OneDrive:/test/hello.txt test-onedrive.txt
 
 ## Testing the OneDrive Connection (Webacces https://hpc.tue.nl)
 
-Login, check the "File" top menu bar option, besides a "Homedrive" there now is a "onedrive" which was configured. Uisng the files browser can be copie from and to the "Homedrive".
+Login, check the "File" top menu bar option, besides a "Homedrive" there now is a "onedrive" which was configured. Using the files browser can be copie from and to the "Homedrive".
