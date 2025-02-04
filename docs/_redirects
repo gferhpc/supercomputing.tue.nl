@@ -1,11 +1,11 @@
 # https://docs.gitlab.com/ee/user/project/pages/redirects.html
 
 # Redirect old HPC wiki to new documentation page.
-https://hpcwiki.tue.nl  https://supercomputing.tue.nl/documentation/ 301
+http://hpcwiki.tue.nl/*  https://supercomputing.tue.nl/documentation/ 301
 https://hpcwiki.tue.nl/*  https://supercomputing.tue.nl/documentation/ 301
 
 # Redirect HPClab to Supercomputing domain
-https://hpclab.tue.nl  https://supercomputing.tue.nl/ 301
+http://hpclab.tue.nl/*  https://supercomputing.tue.nl/ 301
 https://hpclab.tue.nl/*  https://supercomputing.tue.nl/ 301
 
 # Temporary redirects for changed slug urls - post_url_date_format: yyyy
