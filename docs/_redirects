@@ -1,1 +1,4 @@
+https://hpcwiki.tue.nl/*  https://supercomputing.tue.nl/documentation/ 301
+https://hpclab.tue.nl/*  https://supercomputing.tue.nl/ 301
+
 /blog/:year/:month/:date/* /blog/:year/:splat 301
