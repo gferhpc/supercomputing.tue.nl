@@ -1,1 +1,1 @@
-/blog/:year/:month/:date/* /blog/:year/:splat 302
+/blog/:year/:month/:date/* /blog/:year/:splat 301
