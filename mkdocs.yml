@@ -91,6 +91,7 @@ plugins:
         - categories
   - scc/blog:
       post_excerpt_max_authors: 10
+      post_url_date_format: yyyy
   - scc/meta
   - scc/specs:
       sinfo_path: cluster/.cache/sinfo.json
