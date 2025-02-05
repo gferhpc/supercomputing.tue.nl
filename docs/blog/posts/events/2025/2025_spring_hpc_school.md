@@ -16,8 +16,6 @@ image: /assets/images/2025-springschool-thumb.png
 type: event
 scheme: spring
 sponsors: [ surf.nl, eurocc-netherlands.nl ]
-#banner:
-#  enabled: false
 #registration:
 #  enabled: false
 #  options:

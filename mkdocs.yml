@@ -5,7 +5,6 @@ not_in_nav: |
   includes
   solutions
   events.md
-  hpc-school.md
 theme:
   name: material
   custom_dir: overrides
