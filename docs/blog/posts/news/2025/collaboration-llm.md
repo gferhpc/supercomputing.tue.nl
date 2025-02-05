@@ -13,11 +13,9 @@ hero:
 
 # Open LLMs for Transparent AI in Europe
 
-Europe's leading AI companies and research institutions combine their forces and expertise to develop next-generation
+**Europe's leading AI companies and research institutions combine their forces and expertise to develop next-generation
 open-source language models in an unprecedented collaboration to advance European AI capabilities, the [OpenEuroLLM
-project](https://openeurollm.eu/){:target=_blank}.
-
-
+project](https://openeurollm.eu/){:target=_blank}.**
 
 A consortium of **20 leading European research institutions**, companies and EuroHPC centres coordinated by Jan Hajič (
 [Charles University](https://ufal.mff.cuni.cz/){:target=_blank}, Czechia) and co-led by Peter Sarlin 
