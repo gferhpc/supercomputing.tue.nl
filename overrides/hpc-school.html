@@ -8,6 +8,7 @@
   {% if event.config.end >= now() %}
     {% set hide = page.meta.hide %}
     {% set page = event %}
+    {% set url_prefix = "blog/" %}
     {% extends "blog-post.html" %}
   {% else %}
     {% extends "main.html" %}
