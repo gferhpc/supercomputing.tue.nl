@@ -57,13 +57,18 @@ resources. The cluster provides
     [Hub MetaForum](https://tuenl.sharepoint.com/sites/intranet-mathematics-and-computer-science/SitePages/Hub-Metaforum.aspx){:target=_blank}.
 
 ## Access to the management interface
-Currently, a management interface, MyNebula, is provided. This software is no
-longer maintained for use with VMware ESXi and it is unclear whether an
-alternative will be provided for management.
+Currently, a management interface, MyNebula, is provided.
 
 The interface is available on [mynebula.tue.nl](https://mynebula.tue.nl){:target=_blank}
 (campus network or VPN only) and allows you to start/stop and remotely manage
 the VM without using SSH/RDP.
+
+!!! info "Management interface update"
+
+    MyNebula is no longer maintained for use with VMware ESXi and usage will
+    be phased out at the start of 2025. For users that have a reason for console
+    access, an alternative will be provided. Existing users of MyNebula will be
+    contacted about this by the support engineer.
 
 ## Request procedure
 New virtual machines can be requested through TOPdesk SSP. Please use the
@@ -72,9 +77,15 @@ form.
 
 **Budget/Budgetholder**: for the M&CS cluster, you can enter "/" in both fields.
 
-**Technical Point of Contact** will be contacted in case of e.g. security
+**Functional Point of Contact**: contact for administrative tasks.
+For physical servers, this includes the procurement process, but for VMs in the
+M&CS ESX cluster this role is limited.
+
+**Technical Point of Contact**: contact in case of e.g. security
 incidents or maintenance and is also able to request changes.<br/>
-The initial user account created by us will also be for this user.
+The initial user account created by us will also be for this user.<br/>
+*If the functional point of contact and technical point of contact are the same
+person, please provide a backup technical contact.*
 
 **CPU/Memory/Harddisk (system/data)**: please include all requirements 
 regarding technical specifications in your request.
@@ -136,6 +147,7 @@ once a year for security and maintenance reasons.
 
 ## Responsibilities of the owner
 As the owner of a virtual machine, you are responsible for all management of the VM, including the following:
+
 * installing regular system updates in accordance with the [patch policy](https://tuenl.sharepoint.com/:b:/r/sites/LIS/DocumentManagement/Shared%20Documents/Policies/1-0008%20-%20SP07%20-%20Policy%20Patch%20Management.pdf?csf=1&web=1&e=ZOJMsE){:target=_blank}<br/>
 *For Windows Server virtual machines this happens automatically*
 * installing application updates in accordance with the [patch policy](https://tuenl.sharepoint.com/:b:/r/sites/LIS/DocumentManagement/Shared%20Documents/Policies/1-0008%20-%20SP07%20-%20Policy%20Patch%20Management.pdf?csf=1&web=1&e=ZOJMsE){:target=_blank}
@@ -148,7 +160,7 @@ is meant to store and process personal/confidential data, additional security
 measures need to be taken.
 
 For most educational projects, the virtual machine will be part of a specific
-network zone (the 'play zone'; here VLAN 468). This means that access
+network zone (the 'play zone'; here VLAN 468/469). This means that access
 to the following resources is allowed:
 
 * Any HTTP(S) destination
@@ -162,4 +174,5 @@ Hub MetaForum to request the requirements and the impact for the data
 classification. 
 
 Remote management is only possible from the campus or the TU/e VPN. External
-management is never allowed. 
+management is never allowed. Incoming access to for example a web server needs
+to be requested during the VM creation or afterwards.
