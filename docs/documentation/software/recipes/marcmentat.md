@@ -65,7 +65,7 @@ Use your browser to connect to [Umbrella On Demand](https://hpc.tue.nl){:target=
     ......
     ```
     
-    ### Test Marc and Fortran compiler
+???example "Test MarcMentat and Fortran compiler"
     
     Load the module
     
@@ -73,6 +73,16 @@ Use your browser to connect to [Umbrella On Demand](https://hpc.tue.nl){:target=
     [user@umbrella]$ module purge
     [user@umbrella]$ module load MarcMentat/2024.1-intel-2023a
     ```
+    Check execution on empty data file (test.dat) and fortran code (main.f)
+    
+    ```shell
+    [user@umbrella]$ touch test.dat
+    [user@umbrella]$ 
+    [user@umbrella]$ run_marc -jid test -u main
+    ```
+    
+
+
 
 
 ### Marc SLURM sbatch jobscript example using Shared Memory
@@ -91,7 +101,7 @@ Use your browser to connect to [Umbrella On Demand](https://hpc.tue.nl){:target=
 module purge
 module load MarcMentat/2024.1-intel-2023a
 
-# The input file input.dat can. be referenced without the .dat extension
+# The input file input.dat can be referenced without the .dat extension
 
 run_marc -j input -v no -b no -nte ${SLURM_CPUS_PER_TASK} -nts ${SLURM_CPUS_PER_TASK}
 ```
