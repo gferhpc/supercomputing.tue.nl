@@ -64,6 +64,17 @@ Mon Jan  6 11:36:25 CET 2025
 ......
 ```
 
+### Test Marc and Fortran compiler
+
+Load the module
+
+```shell 
+[user@umbrella]$ module purge
+[user@umbrella]$ module load MarcMentat/2024.1-intel-2023a
+```
+
+
+
 ### Marc SLURM sbatch jobscript example using Shared Memory
 
 ``` text
@@ -80,5 +91,31 @@ Mon Jan  6 11:36:25 CET 2025
 module purge
 module load MarcMentat/2024.1-intel-2023a
 
-run_marc -j e2x1.dat -v no -b no -nte ${SLURM_CPUS_PER_TASK} -nts ${SLURM_CPUS_PER_TASK}
+# The input file input.dat can. be referenced without the .dat extension
+
+run_marc -j input -v no -b no -nte ${SLURM_CPUS_PER_TASK} -nts ${SLURM_CPUS_PER_TASK}
 ```
+
+### Marc SLURM sbatch jobscript example using specific Fortran code
+
+``` text
+#!/bin/bash
+#SBATCH --job-name=test_marc
+#SBATCH --output=test_marc-%j.log
+#SBATCH --partition=tue.default.q
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=4
+#SBATCH --mem-per-cpu=2gb
+#SBATCH --time=00:05:00
+
+module purge
+module load MarcMentat/2024.1-intel-2023a
+
+# The input file input.dat can be referenced without the .dat extension
+# The Fortran code main.f can be referenced without the .f extension
+
+run_marc -j input -u main -v no -b no -nte ${SLURM_CPUS_PER_TASK} -nts ${SLURM_CPUS_PER_TASK}
+
+```
+
