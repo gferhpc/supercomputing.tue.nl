@@ -14,65 +14,65 @@ Use your browser to connect to [Umbrella On Demand](https://hpc.tue.nl){:target=
 
 ### Test Marc
 
-Load the module
-
-```shell 
-[user@umbrella]$ module purge
-[user@umbrella]$ module load MarcMentat/2024.1-intel-2023a
-```
-
-Check execution on empty data file (test.dat)
-
-```shell
-[user@umbrella]$ touch test.dat
-[user@umbrella]$ run_marc -jid test
-
-Program name         : marc
-Marc shared lib      : 
-Version type         : i8
-.....
-.....
-running the job in the background, see test.log
-
- 
-Final run stream value
- RUNJOB= /sw/rl8/zen/app/MarcMentat/marc2024.1/bin/linux64i8/marc -jid test -dirjid /home/20224765/. -maxnum 1000000 -dirjob /home/20224765 -ml 128474 -ci yes -cr yes
-```
-
-test.log file has more info
-
-```shell
-[user@umbrella]$ cat test.log
-.....
-Mon Jan  6 11:36:25 CET 2025
- Marc test begins execution
-
-     (c) COPYRIGHT 2024 Hexagon Manufacturing Intelligence, Inc., all rights reserved
-
-
- Requested number of element threads                     =    1
- Requested number of solver threads                      =    1
-
-
- VERSION: Marc 2024.1, build 942447 (2024/05/08)
-
-
-
-     Date: Mon Jan  6 11:36:25 2025
-
-                              Marc execution begins
-......
-```
-
-### Test Marc and Fortran compiler
-
-Load the module
-
-```shell 
-[user@umbrella]$ module purge
-[user@umbrella]$ module load MarcMentat/2024.1-intel-2023a
-```
-
+??? example "Test Marc Mentat"
+    Load the module
+    
+    ```shell 
+    [user@umbrella]$ module purge
+    [user@umbrella]$ module load MarcMentat/2024.1-intel-2023a
+    ```
+    
+    Check execution on empty data file (test.dat)
+    
+    ```shell
+    [user@umbrella]$ touch test.dat
+    [user@umbrella]$ run_marc -jid test
+    
+    Program name         : marc
+    Marc shared lib      : 
+    Version type         : i8
+    .....
+    .....
+    running the job in the background, see test.log
+    
+     
+    Final run stream value
+     RUNJOB= /sw/rl8/zen/app/MarcMentat/marc2024.1/bin/linux64i8/marc -jid test -dirjid /home/20224765/. -maxnum 1000000     -dirjob /home/20224765 -ml 128474 -ci yes -cr yes
+    ```
+    
+    test.log file has more info
+    
+    ```shell
+    [user@umbrella]$ cat test.log
+    .....
+    Mon Jan  6 11:36:25 CET 2025
+     Marc test begins execution
+    
+         (c) COPYRIGHT 2024 Hexagon Manufacturing Intelligence, Inc., all rights reserved
+    
+    
+     Requested number of element threads                     =    1
+     Requested number of solver threads                      =    1
+    
+    
+     VERSION: Marc 2024.1, build 942447 (2024/05/08)
+    
+    
+    
+         Date: Mon Jan  6 11:36:25 2025
+    
+                                  Marc execution begins
+    ......
+    ```
+    
+    ### Test Marc and Fortran compiler
+    
+    Load the module
+    
+    ```shell 
+    [user@umbrella]$ module purge
+    [user@umbrella]$ module load MarcMentat/2024.1-intel-2023a
+    ```
 
 
 ### Marc SLURM sbatch jobscript example using Shared Memory
