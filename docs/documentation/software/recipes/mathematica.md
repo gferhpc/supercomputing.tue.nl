@@ -19,13 +19,13 @@ Use your browser to connect to [Umbrella On Demand](https://hpc.tue.nl){:target=
 Load the module(s)
 ``` shell
 [user@umbrella]$ module purge
-[user@umbrella]$ module Mathematica/14.0.0
+[user@umbrella]$ module Mathematica/14.2.0
 ```
 Test the Mathematica command line version
 ``` shell
-[user@umbrella]$ math -run 'Quit[];'
-Mathematica 14.0.0 Kernel for Linux x86 (64-bit)
-Copyright 1988-2023 Wolfram Research, Inc.
+[user@umbrella]$ wolfram -run 'Quit[];'
+Wolfram 14.2.0 Kernel for Linux x86 (64-bit)
+Copyright 1988-2024 Wolfram Research, Inc.
 ```
 
 ### Mathematica SLURM sbatch jobscript example using 1 CPU
@@ -41,8 +41,8 @@ Copyright 1988-2023 Wolfram Research, Inc.
 #SBATCH --mem-per-cpu=2gb
 #SBATCH --time=00:05:00
 module purge
-module load Mathematica/14.0.0
-math -script sample-simple.wl
+module load Mathematica/14.2.0
+wolfram -script sample-simple.wl
 ```
 
 ??? example "sample-simple.wl"
@@ -72,8 +72,8 @@ Mathematica can be run in parallel using the built in Parallel commands or by ut
 #SBATCH --mem-per-cpu=2gb
 #SBATCH --time=00:05:00
 module purge
-module load Mathematica/14.0.0
-math -script sample-parallel.wl
+module load Mathematica/14.2.0
+worlfram -script sample-parallel.wl
 ```
 ??? example "sample-parallel.wl"
   
@@ -90,7 +90,7 @@ math -script sample-parallel.wl
 
 ## To Be Tested (Work In Progress)
 
-in a Slurm batch script is all you need. However, these scripts will
+In a Slurm batch script is all you need. However, these scripts will
 only use a single core. To fully leverage the parallel character of the
 HPC cluster, one can/should use (remote) subkernels. This can be done by
 embedding your script into the following template.
@@ -181,7 +181,7 @@ it, using the following Slurm batch script.
     #SBATCH --output=slurm-%j.out
     #SBATCH --time=00:01:00
 
-    module load mathematica
+    module load Mathematica/14.2.0
     math -script hpc.wl
     ```
 
