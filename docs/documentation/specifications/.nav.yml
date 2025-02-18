@@ -1,0 +1,7 @@
+sort:
+  direction: desc
+
+nav:
+  - index.md
+  - Investment Options:
+      - "configs/*"

@@ -9,3 +9,4 @@ class CustomBlogConfig(BlogConfig):
 
     speakers = Type(bool, default = True)
     sponsors = Type(bool, default = True)
+    main = Type(bool, default = True)

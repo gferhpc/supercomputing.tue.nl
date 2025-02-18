@@ -15,7 +15,7 @@ title: M&CS big memory compute (mastodont)
 `mastodont.win.tue.nl` is a Linux system designed to support
 long-running computations that require a large amount of RAM.
 It was *not* designed to support CPU-bound or parallel computations.
-For such computations, please consider the [HPC cluster](./hpc.md)
+For such computations, please consider the [HPC cluster](hpc.md)
 . The mastodont server is *not* part of a cluster.
 
 ## Documentation
@@ -82,7 +82,7 @@ TU/e user name and password. It is highly recommended that you setup and use
 All disk space is local, not shared with other systems.
 
 !!! tip "Data transfer to/from other data solutions"
-    On [this page](../../steps/data/index.md), some tips can be found on how to
+    On [this page](../../steps/data/smb.md), some tips can be found on how to
     transfer data to and from TU/e long-term data solutions.
 
 | **Path**           | **Storage space**             | **Purpose**                                                                                                                                                                                                                                                               |

@@ -1,5 +1,11 @@
 # https://docs.gitlab.com/ee/user/project/pages/redirects.html
 
+# Redirect (legacy) introduction page to root documentation.
+/documentation/introduction /documentation 301
+
+# Redirect (legacy) events page to trainings category.
+/events /blog/category/training 301
+
 # Redirect old HPC wiki to new documentation page.
 https://hpcwiki.tue.nl/*  https://supercomputing.tue.nl/documentation/ 301
 

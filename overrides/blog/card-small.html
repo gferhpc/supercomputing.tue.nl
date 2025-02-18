@@ -24,11 +24,13 @@
         </div>
       {% endif %}
     </div>
-    <div class="post__image--thumbnail">
-      <a href="{{ post_url | default(post.url) | url }}">
-        <img src="{{ post.meta.image | default("assets/images/112x63.svg") | url }}" alt="{{ post.title }}"/>
-      </a>
-    </div>
+    {% if post.meta.image or post.config.type != "kb" %}
+      <div class="post__image--thumbnail">
+        <a href="{{ post_url | default(post.url) | url }}">
+          <img src="{{ post.meta.image | default("assets/images/112x63.svg") | url }}" alt="{{ post.title }}"/>
+        </a>
+      </div>
+    {% endif %}
   </div>
   <div class="post__inner">
     <div class="post__meta">
@@ -38,7 +40,15 @@
         {{ post.config.date.created | date }}
       {% endif %}
       <div class="post__meta--badges">
+        {% for category in post.categories %}
+          <a href="{{ category.url | url }}" class="badge badge--default">
+            {{ category.title }}
+          </a>
+        {% endfor %}
         <div class="md-draft badge badge--light">{{ post.meta.type }}</div>
+        {% if post.config.draft %}
+          <div class="md-draft">{{ lang.t("blog.draft") }}</div>
+        {% endif %}
       </div>
     </div>
     <div class="post__title">

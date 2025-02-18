@@ -1,3 +1,4 @@
 nav:
+  - index.md
   - openondemand.md
-  - ssh.md
+  - SSH: ssh

@@ -1,7 +1,6 @@
 nav:
   - Home: index.md
   - News: blog
-  - ...
   - Contact: contact.md
   - HPC School: hpc-school.md
   - Documentation: documentation

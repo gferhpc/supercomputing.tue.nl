@@ -2,6 +2,7 @@
 date: 2024-04-12
 start: 2024-04-08T09:00:00
 end: 2024-04-19T14:00:00
+hide: [ sidebar ]
 type: event
 title: Spring HPC School '24
 categories: [ HPC School ]

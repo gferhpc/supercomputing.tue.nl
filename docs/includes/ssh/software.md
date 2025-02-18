@@ -1,3 +1,7 @@
+---
+search: {exclude: true}
+---
+
 === ":fontawesome-brands-windows: Windows"
 
     === ":octicons-terminal-16: MobaXterm"

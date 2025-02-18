@@ -46,8 +46,7 @@ comsol batch -inputfile $MODEL.mph -outputfile $MODEL\_out.mph -np ${SLURM_CPUS_
 
 This short tutorial is about this
 second possibility. It is focused on configuring your simulation using a
-TU/e cluster. For more information, visit the [COMSOL
-blog](https://www.comsol.com/blogs/how-to-run-on-clusters-from-the-comsol-desktop-environment/){:target=_blank}
+TU/e cluster. For more information, visit the [COMSOL blog](https://www.comsol.com/blogs/how-to-run-on-clusters-from-the-comsol-desktop-environment/){:target=_blank}
 where the procedure is explained in detail.
 
 Once you are done with building your model and specifying the physics of
@@ -65,7 +64,7 @@ menu `user controlled` in *Settings* and `SLURM` in *Scheduler type*.
 Leave the next two fields, *i.e.* the fields *Scheduler type* and
 *User*, empty. In the field *Queue name*, fill the queue you want to
 use, *e.g.* `tue.default.q`. Choose the queue according to your
-department and the information in [Technical Specifications](../../specifications.md) of the clusters.
+department and the information in [Technical Specifications](../../specifications/index.md) of the clusters.
 
 In the same submenu, check the boxes of *Specify external COMSOL batch
 directory path* and *Specify external COMSOL installation directory
@@ -74,7 +73,7 @@ path* and respectively type the paths `/home/tue/`<user> (or
 `/cm/shared/apps/comsol/5.5/multiphysics/`.
 
 Assuming that you are using PuTTY and that you have generated a [SSH
-key](../../steps/access/ssh.md#passwordless-authentication) to log in, you can fill the
+key](../../steps/access/ssh/step-1.md) to log in, you can fill the
 remainder fields as follows. On the *Remote and Cloud Access* submenu,
 choose from the dropdown menu `user controlled` in *Settings* and
 \`check the box of *Run remote*. In the dropdown menu select `SSH` in

@@ -2,6 +2,7 @@
 date: 2024-10-29
 start: 2024-10-29T09:00:00
 end: 2024-11-08T17:00:00
+hide: [ sidebar ]
 hero:
   backdrop: /assets/images/poster-autumnschool-2024.jpg
   messages:

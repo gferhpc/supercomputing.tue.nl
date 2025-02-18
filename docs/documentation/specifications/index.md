@@ -22,7 +22,7 @@ print out a (possibly empty) list of partitions (queues) you have access
 to.
 
 Read how to select these clusters, or even specific nodes within them,
-in the [Submit Jobs](steps/jobs/index.md) tutorial.
+in the [Submit Jobs](../steps/jobs/index.md) tutorial.
 
 In case you are not a part of the below-mentioned departments, and you
 still would like to compute, you can use the [generic nodes](#generic-nodes) for
@@ -81,7 +81,7 @@ experimental purposes to get familiar with HPC.
 
 ## Investment Options
 
-[This](standard_configs_2024.md) is a proposal for standard node
+[This](configs/2024.md) is a proposal for standard node
 configurations. In what form this will be implemented, \*if at all\*, is not
 known yet.
 

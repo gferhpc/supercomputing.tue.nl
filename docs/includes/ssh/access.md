@@ -1,3 +1,7 @@
+---
+search: {exclude: true}
+---
+
 === ":fontawesome-brands-windows: Windows"
 
     1. **Launch MobaXterm**:
