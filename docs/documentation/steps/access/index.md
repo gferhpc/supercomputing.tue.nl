@@ -14,7 +14,7 @@ Dedicated documentation on how to set this up is provided on the intranet
 Once there, the user can interact with the system and run (small) programs to generally test the system/software.
 
 There are currently two options to connect to the TU/e HPC Umbrella Cluster. Either by using a GUI/Website 
-via [Open Ondemand](openondemand.md) ^(suggested)^ or through [SSH/Command Line](ssh.md).
+via [Open Ondemand](openondemand.md) ^(suggested)^ or through [SSH/Command Line](ssh/index.md).
 
 <figure markdown>
   ![](infrastructure-overview.png)

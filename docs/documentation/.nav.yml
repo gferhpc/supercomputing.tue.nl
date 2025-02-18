@@ -1,0 +1,26 @@
+nav:
+  - Umbrella:
+      - index.md
+      - policies.md
+      - filesystems.md
+      - Technical Specifications: specifications/
+  - Getting Started:
+      - 1. Get an account: steps/request/
+      - 2. Access the cluster: steps/access/
+      - 3. Transfer Data: steps/data/
+      - 4. Using Software: steps/software/
+      - 5. Submit Jobs: steps/jobs/
+      - 6. Workload Optimization: steps/optimization/
+      - 7. Training: steps/training/
+  - Software:
+      - Available Modules:
+          - software/index.md
+          - software/commercial.md
+          - software/non-commercial.md
+          - software/python.md
+      - How-To Guides: software/recipes/
+      - Licenses: software/licenses.md
+      - Datasets: datasets.md
+  - Advanced Topics: advancedtopics/
+  - Departments: departments/
+  - Knowledge Base: kb/

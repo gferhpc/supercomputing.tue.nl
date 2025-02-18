@@ -3,8 +3,6 @@ site_url: https://supercomputing.tue.nl/
 docs_dir: &base_path docs
 not_in_nav: |
   includes
-  solutions
-  events.md
 theme:
   name: material
   custom_dir: overrides
@@ -22,7 +20,7 @@ theme:
     - navigation.indexes
     - navigation.top
     - toc.follow
-    - toc.integrate
+#    - toc.integrate
     - search
     - search.suggest
     - search.highlight
@@ -56,8 +54,7 @@ extra_css:
   - assets/css/scheme.css
   - assets/css/site.css
 plugins:
-  - awesome-pages:
-      filename: .pages.yml
+  - awesome-nav
   - glightbox
   - git-revision-date-localized:
       enabled: !ENV [CI, false]
@@ -76,8 +73,6 @@ plugins:
       css_files:
         - assets/css/scheme.css
         - assets/css/site.css
-#  - privacy:
-#      enabled: !ENV [CI, false]
   - redirects:
       redirect_maps:
         'documentation/introduction.md': 'documentation/index.md'
@@ -91,6 +86,12 @@ plugins:
   - scc/blog:
       post_excerpt_max_authors: 10
       post_url_date_format: yyyy
+  - scc/blog:
+      blog_dir: documentation/kb
+      post_dir: "{blog}/articles"
+      main: false
+      archive: false
+      post_url_format: "{categories}/{slug}"
   - scc/meta
   - scc/specs:
       sinfo_path: cluster/.cache/sinfo.json
@@ -157,7 +158,8 @@ plugins:
       cards_layout_options:
         background_color: "#1a1a1a"
         color: "#fafafa"
-  - tags
+  - tags:
+      tags: false
 watch:
   - overrides
   - layouts

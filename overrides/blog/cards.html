@@ -1,46 +1,42 @@
-{% if not full %}
+{% macro related_posts(posts, offset, limit, template) %}
+  <li class="container">
+    <dl>
+      {% for post in posts[offset:limit] %}
+        {% if url_prefix %}
+          {% set post_url = url_prefix ~ post.url %}
+        {% endif %}
+        <dt>
+          {% include template %}
+        </dt>
+        {% if not loop.last %}
+          <dt>
+            <hr/>
+          </dt>
+        {% endif %}
+      {% endfor %}
+    </dl>
+  </li>
+{% endmacro %}
+
+{% if not full and full != 0 %}
   {% set full = 2 %}
 {% endif %}
 {% if not limit %}
   {% set limit = 7 %}
 {% endif %}
+
 <div class="grid cards">
   <ul>
-    {% for post in posts[:full] %}
-      {% if url_prefix %}
-        {% set post_url = url_prefix ~ post.url %}
+    {% if type|default("") == "kb" %}
+      {{ related_posts(posts, 0, 5, "blog/card-small.html") }}
+      {% if posts | length > 5 %}
+        {{ related_posts(posts, 5, 10, "blog/card-small.html") }}
       {% endif %}
-      <li class="container">
-        {% include "blog/card-full.html" %}
-      </li>
-    {% endfor %}
-    {% if posts[full:limit] %}
-      <li>
-        <div class="container">
-          <strong>
-            MORE ITEMS
-            {% set post = posts | first %}
-            {% if post %}
-              <a style="float: right" href="{{ post.parent.url | url }}">Read more</a>
-            {% endif %}
-          </strong>
-        </div>
-        <dl>
-          {% for post in posts[full:limit] %}
-            {% if url_prefix %}
-              {% set post_url = url_prefix ~ post.url %}
-            {% endif %}
-            <dt class="container">
-              {% include "blog/card-small.html" %}
-            </dt>
-            {% if not loop.last %}
-              <dt>
-                <hr/>
-              </dt>
-            {% endif %}
-          {% endfor %}
-        </dl>
-      </li>
+    {% else %}
+      {% for offset in range(0, full) %}
+        {{ related_posts(posts, offset, offset + 1, "blog/card-full.html") }}
+      {% endfor %}
+      {{ related_posts(posts, full, limit, "blog/card-small.html") }}
     {% endif %}
   </ul>
 </div>

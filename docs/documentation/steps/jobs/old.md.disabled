@@ -316,7 +316,7 @@ We'll go through the lines one by one:
 -   **#SBATCH --partition=tue.test.q** tells Slurm the partition it
     should use (this used to be called "queue" in the old system).
     Select a partition based on the [technical
-    specifications](../../specifications.md) of the cluster
+    specifications](../../specifications/index.md) of the cluster
     you are using.
 
 <!-- -->
@@ -462,7 +462,7 @@ the cluster.
 
 The `--partition` option takes care of selecting a queue (partition in
 Slurm terminology). Select a partition based on the [technical
-specifications](../../specifications.md) of the cluster you
+specifications](../../specifications/index.md) of the cluster you
 are using.
 
 In case there are different types of nodes within the partition you

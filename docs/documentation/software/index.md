@@ -9,7 +9,7 @@ The following modules are allready available, on request new ones can be added.
 
 [Commercial software modules](commercial.md)
 
-:   For most of these modules a license is needed. More info: [Licenses](../licenses.md)
+:   For most of these modules a license is needed. More info: [Licenses](licenses.md)
 
 [Non-Commercial software modules](non-commercial.md)
 

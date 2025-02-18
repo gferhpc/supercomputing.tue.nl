@@ -23,13 +23,13 @@ If you recurrently need lots of modules, this loading can be automated with a (b
 
 More deatailed infromation about what modules are available in the TU/e Umbrella HPC Cluster can be found here:
 
-[Commercial software modules](../../software/modules/commercial.md)
+[Commercial software modules](../../software/commercial.md)
 
-[Non-Commercial software modules](../../software/modules/non-commercial.md)
+[Non-Commercial software modules](../../software/non-commercial.md)
 
-[Python related software modules](../../software/modules/python.md)
+[Python related software modules](../../software/python.md)
 
-![Lmod logo](../../software/modules/Lmod-logo.png){: align=left style="height:30px"}
+![Lmod logo](../../software/Lmod-logo.png){: align=left style="height:30px"}
 The TU/e Umbrella HPC cluster uses [lmod](https://lmod.readthedocs.io/) a Lua based environment module system.
 
 

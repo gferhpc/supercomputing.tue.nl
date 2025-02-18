@@ -14,7 +14,7 @@ from mkdocs.config.defaults import MkDocsConfig
 from mkdocs.exceptions import PluginError
 from mkdocs.structure.files import File, Files
 from mkdocs.structure.pages import Page, _RelativePathTreeprocessor
-from mkdocs.structure.toc import get_toc, TableOfContents, AnchorLink
+from mkdocs.structure.toc import get_toc, AnchorLink
 from mkdocs.utils.meta import YAML_RE
 from re import Match
 from yaml import SafeLoader
@@ -85,6 +85,8 @@ class Post(Page):
             self.config: NewsConfig = NewsConfig(file.abs_src_path)
         elif "maintenance" == self.config.type:
             self.config: MaintenanceConfig = MaintenanceConfig(file.abs_src_path)
+        elif "kb" == self.config.type:
+            self.config: NewsConfig = NewsConfig(file.abs_src_path)
 
         self.config.load_dict({
             key: self.meta[key] for key in (

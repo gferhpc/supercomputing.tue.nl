@@ -34,14 +34,9 @@ ssh username@hpc.tue.nl
 ??? info "Server Key Fingerprints Overview for Verification"
 
     If you get a question about SSH key fingerprints from the server, you
-    can verify them with the values below.
+    can verify them with the values below:
 
-    | Key Length | Fingerprint                                        | Hostname   | Key Type |
-    |------------|----------------------------------------------------|------------|----------|
-    | 1024       | SHA256:vrd92GRLJ7TyjJHu8KmULfsYb6n4zMX7I7K7ICJRrHA | hpc.tue.nl | DSA      |
-    | 256        | SHA256:kdpFd6RFR0rQ+76L7d2WRYsaYqSxS7jDBj/PzMlHyzg | hpc.tue.nl | ECDSA    |
-    | 256        | SHA256:a0EWqBadQrhOezlF5HuhCo/diEBMl1ElskZ4LpNci3c | hpc.tue.nl | ED25519  |
-    | 3072       | SHA256:S2BgcB7EnIZGnDHqPe9kBm20r0p7amTSoARbXjkOLPE | hpc.tue.nl | RSA      |
+    --8<-- "includes/ssh/fingerprints.md"
 
 ## Passwordless Authentication
 
@@ -89,4 +84,4 @@ connections remain private and protected.
 
 Now that you understand the analogy, let’s set up your secure access and ensure your communications are protected.
 
-[Start Guide to SSH Key-Based Authentication](ssh/step-1.md){ .md-button .md-button--primary }
+[Start Guide to SSH Key-Based Authentication](step-1.md){ .md-button .md-button--primary }

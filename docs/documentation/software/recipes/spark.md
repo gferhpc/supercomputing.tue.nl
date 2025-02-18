@@ -7,7 +7,7 @@ a Slurm job as follows. First, create a directory to work in:
 
 Then, upload the following Slurm batch script into that directory.
 Please update the values for the `--output` and `--error` parameters if
-needed - some departments have [their own storage server](../../specifications.md) and therefore a different
+needed - some departments have [their own storage server](../../specifications/index.md) and therefore a different
 path to their home directories.
 
 ??? example "spark.cmd"

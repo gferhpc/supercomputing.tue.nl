@@ -31,7 +31,7 @@ left of this page.
 
 ### Technical specifications
 All specifications of the machines in the cluster can be found
-[here](../../specifications.md#__tabbed_1_7). Users are given their own 'home'
+[here](../../specifications/index.md#mcs). Users are given their own 'home'
 folder under `/home/[username]` and shared scratch space is available under
 `/scratch-shared/[username]`. The M&CS GPU nodes have an additional **200 GB**
 and **500 GB** of node-specific scratch space available under `$TMPDIR`. Please

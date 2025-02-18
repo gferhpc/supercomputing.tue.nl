@@ -224,7 +224,7 @@ By default, the HPC node will not use the GUI license, but just a runner license
 
 ### Initial setup
 
-1. Configure SSH keys to connect to the HPC from you local PC [using this method](../../steps/access/ssh.md#passwordless-authentication)
+1. Configure SSH keys to connect to the HPC from you local PC [using this method](../../steps/access/ssh/step-1.md)
 2. Configure Lumerical config settings on the HPC
    1. Connect to HPC using SSH
    2. Add a new directory using: `mkdir -p ~/.config/Lumerical/`

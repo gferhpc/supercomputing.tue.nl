@@ -1,5 +1,6 @@
 ---
-hide: [meta]
+hide: [meta, toc]
+search: {exclude: true}
 ---
 
 <div class="stepper-wrapper">

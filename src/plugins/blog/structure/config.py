@@ -1,5 +1,4 @@
 from datetime import datetime
-from email.policy import default
 
 from material.plugins.blog.structure import PostConfig
 from mkdocs.config.base import Config
@@ -7,7 +6,7 @@ from mkdocs.config.config_options import ListOfItems, Optional, Type, Choice, Su
 
 
 class CustomPostConfig(PostConfig):
-    type = Optional(Choice(["news", "maintenance", "event"]))
+    type = Optional(Choice(["news", "maintenance", "event", "kb"]))
 
 class NewsSourceConfig(Config):
     title = Type(str)

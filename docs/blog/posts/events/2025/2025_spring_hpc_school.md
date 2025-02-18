@@ -2,6 +2,7 @@
 date: 2025-01-28
 start: 2025-04-01T09:00:00
 end: 2025-04-11T17:00:00
+hide: [ sidebar ]
 hero:
   backdrop: /assets/images/2025-springschool.jpg
   messages:

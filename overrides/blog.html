@@ -15,7 +15,13 @@
         <div class="grid cards post">
           <ul>
             {% for post in posts %}
-              <li class="post__item">{% include "blog/card-full.html" %}</li>
+              <li class="post__item">
+                {% if post.config.type == "kb" %}
+                  {% include "blog/card-small.html" %}
+                {% else %}
+                  {% include "blog/card-full.html" %}
+                {% endif %}
+              </li>
             {% endfor %}
           </ul>
         </div>

@@ -33,7 +33,7 @@ page aim to help you with this.
         * Don't worry about account creation and forgetting passwords: use your TU/e account
     * Setup and maintenance done by the Eindhoven Supercomputing Center
         * Don't worry about buying and maintaining hardware
-        * Your **[favourite software](../../software/modules/index.md) is available** without any additional steps, [TU/e (network) licenses](../../software/licenses.md) can be used
+        * Your **[favourite software](../../software/index.md) is available** without any additional steps, [TU/e (network) licenses](../../software/licenses.md) can be used
     * Funded by department-wide funds
         * No funding proposal/credits needed
         * Unfunded research possible
@@ -52,7 +52,7 @@ left of this page.
 
 ### Technical specifications
 All specifications of the machines in the cluster can be found
-[here](../../specifications.md#__tabbed_1_7). Users are given their own 'home'
+[here](../../specifications/index.md#mcs). Users are given their own 'home'
 folder under `/home/[username]` and shared scratch space is available under
 `/scratch-shared/[username]`. The M&CS nodes have an additional **2 TB** of
 node-specific scratch space available under `$TMPDIR`. Please review
