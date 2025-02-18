@@ -13,9 +13,10 @@ user@umbrella$ module load SlurmViewer
 Start SlurmViewer
 
 ```shell
-user@umbrella$ slurm-Viewer
+user@umbrella$ slurm-viewer
 ```
+The interface can be used with a mouse (it's clickable)
 
 ![SlurmViewerExample](SlurmViewerExample.png)
 
-Use 'q' to quit. The interface can be used with a mouse (it's clickable)
+
