@@ -182,7 +182,7 @@ it, using the following Slurm batch script.
     #SBATCH --time=00:01:00
 
     module load Mathematica/14.2.0
-    math -script hpc.wl
+    wolfram -script hpc.wl
     ```
 
 Of course, you can modify the number of nodes and CPUs in the parameters
