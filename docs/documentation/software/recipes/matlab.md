@@ -59,7 +59,7 @@ Check the GPU(s) available. This command only gives output on nodes with GPU (MI
 module purge
 module load MATLAB/2024b
 
-matlab -nodisplay -nosplash -nodesktop -r simple
+matlab -batch simple
 ```
 
 ??? example "simple.m"
