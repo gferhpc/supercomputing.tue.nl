@@ -90,7 +90,7 @@ MATLAB by default creates a parpool("Processes") using the available CPUs (--cpu
 module purge
 module load MATLAB/2024b
 
-matlab -nodisplay -nosplash -nodesktop -r parallel
+matlab -batch parallel
 ```
 
 ??? example "parallel.m"
