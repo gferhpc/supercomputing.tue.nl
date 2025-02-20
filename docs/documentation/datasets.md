@@ -84,7 +84,7 @@ unzip /dataset/ADE20K/ADE20K.zip -d $datadir
 <tr>
     <td>ImageNet</td>
     <td>&mdash;</td>
-    <td>&mdash;</td>
+    <td>&cross;</td>
     <td><code>/dataset/ImagNet</code></td>
     <td><a href="https://www.image-net.org/download">Terms and Conditions</a></td>
     <td><a href="https://www.image-net.org/">Website</a></td>
