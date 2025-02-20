@@ -74,20 +74,20 @@ unzip /dataset/ADE20K/ADE20K.zip -d $datadir
     <td><a href="https://www.cs.toronto.edu/~kriz/cifar.html">Website</a></td>
   </tr>
   <tr>
+    <td>ImageNet</td>
+    <td>&mdash;</td>
+    <td>&cross;</td>
+    <td><code>/dataset/ImageNet</code></td>
+    <td><a href="https://www.image-net.org/download">Terms and Conditions</a></td>
+    <td><a href="https://www.image-net.org/">Website</a></td>
+  </tr>
+  <tr>
     <td>MNIST</td>
     <td>&mdash;</td>
     <td>&check;</td>
     <td><code>/dataset/MNIST</code></td>
     <td><a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></td>
     <td><a href="https://yann.lecun.com/exdb/mnist/">Website</a></td>
-  </tr>
-<tr>
-    <td>ImageNet</td>
-    <td>&mdash;</td>
-    <td>&cross;</td>
-    <td><code>/dataset/ImagNet</code></td>
-    <td><a href="https://www.image-net.org/download">Terms and Conditions</a></td>
-    <td><a href="https://www.image-net.org/">Website</a></td>
   </tr>
 </table>
 
