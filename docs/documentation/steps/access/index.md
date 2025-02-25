@@ -1,22 +1,24 @@
 ---
 title: 2. Access the cluster
 ---
+
 # Access the cluster
 
-The TU/e Umbrella HPC Cluster is a Linux environment with shell (commandline) access and [web access](https://hpc.tue.nl).
-To log in, one usually uses SSH to reach the respective Login Nodes (computers reserved for people just like you that 
-want to connect to the HPC Cluster). This access is restricted, so you can only connect, when you are within the 
-university/facility and its network. To still access the Login Nodes externally, you'll need to setup a VPN (Virtual Private Network) connection. 
-Dedicated documentation on how to set this up is provided on the intranet
-[VPN for employees](https://tuenl.sharepoint.com/sites/intranet-LIS/SitePages/VPN.aspx){:target=_blank} or 
-[VPN for students](https://tuenl.sharepoint.com/sites/intranet-LIS/SitePages/Provisional-VPN-for-Students.aspx){:target=_blank}.
- 
-Once there, the user can interact with the system and run (small) programs to generally test the system/software.
+The TU/e Umbrella HPC Cluster operates on a Linux platform that can be accessed via the command line or
+through [web access](https://hpc.tue.nl). To log in, users typically utilize SSH to connect to the Login Nodes, which
+are computers specifically designated for those wishing to access the HPC Cluster. This connection is restricted to
+users within the university or facility network. To connect from an external location, you'll need to configure a VPN 
+connection. Detailed instructions on setting up the VPN are available on the 
+[intranet](https://tuenl.sharepoint.com/sites/intranet-LIS/SitePages/New-VPN-Service--eduVPN.aspx){:target=_blank}.
 
-There are currently two options to connect to the TU/e HPC Umbrella Cluster. Either by using a GUI/Website 
-via [Open Ondemand](openondemand.md) ^(suggested)^ or through [SSH/Command Line](ssh/index.md).
+Once connected, users can interact with the system and execute small programs to test the system or software.
+
+There are currently two methods to connect to the TU/e HPC Umbrella Cluster: either through a graphical user
+interface/website using [Open Ondemand](openondemand.md) ^(recommended)^ or via the [SSH/Command Line](ssh/index.md).
 
 <figure markdown>
   ![](infrastructure-overview.png)
   <figcaption>Infrastructure Overview</figcaption>
 </figure>
+
+*[VPN]: Virtual Private Network

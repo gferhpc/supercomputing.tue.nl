@@ -46,9 +46,8 @@ FSA cluster is the biggest consumer of the machine and can help determine
 when and whether there is capacity available on the machine for your research. 
 
 For security reasons, SSH access is only allowed from the campus or
-[VPN](https://tuenl.sharepoint.com/sites/intranet-LIS/SitePages/VPN.aspx){:target=_blank}
-(`vpn2` and `vpn3` both have access to the machine). Login using SSH with your
-TU/e user name and password. It is highly recommended that you setup and use
+[VPN](https://tuenl.sharepoint.com/sites/intranet-LIS/SitePages/New-VPN-Service--eduVPN.aspx){:target=_blank}. Login 
+using SSH with your TU/e user name and password. It is highly recommended that you setup and use
 [public key authentication](https://linuxwiki.tue.nl/wiki/SSH#SSH_Keys).
 
 ??? warning "User account names starting with a digit"
