@@ -37,12 +37,14 @@
 {% macro events(type = None, limit = 7) %}
   {% set posts = [] %}
 
-  {% if type %}
-    {% for post in page.blog.posts if post.config.type in type %}
-      {% set na = posts.insert(loop.index, post) %}
-    {% endfor %}
-  {% else %}
-    {% set posts = page.blog.posts %}
+  {% if page.blog %}
+    {% if type %}
+      {% for post in page.blog.posts if post.config.type in type %}
+        {% set na = posts.insert(loop.index, post) %}
+      {% endfor %}
+    {% else %}
+      {% set posts = page.blog.posts %}
+    {% endif %}
   {% endif %}
 
   {% include "blog/cards.html" %}

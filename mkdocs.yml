@@ -73,9 +73,6 @@ plugins:
       css_files:
         - assets/css/scheme.css
         - assets/css/site.css
-  - redirects:
-      redirect_maps:
-        'documentation/introduction.md': 'documentation/index.md'
   - rss:
       enabled: !ENV [CI, false]
       match_path: 'blog.posts.(news|events|maintenance).[0-9]+..*'

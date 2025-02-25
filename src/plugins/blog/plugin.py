@@ -74,7 +74,7 @@ class CustomBlogPlugin(BlogPlugin[CustomBlogConfig]):
                         post.excerpt.render(page, self.config.post_excerpt_separator)
 
             # if page.is_homepage or page.is_top_level - only when blog.main = True:
-            if self.config.main:
+            if self.config.main and (page.is_homepage or page.is_top_level):
                 page.blog = self.blog
 
             if not self.config.pagination:
@@ -97,7 +97,6 @@ class CustomBlogPlugin(BlogPlugin[CustomBlogConfig]):
 
             # Nothing more to be done for views
             return
-
 
         page.blog = self.blog
 

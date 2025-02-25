@@ -1,7 +1,9 @@
 {% set posts = [] %}
-{% for post in page.blog.posts if post.config.type == "event" and "HPC School" in post.config.categories %}
-  {% set na = posts.insert(loop.index, post) %}
-{% endfor %}
+{% if page.blog %}
+  {% for post in page.blog.posts if post.config.type == "event" and "HPC School" in post.config.categories %}
+    {% set na = posts.insert(loop.index, post) %}
+  {% endfor %}
+{% endif %}
 
 {% if posts %}
   {% set event = posts|first %}
@@ -13,11 +15,13 @@
   {% else %}
     {% extends "main.html" %}
   {% endif %}
+{% else %}
+  {% extends "main.html" %}
 {% endif %}
 
 {% block content %}
   {{ super() }}
-  {% if event.config.end < now() %}
+  {% if page.blog and event and event.config.end < now() %}
     {% include "blog/cards.html" %}
   {% endif %}
 {% endblock %}
