@@ -32,52 +32,45 @@ experimental purposes to get familiar with HPC.
 
 ### Generic Nodes
 
-{ .umbrella-specs tue-login001,tue-login002,tue.default.q,tue.gpu.q }
+--8<-- "includes/specifications/tue.md"
 
 ### Departmental Nodes
 
 === "APSE"
 
-    { .umbrella-specs phys.default.q,phys.gpu.q,phys.bigmem.q,phys.and.q,phys.edu.q,phys.psn.q }
+    --8<-- "includes/specifications/phys.md"
 
 === "BE"
 
-    { .umbrella-specs be.research.q,be.gpuresearch.q,be.student.q,be.gpustudent.q }
+    --8<-- "includes/specifications/be.md"
 
 === "BmE"
 
-    { .umbrella-specs bme-storage001 }
-    { .umbrella-specs bme.gpuresearch.q,bme.gpustudent.q,bme.gpumolml.q }
+    --8<-- "includes/specifications/bme.md"
 
 === "CE&C"
 
-    { .umbrella-specs chem-storage001 }
-    { .umbrella-specs chem.default.q,chem.gpu.q,chem.longterm.q,chem.smm01.q,chem.smm02.q,chem.smm03.q }
+    --8<-- "includes/specifications/chem.md"
 
 === "EE"
 
-    { .umbrella-specs elec.default.q,elec.gpu.q,elec-ees-empso.cpu.q,elec-em.gpu.q,elec-phi.gpu.q,elec-vca.gpu.q,elec.gpu-es02.q }
+    --8<-- "includes/specifications/ee.md"
 
 === "ID"
 
-    { .umbrella-specs id.fe.q }
+    --8<-- "includes/specifications/id.md"
 
 === "M&CS"
 
-    { .umbrella-specs mcs.default.q,mcs.gpu.q }
+    --8<-- "includes/specifications/mcs.md"
 
 === "ME"
 
-    { .umbrella-specs mech-storage001 }
-    { .umbrella-specs mech.cm.q,mech.pf.q,mech.pf-student.q,mech.student.q,mech-cst-mov.cpu.q }
+    --8<-- "includes/specifications/mech.md"
 
 === "MaTe"
-    
-    { .umbrella-specs mate.cpu.q }
 
-!!! example "Auto Generated"
-
-    The information above is automatically generated, please report any issues to hpcsupport@tue.nl.
+    --8<-- "includes/specifications/mate.md"
 
 ## Investment Options
 
@@ -97,5 +90,3 @@ known yet.
 *[IE&IS]: Industrial Engineering & Innovation Sciences
 *[M&CS]: Mathematics & Computer Science
 *[ME]: Mechanical Engineering
-
-{ .umbrella-specs references }

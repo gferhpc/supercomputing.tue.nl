@@ -23,4 +23,3 @@ insiders = [
 [project.entry-points."mkdocs.plugins"]
 "scc/blog" = "src.plugins.blog.plugin:CustomBlogPlugin"
 "scc/meta" = "src.plugins.meta.plugin:MetaPlugin"
-"scc/specs" = "src.plugins.specs.plugin:SpecsPlugin"
