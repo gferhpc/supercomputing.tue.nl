@@ -19,3 +19,6 @@ else
 fi
 
 "$python" -m mkdocs build --no-directory-urls --site-dir public
+echo "Listening on http://localhost:8000."
+echo "Hit ctrl-C to quit."
+"$python" -m mkdocs serve -q
