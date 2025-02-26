@@ -96,13 +96,13 @@ unzip /dataset/ADE20K/ADE20K.zip -d $datadir
 
 ## Getting access to restricted datasets
 
-Some datasets and models are not accessible by default on the Umbrella Cluster, because they require explicit acceptance of a license or agreeing to a terms of use on the website of the dataset or model provider.  Or, the dataset is provided a company that has put restrictions on the dataset's use. To be able to legally provide you access to these datasets, we employ the following access models:
+Some datasets and models are not accessible by default on the Umbrella Cluster, because they require explicit acceptance of a license or agreeing to a terms of use on the website of the dataset or model provider.  Or, the dataset is provided a company that has put restrictions on the dataset's use. To ensure *legal* access to datasets, we employ the following access models:
 
 - <a name="free">Free:</a> you can use the dataset **free of cost**, but you still need to adhere to its **license terms** and/or **terms of use**! By using such a dataset you are agreeing to its license.
 - <a name="poa">POA:</a> proof of authorization (POA) needed. You can use the dataset after providing a proof of authorization, for example a screenshot of an e-mail of the dataset owner/provider in which they give you access.
 - <a name="dmp">DMP:</a> data management plan (DMP) needed. You can use the dataset after providing a data management plan.
 
-If you would like to access a restricted datasets or model on the Umbrella Cluster, please contact the system administrators and provide the required information.
+If you would like to access a restricted datasets or model on the Umbrella Cluster, please contact the system administrators and provide the required information. If the information you provide is sufficient, we will give you access to the dataset. For legal reasons we will record this process in TOPdesk.
 
 Even if access to a datasets is not restricted, it usually still has a license and a terms of conduct.  By using the dataset or model you are agreeing to both the license and the terms of conduct.
 
@@ -115,3 +115,5 @@ To install a dataset on the cluster, a few steps must be taken:
 1. Please contact us to request installation of the dataset.
 2. We forward your request to the Data Stewards. A data steward is a legal expert that will judge if any [access conditions](#getting-access-to-restricted-datasets) are needed.
 3. We install the dataset and inform you.
+
+The Data Stewards maintain a larger list of datasets available within the TU/e [here](https://tue.atlassian.net/wiki/spaces/DA/database/3071213570).
