@@ -5,7 +5,7 @@ description: >
   collaboration opportunities in research.
 hide: [ navigation, meta ]
 hero:
-  backdrop: /assets/images/backdrops/contact.jpg
+  backdrop: assets/images/backdrops/contact.jpg
   messages: 
   - { message: "Contact" }
   #  attribution: { 

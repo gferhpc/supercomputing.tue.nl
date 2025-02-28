@@ -4,7 +4,7 @@ start: 2024-10-29T09:00:00
 end: 2024-11-08T17:00:00
 hide: [ sidebar ]
 hero:
-  backdrop: /assets/images/poster-autumnschool-2024.jpg
+  backdrop: assets/images/poster-autumnschool-2024.jpg
   messages:
     - { message: "Autumn HPC School", color: "primary" }
     - { message: "29-31 October & 4-8 November", size: "medium" }

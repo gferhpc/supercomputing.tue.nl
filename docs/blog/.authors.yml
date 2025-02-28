@@ -92,3 +92,18 @@ authors:
     avatar: /assets/images/sponsor/eurocc-netherlands.nl.svg
     url: https://www.eurocc-netherlands.nl/
     description: "EuroCC aims to build a European network of 33 national HPC competence centres to bridge the existing HPC skills gaps while promoting cooperation across Europe. The establishment of a European network of 33 national HPC competence centres (NCCs) is coordinated by the EuroCC project. This falls under The European High Performance Computing Joint Undertaking (EuroHPC JU) from the European Union."
+  "universityracing":
+    name: University Racing Eindhoven
+    avatar: /assets/images/logo/universityracing.png
+    url: https://www.universityracing.nl
+    description: "University Racing Eindhoven (URE) is a student team of Eindhoven University of Technology. The team stands for technological innovation, teamwork and a passion for engineering. By competing in the Formula Student competition, the world's largest engineering design competition that takes place all over the world, we try to push ourselves and our cars to new limits! Using a combination of the engineering skills of all the members and some help from our dear partners, we are able to build a high-tech, innovative electric and autonomous Formula-style race-car every year. During the Formula Student events, the result of our hard work is put to the test. Determination to be the very best comes from a passion for engineering that lies deep within every one of our team members, resulting in something epic year after year. However, the events aren't only about winning, they are also a perfect place to share information with other teams and technological companies to develop new ideas."
+  "evertvanvlietcfd":
+    name: Evert van Vliet
+    avatar: /assets/images/people/evertvanvlietcfd.png
+    url: https://www.linkedin.com/in/evertvanvlietcfd/
+    description: "Experienced Engineer with a demonstrated history of working in the semiconductors industry. Skilled in Computational Fluid Dynamics, Management, STAR-CCM+, OpenFOAM, LBM .... Strong engineering professional with a Master's degree focused in Applied Physics from Delft University of Technology."
+  "v.menkovski":
+    name: Vlado Menkovski
+    avatar: /assets/images/people/v.menkovski.png
+    url: https://www.tue.nl/en/research/researchers/vlado-menkovski
+    description: "His research interests span from studying how Machine Learning approaches can benefit natural sciences to applications in high-tech industry settings. He was recently fortunate to be part of exciting collaborations focusing on the detection of miRNA in bioinformatics, quantification of turbulence intensity, and the detection of the state of plasma confinement in fusion in applied physics. He also works on enhancing the use of expert knowledge in building ML models."

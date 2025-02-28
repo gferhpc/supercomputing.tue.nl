@@ -6,7 +6,7 @@ description: >
 hide: [ navigation, meta ]
 template: landing.html
 hero:
-  backdrop: /assets/images/backdrops/home.png
+  backdrop: assets/images/backdrops/home.png
   messages:
     - { message: "Compute to Compete" }
 ---

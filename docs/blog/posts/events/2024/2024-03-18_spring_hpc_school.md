@@ -11,7 +11,7 @@ price: 0.00
 location: TU/e Campus
 image: /assets/images/poster-springschool-2025.png
 hero:
-  backdrop: /assets/images/poster-springschool-2025.png
+  backdrop: assets/images/poster-springschool-2025.png
   messages:
     - { message: "Spring HPC School", color: "primary" }
     - { message: "8-11 April & 15-19 April", size: "medium" }
