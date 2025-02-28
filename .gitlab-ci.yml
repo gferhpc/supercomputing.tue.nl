@@ -3,7 +3,7 @@ workflow:
     on_new_commit: interruptible
 
 default:
-  image: "python:latest"
+  image: "python:$PYTHON_VERSION"
   before_script:
     - "python3 -m pip install --no-warn-script-location --user --upgrade -e ."
   artifacts:
@@ -15,60 +15,35 @@ default:
 
 variables:
   GIT_DEPTH: 1000
+  PYTHON_VERSION: 3.13
   PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
-
-staging:
-  stage: build
-  script:
-    - "python3 -m mkdocs build --no-directory-urls --site-dir public"
-  interruptible: true
-  rules:
-    - if: "$CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH"
-
-production:
-  stage: build
-  script:
-    - "python3 -m mkdocs build --site-dir public"
-  interruptible: true
-  rules:
-    - if: "$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH"
 
 python:
   stage: test
-  image: "python:$VERSION"
-  script:
-    - "python3 -m mkdocs build --no-directory-urls --site-dir public"
-  interruptible: true
-  parallel:
-    matrix:
-      - VERSION: [ "3.11", "3.12", "3.13" ]
-  rules:
-    - if: "$CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH"
-
-preview:
-  stage: deploy
-  dependencies: [ staging ]
-  before_script: [ ]
   variables:
     PREVIEW_URL: "https://$CI_PROJECT_ROOT_NAMESPACE.$CI_PAGES_DOMAIN/-/sites/$CI_PROJECT_NAME/-/jobs/$CI_JOB_ID/artifacts/public/index.html"
   script:
+    - "python3 -m mkdocs build --no-directory-urls --site-dir public"
     - "echo $PREVIEW_URL"
   environment:
+    deployment_tier: development
     name: "review/$CI_COMMIT_REF_NAME"
     url: $PREVIEW_URL
-    deployment_tier: development
-  rules:
-    - if: "$CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH"
+  parallel:
+    matrix:
+      - PYTHON_VERSION: [ "3.11", "3.12", "3.13" ]
+  interruptible: true
 
 pages:
   stage: deploy
-  dependencies: [ production ]
-  before_script: [ ]
+  dependencies: [ python ]
   script:
+    - "python3 -m mkdocs build --site-dir public"
     - "echo Publishing release to https://supercomputing.tue.nl/"
   environment:
+    deployment_tier: production
     name: production
     url: https://supercomputing.tue.nl
-    deployment_tier: production
+  interruptible: true
   rules:
     - if: "$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH"
