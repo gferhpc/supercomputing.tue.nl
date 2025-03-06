@@ -2,6 +2,24 @@
 
 All tough `rclone` is a command line tool (https://rclone.org/), to configure a OneDrive connection a graphical environment is needed to authorize the connection to Microsoft OneDrive. Configuration of the connection only needs to be done once.
 
+!!! bug
+
+    We are aware that this documentation needs to be updated and that as result the rclone configuration isn't stored
+    correctly. Please stand by while we investigate the issue and work on a fix.
+
+    **TL;DR**
+
+    The `rclone.conf` file is stored incorrectly in:
+    ```shell
+    ls ~/ondemand/data/sys/dashboard/batch_connect/sys/desktop/output/*/config/rclone/rclone.conf
+    ``` 
+
+    This files needs to be located at:
+    ```shell
+    ~/.config/rclone/rclone.conf
+    ```
+
+
 ## Start an interactive Desktop Session
 
 Login to [The Umbrella Cluster](https://hpc.tue.nl) and request an Interactive Desktop (Scroll Down to the bottom of the list of Tiles), 1 hour, 1 CPU and 4 GB of memory should be sufficient to finish the configuration.
