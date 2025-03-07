@@ -89,7 +89,9 @@ schedule:
 the world of AI and high-performance computing. Join us for our excellent keynotes and workshops and unlock the power of
 HPC.**
 
-This event is free of charge with only limited seats available, please [**register**](https://hpcschool2025.dryfta.com/en/attendee-registration-tickets){:target=_blank} yourself quickly if you're interested!
+Be part of our free event and select tracks that match your interests. Seats are limited, so make sure to 
+[**register**](https://hpcschool2025.dryfta.com/en/attendee-registration-tickets){:target=_blank} quickly to secure your 
+spot!
 
 This HPC School is made possible through the collaboration between the [TU/e Supercomputing Center](https://www.linkedin.com/in/supercomputing/){:target=_blank}, [SURF](https://www.surf.nl){:target=_blank}, & [EuroCC Netherlands](https://eurocc-netherlands.nl/nl/){:target=_blank}.
 
