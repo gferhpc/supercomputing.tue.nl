@@ -2,17 +2,19 @@
 |---------------------------|---------|--------|-------------------------------------------------------------------------------------------------|
 | Storage (mech-storage001) | 32^SMT^ | 128GB  | 2x [AMD EPYC 7251](https://www.amd.com/en/products/cpu/amd-epyc-7251){:target=_blank} @ 2.10GHz |
 
-| Partition/Nodes        | Threads  | Memory      | Processor/GPU                                                                                     |
-|------------------------|----------|-------------|---------------------------------------------------------------------------------------------------|
-| **mech.cm.q**          | **128**  | **512GB**   |                                                                                                   |
-| 2x ^(computeF)^          | 64       | 256GB       | 1x [AMD EPYC 7713P](https://www.amd.com/en/products/cpu/amd-epyc-7713p){:target=_blank} @ 2.00GHz |
-| **mech.pf.q**          | **1280** | **11008GB** |                                                                                                   |
-| 9x ^(computeA)^          | 64       | 512GB       | 2x [AMD EPYC 7601](https://www.amd.com/en/products/cpu/amd-epyc-7601){:target=_blank} @ 2.20GHz   |
-| 7x ^(computeB)^          | 64       | 768GB       | 2x [AMD EPYC 7542](https://www.amd.com/en/products/cpu/amd-epyc-7542){:target=_blank} @ 2.90GHz   |
-| 4x ^(computeE)^          | 64       | 512GB       | 2x [AMD EPYC 7513](https://www.amd.com/en/products/cpu/amd-epyc-7513){:target=_blank} @ 2.60GHz   |
-| **mech.pf-student.q**  | **384**  | **1536GB**  |                                                                                                   |
-| 3x ^(computeC)^          | 128^SMT^ | 512GB       | 2x [AMD EPYC 7452](https://www.amd.com/en/products/cpu/amd-epyc-7452){:target=_blank} @ 2.35GHz   |
-| **mech.student.q**     | **128**  | **1024GB**  |                                                                                                   |
-| 1x ^(computeD)^          | 128      | 1024GB      | 2x [AMD EPYC 7742](https://www.amd.com/en/products/cpu/amd-epyc-7742){:target=_blank} @ 2.25GHz   |
-| **mech-cst-mov.cpu.q** | **192**  | **768GB**   |                                                                                                   |
-| 1x ^(computeG)^          | 192      | 768GB       | 2x [AMD EPYC 9654](https://www.amd.com/en/products/cpu/amd-epyc-9654){:target=_blank} @ 2.40GHz   |
+| Partition/Nodes        | Threads  | Memory      | Processor/GPU                                                                                                                                                 |
+|------------------------|----------|-------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **mech.cm.q**          | **128**  | **512GB**   |                                                                                                                                                               |
+| 2x ^(computeF)^        | 64       | 256GB       | 1x [AMD EPYC 7713P](https://www.amd.com/en/products/cpu/amd-epyc-7713p){:target=_blank} @ 2.00GHz                                                             |
+| **mech.pf.q**          | **1280** | **11008GB** |                                                                                                                                                               |
+| 9x ^(computeA)^        | 64       | 512GB       | 2x [AMD EPYC 7601](https://www.amd.com/en/products/cpu/amd-epyc-7601){:target=_blank} @ 2.20GHz                                                               |
+| 7x ^(computeB)^        | 64       | 768GB       | 2x [AMD EPYC 7542](https://www.amd.com/en/products/cpu/amd-epyc-7542){:target=_blank} @ 2.90GHz                                                               |
+| 4x ^(computeE)^        | 64       | 512GB       | 2x [AMD EPYC 7513](https://www.amd.com/en/products/cpu/amd-epyc-7513){:target=_blank} @ 2.60GHz                                                               |
+| **mech.pf-student.q**  | **384**  | **1536GB**  |                                                                                                                                                               |
+| 3x ^(computeC)^        | 128^SMT^ | 512GB       | 2x [AMD EPYC 7452](https://www.amd.com/en/products/cpu/amd-epyc-7452){:target=_blank} @ 2.35GHz                                                               |
+| **mech.student.q**     | **128**  | **1024GB**  |                                                                                                                                                               |
+| 1x ^(computeD)^        | 128      | 1024GB      | 2x [AMD EPYC 7742](https://www.amd.com/en/products/cpu/amd-epyc-7742){:target=_blank} @ 2.25GHz                                                               |
+| **mech-cst-mov.cpu.q** | **192**  | **768GB**   |                                                                                                                                                               |
+| 1x ^(computeG)^        | 192      | 768GB       | 2x [AMD EPYC 9654](https://www.amd.com/en/products/cpu/amd-epyc-9654){:target=_blank} @ 2.40GHz                                                               |
+| **mech-cem.cpu.q**     | **576**  | **2304GB**  |                                                                                                                                                               |
+| 6x ^(computeH)^        | 96       | 384GB       | 1x [AMD EPYC 9654P](https://www.amd.com/en/products/processors/server/epyc/4th-generation-9004-and-8004-series/amd-epyc-9654p.html){:target=_blank} @ 2.40GHz |                                                                                               | 
