@@ -23,8 +23,7 @@ industrial researchers in all areas of chemistry, materials science, and enginee
 #SBATCH --time=0-00:05:00
 
 module purge
-module load foss/2023a
-module load AMS/2023.105
+module load  AMS/2024.102-gompi-2023a
 
 export SCM_TMPDIR=$SLURM_TMPDIR
 
