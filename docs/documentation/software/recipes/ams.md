@@ -5,7 +5,7 @@ tags: [Software, Module]
 The [Amsterdam Modeling Suite](https://www.scm.com){:target=_blank} is used by academic and
 industrial researchers in all areas of chemistry, materials science, and engineering.
 
-## Using ANSYS Fluent in SLURM batch jobs<br>(Command Line Interface)
+## Using AMS in SLURM batch jobs<br>(Command Line Interface)
 
 ### AMS SLURM sbatch jobscript example using OpenMPI on 1 Node
 
