@@ -101,7 +101,7 @@ Using the toolchain(s) the following software is avaiable. When the module is lo
 | Rstudio                                     | 2022.07.2+576-foss-2022a-Java-11-R-4.2.1<br>2023.12.1+402-gfbf-2023a-Java-11-R-4.4.1 | `RStudio`           | Yes                         |
 | [SlurmViewer](../steps/jobs/slurmviewer.md) | 1.0.3-GCCcore-12.3.0                                                                 | `slurm-SlurmViewer` |                             |
 | [Spark](recipes/spark.md)                   | 3.5.0-foss-2023a<br>3.5.1-foss-2023a-Java-17                                         | `Spark`             |                             |
-| VSCode                                      | 1.97.2<br>1.98.1                                                                             | `VSCode`            | Yes via CodeServer          |
+| VSCode                                      | 1.98.0<br>1.98.2                                                                             | `VSCode`            | Yes via CodeServer          |
 
 *[foss]: Free and Open Source Software
 *[gfbf]: Gcc + FlexiBas + Fftw
