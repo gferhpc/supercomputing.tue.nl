@@ -32,45 +32,45 @@ experimental purposes to get familiar with HPC.
 
 ### Generic Nodes
 
---8<-- "includes/specifications/tue.md"
+--8<-- ".includes/specifications/tue.md"
 
 ### Departmental Nodes
 
 === "APSE"
 
-    --8<-- "includes/specifications/phys.md"
+    --8<-- ".includes/specifications/phys.md"
 
 === "BE"
 
-    --8<-- "includes/specifications/be.md"
+    --8<-- ".includes/specifications/be.md"
 
 === "BmE"
 
-    --8<-- "includes/specifications/bme.md"
+    --8<-- ".includes/specifications/bme.md"
 
 === "CE&C"
 
-    --8<-- "includes/specifications/chem.md"
+    --8<-- ".includes/specifications/chem.md"
 
 === "EE"
 
-    --8<-- "includes/specifications/ee.md"
+    --8<-- ".includes/specifications/ee.md"
 
 === "ID"
 
-    --8<-- "includes/specifications/id.md"
+    --8<-- ".includes/specifications/id.md"
 
 === "M&CS"
 
-    --8<-- "includes/specifications/mcs.md"
+    --8<-- ".includes/specifications/mcs.md"
 
 === "ME"
 
-    --8<-- "includes/specifications/mech.md"
+    --8<-- ".includes/specifications/mech.md"
 
 === "MaTe"
 
-    --8<-- "includes/specifications/mate.md"
+    --8<-- ".includes/specifications/mate.md"
 
 ## Investment Options
 
