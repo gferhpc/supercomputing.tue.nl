@@ -84,7 +84,7 @@ Using the toolchain(s) the following software is avaiable. When the module is lo
 | Blender                                     | 4.4.0-linux-x86_64-CUDA-12.1.1.                                                      | `Blender`           | Yes                         |
 | [CP2K](recipes/cp2k.md)                     | 2023.1-foss-2023a                                                                    | `CP2K`              |                             |
 | dask                                        | 2024.9.1-gfbf-2024a                                                                 | `dask`              |                             |
-| GROMACS                                     | 2023.3-foss-2023a                                                                    | `GROMACS`           |                             |
+| git                                     | 2.49.0-bodocs                                                                    | `git`           | GROMACS                                     | 2023.3-foss-2023a                                                                    | `GROMACS`           |                             |
 | Julia                                       | 1.11.4                                                                               | `Julia`            | Yes via Pluto          |
 | [LAMMPS](recipes/lammps.md)                 | 2Aug2023_update2-foss-2023a-kokkos                                                   | `LAMMPS`            |                             |
 | MCL                                         | 22.282-GCCcore-12.3.0                                                                | `MCL`               |                             |
