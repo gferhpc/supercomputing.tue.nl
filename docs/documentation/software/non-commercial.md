@@ -85,6 +85,7 @@ Using the toolchain(s) the following software is avaiable. When the module is lo
 | [CP2K](recipes/cp2k.md)                     | 2023.1-foss-2023a                                                                    | `CP2K`              |                             |
 | dask                                        | 2024.9.1-gfbf-2024a                                                                 | `dask`              |                             |
 | git                                     | 2.49.0-nodocs                                                                    | `git`           |
+| git-lfs                                     | 3.6.1                                                                    | `git-lfs`           |
 | GROMACS                                     | 2023.3-foss-2023a                                                                    | `GROMACS`           |                             |
 | Julia                                       | 1.11.4                                                                               | `Julia`            | Yes via Pluto          |
 | [LAMMPS](recipes/lammps.md)                 | 2Aug2023_update2-foss-2023a-kokkos                                                   | `LAMMPS`            |                             |
