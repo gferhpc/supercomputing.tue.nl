@@ -25,7 +25,7 @@ tags: [ Software ]
 | RHEIA                            | `1.1.11-foss-2023a`                                                           | `ml avail RHEIA`     |  |
 | scikit-bio                       | `0.6.0-foss-2023a`<br>`0.5.7-foss-2022a`                                                           | `ml avail scikit-bio`   |                                                                 |
 | scikit-learn                     | `1.4.2-gfbf-2023a`<br>`1.1.2-foss-2022a`                                                           | `ml avail scikit-learn` |                                                                 |
-| scikit-image                     | `0.22.0-foss-2023a`<br>`0.19.3-foss-2022a`                                                          | `ml avail scikit-image` |                                                                 |
+| scikit-image                     | `0.25.0-foss-2024a`<br>`0.22.0-foss-2023a`                                                          | `ml avail scikit-image` |                                                                 |
 | SciPy                            | `2023.07-gfbf-2023a`<br/>`2022.05-foss-2022a`                                | `ml avail SciPy-bundle` | [Yes](https://hpc.tue.nl "included in Jupyter"){:target=_blank} |
 | slepc4py                         | `3.20.2-foss-2023a`<br>`3.17.2-foss-2022a`    | `ml avail slepc4py`     |                                                                 |
 | Transformers                     | `4.39.3-gfbf-2023a`                                                          | `ml avail Transformers` |                                                                 |
