@@ -12,27 +12,30 @@
       {% endfor %}
     {% endfor %}
 
-    <div class="grid cards">
-      <ul>
-        <li class="container">
-          <dl>
-            {% for post in posts[:limit] %}
-              {% if url_prefix %}
-                {% set post_url = url_prefix ~ post.url %}
-              {% endif %}
-              <dt>
-                {% include 'blog/card-small.html' %}
-              </dt>
-              {% if not loop.last %}
+    {% if posts %}
+      <h2>Related Articles</h2>
+      <div class="grid cards">
+        <ul>
+          <li class="container">
+            <dl>
+              {% for post in posts[:limit] %}
+                {% if url_prefix %}
+                  {% set post_url = url_prefix ~ post.url %}
+                {% endif %}
                 <dt>
-                  <hr/>
+                  {% include 'blog/card-small.html' %}
                 </dt>
-              {% endif %}
-            {% endfor %}
-          </dl>
-        </li>
-      </ul>
-    </div>
+                {% if not loop.last %}
+                  <dt>
+                    <hr/>
+                  </dt>
+                {% endif %}
+              {% endfor %}
+            </dl>
+          </li>
+        </ul>
+      </div>
+    {% endif %}
   {% endif %}
 {% endmacro %}
 
@@ -128,7 +131,6 @@
 
   {% block knowledge_base %}
     {% if page.blog %}
-      <h2>Related Articles</h2>
       {{ knowledge_items(page.meta.tags) }}
     {% endif %}
   {% endblock %}
