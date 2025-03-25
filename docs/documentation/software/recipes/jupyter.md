@@ -1,6 +1,7 @@
 ---
 title: Jupyter
-tags: [Software]
+tags: [Software, Jupyter]
+knowledgebase: true
 ---
 
 [Jupyter](https://jupyter.org/){:target="_blank"} Jupyter(Lab) is the latest web-based interactive development environment for notebooks, code, and data. Its flexible interface allows users to configure and arrange workflows in data science, scientific computing, computational journalism, and machine learning.

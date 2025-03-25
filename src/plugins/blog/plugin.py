@@ -58,10 +58,13 @@ class CustomBlogPlugin(BlogPlugin[CustomBlogConfig]):
             except:
                 pass
 
-    @event_priority(-50)
+    @event_priority(-55)
     def on_page_markdown(self, markdown, *, page: Post, config, files):
         if not self.config.enabled:
             return
+
+        if not self.config.main and page.meta and "knowledgebase" in page.meta and page.meta['knowledgebase']:
+            page.blog = self.blog
 
         # Skip if page is not a post managed by this instance - this plugin has
         # support for multiple instances, which is why this check is necessary

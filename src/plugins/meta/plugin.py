@@ -1,5 +1,5 @@
 from mkdocs.config import Config
-from mkdocs.config.config_options import SubConfig, OptionallyRequired
+from mkdocs.config.config_options import SubConfig, OptionallyRequired, Optional, Type
 from mkdocs.config.defaults import MkDocsConfig
 from mkdocs.exceptions import PluginError
 from mkdocs.plugins import BasePlugin, log
@@ -10,6 +10,7 @@ from plugins.meta.hero import HeroConfig
 
 class MetaPluginConfig(Config):
     hero = OptionallyRequired(SubConfig(HeroConfig))
+    knowledgebase = Type(bool, default=False)
 
 class MetaPlugin(BasePlugin):
     def on_page_markdown(self, markdown: str, /, *, page: Page, config: MkDocsConfig, files: Files):

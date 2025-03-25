@@ -2,6 +2,40 @@
 
 <!-- https://squidfunk.github.io/mkdocs-material/customization/ -->
 
+{% macro knowledge_items(filter_tags, limit = 5) %}
+  {% if page.blog %}
+    {% set posts = [] %}
+    {% for post in page.blog.posts %}
+      {% set index = loop.index %}
+      {% for tag in post.meta.tags if tag in filter_tags %}
+        {% set na = posts.insert(index, post) %}
+      {% endfor %}
+    {% endfor %}
+
+    <div class="grid cards">
+      <ul>
+        <li class="container">
+          <dl>
+            {% for post in posts[:limit] %}
+              {% if url_prefix %}
+                {% set post_url = url_prefix ~ post.url %}
+              {% endif %}
+              <dt>
+                {% include 'blog/card-small.html' %}
+              </dt>
+              {% if not loop.last %}
+                <dt>
+                  <hr/>
+                </dt>
+              {% endif %}
+            {% endfor %}
+          </dl>
+        </li>
+      </ul>
+    </div>
+  {% endif %}
+{% endmacro %}
+
 {% block header %}
   <div class="particle-network-animation"></div>
   {{ super() }}
@@ -87,4 +121,15 @@
       {% endfor %}
     </div>
   {% endif %}
+{% endblock %}
+
+{% block content %}
+  {{ super() }}
+
+  {% block knowledge_base %}
+    {% if page.blog %}
+      <h2>Related Articles</h2>
+      {{ knowledge_items(page.meta.tags) }}
+    {% endif %}
+  {% endblock %}
 {% endblock %}
