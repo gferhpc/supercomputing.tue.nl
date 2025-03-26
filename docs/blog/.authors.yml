@@ -107,3 +107,13 @@ authors:
     avatar: /assets/images/people/v.menkovski.png
     url: https://www.tue.nl/en/research/researchers/vlado-menkovski
     description: "His research interests span from studying how Machine Learning approaches can benefit natural sciences to applications in high-tech industry settings. He was recently fortunate to be part of exciting collaborations focusing on the detection of miRNA in bioinformatics, quantification of turbulence intensity, and the detection of the state of plasma confinement in fusion in applied physics. He also works on enhancing the use of expert knowledge in building ML models."
+  "n.sunami":
+    name: Nami Sunami
+    avatar: /assets/images/people/n.sunami.png
+    url: https://www.tue.nl/en/research/researchers/nami-sunami
+    description: "I am a Data Steward at Library and Information Services. I provide services for Chemical Engineering and Chemistry (Hub Helix), and Applied Physics & Science Education (Hub Flux)."
+  "r.ozcelik":
+    name: Rıza Özçelik
+    avatar: /assets/images/people/r.ozcelik.png
+    url: https://rizaozcelik.github.io
+    description: "I am Rıza! I am a lively Ph.D. candidate happy to be supervised by Francesca Grisoni 👩‍🔬 at the Molecular Machine Learning Group in Eindhoven University of Technology. I also hold high honor BSc. and MSc. degrees from the Dept. of Computer Engineering in Boğaziçi University, where I was lucky to work with Arzucan Özgür and Elif Özkırımlı👩‍🔬👩‍🔬."
