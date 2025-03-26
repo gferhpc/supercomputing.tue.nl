@@ -1,4 +1,4 @@
-[![Build](https://github.com/HPC-TUE/supercomputing.tue.nl/actions/workflows/documentation.yml/badge.svg)](https://github.com/HPC-TUE/supercomputing.tue.nl/actions/workflows/documentation.yml)
+[![build](https://github.com/HPC-TUE/supercomputing.tue.nl/actions/workflows/documentation.yml/badge.svg)](https://github.com/HPC-TUE/supercomputing.tue.nl/actions/workflows/documentation.yml)
 
 # TU/e Supercomputing Center
 
