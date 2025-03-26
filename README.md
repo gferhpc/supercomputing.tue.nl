@@ -1,8 +1,8 @@
-[![pipeline status](https://gitlab.tue.nl/hpclab/website/badges/main/pipeline.svg)](https://gitlab.tue.nl/hpclab/website/-/commits/main)
+[![Build](https://github.com/HPC-TUE/supercomputing.tue.nl/actions/workflows/documentation.yml/badge.svg)](https://github.com/HPC-TUE/supercomputing.tue.nl/actions/workflows/documentation.yml)
 
 # TU/e Supercomputing Center
 
-The official website of the TU/e Supercomputing Center (TUeSC).
+The official website of the TU/e Supercomputing Center (SCC).
 
 ## Development
 

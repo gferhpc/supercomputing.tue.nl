@@ -1,6 +1,7 @@
 {% extends "main.html" %}
 
 {% import "partials/nav-item.html" as item with context %}
+{% import "partials/language.html" as lang with context %}
 
 {% block container %}
   <div class="md-content md-content--post" data-md-component="content">
@@ -46,6 +47,8 @@
           {% include "blog/cards.html" %}
         {% endif %}
       {% endblock %}
+
+      {% include "partials/comments.html" %}
     </article>
   </div>
 {% endblock %}

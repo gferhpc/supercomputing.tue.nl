@@ -62,6 +62,7 @@ plugins:
       enable_creation_date: true
       timezone: Europe/Amsterdam
       type: timeago
+  - meta
   - minify:
       enabled: !ENV [CI, false]
       minify_html: true
