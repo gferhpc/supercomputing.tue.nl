@@ -15,7 +15,7 @@ department/research group, you can get access to certain part of TU/e Umbrella H
 
 Feel free to contribute by providing content and/or correcting mistakes as this documentation is intended as a
 collaborative platform.
-You can do this by clicking on the edit button (:material-pencil:) in the top right corner on every page or visit our [Gitlab Repository](https://gitlab.tue.nl/hpclab/website){:target=_blank}.
+You can do this by clicking on the edit button (:material-pencil:) in the top right corner on every page or visit our [GitHub Repository](https://github.com/HPC-TUE/supercomputing.tue.nl){:target=_blank}.
 All TU/e employees and students can contribute, provided the information is TU/e HPC specific (refer to online guides for more generic HPC information where possible)!
 
 !!! info "Local Clusters"
