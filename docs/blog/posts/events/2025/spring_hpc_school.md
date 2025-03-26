@@ -10,7 +10,7 @@ hero:
     - { message: "1-3 April & 7-11 April", size: "medium" }
 title: Spring HPC School '25
 categories: [ HPC School ]
-speakers: [ g.t.chepuck.fernandes, a.van.hoof, v.menkovski, evertvanvlietcfd, universityracing ]
+speakers: [ g.t.chepuck.fernandes, a.van.hoof, n.sunami, v.menkovski, evertvanvlietcfd, r.ozcelik, universityracing ]
 price: 0.00
 location: TU/e Campus
 image: assets/images/2025-spring_hpc_school_thumb.png
@@ -33,7 +33,8 @@ schedule:
   - { title: HPC Primer II, description: "Learn about secure SSH connections, setting up Git for version control, and understanding repository licenses in day two of the HPC Primer.", start: 2025-04-02T09:30:00, end: 2025-04-02T15:30:00, speakers: [ a.van.hoof ], location: "Neuron 0.246",
       schedule: [
 #        { start: 2025-04-02T09:30:00, end: 2025-04-02T12:30:00 },
-        { start: 2025-04-02T12:30:00, end: 2025-04-02T13:30:00, icon: food-fork-drink, title: Lunch },
+        { start: 2025-04-02T12:00:00, end: 2025-04-02T13:00:00, icon: food-fork-drink, title: Lunch },
+        { start: 2025-04-02T13:00:00, end: 2025-04-02T13:30:00, speakers: ["n.sunami"], title: "Licenses for Code Repository" },
 #        { start: 2025-04-02T13:30:00, end: 2025-04-02T15:30:00 },
       ]
   }
@@ -41,7 +42,8 @@ schedule:
       schedule: [
         { start: 2025-04-03T09:30:00, end: 2025-04-03T12:30:00, title: Introduction to Supercomputing, description: "Learn to harness the power of clusters and supercomputers for large-scale computations and analyses in this course." },
         { start: 2025-04-03T12:30:00, end: 2025-04-03T13:30:00, icon: food-fork-drink, title: Lunch },
-        { start: 2025-04-03T13:30:00, end: 2025-04-03T15:00:00, title: "LUMI: pre-exascale compute facilities for TU/e researchers" },
+        { start: 2025-04-03T13:30:00, end: 2025-04-03T14:30:00, title: "LUMI: pre-exascale compute facilities for TU/e researchers" },
+        { start: 2025-04-03T14:30:00, end: 2025-04-03T15:00:00, speakers: ["r.ozcelik"], title: "Experiences from the first TU/e user on LUMI" },
       ] 
   }
   - { title: Parallel jobs & Profiling, start: 2025-04-07T09:30:00, end: 2025-04-07T16:00:00, location: "Neuron 0.354", description: "Explore two distinct courses: one on optimizing supercomputer resource utilization through job concurrency with the QCG PilotJob framework, and another offering insights into high-performance hybrid systems with a focus on architecture, configuration, performance analysis models, and the Roofline model application.",
@@ -76,8 +78,7 @@ schedule:
   - { title: ParaView for (remote) visualization, start: 2025-04-11T09:30:00, end: 2025-04-11T16:30:00, location: "Neuron 0.354", description: "This course offers practical exercises and advanced topics in scientific visualization using ParaView.",
       schedule: [
 #        { start: 2025-04-11T09:30:00, end: 2025-04-11T12:30:00 },
-        { start: 2025-04-11T11:30:00, end: 2025-04-11T12:30:00, title: "Keynote: University Racing Eindhoven", speakers: [ universityracing ] },
-        { start: 2025-04-11T12:30:00, end: 2025-04-11T13:30:00, icon: food-fork-drink, title: Lunch },
+        { start: 2025-04-11T12:30:00, end: 2025-04-11T13:30:00, icon: food-fork-drink, title: "Keynote: University Racing Eindhoven (Lunch session)", speakers: [ universityracing ] },
 #        { start: 2025-04-11T13:30:00, end: 2025-04-11T16:30:00 },
       ]
   }
