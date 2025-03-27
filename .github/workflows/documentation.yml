@@ -69,8 +69,6 @@ jobs:
           key: mkdocs-material-${{ hashfiles('.cache/**') }}
           path: .cache
           restore-keys: mkdocs-material-
-      - name: Install dependencies
-        run: sudo apt-get install pngquant
       - name: Install Python dependencies
         run: pip install -e .
       - name: Build documentation
