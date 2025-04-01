@@ -46,28 +46,28 @@ schedule:
         { start: 2025-04-03T14:30:00, end: 2025-04-03T15:00:00, speakers: ["r.ozcelik"], title: "Experiences from the first TU/e user on LUMI" },
       ] 
   }
-  - { title: Parallel jobs & Profiling, start: 2025-04-07T09:30:00, end: 2025-04-07T16:00:00, location: "Neuron 0.354", description: "Explore two distinct courses: one on optimizing supercomputer resource utilization through job concurrency with the QCG PilotJob framework, and another offering insights into high-performance hybrid systems with a focus on architecture, configuration, performance analysis models, and the Roofline model application.",
+  - { title: Parallel jobs & Profiling, start: 2025-04-07T09:30:00, end: 2025-04-07T16:00:00, location: "Atlas -1.822", description: "Explore two distinct courses: one on optimizing supercomputer resource utilization through job concurrency with the QCG PilotJob framework, and another offering insights into high-performance hybrid systems with a focus on architecture, configuration, performance analysis models, and the Roofline model application.",
       schedule: [
         { start: 2025-04-07T09:30:00, end: 2025-04-07T12:30:00, title: Embarrassingly Parallel jobs },
         { start: 2025-04-07T12:30:00, end: 2025-04-07T13:30:00, icon: food-fork-drink, title: Lunch },
         { start: 2025-04-07T13:30:00, end: 2025-04-07T16:00:00, title: "Fundamentals of performance analysis" },
       ]
   }
-  - { title: High Performance Machine Learning 1, start: 2025-04-08T09:30:00, end: 2025-04-08T17:00:00, location: "Neuron 0.354", description: "Engage in a two-day, hands-on course to master deep learning basics, optimize neural network models with Keras, and harness high-performance computing clusters.",
+  - { title: High Performance Machine Learning 1, start: 2025-04-08T09:30:00, end: 2025-04-08T17:00:00, location: "Neuron 0.246", description: "Engage in a two-day, hands-on course to master deep learning basics, optimize neural network models with Keras, and harness high-performance computing clusters.",
       schedule: [
 #        { start: 2025-04-08T09:30:00, end: 2025-04-08T12:30:00 },
         { start: 2025-04-08T12:30:00, end: 2025-04-08T13:30:00, icon: food-fork-drink, title: Lunch },
 #        { start: 2025-04-08T13:30:00, end: 2025-04-08T17:00:00 },
       ]
   }
-  - { title: High Performance Machine Learning 2, start: 2025-04-09T09:30:00, end: 2025-04-09T17:00:00, location: "Neuron 0.354", description: "Enhance your deep learning efficiency by setting up a software environment, optimizing file I/O, leveraging CPU/GPU capabilities, profiling PyTorch, and utilizing parallel computing.",
+  - { title: High Performance Machine Learning 2, start: 2025-04-09T09:30:00, end: 2025-04-09T17:00:00, location: "Neuron 0.262", description: "Enhance your deep learning efficiency by setting up a software environment, optimizing file I/O, leveraging CPU/GPU capabilities, profiling PyTorch, and utilizing parallel computing.",
       schedule: [
         { start: 2025-04-09T11:30:00, end: 2025-04-09T12:30:00, title: "Keynote: Vlado Menkovski", speakers: [ v.menkovski ] },
         { start: 2025-04-09T12:30:00, end: 2025-04-09T13:30:00, icon: food-fork-drink, title: Lunch },
 #        { start: 2025-04-09T13:30:00, end: 2025-04-09T17:00:00 },
       ]
   }
-  - { title: GPU computing in Python using PyCUDA, start: 2025-04-10T09:30:00, end: 2025-04-10T16:00:00, location: "Neuron 0.354", description: "Learn to leverage NVIDIA GPUs in Python using PyCUDA, from basic concepts to advanced parallel computation techniques.",
+  - { title: GPU computing in Python using PyCUDA, start: 2025-04-10T09:30:00, end: 2025-04-10T16:00:00, location: "Neuron 0.246", description: "Learn to leverage NVIDIA GPUs in Python using PyCUDA, from basic concepts to advanced parallel computation techniques.",
       schedule: [
 #        { start: 2025-04-10T09:30:00, end: 2025-04-10T12:30:00 },
         { start: 2025-04-10T11:30:00, end: 2025-04-10T12:30:00, title: "Keynote: Evert van Vliet (ASML)", speakers: [ evertvanvlietcfd ] },
@@ -75,7 +75,7 @@ schedule:
 #        { start: 2025-04-10T13:30:00, end: 2025-04-10T16:00:00 },
       ]
   }
-  - { title: ParaView for (remote) visualization, start: 2025-04-11T09:30:00, end: 2025-04-11T16:30:00, location: "Neuron 0.354", description: "This course offers practical exercises and advanced topics in scientific visualization using ParaView.",
+  - { title: ParaView for (remote) visualization, start: 2025-04-11T09:30:00, end: 2025-04-11T16:30:00, location: "Neuron 0.264", description: "This course offers practical exercises and advanced topics in scientific visualization using ParaView.",
       schedule: [
 #        { start: 2025-04-11T09:30:00, end: 2025-04-11T12:30:00 },
         { start: 2025-04-11T12:30:00, end: 2025-04-11T13:30:00, icon: food-fork-drink, title: "Keynote: University Racing Eindhoven (Lunch session)", speakers: [ universityracing ] },
