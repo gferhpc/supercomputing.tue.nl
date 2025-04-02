@@ -55,14 +55,14 @@ typos or incorrect capitalization.
 
         `rzoontjens`, `ahoof`, etc...
 
-??? danger "Invalid Usernames (examples)"
+!!! danger "Invalid Username Examples"
 
-    - **E-Mail addresses can't be used**  
+    - **E-mail addresses can't be used**  
 
         - l.s.surname@tue.nl
         - l.s.surname@student.tue.nl
 
-    - **Usernames can't contain NETBIOS names**
+    - **Usernames can't contain pre- or suffixes**
     
         - TUE\20191262
         - 20191262@TUE
