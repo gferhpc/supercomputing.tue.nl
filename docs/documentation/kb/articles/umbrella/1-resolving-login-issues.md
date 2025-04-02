@@ -40,8 +40,8 @@ typos or incorrect capitalization.
 
 !!! success "Valid Usernames"
 
-    Most users have a 8-digit numeric ID as username, but for historically reasons you may still have a "s" (student number) or 
-    have a named username.
+    Most users have a 8-digit numeric ID as username, but for historical reasons you may still have a "s" (student number) or 
+    a named username.
 
     - **Numerical Accounts** _(8 digits)_
             
