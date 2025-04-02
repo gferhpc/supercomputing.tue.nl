@@ -69,11 +69,11 @@ typos or incorrect capitalization.
 
 ## 4. Verify Your Password
 
-Make sure you are entering the correct TU/e password. This should be the same password you use for other TU/e systems.
+Make sure you are entering the correct password. This should be the same password you use for other TU/e systems.
 If you suspect the password might be incorrect:
 
 - Try logging into another TU/e service to confirm it's working.
-- If necessary, reset your password.
+- If necessary, [reset your TU/e password](https://tue.topdesk.net/tas/public/ssp/content/detail/knowledgeitem?unid=c1c23cc6-f101-4944-aedc-08183fb79a7a){:target=_blank}.
 
 ## 5. Check for Expired Accounts
 
