@@ -55,7 +55,7 @@ typos or incorrect capitalization.
 
         `rzoontjens`, `ahoof`, etc...
 
-!!! danger "Invalid Username Examples"
+!!! danger "Invalid Username"
 
     - **E-mail addresses can't be used**  
 
