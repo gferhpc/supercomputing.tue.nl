@@ -29,14 +29,13 @@ the command should be similar to one of the following:
 ssh USERNAME@hpc.tue.nl
 ssh hpc.tue.nl -l USERNAME
 
-# USERNAME needs to be replaced with your actual username
+# USERNAME needs to be replaced with your actual username (also see: 3. Verify your username)
 ```
 
 ## 3. Verify your username
 
-Your username should be your TU/e network name. This is (usually) a numeric ID. Double-check for
-typos or incorrect capitalization.
-
+Your username should be your TU/e network name. This is (usually) a numeric ID. 
+Double-check for typos or incorrect capitalization.
 
 !!! success "Valid Usernames"
 
@@ -69,7 +68,7 @@ typos or incorrect capitalization.
 
 ## 4. Verify your password
 
-Make sure you are entering the correct password. This should be the same password you use for other TU/e systems.
+Make sure you are entering the correct password. This should be the same password you use for other TU/e services (TU/e laptop, Microsoft 365) 
 If you suspect the password might be incorrect:
 
 - Try logging into another TU/e service to confirm it's working.
