@@ -26,7 +26,7 @@ tags: [ Software ]
 | scikit-bio                       | `0.6.0-foss-2023a`<br>`0.5.7-foss-2022a`                                                           | `ml avail scikit-bio`   |                                                                 |
 | scikit-learn                     | `1.5.2-gfbf-2024a`<br>`1.4.2-gfbf-2023a`                                                           | `ml avail scikit-learn` |                                                                 |
 | scikit-image                     | `0.25.0-foss-2024a`<br>`0.22.0-foss-2023a`                                                          | `ml avail scikit-image` |                                                                 |
-| SciPy                            | `2023.07-gfbf-2023a`<br/>`2022.05-foss-2022a`                                | `ml avail SciPy-bundle` | [Yes](https://hpc.tue.nl "included in Jupyter"){:target=_blank} |
+| SciPy                            | `2024.05-gfbf-2024a`<br>`2023.07-gfbf-2023a`                                | `ml avail SciPy-bundle` | [Yes](https://hpc.tue.nl "included in Jupyter"){:target=_blank} |
 | slepc4py                         | `3.20.2-foss-2023a`<br>`3.17.2-foss-2022a`    | `ml avail slepc4py`     |                                                                 |
 | Transformers                     | `4.39.3-gfbf-2023a`                                                          | `ml avail Transformers` |                                                                 |
 | Tensorflow                       | `2.15.1-foss-2023a`<br/>`2.15.1-foss-2023a-CUDA-12.1.1`<br>`2.11.0-foss-2022a`<br>`2.11.0-foss-2022a-CUDA-11.7.0`   | `ml avail TensorFlow`   | [Yes](https://hpc.tue.nl "included in Jupyter"){:target=_blank} |
