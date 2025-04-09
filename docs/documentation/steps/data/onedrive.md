@@ -1,8 +1,10 @@
 # OneDrive (using rclone)
 
-All tough `rclone` is a command line tool (https://rclone.org/), to configure a OneDrive connection a graphical environment is needed to authorize the connection to Microsoft OneDrive. Configuration of the connection only needs to be done once.
+??? bug "This article is outdated and needs to be updated"
 
-!!! bug
+    As a result the content may lead to unexpected results. Please help update this Article to reflect newly available information.
+
+    ---
 
     We are aware that this documentation needs to be updated and that as result the rclone configuration isn't stored
     correctly. Please stand by while we investigate the issue and work on a fix.
@@ -19,6 +21,7 @@ All tough `rclone` is a command line tool (https://rclone.org/), to configure a 
     ~/.config/rclone/rclone.conf
     ```
 
+All tough `rclone` is a command line tool (https://rclone.org/), to configure a OneDrive connection a graphical environment is needed to authorize the connection to Microsoft OneDrive. Configuration of the connection only needs to be done once.
 
 ## Start an interactive Desktop Session
 

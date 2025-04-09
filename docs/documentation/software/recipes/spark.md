@@ -1,5 +1,9 @@
 # Spark
 
+??? bug "This article is outdated and needs to be updated"
+
+    As a result the content may lead to unexpected results. Please help update this Article to reflect newly available information.
+
 It is possible to set up a [Spark](https://spark.apache.org/) cluster in
 a Slurm job as follows. First, create a directory to work in:
 
