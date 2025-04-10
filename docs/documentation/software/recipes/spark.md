@@ -1,18 +1,15 @@
 # Spark
 
-??? bug "This article is outdated and needs to be updated"
+It is possible to set up a [Spark](https://spark.apache.org/){:target=_blank} cluster in a Slurm job as follows. 
+First, create a directory to work in:
 
-    As a result the content may lead to unexpected results. Please help update this Article to reflect newly available information.
-
-It is possible to set up a [Spark](https://spark.apache.org/) cluster in
-a Slurm job as follows. First, create a directory to work in:
-
-` mkdir -p -- ~/spark/{logs,temp} ; cd ~/spark`
+```shell
+mkdir -p -- ~/spark/{logs,temp}
+cd ~/spark
+```
 
 Then, upload the following Slurm batch script into that directory.
-Please update the values for the `--output` and `--error` parameters if
-needed - some departments have [their own storage server](../../specifications/index.md) and therefore a different
-path to their home directories.
+Please update the `#SBATCH` values accordingly to your needs.
 
 ??? example "spark.cmd"
 
@@ -27,8 +24,8 @@ path to their home directories.
 
     #SBATCH --time=01:00:00
 
-    #SBATCH --output=/home/tue/%u/spark/logs/%j.out
-    #SBATCH --error=/home/tue/%u/spark/logs/%j.err
+    #SBATCH --output=/home/%u/spark/logs/%j.out
+    #SBATCH --error=/home/%u/spark/logs/%j.err
 
     # can only have one Spark slave per node in this script (otherwise would need
     # increasing ports and take care in general)
@@ -48,7 +45,7 @@ path to their home directories.
 
         srun "$_SCRIPT" srunning
     else # if run by srun, decide via the Slurm procid whether we are master or worker
-        module load spark
+        module load Spark
 
         # trim "bin/spark-submit" from the below path to get Spark root
         _SPARK_LOC="$(whereis spark-submit | awk -F' ' '{print $2}')"
@@ -93,8 +90,7 @@ Modify the parameters near the top to suit your needs:
 -   number of nodes (master plus number of workers),
 -   CPUs per task (number of CPUs that can be used by each worker and
     the master), and
--   memory per CPU (default unit is megabytes, unit can be specified as
-    K\|M\|G\|T after the number).
+-   memory per CPU (default unit is megabytes, unit can be specified as `K`|`M`|`G`|`T` after the number).
 
 You can also change the time limit, which is the time after which the
 cluster is destroyed. Consult the [sbatch man page](https://slurm.schedmd.com/sbatch.html){:target=_blank} to find accepted time
@@ -109,20 +105,22 @@ in the same directory where Spark will write its log files to.
 Now that you have set up this batch script, you can start a cluster as
 follows.
 
-` [you@tue-login001 spark]$ sbatch spark.cmd`
-` Submitted batch job `<job ID>
+```shell
+sbatch spark.cmd
+# Submitted batch job <JobID>
+```
 
-Note the Slurm job ID; you'll need it later to work with the Spark
-cluster.
+Note the Slurm _JobID_; you'll need it later to work with the Spark cluster.
 
 Monitor the status of the job by issuing `squeue -u $USER` until you see
 it has started (time greater than 00:00, nodelist nonempty). You will
 (soon after) find the address of the master node in the
-`temp/`<job ID>`_spark_master` file. This can be used as follows to run
-an example:
+`temp/<JobID>_spark_master` file. This can be used as follows to run an example:
 
-` [you@tue-login001 spark]$ module load spark`
-` [you@tue-login001 spark]$ run-example --master $(<temp/`<job ID>`_spark_master) SparkPi 100`
+```shell
+module load Spark
+run-example --master $(<temp/<JobID>_spark_master) SparkPi 100
+```
 
 This uses a Bash construct to read the value from the file that contains
 the master node address, and pass it as an argument to the `run-example`
@@ -132,17 +130,20 @@ your application to the Spark cluster and monitor its status.
 ### Stopping a Spark cluster
 
 Stopping the cluster is a matter of cancelling the Slurm job:
-`scancel `<job ID>.
+```shell
+scancel <JobID>
+```
 
 ### Opening the Spark web UI
 
-If you open the `temp/`<job ID>`_spark_master` file, you'll see on which
+If you open the `temp/<JobID>_spark_master` file, you'll see on which
 node it runs. This might be `tue-computeZ042.cm.cluster` for example.
 Given that the web UI can be accessed via port 8082 on that node, you
 can access it in your browser if you set up local port forwarding. When
 connecting to the HPC cluster on Linux, that might look as follows:
 
-`ssh -L 8000:tue-computeB005.cm.cluster:8082 you@hpc.tue.nl`
+```shell
+ssh -L 8000:tue-computeB005.cm.cluster:8082 you@hpc.tue.nl
+```
 
-You will then be able to open `localhost:8000` in your browser to access
-the Spark web UI.
+You will then be able to open [http://localhost:8000](http://localhost:8000){:target=_blank} in your browser to access the Spark web UI.
