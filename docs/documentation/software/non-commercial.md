@@ -99,11 +99,11 @@ Using the toolchain(s) the following software is avaiable. When the module is lo
 | ParaView                                    | 5.12.1-foss-2023a                                                                    | `ParaView`          | Yes                         |
 | QCG-PilotJob                                | 0.14.1-gfbf-2024a                                                                    | `QCG-PilotJob`      |                             |
 | QuantumESPRESSO                             | 7.3.1-foss-2024a                                                                     | `QuantumESPRESSO`   |                             |
-| [R](recipes/r.md)                           | 4.4.1-gfbf-2023a<br>4.4.2-gfbf-2024a                                                 | `R`                 | Yes via Rstudio                          |
+| [R](recipes/r.md)                           | 4.4.2-gfbf-2024a<br>4.5.0-gfbf-2024a                                                 | `R`                 | Yes via Rstudio                          |
 | Rstudio                                     | 2023.12.1+402-gfbf-2023a-Java-11-R-4.4.1 | `RStudio`           | Yes                         |
 | [SlurmViewer](../steps/jobs/slurmviewer.md) | 1.0.3-GCCcore-12.3.0                                                                 | `slurm-SlurmViewer` |                             |
 | [Spark](recipes/spark.md)                   | 3.5.0-foss-2023a<br>3.5.1-foss-2023a-Java-17                                         | `Spark`             |                             |
-| VSCode                                      | 1.98.0<br>1.98.2                                                                             | `VSCode`            | Yes via CodeServer          |
+| VSCode                                      | 1.98.2<br>1.99.2                                                                             | `VSCode`            | Yes via CodeServer          |
 
 *[foss]: Free and Open Source Software
 *[gfbf]: Gcc + FlexiBas + Fftw
