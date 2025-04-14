@@ -19,15 +19,15 @@ Load the module(s)
 
 ```shell 
 [user@umbrella]$ module purge
-[user@umbrella]$ module load R/4.4.2-gfbf-2024a
+[user@umbrella]$ module load R/4.5.0-gfbf-2024a
 ```
 
 Check the version of R
 
 ```shell
 [user@umbrella]$ R --version
-R version 4.4.2 (2024-10-31) -- "Pile of Leaves"
-Copyright (C) 2024 The R Foundation for Statistical Computing
+R version 4.5.0 (2025-04-11) -- "How About a Twenty-Six"
+Copyright (C) 2025 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu
 ...
 ```
