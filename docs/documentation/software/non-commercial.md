@@ -87,7 +87,7 @@ Using the toolchain(s) the following software is avaiable. When the module is lo
 | git                                     | 2.49.0-nodocs                                                                    | `git`           |
 | git-lfs                                     | 3.6.1                                                                    | `git-lfs`           |
 | GROMACS                                     | 2023.3-foss-2023a                                                                    | `GROMACS`           |                             |
-| Julia                                       | 1.11.4                                                                               | `Julia`            | Yes via Pluto          |
+| Julia                                       | 1.11.5                                                                               | `Julia`            | Yes via Pluto          |
 | [LAMMPS](recipes/lammps.md)                 | 2Aug2023_update2-foss-2023a-kokkos                                                   | `LAMMPS`            |                             |
 | MCL                                         | 22.282-GCCcore-12.3.0                                                                | `MCL`               |                             |
 | [NetLogo](recipes/netlogo.md)               | 6.4.0-64                                                                             | `NetLogo`           | Yes                         |
@@ -95,10 +95,10 @@ Using the toolchain(s) the following software is avaiable. When the module is lo
 | OpenFOAM (Foundation)                       | 10-foss-2023a<br>11-foss-2023a<br>12-foss-2023a                                      | `OpenFOAM`          |                             |
 | OpenModelica                                | 1.22.0-foss-2022a                                                                    | `OpenModelica`      |                             |
 | OpenSceneGraph                              | 3.6.5-foss-2022a                                                                     | `OpenSceneGraph`    | Yes via Interactive Desktop |
-| ORCA                                        | 6.0.1-gompi-2023a<br>5.0.4-gompi-2023a                                               | `ORCA`              |                             |
+| ORCA                                        | 5.0.4-gompi-2023a<br>6.0.1-gompi-2023a                                               | `ORCA`              |                             |
 | ParaView                                    | 5.12.1-foss-2023a                                                                    | `ParaView`          | Yes                         |
 | QCG-PilotJob                                | 0.14.1-gfbf-2024a                                                                    | `QCG-PilotJob`      |                             |
-| QuantumESPRESSO                             | 7.3.1-foss-2024a                                                                     | `QuantumESPRESSO`   |                             |
+| QuantumESPRESSO                             | 7.3.1-foss-2023a<br>7.4-foss-2024a                                                                    | `QuantumESPRESSO`   |                             |
 | [R](recipes/r.md)                           | 4.4.2-gfbf-2024a<br>4.5.0-gfbf-2024a                                                 | `R`                 | Yes via Rstudio                          |
 | Rstudio                                     | 2023.12.1+402-gfbf-2023a-Java-11-R-4.4.1 | `RStudio`           | Yes                         |
 | [SlurmViewer](../steps/jobs/slurmviewer.md) | 1.0.3-GCCcore-12.3.0                                                                 | `slurm-SlurmViewer` |                             |
