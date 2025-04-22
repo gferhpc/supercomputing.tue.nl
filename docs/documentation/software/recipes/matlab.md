@@ -109,13 +109,13 @@ This document provides the steps to configure MATLAB to submit jobs to a cluster
 
 ### CONFIGURATION – Interactive MATLAB client (GUI) on the cluster
 
-After logging into [https://hpc.tue.nl], start MATLAB.  On the Home tab, click Parallel > Discover Clusters… to discover the profile.
+After logging into [hpc.tue.nl](<https://hpc.tue.nl>), start MATLAB.  On the Home tab, click Parallel > Discover Clusters… to discover the profile.
 
 Jobs will now default to the cluster rather than submit to the local machine.
 
 ## INSTALLATION and CONFIGURATION – Desktop MATLAB client
 
-The **Umbrella** MATLAB support package (a ZIP file) can be found here [tue.Desktop.zip].
+The **Umbrella** MATLAB support package (a ZIP file) can be found [here](tue.Desktop.zip).
 
 Download the ZIP file and start MATLAB on your local compute. The ZIP file should be unzipped in the location returned by calling
 
