@@ -1,5 +1,25 @@
 # Spark
 
+## Simple, relatively small workloads
+
+The following script will do the trick:
+
+```bash
+#!/bin/bash
+
+#SBATCH --partition=tue.default.q    #FIXME: partition
+#SBATCH --cpus-per-task=4            #FIXME: number of CPU cores needed
+#SBATCH --mem=64G                    #FIXME: total RAM needed
+#SBATCH --time=4:00:00               #FIXME: run time needed
+
+module load Spark
+spark-submit --master 'local[*]' my_spark_script.py
+```
+
+`--master 'local[*]'` will tell Spark to start an instance of Spark (master and workers) in the CPUs and RAM that Slurm allocated for the job.  Once the instance has started, it will run `my_spark_script.py` as a workload within the Spark instance.  Once it finishes, Spark will exit, and the job will terminate.
+
+## Spark cluster within a job
+
 It is possible to set up a [Spark](https://spark.apache.org/){:target=_blank} cluster in a Slurm job as follows. 
 First, create a directory to work in:
 
@@ -137,13 +157,13 @@ scancel <JobID>
 ### Opening the Spark web UI
 
 If you open the `temp/<JobID>_spark_master` file, you'll see on which
-node it runs. This might be `tue-computeZ042.cm.cluster` for example.
-Given that the web UI can be accessed via port 8082 on that node, you
+node it runs. This might be `tue-computeZ042.cluster` for example.
+Given that the web UI can be accessed via port 8080 on that node, you
 can access it in your browser if you set up local port forwarding. When
 connecting to the HPC cluster on Linux, that might look as follows:
 
 ```shell
-ssh -L 8000:tue-computeB005.cm.cluster:8082 you@hpc.tue.nl
+ssh -L 8000:tue-computeB005.cm.cluster:8080 you@hpc.tue.nl
 ```
 
 You will then be able to open [http://localhost:8000](http://localhost:8000){:target=_blank} in your browser to access the Spark web UI.
