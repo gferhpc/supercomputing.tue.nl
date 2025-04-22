@@ -365,13 +365,13 @@ Alternatively, to retrieve job results via a graphical user interface, use the J
 
 ### HELPER FUNCTIONS
 
-| Function   	    | Description  	| Applies only to Desktop   	|
-|---	            |---	        |---	                        |
-| clusterFeatures	| List of cluster features/constraints	|   	|
-| clusterGpuCards   | List of cluster GPU cards             |       |
-| clusterPartitionNames	| List of cluster partition names	        |       |
-| fixConnection	    | Reestablish cluster connection (e.g., after reconnection of VPN) 	|   true	|
-| willRun	        | Explain why job is queued	            |   	|
+| Function              | Description                          | Applies only to Desktop    |
+|---                    |---                                   |---                         |
+| clusterFeatures       | List of cluster features/constraints |                            |
+| clusterGpuCards       | List of cluster GPU cards            |                            |
+| clusterPartitionNames | List of cluster partition names      |                            |
+| fixConnection         | Reestablish cluster connection (e.g., after reconnection of VPN) | true |
+| willRun               | Explain why job is queued            |                            |
 
 ### DEBUGGING
 
@@ -396,6 +396,7 @@ ans =
 ```
 
 ## TO LEARN MORE
+
 To learn more about the MATLAB Parallel Computing Toolbox, check out these resources:
 
 - [Parallel Computing Overview](http://www.mathworks.com/products/parallel-computing/index.html){:target="_blank"}
