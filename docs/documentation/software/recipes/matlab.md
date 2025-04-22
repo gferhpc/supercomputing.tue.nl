@@ -103,9 +103,9 @@ matlab -batch parallel
     exit;
     ```
 
-## Getting Started with Parallel Computing using MATLAB on the **Umbrella** HPC Cluster
+## Parallel Computing using MATLAB on the **Umbrella** HPC Cluster
 
-This document provides the steps to configure MATLAB to submit jobs to a cluster, retrieve results, and debug errors.
+Below the steps to configure MATLAB so it's submit jobs to a cluster, retrieve results, and debug errors. Either using interactive MATLAB in the Cluster, or using MATLAB running on your Desktop/Laptop.  
 
 ### CONFIGURATION – Interactive MATLAB client (GUI) on the cluster
 
@@ -113,7 +113,7 @@ After logging into [hpc.tue.nl](<https://hpc.tue.nl>){:target="_blank"}, click t
 
 Jobs will now default to the cluster rather than submit to the local machine.
 
-## INSTALLATION and CONFIGURATION – Desktop MATLAB client
+### INSTALLATION and CONFIGURATION – Desktop MATLAB client
 
 The **Umbrella** MATLAB support package (a ZIP file) can be found [here](tue.Desktop.zip).
 
