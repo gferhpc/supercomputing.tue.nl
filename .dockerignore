@@ -1,9 +1,0 @@
-.cache
-.devcontainer
-.gitignore
-.github
-.gitlab-ci.yml
-.idea
-.vscode
-buildtest.sh
-Dockerfile
