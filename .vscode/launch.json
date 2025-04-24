@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "MkDocs server",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "mkdocs",
+            "args": ["serve", "--dev-addr", "0.0.0.0:8000"],
+            "env": {
+              "PYTHONPATH": "."
+            }
+          }
+    ]
+  }

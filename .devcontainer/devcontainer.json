@@ -1,0 +1,24 @@
+// https://aka.ms/devcontainer.json
+{
+  "name": "supercomputing.tue.nl",
+  "build": {
+    "dockerfile": "../Dockerfile",
+    "context": "..",
+    "target": "dev"
+  },
+  "features": {
+    "ghcr.io/cirolosapio/devcontainers-features/alpine-openssh:0": {}
+  },
+  "forwardPorts": [
+    8000
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "shd101wyy.markdown-preview-enhanced",
+        "ms-python.python",
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  }
+}
