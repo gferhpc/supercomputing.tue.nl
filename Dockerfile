@@ -37,4 +37,4 @@ COPY --from=build /tmp/site .
 
 EXPOSE 8000
 
-CMD ["caddy", "file-server", "--listen", ":8000"]
+CMD ["caddy", "file-server", "--access-log", "--listen", ":8000"]
