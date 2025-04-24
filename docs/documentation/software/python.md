@@ -31,6 +31,7 @@ tags: [ Software ]
 | Transformers                     | `4.39.3-gfbf-2023a`                                                          | `ml avail Transformers` |                                                                 |
 | Tensorflow                       | `2.15.1-foss-2023a`<br/>`2.15.1-foss-2023a-CUDA-12.1.1`<br>`2.11.0-foss-2022a`<br>`2.11.0-foss-2022a-CUDA-11.7.0`   | `ml avail TensorFlow`   | [Yes](https://hpc.tue.nl "included in Jupyter"){:target=_blank} |
 | torchvision                      | `0.16.0-foss-2023a`<br>`0.16.0-foss-2023a-CUDA-12.1.1`<br>`0.13.1-foss-2022a`<br>`0.13.1-foss-2022a-CUDA-11.7.0` | `ml avail torchvision`  | [Yes](https://hpc.tue.nl "included in Jupyter"){:target=_blank} |
+| XGBoost                         | `2.1.3-gfbf-2023a`<br>`2.1.3-gfbf-2023a-CUDA-12.1.1`    | `ml avail XGBoost`     |                                                                 |
 
 ??? example "available pip packages after running module load SciPy-bundle/2023.07-gfbf-2023a"
     ```shell
