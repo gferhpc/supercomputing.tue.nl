@@ -46,7 +46,7 @@ This page gives an overview of the file systems of the Umbrella HPC cluster and 
     <td>Scratch-node</td>
     <td>&mdash;</td>
     <td>&mdash;</td>
-    <td>Very fast</td>
+    <td>Very fast (but see below)</td>
     <td>No</td>
     <td><code>$TMPDIR</code> (and <code>/scratch-node</code>)</td>
     <td>Data is cleaned at irregular intervals</td>
@@ -102,7 +102,7 @@ Scratch-shared can be accessed at <code>/scratch-shared/&lt;login_name&gt;</code
 
     There is no backup service for scratch-shared.
 
-Scratch-node can be accessed at <code>$TMPDIR</code> (will be removed after job) and <code>/scratch-node</code> (cleaned up irregularly).  It resides on fast (NVMe) local storage, that is attached directly to the compute node's CPU.  The size of this file system differs per node.
+Scratch-node can be accessed at <code>$TMPDIR</code> (will be removed after job) and <code>/scratch-node</code> (cleaned up irregularly).  For newer nodes, it resides on fast (NVMe) local storage, that is attached directly to the compute node's CPU.  For older nodes, it resides on a HDD.  The size of this file system differs per node.
 
 ## Project spaces
 
