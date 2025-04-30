@@ -95,6 +95,7 @@ Using the toolchain(s) the following software is avaiable. When the module is lo
 | OpenFOAM (ESI)                              | v2206-foss-2022a<br>v2312-foss-2023a<br>v2406-foss-2023a                             | `OpenFOAM`          |                             |
 | OpenFOAM (Foundation)                       | 10-foss-2023a<br>11-foss-2023a<br>12-foss-2023a                                      | `OpenFOAM`          |                             |
 | OpenModelica                                | 1.22.0-foss-2022a                                                                    | `OpenModelica`      |                             |
+| OpenMMM                                     | 8.0.0-foss-2023a-CUDA-12.1.1<br>8.0.0-foss-2023a                                     | `OpenMM`            |                             |
 | OpenSceneGraph                              | 3.6.5-foss-2022a                                                                     | `OpenSceneGraph`    | Yes via Interactive Desktop |
 | ORCA                                        | 5.0.4-gompi-2023a<br>6.0.1-gompi-2023a                                               | `ORCA`              |                             |
 | ParaView                                    | 5.12.1-foss-2023a                                                                    | `ParaView`          | Yes                         |
