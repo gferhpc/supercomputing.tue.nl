@@ -13,7 +13,7 @@ title: Technical Specifications
 ## Partition/Queues
 
 Depending on your department/research group, you can get access to
-certain parts (partitions/queues) of the TU/e Umbrella HPC Cluster. 
+certain parts (partitions/queues) of the TU/e Umbrella HPC Cluster.
 The tables below list the specifications of the clusters per department.
 
 To find out which cluster partition(s)/queue(s) you have access to,
@@ -32,9 +32,18 @@ experimental purposes to get familiar with HPC.
 
 ### Generic Nodes
 
+Generic computing nodes are freely available to everyone with a TU/e account. These shared resources provide easy access
+to high-performance computing capabilities, enabling users from any discipline to carry out a wide range of
+computational tasks.
+
 --8<-- ".includes/specifications/tue.md"
 
 ### Departmental Nodes
+
+Departmental computing nodes are reserved for specific departments or research groups within TU/e. Access to these
+resources is restricted, and in cases where nodes are allocated to smaller groups, explicit approval from the queue
+owner is required. These nodes are intended to support more specialized or intensive computational tasks aligned with
+departmental research priorities.
 
 === "APSE"
 
