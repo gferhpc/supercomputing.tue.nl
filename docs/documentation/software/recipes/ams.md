@@ -27,6 +27,8 @@ module load AMS/2025.101-gompi-2024a
 
 export SCM_TMPDIR=$SLURM_TMPDIR
 
+ls -R $AMSHOME >> /dev/null
+
 <AMS CODE HERE>
 ```
 
