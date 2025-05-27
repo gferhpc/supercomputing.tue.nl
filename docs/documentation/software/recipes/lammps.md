@@ -13,7 +13,7 @@ Load the modules
 
 ``` shell
 [user@umbrella]$ module purge
-[user@umbrella]$ module load LAMMPS/2Aug2023_update2-foss-2023a-kokkos
+[user@umbrella]$ module load LAMMPS/29Aug2024_update2-foss-2023a-kokkos
 ```
 
 Check commandline version of LAMMPS
@@ -40,7 +40,7 @@ Total wall time: 0:00:00
 #SBATCH --time=00:05:00
 
 module purge
-module load LAMMPS/2Aug2023_update2-foss-2023a-kokkos
+module load LAMMPS/29Aug2024_update2-foss-2023a-kokkos
 
 export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK}
 
@@ -61,7 +61,7 @@ lmp < in.friction
 #SBATCH --time=00:05:00
 
 module purge
-module load LAMMPS/2Aug2023_update2-foss-2023a-kokkos
+module load LAMMPS/29Aug2024_update2-foss-2023a-kokkos
 
 mpirun lmp < in.friction
 ```
@@ -80,7 +80,7 @@ mpirun lmp < in.friction
 #SBATCH --time=00:05:00
 
 module purge
-module load LAMMPS/2Aug2023_update2-foss-2023a-kokkos
+module load LAMMPS/29Aug2024_update2-foss-2023a-kokkos
 
 export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK}
 
