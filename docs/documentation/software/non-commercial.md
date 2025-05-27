@@ -89,7 +89,7 @@ Using the toolchain(s) the following software is avaiable. When the module is lo
 | git-lfs                                     | 3.6.1                                                                                | `git-lfs`           |                             |
 | GROMACS                                     | 2023.3-foss-2023a                                                                    | `GROMACS`           |                             |
 | Julia                                       | 1.11.5                                                                               | `Julia`             | Yes via Pluto               |
-| [LAMMPS](recipes/lammps.md)                 | 2Aug2023_update2-foss-2023a-kokkos                                                   | `LAMMPS`            |                             |
+| [LAMMPS](recipes/lammps.md)                 | 29Aug2024_update2-foss-2023a-kokkos                                                  | `LAMMPS`            |                             |
 | MCL                                         | 22.282-GCCcore-12.3.0                                                                | `MCL`               |                             |
 | [NetLogo](recipes/netlogo.md)               | 6.4.0-64                                                                             | `NetLogo`           | Yes                         |
 | OpenFOAM (ESI)                              | v2206-foss-2022a<br>v2312-foss-2023a<br>v2406-foss-2023a                             | `OpenFOAM`          |                             |
