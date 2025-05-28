@@ -8,8 +8,8 @@ implementation, in case of foss also Open/FlexiBLAS, ScaLAPACK and FFTW(MPI) are
 
 | Toolchain Name | Supported Versions            | Module(s)             | Remarks                               |
 |----------------|-------------------------------|-----------------------|---------------------------------------|
-| foss           | **`2024a`**, `2023a`, `2022a` | `module spider foss`  |                                       |
-| gfbf           | **`2024a`**, `2023a`          | `module spider gfbf`  | gfbf is a subset of foss (no OpenMPI) |
+| foss           | `2025a`,**`2024a`**, `2023a`, `2022a` | `module spider foss`  |                                       |
+| gfbf           | `2025a`,**`2024a`**, `2023a`  | `module spider gfbf`  | gfbf is a subset of foss (no OpenMPI) |
 | intel          | **`2024a`**, `2023a`, `2022a` | `module spider intel` |                                       |
 
 ??? example "module load foss/2024a"
@@ -103,6 +103,7 @@ Using the toolchain(s) the following software is avaiable. When the module is lo
 | QuantumESPRESSO                             | 7.3.1-foss-2023a<br>7.4-foss-2024a                                                   | `QuantumESPRESSO`   |                             |
 | [R](recipes/r.md)                           | 4.4.2-gfbf-2024a<br>4.5.0-gfbf-2024a                                                 | `R`                 | Yes via Rstudio             |
 | Rstudio                                     | 2023.12.1+402-gfbf-2023a-Java-11-R-4.4.1                                             | `RStudio`           | Yes                         |
+| Siesta                                      | 5.2.2-foss-2024a                                                                     | `Siesta`            |                             |
 | [SlurmViewer](../steps/jobs/slurmviewer.md) | 1.0.3-GCCcore-12.3.0                                                                 | `slurm-SlurmViewer` |                             |
 | [Spark](recipes/spark.md)                   | 3.5.0-foss-2023a<br>3.5.1-foss-2023a-Java-17                                         | `Spark`             |                             |
 | VSCode                                      | 1.98.2<br>1.99.3                                                                     | `VSCode`            | Yes via CodeServer          |
