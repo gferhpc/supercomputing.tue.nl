@@ -8,9 +8,9 @@ implementation, in case of foss also Open/FlexiBLAS, ScaLAPACK and FFTW(MPI) are
 
 | Toolchain Name | Supported Versions            | Module(s)             | Remarks                               |
 |----------------|-------------------------------|-----------------------|---------------------------------------|
-| foss           | `2025a`,**`2024a`**, `2023a`, `2022a` | `module spider foss`  |                                       |
-| gfbf           | `2025a`,**`2024a`**, `2023a`  | `module spider gfbf`  | gfbf is a subset of foss (no OpenMPI) |
-| intel          | **`2024a`**, `2023a`, `2022a` | `module spider intel` |                                       |
+| foss           | `2025a`, **`2024a`**, `2023a`, `2022a` | `module spider foss`  |                                       |
+| gfbf           | `2025a`, **`2024a`**, `2023a`  | `module spider gfbf`  | gfbf is a subset of foss (no OpenMPI) |
+| intel          | `2025a`, **`2024a`**, `2023a`, `2022a` | `module spider intel` |                                       |
 
 ??? example "module load foss/2024a"
     ```shell
