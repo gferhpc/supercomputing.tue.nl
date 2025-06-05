@@ -10,8 +10,8 @@ Available as [modules](../steps/software/index.md):
 
 | Name                                          | Website                                                                                                           | Usage Documentation                         | https://hpc.tue.nl |
 |-----------------------------------------------|-------------------------------------------------------------------------------------------------------------------|---------------------------------------------|--------------------|
-| [Abaqus](recipes/abaqus.md)                   | [3ds.com](https://www.3ds.com/products/simulia/abaqus){:target="_blank"}                                          | [Using Abaqus](recipes/abaqus.md)        | Yes                |
-| [AMS](recipes/ams.md)                         | [scm.com](https://www.scm.com/amsterdam-modeling-suite/){:target="_blank"}                                        | `module avail ams`                          | No                 |
+| [Abaqus](recipes/abaqus.md)                   | [3ds.com](https://www.3ds.com/products/simulia/abaqus){:target="_blank"}                                          | [Using Abaqus](recipes/abaqus.md)               | Yes                |
+| [AMS](recipes/ams.md)                         | [scm.com](https://www.scm.com/amsterdam-modeling-suite/){:target="_blank"}                                        | [AMS](recipes/ams.md)                       | No                 |
 | ANSYS CFX                                     | [ansys.com](https://www.ansys.com/products/fluids/ansys-cfx){:target="_blank"}                                    | `module avail ansys`                        | Yes                |
 | ANSYS Electromagnetics                        | [ansys.com](https://www.ansys.com/products/electronics){:target="_blank"}                                         | `module avail ansys-em`                     | Yes                |
 | [ANSYS Fluent](recipes/ansys_fluent.md)       | [ansys.com](https://www.ansys.com/products/fluids/ansys-fluent){:target="_blank"}                                 | `module avail ansys`                        | Yes                |
