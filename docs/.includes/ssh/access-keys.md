@@ -22,7 +22,7 @@ search: {exclude: true}
             - **Specify username**: Enter your SSH username, e.g., `s133320`.
             - **Port**: Leave this set to `22`, the default SSH port.
         
-            If you have a private key for authentication, check the box for `Use private key` and browse to the key file location, typically `C:\Users\yourusername\.ssh\id_rsa`.
+            If you have a private key for authentication, check the box for `Use private key` and browse to the key file location, typically `C:\Users\yourusername\.ssh\id_rsa`.  Note that this only works if you have manually added this key your HPC account's `.ssh/authorized_keys` file.
         
         4. **Save and Start the Session**:
         
