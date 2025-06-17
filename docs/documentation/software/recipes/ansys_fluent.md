@@ -18,8 +18,8 @@ Load the module(s)
 
 ```shell 
 [user@umbrella]$ module purge
-[user@umbrella]$ module load foss/2023a # or intel/2023a for -mpi=intel)
-[user@umbrella]$ module load ANSYS/2024R2
+[user@umbrella]$ module load foss/2024a # or intel/2024a for -mpi=intel)
+[user@umbrella]$ module load ANSYS/2025R1
 ```
 
 Check ANSYS Fluent:
@@ -32,21 +32,21 @@ FLUENT MPI test started ...
 Ping pong latency test ...
 ping..pong..latency(usec)...count..host
 -------------------------------------------------------------
-0.....1.....0.607091........10000..0:tue-login002.icts.tue.nl
-1.....0.....0.602129........10000..1:tue-login002.icts.tue.nl
+0.....1.....0.29906.........10000..0:tue-login002.icts.tue.nl
+1.....0.....0.296366........10000..1:tue-login002.icts.tue.nl
 
 Ping pong bandwidth test ...
 ping..pong..bandwidth(MB)...count.msg-size(MB)..host
 -------------------------------------------------------------
-0.....1.....3777.73.........10....4.............0:tue-login002.icts.tue.nl
-1.....0.....3769.36.........10....4.............1:tue-login002.icts.tue.nl
+0.....1.....6049.28.........10....4.............0:tue-login002.icts.tue.nl
+1.....0.....5543.97.........10....4.............1:tue-login002.icts.tue.nl
 
 Global reduction test ...
 MPI-function...time-per-msg(usec)..count...total-time(sec)..
 -------------------------------------------------------------
-Bcast..........0.248226............5000....0.00124113.......
-Reduce.........0.263078............5000....0.00131539.......
-Barier.........0.616867............5000....0.00308433.......
+Bcast..........0.194028............5000....0.000970142......
+Reduce.........0.22126.............5000....0.0011063........
+Barier.........0.308314............5000....0.00154157.......
 
 FLUENT MPI test done.
 
@@ -67,8 +67,8 @@ FLUENT MPI test done.
 #SBATCH --time=00:05:00
 
 module purge
-module load foss/2023a
-module load ANSYS/2024R2
+module load foss/2024a
+module load ANSYS/2025R1
 
 fluent 3ddp -g -t${SLURM_NTASKS} -mpitest -mpi=openmpi
 ```
@@ -87,8 +87,8 @@ fluent 3ddp -g -t${SLURM_NTASKS} -mpitest -mpi=openmpi
 #SBATCH --time=00:05:00
 
 module purge
-module load foss/2023a
-module load ANSYS/2024R2
+module load foss/2024a
+module load ANSYS/2025R1
 
 JOB_NODES="$(scontrol show hostnames)"
 JOB_NODES=$(echo ${JOB_NODES} | tr ' ' ',')
