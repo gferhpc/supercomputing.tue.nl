@@ -5,11 +5,11 @@ tags: [Training, HPC]
 
 **TU/e Supercomputing Center** organizes a Spring and Autumn HPC School:
 
-[HPC School Events](../../../hpc-school.md)
+[HPC School Events](../../../hpc-school.md){:target="_blank"}
 
 **Technical University Delft** organizes regular trainings:
 
-[TU Delft Computational Science and Engineering Agenda](https://www.tudelft.nl/cse/agenda)
+[TU Delft Computational Science and Engineering Agenda](https://www.tudelft.nl/cse/agenda){:target="_blank"}
 
 **SURFacademy** organizes trainings for HPC and research on a regular basis:
 
