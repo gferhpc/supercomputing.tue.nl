@@ -25,5 +25,5 @@ Interactive **SLURM** Tutorial
 
 A web based interactive HPC Scheduling "Game"
 
-[HPC Scheduling Game](https://game.funcx.org/)){:target="_blank"}
+[HPC Scheduling Game](https://game.funcx.org/){:target="_blank"}
 
