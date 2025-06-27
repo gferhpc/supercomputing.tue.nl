@@ -85,7 +85,7 @@ Using the toolchain(s) the following software is avaiable. When the module is lo
 | Blender                                     | 4.4.3-linux-x86_64-CUDA-12.8.0                                                       | `Blender`           | Yes                         |
 | [CP2K](recipes/cp2k.md)                     | 2023.1-foss-2023a                                                                    | `CP2K`              |                             |
 | dask                                        | 2024.9.1-gfbf-2024a                                                                  | `dask`              |                             |
-| git                                         | 2.49.0-nodocs                                                                        | `git`               |                             |
+| git                                         | 2.50.0-GCCcore-14.2.0                                                                | `git`               |                             |
 | git-lfs                                     | 3.6.1                                                                                | `git-lfs`           |                             |
 | GROMACS                                     | 2023.3-foss-2023a                                                                    | `GROMACS`           |                             |
 | Julia                                       | 1.11.5                                                                               | `Julia`             | Yes via Pluto               |
