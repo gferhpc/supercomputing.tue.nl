@@ -80,7 +80,7 @@ Using the toolchain(s) the following software is avaiable. When the module is lo
 
 | Name                                        | Supported Versions                                                                   | Module(s)           | https://hpc.tue.nl          |
 |---------------------------------------------|--------------------------------------------------------------------------------------|---------------------|-----------------------------|
-| ADIOS2                                      | 2.10.1-gompi-2023a                                                                   | `ADIOS2`            |                             |
+| ADIOS2                                      | 2.10.2-gompi-2024a                                                                   | `ADIOS2`            |                             |
 | Amber                                       | 24.0-foss-2022a-AmberTools-24.0-CUDA-11.7.0<br>24.0-foss-2024a-AmberTools-24.0       | `Amber`             |                             |
 | Blender                                     | 4.4.3-linux-x86_64-CUDA-12.8.0                                                       | `Blender`           | Yes                         |
 | [CP2K](recipes/cp2k.md)                     | 2023.1-foss-2023a                                                                    | `CP2K`              |                             |
