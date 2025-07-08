@@ -85,9 +85,12 @@ To see if your job suffered an out-of-memory (OOM) event, you can do any of the 
   ```
   slurmstepd-...: error: Detected 1 oom_kill event in StepId=17020.18. Some of the step tasks have been OOM Killed.
   ```
+  An overview of OOM events is also shown at the end of this file.
 
 - Check Slurm's accounting info.  Run `sacct -j <job_id>`.  If `State` is
   `OUT_OF_MEMORY`, your job (or some of its `srun` steps) ran out of memory.
+  For your convenience, the output of the `sacct` command is also made at the
+  end of your job's output log.
 
 If your job indeed sufferent an OOM event, you'll need to change your job script to request more memory (see above), and resubmit your job.
 
@@ -105,7 +108,43 @@ If your job indeed sufferent an OOM event, you'll need to change your job script
 
 - **What happens if I don’t specify any --mem option?**
 
-    Your job is allocated 1 GB RAM per requested CPU core by default.
+    Your job is allocated 1 GB RAM per requested CPU core by default.  If that
+    is not enough for your job, it will run out of memory, and will be
+    terminated as soon as that happens.
+
+- **What happens if I ask for too little memory for my job?**
+
+    Your job will run out of memory, and will be terminated as soon as this
+    happens.
+
+- **What happens if I ask for too much memory for my job?**
+
+    A number of things can happen:
+
+    - If you ask for more memory than the nodes have available, your job will
+      not start.
+    - Your job will start and will run to completion, but other people's jobs
+      cannot run because you claimed all the memory for your job.  Also, Slurm
+      will lower the priority of your future jobs, because it tries to share
+      resources (including memory) fairly.
+
+- **What happens if I always reserve way more RAM than I need? At least my jobs
+  will always run...**
+
+    Short answer: you'll shoot yourself in the foot: your job won't start,
+    and/or Slurm will let your jobs wait in the queue longer.
+
+    Long answer 1: if you request more memory than the nodes have available,
+    Slurm will conclude that your job cannot start, because it cannot offer you
+    the amount of memory you requested.
+
+    Long answer 2: whenever Slurm can start a new job, it must decide which job
+    from the queue it will take: yours, or that of another user?  To this end
+    Slurm calculates all queued jobs' priorities based on the historical
+    resource requests (including memory) of their respective owners.  If you
+    have recently requested more resources than the average user, your priority
+    will drop below that of the average user, which ensures all users get to
+    fairly share the cluster.
 
 - **Does --mem-per-gpu allocate GPU VRAM?**
 
@@ -114,18 +153,5 @@ If your job indeed sufferent an OOM event, you'll need to change your job script
 - **Can I use both `--mem` and `--mem-per-cpu`?**
 
     No. Slurm will error if both are provided; use one or the other.
-
-- **What happens if I always reserve way more RAM than I need? At least my jobs will always run...**
-
-    Short answer: you'll shoot yourself in the foot: Slurm will let your jobs
-    wait in the queue longer.
-
-    Long answer: whenever Slurm can start a new job, it must decide which job
-    from the queue it will take: yours, or that of another user?  To this end
-    Slurm calculates all queued jobs' priorities based on the historical
-    resource requests (including memory) of their respective owners.  If you
-    have recently requested more resources than the average user, your priority
-    will drop below that of the average user, which ensures all users get to
-    fairly share the cluster.
 
 **Remember:** Always request only what you need. Overestimating memory reduces overall cluster efficiency. Underestimating may cause job failures.
