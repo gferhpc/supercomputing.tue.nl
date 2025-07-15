@@ -55,7 +55,7 @@ fdtd-engine -t ${SLURM_CPUS_PER_TASK} -logall -fullinfo example.lsf
 #!/bin/bash
 #
 #SBATCH --job-name=test_lumerical
-#SBATCH --error=test_lumerical-%j.log
+#SBATCH --output=test_lumerical-%j.log
 #SBATCH --partition=tue.default.q
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=8
@@ -255,7 +255,6 @@ By default, the HPC node will not use the GUI license, but just a runner license
         #SBATCH --nodes=1
         #SBATCH --ntasks=16
         #SBATCH --partition=elec-phi.gpu.q
-        #SBATCH --error=slurm-%j.err
         #SBATCH --output=slurm-%j.out
 
         module purge

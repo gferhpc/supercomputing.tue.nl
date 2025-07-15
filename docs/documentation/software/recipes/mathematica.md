@@ -177,7 +177,6 @@ it, using the following Slurm batch script.
     #SBATCH --ntasks=3
     #SBATCH --cpus-per-task=2
     #SBATCH --partition=tue.default.q
-    #SBATCH --error=slurm-%j.err
     #SBATCH --output=slurm-%j.out
     #SBATCH --time=00:01:00
 

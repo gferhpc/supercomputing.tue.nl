@@ -288,7 +288,6 @@ same directory as the Slurm script:
 `#SBATCH --nodes=1`
 `#SBATCH --ntasks=1`
 `#SBATCH --partition=tue.default.q`
-`#SBATCH --error=slurm-%j.err`
 `#SBATCH --output=slurm-%j.out`
 `#SBATCH --time=24:00:00`
 ` `
@@ -318,14 +317,6 @@ We'll go through the lines one by one:
     Select a partition based on the [technical
     specifications](../../specifications/index.md) of the cluster
     you are using.
-
-<!-- -->
-
--   **#SBATCH --error=slurm-%j.err** tells Slurm to write standard error
-    messages (errors and warnings from the job itself) to a file named
-    "slurm-<jobid>.err". If this line is omitted, the standard error
-    stream is merged with the standard output into a single file
-    "slurm-<jobid>.out".
 
 <!-- -->
 
@@ -373,7 +364,6 @@ where the differences are highlighted in bold:
 `#SBATCH --nodes=1`
 `#SBATCH --ntasks=16`
 `#SBATCH --partition=tue.default.q`
-`#SBATCH --error=slurm-%j.err`
 `#SBATCH --output=slurm-%j.out`
 `#SBATCH --time=24:00:00`
 

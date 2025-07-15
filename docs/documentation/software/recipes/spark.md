@@ -45,7 +45,6 @@ Please update the `#SBATCH` values accordingly to your needs.
     #SBATCH --time=01:00:00
 
     #SBATCH --output=/home/%u/spark/logs/%j.out
-    #SBATCH --error=/home/%u/spark/logs/%j.err
 
     # can only have one Spark slave per node in this script (otherwise would need
     # increasing ports and take care in general)

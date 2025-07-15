@@ -15,7 +15,6 @@ industrial researchers in all areas of chemistry, materials science, and enginee
 
 #SBATCH --job-name=test_ams
 #SBATCH --output=test_ams-%j.out 
-#SBATCH --error=test_ams-%j.err
 #SBATCH --partition=tue.default.q
 #SBATCH --nodes=1
 #SBATCH --ntasks=16

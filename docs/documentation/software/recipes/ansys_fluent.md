@@ -58,7 +58,7 @@ FLUENT MPI test done.
 #!/bin/bash
 #
 #SBATCH --job-name=test_ansys
-#SBATCH --error=test_ansys-%j.log
+#SBATCH --output=test_ansys-%j.log
 #SBATCH --partition=tue.default.q
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=8
@@ -78,7 +78,7 @@ fluent 3ddp -g -t${SLURM_NTASKS} -mpitest -mpi=openmpi
 #!/bin/bash
 #
 #SBATCH --job-name=test_ansys
-#SBATCH --error=test_ansys-%j.log
+#SBATCH --output=test_ansys-%j.log
 #SBATCH --partition=tue.default.q
 #SBATCH --nodes=2
 #SBATCH --ntasks-per-node=8
