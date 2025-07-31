@@ -83,14 +83,14 @@ plugins:
       categories:
         - categories
   - scc/blog:
-      post_excerpt_max_authors: 10
-      post_url_date_format: yyyy
-  - scc/blog:
       blog_dir: documentation/kb
       post_dir: "{blog}/articles"
       main: false
       archive: false
       post_url_format: "{categories}/{slug}"
+  - scc/blog:
+      post_excerpt_max_authors: 10
+      post_url_date_format: yyyy
   - scc/meta
   - search:
       lang: en
@@ -163,7 +163,7 @@ extra:
   consent:
     title: Our website uses cookies
     description: >-
-      It allows us to offer you the best website experience. By accepting the cookies, 
-      you allow us to use these cookies to optimize the user-friendliness of our website, 
+      It allows us to offer you the best website experience. By accepting the cookies,
+      you allow us to use these cookies to optimize the user-friendliness of our website,
       to analyze website usage, and to support our marketing activities.
     actions: [accept, reject, manage]

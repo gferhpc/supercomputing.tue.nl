@@ -77,7 +77,7 @@ class CustomBlogPlugin(BlogPlugin[CustomBlogConfig]):
                         post.excerpt.render(page, self.config.post_excerpt_separator)
 
             # if page.is_homepage or page.is_top_level - only when blog.main = True:
-            if self.config.main and (page.is_homepage or page.is_top_level):
+            if self.config.main and (page.is_homepage or page.is_top_level or "documentation" in page.url):
                 page.blog = self.blog
 
             if not self.config.pagination:
