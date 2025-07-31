@@ -8,7 +8,7 @@ Login to [The Umbrella Cluster](https://hpc.tue.nl) and request an Interactive D
 
 ## Setting up a connection to Microsoft OneDrive
 
-Once the Interactive Desktop session is ready, open a terminal. In the terminal, run the command `rclone_setup_onedrive`.
+Once the Interactive Desktop session is ready, open a terminal. In the terminal, run the command `rclone_setup_onedrive`[^1].
 
 A web browser window should pop up allowing you to log into box. It is a good idea at this point to verify that the url is actually OneDrive before entering any credentials
   - Enter your TU/e email, Password and MFA
@@ -54,3 +54,5 @@ rclone copyto OneDrive:/test/hello.txt test-onedrive.txt
 ## Testing the OneDrive Connection (Webacces https://hpc.tue.nl)
 
 Login, check the "File" top menu bar option, besides a "Homedrive" there now is a "onedrive" which was configured. Using the files browser can be copie from and to the "Homedrive".
+
+[^1]: Effectively runs: `rclone --config=~/.config/rclone/rclone.conf config create --onedrive-drive-id=1 --onedrive-drive-type=business --onedrive-region=global OneDrive onedrive`
