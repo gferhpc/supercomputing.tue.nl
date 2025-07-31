@@ -1,26 +1,5 @@
 # OneDrive (using rclone)
 
-??? bug "This article is outdated and needs to be updated"
-
-    As a result the content may lead to unexpected results. Please help update this Article to reflect newly available information.
-
-    ---
-
-    We are aware that this documentation needs to be updated and that as result the rclone configuration isn't stored
-    correctly. Please stand by while we investigate the issue and work on a fix.
-
-    **TL;DR**
-
-    The `rclone.conf` file is stored incorrectly in:
-    ```shell
-    ls ~/ondemand/data/sys/dashboard/batch_connect/sys/desktop/output/*/config/rclone/rclone.conf
-    ``` 
-
-    This files needs to be located at:
-    ```shell
-    ~/.config/rclone/rclone.conf
-    ```
-
 All tough `rclone` is a command line tool (https://rclone.org/), to configure a OneDrive connection a graphical environment is needed to authorize the connection to Microsoft OneDrive. Configuration of the connection only needs to be done once.
 
 ## Start an interactive Desktop Session
@@ -29,43 +8,12 @@ Login to [The Umbrella Cluster](https://hpc.tue.nl) and request an Interactive D
 
 ## Setting up a connection to Microsoft OneDrive
 
-Once the Interactive Desktop session is ready, open a terminal. In the terminal, run the command `rclone config`.
+Once the Interactive Desktop session is ready, open a terminal. In the terminal, run the command `rclone_setup_onedrive`.
 
-It prompts you with a bunch of questions:
-
-- It shows "No remotes found -- make a new one" or list available remotes you made before
-    - Answer "n" for "New remote"
-- "name>" (the name for the new remote)
-    - Type "OneDrive" (or whatever else you want to call this remote)
-- "Storage>" (the storage type of the new remote)
-    - This should display a list to choose from. Enter the number corresponding to the "Microsoft OneDrive" storage type, which is "35".
-- "client_id>"
-    - Leave this blank (just press enter).
-- "client_secret>"
-    - Leave this blank (just press enter).
-- "Choose national cloud region for OneDrive."
-    - This should display a list to choose from. Enter the number corresponding to the "Microsoft Cloud Global" region, which is "1".
-- "Edit advanced config?"
-    - Type "n" for no
-- "Use auto config?"
-    - Answer "y" for yes
-- A web browser window should pop up allowing you to log into box. It is a good idea at this point to verify that the url is actually OneDrive before entering any credentials
-    - Enter your TU/e email, Password and MFA
-    - This should take you to the OSU login page. Login with your OSU credentials
-    - Go back to the terminal once "Success" is displayed.
-- "Your choice>"
-    - Locate the drive you wish to use.
-    - Type "1" to use your personal or business OneDrive
-- "Choose drive to use"
-    - Locate the option: OneDrive (business)
-    - Type the number of the option
-- "Is this Okay? y/n>"
-    - Type "y" to confirm the drive you wish to use is correct.
-- "y/e/d>"
-    - Type "y" to confirm you wish to add this remote to rclone.
-- "Current remotes:"
-    - An remote of type "onedrive" should be avaiable.
-    - Type "q" to Quit
+A web browser window should pop up allowing you to log into box. It is a good idea at this point to verify that the url is actually OneDrive before entering any credentials
+  - Enter your TU/e email, Password and MFA
+  - This should take you to the OSU login page. Login with your OSU credentials
+  - Go back to the terminal once "Success" is displayed.
 
 Close the terminal (type `exit` of close the window) and end the Interactive Desktop (Left Click on your name in the upper right corner en choose "logout" the press "logout" button).
 
