@@ -10,7 +10,7 @@ type: maintenance
 slug: Q3-2025-umbrella-maintenance
 image: assets/images/maintenance.webp
 banner:
-  enabled: true
+  enabled: false
 ---
 
 # 2025 Q3 Umbrella HPC Cluster maintenance
