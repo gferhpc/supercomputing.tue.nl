@@ -5,7 +5,6 @@ type: kb
 slug: "7"
 tags: [ "Umbrella", "Knowledge Base", "Slurm" ]
 categories: [ "Slurm", "Umbrella" ]
-draft: True
 ---
 
 # Maximum run time for batch jobs

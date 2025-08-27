@@ -5,7 +5,6 @@ type: kb
 slug: "6"
 tags: [ "Umbrella", "Knowledge Base", "Slurm" ]
 categories: [ "Slurm", "Umbrella" ]
-draft: True
 ---
 
 # Memory requirement for Slurm jobs
