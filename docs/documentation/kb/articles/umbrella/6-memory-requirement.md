@@ -11,16 +11,16 @@ categories: [ "Slurm", "Umbrella" ]
 
 All Slurm jobs must specify how much memory they require. If no memory request is specified, your job will automatically be allocated **1 GB RAM per CPU core** by default. This change ensures optimal sharing and utilization of cluster resources and helps prevent job failures due to insufficient memory allocation.
 
-## How to specify memory in Slurm
+## Specifying memory requirements in Slurm
 
-Add one of the following options to your job script’s `#SBATCH` header:
+Add one of the options shown below to your job script’s `#SBATCH` header.  You cannot request more RAM than a node has; see [Technical Specifications](../../../specifications/index.md#hardware).
 
 ### Allocate a fixed amount of memory for the entire job
 
 ```bash
 #SBATCH --mem=10G
 ```
-*Requests a total of 10 GB RAM for the entire job, regardless of the number of cores.*
+*Requests 10 GB RAM per node for the job.  For single-node jobs this is the total amount of RAM for the entire job, regardless of the number of cores.*
 
 ### Allocate memory per CPU core
 
