@@ -77,6 +77,14 @@ unzip /dataset/ADE20K/ADE20K.zip -d $datadir
     <td><a href="https://www.cs.toronto.edu/~kriz/cifar.html">Website</a></td>
   </tr>
   <tr>
+    <td>DeepSeek</td>
+    <td>v3.1</td>
+    <td><a href="#free">free</a></td>
+    <td><code>/dataset/DeepSeek-v3.1</code></td>
+    <td>MIT</td>
+    <td><a href="https://huggingface.co/deepseek-ai/DeepSeek-V3.1">Website</a></td>
+  </tr>
+  <tr>
     <td>ImageNet</td>
     <td>&mdash;</td>
     <td><a href="#poa">POA</a></td>
