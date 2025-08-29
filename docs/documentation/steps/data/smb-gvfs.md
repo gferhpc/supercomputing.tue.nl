@@ -1,5 +1,10 @@
 # Windows file shares (gvfs)
 
+!!! warning
+
+    This is currently in development and may not work yet.  To receive updates,
+    please leave a comment below this page.
+
 ## Connecting
 
 1.  [Connect](../access/index.md) to any of the cluster's login nodes.
@@ -35,5 +40,5 @@ standard Linux tools such as `mv`, `cp`, and `rm`.
 
 1.  Run the following command:
     ```
-    gio mount --unmount smb://<server>/<share>
+    gio mount -u smb://<server>/<share>
     ```
