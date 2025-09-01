@@ -8,7 +8,11 @@ Login to [The Umbrella Cluster](https://hpc.tue.nl) and request an Interactive D
 
 ## Setting up a connection to Microsoft OneDrive
 
-Once the Interactive Desktop session is ready, open a terminal. In the terminal, run the command `rclone_setup_onedrive`[^1].
+Once the Interactive Desktop session is ready, open a terminal. In the terminal, run the command `rclone_setup_onedrive`[^1]:
+
+```shell
+rclone_setup_onedrive
+```
 
 A web browser window should pop up allowing you to log into box. It is a good idea at this point to verify that the url is actually OneDrive before entering any credentials
   - Enter your TU/e email, Password and MFA
