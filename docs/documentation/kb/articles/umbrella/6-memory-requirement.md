@@ -40,7 +40,21 @@ Add one of the options shown below to your job script’s `#SBATCH` header.  You
 
 To view the memory usage of your job, use any of the following commands:
 
-- `seff <job_id>`
+- `sstat -o jobid,averss,maxrss,maxrssnode,maxrsstask -a -j <job_id>`  (for running jobs)
+  ```
+  JobID            AveRSS     MaxRSS MaxRSSNode MaxRSSTask
+  ------------ ---------- ---------- ---------- ----------
+  3400925.ext+        72K        72K bme-compu+          0
+  3400925.bat+      4968K      4968K bme-compu+          0
+  3400925.0     42329236K  42708164K bme-compu+          0
+  ```
+  This command will query the Slurm controller for current info about your job.
+  It shows how much physical memory each of your job's running steps is
+  occupying.  In case you're using multiple tasks (e.g. with MPI), it shows how
+  much memory each task used on average (`AveRSS`), and how much memory the
+  largest task used (`MaxRSS`).
+
+- `seff <job_id>`  (for finished jobs)
   ```
   Job ID: 17026
   Cluster: cluster
@@ -58,7 +72,7 @@ To view the memory usage of your job, use any of the following commands:
   the last line shows, we've used all of our requested RAM, and it would be
   wise to request a bit more.
 
-- `sacct -j <job_id> -o jobid,state,reqmem,averss,maxrss,maxrssnode,maxrsstask`
+- `sacct -o jobid,state,reqmem,averss,maxrss,maxrssnode,maxrsstask -j <job_id>`  (for finished jobs)
   ```
   JobID             State     ReqMem     AveRSS     MaxRSS MaxRSSNode MaxRSSTask
   ------------ ---------- ---------- ---------- ---------- ---------- ----------
