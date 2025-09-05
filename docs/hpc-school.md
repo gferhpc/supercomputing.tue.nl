@@ -28,8 +28,8 @@ Stay tuned for announcements on future editions through the official channels.
 
 <div class="grid cards" markdown>
 - <figure markdown>
-    ![Vlado Menkovski](/assets/images/people/j.proll.png)
-    <figcaption>[Josefine Proll](https://www.tue.nl/en/research/researchers/josefine-proll/){ target=_blank }</figcaption>
+    ![Vlado Menkovski](/assets/images/people/v.menkovski.png)
+    <figcaption>[Vlado Menkovski](https://www.tue.nl/en/research/researchers/vlado-menkovski/){ target=_blank }</figcaption>
     <p style="font-style: italic">
       Generative modelling for data-driven simulation
     </p>
@@ -37,8 +37,8 @@ Stay tuned for announcements on future editions through the official channels.
   </figure>
   
 - <figure markdown>
-    ![Evert van Vliet](/assets/images/people/i.filot.png)
-    <figcaption>[Ivo Filot](https://www.tue.nl/en/research/researchers/ivo-filot/){ target=_blank }</figcaption>
+    ![Evert van Vliet](/assets/images/people/evertvanvlietcfd.png)
+    <figcaption>[Evert van Vliet](???){ target=_blank }</figcaption>
     <p style="font-style: italic">
       Computational work at ASML
     </p>
@@ -47,20 +47,13 @@ Stay tuned for announcements on future editions through the official channels.
   
 - <figure markdown>
     ![Esmee Tetterloo & Matthijs Wijmans](/assets/images/people/c.campos.png)
-    <figcaption>[Cassio De Campos](https://www.tue.nl/en/research/researchers/cassio-de-campos/){ target=_blank }</figcaption>
+    <figcaption>[URE](https://www.universityracing.nl/){ target=_blank }</figcaption>
     <p style="font-style: italic">
       University Racing Eindhoven
     </p>
     <small>April 11, 2025</small>
   </figure>
-  
-- <figure markdown>
-    ![Yali Tang](/assets/images/people/y.tang.png)
-    <figcaption>[Yali Tang](https://www.tue.nl/en/research/researchers/yali-tang/){ target=_blank }</figcaption>
-    <small>
-      Yali Tang is an assistant professor at the Power and Flow group in the Department of Mechanical Engineering at Eindhoven University of Technology (TU/e). Her research expertise focuses on the fundamentals of multiphase flows using computational fluid dynamics modelling. An important research topic is the hydrodynamics, mass and heat transfer in fluid-particle systems such as in packed and fluidized beds, as well as bubble column reactors.
-    </small>
-  </figure>
+
 </div>
 
 ### Autumn School 2024
